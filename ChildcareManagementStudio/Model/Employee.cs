@@ -36,10 +36,7 @@ namespace ChildcareManagementStudio.Model
 
         /// <summary>
         /// Property containing an employee's position records.
-        /// The records are stored as a List of Tuple objects.
-        /// The first value in each Tuple object is the name of the position.
-        /// The second value in each Tuple object is the school year when the employee held that position.
         /// </summary>
-        public List<Tuple<string, string>> PositionRecords { get; set; }
+        public List<PositionRecord> PositionRecords { get; set; }
     }
 }
