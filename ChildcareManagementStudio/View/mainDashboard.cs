@@ -170,9 +170,5 @@ namespace ChildcareManagementStudio.View
             this.teacherMainUserControl1.Hide();
         }
 
-        private void ChangeTabColor(Button theTabButton)
-        {
-
-        }
     }
 }
