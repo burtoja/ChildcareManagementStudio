@@ -9,6 +9,7 @@ namespace ChildcareManagementStudio.Model
     {
         private string socialSecurityNumber;
         private string gender;
+        private string phoneNumber;
 
         /// <summary>
         /// Property for a person's unique person ID.
@@ -71,7 +72,21 @@ namespace ChildcareManagementStudio.Model
         /// <summary>
         /// Property for a person's phone number.
         /// </summary>
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber
+        {
+            get
+            {
+                return phoneNumber;
+            }
+            set
+            {
+                if (!IsValidPhoneNumber(value))
+                {
+                    throw new ArgumentException("The specified phone number is not formatted properly.  A format of (###) ###-#### must be used.");
+                }
+                phoneNumber = value;
+            }
+        }
 
         /// <summary>
         /// Property for the first line of a person's address.
@@ -133,6 +148,19 @@ namespace ChildcareManagementStudio.Model
         private bool IsValidGender(string gender)
         {
             return gender.Equals("M") || gender.Equals("F");
+        }
+
+        /// <summary>
+        /// Helper method that indicates if a phone number is valid.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number being evaluated.</param>
+        /// <returns>
+        /// True if the phone number is formatted like "(###) ###-####".
+        /// False if the phone number is not formatted like "(###) ###-####".
+        /// </returns>
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(phoneNumber.Trim(), @"^\(\d{3}\)\s\d{3}-\d{4}$");
         }
     }
 }
