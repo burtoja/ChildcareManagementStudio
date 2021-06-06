@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ChildcareManagementStudio
+namespace ChildcareManagementStudio.View
 {
-    public partial class Form1 : Form
+    public partial class mainDashboard : Form
     {
-        public Form1()
+        public mainDashboard()
         {
             InitializeComponent();
         }
