@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PersonWhenSetSocialSecurityNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
