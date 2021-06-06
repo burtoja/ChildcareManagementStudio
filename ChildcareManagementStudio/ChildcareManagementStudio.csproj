@@ -66,6 +66,9 @@
     <EmbeddedResource Include="View\mainDashboard.resx">
       <DependentUpon>mainDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="ChildCareData.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
