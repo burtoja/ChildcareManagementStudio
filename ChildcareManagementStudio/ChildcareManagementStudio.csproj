@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
+    <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
