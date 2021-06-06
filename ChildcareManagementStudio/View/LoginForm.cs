@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View
 {
-    public partial class MainDashboard : Form
+    public partial class LoginForm : Form
     {
-        public MainDashboard()
+        public LoginForm()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace ChildcareManagementStudio.View
 {
-    partial class mainDashboard
+    partial class MainDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace ChildcareManagementStudio.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panelTop = new System.Windows.Forms.Panel();
             this.pictureBoxLogoutIcon = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
