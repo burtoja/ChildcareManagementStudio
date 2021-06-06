@@ -61,7 +61,7 @@ namespace ChildcareManagementStudio.View
                         {
                             this.theMainDashboard.SetTheLoginForm(this);
                         }
-                        this.theMainDashboard.SetActiveUsername(username);                      
+                        this.theMainDashboard.SetActiveUsername(username);
                         this.theMainDashboard.Show();
                         this.textBoxPassword.Text = "";
                         this.Hide();
@@ -77,7 +77,7 @@ namespace ChildcareManagementStudio.View
                         this.labelErrorMessage.Text = "Please enter a username";
                     else if (ex.ParamName == "password")
                         this.labelErrorMessage.Text = "Please enter a password";
-                }
+                }                
             }
             //TODO: Make credential controller with a CredentialsAreValid method stubbed in
             //TODO: Make SetTheLoginForm method in MainDashboard
