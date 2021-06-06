@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Controller\CredentialControllerWhenCheckCredentialsAreValid.cs" />
     <Compile Include="Controller\SalaryControllerWhenGetSalaryRecords.cs" />
+    <Compile Include="Controller\CertificationControllerWhenGetCertificationRecords.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
     <Compile Include="DAL\CertificationDALWhenGetCertificationRecords.cs" />
