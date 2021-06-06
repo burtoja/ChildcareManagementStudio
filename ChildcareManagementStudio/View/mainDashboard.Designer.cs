@@ -1,7 +1,7 @@
 ﻿
 namespace ChildcareManagementStudio.View
 {
-    partial class mainDashboard
+    partial class MainDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@ namespace ChildcareManagementStudio.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.pictureBoxLogoutIcon = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelLeftSide = new System.Windows.Forms.Panel();
@@ -40,8 +39,8 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab = new System.Windows.Forms.Button();
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoutIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +48,7 @@ namespace ChildcareManagementStudio.View
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.Maroon;
-            this.panelTop.Controls.Add(this.pictureBoxLogoutIcon);
+            this.panelTop.Controls.Add(this.buttonLogout);
             this.panelTop.Controls.Add(this.pictureBoxLogo);
             this.panelTop.Controls.Add(this.labelTitle);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -58,16 +57,6 @@ namespace ChildcareManagementStudio.View
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1045, 81);
             this.panelTop.TabIndex = 0;
-            // 
-            // pictureBoxLogoutIcon
-            // 
-            this.pictureBoxLogoutIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogoutIcon.Image")));
-            this.pictureBoxLogoutIcon.Location = new System.Drawing.Point(1006, 3);
-            this.pictureBoxLogoutIcon.Name = "pictureBoxLogoutIcon";
-            this.pictureBoxLogoutIcon.Size = new System.Drawing.Size(36, 30);
-            this.pictureBoxLogoutIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogoutIcon.TabIndex = 3;
-            this.pictureBoxLogoutIcon.TabStop = false;
             // 
             // pictureBoxLogo
             // 
@@ -165,7 +154,21 @@ namespace ChildcareManagementStudio.View
             this.buttonTeacherTab.Text = "Teachers";
             this.buttonTeacherTab.UseVisualStyleBackColor = true;
             // 
-            // mainDashboard
+            // buttonLogout
+            // 
+            this.buttonLogout.AccessibleDescription = "Click to logout";
+            this.buttonLogout.AccessibleName = "Logout";
+            this.buttonLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogout.BackgroundImage")));
+            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(1004, 8);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(29, 31);
+            this.buttonLogout.TabIndex = 3;
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            // 
+            // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,12 +176,11 @@ namespace ChildcareManagementStudio.View
             this.Controls.Add(this.panelLeftSide);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "mainDashboard";
+            this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoutIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelLeftSide.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -196,6 +198,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Button buttonStudentsTab;
         private System.Windows.Forms.Button buttonTeacherTab;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBoxLogoutIcon;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }

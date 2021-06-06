@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\mainDashboard.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\mainDashboard.Designer.cs">
-      <DependentUpon>mainDashboard.cs</DependentUpon>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Person.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,8 +73,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\mainDashboard.resx">
-      <DependentUpon>mainDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <Content Include="ChildCareData.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -87,7 +96,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="DAL\" />
     <Folder Include="UserControls\" />
   </ItemGroup>

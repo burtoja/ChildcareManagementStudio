@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ChildcareManagementStudio.View;
+using System;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio
@@ -16,7 +14,7 @@ namespace ChildcareManagementStudio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
