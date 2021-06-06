@@ -8,6 +8,7 @@ namespace ChildcareManagementStudio.Model
     public class Person
     {
         private string socialSecurityNumber;
+        private string gender;
 
         /// <summary>
         /// Property for a person's unique person ID.
@@ -51,7 +52,21 @@ namespace ChildcareManagementStudio.Model
         /// <summary>
         /// Property for a person's gender.
         /// </summary>
-        public string Gender { get; set; }
+        public string Gender
+        {
+            get
+            {
+                return gender;
+            }
+            set
+            {
+                if (!IsValidGender(value))
+                {
+                    throw new ArgumentException("The specified gender is not formatted properly.  'M' and 'F' are the only two characters that are allowed.");
+                }
+                gender = value;
+            }
+        }
 
         /// <summary>
         /// Property for a person's phone number.
@@ -105,6 +120,19 @@ namespace ChildcareManagementStudio.Model
         private bool IsValidSocialSecurityNumber(string socialSecurityNumber)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(socialSecurityNumber, @"^\d{3}-\d{2}-\d{4}$");
+        }
+
+        /// <summary>
+        /// Helper method that indicates if a gender is valid.
+        /// </summary>
+        /// <param name="gender">The gender input being evaluated.</param>
+        /// <returns>
+        /// True if the gender is equal to either "M" or "F".
+        /// False if the gender is not equal to either "M" or "F".
+        /// </returns>
+        private bool IsValidGender(string gender)
+        {
+            return gender.Equals("M") || gender.Equals("F");
         }
     }
 }
