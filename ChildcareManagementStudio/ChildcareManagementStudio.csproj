@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -82,7 +83,6 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="DAL\" />
-    <Folder Include="Model\" />
     <Folder Include="UserControls\" />
     <Folder Include="View\" />
   </ItemGroup>
