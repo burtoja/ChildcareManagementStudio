@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ChildcareManagementStudio.DAL;
+using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ChildcareManagementStudio.Controller
 {
     /// <summary>
     /// Controller class for managing credentials
     /// </summary>
-    class CredentialController
+    public class CredentialController
     {
+        private readonly CredentialDAL credentialDAL;
+
         /// <summary>
         /// Constructor for CredentialController objects
         /// </summary>
         public CredentialController()
         {
+            credentialDAL = new CredentialDAL();
         }
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace ChildcareManagementStudio.Controller
                 }
             }
 
-            return true; //TODO: Replace -- This is a placeholder until DB/DAL is implemented
+            return credentialDAL.CredentialsAreValid(username, passwordHash);
         }
     }
 }
