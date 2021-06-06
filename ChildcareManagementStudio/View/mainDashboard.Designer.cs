@@ -31,15 +31,15 @@ namespace ChildcareManagementStudio.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panelTop = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelLeftSide = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTabIndicator = new System.Windows.Forms.Panel();
             this.buttonFinancialTab = new System.Windows.Forms.Button();
             this.buttonClassroomsTab = new System.Windows.Forms.Button();
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
@@ -57,6 +57,20 @@ namespace ChildcareManagementStudio.View
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1045, 81);
             this.panelTop.TabIndex = 0;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.AccessibleDescription = "Click to logout";
+            this.buttonLogout.AccessibleName = "Logout";
+            this.buttonLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogout.BackgroundImage")));
+            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(1004, 8);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(29, 31);
+            this.buttonLogout.TabIndex = 3;
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
             // 
             // pictureBoxLogo
             // 
@@ -82,7 +96,7 @@ namespace ChildcareManagementStudio.View
             // panelLeftSide
             // 
             this.panelLeftSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelLeftSide.Controls.Add(this.panel1);
+            this.panelLeftSide.Controls.Add(this.panelTabIndicator);
             this.panelLeftSide.Controls.Add(this.buttonFinancialTab);
             this.panelLeftSide.Controls.Add(this.buttonClassroomsTab);
             this.panelLeftSide.Controls.Add(this.buttonStudentsTab);
@@ -93,17 +107,18 @@ namespace ChildcareManagementStudio.View
             this.panelLeftSide.Size = new System.Drawing.Size(266, 563);
             this.panelLeftSide.TabIndex = 1;
             // 
-            // panel1
+            // panelTabIndicator
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 140);
-            this.panel1.TabIndex = 2;
+            this.panelTabIndicator.BackColor = System.Drawing.Color.Black;
+            this.panelTabIndicator.Location = new System.Drawing.Point(3, 0);
+            this.panelTabIndicator.Margin = new System.Windows.Forms.Padding(0);
+            this.panelTabIndicator.Name = "panelTabIndicator";
+            this.panelTabIndicator.Size = new System.Drawing.Size(10, 140);
+            this.panelTabIndicator.TabIndex = 2;
             // 
             // buttonFinancialTab
             // 
+            this.buttonFinancialTab.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonFinancialTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinancialTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFinancialTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -114,9 +129,11 @@ namespace ChildcareManagementStudio.View
             this.buttonFinancialTab.TabIndex = 3;
             this.buttonFinancialTab.Text = "Financial";
             this.buttonFinancialTab.UseVisualStyleBackColor = true;
+            this.buttonFinancialTab.Click += new System.EventHandler(this.ButtonFinancialTab_Click);
             // 
             // buttonClassroomsTab
             // 
+            this.buttonClassroomsTab.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonClassroomsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClassroomsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClassroomsTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -127,9 +144,11 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab.TabIndex = 2;
             this.buttonClassroomsTab.Text = "Classrooms";
             this.buttonClassroomsTab.UseVisualStyleBackColor = true;
+            this.buttonClassroomsTab.Click += new System.EventHandler(this.ButtonClassroomsTab_Click);
             // 
             // buttonStudentsTab
             // 
+            this.buttonStudentsTab.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonStudentsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStudentsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStudentsTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -140,33 +159,23 @@ namespace ChildcareManagementStudio.View
             this.buttonStudentsTab.TabIndex = 1;
             this.buttonStudentsTab.Text = "Students";
             this.buttonStudentsTab.UseVisualStyleBackColor = true;
+            this.buttonStudentsTab.Click += new System.EventHandler(this.ButtonStudentsTab_Click);
             // 
             // buttonTeacherTab
             // 
+            this.buttonTeacherTab.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonTeacherTab.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.buttonTeacherTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTeacherTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTeacherTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonTeacherTab.ForeColor = System.Drawing.Color.Black;
             this.buttonTeacherTab.Location = new System.Drawing.Point(13, 0);
             this.buttonTeacherTab.Margin = new System.Windows.Forms.Padding(0);
             this.buttonTeacherTab.Name = "buttonTeacherTab";
             this.buttonTeacherTab.Size = new System.Drawing.Size(253, 140);
             this.buttonTeacherTab.TabIndex = 0;
             this.buttonTeacherTab.Text = "Teachers";
-            this.buttonTeacherTab.UseVisualStyleBackColor = true;
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.AccessibleDescription = "Click to logout";
-            this.buttonLogout.AccessibleName = "Logout";
-            this.buttonLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogout.BackgroundImage")));
-            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Location = new System.Drawing.Point(1004, 8);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(29, 31);
-            this.buttonLogout.TabIndex = 3;
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            this.buttonTeacherTab.UseVisualStyleBackColor = false;
+            this.buttonTeacherTab.Click += new System.EventHandler(this.ButtonTeacherTab_Click);
             // 
             // MainDashboard
             // 
@@ -197,7 +206,7 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Button buttonClassroomsTab;
         private System.Windows.Forms.Button buttonStudentsTab;
         private System.Windows.Forms.Button buttonTeacherTab;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelTabIndicator;
         private System.Windows.Forms.Button buttonLogout;
     }
 }
