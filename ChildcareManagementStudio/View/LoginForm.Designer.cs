@@ -165,7 +165,7 @@ namespace ChildcareManagementStudio.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 205);
+            this.ClientSize = new System.Drawing.Size(352, 195);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
