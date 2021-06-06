@@ -58,7 +58,7 @@ namespace ChildcareManagementStudio.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ButtonLogout_Click(object sender, EventArgs e)
         {
             this.theLoginForm.SetMainDashboard(this);
             this.theLoginForm.Show();
