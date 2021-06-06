@@ -20,11 +20,8 @@ namespace ChildcareManagementStudio.Model
 
         /// <summary>
         /// Property containing an employee's salary records.
-        /// The records are stored as a List of Tuple objects.
-        /// The first value in each Tuple object is the date that the given salary became effective.
-        /// The second value in each Tuple object is the hourly pay rate for the employee.
         /// </summary>
-        public List<Tuple<DateTime, double>> SalaryRecords { get; set; }
+        public List<SalaryRecord> SalaryRecords { get; set; }
 
         /// <summary>
         /// Property containing an employee's certification records.
