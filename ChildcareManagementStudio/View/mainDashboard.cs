@@ -64,5 +64,108 @@ namespace ChildcareManagementStudio.View
             this.theLoginForm.Show();
             this.Hide();
         }
+
+        /// <summary>
+        /// Actions to perform when teacher tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonTeacherTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 0);
+            this.buttonTeacherTab.BackColor = SystemColors.Control;
+            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
+
+            this.buttonTeacherTab.ForeColor = Color.Black;
+            this.buttonStudentsTab.ForeColor = SystemColors.Control;
+            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
+            this.buttonFinancialTab.ForeColor = SystemColors.Control;
+
+            this.buttonTeacherTab.FlatAppearance.BorderColor = SystemColors.Control;
+            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+
+        }
+
+        /// <summary>
+        /// Actions to perform when student tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonStudentsTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 140);
+            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonStudentsTab.BackColor = SystemColors.Control;
+            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
+
+            this.buttonTeacherTab.ForeColor = SystemColors.Control;
+            this.buttonStudentsTab.ForeColor = Color.Black;
+            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
+            this.buttonFinancialTab.ForeColor = SystemColors.Control;
+
+            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonStudentsTab.FlatAppearance.BorderColor = SystemColors.Control;
+            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        /// <summary>
+        /// Actions to perform when classroom tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClassroomsTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 280);
+            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonClassroomsTab.BackColor = SystemColors.Control;
+            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
+
+            this.buttonTeacherTab.ForeColor = SystemColors.Control;
+            this.buttonStudentsTab.ForeColor = SystemColors.Control;
+            this.buttonClassroomsTab.ForeColor = Color.Black;
+            this.buttonFinancialTab.ForeColor = SystemColors.Control;
+
+            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonClassroomsTab.FlatAppearance.BorderColor = SystemColors.Control;
+            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        /// <summary>
+        /// Actions to perform when financial tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <summary>
+        private void ButtonFinancialTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 420);
+            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
+            this.buttonFinancialTab.BackColor = SystemColors.Control;
+
+            this.buttonTeacherTab.ForeColor = SystemColors.Control;
+            this.buttonStudentsTab.ForeColor = SystemColors.Control;
+            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
+            this.buttonFinancialTab.ForeColor = Color.Black;
+
+            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
+            this.buttonFinancialTab.FlatAppearance.BorderColor = SystemColors.Control;
+        }
+
+        private void ChangeTabColor(Button theTabButton)
+        {
+
+        }
     }
 }
