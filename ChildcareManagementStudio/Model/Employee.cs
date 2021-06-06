@@ -28,11 +28,8 @@ namespace ChildcareManagementStudio.Model
 
         /// <summary>
         /// Property containing an employee's certification records.
-        /// The records are stored as a List of Tuple objects.
-        /// The first value in each Tuple object is the type of certification that the employee earned.
-        /// The second value in each Tuple object is the expiration date for the given certification.
         /// </summary>
-        public List<Tuple<string, DateTime>> CertificationRecords { get; set; }
+        public List<CertificationRecord> CertificationRecords { get; set; }
 
         /// <summary>
         /// Property containing an employee's position records.
