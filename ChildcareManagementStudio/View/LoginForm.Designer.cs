@@ -32,10 +32,10 @@ namespace ChildcareManagementStudio.View
             this.panelTop = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelErrorMessage = new System.Windows.Forms.Label();
@@ -87,6 +87,17 @@ namespace ChildcareManagementStudio.View
             this.tableLayoutPanel1.Size = new System.Drawing.Size(328, 127);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // textBoxPassword
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPassword, 2);
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(101, 33);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(224, 26);
+            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.EntryInTextbox);
+            // 
             // labelUsername
             // 
             this.labelUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -119,16 +130,7 @@ namespace ChildcareManagementStudio.View
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(224, 26);
             this.textBoxUsername.TabIndex = 2;
-            // 
-            // textBoxPassword
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxPassword, 2);
-            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(101, 33);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(224, 26);
-            this.textBoxPassword.TabIndex = 3;
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.EntryInTextbox);
             // 
             // buttonSubmit
             // 
@@ -139,6 +141,7 @@ namespace ChildcareManagementStudio.View
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Login";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // buttonExit
             // 
@@ -149,6 +152,7 @@ namespace ChildcareManagementStudio.View
             this.buttonExit.TabIndex = 5;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // labelErrorMessage
             // 
