@@ -1,12 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View
@@ -64,5 +58,91 @@ namespace ChildcareManagementStudio.View
             this.theLoginForm.Show();
             this.Hide();
         }
+
+        /// <summary>
+        /// Actions to perform when teacher tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonTeacherTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 0);
+            this.UpdateTabAppearance(this.buttonTeacherTab);
+            this.teacherMainUserControl1.Show();
+        }
+
+        /// <summary>
+        /// Actions to perform when student tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonStudentsTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 140);
+            this.UpdateTabAppearance(this.buttonStudentsTab);
+            this.teacherMainUserControl1.Hide();
+        }
+
+        /// <summary>
+        /// Actions to perform when classroom tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClassroomsTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 280);
+            this.UpdateTabAppearance(this.buttonClassroomsTab);
+            this.teacherMainUserControl1.Hide();
+        }
+
+        /// <summary>
+        /// Actions to perform when financial tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <summary>
+        private void ButtonFinancialTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 420);
+            this.UpdateTabAppearance(this.buttonFinancialTab);
+            this.teacherMainUserControl1.Hide();
+        }
+
+        /// <summary>
+        /// Update the tabs to visually reflect the active tab
+        /// </summary>
+        /// <param name="activeButton">the active tab (most recently clicked)</param>
+        private void UpdateTabAppearance(Button activeButton)
+        {
+            activeButton.BackColor = SystemColors.Control;
+            activeButton.ForeColor = Color.Black;
+            activeButton.FlatAppearance.BorderColor = SystemColors.Control;
+            if (activeButton != this.buttonTeacherTab)
+            {
+                this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonTeacherTab.ForeColor = SystemColors.Control;
+                this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
+            } 
+            if (activeButton != this.buttonStudentsTab)
+            {
+                this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonStudentsTab.ForeColor = SystemColors.Control;
+                this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
+            }
+            if (activeButton != this.buttonClassroomsTab)
+            {
+                this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonClassroomsTab.ForeColor = SystemColors.Control;
+                this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
+            }
+            if (activeButton != this.buttonFinancialTab)
+            {
+                this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonFinancialTab.ForeColor = SystemColors.Control;
+                this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+            }
+
+        }
+
     }
 }
