@@ -88,6 +88,7 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
             this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
 
+            this.teacherMainUserControl1.Show();
         }
 
         /// <summary>
@@ -112,6 +113,8 @@ namespace ChildcareManagementStudio.View
             this.buttonStudentsTab.FlatAppearance.BorderColor = SystemColors.Control;
             this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
             this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+
+            this.teacherMainUserControl1.Hide();
         }
 
         /// <summary>
@@ -136,6 +139,8 @@ namespace ChildcareManagementStudio.View
             this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
             this.buttonClassroomsTab.FlatAppearance.BorderColor = SystemColors.Control;
             this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+
+            this.teacherMainUserControl1.Hide();
         }
 
         /// <summary>
@@ -161,6 +166,8 @@ namespace ChildcareManagementStudio.View
             this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
             this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
             this.buttonFinancialTab.FlatAppearance.BorderColor = SystemColors.Control;
+
+            this.teacherMainUserControl1.Hide();
         }
 
         private void ChangeTabColor(Button theTabButton)
