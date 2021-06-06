@@ -67,21 +67,7 @@ namespace ChildcareManagementStudio.View
         private void ButtonTeacherTab_Click(object sender, EventArgs e)
         {
             this.panelTabIndicator.Location = new Point(3, 0);
-            this.buttonTeacherTab.BackColor = SystemColors.Control;
-            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
-
-            this.buttonTeacherTab.ForeColor = Color.Black;
-            this.buttonStudentsTab.ForeColor = SystemColors.Control;
-            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
-            this.buttonFinancialTab.ForeColor = SystemColors.Control;
-
-            this.buttonTeacherTab.FlatAppearance.BorderColor = SystemColors.Control;
-            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
-
+            this.UpdateTabAppearance(this.buttonTeacherTab);
             this.teacherMainUserControl1.Show();
         }
 
@@ -93,21 +79,7 @@ namespace ChildcareManagementStudio.View
         private void ButtonStudentsTab_Click(object sender, EventArgs e)
         {
             this.panelTabIndicator.Location = new Point(3, 140);
-            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonStudentsTab.BackColor = SystemColors.Control;
-            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
-
-            this.buttonTeacherTab.ForeColor = SystemColors.Control;
-            this.buttonStudentsTab.ForeColor = Color.Black;
-            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
-            this.buttonFinancialTab.ForeColor = SystemColors.Control;
-
-            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonStudentsTab.FlatAppearance.BorderColor = SystemColors.Control;
-            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
-
+            this.UpdateTabAppearance(this.buttonStudentsTab);
             this.teacherMainUserControl1.Hide();
         }
 
@@ -119,21 +91,7 @@ namespace ChildcareManagementStudio.View
         private void ButtonClassroomsTab_Click(object sender, EventArgs e)
         {
             this.panelTabIndicator.Location = new Point(3, 280);
-            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonClassroomsTab.BackColor = SystemColors.Control;
-            this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
-
-            this.buttonTeacherTab.ForeColor = SystemColors.Control;
-            this.buttonStudentsTab.ForeColor = SystemColors.Control;
-            this.buttonClassroomsTab.ForeColor = Color.Black;
-            this.buttonFinancialTab.ForeColor = SystemColors.Control;
-
-            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonClassroomsTab.FlatAppearance.BorderColor = SystemColors.Control;
-            this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
-
+            this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.teacherMainUserControl1.Hide();
         }
 
@@ -146,22 +104,44 @@ namespace ChildcareManagementStudio.View
         private void ButtonFinancialTab_Click(object sender, EventArgs e)
         {
             this.panelTabIndicator.Location = new Point(3, 420);
-            this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
-            this.buttonFinancialTab.BackColor = SystemColors.Control;
-
-            this.buttonTeacherTab.ForeColor = SystemColors.Control;
-            this.buttonStudentsTab.ForeColor = SystemColors.Control;
-            this.buttonClassroomsTab.ForeColor = SystemColors.Control;
-            this.buttonFinancialTab.ForeColor = Color.Black;
-
-            this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
-            this.buttonFinancialTab.FlatAppearance.BorderColor = SystemColors.Control;
-
+            this.UpdateTabAppearance(this.buttonFinancialTab);
             this.teacherMainUserControl1.Hide();
+        }
+
+        /// <summary>
+        /// Update the tabs to visually reflect the active tab
+        /// </summary>
+        /// <param name="activeButton">the active tab (most recently clicked)</param>
+        private void UpdateTabAppearance(Button activeButton)
+        {
+            activeButton.BackColor = SystemColors.Control;
+            activeButton.ForeColor = Color.Black;
+            activeButton.FlatAppearance.BorderColor = SystemColors.Control;
+            if (activeButton != this.buttonTeacherTab)
+            {
+                this.buttonTeacherTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonTeacherTab.ForeColor = SystemColors.Control;
+                this.buttonTeacherTab.FlatAppearance.BorderColor = Color.Black;
+            } 
+            if (activeButton != this.buttonStudentsTab)
+            {
+                this.buttonStudentsTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonStudentsTab.ForeColor = SystemColors.Control;
+                this.buttonStudentsTab.FlatAppearance.BorderColor = Color.Black;
+            }
+            if (activeButton != this.buttonClassroomsTab)
+            {
+                this.buttonClassroomsTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonClassroomsTab.ForeColor = SystemColors.Control;
+                this.buttonClassroomsTab.FlatAppearance.BorderColor = Color.Black;
+            }
+            if (activeButton != this.buttonFinancialTab)
+            {
+                this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonFinancialTab.ForeColor = SystemColors.Control;
+                this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+            }
+
         }
 
     }
