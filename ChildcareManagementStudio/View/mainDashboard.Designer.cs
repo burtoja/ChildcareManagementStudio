@@ -31,8 +31,8 @@ namespace ChildcareManagementStudio.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDashboard));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogoutIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelLeftSide = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,16 +41,16 @@ namespace ChildcareManagementStudio.View
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoutIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.Maroon;
-            this.panelTop.Controls.Add(this.pictureBox2);
-            this.panelTop.Controls.Add(this.pictureBox1);
+            this.panelTop.Controls.Add(this.pictureBoxLogoutIcon);
+            this.panelTop.Controls.Add(this.pictureBoxLogo);
             this.panelTop.Controls.Add(this.labelTitle);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
@@ -59,25 +59,25 @@ namespace ChildcareManagementStudio.View
             this.panelTop.Size = new System.Drawing.Size(1045, 81);
             this.panelTop.TabIndex = 0;
             // 
-            // pictureBox2
+            // pictureBoxLogoutIcon
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(997, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxLogoutIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogoutIcon.Image")));
+            this.pictureBoxLogoutIcon.Location = new System.Drawing.Point(1006, 3);
+            this.pictureBoxLogoutIcon.Name = "pictureBoxLogoutIcon";
+            this.pictureBoxLogoutIcon.Size = new System.Drawing.Size(36, 30);
+            this.pictureBoxLogoutIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogoutIcon.TabIndex = 3;
+            this.pictureBoxLogoutIcon.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(152, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(152, 8);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(66, 64);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 2;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // labelTitle
             // 
@@ -101,7 +101,7 @@ namespace ChildcareManagementStudio.View
             this.panelLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftSide.Location = new System.Drawing.Point(0, 81);
             this.panelLeftSide.Name = "panelLeftSide";
-            this.panelLeftSide.Size = new System.Drawing.Size(266, 586);
+            this.panelLeftSide.Size = new System.Drawing.Size(266, 563);
             this.panelLeftSide.TabIndex = 1;
             // 
             // panel1
@@ -169,7 +169,7 @@ namespace ChildcareManagementStudio.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 667);
+            this.ClientSize = new System.Drawing.Size(1045, 644);
             this.Controls.Add(this.panelLeftSide);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -178,8 +178,8 @@ namespace ChildcareManagementStudio.View
             this.Text = "Form1";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoutIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelLeftSide.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -190,12 +190,12 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelLeftSide;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button buttonFinancialTab;
         private System.Windows.Forms.Button buttonClassroomsTab;
         private System.Windows.Forms.Button buttonStudentsTab;
         private System.Windows.Forms.Button buttonTeacherTab;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxLogoutIcon;
     }
 }
