@@ -78,7 +78,7 @@ namespace ChildcareManagementStudio.View
                         this.labelErrorMessage.Text = "Please enter a password";
                 }
             }
-            //TODO: Make credential controller
+            //TODO: Make credential controller with a CredentialsAreValid method stubbed in
             //TODO: Make SetTheLoginForm method in MainDashboard
             //TODO: Make SetActiveUsername method in MAinDashboard
         }
