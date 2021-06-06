@@ -30,5 +30,13 @@ namespace ChildcareManagementStudio.Model
         public string State { get; set; }
 
         public string ZipCode { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
     }
 }
