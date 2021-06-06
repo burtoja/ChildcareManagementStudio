@@ -34,7 +34,12 @@ namespace ChildcareManagementStudio.View
             this.panelLeftSide = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonTeacherTab = new System.Windows.Forms.Button();
+            this.buttonStudentsTab = new System.Windows.Forms.Button();
+            this.buttonClassroomsTab = new System.Windows.Forms.Button();
+            this.buttonFinancialTab = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
+            this.panelLeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +57,14 @@ namespace ChildcareManagementStudio.View
             // panelLeftSide
             // 
             this.panelLeftSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelLeftSide.Controls.Add(this.buttonFinancialTab);
+            this.panelLeftSide.Controls.Add(this.buttonClassroomsTab);
+            this.panelLeftSide.Controls.Add(this.buttonStudentsTab);
+            this.panelLeftSide.Controls.Add(this.buttonTeacherTab);
             this.panelLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftSide.Location = new System.Drawing.Point(0, 78);
             this.panelLeftSide.Name = "panelLeftSide";
-            this.panelLeftSide.Size = new System.Drawing.Size(292, 589);
+            this.panelLeftSide.Size = new System.Drawing.Size(244, 589);
             this.panelLeftSide.TabIndex = 1;
             // 
             // labelTitle
@@ -79,6 +88,54 @@ namespace ChildcareManagementStudio.View
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonTeacherTab
+            // 
+            this.buttonTeacherTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTeacherTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTeacherTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonTeacherTab.Location = new System.Drawing.Point(3, 6);
+            this.buttonTeacherTab.Name = "buttonTeacherTab";
+            this.buttonTeacherTab.Size = new System.Drawing.Size(235, 140);
+            this.buttonTeacherTab.TabIndex = 0;
+            this.buttonTeacherTab.Text = "Teachers";
+            this.buttonTeacherTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonStudentsTab
+            // 
+            this.buttonStudentsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStudentsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStudentsTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonStudentsTab.Location = new System.Drawing.Point(3, 152);
+            this.buttonStudentsTab.Name = "buttonStudentsTab";
+            this.buttonStudentsTab.Size = new System.Drawing.Size(235, 140);
+            this.buttonStudentsTab.TabIndex = 1;
+            this.buttonStudentsTab.Text = "Students";
+            this.buttonStudentsTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonClassroomsTab
+            // 
+            this.buttonClassroomsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClassroomsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClassroomsTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonClassroomsTab.Location = new System.Drawing.Point(3, 298);
+            this.buttonClassroomsTab.Name = "buttonClassroomsTab";
+            this.buttonClassroomsTab.Size = new System.Drawing.Size(235, 140);
+            this.buttonClassroomsTab.TabIndex = 2;
+            this.buttonClassroomsTab.Text = "Classrooms";
+            this.buttonClassroomsTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonFinancialTab
+            // 
+            this.buttonFinancialTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinancialTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFinancialTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonFinancialTab.Location = new System.Drawing.Point(3, 446);
+            this.buttonFinancialTab.Name = "buttonFinancialTab";
+            this.buttonFinancialTab.Size = new System.Drawing.Size(235, 140);
+            this.buttonFinancialTab.TabIndex = 3;
+            this.buttonFinancialTab.Text = "Financial";
+            this.buttonFinancialTab.UseVisualStyleBackColor = true;
+            // 
             // mainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +149,7 @@ namespace ChildcareManagementStudio.View
             this.Text = "Form1";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.panelLeftSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -103,5 +161,9 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Panel panelLeftSide;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonFinancialTab;
+        private System.Windows.Forms.Button buttonClassroomsTab;
+        private System.Windows.Forms.Button buttonStudentsTab;
+        private System.Windows.Forms.Button buttonTeacherTab;
     }
 }
