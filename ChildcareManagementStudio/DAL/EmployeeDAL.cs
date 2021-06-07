@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Model;
 using Microsoft.Data.Sqlite;
 using System;
+using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.DAL
 {
@@ -86,6 +87,62 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return employee;
+        }
+
+        /// <summary>
+        /// Method that returns Employee objects for all of the employees in the database.
+        /// </summary>
+        /// <returns>A list of Employee objects for all of the employees in the database.</returns>
+        public List<Employee> GetAllEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+
+            string selectStatement =
+                "SELECT personId, employeeId, startDate " +
+                "FROM Employee";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int personIdOrdinal = reader.GetOrdinal("personId");
+                        int employeeIdOrdinal = reader.GetOrdinal("employeeId");
+                        int startDateOrdinal = reader.GetOrdinal("startDate");
+                        while (reader.Read())
+                        {
+                            Employee employee = new Employee();
+
+                            employee.PersonId = reader.GetInt32(personIdOrdinal);
+                            employee.EmployeeId = reader.GetInt32(employeeIdOrdinal);
+                            employee.StartDate = reader.GetDateTime(startDateOrdinal);
+
+                            Person person = GetPerson(employee.PersonId);
+                            employee.LastName = person.LastName;
+                            employee.FirstName = person.FirstName;
+                            employee.DateOfBirth = person.DateOfBirth;
+                            employee.SocialSecurityNumber = person.SocialSecurityNumber;
+                            employee.Gender = person.Gender;
+                            employee.PhoneNumber = person.PhoneNumber;
+                            employee.AddressLine1 = person.AddressLine1;
+                            if (person.AddressLine2 != default) { employee.AddressLine2 = person.AddressLine2; }
+                            employee.City = person.City;
+                            employee.State = person.State;
+                            employee.ZipCode = person.ZipCode;
+
+                            employee.SalaryRecords = salaryDAL.GetSalaryRecords(employee.EmployeeId);
+                            employee.CertificationRecords = certificationDAL.GetCertificationRecords(employee.EmployeeId);
+                            employee.PositionRecords = positionDAL.GetPositionRecords(employee.EmployeeId);
+
+                            employees.Add(employee);
+                        }
+                    }
+                }
+            }
+
+            return employees;
         }
     }
 }
