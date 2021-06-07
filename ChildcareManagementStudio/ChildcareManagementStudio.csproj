@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Controller\CertificationController.cs" />
     <Compile Include="Controller\CredentialController.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\PersonController.cs" />
     <Compile Include="Controller\PositionController.cs" />
     <Compile Include="Controller\SalaryController.cs" />
