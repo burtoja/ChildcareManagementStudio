@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
 using System;
+using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
 {
@@ -32,6 +33,15 @@ namespace ChildcareManagementStudio.Controller
             }
 
             return employeeDAL.GetEmployee(employeeId);
+        }
+
+        /// <summary>
+        /// Method that returns Employee objects for all of the employees in the database.
+        /// </summary>
+        /// <returns>A list of Employee objects for all of the employees in the database.</returns>
+        public List<Employee> GetAllEmployees()
+        {
+            return employeeDAL.GetAllEmployees();
         }
     }
 }

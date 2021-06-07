@@ -83,6 +83,7 @@
     <Compile Include="Controller\PositionControllerWhenGetPositionRecords.cs" />
     <Compile Include="Controller\PersonControllerWhenGetPerson.cs" />
     <Compile Include="Controller\EmployeeControllerWhenGetEmployee.cs" />
+    <Compile Include="Controller\EmployeeControllerWhenGetAllEmployees.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
     <Compile Include="DAL\CertificationDALWhenGetCertificationRecords.cs" />
