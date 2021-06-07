@@ -83,6 +83,7 @@
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
+    <Compile Include="DAL\PersonDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
