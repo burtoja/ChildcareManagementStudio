@@ -113,11 +113,12 @@ namespace ChildcareManagementStudio.DAL
                         int startDateOrdinal = reader.GetOrdinal("startDate");
                         while (reader.Read())
                         {
-                            Employee employee = new Employee();
-
-                            employee.PersonId = reader.GetInt32(personIdOrdinal);
-                            employee.EmployeeId = reader.GetInt32(employeeIdOrdinal);
-                            employee.StartDate = reader.GetDateTime(startDateOrdinal);
+                            Employee employee = new Employee
+                            {
+                                PersonId = reader.GetInt32(personIdOrdinal),
+                                EmployeeId = reader.GetInt32(employeeIdOrdinal),
+                                StartDate = reader.GetDateTime(startDateOrdinal)
+                            };
 
                             Person person = GetPerson(employee.PersonId);
                             employee.LastName = person.LastName;
