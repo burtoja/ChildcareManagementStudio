@@ -133,7 +133,7 @@
       <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <Content Include="ChildCareData.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
