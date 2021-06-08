@@ -20,7 +20,7 @@ namespace ChildcareManagementStudioTests.DAL
             EmployeeDAL employeeDAL = new EmployeeDAL();
 
             List<Employee> employees = employeeDAL.GetAllEmployees();
-            Assert.AreEqual(3, employees.Count);
+            Assert.AreEqual(4, employees.Count);
 
             Employee firstEmployee = employees[0];
             Assert.AreEqual(1, firstEmployee.PersonId);

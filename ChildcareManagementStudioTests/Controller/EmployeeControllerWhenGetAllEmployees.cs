@@ -20,7 +20,7 @@ namespace ChildcareManagementStudioTests.Controller
             EmployeeController employeeController = new EmployeeController();
 
             List<Employee> employees = employeeController.GetAllEmployees();
-            Assert.AreEqual(2, employees.Count);
+            Assert.AreEqual(3, employees.Count);
 
             Employee firstEmployee = employees[0];
             Assert.AreEqual(1, firstEmployee.PersonId);
