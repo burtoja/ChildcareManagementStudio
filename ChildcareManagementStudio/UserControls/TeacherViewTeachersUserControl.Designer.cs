@@ -34,6 +34,7 @@ namespace ChildcareManagementStudio.UserControls
             this.firstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dob = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonViewTeacherDetails = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewAllTeachers
@@ -77,13 +78,27 @@ namespace ChildcareManagementStudio.UserControls
             this.phone.Text = "Phone Number";
             this.phone.Width = 180;
             // 
+            // buttonViewTeacherDetails
+            // 
+            this.buttonViewTeacherDetails.AccessibleDescription = "View teacher details button";
+            this.buttonViewTeacherDetails.AccessibleName = "View teacher details button";
+            this.buttonViewTeacherDetails.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonViewTeacherDetails.Location = new System.Drawing.Point(16, 410);
+            this.buttonViewTeacherDetails.Name = "buttonViewTeacherDetails";
+            this.buttonViewTeacherDetails.Size = new System.Drawing.Size(708, 43);
+            this.buttonViewTeacherDetails.TabIndex = 1;
+            this.buttonViewTeacherDetails.Text = "View Details for Selected Teacher";
+            this.buttonViewTeacherDetails.UseVisualStyleBackColor = true;
+            // 
             // TeacherViewTeachersUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.buttonViewTeacherDetails);
             this.Controls.Add(this.listViewAllTeachers);
             this.Name = "TeacherViewTeachersUserControl";
             this.Size = new System.Drawing.Size(745, 470);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeacherViewTeachersUserControl_KeyPress);
             this.ResumeLayout(false);
 
         }
@@ -95,5 +110,6 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.ColumnHeader firstName;
         private System.Windows.Forms.ColumnHeader dob;
         private System.Windows.Forms.ColumnHeader phone;
+        private System.Windows.Forms.Button buttonViewTeacherDetails;
     }
 }

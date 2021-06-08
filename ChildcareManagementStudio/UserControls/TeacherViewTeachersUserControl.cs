@@ -38,5 +38,9 @@ namespace ChildcareManagementStudio.UserControls
             return this.personController.GetPerson(theEmployee.PersonId);
         }
 
+        private void TeacherViewTeachersUserControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
     }
 }
