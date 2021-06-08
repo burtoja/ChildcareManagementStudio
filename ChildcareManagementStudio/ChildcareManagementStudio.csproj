@@ -100,6 +100,12 @@
     <Compile Include="UserControls\TeacherMainUserControl.Designer.cs">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TeacherViewTeachersUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TeacherViewTeachersUserControl.Designer.cs">
+      <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\TeacherMainUserControl.resx">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TeacherViewTeachersUserControl.resx">
+      <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
