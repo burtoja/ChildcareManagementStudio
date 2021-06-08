@@ -76,9 +76,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CertificationController.cs" />
     <Compile Include="Controller\CredentialController.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
+    <Compile Include="Controller\PersonController.cs" />
+    <Compile Include="Controller\PositionController.cs" />
+    <Compile Include="Controller\SalaryController.cs" />
+    <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\PersonDAL.cs" />
+    <Compile Include="DAL\PositionDAL.cs" />
+    <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
@@ -123,7 +133,7 @@
       <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <Content Include="ChildCareData.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

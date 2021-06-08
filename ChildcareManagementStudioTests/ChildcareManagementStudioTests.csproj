@@ -78,7 +78,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CredentialControllerWhenCheckCredentialsAreValid.cs" />
+    <Compile Include="Controller\SalaryControllerWhenGetSalaryRecords.cs" />
+    <Compile Include="Controller\CertificationControllerWhenGetCertificationRecords.cs" />
+    <Compile Include="Controller\PositionControllerWhenGetPositionRecords.cs" />
+    <Compile Include="Controller\PersonControllerWhenGetPerson.cs" />
+    <Compile Include="Controller\EmployeeControllerWhenGetEmployee.cs" />
+    <Compile Include="Controller\EmployeeControllerWhenGetAllEmployees.cs" />
+    <Compile Include="Controller\PersonControllerWhenAddPerson.cs" />
+    <Compile Include="Controller\EmployeeControllerWhenAddEmployee.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
+    <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
+    <Compile Include="DAL\CertificationDALWhenGetCertificationRecords.cs" />
+    <Compile Include="DAL\PositionDALWhenGetPositionRecords.cs" />
+    <Compile Include="DAL\PersonDALWhenGetPerson.cs" />
+    <Compile Include="DAL\EmployeeDALWhenGetEmployee.cs" />
+    <Compile Include="DAL\EmployeeDALWhenGetAllEmployees.cs" />
+    <Compile Include="DAL\PersonDALWhenAddPerson.cs" />
+    <Compile Include="DAL\EmployeeDALWhenAddEmployee.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
