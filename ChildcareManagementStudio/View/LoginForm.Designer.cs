@@ -96,6 +96,7 @@ namespace ChildcareManagementStudio.View
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(224, 26);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.Text = "mickey";
             this.textBoxPassword.TextChanged += new System.EventHandler(this.EntryInTextbox);
             // 
             // labelUsername
@@ -130,6 +131,7 @@ namespace ChildcareManagementStudio.View
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(224, 26);
             this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.Text = "mmouse";
             this.textBoxUsername.TextChanged += new System.EventHandler(this.EntryInTextbox);
             // 
             // buttonSubmit
