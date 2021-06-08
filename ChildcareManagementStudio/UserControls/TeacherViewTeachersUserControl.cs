@@ -37,7 +37,7 @@ namespace ChildcareManagementStudio.UserControls
                 Person person = this.GetPerson(current);
                 ListViewItem item = new ListViewItem(person.LastName.ToString());
                 item.SubItems.Add(person.FirstName.ToString());
-                item.SubItems.Add(person.DateOfBirth.ToString());
+                item.SubItems.Add(person.DateOfBirth.ToString("d"));
                 item.SubItems.Add(person.PhoneNumber.ToString());
                 this.listViewAllTeachers.Items.Add(item);
             }
