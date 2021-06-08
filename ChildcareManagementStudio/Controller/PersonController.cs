@@ -59,6 +59,31 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Method that edits a person's records in the database.
+        /// </summary>
+        /// <param name="originalPerson">Person object representing the person's records before the edits are made.</param>
+        /// <param name="revisedPerson">Person object representing the person's records after the edits are made.</param>
+        public void EditPerson(Person originalPerson, Person revisedPerson)
+        {
+            if (originalPerson == null)
+            {
+                throw new ArgumentNullException("originalPerson", "The original person cannot be null.");
+            }
+
+            if (revisedPerson == null)
+            {
+                throw new ArgumentNullException("revisedPerson", "The revised person cannot be null.");
+            }
+
+            if (originalPerson.PersonId != revisedPerson.PersonId)
+            {
+                throw new ArgumentException("The ID must be the same for both Person objects.");
+            }
+
+            personDAL.EditPerson(originalPerson, revisedPerson);
+        }
+
+        /// <summary>
         /// Helper method that ensures all of the mandatory properties are included with the specified Person object.
         /// </summary>
         /// <param name="person">The Person object being evaluated.</param>

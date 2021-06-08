@@ -140,6 +140,104 @@ namespace ChildcareManagementStudio.DAL
         }
 
         /// <summary>
+        /// Method that edits a person's records in the database.
+        /// </summary>
+        /// <param name="originalPerson">Person object representing the person's records before the edits are made.</param>
+        /// <param name="revisedPerson">Person object representing the person's records after the edits are made.</param>
+        public void EditPerson(Person originalPerson, Person revisedPerson)
+        {
+            if (originalPerson == null)
+            {
+                throw new ArgumentNullException("originalPerson", "The original person cannot be null.");
+            }
+
+            if (revisedPerson == null)
+            {
+                throw new ArgumentNullException("revisedPerson", "The revised person cannot be null.");
+            }
+
+            if (originalPerson.PersonId != revisedPerson.PersonId)
+            {
+                throw new ArgumentException("The ID must be the same for both Person objects.");
+            }
+
+            string updateStatement =
+                "UPDATE Person SET " +
+                    "lastName = $revisedLastName, " +
+                    "firstName = $revisedFirstName, " +
+                    "dateOfBirth = $revisedDateOfBirth, " +
+                    "ssn = $revisedSocialSecurityNumber, " +
+                    "gender = $revisedGender, " +
+                    "phoneNumber = $revisedPhoneNumber, " +
+                    "addressLine1 = $revisedAddressLine1, " +
+                    "addressLine2 = $revisedAddressLine2, " +
+                    "city = $revisedCity, " +
+                    "state = $revisedState, " +
+                    "zipCode = $revisedZipCode " +
+                "WHERE personId = $personId " +
+                    "AND lastName = $originalLastName " +
+                    "AND firstName = $originalFirstName " +
+                    "AND dateOfBirth = $originalDateOfBirth " +
+                    "AND ssn = $originalSocialSecurityNumber " +
+                    "AND gender = $originalGender " +
+                    "AND phoneNumber = $originalPhoneNumber " +
+                    "AND addressLine1 = $originalAddressLine1 " +
+                    "AND (addressLine2 = $originalAddressLine2 OR addressLine2 IS NULL AND $originalAddressLine2 IS NULL) " +
+                    "AND city = $originalCity " +
+                    "AND state = $originalState " +
+                    "AND zipCode = $originalZipCode";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("$personId", originalPerson.PersonId);
+                    updateCommand.Parameters.AddWithValue("$originalLastName", originalPerson.LastName);
+                    updateCommand.Parameters.AddWithValue("$originalFirstName", originalPerson.FirstName);
+                    updateCommand.Parameters.AddWithValue("$originalDateOfBirth", originalPerson.DateOfBirth.ToString("yyyy-MM-dd"));
+                    updateCommand.Parameters.AddWithValue("$originalSocialSecurityNumber", originalPerson.SocialSecurityNumber);
+                    updateCommand.Parameters.AddWithValue("$originalGender", originalPerson.Gender);
+                    updateCommand.Parameters.AddWithValue("$originalPhoneNumber", originalPerson.PhoneNumber);
+                    updateCommand.Parameters.AddWithValue("$originalAddressLine1", originalPerson.AddressLine1);
+                    updateCommand.Parameters.AddWithValue("$originalCity", originalPerson.City);
+                    updateCommand.Parameters.AddWithValue("$originalState", originalPerson.State);
+                    updateCommand.Parameters.AddWithValue("$originalZipCode", originalPerson.ZipCode);
+                    updateCommand.Parameters.AddWithValue("$revisedLastName", revisedPerson.LastName);
+                    updateCommand.Parameters.AddWithValue("$revisedFirstName", revisedPerson.FirstName);
+                    updateCommand.Parameters.AddWithValue("$revisedDateOfBirth", revisedPerson.DateOfBirth.ToString("yyyy-MM-dd"));
+                    updateCommand.Parameters.AddWithValue("$revisedSocialSecurityNumber", revisedPerson.SocialSecurityNumber);
+                    updateCommand.Parameters.AddWithValue("$revisedGender", revisedPerson.Gender);
+                    updateCommand.Parameters.AddWithValue("$revisedPhoneNumber", revisedPerson.PhoneNumber);
+                    updateCommand.Parameters.AddWithValue("$revisedAddressLine1", revisedPerson.AddressLine1);
+                    updateCommand.Parameters.AddWithValue("$revisedCity", revisedPerson.City);
+                    updateCommand.Parameters.AddWithValue("$revisedState", revisedPerson.State);
+                    updateCommand.Parameters.AddWithValue("$revisedZipCode", revisedPerson.ZipCode);
+
+                    if (originalPerson.AddressLine2 == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalAddressLine2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalAddressLine2", originalPerson.AddressLine2);
+                    }
+
+                    if (revisedPerson.AddressLine2 == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedAddressLine2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedAddressLine2", revisedPerson.AddressLine2);
+                    }
+
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        /// <summary>
         /// Helper method that ensures all of the mandatory properties are included with the specified Person object.
         /// </summary>
         /// <param name="person">The Person object being evaluated.</param>
