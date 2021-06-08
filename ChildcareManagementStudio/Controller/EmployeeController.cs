@@ -75,6 +75,48 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Method that edits an employee's records in the database.
+        /// Note that this method cannot be used to edit position records, salary records, or certification records.
+        /// The method will throw an exception if any of the aforementioned records are different between the original and revised Employee objects.
+        /// </summary>
+        /// <param name="originalEmployee">Employee object representing the employee's records before the edits are made.</param>
+        /// <param name="revisedEmployee">Employee object representing the person's records after the edits are made.</param>
+        public void EditEmployee(Employee originalEmployee, Employee revisedEmployee)
+        {
+            if (originalEmployee == null)
+            {
+                throw new ArgumentNullException("originalEmployee", "The original employee cannot be null.");
+            }
+
+            if (revisedEmployee == null)
+            {
+                throw new ArgumentNullException("revisedEmployee", "The revised employee cannot be null.");
+            }
+
+            if (originalEmployee.EmployeeId != revisedEmployee.EmployeeId)
+            {
+                throw new ArgumentException("The employee ID must be the same for both Employee objects.");
+            }
+
+            if (SalaryRecordsAreDifferent(originalEmployee, revisedEmployee))
+            {
+                throw new ArgumentException("Salary records cannot be changed using the EditEmployee method.  Use a method specifically for salary records instead.");
+            }
+
+            if (CertificationRecordsAreDifferent(originalEmployee, revisedEmployee))
+            {
+                throw new ArgumentException("Certification records cannot be changed using the EditEmployee method.  Use a method specifically for certification records instead.");
+            }
+
+            if (PositionRecordsAreDifferent(originalEmployee, revisedEmployee))
+            {
+                throw new ArgumentException("Position records cannot be changed using the EditEmployee method.  Use a method specifically for position records instead.");
+            }
+
+            employeeDAL.EditEmployee(originalEmployee, revisedEmployee);
+        }
+
+        /// <summary>
         /// Helper method that checks to see if any of the Employee list properties (SalaryRecords, CertificationRecords, and PositionRecords) have records.
         /// </summary>
         /// <param name="employee">The Employee object being evaluated.</param>
@@ -82,6 +124,123 @@ namespace ChildcareManagementStudio.Controller
         private bool EmployeeListPropertiesHaveRecords(Employee employee)
         {
             return employee.SalaryRecords != null || employee.CertificationRecords != null || employee.PositionRecords != null;
+        }
+
+        /// <summary>
+        /// Helper method that compares the position records for two Employee objects.
+        /// </summary>
+        /// <param name="originalEmployee">The first Employee object being evaluated.</param>
+        /// <param name="revisedEmployee">The second Employee object being evaluated.</param>
+        /// <returns>True if the position records are different, false otherwise.</returns>
+        private bool PositionRecordsAreDifferent(Employee originalEmployee, Employee revisedEmployee)
+        {
+            if ((originalEmployee.PositionRecords == null) != (revisedEmployee.PositionRecords == null))
+            {
+                return true;
+            }
+
+            if (originalEmployee.PositionRecords == null && revisedEmployee.PositionRecords == null)
+            {
+                return false;
+            }
+
+            if (originalEmployee.PositionRecords.Count != revisedEmployee.PositionRecords.Count)
+            {
+                return true;
+            }
+
+            for (int recordIndex = 0; recordIndex < originalEmployee.PositionRecords.Count; recordIndex++)
+            {
+                if (originalEmployee.PositionRecords[recordIndex].Type != revisedEmployee.PositionRecords[recordIndex].Type)
+                {
+                    return true;
+                }
+
+                if (originalEmployee.PositionRecords[recordIndex].SchoolYear != revisedEmployee.PositionRecords[recordIndex].SchoolYear)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Helper method that compares the salary records for two Employee objects.
+        /// </summary>
+        /// <param name="originalEmployee">The first Employee object being evaluated.</param>
+        /// <param name="revisedEmployee">The second Employee object being evaluated.</param>
+        /// <returns>True if the salary records are different, false otherwise.</returns>
+        private bool SalaryRecordsAreDifferent(Employee originalEmployee, Employee revisedEmployee)
+        {
+            if ((originalEmployee.SalaryRecords == null) != (revisedEmployee.SalaryRecords == null))
+            {
+                return true;
+            }
+
+            if (originalEmployee.SalaryRecords == null && revisedEmployee.SalaryRecords == null)
+            {
+                return false;
+            }
+
+            if (originalEmployee.SalaryRecords.Count != revisedEmployee.SalaryRecords.Count)
+            {
+                return true;
+            }
+
+            for (int recordIndex = 0; recordIndex < originalEmployee.SalaryRecords.Count; recordIndex++)
+            {
+                if (originalEmployee.SalaryRecords[recordIndex].EffectiveDate != revisedEmployee.SalaryRecords[recordIndex].EffectiveDate)
+                {
+                    return true;
+                }
+
+                if (originalEmployee.SalaryRecords[recordIndex].Rate != revisedEmployee.SalaryRecords[recordIndex].Rate)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Helper method that compares the certification records for two Employee objects.
+        /// </summary>
+        /// <param name="originalEmployee">The first Employee object being evaluated.</param>
+        /// <param name="revisedEmployee">The second Employee object being evaluated.</param>
+        /// <returns>True if the certification records are different, false otherwise.</returns>
+        private bool CertificationRecordsAreDifferent(Employee originalEmployee, Employee revisedEmployee)
+        {
+            if ((originalEmployee.CertificationRecords == null) != (revisedEmployee.CertificationRecords == null))
+            {
+                return true;
+            }
+
+            if (originalEmployee.CertificationRecords == null && revisedEmployee.CertificationRecords == null)
+            {
+                return false;
+            }
+
+            if (originalEmployee.CertificationRecords.Count != revisedEmployee.CertificationRecords.Count)
+            {
+                return true;
+            }
+
+            for (int recordIndex = 0; recordIndex < originalEmployee.CertificationRecords.Count; recordIndex++)
+            {
+                if (originalEmployee.CertificationRecords[recordIndex].Type != revisedEmployee.CertificationRecords[recordIndex].Type)
+                {
+                    return true;
+                }
+
+                if (originalEmployee.CertificationRecords[recordIndex].ExpirationDate != revisedEmployee.CertificationRecords[recordIndex].ExpirationDate)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
