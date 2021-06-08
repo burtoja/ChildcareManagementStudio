@@ -1,24 +1,24 @@
-﻿using ChildcareManagementStudio.DAL;
+﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace ChildcareManagementStudioTests.DAL
+namespace ChildcareManagementStudioTests.Controller
 {
     /// <summary>
-    /// Class for testing the EditPerson method of the PersonDAL class.
+    /// Class for testing the EditPerson method of the PersonController class.
     /// Note that this is only a temporary test class.
     /// These tests are based on the current state of the production database.
     /// </summary>
     [TestClass]
-    public class PersonDALWhenEditPerson
+    public class PersonControllerWhenEditPerson
     {
-        private PersonDAL personDAL;
+        private PersonController personController;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            personDAL = new PersonDAL();
+            personController = new PersonController();
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace ChildcareManagementStudioTests.DAL
                 ZipCode = "32830"
             };
 
-            Assert.ThrowsException<System.ArgumentNullException>(() => personDAL.EditPerson(originalPerson, revisedPerson));
+            Assert.ThrowsException<System.ArgumentNullException>(() => personController.EditPerson(originalPerson, revisedPerson));
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace ChildcareManagementStudioTests.DAL
 
             Person revisedPerson = null;
 
-            Assert.ThrowsException<System.ArgumentNullException>(() => personDAL.EditPerson(originalPerson, revisedPerson));
+            Assert.ThrowsException<System.ArgumentNullException>(() => personController.EditPerson(originalPerson, revisedPerson));
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@ namespace ChildcareManagementStudioTests.DAL
                 ZipCode = "32830"
             };
 
-            Assert.ThrowsException<System.ArgumentException>(() => personDAL.EditPerson(originalPerson, revisedPerson));
+            Assert.ThrowsException<System.ArgumentException>(() => personController.EditPerson(originalPerson, revisedPerson));
         }
 
         [TestMethod]
@@ -136,12 +136,12 @@ namespace ChildcareManagementStudioTests.DAL
                 ZipCode = "32830"
             };
 
-            personDAL.EditPerson(originalPerson, revisedPerson);
+            personController.EditPerson(originalPerson, revisedPerson);
 
-            Person retrievedPerson = personDAL.GetPerson(originalPerson.PersonId);
+            Person retrievedPerson = personController.GetPerson(originalPerson.PersonId);
             Assert.AreEqual("Lake Buena Vista", retrievedPerson.City);
 
-            personDAL.EditPerson(revisedPerson, originalPerson);    // this line is intended to undo the change made during the test
+            personController.EditPerson(revisedPerson, originalPerson);    // this line is intended to undo the change made during the test
         }
     }
 }
