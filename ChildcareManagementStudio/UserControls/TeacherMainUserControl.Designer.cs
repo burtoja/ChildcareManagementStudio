@@ -34,8 +34,10 @@ namespace ChildcareManagementStudio.UserControls
             this.teacherViewTeachersUserControl1 = new ChildcareManagementStudio.UserControls.TeacherViewTeachersUserControl();
             this.tabViewTeacherDetails = new System.Windows.Forms.TabPage();
             this.tabAddTeacher = new System.Windows.Forms.TabPage();
+            this.teacherAddTeacherUserControl1 = new ChildcareManagementStudio.UserControls.TeacherAddTeacherUserControl();
             this.tabControlTeacher.SuspendLayout();
             this.tabViewAllTeachers.SuspendLayout();
+            this.tabAddTeacher.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlTeacher
@@ -85,6 +87,7 @@ namespace ChildcareManagementStudio.UserControls
             // 
             // tabAddTeacher
             // 
+            this.tabAddTeacher.Controls.Add(this.teacherAddTeacherUserControl1);
             this.tabAddTeacher.Location = new System.Drawing.Point(4, 34);
             this.tabAddTeacher.Name = "tabAddTeacher";
             this.tabAddTeacher.Padding = new System.Windows.Forms.Padding(3);
@@ -92,6 +95,13 @@ namespace ChildcareManagementStudio.UserControls
             this.tabAddTeacher.TabIndex = 2;
             this.tabAddTeacher.Text = "Add Teacher";
             this.tabAddTeacher.UseVisualStyleBackColor = true;
+            // 
+            // teacherAddTeacherUserControl1
+            // 
+            this.teacherAddTeacherUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.teacherAddTeacherUserControl1.Name = "teacherAddTeacherUserControl1";
+            this.teacherAddTeacherUserControl1.Size = new System.Drawing.Size(745, 470);
+            this.teacherAddTeacherUserControl1.TabIndex = 0;
             // 
             // TeacherMainUserControl
             // 
@@ -102,6 +112,7 @@ namespace ChildcareManagementStudio.UserControls
             this.Size = new System.Drawing.Size(760, 515);
             this.tabControlTeacher.ResumeLayout(false);
             this.tabViewAllTeachers.ResumeLayout(false);
+            this.tabAddTeacher.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -113,5 +124,6 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.TabPage tabViewTeacherDetails;
         private System.Windows.Forms.TabPage tabAddTeacher;
         private TeacherViewTeachersUserControl teacherViewTeachersUserControl1;
+        private TeacherAddTeacherUserControl teacherAddTeacherUserControl1;
     }
 }
