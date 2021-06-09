@@ -34,5 +34,31 @@ namespace ChildcareManagementStudio.Controller
 
             return positionDAL.GetPositionRecords(employeeId);
         }
+
+        /// <summary>
+        /// Method that adds a position record to the database.
+        /// </summary>
+        /// <param name="employeeId">The employee ID of the employee that the record is associated with.</param>
+        /// <param name="positionRecord">A PositionRecord object containing the record details.</param>
+        public void AddPositionRecord(int employeeId, PositionRecord positionRecord)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            if (positionRecord == null)
+            {
+                throw new ArgumentNullException("positionRecord", "The position record cannot be null.");
+            }
+
+            positionDAL.AddPositionRecord(employeeId, positionRecord);
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeletePositionRecord(int employeeId, PositionRecord positionRecord)
+        {
+            positionDAL.DeletePositionRecord(employeeId, positionRecord);
+        }
     }
 }
