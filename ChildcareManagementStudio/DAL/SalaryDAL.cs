@@ -57,5 +57,62 @@ namespace ChildcareManagementStudio.DAL
 
             return salaryRecords;
         }
+
+        /// <summary>
+        /// Method that adds a salary record to the database.
+        /// </summary>
+        /// <param name="employeeId">The employee ID for the employee that the record is associated with.</param>
+        /// <param name="salaryRecord">A SalaryRecord object containing the details of the salary record.</param>
+        public void AddSalaryRecord(int employeeId, SalaryRecord salaryRecord)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            if (salaryRecord == null)
+            {
+                throw new ArgumentNullException("salaryRecord", "The salary record cannot be null.");
+            }
+
+            string insertStatement =
+                "INSERT INTO Salary (employeeId, effectiveDate, rate) " +
+                "VALUES ($employeeId, $effectiveDate, $rate)";
+
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    insertCommand.Parameters.AddWithValue("$effectiveDate", salaryRecord.EffectiveDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("$rate", salaryRecord.Rate);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteSalaryRecord(int employeeId, SalaryRecord salaryRecord)
+        {
+            string deleteStatement =
+                "DELETE FROM Salary " +
+                "WHERE employeeId = $employeeId " +
+                "AND effectiveDate = $effectiveDate"; ;
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    deleteCommand.Parameters.AddWithValue("$effectiveDate", salaryRecord.EffectiveDate.ToString("yyyy-MM-dd"));
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
