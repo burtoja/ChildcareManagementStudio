@@ -34,5 +34,31 @@ namespace ChildcareManagementStudio.Controller
 
             return this.salaryDAL.GetSalaryRecords(employeeId);
         }
+
+        /// <summary>
+        /// Method that adds a salary record to the database.
+        /// </summary>
+        /// <param name="employeeId">The employee ID for the employee that the record is associated with.</param>
+        /// <param name="salaryRecord">A SalaryRecord object containing the details of the salary record.</param>
+        public void AddSalaryRecord(int employeeId, SalaryRecord salaryRecord)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            if (salaryRecord == null)
+            {
+                throw new ArgumentNullException("salaryRecord", "The salary record cannot be null.");
+            }
+
+            salaryDAL.AddSalaryRecord(employeeId, salaryRecord);
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteSalaryRecord(int employeeId, SalaryRecord salaryRecord)
+        {
+            salaryDAL.DeleteSalaryRecord(employeeId, salaryRecord);
+        }
     }
 }
