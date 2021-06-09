@@ -79,7 +79,6 @@ namespace ChildcareManagementStudio.DAL
                 "INSERT INTO Salary (employeeId, effectiveDate, rate) " +
                 "VALUES ($employeeId, $effectiveDate, $rate)";
 
-
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
@@ -100,7 +99,7 @@ namespace ChildcareManagementStudio.DAL
             string deleteStatement =
                 "DELETE FROM Salary " +
                 "WHERE employeeId = $employeeId " +
-                "AND effectiveDate = $effectiveDate"; ;
+                "AND effectiveDate = $effectiveDate";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {

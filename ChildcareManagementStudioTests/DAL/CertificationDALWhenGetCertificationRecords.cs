@@ -42,7 +42,6 @@ namespace ChildcareManagementStudioTests.DAL
         {
             int employeeId = 1;
             List<CertificationRecord> certificationRecords = certificationDAL.GetCertificationRecords(employeeId);
-            Assert.AreEqual(1, certificationRecords.Count);
             Assert.AreEqual("FCCPC", certificationRecords[0].Type);
             Assert.AreEqual(new DateTime(2021, 12, 31), certificationRecords[0].ExpirationDate);
         }

@@ -103,6 +103,7 @@
     <Compile Include="DAL\EmployeeDALWhenEditEmployee.cs" />
     <Compile Include="DAL\PositionDALWhenAddPositionRecord.cs" />
     <Compile Include="DAL\SalaryDALWhenAddSalaryRecord.cs" />
+    <Compile Include="DAL\CertificationDALWhenAddCertificationRecord.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
