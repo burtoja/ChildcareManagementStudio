@@ -287,6 +287,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonClear.TabIndex = 24;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // textBoxFirstName
             // 

@@ -95,6 +95,7 @@ namespace ChildcareManagementStudio.UserControls
                     this.employeeController.AddEmployee(newEmployee);                   
                     String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
                     var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
+                    this.ClearForm();
                 }
                 catch (Exception ex)
                 {
@@ -103,6 +104,35 @@ namespace ChildcareManagementStudio.UserControls
             }
         }
 
+
+        /// <summary>
+        /// Handler for button clicks of the Clear button.  Should reset the form to empty/default values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            this.ClearForm();
+        }
+
+        /// <summary>
+        /// Clears all form fields and resets date pickers back to today.
+        /// </summary>
+        private void ClearForm()
+        {
+            this.textBoxFirstName.Text = "";
+            this.textBoxLastName.Text = "";
+            this.dateTimePickerDOB.Value = DateTime.Now;
+            this.textBoxSSN.Text = "";
+            this.textBoxPhoneNumber.Text = "";
+            this.comboBoxGender.SelectedIndex = -1;
+            this.textBoxAddress1.Text = "";
+            this.textBoxAddress2.Text = "";
+            this.textBoxCity.Text = "";
+            this.comboBoxState.SelectedIndex = -1;
+            this.textBoxZipCode.Text = "";
+            this.dateTimePickerStartDate.Value = DateTime.Now;
+        }
     }
 
     
