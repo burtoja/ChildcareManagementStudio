@@ -34,5 +34,31 @@ namespace ChildcareManagementStudio.Controller
 
             return this.certificationDAL.GetCertificationRecords(employeeId);
         }
+
+        /// <summary>
+        /// Method that adds a certification record to the database.
+        /// </summary>
+        /// <param name="employeeId">The employee ID of the employee that the record is associated with.</param>
+        /// <param name="certificationRecord">A CertificationRecord object that contains the details of the certification record.</param>
+        public void AddCertificationRecord(int employeeId, CertificationRecord certificationRecord)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            if (certificationRecord == null)
+            {
+                throw new ArgumentNullException("certificationRecord", "The certification record cannot be null.");
+            }
+
+            certificationDAL.AddCertificationRecord(employeeId, certificationRecord);
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteCertificationRecord(int employeeId, CertificationRecord certificationRecord)
+        {
+            certificationDAL.DeleteCertificationRecord(employeeId, certificationRecord);
+        }
     }
 }
