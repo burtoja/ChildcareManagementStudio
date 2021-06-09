@@ -39,8 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Data.Sqlite, Version=5.0.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.5.0.6\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    <Reference Include="Microsoft.Data.Sqlite, Version=5.0.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.5.0.7\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.1.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
@@ -99,6 +99,7 @@
     <Compile Include="DAL\PersonDALWhenAddPerson.cs" />
     <Compile Include="DAL\EmployeeDALWhenAddEmployee.cs" />
     <Compile Include="DAL\EmployeeDALWhenEditEmployee.cs" />
+    <Compile Include="DAL\PositionDALWhenAddPositionRecord.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />

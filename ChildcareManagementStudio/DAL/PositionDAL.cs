@@ -57,5 +57,64 @@ namespace ChildcareManagementStudio.DAL
 
             return positionRecords;
         }
+
+        /// <summary>
+        /// Method that adds a position record to the database.
+        /// </summary>
+        /// <param name="employeeId">The employee ID of the employee that the record is associated with.</param>
+        /// <param name="positionRecord">A PositionRecord object containing the record details.</param>
+        public void AddPositionRecord(int employeeId, PositionRecord positionRecord)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            if (positionRecord == null)
+            {
+                throw new ArgumentNullException("positionRecord", "The position record cannot be null.");
+            }
+
+            string insertStatement =
+                "INSERT INTO Position (employeeId, type, schoolYear) " +
+                "VALUES ($employeeId, $type, $schoolYear)";
+            
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    insertCommand.Parameters.AddWithValue("$type", positionRecord.Type);
+                    insertCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeletePositionRecord(int employeeId, PositionRecord positionRecord)
+        {
+            string deleteStatement =
+                "DELETE FROM Position " +
+                "WHERE employeeId = $employeeId " +
+                "AND type = $type " +
+                "AND schoolYear = $schoolYear";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    deleteCommand.Parameters.AddWithValue("$type", positionRecord.Type);
+                    deleteCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

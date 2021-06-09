@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ChildcareManagementStudioTests.DAL
 {
     /// <summary>
-    /// Class for testing the GetPositionRecords method of the CertificationDAL class.
+    /// Class for testing the GetPositionRecords method of the PositionDAL class.
     /// Note that this is only a temporary test class.
     /// These tests are based on the current state of the production database.
     /// </summary>
