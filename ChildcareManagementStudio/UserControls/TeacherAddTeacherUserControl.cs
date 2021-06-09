@@ -5,10 +5,16 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
+    /// <summary>
+    /// This class builds and manages the add new teacher user control
+    /// </summary>
     public partial class TeacherAddTeacherUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
 
+        /// <summary>
+        /// Constructor for the user control
+        /// </summary>
         public TeacherAddTeacherUserControl()
         {
             InitializeComponent();
@@ -16,52 +22,17 @@ namespace ChildcareManagementStudio.UserControls
 
         }
 
+        /// <summary>
+        /// Actions to perform when the submit button is clicked.  It should run a validation of form data 
+        /// and then attempt to create the new employee in the DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
-        {
-            String alertText = "";
+        {               
+            this.labelErrorMessage.Text = this.checkInputFields();
 
-            if (String.IsNullOrEmpty(this.textBoxLastName.Text))
-            {
-                alertText += "Patient first name cannot be blank. ";
-            }
-            if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
-            {
-                alertText += "Patient last name cannot be blank. ";
-            }
-            if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
-            {
-                alertText += "The date of birth cannot be in the future. ";
-            }
-            if (this.textBoxPhoneNumber.Text.Length != 14)
-            {
-                alertText += "Ten digit phone number is required of the following format: (xxx) xxx-xxxx";
-            }
-            if (String.IsNullOrEmpty(this.textBoxAddress1.Text))
-            {
-                alertText += "Address cannot be blank. ";
-            }
-            if (String.IsNullOrEmpty(this.comboBoxState.Text))
-            {
-                alertText += "State must be selected. ";
-            }
-            if (String.IsNullOrEmpty(this.textBoxCity.Text))
-            {
-                alertText += "City is required. ";
-            }
-            else if (char.IsLower(textBoxCity.Text[0]))
-            {
-                alertText += "City name should start with a capital letter. ";
-            }
-            if (this.textBoxZipCode.Text.Length != 5)
-            {
-                alertText += "Five digit zip number is required. ";
-            }
-
-            // TODO: Check for dupes?
-         
-            this.labelErrorMessage.Text = alertText;
-
-            if (alertText == "")
+            if (this.labelErrorMessage.Text == "")
             {
                 string firstName = this.textBoxFirstName.Text;
                 string lastName = this.textBoxLastName.Text;
@@ -132,6 +103,54 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
             this.dateTimePickerStartDate.Value = DateTime.Now;
+        }
+
+        /// <summary>
+        /// Performs inital validation on the form fields.
+        /// </summary>
+        /// <returns>alert text to be displayed if errors are found (blank string if no errors)</returns>
+        private string checkInputFields()
+        {
+            String alertText = "";
+
+            if (String.IsNullOrEmpty(this.textBoxLastName.Text))
+            {
+                alertText += "Patient first name cannot be blank. ";
+            }
+            if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
+            {
+                alertText += "Patient last name cannot be blank. ";
+            }
+            if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
+            {
+                alertText += "The date of birth cannot be in the future. ";
+            }
+            if (this.textBoxPhoneNumber.Text.Length != 14)
+            {
+                alertText += "Ten digit phone number is required of the following format: (xxx) xxx-xxxx";
+            }
+            if (String.IsNullOrEmpty(this.textBoxAddress1.Text))
+            {
+                alertText += "Address cannot be blank. ";
+            }
+            if (String.IsNullOrEmpty(this.comboBoxState.Text))
+            {
+                alertText += "State must be selected. ";
+            }
+            if (String.IsNullOrEmpty(this.textBoxCity.Text))
+            {
+                alertText += "City is required. ";
+            }
+            else if (char.IsLower(textBoxCity.Text[0]))
+            {
+                alertText += "City name should start with a capital letter. ";
+            }
+            if (this.textBoxZipCode.Text.Length != 5)
+            {
+                alertText += "Five digit zip number is required. ";
+            }
+
+            return alertText;
         }
     }
 
