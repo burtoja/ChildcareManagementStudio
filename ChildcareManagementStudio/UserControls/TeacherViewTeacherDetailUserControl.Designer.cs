@@ -67,7 +67,6 @@ namespace ChildcareManagementStudio.UserControls
             this.labelName.Size = new System.Drawing.Size(130, 21);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Teacher Name:";
-            this.labelName.Click += new System.EventHandler(this.labelFirstName_Click);
             // 
             // labelDOB
             // 
@@ -238,12 +237,12 @@ namespace ChildcareManagementStudio.UserControls
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.Controls.Add(this.listViewCredentialHistory, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.listViewPayHistory, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelCredentialHistory, 4, 0);
@@ -270,7 +269,7 @@ namespace ChildcareManagementStudio.UserControls
             this.labelPositionHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPositionHistory.Location = new System.Drawing.Point(3, 8);
             this.labelPositionHistory.Name = "labelPositionHistory";
-            this.labelPositionHistory.Size = new System.Drawing.Size(244, 19);
+            this.labelPositionHistory.Size = new System.Drawing.Size(238, 19);
             this.labelPositionHistory.TabIndex = 0;
             this.labelPositionHistory.Text = "Position History";
             this.labelPositionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,9 +280,9 @@ namespace ChildcareManagementStudio.UserControls
             this.labelPayHistory.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.labelPayHistory, 2);
             this.labelPayHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPayHistory.Location = new System.Drawing.Point(253, 8);
+            this.labelPayHistory.Location = new System.Drawing.Point(247, 8);
             this.labelPayHistory.Name = "labelPayHistory";
-            this.labelPayHistory.Size = new System.Drawing.Size(244, 19);
+            this.labelPayHistory.Size = new System.Drawing.Size(238, 19);
             this.labelPayHistory.TabIndex = 1;
             this.labelPayHistory.Text = "Pay History";
             this.labelPayHistory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -294,9 +293,9 @@ namespace ChildcareManagementStudio.UserControls
             this.labelCredentialHistory.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.labelCredentialHistory, 2);
             this.labelCredentialHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCredentialHistory.Location = new System.Drawing.Point(503, 8);
+            this.labelCredentialHistory.Location = new System.Drawing.Point(491, 8);
             this.labelCredentialHistory.Name = "labelCredentialHistory";
-            this.labelCredentialHistory.Size = new System.Drawing.Size(244, 19);
+            this.labelCredentialHistory.Size = new System.Drawing.Size(245, 19);
             this.labelCredentialHistory.TabIndex = 2;
             this.labelCredentialHistory.Text = "Credential History";
             this.labelCredentialHistory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -307,7 +306,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonChangePosition.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChangePosition.Location = new System.Drawing.Point(3, 130);
             this.buttonChangePosition.Name = "buttonChangePosition";
-            this.buttonChangePosition.Size = new System.Drawing.Size(244, 29);
+            this.buttonChangePosition.Size = new System.Drawing.Size(238, 29);
             this.buttonChangePosition.TabIndex = 3;
             this.buttonChangePosition.Text = "Change Position";
             this.buttonChangePosition.UseVisualStyleBackColor = true;
@@ -316,9 +315,9 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.buttonChangePayRate, 2);
             this.buttonChangePayRate.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangePayRate.Location = new System.Drawing.Point(253, 130);
+            this.buttonChangePayRate.Location = new System.Drawing.Point(247, 130);
             this.buttonChangePayRate.Name = "buttonChangePayRate";
-            this.buttonChangePayRate.Size = new System.Drawing.Size(244, 29);
+            this.buttonChangePayRate.Size = new System.Drawing.Size(238, 29);
             this.buttonChangePayRate.TabIndex = 4;
             this.buttonChangePayRate.Text = "Change Pay Rate";
             this.buttonChangePayRate.UseVisualStyleBackColor = true;
@@ -327,9 +326,9 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.button2, 2);
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(503, 130);
+            this.button2.Location = new System.Drawing.Point(491, 130);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 29);
+            this.button2.Size = new System.Drawing.Size(245, 29);
             this.button2.TabIndex = 5;
             this.button2.Text = "Add New Credential";
             this.button2.UseVisualStyleBackColor = true;
@@ -342,7 +341,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory.HideSelection = false;
             this.listViewPositionHistory.Location = new System.Drawing.Point(3, 38);
             this.listViewPositionHistory.Name = "listViewPositionHistory";
-            this.listViewPositionHistory.Size = new System.Drawing.Size(244, 86);
+            this.listViewPositionHistory.Size = new System.Drawing.Size(238, 86);
             this.listViewPositionHistory.TabIndex = 6;
             this.listViewPositionHistory.UseCompatibleStateImageBehavior = false;
             // 
@@ -352,9 +351,9 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPayHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPayHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewPayHistory.HideSelection = false;
-            this.listViewPayHistory.Location = new System.Drawing.Point(253, 38);
+            this.listViewPayHistory.Location = new System.Drawing.Point(247, 38);
             this.listViewPayHistory.Name = "listViewPayHistory";
-            this.listViewPayHistory.Size = new System.Drawing.Size(244, 86);
+            this.listViewPayHistory.Size = new System.Drawing.Size(238, 86);
             this.listViewPayHistory.TabIndex = 7;
             this.listViewPayHistory.UseCompatibleStateImageBehavior = false;
             // 
@@ -364,9 +363,9 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewCredentialHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewCredentialHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewCredentialHistory.HideSelection = false;
-            this.listViewCredentialHistory.Location = new System.Drawing.Point(503, 38);
+            this.listViewCredentialHistory.Location = new System.Drawing.Point(491, 38);
             this.listViewCredentialHistory.Name = "listViewCredentialHistory";
-            this.listViewCredentialHistory.Size = new System.Drawing.Size(244, 86);
+            this.listViewCredentialHistory.Size = new System.Drawing.Size(245, 86);
             this.listViewCredentialHistory.TabIndex = 8;
             this.listViewCredentialHistory.UseCompatibleStateImageBehavior = false;
             // 
