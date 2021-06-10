@@ -42,7 +42,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <summary>
         /// Helper method to reset the list and refresh the results
         /// </summary>
-        private void ResetEmployeeListResults()
+        public void ResetEmployeeListResults()
         {
             this.listViewAllTeachers.Items.Clear();
             this.PopulateListView();
@@ -58,14 +58,5 @@ namespace ChildcareManagementStudio.UserControls
             //TODO: Implement view detail
         }
 
-        /// <summary>
-        /// Refresh employee listview everytime the page becomes visible 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TeacherViewTeachersUserControl_VisibleChanged(object sender, System.EventArgs e)
-        {
-            this.ResetEmployeeListResults();
-        }
     }
 }
