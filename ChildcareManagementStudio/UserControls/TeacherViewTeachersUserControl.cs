@@ -55,5 +55,21 @@ namespace ChildcareManagementStudio.UserControls
 
         //TODO: Implement button action when view teacher details user control complete
 
+        public void ResetEmployeeListResults()
+        {
+            this.listViewAllTeachers.Items.Clear();
+            this.PopulateListView();
+        }
+
+        /// <summary>
+        /// Event handler for when view has visibility changed (when tab is selected).  It 
+        /// causes the list to be refreshed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TeacherViewTeachersUserControl_VisibleChanged(object sender, System.EventArgs e)
+        {
+            this.ResetEmployeeListResults();
+        }
     }
 }

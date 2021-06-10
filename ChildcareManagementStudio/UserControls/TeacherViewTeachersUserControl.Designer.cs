@@ -98,6 +98,7 @@ namespace ChildcareManagementStudio.UserControls
             this.Controls.Add(this.listViewAllTeachers);
             this.Name = "TeacherViewTeachersUserControl";
             this.Size = new System.Drawing.Size(745, 470);
+            this.VisibleChanged += new System.EventHandler(this.TeacherViewTeachersUserControl_VisibleChanged);
             this.ResumeLayout(false);
 
         }

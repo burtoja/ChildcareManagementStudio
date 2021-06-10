@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {               
-            this.labelErrorMessage.Text = this.checkInputFields();
+            this.labelErrorMessage.Text = this.CheckInputFields();
 
             if (this.labelErrorMessage.Text == "")
             {
@@ -109,7 +109,7 @@ namespace ChildcareManagementStudio.UserControls
         /// Performs inital validation on the form fields.
         /// </summary>
         /// <returns>alert text to be displayed if errors are found (blank string if no errors)</returns>
-        private string checkInputFields()
+        private string CheckInputFields()
         {
             String alertText = "";
 
