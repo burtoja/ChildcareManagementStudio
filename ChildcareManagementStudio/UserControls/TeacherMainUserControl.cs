@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
+    /// <summary>
+    /// This class will build and manage the main tab user control on the Teacher portion of the app
+    /// </summary>
     public partial class TeacherMainUserControl : UserControl
     {
+        /// <summary>
+        /// Constructor for the control
+        /// </summary>
         public TeacherMainUserControl()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Event handler to listen for tab selected events and refresh the employee list when heard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TabControlTeacher_Selected(object sender, TabControlEventArgs e)
+        {
+            this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
         }
     }
 }
