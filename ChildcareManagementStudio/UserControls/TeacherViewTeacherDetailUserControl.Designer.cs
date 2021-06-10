@@ -53,6 +53,16 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.listViewPayHistory = new System.Windows.Forms.ListView();
             this.listViewCredentialHistory = new System.Windows.Forms.ListView();
+            this.labelValueDOB = new System.Windows.Forms.Label();
+            this.labelValueSSN = new System.Windows.Forms.Label();
+            this.labelValuePhone = new System.Windows.Forms.Label();
+            this.labelValueGender = new System.Windows.Forms.Label();
+            this.labelValueAddress1 = new System.Windows.Forms.Label();
+            this.labelValueAdress2 = new System.Windows.Forms.Label();
+            this.labelValueCity = new System.Windows.Forms.Label();
+            this.labelValueState = new System.Windows.Forms.Label();
+            this.labelValueZipCode = new System.Windows.Forms.Label();
+            this.labelValueStartDate = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -199,6 +209,16 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonEditTeacher, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueDOB, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueSSN, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelValuePhone, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueGender, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueAddress1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueAdress2, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueCity, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueState, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueZipCode, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueStartDate, 3, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -369,6 +389,108 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewCredentialHistory.TabIndex = 8;
             this.listViewCredentialHistory.UseCompatibleStateImageBehavior = false;
             // 
+            // labelValueDOB
+            // 
+            this.labelValueDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueDOB.AutoSize = true;
+            this.labelValueDOB.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueDOB.Location = new System.Drawing.Point(150, 49);
+            this.labelValueDOB.Name = "labelValueDOB";
+            this.labelValueDOB.Size = new System.Drawing.Size(0, 21);
+            this.labelValueDOB.TabIndex = 27;
+            // 
+            // labelValueSSN
+            // 
+            this.labelValueSSN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueSSN.AutoSize = true;
+            this.labelValueSSN.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueSSN.Location = new System.Drawing.Point(444, 49);
+            this.labelValueSSN.Name = "labelValueSSN";
+            this.labelValueSSN.Size = new System.Drawing.Size(0, 21);
+            this.labelValueSSN.TabIndex = 28;
+            // 
+            // labelValuePhone
+            // 
+            this.labelValuePhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValuePhone.AutoSize = true;
+            this.labelValuePhone.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValuePhone.Location = new System.Drawing.Point(150, 84);
+            this.labelValuePhone.Name = "labelValuePhone";
+            this.labelValuePhone.Size = new System.Drawing.Size(0, 21);
+            this.labelValuePhone.TabIndex = 29;
+            // 
+            // labelValueGender
+            // 
+            this.labelValueGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueGender.AutoSize = true;
+            this.labelValueGender.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueGender.Location = new System.Drawing.Point(444, 84);
+            this.labelValueGender.Name = "labelValueGender";
+            this.labelValueGender.Size = new System.Drawing.Size(0, 21);
+            this.labelValueGender.TabIndex = 30;
+            // 
+            // labelValueAddress1
+            // 
+            this.labelValueAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueAddress1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelValueAddress1, 3);
+            this.labelValueAddress1.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueAddress1.Location = new System.Drawing.Point(150, 119);
+            this.labelValueAddress1.Name = "labelValueAddress1";
+            this.labelValueAddress1.Size = new System.Drawing.Size(0, 21);
+            this.labelValueAddress1.TabIndex = 31;
+            // 
+            // labelValueAdress2
+            // 
+            this.labelValueAdress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueAdress2.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelValueAdress2, 3);
+            this.labelValueAdress2.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueAdress2.Location = new System.Drawing.Point(150, 154);
+            this.labelValueAdress2.Name = "labelValueAdress2";
+            this.labelValueAdress2.Size = new System.Drawing.Size(0, 21);
+            this.labelValueAdress2.TabIndex = 32;
+            // 
+            // labelValueCity
+            // 
+            this.labelValueCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueCity.AutoSize = true;
+            this.labelValueCity.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueCity.Location = new System.Drawing.Point(150, 189);
+            this.labelValueCity.Name = "labelValueCity";
+            this.labelValueCity.Size = new System.Drawing.Size(0, 21);
+            this.labelValueCity.TabIndex = 33;
+            // 
+            // labelValueState
+            // 
+            this.labelValueState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueState.AutoSize = true;
+            this.labelValueState.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueState.Location = new System.Drawing.Point(444, 189);
+            this.labelValueState.Name = "labelValueState";
+            this.labelValueState.Size = new System.Drawing.Size(0, 21);
+            this.labelValueState.TabIndex = 34;
+            // 
+            // labelValueZipCode
+            // 
+            this.labelValueZipCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueZipCode.AutoSize = true;
+            this.labelValueZipCode.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueZipCode.Location = new System.Drawing.Point(150, 224);
+            this.labelValueZipCode.Name = "labelValueZipCode";
+            this.labelValueZipCode.Size = new System.Drawing.Size(0, 21);
+            this.labelValueZipCode.TabIndex = 35;
+            // 
+            // labelValueStartDate
+            // 
+            this.labelValueStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueStartDate.AutoSize = true;
+            this.labelValueStartDate.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueStartDate.Location = new System.Drawing.Point(444, 224);
+            this.labelValueStartDate.Name = "labelValueStartDate";
+            this.labelValueStartDate.Size = new System.Drawing.Size(0, 21);
+            this.labelValueStartDate.TabIndex = 36;
+            // 
             // TeacherViewTeacherDetailUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -411,5 +533,15 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.ListView listViewCredentialHistory;
         private System.Windows.Forms.ListView listViewPayHistory;
         private System.Windows.Forms.ListView listViewPositionHistory;
+        private System.Windows.Forms.Label labelValueDOB;
+        private System.Windows.Forms.Label labelValueSSN;
+        private System.Windows.Forms.Label labelValuePhone;
+        private System.Windows.Forms.Label labelValueGender;
+        private System.Windows.Forms.Label labelValueAddress1;
+        private System.Windows.Forms.Label labelValueAdress2;
+        private System.Windows.Forms.Label labelValueCity;
+        private System.Windows.Forms.Label labelValueState;
+        private System.Windows.Forms.Label labelValueZipCode;
+        private System.Windows.Forms.Label labelValueStartDate;
     }
 }
