@@ -89,6 +89,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonViewTeacherDetails.TabIndex = 1;
             this.buttonViewTeacherDetails.Text = "View Details for Selected Teacher";
             this.buttonViewTeacherDetails.UseVisualStyleBackColor = true;
+            this.buttonViewTeacherDetails.Click += new System.EventHandler(this.ButtonViewTeacherDetails_Click);
             // 
             // TeacherViewTeachersUserControl
             // 
