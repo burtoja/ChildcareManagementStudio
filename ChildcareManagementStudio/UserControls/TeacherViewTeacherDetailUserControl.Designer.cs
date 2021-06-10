@@ -208,7 +208,6 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEditTeacher, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelValueDOB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelValueSSN, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelValuePhone, 1, 2);
@@ -219,6 +218,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.Controls.Add(this.labelValueState, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelValueZipCode, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelValueStartDate, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonEditTeacher, 0, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -235,6 +235,7 @@ namespace ChildcareManagementStudio.UserControls
             // 
             // comboBoxName
             // 
+            this.comboBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.comboBoxName, 2);
             this.comboBoxName.FormattingEnabled = true;
             this.comboBoxName.Location = new System.Drawing.Point(150, 3);
@@ -245,13 +246,13 @@ namespace ChildcareManagementStudio.UserControls
             // buttonEditTeacher
             // 
             this.buttonEditTeacher.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.SetColumnSpan(this.buttonEditTeacher, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonEditTeacher, 5);
             this.buttonEditTeacher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditTeacher.Location = new System.Drawing.Point(150, 256);
+            this.buttonEditTeacher.Location = new System.Drawing.Point(113, 256);
             this.buttonEditTeacher.Name = "buttonEditTeacher";
-            this.buttonEditTeacher.Size = new System.Drawing.Size(435, 28);
+            this.buttonEditTeacher.Size = new System.Drawing.Size(513, 28);
             this.buttonEditTeacher.TabIndex = 26;
-            this.buttonEditTeacher.Text = "Edit Teacher";
+            this.buttonEditTeacher.Text = "Edit Details for Selected Teacher";
             this.buttonEditTeacher.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
