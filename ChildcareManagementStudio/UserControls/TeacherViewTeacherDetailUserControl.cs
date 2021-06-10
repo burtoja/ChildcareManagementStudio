@@ -16,5 +16,10 @@ namespace ChildcareManagementStudio.UserControls
         {
             InitializeComponent();
         }
+
+        private void labelFirstName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
