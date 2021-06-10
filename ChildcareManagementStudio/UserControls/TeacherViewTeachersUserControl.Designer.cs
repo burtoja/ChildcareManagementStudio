@@ -89,6 +89,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonViewTeacherDetails.TabIndex = 1;
             this.buttonViewTeacherDetails.Text = "View Details for Selected Teacher";
             this.buttonViewTeacherDetails.UseVisualStyleBackColor = true;
+            this.buttonViewTeacherDetails.Click += new System.EventHandler(this.ButtonViewTeacherDetails_Click);
             // 
             // TeacherViewTeachersUserControl
             // 
@@ -98,6 +99,7 @@ namespace ChildcareManagementStudio.UserControls
             this.Controls.Add(this.listViewAllTeachers);
             this.Name = "TeacherViewTeachersUserControl";
             this.Size = new System.Drawing.Size(745, 470);
+            this.VisibleChanged += new System.EventHandler(this.TeacherViewTeachersUserControl_VisibleChanged);
             this.ResumeLayout(false);
 
         }

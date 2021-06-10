@@ -12,7 +12,6 @@ namespace ChildcareManagementStudio.UserControls
     public partial class TeacherViewTeachersUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
-        private readonly PersonController personController;
 
         /// <summary>
         /// Constructor for the user control
@@ -20,9 +19,7 @@ namespace ChildcareManagementStudio.UserControls
         public TeacherViewTeachersUserControl()
         {
             InitializeComponent();
-            this.employeeController = new EmployeeController();
-            this.personController = new PersonController();
-            this.PopulateListView();
+            this.employeeController = new EmployeeController();      
         }
 
         /// <summary>
@@ -34,26 +31,41 @@ namespace ChildcareManagementStudio.UserControls
             List<Employee> employeeList = this.employeeController.GetAllEmployees();
             foreach (Employee current in employeeList)
             {
-                Person person = this.GetPerson(current);
-                ListViewItem item = new ListViewItem(person.LastName.ToString());
-                item.SubItems.Add(person.FirstName.ToString());
-                item.SubItems.Add(person.DateOfBirth.ToString("d"));
-                item.SubItems.Add(person.PhoneNumber.ToString());
+                ListViewItem item = new ListViewItem(current.LastName.ToString());
+                item.SubItems.Add(current.FirstName.ToString());
+                item.SubItems.Add(current.DateOfBirth.ToString("d"));
+                item.SubItems.Add(current.PhoneNumber.ToString());
                 this.listViewAllTeachers.Items.Add(item);
             }
         }
 
         /// <summary>
-        /// Gets the Person associated with the Employee
+        /// Helper method to reset the list and refresh the results
         /// </summary>
-        /// <param name="theEmployee">The Employee to retrieve information for</param>
-        /// <returns></returns>
-        private  Person GetPerson(Employee theEmployee)
+        private void ResetEmployeeListResults()
         {
-            return this.personController.GetPerson(theEmployee.PersonId);
+            this.listViewAllTeachers.Items.Clear();
+            this.PopulateListView();
         }
 
-        //TODO: Implement button action when view teacher details user control complete
+        /// <summary>
+        /// Button click causes a view of the employee details to be shown
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonViewTeacherDetails_Click(object sender, System.EventArgs e)
+        {
+            //TODO: Implement view detail
+        }
 
+        /// <summary>
+        /// Refresh employee listview everytime the page becomes visible 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TeacherViewTeachersUserControl_VisibleChanged(object sender, System.EventArgs e)
+        {
+            this.ResetEmployeeListResults();
+        }
     }
 }
