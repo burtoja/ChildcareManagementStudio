@@ -14,12 +14,16 @@ namespace ChildcareManagementStudio.UserControls
         private readonly EmployeeController employeeController;
 
         /// <summary>
-        /// Constructor for the user control
+        /// Constructor for the user control.
+        /// Note: comment out the this.PopulateListView(); to be able to work in the Designer view
+        /// for this user control.  The DB is not active until app runs which seems to freak out
+        /// VisualStudio.
         /// </summary>
         public TeacherViewTeachersUserControl()
         {
             InitializeComponent();
-            this.employeeController = new EmployeeController();      
+            this.employeeController = new EmployeeController();
+            this.PopulateListView();
         }
 
         /// <summary>

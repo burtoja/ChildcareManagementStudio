@@ -109,7 +109,6 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.TabControl tabControlTeacher;
         private System.Windows.Forms.TabPage tabViewAllTeachers;
         private System.Windows.Forms.TabPage tabAddTeacher;
-        private TeacherViewTeachersUserControl teacherViewTeachersUserControl1;
         private TeacherAddTeacherUserControl teacherAddTeacherUserControl1;
         private TeacherViewTeachersUserControl teacherViewTeachersUserControl2;
     }
