@@ -360,6 +360,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonEditTeacher.TabIndex = 26;
             this.buttonEditTeacher.Text = "Edit Details for Selected Teacher";
             this.buttonEditTeacher.UseVisualStyleBackColor = true;
+            this.buttonEditTeacher.Click += new System.EventHandler(this.ButtonEditTeacher_Click);
             // 
             // tableLayoutPanel2
             // 

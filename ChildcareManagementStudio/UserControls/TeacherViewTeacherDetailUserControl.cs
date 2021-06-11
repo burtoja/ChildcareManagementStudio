@@ -10,18 +10,18 @@ namespace ChildcareManagementStudio.UserControls
     public partial class TeacherViewTeacherDetailUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
-        private readonly List<Employee> employeeList;
+        private List<Employee> employeeList;
 
         public TeacherViewTeacherDetailUserControl()
         {
             this.employeeController = new EmployeeController();
-            InitializeComponent();
-            this.employeeList = this.employeeController.GetAllEmployees();
+            InitializeComponent();          
             this.FillDropDownList();
         }
 
         public void FillDropDownList()
         {
+            this.employeeList = this.employeeController.GetAllEmployees();
             BindingList<Employee> employees = new BindingList<Employee>();
             foreach (Employee current in this.employeeList)
             {
@@ -32,6 +32,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DisplayMember = "FullName";
             this.comboBoxName.SelectedIndex = -1;
             this.comboBoxName.SelectedText = "--select--";
+            this.ResetFormValues();
         }
 
         private void FillFormValues(int employeeId)
@@ -42,12 +43,11 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValuePhone.Text = employee.PhoneNumber;
             this.labelValueGender.Text = employee.Gender;
             this.labelValueAddress1.Text = employee.AddressLine1;
-            this.labelValueAddress2.Text = employee.AddressLine2;
+            this.labelValueAddress2.Text = employee.AddressLine2 ?? "n/a";
             this.labelValueCity.Text = employee.City;
             this.labelValueState.Text = employee.State;
             this.labelValueZipCode.Text = employee.ZipCode;
             this.labelValueStartDate.Text = employee.StartDate.ToString("d");
-
         }
 
         private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -61,9 +61,28 @@ namespace ChildcareManagementStudio.UserControls
                 }
                 catch (Exception ex)
                 {
-
+                    this.ResetFormValues();
                 }
             }
+            
+        }
+
+        private void ResetFormValues()
+        {
+            this.labelValueDOB.Text = "";
+            this.labelValueSSN.Text = "";
+            this.labelValuePhone.Text = "";
+            this.labelValueGender.Text = "";
+            this.labelValueAddress1.Text = "";
+            this.labelValueAddress2.Text = "";
+            this.labelValueCity.Text = "";
+            this.labelValueState.Text = "";
+            this.labelValueZipCode.Text = "";
+            this.labelValueStartDate.Text = "";
+        }
+
+        private void ButtonEditTeacher_Click(object sender, EventArgs e)
+        {
             
         }
     }
