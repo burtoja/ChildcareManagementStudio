@@ -37,13 +37,16 @@ namespace ChildcareManagementStudio.UserControls
         private void FillFormValues(int employeeId)
         {
             Employee employee = this.employeeController.GetEmployee(employeeId);
-            this.labelValueDOB.Text = employee.DateOfBirth.ToString();
+            this.labelValueDOB.Text = employee.DateOfBirth.ToString("d");
+            this.labelValueSSN.Text = employee.SocialSecurityNumber;
             this.labelValuePhone.Text = employee.PhoneNumber;
+            this.labelValueGender.Text = employee.Gender;
             this.labelValueAddress1.Text = employee.AddressLine1;
             this.labelValueAddress2.Text = employee.AddressLine2;
             this.labelValueCity.Text = employee.City;
             this.labelValueState.Text = employee.State;
             this.labelValueZipCode.Text = employee.ZipCode;
+            this.labelValueStartDate.Text = employee.StartDate.ToString("d");
 
         }
 

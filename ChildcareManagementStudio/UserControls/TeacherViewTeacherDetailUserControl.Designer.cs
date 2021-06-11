@@ -347,6 +347,7 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueStartDate.Name = "labelValueStartDate";
             this.labelValueStartDate.Size = new System.Drawing.Size(0, 21);
             this.labelValueStartDate.TabIndex = 36;
+            this.labelValueStartDate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // buttonEditTeacher
             // 
