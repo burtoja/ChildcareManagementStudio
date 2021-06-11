@@ -106,6 +106,12 @@
     <Compile Include="UserControls\TeacherMainUserControl.Designer.cs">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TeacherViewTeacherDetailUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TeacherViewTeacherDetailUserControl.Designer.cs">
+      <DependentUpon>TeacherViewTeacherDetailUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TeacherViewTeachersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherMainUserControl.resx">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TeacherViewTeacherDetailUserControl.resx">
+      <DependentUpon>TeacherViewTeacherDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherViewTeachersUserControl.resx">
       <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>

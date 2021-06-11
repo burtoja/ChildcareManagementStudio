@@ -23,7 +23,7 @@ namespace ChildcareManagementStudio.UserControls
         {
             InitializeComponent();
             this.employeeController = new EmployeeController();
-            this.PopulateListView();
+            //this.PopulateListView();
         }
 
         /// <summary>
