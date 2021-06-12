@@ -96,7 +96,7 @@ namespace ChildcareManagementStudio.View
         {
             this.textBoxFirstName.Text = this.originalEmployee.FirstName;
             this.textBoxLastName.Text = this.originalEmployee.LastName;
-            //this.dateTimePickerDOB.Value = this.originalEmployee;
+            this.dateTimePickerDOB.Value = this.originalEmployee.DateOfBirth;
             this.textBoxSSN.Text = this.originalEmployee.SocialSecurityNumber;
             this.textBoxPhoneNumber.Text = this.originalEmployee.PhoneNumber;
             this.comboBoxGender.Text = this.originalEmployee.Gender;
@@ -105,7 +105,7 @@ namespace ChildcareManagementStudio.View
             this.textBoxCity.Text = this.originalEmployee.City;
             this.comboBoxState.Text = this.originalEmployee.State;
             this.textBoxZipCode.Text = this.originalEmployee.ZipCode;
-            //this.dateTimePickerStartDate.Value = this.originalEmployee; 
+            this.dateTimePickerStartDate.Value = this.originalEmployee.StartDate; 
         }
 
         /// <summary>
