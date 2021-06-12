@@ -90,20 +90,28 @@ namespace ChildcareManagementStudio.UserControls
 
         private void ButtonEditTeacher_Click(object sender, EventArgs e)
         {
-            try
+            if (this.comboBoxName.SelectedIndex != -1)
             {
-                Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
-                Employee employee = this.employeeController.GetEmployee(employeeId);
-                EditTeacherForm editTeacherForm = new EditTeacherForm(employee, this);
-                editTeacherForm.Show();
+                try
+                {
+                    Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+                    Employee employee = this.employeeController.GetEmployee(employeeId);
+                    EditTeacherForm editTeacherForm = new EditTeacherForm(employee, this);
+                    editTeacherForm.Show();
+                }
+                catch (Exception ex)
+                {
+                    var dialogeResult = MessageBox.Show("Error: ", ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                var dialogeResult = MessageBox.Show("Error: ", ex.Message);
+                string title = "No Teacher Chosen";
+                string message = "Please choose a teacher to edit.";
+                DialogResult dialogeResult = MessageBox.Show(message, title);
             }
 
         }
-
 
     }
 }
