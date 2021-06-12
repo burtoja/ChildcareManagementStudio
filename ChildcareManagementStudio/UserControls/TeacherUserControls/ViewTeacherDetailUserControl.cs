@@ -88,8 +88,8 @@ namespace ChildcareManagementStudio.UserControls
             List<PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
             foreach (PositionRecord current in positionList)
             {
-                ListViewItem item = new ListViewItem(current.Type.ToString());
-                item.SubItems.Add(current.SchoolYear.ToString());
+                ListViewItem item = new ListViewItem(current.Type);
+                item.SubItems.Add(current.SchoolYear);
                 this.listViewPositionHistory.Items.Add(item);
             }
         }
@@ -104,7 +104,7 @@ namespace ChildcareManagementStudio.UserControls
             foreach (SalaryRecord current in salaryList)
             {
                 ListViewItem item = new ListViewItem(current.Rate.ToString());
-                item.SubItems.Add(current.EffectiveDate.ToString());
+                item.SubItems.Add(current.EffectiveDate.ToString("d"));
                 this.listViewPayHistory.Items.Add(item);
             }
         }
@@ -119,7 +119,7 @@ namespace ChildcareManagementStudio.UserControls
             foreach (CertificationRecord current in certificationList)
             {
                 ListViewItem item = new ListViewItem(current.Type.ToString());
-                item.SubItems.Add(current.ExpirationDate.ToString());
+                item.SubItems.Add(current.ExpirationDate.ToString("d"));
                 this.listViewCredentialHistory.Items.Add(item);
             }
         }
