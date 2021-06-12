@@ -2,23 +2,24 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View
 {
+    /// <summary>
+    /// Form used to edit teacher information. 
+    /// </summary>
     public partial class EditTeacherForm : Form
     {
         private TeacherViewTeacherDetailUserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
 
+        /// <summary>
+        /// Constructor for the form.  Disables the referring control and pre-fills form fields.
+        /// </summary>
+        /// <param name="theEmployee">the employee to be edited</param>
+        /// <param name="referingControl">the referring User Control</param>
         public EditTeacherForm(Employee theEmployee, TeacherViewTeacherDetailUserControl referingControl)
         {
             InitializeComponent();
@@ -29,7 +30,11 @@ namespace ChildcareManagementStudio.View
             this.FillFormWithOriginalEmployeeInfo();
         }
     
-
+        /// <summary>
+        /// Actions to perform whne submit button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             this.labelErrorMessage.Text = this.CheckInputFields();
