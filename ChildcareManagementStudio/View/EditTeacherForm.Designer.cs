@@ -205,6 +205,7 @@ namespace ChildcareManagementStudio.View
             this.buttonSubmit.TabIndex = 23;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonClear
             // 
@@ -215,8 +216,9 @@ namespace ChildcareManagementStudio.View
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(178, 34);
             this.buttonClear.TabIndex = 24;
-            this.buttonClear.Text = "Clear";
+            this.buttonClear.Text = "Reset";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // textBoxFirstName
             // 

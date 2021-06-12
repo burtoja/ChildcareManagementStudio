@@ -22,6 +22,7 @@ namespace ChildcareManagementStudio.View
             InitializeComponent();
             this.employeeController = new EmployeeController();
             this.originalEmployee = theEmployee;
+            this.FillFormWithOriginalEmployeeInfo();
         }
     
 
@@ -47,6 +48,8 @@ namespace ChildcareManagementStudio.View
                 {
                     Employee revisedEmployee = new Employee
                     {
+                        PersonId = this.originalEmployee.PersonId,
+                        EmployeeId = this.originalEmployee.EmployeeId,
                         LastName = lastName,
                         FirstName = firstName,
                         DateOfBirth = dob,
@@ -58,12 +61,14 @@ namespace ChildcareManagementStudio.View
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        StartDate = startDate
+                        StartDate = startDate,
+                        SalaryRecords = this.originalEmployee.SalaryRecords,
+                        CertificationRecords = this.originalEmployee.CertificationRecords,
+                        PositionRecords = this.originalEmployee.PositionRecords
                     };
                     this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
                     String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
                     var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
-                    this.ClearForm();
                     //TODO: Need to close this UserControl and go back to the reffering UserControl
                 }
                 catch (Exception ex)
@@ -74,32 +79,33 @@ namespace ChildcareManagementStudio.View
         }
 
         /// <summary>
-        /// Handler for button clicks of the Clear button.  Should reset the form to empty/default values
+        /// Handler for button clicks of the Reset button.  Should reset the form to default values
+        /// from the original employee
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClear_Click(object sender, EventArgs e)
+        private void ButtonReset_Click(object sender, EventArgs e)
         {
-            this.ClearForm();
+            this.FillFormWithOriginalEmployeeInfo();
         }
 
-        /// <summary>
-        /// Clears all form fields and resets date pickers back to today.
+         /// <summary>
+        /// Fills form fields with original emplyee data
         /// </summary>
-        private void ClearForm()
+        private void FillFormWithOriginalEmployeeInfo()
         {
-            this.textBoxFirstName.Text = "";
-            this.textBoxLastName.Text = "";
-            this.dateTimePickerDOB.Value = DateTime.Now;
-            this.textBoxSSN.Text = "";
-            this.textBoxPhoneNumber.Text = "";
-            this.comboBoxGender.SelectedIndex = -1;
-            this.textBoxAddress1.Text = "";
-            this.textBoxAddress2.Text = "";
-            this.textBoxCity.Text = "";
-            this.comboBoxState.SelectedIndex = -1;
-            this.textBoxZipCode.Text = "";
-            this.dateTimePickerStartDate.Value = DateTime.Now;
+            this.textBoxFirstName.Text = this.originalEmployee.FirstName;
+            this.textBoxLastName.Text = this.originalEmployee.LastName;
+            //this.dateTimePickerDOB.Value = this.originalEmployee;
+            this.textBoxSSN.Text = this.originalEmployee.SocialSecurityNumber;
+            this.textBoxPhoneNumber.Text = this.originalEmployee.PhoneNumber;
+            this.comboBoxGender.Text = this.originalEmployee.Gender;
+            this.textBoxAddress1.Text = this.originalEmployee.AddressLine1;
+            this.textBoxAddress2.Text = this.originalEmployee.AddressLine2;
+            this.textBoxCity.Text = this.originalEmployee.City;
+            this.comboBoxState.Text = this.originalEmployee.State;
+            this.textBoxZipCode.Text = this.originalEmployee.ZipCode;
+            //this.dateTimePickerStartDate.Value = this.originalEmployee; 
         }
 
         /// <summary>
