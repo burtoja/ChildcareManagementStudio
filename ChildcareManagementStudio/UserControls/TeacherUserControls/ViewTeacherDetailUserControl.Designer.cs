@@ -246,7 +246,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -557,6 +557,7 @@ namespace ChildcareManagementStudio.UserControls
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "TeacherViewTeacherDetailUserControl";
             this.Size = new System.Drawing.Size(745, 470);
+            this.EnabledChanged += new System.EventHandler(this.TeacherViewTeacherDetailUserControl_EnabledChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

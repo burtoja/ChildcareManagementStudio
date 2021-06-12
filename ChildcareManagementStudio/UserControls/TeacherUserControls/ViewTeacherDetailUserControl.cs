@@ -86,7 +86,8 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="employeeId"></param>
         private void PopulatePositionHistoryListView(int employeeId)
         {
-            List<PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
+            this.listViewPositionHistory.Items.Clear();
+           List <PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
             foreach (PositionRecord current in positionList)
             {
                 ListViewItem item = new ListViewItem(current.Type);
@@ -101,6 +102,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="employeeId"></param>
         private void PopulateSalaryHistoryListView(int employeeId)
         {
+            this.listViewPayHistory.Items.Clear();
             List<SalaryRecord> salaryList = this.salaryController.GetSalaryRecords(employeeId);
             foreach (SalaryRecord current in salaryList)
             {
@@ -116,6 +118,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="employeeId"></param>
         private void PopulateCertificationHistoryListView(int employeeId)
         {
+            this.listViewCredentialHistory.Items.Clear();
             List<CertificationRecord> certificationList = this.certificationController.GetCertificationRecords(employeeId);
             foreach (CertificationRecord current in certificationList)
             {
@@ -132,6 +135,14 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            this.UpdateFormValues();           
+        }
+
+        /// <summary>
+        /// Updates form values based on selected employee
+        /// </summary>
+        private void UpdateFormValues()
+        {
             if (this.comboBoxName.SelectedIndex != -1)
             {
                 try
@@ -146,7 +157,7 @@ namespace ChildcareManagementStudio.UserControls
                 {
                     this.ResetFormValues();
                 }
-            }           
+            }
         }
 
         /// <summary>
@@ -251,13 +262,23 @@ namespace ChildcareManagementStudio.UserControls
             if (this.comboBoxName.SelectedIndex != -1)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
-                AddCertificationForm addCertificationForm = new AddCertificationForm(employeeId);
+                AddCertificationForm addCertificationForm = new AddCertificationForm(employeeId, this);
                 addCertificationForm.Show();
             }
             else
             {
                 this.DisplayChooseTeacherErrorBox();
             }
+        }
+
+        /// <summary>
+        /// Refresh the lists when enabled status changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TeacherViewTeacherDetailUserControl_EnabledChanged(object sender, EventArgs e)
+        {
+            this.UpdateFormValues();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,15 @@ namespace ChildcareManagementStudio.View.TeacherViews
     {
         private readonly int employeeId;
         private readonly CertificationController certificationController;
+        private readonly TeacherViewTeacherDetailUserControl referringUserControl;
 
-        public AddCertificationForm(int employeeId)
+        public AddCertificationForm(int employeeId, TeacherViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
             this.employeeId = employeeId;
             this.certificationController = new CertificationController();
+            this.referringUserControl = referringUserControl;
+            this.referringUserControl.Enabled = false;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -46,6 +50,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 string title = "Success";
                 string message = "Record has been add.";
                 MessageBox.Show(message, title);
+                this.referringUserControl.Enabled = true;
                 this.Close();
             }
             
