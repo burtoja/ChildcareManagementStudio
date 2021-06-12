@@ -14,14 +14,17 @@ namespace ChildcareManagementStudio.View
 {
     public partial class EditTeacherForm : Form
     {
+        private UserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
 
-        public EditTeacherForm(Employee theEmployee)
+        public EditTeacherForm(Employee theEmployee, UserControl referingControl)
         {
             InitializeComponent();
+            this.referringControl = referingControl;
             this.employeeController = new EmployeeController();
             this.originalEmployee = theEmployee;
+            this.referringControl.Enabled = false;
             this.FillFormWithOriginalEmployeeInfo();
         }
     
@@ -67,9 +70,16 @@ namespace ChildcareManagementStudio.View
                         PositionRecords = this.originalEmployee.PositionRecords
                     };
                     this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
-                    String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
-                    var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
-                    //TODO: Need to close this UserControl and go back to the reffering UserControl
+                    string box_title = "Teacher Updated";
+                    string box_msg = "The teacher information has been updated. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(box_msg, box_title);
+                    if (dialogeResult == DialogResult.OK)
+                    {
+                        this.referringControl.Enabled = true;
+                        // TODO: refresh referring control and set to current employee with new information.
+                        this.Close();
+                    }
+
                 }
                 catch (Exception ex)
                 {

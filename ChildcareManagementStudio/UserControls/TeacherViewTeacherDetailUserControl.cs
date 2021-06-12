@@ -88,7 +88,7 @@ namespace ChildcareManagementStudio.UserControls
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                 Employee employee = this.employeeController.GetEmployee(employeeId);
-                EditTeacherForm editTeacherForm = new EditTeacherForm(employee);
+                EditTeacherForm editTeacherForm = new EditTeacherForm(employee, this);
                 editTeacherForm.Show();
             }
             catch (Exception ex)
