@@ -32,8 +32,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPosition = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerExpirationDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxDescriptionValue = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -46,8 +46,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.74419F));
             this.tableLayoutPanel1.Controls.Add(this.labelPosition, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerExpirationDate, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxDescriptionValue, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -77,24 +77,21 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelStartDate.TabIndex = 1;
             this.labelStartDate.Text = "Expiration Date:";
             // 
-            // comboBox1
+            // dateTimePickerExpirationDate
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(145, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 29);
-            this.comboBox1.TabIndex = 2;
+            this.dateTimePickerExpirationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerExpirationDate.Location = new System.Drawing.Point(145, 50);
+            this.dateTimePickerExpirationDate.Name = "dateTimePickerExpirationDate";
+            this.dateTimePickerExpirationDate.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerExpirationDate.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // textBoxDescriptionValue
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 50);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 3;
+            this.textBoxDescriptionValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxDescriptionValue.Location = new System.Drawing.Point(145, 10);
+            this.textBoxDescriptionValue.Name = "textBoxDescriptionValue";
+            this.textBoxDescriptionValue.Size = new System.Drawing.Size(282, 27);
+            this.textBoxDescriptionValue.TabIndex = 2;
             // 
             // buttonCancel
             // 
@@ -104,6 +101,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonSubmit
             // 
@@ -113,6 +111,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Add Record";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // AddCertificationForm
             // 
@@ -136,9 +135,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.Label labelStartDate;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerExpirationDate;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.TextBox textBoxDescriptionValue;
     }
 }
