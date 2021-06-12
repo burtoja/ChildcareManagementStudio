@@ -61,7 +61,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             // 
             this.labelPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPosition.AutoSize = true;
-            this.labelPosition.Location = new System.Drawing.Point(30, 19);
+            this.labelPosition.Location = new System.Drawing.Point(29, 19);
             this.labelPosition.Name = "labelPosition";
             this.labelPosition.Size = new System.Drawing.Size(72, 21);
             this.labelPosition.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             // 
             this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Location = new System.Drawing.Point(6, 59);
+            this.labelStartDate.Location = new System.Drawing.Point(5, 59);
             this.labelStartDate.Name = "labelStartDate";
             this.labelStartDate.Size = new System.Drawing.Size(96, 21);
             this.labelStartDate.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(108, 8);
+            this.comboBox1.Location = new System.Drawing.Point(107, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 29);
             this.comboBox1.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(108, 50);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 50);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
             this.dateTimePicker1.TabIndex = 3;

@@ -55,7 +55,11 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonEditTeacher = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.listViewCredentialHistory = new System.Windows.Forms.ListView();
+            this.columnHeaderCredential = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderExpiration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewPayHistory = new System.Windows.Forms.ListView();
+            this.columnHeaderPayRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderEffectiveDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelCredentialHistory = new System.Windows.Forms.Label();
             this.labelPayHistory = new System.Windows.Forms.Label();
             this.labelPositionHistory = new System.Windows.Forms.Label();
@@ -65,10 +69,6 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPayRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderEffectiveDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderCredential = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderExpiration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -246,7 +246,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -411,6 +411,16 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewCredentialHistory.UseCompatibleStateImageBehavior = false;
             this.listViewCredentialHistory.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeaderCredential
+            // 
+            this.columnHeaderCredential.Text = "Description";
+            this.columnHeaderCredential.Width = 119;
+            // 
+            // columnHeaderExpiration
+            // 
+            this.columnHeaderExpiration.Text = "Expiration";
+            this.columnHeaderExpiration.Width = 119;
+            // 
             // listViewPayHistory
             // 
             this.listViewPayHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -426,6 +436,16 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPayHistory.TabIndex = 7;
             this.listViewPayHistory.UseCompatibleStateImageBehavior = false;
             this.listViewPayHistory.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderPayRate
+            // 
+            this.columnHeaderPayRate.Text = "Rate";
+            this.columnHeaderPayRate.Width = 115;
+            // 
+            // columnHeaderEffectiveDate
+            // 
+            this.columnHeaderEffectiveDate.Text = "StartDate";
+            this.columnHeaderEffectiveDate.Width = 117;
             // 
             // labelCredentialHistory
             // 
@@ -476,6 +496,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonChangePosition.TabIndex = 3;
             this.buttonChangePosition.Text = "Change Position";
             this.buttonChangePosition.UseVisualStyleBackColor = true;
+            this.buttonChangePosition.Click += new System.EventHandler(this.ButtonChangePosition_Click);
             // 
             // buttonChangePayRate
             // 
@@ -487,6 +508,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonChangePayRate.TabIndex = 4;
             this.buttonChangePayRate.Text = "Change Pay Rate";
             this.buttonChangePayRate.UseVisualStyleBackColor = true;
+            this.buttonChangePayRate.Click += new System.EventHandler(this.ButtonChangePayRate_Click);
             // 
             // button2
             // 
@@ -498,6 +520,7 @@ namespace ChildcareManagementStudio.UserControls
             this.button2.TabIndex = 5;
             this.button2.Text = "Add New Credential";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // listViewPositionHistory
             // 
@@ -524,26 +547,6 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.columnHeaderStartDate.Text = "Start Date";
             this.columnHeaderStartDate.Width = 120;
-            // 
-            // columnHeaderPayRate
-            // 
-            this.columnHeaderPayRate.Text = "Rate";
-            this.columnHeaderPayRate.Width = 115;
-            // 
-            // columnHeaderEffectiveDate
-            // 
-            this.columnHeaderEffectiveDate.Text = "StartDate";
-            this.columnHeaderEffectiveDate.Width = 117;
-            // 
-            // columnHeaderCredential
-            // 
-            this.columnHeaderCredential.Text = "Description";
-            this.columnHeaderCredential.Width = 119;
-            // 
-            // columnHeaderExpiration
-            // 
-            this.columnHeaderExpiration.Text = "Expiration";
-            this.columnHeaderExpiration.Width = 119;
             // 
             // TeacherViewTeacherDetailUserControl
             // 

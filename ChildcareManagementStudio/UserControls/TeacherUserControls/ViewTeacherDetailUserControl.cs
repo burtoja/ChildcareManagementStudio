@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.View;
+using ChildcareManagementStudio.View.TeacherViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -145,8 +146,7 @@ namespace ChildcareManagementStudio.UserControls
                 {
                     this.ResetFormValues();
                 }
-            }
-            
+            }           
         }
 
         /// <summary>
@@ -164,6 +164,16 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueState.Text = "";
             this.labelValueZipCode.Text = "";
             this.labelValueStartDate.Text = "";
+        }
+
+        /// <summary>
+        /// Displays a message box for not choosing a teacher when needed
+        /// </summary>
+        private void DisplayChooseTeacherErrorBox()
+        {
+            string title = "No Teacher Chosen";
+            string message = "Please choose a teacher to edit.";
+            MessageBox.Show(message, title);
         }
 
         /// <summary>
@@ -189,12 +199,65 @@ namespace ChildcareManagementStudio.UserControls
             }
             else
             {
-                string title = "No Teacher Chosen";
-                string message = "Please choose a teacher to edit.";
-                MessageBox.Show(message, title);
+                this.DisplayChooseTeacherErrorBox();
             }
-
         }
 
+        /// <summary>
+        /// Handler for change positiion button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonChangePosition_Click(object sender, EventArgs e)
+        {
+            if (this.comboBoxName.SelectedIndex != -1)
+            {
+                Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+                AddPositionForm addPositionForm = new AddPositionForm(employeeId);
+                addPositionForm.Show();
+            }
+            else
+            {
+                this.DisplayChooseTeacherErrorBox();
+            }
+        }
+
+        /// <summary>
+        /// Handler for update salary button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonChangePayRate_Click(object sender, EventArgs e)
+        {
+            if (this.comboBoxName.SelectedIndex != -1)
+            {
+                Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+                AddSalaryForm addSalaryForm = new AddSalaryForm(employeeId);
+                addSalaryForm.Show();
+            }
+            else
+            {
+                this.DisplayChooseTeacherErrorBox();
+            }
+        }
+
+        /// <summary>
+        /// Handler for add certification button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (this.comboBoxName.SelectedIndex != -1)
+            {
+                Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+                AddCertificationForm addCertificationForm = new AddCertificationForm(employeeId);
+                addCertificationForm.Show();
+            }
+            else
+            {
+                this.DisplayChooseTeacherErrorBox();
+            }
+        }
     }
 }

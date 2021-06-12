@@ -12,9 +12,12 @@ namespace ChildcareManagementStudio.View.TeacherViews
 {
     public partial class AddSalaryForm : Form
     {
-        public AddSalaryForm()
+        private readonly int employeeId;
+
+        public AddSalaryForm(int employeeId)
         {
             InitializeComponent();
+            this.employeeId = employeeId;
         }
     }
 }
