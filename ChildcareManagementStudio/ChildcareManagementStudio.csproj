@@ -186,6 +186,15 @@
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\TeacherViews\AddCertificationForm.resx">
+      <DependentUpon>AddCertificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TeacherViews\AddPositionForm.resx">
+      <DependentUpon>AddPositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TeacherViews\AddSalaryForm.resx">
+      <DependentUpon>AddSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TeacherViews\EditTeacherForm.resx">
       <DependentUpon>EditTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
