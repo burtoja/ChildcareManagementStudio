@@ -43,6 +43,10 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 record.Type = this.textBoxDescriptionValue.Text;
                 record.ExpirationDate = this.dateTimePickerExpirationDate.Value;
                 this.certificationController.AddCertificationRecord(this.employeeId, record);
+                string title = "Success";
+                string message = "Record has been add.";
+                MessageBox.Show(message, title);
+                this.Close();
             }
             
         }
