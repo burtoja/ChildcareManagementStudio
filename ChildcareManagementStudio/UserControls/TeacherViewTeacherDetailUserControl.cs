@@ -14,6 +14,9 @@ namespace ChildcareManagementStudio.UserControls
     public partial class TeacherViewTeacherDetailUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
+        private readonly PositionController positionController;
+        private readonly SalaryController salaryController;
+        private readonly CertificationController certificationController;
         private List<Employee> employeeList;
 
         /// <summary>
@@ -22,6 +25,9 @@ namespace ChildcareManagementStudio.UserControls
         public TeacherViewTeacherDetailUserControl()
         {
             this.employeeController = new EmployeeController();
+            this.positionController = new PositionController();
+            this.salaryController = new SalaryController();
+            this.certificationController = new CertificationController();
             InitializeComponent();          
         }
 
@@ -74,6 +80,51 @@ namespace ChildcareManagementStudio.UserControls
         }
 
         /// <summary>
+        /// Populate the listview with the employee's position history records.
+        /// </summary>
+        /// <param name="employeeId"></param>
+        private void PopulatePositionHistoryListView(int employeeId)
+        {
+            List<PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
+            foreach (PositionRecord current in positionList)
+            {
+                ListViewItem item = new ListViewItem(current.Type.ToString());
+                item.SubItems.Add(current.SchoolYear.ToString());
+                this.listViewPositionHistory.Items.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Populate the listview with the employee's salary history records.
+        /// </summary>
+        /// <param name="employeeId"></param>
+        private void PopulateSalaryHistoryListView(int employeeId)
+        {
+            List<SalaryRecord> salaryList = this.salaryController.GetSalaryRecords(employeeId);
+            foreach (SalaryRecord current in salaryList)
+            {
+                ListViewItem item = new ListViewItem(current.Rate.ToString());
+                item.SubItems.Add(current.EffectiveDate.ToString());
+                this.listViewPayHistory.Items.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Populate the listview with the employee's certification history records.
+        /// </summary>
+        /// <param name="employeeId"></param>
+        private void PopulateCertificationHistoryListView(int employeeId)
+        {
+            List<CertificationRecord> certificationList = this.certificationController.GetCertificationRecords(employeeId);
+            foreach (CertificationRecord current in certificationList)
+            {
+                ListViewItem item = new ListViewItem(current.Type.ToString());
+                item.SubItems.Add(current.ExpirationDate.ToString());
+                this.listViewCredentialHistory.Items.Add(item);
+            }
+        }
+
+        /// <summary>
         /// When new value chosen in combobox the displayed teacher details update
         /// </summary>
         /// <param name="sender"></param>
@@ -86,6 +137,9 @@ namespace ChildcareManagementStudio.UserControls
                 {
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                     this.FillFormValues(employeeId);
+                    this.PopulatePositionHistoryListView(employeeId);
+                    this.PopulateSalaryHistoryListView(employeeId);
+                    this.PopulateCertificationHistoryListView(employeeId);
                 }
                 catch
                 {

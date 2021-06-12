@@ -240,7 +240,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -400,6 +400,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewCredentialHistory.Size = new System.Drawing.Size(245, 86);
             this.listViewCredentialHistory.TabIndex = 8;
             this.listViewCredentialHistory.UseCompatibleStateImageBehavior = false;
+            this.listViewCredentialHistory.View = System.Windows.Forms.View.Details;
             // 
             // listViewPayHistory
             // 
@@ -412,6 +413,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPayHistory.Size = new System.Drawing.Size(238, 86);
             this.listViewPayHistory.TabIndex = 7;
             this.listViewPayHistory.UseCompatibleStateImageBehavior = false;
+            this.listViewPayHistory.View = System.Windows.Forms.View.Details;
             // 
             // labelCredentialHistory
             // 
@@ -496,6 +498,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory.Size = new System.Drawing.Size(238, 86);
             this.listViewPositionHistory.TabIndex = 6;
             this.listViewPositionHistory.UseCompatibleStateImageBehavior = false;
+            this.listViewPositionHistory.View = System.Windows.Forms.View.Details;
             // 
             // TeacherViewTeacherDetailUserControl
             // 
