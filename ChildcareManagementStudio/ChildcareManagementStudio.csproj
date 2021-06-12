@@ -94,34 +94,34 @@
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\TeacherAddTeacherUserControl.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherAddTeacherUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TeacherAddTeacherUserControl.Designer.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherAddTeacherUserControl.Designer.cs">
       <DependentUpon>TeacherAddTeacherUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TeacherEditTeacherUserControl.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherEditTeacherUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TeacherEditTeacherUserControl.Designer.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherEditTeacherUserControl.Designer.cs">
       <DependentUpon>TeacherEditTeacherUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TeacherMainUserControl.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherMainUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TeacherMainUserControl.Designer.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherMainUserControl.Designer.cs">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TeacherViewTeacherDetailUserControl.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherViewTeacherDetailUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TeacherViewTeacherDetailUserControl.Designer.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherViewTeacherDetailUserControl.Designer.cs">
       <DependentUpon>TeacherViewTeacherDetailUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TeacherViewTeachersUserControl.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherViewTeachersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TeacherViewTeachersUserControl.Designer.cs">
+    <Compile Include="UserControls\TeacherUserControls\TeacherViewTeachersUserControl.Designer.cs">
       <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TeacherViews\EditTeacherForm.cs">
@@ -153,19 +153,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\TeacherAddTeacherUserControl.resx">
+    <EmbeddedResource Include="UserControls\TeacherUserControls\TeacherAddTeacherUserControl.resx">
       <DependentUpon>TeacherAddTeacherUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TeacherEditTeacherUserControl.resx">
+    <EmbeddedResource Include="UserControls\TeacherUserControls\TeacherEditTeacherUserControl.resx">
       <DependentUpon>TeacherEditTeacherUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TeacherMainUserControl.resx">
+    <EmbeddedResource Include="UserControls\TeacherUserControls\TeacherMainUserControl.resx">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TeacherViewTeacherDetailUserControl.resx">
+    <EmbeddedResource Include="UserControls\TeacherUserControls\TeacherViewTeacherDetailUserControl.resx">
       <DependentUpon>TeacherViewTeacherDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TeacherViewTeachersUserControl.resx">
+    <EmbeddedResource Include="UserControls\TeacherUserControls\TeacherViewTeachersUserControl.resx">
       <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TeacherViews\EditTeacherForm.resx">
