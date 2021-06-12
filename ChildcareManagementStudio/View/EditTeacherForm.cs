@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace ChildcareManagementStudio.View
 {
     public partial class EditTeacherForm : Form
     {
-        private UserControl referringControl;
+        private TeacherViewTeacherDetailUserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
 
-        public EditTeacherForm(Employee theEmployee, UserControl referingControl)
+        public EditTeacherForm(Employee theEmployee, TeacherViewTeacherDetailUserControl referingControl)
         {
             InitializeComponent();
             this.referringControl = referingControl;
@@ -76,7 +77,7 @@ namespace ChildcareManagementStudio.View
                     if (dialogeResult == DialogResult.OK)
                     {
                         this.referringControl.Enabled = true;
-                        // TODO: refresh referring control and set to current employee with new information.
+                        this.referringControl.FillDropDownList(revisedEmployee.EmployeeId);
                         this.Close();
                     }
 

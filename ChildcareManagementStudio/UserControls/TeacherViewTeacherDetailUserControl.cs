@@ -36,6 +36,12 @@ namespace ChildcareManagementStudio.UserControls
             this.ResetFormValues();
         }
 
+        public void FillDropDownList(int presetEmployeeId)
+        {
+            this.FillDropDownList();
+            this.comboBoxName.SelectedValue = presetEmployeeId;
+        }
+
         private void FillFormValues(int employeeId)
         {
             Employee employee = this.employeeController.GetEmployee(employeeId);
@@ -97,5 +103,7 @@ namespace ChildcareManagementStudio.UserControls
             }
 
         }
+
+
     }
 }
