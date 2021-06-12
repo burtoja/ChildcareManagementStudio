@@ -11,7 +11,7 @@ namespace ChildcareManagementStudio.View
     /// </summary>
     public partial class EditTeacherForm : Form
     {
-        private TeacherViewTeacherDetailUserControl referringControl;
+        private readonly TeacherViewTeacherDetailUserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
 

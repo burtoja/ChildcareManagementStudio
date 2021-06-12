@@ -87,7 +87,7 @@ namespace ChildcareManagementStudio.UserControls
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                     this.FillFormValues(employeeId);
                 }
-                catch (Exception ex)
+                catch
                 {
                     this.ResetFormValues();
                 }
@@ -130,14 +130,14 @@ namespace ChildcareManagementStudio.UserControls
                 }
                 catch (Exception ex)
                 {
-                    var dialogeResult = MessageBox.Show("Error: ", ex.Message);
+                    MessageBox.Show("Error: ", ex.Message);
                 }
             }
             else
             {
                 string title = "No Teacher Chosen";
                 string message = "Please choose a teacher to edit.";
-                DialogResult dialogeResult = MessageBox.Show(message, title);
+                MessageBox.Show(message, title);
             }
 
         }
