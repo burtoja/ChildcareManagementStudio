@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace ChildcareManagementStudio.UserControls
         {
             this.employeeController = new EmployeeController();
             InitializeComponent();          
-            this.FillDropDownList();
+            //this.FillDropDownList();
         }
 
         public void FillDropDownList()
@@ -83,7 +84,18 @@ namespace ChildcareManagementStudio.UserControls
 
         private void ButtonEditTeacher_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+                Employee employee = this.employeeController.GetEmployee(employeeId);
+                EditTeacherForm editTeacherForm = new EditTeacherForm(employee);
+                editTeacherForm.Show();
+            }
+            catch (Exception ex)
+            {
+                var dialogeResult = MessageBox.Show("Error: ", ex.Message);
+            }
+
         }
     }
 }

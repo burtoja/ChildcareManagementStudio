@@ -100,6 +100,12 @@
     <Compile Include="UserControls\TeacherAddTeacherUserControl.Designer.cs">
       <DependentUpon>TeacherAddTeacherUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TeacherEditTeacherUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TeacherEditTeacherUserControl.Designer.cs">
+      <DependentUpon>TeacherEditTeacherUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TeacherMainUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </Compile>
     <Compile Include="UserControls\TeacherViewTeachersUserControl.Designer.cs">
       <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EditTeacherForm.Designer.cs">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <EmbeddedResource Include="UserControls\TeacherAddTeacherUserControl.resx">
       <DependentUpon>TeacherAddTeacherUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TeacherEditTeacherUserControl.resx">
+      <DependentUpon>TeacherEditTeacherUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherMainUserControl.resx">
       <DependentUpon>TeacherMainUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherViewTeachersUserControl.resx">
       <DependentUpon>TeacherViewTeachersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EditTeacherForm.resx">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
