@@ -124,6 +124,24 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TeacherViews\AddCertificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherViews\AddCertificationForm.Designer.cs">
+      <DependentUpon>AddCertificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherViews\AddPositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherViews\AddPositionForm.Designer.cs">
+      <DependentUpon>AddPositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherViews\AddSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherViews\AddSalaryForm.Designer.cs">
+      <DependentUpon>AddSalaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TeacherViews\EditTeacherForm.cs">
       <SubType>Form</SubType>
     </Compile>
