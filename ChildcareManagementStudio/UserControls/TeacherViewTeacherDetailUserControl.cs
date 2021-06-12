@@ -8,18 +8,26 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
+    /// <summary>
+    /// User control to display teacher details based on pull-down menu selection of teacher
+    /// </summary>
     public partial class TeacherViewTeacherDetailUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
         private List<Employee> employeeList;
 
+        /// <summary>
+        /// Constructor for the user control
+        /// </summary>
         public TeacherViewTeacherDetailUserControl()
         {
             this.employeeController = new EmployeeController();
             InitializeComponent();          
-            //this.FillDropDownList();
         }
 
+        /// <summary>
+        /// Fills the Name combobox with names of employees stored in DB
+        /// </summary>
         public void FillDropDownList()
         {
             this.employeeList = this.employeeController.GetAllEmployees();
@@ -36,12 +44,20 @@ namespace ChildcareManagementStudio.UserControls
             this.ResetFormValues();
         }
 
+        /// <summary>
+        /// Fills comboboxes with names of employees in DB and preselects the indicated employee
+        /// </summary>
+        /// <param name="presetEmployeeId"></param>
         public void FillDropDownList(int presetEmployeeId)
         {
             this.FillDropDownList();
             this.comboBoxName.SelectedValue = presetEmployeeId;
         }
 
+        /// <summary>
+        /// Display the employee details from the DB
+        /// </summary>
+        /// <param name="employeeId"></param>
         private void FillFormValues(int employeeId)
         {
             Employee employee = this.employeeController.GetEmployee(employeeId);
@@ -57,6 +73,11 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueStartDate.Text = employee.StartDate.ToString("d");
         }
 
+        /// <summary>
+        /// When new value chosen in combobox the displayed teacher details update
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             if (this.comboBoxName.SelectedIndex != -1)
@@ -74,6 +95,9 @@ namespace ChildcareManagementStudio.UserControls
             
         }
 
+        /// <summary>
+        /// Resets teacher details to empty
+        /// </summary>
         private void ResetFormValues()
         {
             this.labelValueDOB.Text = "";
@@ -88,6 +112,11 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueStartDate.Text = "";
         }
 
+        /// <summary>
+        /// Handles events needed to open the edit teacher form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonEditTeacher_Click(object sender, EventArgs e)
         {
             if (this.comboBoxName.SelectedIndex != -1)
