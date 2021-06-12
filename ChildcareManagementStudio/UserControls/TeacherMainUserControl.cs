@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using ChildcareManagementStudio.Model;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
@@ -25,5 +27,6 @@ namespace ChildcareManagementStudio.UserControls
             this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
             this.teacherViewTeacherDetailUserControl1.FillDropDownList();
         }
+
     }
 }
