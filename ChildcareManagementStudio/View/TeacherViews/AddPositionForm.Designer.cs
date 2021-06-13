@@ -32,7 +32,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPosition = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPosition = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.23288F));
             this.tableLayoutPanel1.Controls.Add(this.labelPosition, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxPosition, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,16 +77,16 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelStartDate.TabIndex = 1;
             this.labelStartDate.Text = "Start Date:";
             // 
-            // comboBox1
+            // comboBoxPosition
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 29);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPosition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxPosition.FormattingEnabled = true;
+            this.comboBoxPosition.Location = new System.Drawing.Point(107, 8);
+            this.comboBoxPosition.Name = "comboBoxPosition";
+            this.comboBoxPosition.Size = new System.Drawing.Size(235, 29);
+            this.comboBoxPosition.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -136,7 +136,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.Label labelStartDate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxPosition;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
