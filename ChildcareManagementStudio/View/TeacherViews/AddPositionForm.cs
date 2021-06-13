@@ -43,9 +43,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
         public void FillPositionTypeDropDownList()
         {
             List<string> positionTypeList = this.positionTypeController.GetAllPositionTypes();
+            positionTypeList.Insert(0, "Choose a Position...");
             this.comboBoxPosition.DataSource = positionTypeList;
-            this.comboBoxPosition.SelectedIndex = -1;
-            this.comboBoxPosition.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -54,9 +53,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
         public void FillSchoolYearDropDownList()
         {
             //List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
+            //schoolYearList.Insert(0, "Choose a School Year...");
             //this.comboBoxPosition.DataSource = schoolYearList;
-            //this.comboBoxPosition.SelectedIndex = -1;
-            //this.comboBoxPosition.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -78,10 +76,16 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxPosition.SelectedIndex != -1)
+            if (this.comboBoxPosition.SelectedIndex == 0)
             {
                 string title = "Position Type Choice Error";
                 string message = "Please choose a position type and resubmit.";
+                MessageBox.Show(message, title);
+            }
+            else if (this.comboBoxSchoolYear.SelectedIndex == 0)
+            {
+                string title = "Position Type Choice Error";
+                string message = "Please choose a school year and resubmit.";
                 MessageBox.Show(message, title);
             }
             else
