@@ -1,4 +1,5 @@
-﻿using ChildcareManagementStudio.Model;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,12 @@ namespace ChildcareManagementStudio.View.TeacherViews
     public partial class AddPositionForm : Form
     {
         private readonly int employeeId;
+        private readonly PositionController positionController;
         private readonly PositionTypeController positionTypeController;
+        private readonly SchoolYearController schoolYearController;
         private readonly TeacherViewTeacherDetailUserControl referringUserControl;
         //private readonly List<string> positionTypeList;
+        //private readonly List<string> schoolYearList;
 
         /// <summary>
         /// Constructor for the form
@@ -31,17 +35,31 @@ namespace ChildcareManagementStudio.View.TeacherViews
             InitializeComponent();
             this.employeeId = employeeId;
             this.referringUserControl = referringUserControl;
+            this.positionController = new PositionController();
             this.positionTypeController = new PositionTypeController();
-            this.FillDropDownList();
+            this.schoolYearController = new SchoolYearController();
+            this.FillPositionTypeDropDownList();
+            this.FillSchoolYearDropDownList();
         }
 
         /// <summary>
         /// Fill combobox with position types from DB
         /// </summary>
-        public void FillDropDownList()
+        public void FillPositionTypeDropDownList()
         {
             List<string> positionTypeList = this.positionTypeController.GetPositionTypes();
             this.comboBoxPosition.DataSource = positionTypeList;
+            this.comboBoxPosition.SelectedIndex = -1;
+            this.comboBoxPosition.SelectedText = "--select--";
+        }
+
+        /// <summary>
+        /// Fill combobox with position types from DB
+        /// </summary>
+        public void FillSchoolYearDropDownList()
+        {
+            List<string> schoolYearList = this.schoolYearController.GetSchoolYears();
+            this.comboBoxPosition.DataSource = schoolYearList;
             this.comboBoxPosition.SelectedIndex = -1;
             this.comboBoxPosition.SelectedText = "--select--";
         }
@@ -75,9 +93,10 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 PositionRecord record = new PositionRecord
                 {
                     Type = this.comboBoxPosition.SelectedValue.ToString(),
-                    SchoolYear = this.dateTimePickerExpirationDate.Value //TODO: Should we have effective date???? Answer before proceding
+                    SchoolYear = this.comboBoxSchoolYear.SelectedValue.ToString(),
+                    StartDate = this.dateTimePickerStartDate.Value
                 };
-                this.certificationController.AddCertificationRecord(this.employeeId, record);
+                this.positionController.AddPositionRecord(this.employeeId, record);
                 string title = "Success";
                 string message = "Record has been added.";
                 MessageBox.Show(message, title);
