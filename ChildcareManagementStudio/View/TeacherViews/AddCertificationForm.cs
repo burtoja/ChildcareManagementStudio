@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Windows.Forms;
 
@@ -36,6 +37,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
+            this.referringUserControl.Enabled = true;
             this.Close();
         }
 
@@ -54,19 +56,42 @@ namespace ChildcareManagementStudio.View.TeacherViews
             }
             else
             {
-                CertificationRecord record = new CertificationRecord
-                {
-                    Type = this.textBoxDescriptionValue.Text,
-                    ExpirationDate = this.dateTimePickerExpirationDate.Value
-                };
-                this.certificationController.AddCertificationRecord(this.employeeId, record);
-                string title = "Success";
-                string message = "Record has been added.";
-                MessageBox.Show(message, title);
+                this.SubmitNewRecord();
                 this.referringUserControl.Enabled = true;
                 this.Close();
             }
             
+        }
+
+        /// <summary>
+        /// Attempts to submit new record to DB
+        /// </summary>
+        private void SubmitNewRecord()
+        {
+            CertificationRecord record = new CertificationRecord
+            {
+                Type = this.textBoxDescriptionValue.Text,
+                ExpirationDate = this.dateTimePickerExpirationDate.Value
+            };
+            try
+            {
+                this.certificationController.AddCertificationRecord(this.employeeId, record);
+                string title = "Success";
+                string message = "Record has been added.";
+                MessageBox.Show(message, title);
+            }
+            catch (SqliteException ex)
+            {
+                Console.WriteLine("TEST: " + ex.ErrorCode);
+                if (ex.ErrorCode == -2147467259)
+                {
+                    string title = "Duplicate Record Error";
+                    string message = "Error. This record matches anothed record on file for this employee.  " +
+                        "Duplicate records are not allowed.  Please try again.";
+                    MessageBox.Show(message, title);
+                }
+            }
+
         }
     }
 }
