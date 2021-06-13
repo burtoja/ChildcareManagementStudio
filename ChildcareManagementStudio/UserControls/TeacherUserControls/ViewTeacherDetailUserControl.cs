@@ -224,7 +224,7 @@ namespace ChildcareManagementStudio.UserControls
             if (this.comboBoxName.SelectedIndex != -1)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
-                AddPositionForm addPositionForm = new AddPositionForm(employeeId);
+                AddPositionForm addPositionForm = new AddPositionForm(employeeId, this);
                 addPositionForm.Show();
             }
             else

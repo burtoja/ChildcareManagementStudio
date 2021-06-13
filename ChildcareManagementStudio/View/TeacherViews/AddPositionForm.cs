@@ -64,7 +64,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            if (false) // TODO: Implement validation
+            if (this.comboBoxPosition.SelectedIndex != -1)
             {
                 string title = "Position Type Choice Error";
                 string message = "Please choose a position type and resubmit.";
@@ -74,8 +74,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
             {
                 PositionRecord record = new PositionRecord
                 {
-                    Type = this.textBoxDescriptionValue.Text,
-                    SchoolYear = this.dateTimePickerExpirationDate.Value
+                    Type = this.comboBoxPosition.SelectedValue.ToString(),
+                    SchoolYear = this.dateTimePickerExpirationDate.Value //TODO: Should we have effective date???? Answer before proceding
                 };
                 this.certificationController.AddCertificationRecord(this.employeeId, record);
                 string title = "Success";
