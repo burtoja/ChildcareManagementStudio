@@ -81,9 +81,10 @@ namespace ChildcareManagementStudio.View.TeacherViews
             // dateTimePickerEffectiveDate
             // 
             this.dateTimePickerEffectiveDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerEffectiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerEffectiveDate.Location = new System.Drawing.Point(137, 50);
             this.dateTimePickerEffectiveDate.Name = "dateTimePickerEffectiveDate";
-            this.dateTimePickerEffectiveDate.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerEffectiveDate.Size = new System.Drawing.Size(137, 27);
             this.dateTimePickerEffectiveDate.TabIndex = 3;
             // 
             // numericUpDownRate

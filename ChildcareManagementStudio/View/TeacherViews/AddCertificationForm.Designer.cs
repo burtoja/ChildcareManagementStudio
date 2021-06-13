@@ -80,9 +80,10 @@ namespace ChildcareManagementStudio.View.TeacherViews
             // dateTimePickerExpirationDate
             // 
             this.dateTimePickerExpirationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerExpirationDate.Location = new System.Drawing.Point(145, 50);
             this.dateTimePickerExpirationDate.Name = "dateTimePickerExpirationDate";
-            this.dateTimePickerExpirationDate.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerExpirationDate.Size = new System.Drawing.Size(128, 27);
             this.dateTimePickerExpirationDate.TabIndex = 3;
             // 
             // textBoxDescriptionValue
