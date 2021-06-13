@@ -90,11 +90,19 @@ namespace ChildcareManagementStudio.View.TeacherViews
             }
             else
             {
-                this.SubmitNewRecord();
-                this.referringUserControl.Enabled = true;
-                this.Close();
+                string title = "Submit Record Confirmation";
+                string message = "Are you sure you want to add a new record with the following information: \n\n" +
+                    "Position: " + this.comboBoxPosition.SelectedValue + "\n" +
+                    "School Year: " + this.comboBoxSchoolYear.SelectedValue + "\n" +
+                    "Start Date: " + this.dateTimePickerStartDate.Value.ToString("d");
+                DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.SubmitNewRecord();
+                    this.referringUserControl.Enabled = true;
+                    this.Close();
+                }
             }
-
         }
 
         /// <summary>
@@ -117,7 +125,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
             }
             catch (SqliteException ex)
             {
-                Console.WriteLine("TEST: " + ex.ErrorCode);
                 if (ex.ErrorCode == -2147467259)
                 {
                     string title = "Duplicate Record Error";
