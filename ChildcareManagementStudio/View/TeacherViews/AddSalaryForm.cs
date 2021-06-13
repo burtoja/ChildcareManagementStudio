@@ -41,6 +41,12 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 string message = "Pay rate cannot equal zero.  Please correct and resubmit the form.";
                 MessageBox.Show(message, title);
             }
+            else if ((double)this.numericUpDownRate.Value < 0.00)
+            {
+                string title = "Pay Rate Error";
+                string message = "Pay rate cannot be negative.  Please correct and resubmit the form.";
+                MessageBox.Show(message, title);
+            }
             else
             {
                 SalaryRecord record = new SalaryRecord
