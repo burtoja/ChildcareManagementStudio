@@ -83,7 +83,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 string title = "Success";
                 string message = "Record has been added.";
                 MessageBox.Show(message, title);
-            } catch (SqliteException ex)
+            } 
+            catch (SqliteException ex)
             {
                 Console.WriteLine("TEST: " + ex.ErrorCode) ;
                 if (ex.ErrorCode == -2147467259)
