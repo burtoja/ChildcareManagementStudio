@@ -90,7 +90,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.comboBoxPosition.Location = new System.Drawing.Point(121, 26);
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(235, 29);
-            this.comboBoxPosition.TabIndex = 2;
+            this.comboBoxPosition.TabIndex = 1;
             // 
             // dateTimePickerStartDate
             // 
@@ -106,7 +106,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonSubmit.Location = new System.Drawing.Point(25, 191);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(135, 45);
-            this.buttonSubmit.TabIndex = 1;
+            this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Add Record";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             // 
@@ -115,7 +115,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonCancel.Location = new System.Drawing.Point(226, 191);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(142, 45);
-            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +138,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.comboBoxSchoolYear.Location = new System.Drawing.Point(121, 68);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(235, 29);
-            this.comboBoxSchoolYear.TabIndex = 5;
+            this.comboBoxSchoolYear.TabIndex = 2;
             // 
             // AddPositionForm
             // 
