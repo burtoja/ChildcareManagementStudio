@@ -43,9 +43,11 @@ namespace ChildcareManagementStudio.View.TeacherViews
             }
             else
             {
-                SalaryRecord record = new SalaryRecord();
-                record.Rate = (double)this.numericUpDownRate.Value;
-                record.EffectiveDate = this.dateTimePickerEffectiveDate.Value;
+                SalaryRecord record = new SalaryRecord
+                {
+                    Rate = (double)this.numericUpDownRate.Value,
+                    EffectiveDate = this.dateTimePickerEffectiveDate.Value
+                };
                 this.salaryController.AddSalaryRecord(this.employeeId, record);
                 string title = "Success";
                 string message = "Record has been added.";
