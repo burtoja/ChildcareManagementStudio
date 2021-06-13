@@ -33,9 +33,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelPosition = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
             this.dateTimePickerEffectiveDate = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDownRate = new System.Windows.Forms.NumericUpDown();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.numericUpDownRate = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRate)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,25 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.dateTimePickerEffectiveDate.Size = new System.Drawing.Size(200, 27);
             this.dateTimePickerEffectiveDate.TabIndex = 3;
             // 
+            // numericUpDownRate
+            // 
+            this.numericUpDownRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDownRate.DecimalPlaces = 2;
+            this.numericUpDownRate.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericUpDownRate.Location = new System.Drawing.Point(137, 6);
+            this.numericUpDownRate.Name = "numericUpDownRate";
+            this.numericUpDownRate.Size = new System.Drawing.Size(67, 27);
+            this.numericUpDownRate.TabIndex = 4;
+            this.numericUpDownRate.Value = new decimal(new int[] {
+            725,
+            0,
+            0,
+            131072});
+            // 
             // buttonCancel
             // 
             this.buttonCancel.Location = new System.Drawing.Point(245, 114);
@@ -105,20 +124,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonSubmit.Text = "Add Record";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
-            // 
-            // numericUpDownRate
-            // 
-            this.numericUpDownRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numericUpDownRate.DecimalPlaces = 2;
-            this.numericUpDownRate.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            this.numericUpDownRate.Location = new System.Drawing.Point(137, 10);
-            this.numericUpDownRate.Name = "numericUpDownRate";
-            this.numericUpDownRate.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDownRate.TabIndex = 4;
             // 
             // AddSalaryForm
             // 
