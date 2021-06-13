@@ -6,12 +6,20 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.TeacherViews
 {
+    /// <summary>
+    /// This class will create and manage the add certification form
+    /// </summary>
     public partial class AddCertificationForm : Form
     {
         private readonly int employeeId;
         private readonly CertificationController certificationController;
         private readonly TeacherViewTeacherDetailUserControl referringUserControl;
 
+        /// <summary>
+        /// Constructor for the form
+        /// </summary>
+        /// <param name="employeeId">the employeeId of the employee receiving the record</param>
+        /// <param name="referringUserControl">the user control that called this form</param>
         public AddCertificationForm(int employeeId, TeacherViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
@@ -21,11 +29,21 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.referringUserControl.Enabled = false;
         }
 
+        /// <summary>
+        /// Handles cancel button clicks and closes the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Handles submit button clicks and attempts to add a new record to the DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             if (this.textBoxDescriptionValue.Text == "")
