@@ -32,11 +32,12 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPosition = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEffectiveDate = new System.Windows.Forms.DateTimePicker();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.numericUpDownRate = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRate)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,8 +47,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.15328F));
             this.tableLayoutPanel1.Controls.Add(this.labelPosition, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerEffectiveDate, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numericUpDownRate, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -77,24 +78,13 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelStartDate.TabIndex = 1;
             this.labelStartDate.Text = "Effective Date:";
             // 
-            // comboBox1
+            // dateTimePickerEffectiveDate
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 29);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 50);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerEffectiveDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerEffectiveDate.Location = new System.Drawing.Point(137, 50);
+            this.dateTimePickerEffectiveDate.Name = "dateTimePickerEffectiveDate";
+            this.dateTimePickerEffectiveDate.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerEffectiveDate.TabIndex = 3;
             // 
             // buttonCancel
             // 
@@ -104,6 +94,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonSubmit
             // 
@@ -113,6 +104,21 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Add Record";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
+            // 
+            // numericUpDownRate
+            // 
+            this.numericUpDownRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDownRate.DecimalPlaces = 2;
+            this.numericUpDownRate.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.numericUpDownRate.Location = new System.Drawing.Point(137, 10);
+            this.numericUpDownRate.Name = "numericUpDownRate";
+            this.numericUpDownRate.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownRate.TabIndex = 4;
             // 
             // AddSalaryForm
             // 
@@ -122,12 +128,13 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AddSalaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Employee Salary";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,9 +144,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.Label labelStartDate;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEffectiveDate;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.NumericUpDown numericUpDownRate;
     }
 }

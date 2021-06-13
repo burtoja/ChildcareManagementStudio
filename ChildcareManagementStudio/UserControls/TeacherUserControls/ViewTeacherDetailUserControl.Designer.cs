@@ -65,7 +65,7 @@ namespace ChildcareManagementStudio.UserControls
             this.labelPositionHistory = new System.Windows.Forms.Label();
             this.buttonChangePosition = new System.Windows.Forms.Button();
             this.buttonChangePayRate = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAddNewCredential = new System.Windows.Forms.Button();
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -384,7 +384,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.Controls.Add(this.labelPositionHistory, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePosition, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePayRate, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.buttonAddNewCredential, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.listViewPositionHistory, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 305);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -510,17 +510,17 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonChangePayRate.UseVisualStyleBackColor = true;
             this.buttonChangePayRate.Click += new System.EventHandler(this.ButtonChangePayRate_Click);
             // 
-            // button2
+            // buttonAddNewCredential
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.button2, 2);
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(491, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(245, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Add New Credential";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.tableLayoutPanel2.SetColumnSpan(this.buttonAddNewCredential, 2);
+            this.buttonAddNewCredential.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewCredential.Location = new System.Drawing.Point(491, 130);
+            this.buttonAddNewCredential.Name = "buttonAddNewCredential";
+            this.buttonAddNewCredential.Size = new System.Drawing.Size(245, 29);
+            this.buttonAddNewCredential.TabIndex = 5;
+            this.buttonAddNewCredential.Text = "Add New Credential";
+            this.buttonAddNewCredential.UseVisualStyleBackColor = true;
+            this.buttonAddNewCredential.Click += new System.EventHandler(this.ButtonAddNewCredential_Click);
             // 
             // listViewPositionHistory
             // 
@@ -587,7 +587,7 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.Label labelPositionHistory;
         private System.Windows.Forms.Button buttonChangePosition;
         private System.Windows.Forms.Button buttonChangePayRate;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAddNewCredential;
         private System.Windows.Forms.ListView listViewCredentialHistory;
         private System.Windows.Forms.ListView listViewPayHistory;
         private System.Windows.Forms.ListView listViewPositionHistory;

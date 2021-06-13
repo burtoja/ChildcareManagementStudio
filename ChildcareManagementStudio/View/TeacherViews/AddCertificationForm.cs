@@ -2,13 +2,6 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.TeacherViews
@@ -37,8 +30,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
         {
             if (this.textBoxDescriptionValue.Text == "")
             {
-                string title = "Add Description";
-                string message = "Please add a description for the certification.";
+                string title = "Empty Description Error";
+                string message = "Please add a description for the certification and resubmit.";
                 MessageBox.Show(message, title);
             }
             else
@@ -48,7 +41,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 record.ExpirationDate = this.dateTimePickerExpirationDate.Value;
                 this.certificationController.AddCertificationRecord(this.employeeId, record);
                 string title = "Success";
-                string message = "Record has been add.";
+                string message = "Record has been added.";
                 MessageBox.Show(message, title);
                 this.referringUserControl.Enabled = true;
                 this.Close();

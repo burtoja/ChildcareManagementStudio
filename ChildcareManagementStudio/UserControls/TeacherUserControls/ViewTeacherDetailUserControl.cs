@@ -243,7 +243,7 @@ namespace ChildcareManagementStudio.UserControls
             if (this.comboBoxName.SelectedIndex != -1)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
-                AddSalaryForm addSalaryForm = new AddSalaryForm(employeeId);
+                AddSalaryForm addSalaryForm = new AddSalaryForm(employeeId, this);
                 addSalaryForm.Show();
             }
             else
@@ -253,11 +253,11 @@ namespace ChildcareManagementStudio.UserControls
         }
 
         /// <summary>
-        /// Handler for add certification button clicks
+        /// Handler for update crednetials button clicks
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button2_Click(object sender, EventArgs e)
+        private void ButtonAddNewCredential_Click(object sender, EventArgs e)
         {
             if (this.comboBoxName.SelectedIndex != -1)
             {
@@ -280,5 +280,7 @@ namespace ChildcareManagementStudio.UserControls
         {
             this.UpdateFormValues();
         }
+
+       
     }
 }
