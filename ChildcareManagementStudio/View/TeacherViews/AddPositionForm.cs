@@ -15,7 +15,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private readonly int employeeId;
         private readonly PositionController positionController;
         private readonly PositionTypeController positionTypeController;
-        private readonly SchoolYearController schoolYearController;
+        //private readonly SchoolYearController schoolYearController;
         private readonly TeacherViewTeacherDetailUserControl referringUserControl;
         //private readonly List<string> positionTypeList;
         //private readonly List<string> schoolYearList;
@@ -31,7 +31,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.referringUserControl = referringUserControl;
             this.positionController = new PositionController();
             this.positionTypeController = new PositionTypeController();
-            this.schoolYearController = new SchoolYearController();
+            //this.schoolYearController = new SchoolYearController();
             this.FillPositionTypeDropDownList();
             this.FillSchoolYearDropDownList();
         }
@@ -52,10 +52,10 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// </summary>
         public void FillSchoolYearDropDownList()
         {
-            List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
-            this.comboBoxPosition.DataSource = schoolYearList;
-            this.comboBoxPosition.SelectedIndex = -1;
-            this.comboBoxPosition.SelectedText = "--select--";
+            //List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
+            //this.comboBoxPosition.DataSource = schoolYearList;
+            //this.comboBoxPosition.SelectedIndex = -1;
+            //this.comboBoxPosition.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 {
                     Type = this.comboBoxPosition.SelectedValue.ToString(),
                     SchoolYear = this.comboBoxSchoolYear.SelectedValue.ToString(),
-                    StartDate = this.dateTimePickerStartDate.Value
+                    //StartDate = this.dateTimePickerStartDate.Value
                 };
                 this.positionController.AddPositionRecord(this.employeeId, record);
                 string title = "Success";

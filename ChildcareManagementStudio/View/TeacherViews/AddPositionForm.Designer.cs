@@ -30,14 +30,14 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxSchoolYear = new System.Windows.Forms.ComboBox();
+            this.labelSchoolYear = new System.Windows.Forms.Label();
             this.labelPosition = new System.Windows.Forms.Label();
-            this.labelStartDate = new System.Windows.Forms.Label();
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
+            this.labelStartDate = new System.Windows.Forms.Label();
             this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.labelSchoolYear = new System.Windows.Forms.Label();
-            this.comboBoxSchoolYear = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,27 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.tableLayoutPanel1.Size = new System.Drawing.Size(365, 150);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // comboBoxSchoolYear
+            // 
+            this.comboBoxSchoolYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxSchoolYear.FormattingEnabled = true;
+            this.comboBoxSchoolYear.Location = new System.Drawing.Point(121, 76);
+            this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
+            this.comboBoxSchoolYear.Size = new System.Drawing.Size(235, 29);
+            this.comboBoxSchoolYear.TabIndex = 2;
+            // 
+            // labelSchoolYear
+            // 
+            this.labelSchoolYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSchoolYear.AutoSize = true;
+            this.labelSchoolYear.Location = new System.Drawing.Point(9, 79);
+            this.labelSchoolYear.Name = "labelSchoolYear";
+            this.labelSchoolYear.Size = new System.Drawing.Size(106, 21);
+            this.labelSchoolYear.TabIndex = 4;
+            this.labelSchoolYear.Text = "School Year:";
+            // 
             // labelPosition
             // 
             this.labelPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -71,6 +92,17 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelPosition.TabIndex = 0;
             this.labelPosition.Text = "Position:";
             // 
+            // comboBoxPosition
+            // 
+            this.comboBoxPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPosition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxPosition.FormattingEnabled = true;
+            this.comboBoxPosition.Location = new System.Drawing.Point(121, 18);
+            this.comboBoxPosition.Name = "comboBoxPosition";
+            this.comboBoxPosition.Size = new System.Drawing.Size(235, 29);
+            this.comboBoxPosition.TabIndex = 1;
+            // 
             // labelStartDate
             // 
             this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -80,17 +112,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.labelStartDate.Size = new System.Drawing.Size(96, 21);
             this.labelStartDate.TabIndex = 1;
             this.labelStartDate.Text = "Start Date:";
-            // 
-            // comboBoxPosition
-            // 
-            this.comboBoxPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPosition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBoxPosition.FormattingEnabled = true;
-            this.comboBoxPosition.Location = new System.Drawing.Point(121, 26);
-            this.comboBoxPosition.Name = "comboBoxPosition";
-            this.comboBoxPosition.Size = new System.Drawing.Size(235, 29);
-            this.comboBoxPosition.TabIndex = 1;
             // 
             // dateTimePickerStartDate
             // 
@@ -109,6 +130,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Add Record";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
@@ -118,27 +140,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // labelSchoolYear
-            // 
-            this.labelSchoolYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSchoolYear.AutoSize = true;
-            this.labelSchoolYear.Location = new System.Drawing.Point(9, 79);
-            this.labelSchoolYear.Name = "labelSchoolYear";
-            this.labelSchoolYear.Size = new System.Drawing.Size(106, 21);
-            this.labelSchoolYear.TabIndex = 4;
-            this.labelSchoolYear.Text = "School Year:";
-            // 
-            // comboBoxSchoolYear
-            // 
-            this.comboBoxSchoolYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBoxSchoolYear.FormattingEnabled = true;
-            this.comboBoxSchoolYear.Location = new System.Drawing.Point(121, 68);
-            this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
-            this.comboBoxSchoolYear.Size = new System.Drawing.Size(235, 29);
-            this.comboBoxSchoolYear.TabIndex = 2;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // AddPositionForm
             // 
