@@ -41,7 +41,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// </summary>
         public void FillPositionTypeDropDownList()
         {
-            List<string> positionTypeList = this.positionTypeController.GetPositionTypes();
+            List<string> positionTypeList = this.positionTypeController.GetAllPositionTypes();
             this.comboBoxPosition.DataSource = positionTypeList;
             this.comboBoxPosition.SelectedIndex = -1;
             this.comboBoxPosition.SelectedText = "--select--";
@@ -52,7 +52,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// </summary>
         public void FillSchoolYearDropDownList()
         {
-            List<string> schoolYearList = this.schoolYearController.GetSchoolYears();
+            List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
             this.comboBoxPosition.DataSource = schoolYearList;
             this.comboBoxPosition.SelectedIndex = -1;
             this.comboBoxPosition.SelectedText = "--select--";
