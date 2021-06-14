@@ -171,5 +171,15 @@ namespace ChildcareManagementStudio.View
 
             return alertText;
         }
+
+        /// <summary>
+        /// Handler to re-enable the referring UC when form closes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditTeacherForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringControl.Enabled = true;
+        }
     }
 }
