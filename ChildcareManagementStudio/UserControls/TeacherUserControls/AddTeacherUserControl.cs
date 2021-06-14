@@ -10,16 +10,18 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class AddTeacherUserControl : UserControl
     {
-        private readonly EmployeeController employeeController;
+        private readonly MainTeacherUserControl mainTeacherUserControl;
+        private readonly EmployeeController employeeController;       
 
         /// <summary>
         /// Constructor for the user control
         /// </summary>
-        public AddTeacherUserControl()
+        public AddTeacherUserControl(MainTeacherUserControl mainTeacherUserControl)
         {
             InitializeComponent();
+            this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
-
+            
         }
 
         /// <summary>

@@ -15,6 +15,17 @@ namespace ChildcareManagementStudio.UserControls
         public MainTeacherUserControl()
         {
             InitializeComponent();
+            this.AddUserControls();
+        }
+
+        /// <summary>
+        /// Add the user controls to the proper tab pages
+        /// </summary>
+        private void AddUserControls()
+        {
+            this.tabViewAllTeachers.Controls.Add(new ViewTeacherListUserControl(this));
+            this.tabViewTeacherDetails.Controls.Add(new ViewTeacherDetailUserControl(this));
+            this.tabAddTeacher.Controls.Add(new AddTeacherUserControl(this));
         }
 
         /// <summary>
