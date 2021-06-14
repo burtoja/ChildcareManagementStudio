@@ -11,7 +11,7 @@ namespace ChildcareManagementStudio.UserControls
     public partial class MainTeacherUserControl : UserControl
     {
         private ViewTeacherListUserControl viewTeacherListUserControl;
-        private ViewTeacherDetailUserControl viewTeacherDetailUserControl;
+        public ViewTeacherDetailUserControl viewTeacherDetailUserControl { get; }
         private AddTeacherUserControl addTeacherUserControl;
 
         /// <summary>
