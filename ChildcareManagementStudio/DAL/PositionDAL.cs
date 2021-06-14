@@ -76,8 +76,8 @@ namespace ChildcareManagementStudio.DAL
             }
 
             string insertStatement =
-                "INSERT INTO Position (employeeId, type, schoolYear) " +
-                "VALUES ($employeeId, $type, $schoolYear)";
+                "INSERT INTO Position (employeeId, startDate, type, schoolYear) " +
+                "VALUES ($employeeId, $startDate, $type, $schoolYear)";
             
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
@@ -87,6 +87,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    insertCommand.Parameters.AddWithValue("$startDate", positionRecord.StartDate.ToString("yyyy-MM-dd"));
                     insertCommand.Parameters.AddWithValue("$type", positionRecord.Type);
                     insertCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
                     insertCommand.ExecuteNonQuery();
@@ -100,8 +101,7 @@ namespace ChildcareManagementStudio.DAL
             string deleteStatement =
                 "DELETE FROM Position " +
                 "WHERE employeeId = $employeeId " +
-                "AND type = $type " +
-                "AND schoolYear = $schoolYear";
+                "AND startDate = $startDate";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -110,8 +110,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
                 {
                     deleteCommand.Parameters.AddWithValue("$employeeId", employeeId);
-                    deleteCommand.Parameters.AddWithValue("$type", positionRecord.Type);
-                    deleteCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
+                    deleteCommand.Parameters.AddWithValue("$startDate", positionRecord.StartDate.ToString("yyyy-MM-dd"));
                     deleteCommand.ExecuteNonQuery();
                 }
             }
