@@ -1,4 +1,5 @@
 ﻿using ChildcareManagementStudio.Model;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -35,6 +36,21 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void TabControlTeacher_Selected(object sender, TabControlEventArgs e)
         {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    // View All Teachers tab
+
+                    break;
+                case 1:
+                    // View Teacher Details tab
+
+                    break;
+                case 2:
+                    // Add New Teacher tab
+
+                    break;
+            }
             //this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
             //this.teacherViewTeacherDetailUserControl1.FillDropDownList();
         }
