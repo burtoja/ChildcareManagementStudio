@@ -10,12 +10,19 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class MainTeacherUserControl : UserControl
     {
+        private ViewTeacherListUserControl viewTeacherListUserControl;
+        private ViewTeacherDetailUserControl viewTeacherDetailUserControl;
+        private AddTeacherUserControl addTeacherUserControl;
+
         /// <summary>
         /// Constructor for the control
         /// </summary>
         public MainTeacherUserControl()
         {
             InitializeComponent();
+            this.viewTeacherListUserControl = new ViewTeacherListUserControl(this);
+            this.viewTeacherDetailUserControl = new ViewTeacherDetailUserControl(this);
+            this.addTeacherUserControl = new AddTeacherUserControl(this);
             this.AddUserControls();
         }
 
@@ -24,9 +31,9 @@ namespace ChildcareManagementStudio.UserControls
         /// </summary>
         private void AddUserControls()
         {
-            this.tabViewAllTeachers.Controls.Add(new ViewTeacherListUserControl(this));
-            this.tabViewTeacherDetails.Controls.Add(new ViewTeacherDetailUserControl(this));
-            this.tabAddTeacher.Controls.Add(new AddTeacherUserControl(this));
+            this.tabViewAllTeachers.Controls.Add(this.viewTeacherListUserControl);
+            this.tabViewTeacherDetails.Controls.Add(this.viewTeacherDetailUserControl);
+            this.tabAddTeacher.Controls.Add(this.addTeacherUserControl);
         }
 
         /// <summary>
