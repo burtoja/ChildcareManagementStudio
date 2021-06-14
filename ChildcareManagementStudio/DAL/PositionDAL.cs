@@ -25,10 +25,10 @@ namespace ChildcareManagementStudio.DAL
             List<PositionRecord> positionRecords = new List<PositionRecord>();
 
             string selectStatement =
-                "SELECT type, schoolYear " +
+                "SELECT startDate, type, schoolYear " +
                 "FROM Position " +
                 "WHERE employeeId = $employeeId " +
-                "ORDER BY schoolYear";
+                "ORDER BY startDate";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -38,14 +38,17 @@ namespace ChildcareManagementStudio.DAL
                     selectCommand.Parameters.AddWithValue("$employeeId", employeeId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
+                        int startDateOrdinal = reader.GetOrdinal("startDate");
                         int typeOrdinal = reader.GetOrdinal("type");
                         int schoolYearOrdinal = reader.GetOrdinal("schoolYear");
                         while (reader.Read())
                         {
+                            DateTime startDate = reader.GetDateTime(startDateOrdinal);
                             string type = reader.GetString(typeOrdinal);
                             string schoolYear = reader.GetString(schoolYearOrdinal);
                             PositionRecord currentPositionRecord = new PositionRecord
                             {
+                                StartDate = startDate,
                                 Type = type,
                                 SchoolYear = schoolYear
                             };
@@ -76,8 +79,8 @@ namespace ChildcareManagementStudio.DAL
             }
 
             string insertStatement =
-                "INSERT INTO Position (employeeId, type, schoolYear) " +
-                "VALUES ($employeeId, $type, $schoolYear)";
+                "INSERT INTO Position (employeeId, startDate, type, schoolYear) " +
+                "VALUES ($employeeId, $startDate, $type, $schoolYear)";
             
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
@@ -87,6 +90,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    insertCommand.Parameters.AddWithValue("$startDate", positionRecord.StartDate.ToString("yyyy-MM-dd"));
                     insertCommand.Parameters.AddWithValue("$type", positionRecord.Type);
                     insertCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
                     insertCommand.ExecuteNonQuery();
@@ -100,8 +104,7 @@ namespace ChildcareManagementStudio.DAL
             string deleteStatement =
                 "DELETE FROM Position " +
                 "WHERE employeeId = $employeeId " +
-                "AND type = $type " +
-                "AND schoolYear = $schoolYear";
+                "AND startDate = $startDate";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -110,8 +113,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
                 {
                     deleteCommand.Parameters.AddWithValue("$employeeId", employeeId);
-                    deleteCommand.Parameters.AddWithValue("$type", positionRecord.Type);
-                    deleteCommand.Parameters.AddWithValue("$schoolYear", positionRecord.SchoolYear);
+                    deleteCommand.Parameters.AddWithValue("$startDate", positionRecord.StartDate.ToString("yyyy-MM-dd"));
                     deleteCommand.ExecuteNonQuery();
                 }
             }

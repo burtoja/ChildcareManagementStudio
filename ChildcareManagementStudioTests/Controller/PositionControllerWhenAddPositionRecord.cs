@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudioTests.Controller
@@ -27,6 +28,7 @@ namespace ChildcareManagementStudioTests.Controller
             int employeeId = -1;
             PositionRecord positionRecord = new PositionRecord
             {
+                StartDate = new DateTime(2021, 9, 1),
                 Type = "Lead teacher",
                 SchoolYear = "2021-2022"
             };
@@ -47,6 +49,7 @@ namespace ChildcareManagementStudioTests.Controller
             int employeeId = 1;
             PositionRecord positionRecord = new PositionRecord
             {
+                StartDate = new DateTime(2021, 9, 1),
                 Type = "Lead teacher",
                 SchoolYear = "2022-2023"
             };

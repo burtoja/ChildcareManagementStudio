@@ -1,4 +1,6 @@
-﻿namespace ChildcareManagementStudio.Model
+﻿using System;
+
+namespace ChildcareManagementStudio.Model
 {
     /// <summary>
     /// Class for storing position records for an employee.
@@ -14,5 +16,10 @@
         /// Property for the school year when the employee held the specified position.
         /// </summary>
         public string SchoolYear { get; set; }
+
+        /// <summary>
+        /// Property for the date when the employee started the specified position.
+        /// </summary>
+        public DateTime StartDate { get; set; }
     }
 }
