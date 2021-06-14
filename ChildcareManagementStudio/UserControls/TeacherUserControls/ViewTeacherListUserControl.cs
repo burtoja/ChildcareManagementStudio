@@ -64,12 +64,19 @@ namespace ChildcareManagementStudio.UserControls
         private void ButtonViewTeacherDetails_Click(object sender, System.EventArgs e)
         {
             if (this.listViewAllTeachers.SelectedItems.Count == 0)
-                return;
-            ListViewItem item = listViewAllTeachers.SelectedItems[0];
-            if(Int32.TryParse(item.SubItems[4].Text, out int selectedEmployeeId))
             {
-                this.mainTeacherUserControl.tabControlTeacher.SelectedIndex = 1;
-                this.mainTeacherUserControl.viewTeacherDetailUserControl.FillDropDownList(selectedEmployeeId);
+                string title = "No Teacher Chosen";
+                string message = "Please choose a teacher and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                ListViewItem item = listViewAllTeachers.SelectedItems[0];
+                if (Int32.TryParse(item.SubItems[4].Text, out int selectedEmployeeId))
+                {
+                    this.mainTeacherUserControl.tabControlTeacher.SelectedIndex = 1;
+                    this.mainTeacherUserControl.viewTeacherDetailUserControl.FillDropDownList(selectedEmployeeId);
+                }
             }
         }
 
