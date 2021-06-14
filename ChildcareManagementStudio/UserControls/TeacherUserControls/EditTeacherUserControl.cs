@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
-    public partial class TeacherEditTeacherUserControl : UserControl
+    public partial class EditTeacherUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
         //private readonly UserControl referringUserControl;
 
-        public TeacherEditTeacherUserControl(Employee theEmployee)
+        public EditTeacherUserControl(Employee theEmployee)
         {
             InitializeComponent();
             this.employeeController = new EmployeeController();

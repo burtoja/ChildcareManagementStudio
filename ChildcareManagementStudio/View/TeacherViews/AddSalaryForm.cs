@@ -18,9 +18,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
     {
         private readonly int employeeId;
         private readonly SalaryController salaryController;
-        private readonly TeacherViewTeacherDetailUserControl referringUserControl;
+        private readonly ViewTeacherDetailUserControl referringUserControl;
 
-        public AddSalaryForm(int employeeId, TeacherViewTeacherDetailUserControl referringUserControl)
+        public AddSalaryForm(int employeeId, ViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
             this.employeeId = employeeId;

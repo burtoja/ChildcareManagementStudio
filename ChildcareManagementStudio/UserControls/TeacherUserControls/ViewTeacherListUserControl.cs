@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -9,8 +10,9 @@ namespace ChildcareManagementStudio.UserControls
     /// This class will serve to build and manage the user control which displays all teachers (employees)
     /// and allows for selecting a teacher (row) to view details
     /// </summary>
-    public partial class TeacherViewTeachersUserControl : UserControl
+    public partial class ViewTeacherListUserControl : UserControl
     {
+        private readonly MainTeacherUserControl mainTeacherUserControl;
         private readonly EmployeeController employeeController;
 
         /// <summary>
@@ -19,11 +21,12 @@ namespace ChildcareManagementStudio.UserControls
         /// for this user control.  The DB is not active until app runs which seems to freak out
         /// VisualStudio.
         /// </summary>
-        public TeacherViewTeachersUserControl()
+        public ViewTeacherListUserControl(MainTeacherUserControl mainTeacherUserControl)
         {
             InitializeComponent();
+            this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
-            //this.PopulateListView();
+            this.PopulateListView();           
         }
 
         /// <summary>
@@ -39,6 +42,7 @@ namespace ChildcareManagementStudio.UserControls
                 item.SubItems.Add(current.FirstName.ToString());
                 item.SubItems.Add(current.DateOfBirth.ToString("d"));
                 item.SubItems.Add(current.PhoneNumber.ToString());
+                item.SubItems.Add(current.EmployeeId.ToString());
                 this.listViewAllTeachers.Items.Add(item);
             }
         }
@@ -59,7 +63,21 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonViewTeacherDetails_Click(object sender, System.EventArgs e)
         {
-            //TODO: Implement view detail
+            if (this.listViewAllTeachers.SelectedItems.Count == 0)
+            {
+                string title = "No Teacher Chosen";
+                string message = "Please choose a teacher and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                ListViewItem item = listViewAllTeachers.SelectedItems[0];
+                if (Int32.TryParse(item.SubItems[4].Text, out int selectedEmployeeId))
+                {
+                    this.mainTeacherUserControl.tabControlTeacher.SelectedIndex = 1;
+                    this.mainTeacherUserControl.ViewTeacherDetailUserControl.FillDropDownList(selectedEmployeeId);
+                }
+            }
         }
 
     }

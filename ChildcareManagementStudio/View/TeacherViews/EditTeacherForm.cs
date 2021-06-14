@@ -11,7 +11,7 @@ namespace ChildcareManagementStudio.View
     /// </summary>
     public partial class EditTeacherForm : Form
     {
-        private readonly TeacherViewTeacherDetailUserControl referringControl;
+        private readonly ViewTeacherDetailUserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
 
@@ -20,7 +20,7 @@ namespace ChildcareManagementStudio.View
         /// </summary>
         /// <param name="theEmployee">the employee to be edited</param>
         /// <param name="referingControl">the referring User Control</param>
-        public EditTeacherForm(Employee theEmployee, TeacherViewTeacherDetailUserControl referingControl)
+        public EditTeacherForm(Employee theEmployee, ViewTeacherDetailUserControl referingControl)
         {
             InitializeComponent();
             this.referringControl = referingControl;

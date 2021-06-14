@@ -14,14 +14,14 @@ namespace ChildcareManagementStudio.View.TeacherViews
     {
         private readonly int employeeId;
         private readonly CertificationController certificationController;
-        private readonly TeacherViewTeacherDetailUserControl referringUserControl;
+        private readonly ViewTeacherDetailUserControl referringUserControl;
 
         /// <summary>
         /// Constructor for the form
         /// </summary>
         /// <param name="employeeId">the employeeId of the employee receiving the record</param>
         /// <param name="referringUserControl">the user control that called this form</param>
-        public AddCertificationForm(int employeeId, TeacherViewTeacherDetailUserControl referringUserControl)
+        public AddCertificationForm(int employeeId, ViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
             this.employeeId = employeeId;

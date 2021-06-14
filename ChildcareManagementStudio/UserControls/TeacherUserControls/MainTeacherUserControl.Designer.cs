@@ -1,7 +1,7 @@
 ﻿
 namespace ChildcareManagementStudio.UserControls
 {
-    partial class TeacherMainUserControl
+    partial class MainTeacherUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,15 +31,9 @@ namespace ChildcareManagementStudio.UserControls
         {
             this.tabControlTeacher = new System.Windows.Forms.TabControl();
             this.tabViewAllTeachers = new System.Windows.Forms.TabPage();
-            this.teacherViewTeachersUserControl2 = new ChildcareManagementStudio.UserControls.TeacherViewTeachersUserControl();
             this.tabViewTeacherDetails = new System.Windows.Forms.TabPage();
-            this.teacherViewTeacherDetailUserControl1 = new ChildcareManagementStudio.UserControls.TeacherViewTeacherDetailUserControl();
             this.tabAddTeacher = new System.Windows.Forms.TabPage();
-            this.teacherAddTeacherUserControl1 = new ChildcareManagementStudio.UserControls.TeacherAddTeacherUserControl();
             this.tabControlTeacher.SuspendLayout();
-            this.tabViewAllTeachers.SuspendLayout();
-            this.tabViewTeacherDetails.SuspendLayout();
-            this.tabAddTeacher.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlTeacher
@@ -59,7 +53,6 @@ namespace ChildcareManagementStudio.UserControls
             // 
             // tabViewAllTeachers
             // 
-            this.tabViewAllTeachers.Controls.Add(this.teacherViewTeachersUserControl2);
             this.tabViewAllTeachers.Location = new System.Drawing.Point(4, 34);
             this.tabViewAllTeachers.Name = "tabViewAllTeachers";
             this.tabViewAllTeachers.Padding = new System.Windows.Forms.Padding(3);
@@ -68,17 +61,8 @@ namespace ChildcareManagementStudio.UserControls
             this.tabViewAllTeachers.Text = "View All Teachers";
             this.tabViewAllTeachers.UseVisualStyleBackColor = true;
             // 
-            // teacherViewTeachersUserControl2
-            // 
-            this.teacherViewTeachersUserControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.teacherViewTeachersUserControl2.Location = new System.Drawing.Point(1, 4);
-            this.teacherViewTeachersUserControl2.Name = "teacherViewTeachersUserControl2";
-            this.teacherViewTeachersUserControl2.Size = new System.Drawing.Size(745, 470);
-            this.teacherViewTeachersUserControl2.TabIndex = 0;
-            // 
             // tabViewTeacherDetails
             // 
-            this.tabViewTeacherDetails.Controls.Add(this.teacherViewTeacherDetailUserControl1);
             this.tabViewTeacherDetails.Location = new System.Drawing.Point(4, 34);
             this.tabViewTeacherDetails.Name = "tabViewTeacherDetails";
             this.tabViewTeacherDetails.Padding = new System.Windows.Forms.Padding(3);
@@ -87,18 +71,8 @@ namespace ChildcareManagementStudio.UserControls
             this.tabViewTeacherDetails.Text = "View Teacher Details";
             this.tabViewTeacherDetails.UseVisualStyleBackColor = true;
             // 
-            // teacherViewTeacherDetailUserControl1
-            // 
-            this.teacherViewTeacherDetailUserControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teacherViewTeacherDetailUserControl1.Location = new System.Drawing.Point(2, 2);
-            this.teacherViewTeacherDetailUserControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.teacherViewTeacherDetailUserControl1.Name = "teacherViewTeacherDetailUserControl1";
-            this.teacherViewTeacherDetailUserControl1.Size = new System.Drawing.Size(745, 470);
-            this.teacherViewTeacherDetailUserControl1.TabIndex = 0;
-            // 
             // tabAddTeacher
             // 
-            this.tabAddTeacher.Controls.Add(this.teacherAddTeacherUserControl1);
             this.tabAddTeacher.Location = new System.Drawing.Point(4, 34);
             this.tabAddTeacher.Name = "tabAddTeacher";
             this.tabAddTeacher.Padding = new System.Windows.Forms.Padding(3);
@@ -106,13 +80,6 @@ namespace ChildcareManagementStudio.UserControls
             this.tabAddTeacher.TabIndex = 2;
             this.tabAddTeacher.Text = "Add New Teacher";
             this.tabAddTeacher.UseVisualStyleBackColor = true;
-            // 
-            // teacherAddTeacherUserControl1
-            // 
-            this.teacherAddTeacherUserControl1.Location = new System.Drawing.Point(3, 3);
-            this.teacherAddTeacherUserControl1.Name = "teacherAddTeacherUserControl1";
-            this.teacherAddTeacherUserControl1.Size = new System.Drawing.Size(745, 470);
-            this.teacherAddTeacherUserControl1.TabIndex = 0;
             // 
             // TeacherMainUserControl
             // 
@@ -122,9 +89,6 @@ namespace ChildcareManagementStudio.UserControls
             this.Name = "TeacherMainUserControl";
             this.Size = new System.Drawing.Size(760, 515);
             this.tabControlTeacher.ResumeLayout(false);
-            this.tabViewAllTeachers.ResumeLayout(false);
-            this.tabViewTeacherDetails.ResumeLayout(false);
-            this.tabAddTeacher.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -132,10 +96,7 @@ namespace ChildcareManagementStudio.UserControls
         #endregion
         private System.Windows.Forms.TabPage tabViewAllTeachers;
         private System.Windows.Forms.TabPage tabAddTeacher;
-        private TeacherAddTeacherUserControl teacherAddTeacherUserControl1;
         private System.Windows.Forms.TabPage tabViewTeacherDetails;
-        private TeacherViewTeacherDetailUserControl teacherViewTeacherDetailUserControl1;
         public System.Windows.Forms.TabControl tabControlTeacher;
-        private TeacherViewTeachersUserControl teacherViewTeachersUserControl2;
     }
 }
