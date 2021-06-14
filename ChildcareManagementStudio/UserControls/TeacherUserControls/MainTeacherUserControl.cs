@@ -47,19 +47,17 @@ namespace ChildcareManagementStudio.UserControls
             {
                 case 0:
                     // View All Teachers tab
-
+                    this.viewTeacherListUserControl.ResetEmployeeListResults();
                     break;
                 case 1:
                     // View Teacher Details tab
-
+                    this.viewTeacherDetailUserControl.FillDropDownList();
                     break;
                 case 2:
                     // Add New Teacher tab
 
                     break;
             }
-            //this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
-            //this.teacherViewTeacherDetailUserControl1.FillDropDownList();
         }
 
     }
