@@ -10,9 +10,9 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class MainTeacherUserControl : UserControl
     {
-        private ViewTeacherListUserControl viewTeacherListUserControl;
-        public ViewTeacherDetailUserControl viewTeacherDetailUserControl { get; }
-        private AddTeacherUserControl addTeacherUserControl;
+        private readonly ViewTeacherListUserControl viewTeacherListUserControl;
+        public ViewTeacherDetailUserControl ViewTeacherDetailUserControl { get; }
+        private readonly AddTeacherUserControl addTeacherUserControl;
 
         /// <summary>
         /// Constructor for the control
@@ -21,7 +21,7 @@ namespace ChildcareManagementStudio.UserControls
         {
             InitializeComponent();
             this.viewTeacherListUserControl = new ViewTeacherListUserControl(this);
-            this.viewTeacherDetailUserControl = new ViewTeacherDetailUserControl(this);
+            this.ViewTeacherDetailUserControl = new ViewTeacherDetailUserControl(this);
             this.addTeacherUserControl = new AddTeacherUserControl(this);
             this.AddUserControls();
         }
@@ -32,7 +32,7 @@ namespace ChildcareManagementStudio.UserControls
         private void AddUserControls()
         {
             this.tabViewAllTeachers.Controls.Add(this.viewTeacherListUserControl);
-            this.tabViewTeacherDetails.Controls.Add(this.viewTeacherDetailUserControl);
+            this.tabViewTeacherDetails.Controls.Add(this.ViewTeacherDetailUserControl);
             this.tabAddTeacher.Controls.Add(this.addTeacherUserControl);
         }
 
@@ -51,7 +51,7 @@ namespace ChildcareManagementStudio.UserControls
                     break;
                 case 1:
                     // View Teacher Details tab
-                    this.viewTeacherDetailUserControl.FillDropDownList();
+                    this.ViewTeacherDetailUserControl.FillDropDownList();
                     break;
                 case 2:
                     // Add New Teacher tab
