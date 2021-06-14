@@ -19,7 +19,7 @@ namespace ChildcareManagementStudio.UserControls
         /// for this user control.  The DB is not active until app runs which seems to freak out
         /// VisualStudio.
         /// </summary>
-        public ViewTeachersUserControl()
+        public ViewTeachersUserControl(MainTeacherUserControl mainTeacherUserControl)
         {
             InitializeComponent();
             this.employeeController = new EmployeeController();

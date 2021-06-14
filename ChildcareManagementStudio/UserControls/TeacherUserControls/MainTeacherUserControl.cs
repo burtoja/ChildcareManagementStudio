@@ -7,12 +7,12 @@ namespace ChildcareManagementStudio.UserControls
     /// <summary>
     /// This class will build and manage the main tab user control on the Teacher portion of the app
     /// </summary>
-    public partial class TeacherMainUserControl : UserControl
+    public partial class MainTeacherUserControl : UserControl
     {
         /// <summary>
         /// Constructor for the control
         /// </summary>
-        public TeacherMainUserControl()
+        public MainTeacherUserControl()
         {
             InitializeComponent();
         }

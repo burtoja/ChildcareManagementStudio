@@ -1,7 +1,7 @@
 ﻿
 namespace ChildcareManagementStudio.UserControls
 {
-    partial class TeacherMainUserControl
+    partial class MainTeacherUserControl
     {
         /// <summary> 
         /// Required designer variable.
