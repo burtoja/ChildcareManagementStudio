@@ -40,7 +40,7 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab = new System.Windows.Forms.Button();
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
-            this.teacherMainUserControl1 = new ChildcareManagementStudio.UserControls.TeacherMainUserControl();
+            this.teacherMainUserControl1 = new ChildcareManagementStudio.UserControls.MainTeacherUserControl();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
@@ -218,6 +218,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Button buttonTeacherTab;
         private System.Windows.Forms.Panel panelTabIndicator;
         private System.Windows.Forms.Button buttonLogout;
-        private UserControls.TeacherMainUserControl teacherMainUserControl1;
+        private UserControls.MainTeacherUserControl teacherMainUserControl1;
     }
 }
