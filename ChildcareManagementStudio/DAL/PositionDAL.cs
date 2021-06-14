@@ -25,10 +25,10 @@ namespace ChildcareManagementStudio.DAL
             List<PositionRecord> positionRecords = new List<PositionRecord>();
 
             string selectStatement =
-                "SELECT type, schoolYear " +
+                "SELECT startDate, type, schoolYear " +
                 "FROM Position " +
                 "WHERE employeeId = $employeeId " +
-                "ORDER BY schoolYear";
+                "ORDER BY startDate";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -38,14 +38,17 @@ namespace ChildcareManagementStudio.DAL
                     selectCommand.Parameters.AddWithValue("$employeeId", employeeId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
+                        int startDateOrdinal = reader.GetOrdinal("startDate");
                         int typeOrdinal = reader.GetOrdinal("type");
                         int schoolYearOrdinal = reader.GetOrdinal("schoolYear");
                         while (reader.Read())
                         {
+                            DateTime startDate = reader.GetDateTime(startDateOrdinal);
                             string type = reader.GetString(typeOrdinal);
                             string schoolYear = reader.GetString(schoolYearOrdinal);
                             PositionRecord currentPositionRecord = new PositionRecord
                             {
+                                StartDate = startDate,
                                 Type = type,
                                 SchoolYear = schoolYear
                             };
