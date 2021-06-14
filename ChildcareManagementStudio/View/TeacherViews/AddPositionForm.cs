@@ -114,7 +114,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             {
                 Type = this.comboBoxPosition.SelectedValue.ToString(),
                 SchoolYear = this.comboBoxSchoolYear.SelectedValue.ToString(),
-                //StartDate = this.dateTimePickerStartDate.Value
+                StartDate = this.dateTimePickerStartDate.Value
             };
             try
             {
