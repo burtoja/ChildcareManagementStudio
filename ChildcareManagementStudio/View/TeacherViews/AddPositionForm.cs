@@ -17,7 +17,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private readonly PositionController positionController;
         private readonly PositionTypeController positionTypeController;
         //private readonly SchoolYearController schoolYearController;
-        private readonly TeacherViewTeacherDetailUserControl referringUserControl;
+        private readonly ViewTeacherDetailUserControl referringUserControl;
         //private readonly List<string> positionTypeList;
         //private readonly List<string> schoolYearList;
 
@@ -25,7 +25,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// Constructor for the form
         /// </summary>
         /// <param name="employeeId"></param>
-        public AddPositionForm(int employeeId, TeacherViewTeacherDetailUserControl referringUserControl)
+        public AddPositionForm(int employeeId, ViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
             this.employeeId = employeeId;

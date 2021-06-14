@@ -24,8 +24,8 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void TabControlTeacher_Selected(object sender, TabControlEventArgs e)
         {
-            this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
-            this.teacherViewTeacherDetailUserControl1.FillDropDownList();
+            //this.teacherViewTeachersUserControl2.ResetEmployeeListResults();
+            //this.teacherViewTeacherDetailUserControl1.FillDropDownList();
         }
 
     }

@@ -12,7 +12,7 @@ namespace ChildcareManagementStudio.UserControls
     /// <summary>
     /// User control to display teacher details based on pull-down menu selection of teacher
     /// </summary>
-    public partial class TeacherViewTeacherDetailUserControl : UserControl
+    public partial class ViewTeacherDetailUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
         private readonly PositionController positionController;
@@ -23,7 +23,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <summary>
         /// Constructor for the user control
         /// </summary>
-        public TeacherViewTeacherDetailUserControl()
+        public ViewTeacherDetailUserControl()
         {
             this.employeeController = new EmployeeController();
             this.positionController = new PositionController();
