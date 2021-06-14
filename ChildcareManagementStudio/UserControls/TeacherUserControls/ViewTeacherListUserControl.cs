@@ -9,7 +9,7 @@ namespace ChildcareManagementStudio.UserControls
     /// This class will serve to build and manage the user control which displays all teachers (employees)
     /// and allows for selecting a teacher (row) to view details
     /// </summary>
-    public partial class ViewTeachersUserControl : UserControl
+    public partial class ViewTeacherListUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
 
@@ -19,7 +19,7 @@ namespace ChildcareManagementStudio.UserControls
         /// for this user control.  The DB is not active until app runs which seems to freak out
         /// VisualStudio.
         /// </summary>
-        public ViewTeachersUserControl(MainTeacherUserControl mainTeacherUserControl)
+        public ViewTeacherListUserControl(MainTeacherUserControl mainTeacherUserControl)
         {
             InitializeComponent();
             this.employeeController = new EmployeeController();
