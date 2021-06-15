@@ -96,7 +96,7 @@ namespace ChildcareManagementStudio.View
             this.UpdateTabAppearance(this.buttonStudentsTab);
             this.teacherMainUserControl1.Hide();
             this.placeholderUserControl.Show();
-            this.placeholderUserControl.setDescription(
+            this.placeholderUserControl.SetDescription(
                 "This tab will provide the ability to manage the student \n" +
                 "and parent information at the childcare facility. The ability \n" +
                 "will be provided to view, add, and edit student information."
@@ -114,7 +114,7 @@ namespace ChildcareManagementStudio.View
             this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.teacherMainUserControl1.Hide();
             this.placeholderUserControl.Show();
-            this.placeholderUserControl.setDescription(
+            this.placeholderUserControl.SetDescription(
                 "This tab will provide the ability to manage the classrooms \n" +
                 "at the facility. The ability will be provided for creating new \n" +
                 "classes, assining students and teachers to those classes, \n" +
@@ -134,7 +134,7 @@ namespace ChildcareManagementStudio.View
             this.UpdateTabAppearance(this.buttonFinancialTab);
             this.teacherMainUserControl1.Hide();
             this.placeholderUserControl.Show();
-            this.placeholderUserControl.setDescription(
+            this.placeholderUserControl.SetDescription(
                 "This tab will provide the ability to manage the financial \n" +
                 "aspects of the facility. The ability will be provided to view \n" +
                 "payments, record payments, view balances."
