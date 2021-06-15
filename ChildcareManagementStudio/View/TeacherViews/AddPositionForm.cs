@@ -18,8 +18,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private readonly PositionTypeController positionTypeController;
         private readonly SchoolYearController schoolYearController;
         private readonly ViewTeacherDetailUserControl referringUserControl;
-        //private readonly List<string> positionTypeList;
-        //private readonly List<string> schoolYearList;
 
         /// <summary>
         /// Constructor for the form
@@ -35,6 +33,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.schoolYearController = new SchoolYearController();
             this.FillPositionTypeDropDownList();
             this.FillSchoolYearDropDownList();
+            this.referringUserControl.Enabled = false;
         }
 
         /// <summary>

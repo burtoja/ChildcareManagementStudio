@@ -68,7 +68,7 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonAddNewCredential = new System.Windows.Forms.Button();
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSchoolYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -246,7 +246,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -526,7 +526,7 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.listViewPositionHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderPosition,
-            this.columnHeaderStartDate});
+            this.columnHeaderSchoolYear});
             this.tableLayoutPanel2.SetColumnSpan(this.listViewPositionHistory, 2);
             this.listViewPositionHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPositionHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -543,19 +543,19 @@ namespace ChildcareManagementStudio.UserControls
             this.columnHeaderPosition.Text = "Position";
             this.columnHeaderPosition.Width = 112;
             // 
-            // columnHeaderStartDate
+            // columnHeaderSchoolYear
             // 
-            this.columnHeaderStartDate.Text = "Start Date";
-            this.columnHeaderStartDate.Width = 120;
+            this.columnHeaderSchoolYear.Text = "School Year";
+            this.columnHeaderSchoolYear.Width = 120;
             // 
-            // TeacherViewTeacherDetailUserControl
+            // ViewTeacherDetailUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "TeacherViewTeacherDetailUserControl";
+            this.Name = "ViewTeacherDetailUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.EnabledChanged += new System.EventHandler(this.TeacherViewTeacherDetailUserControl_EnabledChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -602,7 +602,7 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.Label labelValueZipCode;
         private System.Windows.Forms.Label labelValueStartDate;
         private System.Windows.Forms.ColumnHeader columnHeaderPosition;
-        private System.Windows.Forms.ColumnHeader columnHeaderStartDate;
+        private System.Windows.Forms.ColumnHeader columnHeaderSchoolYear;
         private System.Windows.Forms.ColumnHeader columnHeaderCredential;
         private System.Windows.Forms.ColumnHeader columnHeaderExpiration;
         private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
