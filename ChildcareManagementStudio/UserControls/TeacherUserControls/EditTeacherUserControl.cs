@@ -1,35 +1,33 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls
 {
-    /// <summary>
-    /// This class builds and manages the add new teacher user control
-    /// </summary>
-    public partial class TeacherAddTeacherUserControl : UserControl
+    public partial class EditTeacherUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
+        private readonly Employee originalEmployee;
+        //private readonly UserControl referringUserControl;
 
-        /// <summary>
-        /// Constructor for the user control
-        /// </summary>
-        public TeacherAddTeacherUserControl()
+        public EditTeacherUserControl(Employee theEmployee)
         {
             InitializeComponent();
             this.employeeController = new EmployeeController();
-
+            this.originalEmployee = theEmployee;
+            //this.referringUserControl = referringUserControl;
         }
 
-        /// <summary>
-        /// Actions to perform when the submit button is clicked.  It should run a validation of form data 
-        /// and then attempt to create the new employee in the DB
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
-        {               
+        {
             this.labelErrorMessage.Text = this.CheckInputFields();
 
             if (this.labelErrorMessage.Text == "")
@@ -48,7 +46,7 @@ namespace ChildcareManagementStudio.UserControls
                 DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
-                    Employee newEmployee = new Employee
+                    Employee revisedEmployee = new Employee
                     {
                         LastName = lastName,
                         FirstName = firstName,
@@ -63,10 +61,11 @@ namespace ChildcareManagementStudio.UserControls
                         ZipCode = zip,
                         StartDate = startDate
                     };
-                    this.employeeController.AddEmployee(newEmployee);                   
+                    this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
                     String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
                     var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
                     this.ClearForm();
+                    //TODO: Need to close this UserControl and go back to the reffering UserControl
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +73,6 @@ namespace ChildcareManagementStudio.UserControls
                 }
             }
         }
-
 
         /// <summary>
         /// Handler for button clicks of the Clear button.  Should reset the form to empty/default values
@@ -153,6 +151,4 @@ namespace ChildcareManagementStudio.UserControls
             return alertText;
         }
     }
-
-    
 }

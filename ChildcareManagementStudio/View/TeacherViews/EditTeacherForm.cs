@@ -1,31 +1,40 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ChildcareManagementStudio.UserControls
+namespace ChildcareManagementStudio.View
 {
-    public partial class TeacherEditTeacherUserControl : UserControl
+    /// <summary>
+    /// Form used to edit teacher information. 
+    /// </summary>
+    public partial class EditTeacherForm : Form
     {
+        private readonly ViewTeacherDetailUserControl referringControl;
         private readonly EmployeeController employeeController;
         private readonly Employee originalEmployee;
-        //private readonly UserControl referringUserControl;
 
-        public TeacherEditTeacherUserControl(Employee theEmployee)
+        /// <summary>
+        /// Constructor for the form.  Disables the referring control and pre-fills form fields.
+        /// </summary>
+        /// <param name="theEmployee">the employee to be edited</param>
+        /// <param name="referingControl">the referring User Control</param>
+        public EditTeacherForm(Employee theEmployee, ViewTeacherDetailUserControl referingControl)
         {
             InitializeComponent();
+            this.referringControl = referingControl;
             this.employeeController = new EmployeeController();
             this.originalEmployee = theEmployee;
-            //this.referringUserControl = referringUserControl;
+            this.referringControl.Enabled = false;
+            this.FillFormWithOriginalEmployeeInfo();
         }
-
+    
+        /// <summary>
+        /// Actions to perform whne submit button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             this.labelErrorMessage.Text = this.CheckInputFields();
@@ -48,6 +57,8 @@ namespace ChildcareManagementStudio.UserControls
                 {
                     Employee revisedEmployee = new Employee
                     {
+                        PersonId = this.originalEmployee.PersonId,
+                        EmployeeId = this.originalEmployee.EmployeeId,
                         LastName = lastName,
                         FirstName = firstName,
                         DateOfBirth = dob,
@@ -59,13 +70,22 @@ namespace ChildcareManagementStudio.UserControls
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        StartDate = startDate
+                        StartDate = startDate,
+                        SalaryRecords = this.originalEmployee.SalaryRecords,
+                        CertificationRecords = this.originalEmployee.CertificationRecords,
+                        PositionRecords = this.originalEmployee.PositionRecords
                     };
                     this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
-                    String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
-                    var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
-                    this.ClearForm();
-                    //TODO: Need to close this UserControl and go back to the reffering UserControl
+                    string title = "Teacher Updated";
+                    string message = "The teacher information has been updated. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                    if (dialogeResult == DialogResult.OK)
+                    {
+                        this.referringControl.Enabled = true;
+                        this.referringControl.FillDropDownList(revisedEmployee.EmployeeId);
+                        this.Close();
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -75,32 +95,33 @@ namespace ChildcareManagementStudio.UserControls
         }
 
         /// <summary>
-        /// Handler for button clicks of the Clear button.  Should reset the form to empty/default values
+        /// Handler for button clicks of the Reset button.  Should reset the form to default values
+        /// from the original employee
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClear_Click(object sender, EventArgs e)
+        private void ButtonReset_Click(object sender, EventArgs e)
         {
-            this.ClearForm();
+            this.FillFormWithOriginalEmployeeInfo();
         }
 
-        /// <summary>
-        /// Clears all form fields and resets date pickers back to today.
+         /// <summary>
+        /// Fills form fields with original emplyee data
         /// </summary>
-        private void ClearForm()
+        private void FillFormWithOriginalEmployeeInfo()
         {
-            this.textBoxFirstName.Text = "";
-            this.textBoxLastName.Text = "";
-            this.dateTimePickerDOB.Value = DateTime.Now;
-            this.textBoxSSN.Text = "";
-            this.textBoxPhoneNumber.Text = "";
-            this.comboBoxGender.SelectedIndex = -1;
-            this.textBoxAddress1.Text = "";
-            this.textBoxAddress2.Text = "";
-            this.textBoxCity.Text = "";
-            this.comboBoxState.SelectedIndex = -1;
-            this.textBoxZipCode.Text = "";
-            this.dateTimePickerStartDate.Value = DateTime.Now;
+            this.textBoxFirstName.Text = this.originalEmployee.FirstName;
+            this.textBoxLastName.Text = this.originalEmployee.LastName;
+            this.dateTimePickerDOB.Value = this.originalEmployee.DateOfBirth;
+            this.textBoxSSN.Text = this.originalEmployee.SocialSecurityNumber;
+            this.textBoxPhoneNumber.Text = this.originalEmployee.PhoneNumber;
+            this.comboBoxGender.Text = this.originalEmployee.Gender;
+            this.textBoxAddress1.Text = this.originalEmployee.AddressLine1;
+            this.textBoxAddress2.Text = this.originalEmployee.AddressLine2;
+            this.textBoxCity.Text = this.originalEmployee.City;
+            this.comboBoxState.Text = this.originalEmployee.State;
+            this.textBoxZipCode.Text = this.originalEmployee.ZipCode;
+            this.dateTimePickerStartDate.Value = this.originalEmployee.StartDate; 
         }
 
         /// <summary>
@@ -149,6 +170,16 @@ namespace ChildcareManagementStudio.UserControls
             }
 
             return alertText;
+        }
+
+        /// <summary>
+        /// Handler to re-enable the referring UC when form closes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditTeacherForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringControl.Enabled = true;
         }
     }
 }

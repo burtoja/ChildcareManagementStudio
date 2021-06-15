@@ -1,42 +1,37 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
-using ChildcareManagementStudio.UserControls;
 using System;
 using System.Windows.Forms;
 
-namespace ChildcareManagementStudio.View
+namespace ChildcareManagementStudio.UserControls
 {
     /// <summary>
-    /// Form used to edit teacher information. 
+    /// This class builds and manages the add new teacher user control
     /// </summary>
-    public partial class EditTeacherForm : Form
+    public partial class AddTeacherUserControl : UserControl
     {
-        private readonly TeacherViewTeacherDetailUserControl referringControl;
-        private readonly EmployeeController employeeController;
-        private readonly Employee originalEmployee;
+        private readonly MainTeacherUserControl mainTeacherUserControl;
+        private readonly EmployeeController employeeController;       
 
         /// <summary>
-        /// Constructor for the form.  Disables the referring control and pre-fills form fields.
+        /// Constructor for the user control
         /// </summary>
-        /// <param name="theEmployee">the employee to be edited</param>
-        /// <param name="referingControl">the referring User Control</param>
-        public EditTeacherForm(Employee theEmployee, TeacherViewTeacherDetailUserControl referingControl)
+        public AddTeacherUserControl(MainTeacherUserControl mainTeacherUserControl)
         {
             InitializeComponent();
-            this.referringControl = referingControl;
+            this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
-            this.originalEmployee = theEmployee;
-            this.referringControl.Enabled = false;
-            this.FillFormWithOriginalEmployeeInfo();
+            
         }
-    
+
         /// <summary>
-        /// Actions to perform whne submit button is clicked
+        /// Actions to perform when the submit button is clicked.  It should run a validation of form data 
+        /// and then attempt to create the new employee in the DB
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
-        {
+        {               
             this.labelErrorMessage.Text = this.CheckInputFields();
 
             if (this.labelErrorMessage.Text == "")
@@ -55,10 +50,8 @@ namespace ChildcareManagementStudio.View
                 DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
-                    Employee revisedEmployee = new Employee
+                    Employee newEmployee = new Employee
                     {
-                        PersonId = this.originalEmployee.PersonId,
-                        EmployeeId = this.originalEmployee.EmployeeId,
                         LastName = lastName,
                         FirstName = firstName,
                         DateOfBirth = dob,
@@ -70,22 +63,12 @@ namespace ChildcareManagementStudio.View
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        StartDate = startDate,
-                        SalaryRecords = this.originalEmployee.SalaryRecords,
-                        CertificationRecords = this.originalEmployee.CertificationRecords,
-                        PositionRecords = this.originalEmployee.PositionRecords
+                        StartDate = startDate
                     };
-                    this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
-                    string title = "Teacher Updated";
-                    string message = "The teacher information has been updated. Click 'Okay' to continue.";
-                    DialogResult dialogeResult = MessageBox.Show(message, title);
-                    if (dialogeResult == DialogResult.OK)
-                    {
-                        this.referringControl.Enabled = true;
-                        this.referringControl.FillDropDownList(revisedEmployee.EmployeeId);
-                        this.Close();
-                    }
-
+                    this.employeeController.AddEmployee(newEmployee);                   
+                    String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
+                    var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
+                    this.ClearForm();
                 }
                 catch (Exception ex)
                 {
@@ -94,34 +77,34 @@ namespace ChildcareManagementStudio.View
             }
         }
 
+
         /// <summary>
-        /// Handler for button clicks of the Reset button.  Should reset the form to default values
-        /// from the original employee
+        /// Handler for button clicks of the Clear button.  Should reset the form to empty/default values
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonReset_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
-            this.FillFormWithOriginalEmployeeInfo();
+            this.ClearForm();
         }
 
-         /// <summary>
-        /// Fills form fields with original emplyee data
+        /// <summary>
+        /// Clears all form fields and resets date pickers back to today.
         /// </summary>
-        private void FillFormWithOriginalEmployeeInfo()
+        private void ClearForm()
         {
-            this.textBoxFirstName.Text = this.originalEmployee.FirstName;
-            this.textBoxLastName.Text = this.originalEmployee.LastName;
-            this.dateTimePickerDOB.Value = this.originalEmployee.DateOfBirth;
-            this.textBoxSSN.Text = this.originalEmployee.SocialSecurityNumber;
-            this.textBoxPhoneNumber.Text = this.originalEmployee.PhoneNumber;
-            this.comboBoxGender.Text = this.originalEmployee.Gender;
-            this.textBoxAddress1.Text = this.originalEmployee.AddressLine1;
-            this.textBoxAddress2.Text = this.originalEmployee.AddressLine2;
-            this.textBoxCity.Text = this.originalEmployee.City;
-            this.comboBoxState.Text = this.originalEmployee.State;
-            this.textBoxZipCode.Text = this.originalEmployee.ZipCode;
-            this.dateTimePickerStartDate.Value = this.originalEmployee.StartDate; 
+            this.textBoxFirstName.Text = "";
+            this.textBoxLastName.Text = "";
+            this.dateTimePickerDOB.Value = DateTime.Now;
+            this.textBoxSSN.Text = "";
+            this.textBoxPhoneNumber.Text = "";
+            this.comboBoxGender.SelectedIndex = -1;
+            this.textBoxAddress1.Text = "";
+            this.textBoxAddress2.Text = "";
+            this.textBoxCity.Text = "";
+            this.comboBoxState.SelectedIndex = -1;
+            this.textBoxZipCode.Text = "";
+            this.dateTimePickerStartDate.Value = DateTime.Now;
         }
 
         /// <summary>
@@ -172,4 +155,6 @@ namespace ChildcareManagementStudio.View
             return alertText;
         }
     }
+
+    
 }

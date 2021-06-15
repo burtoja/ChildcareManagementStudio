@@ -464,6 +464,7 @@ namespace ChildcareManagementStudio.View
             this.Name = "EditTeacherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Teacher Information";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditTeacherForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
