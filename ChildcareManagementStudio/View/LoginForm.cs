@@ -61,7 +61,6 @@ namespace ChildcareManagementStudio.View
                         {
                             this.theMainDashboard.SetTheLoginForm(this);
                         }
-                        this.theMainDashboard.SetActiveUsername(username);
                         this.theMainDashboard.Show();
                         this.textBoxPassword.Text = "";
                         this.Hide();
