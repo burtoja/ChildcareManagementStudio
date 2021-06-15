@@ -14,7 +14,7 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class ViewTeacherDetailUserControl : UserControl
     {
-        private readonly MainTeacherUserControl mainTeacherUserControl;
+        //private readonly MainTeacherUserControl mainTeacherUserControl;
         private readonly EmployeeController employeeController;
         private readonly PositionController positionController;
         private readonly SalaryController salaryController;
@@ -24,9 +24,9 @@ namespace ChildcareManagementStudio.UserControls
         /// <summary>
         /// Constructor for the user control
         /// </summary>
-        public ViewTeacherDetailUserControl(MainTeacherUserControl mainTeacherUserControl)
+        public ViewTeacherDetailUserControl()
         {
-            this.mainTeacherUserControl = mainTeacherUserControl;
+            //this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
             this.positionController = new PositionController();
             this.salaryController = new SalaryController();
