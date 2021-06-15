@@ -1,4 +1,5 @@
 ﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.UserControls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace ChildcareManagementStudio.View
     public partial class MainDashboard : Form
     {
         private LoginForm theLoginForm;
+        private PlaceholderUserControl placeholderUserControl;
         private readonly CredentialController theCredentialController;
         private string username;
 
@@ -22,8 +24,19 @@ namespace ChildcareManagementStudio.View
         {
             InitializeComponent();
             this.SetTheLoginForm(theInputLoginForm);
+            this.InitializePlaceholder();
             theCredentialController = new CredentialController();
             this.username = "";          
+        }
+
+        /// <summary>
+        /// Initializes the placeholder UC for unimplemented tabs
+        /// </summary>
+        private void InitializePlaceholder()
+        {
+            this.placeholderUserControl = new PlaceholderUserControl();
+            this.Controls.Add(this.placeholderUserControl);
+            this.placeholderUserControl.Location = new System.Drawing.Point(266, 81);
         }
 
         /// <summary>
@@ -69,6 +82,7 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 0);
             this.UpdateTabAppearance(this.buttonTeacherTab);
             this.teacherMainUserControl1.Show();
+            this.placeholderUserControl.Hide();
         }
 
         /// <summary>
@@ -81,6 +95,12 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 140);
             this.UpdateTabAppearance(this.buttonStudentsTab);
             this.teacherMainUserControl1.Hide();
+            this.placeholderUserControl.Show();
+            this.placeholderUserControl.setDescription(
+                "This tab will provide the ability to manage the student \n" +
+                "and parent information at the childcare facility. The ability \n" +
+                "will be provided to view, add, and edit student information."
+                );
         }
 
         /// <summary>
@@ -93,6 +113,13 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 280);
             this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.teacherMainUserControl1.Hide();
+            this.placeholderUserControl.Show();
+            this.placeholderUserControl.setDescription(
+                "This tab will provide the ability to manage the classrooms \n" +
+                "at the facility. The ability will be provided for creating new \n" +
+                "classes, assining students and teachers to those classes, \n" +
+                "assigning the class to a room/location, etc. " 
+                );
         }
 
         /// <summary>
@@ -106,6 +133,12 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 420);
             this.UpdateTabAppearance(this.buttonFinancialTab);
             this.teacherMainUserControl1.Hide();
+            this.placeholderUserControl.Show();
+            this.placeholderUserControl.setDescription(
+                "This tab will provide the ability to manage the financial \n" +
+                "aspects of the facility. The ability will be provided to view \n" +
+                "payments, record payments, view balances."
+                );
         }
 
         /// <summary>

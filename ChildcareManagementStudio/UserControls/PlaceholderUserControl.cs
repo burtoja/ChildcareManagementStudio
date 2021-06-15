@@ -7,10 +7,17 @@ namespace ChildcareManagementStudio.UserControls
         /// <summary>
         /// Constructor for the placeholder UC. 
         /// </summary>
-        /// <param name="messageCode">The description of the upcoming feature to be displayed on the UC</param>
-        public PlaceholderUserControl(string description)
+        public PlaceholderUserControl()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="description">The description of the upcoming feature to be displayed on the UC</param>
+        public void setDescription(string description)
+        {
             this.labelDescription.Text = description;
         }
     }
