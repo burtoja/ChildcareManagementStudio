@@ -13,8 +13,6 @@ namespace ChildcareManagementStudio.View
     {
         private LoginForm theLoginForm;
         private PlaceholderUserControl placeholderUserControl;
-        private readonly CredentialController theCredentialController;
-        private string username;
 
         /// <summary>
         /// Constructor for the main dashboard form
@@ -24,9 +22,7 @@ namespace ChildcareManagementStudio.View
         {
             InitializeComponent();
             this.SetTheLoginForm(theInputLoginForm);
-            this.InitializePlaceholder();
-            theCredentialController = new CredentialController();
-            this.username = "";          
+            this.InitializePlaceholder();        
         }
 
         /// <summary>
@@ -37,18 +33,6 @@ namespace ChildcareManagementStudio.View
             this.placeholderUserControl = new PlaceholderUserControl();
             this.Controls.Add(this.placeholderUserControl);
             this.placeholderUserControl.Location = new System.Drawing.Point(266, 81);
-        }
-
-        /// <summary>
-        /// The method sets username(nurse or admin) for the form and displays it along 
-        /// with the full name of the user in upper right corner of the form
-        /// </summary>
-        /// <param name="inputUuserName"> The inputted user name </param>
-        public void SetActiveUsername(String inputUserName)
-        {
-            this.username = inputUserName;
-            //String realName = this.theCredentialController.GetUser(this.username).FullName;
-            //this.activeUsernameLabel.Text = realName + " (" + this.username + ")";
         }
 
         /// <summary>
