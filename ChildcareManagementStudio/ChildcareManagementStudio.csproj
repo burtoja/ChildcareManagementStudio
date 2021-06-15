@@ -98,6 +98,12 @@
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\PlaceholderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PlaceholderUserControl.Designer.cs">
+      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TeacherUserControls\AddTeacherUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
+      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\AddTeacherUserControl.resx">
       <DependentUpon>AddTeacherUserControl.cs</DependentUpon>
     </EmbeddedResource>
