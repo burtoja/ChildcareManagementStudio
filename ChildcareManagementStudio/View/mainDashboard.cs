@@ -11,10 +11,13 @@ namespace ChildcareManagementStudio.View
     /// </summary>
     public partial class MainDashboard : Form
     {
+        
         private LoginForm theLoginForm;
         private PlaceholderUserControl placeholderUserControl;
         private readonly CredentialController theCredentialController;
         private string username;
+        private bool mouseDown;
+        private Point lastLocation;
 
         /// <summary>
         /// Constructor for the main dashboard form
@@ -26,7 +29,7 @@ namespace ChildcareManagementStudio.View
             this.SetTheLoginForm(theInputLoginForm);
             this.InitializePlaceholder();
             theCredentialController = new CredentialController();
-            this.username = "";          
+            this.username = "";
         }
 
         /// <summary>
@@ -174,8 +177,66 @@ namespace ChildcareManagementStudio.View
                 this.buttonFinancialTab.ForeColor = SystemColors.Control;
                 this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
             }
-
         }
 
+        private void PictureBoxLogo_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = true;
+            this.lastLocation = e.Location;
+        }
+
+        private void PictureBoxLogo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.mouseDown)
+            {
+                this.Location = new Point((this.Location.X - this.lastLocation.X) + e.X, (this.Location.Y - this.lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private void PictureBoxLogo_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = false;
+        }
+
+        private void LabelTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = true;
+            this.lastLocation = e.Location;
+        }
+
+        private void LabelTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.mouseDown)
+            {
+                this.Location = new Point((this.Location.X - this.lastLocation.X) + e.X, (this.Location.Y - this.lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private void LabelTitle_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = false;
+        }
+
+        private void PanelTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = true;
+            this.lastLocation = e.Location;
+        }
+
+        private void PanelTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.mouseDown)
+            {
+                this.Location = new Point((this.Location.X - this.lastLocation.X) + e.X, (this.Location.Y - this.lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private void PanelTop_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.mouseDown = false;
+        }
     }
 }

@@ -58,6 +58,9 @@ namespace ChildcareManagementStudio.View
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1045, 81);
             this.panelTop.TabIndex = 0;
+            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseDown);
+            this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseMove);
+            this.panelTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseUp);
             // 
             // buttonLogout
             // 
@@ -82,6 +85,9 @@ namespace ChildcareManagementStudio.View
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 2;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxLogo_MouseDown);
+            this.pictureBoxLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxLogo_MouseMove);
+            this.pictureBoxLogo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBoxLogo_MouseUp);
             // 
             // labelTitle
             // 
@@ -93,6 +99,9 @@ namespace ChildcareManagementStudio.View
             this.labelTitle.Size = new System.Drawing.Size(671, 52);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Childcare Management Studio";
+            this.labelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDown);
+            this.labelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseMove);
+            this.labelTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseUp);
             // 
             // panelLeftSide
             // 
