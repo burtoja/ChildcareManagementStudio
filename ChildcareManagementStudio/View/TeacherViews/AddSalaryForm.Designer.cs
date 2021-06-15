@@ -138,6 +138,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.Name = "AddSalaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Employee Salary";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddSalaryForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRate)).EndInit();

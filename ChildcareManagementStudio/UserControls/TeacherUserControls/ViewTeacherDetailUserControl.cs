@@ -14,7 +14,7 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class ViewTeacherDetailUserControl : UserControl
     {
-        private readonly MainTeacherUserControl mainTeacherUserControl;
+        //private readonly MainTeacherUserControl mainTeacherUserControl;
         private readonly EmployeeController employeeController;
         private readonly PositionController positionController;
         private readonly SalaryController salaryController;
@@ -24,9 +24,9 @@ namespace ChildcareManagementStudio.UserControls
         /// <summary>
         /// Constructor for the user control
         /// </summary>
-        public ViewTeacherDetailUserControl(MainTeacherUserControl mainTeacherUserControl)
+        public ViewTeacherDetailUserControl()
         {
-            this.mainTeacherUserControl = mainTeacherUserControl;
+            //this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
             this.positionController = new PositionController();
             this.salaryController = new SalaryController();
@@ -108,7 +108,8 @@ namespace ChildcareManagementStudio.UserControls
             List<SalaryRecord> salaryList = this.salaryController.GetSalaryRecords(employeeId);
             foreach (SalaryRecord current in salaryList)
             {
-                ListViewItem item = new ListViewItem(current.Rate.ToString());
+                string formattedPayRate = String.Format("${0:0.00}", current.Rate);
+                ListViewItem item = new ListViewItem(formattedPayRate);
                 item.SubItems.Add(current.EffectiveDate.ToString("d"));
                 this.listViewPayHistory.Items.Add(item);
             }
@@ -177,6 +178,9 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueState.Text = "";
             this.labelValueZipCode.Text = "";
             this.labelValueStartDate.Text = "";
+            this.listViewCredentialHistory.Items.Clear();
+            this.listViewPayHistory.Items.Clear();
+            this.listViewPositionHistory.Items.Clear();
         }
 
         /// <summary>

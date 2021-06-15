@@ -3,23 +3,24 @@ using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls;
 using Microsoft.Data.Sqlite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.TeacherViews
 {
+    /// <summary>
+    /// This class will create and manage the add salary record form
+    /// </summary>
     public partial class AddSalaryForm : Form
     {
         private readonly int employeeId;
         private readonly SalaryController salaryController;
         private readonly ViewTeacherDetailUserControl referringUserControl;
 
+        /// <summary>
+        /// Constructor for the form
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="referringUserControl"></param>
         public AddSalaryForm(int employeeId, ViewTeacherDetailUserControl referringUserControl)
         {
             InitializeComponent();
@@ -29,12 +30,22 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.referringUserControl.Enabled = false;
         }
 
+        /// <summary>
+        /// Event handler for cancel button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.referringUserControl.Enabled = true;
             this.Close();
         }
 
+        /// <summary>
+        /// Event handler for submit butotn clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             if ((double)this.numericUpDownRate.Value == 0.00)
@@ -90,8 +101,8 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 if (ex.ErrorCode == -2147467259)
                 {
                     string title = "Duplicate Record Error";
-                    string message = "Error. This record matches anothed record on file for this employee.  " +
-                        "Duplicate records are not allowed.  Please try again.";
+                    string message = "Error. The date of this record matches anothed record on file for this employee.  " +
+                        "Duplicate record dates for employees are not allowed.  Please try again.";
                     MessageBox.Show(message, title);
                 }
             }
@@ -99,5 +110,14 @@ namespace ChildcareManagementStudio.View.TeacherViews
             
         }
 
+        /// <summary>
+        /// Re-enable referring UC when X is clicked to close form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddSalaryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+        }
     }
 }

@@ -21,8 +21,8 @@ namespace ChildcareManagementStudio.UserControls
         {
             InitializeComponent();
             this.viewTeacherListUserControl = new ViewTeacherListUserControl(this);
-            this.ViewTeacherDetailUserControl = new ViewTeacherDetailUserControl(this);
-            this.addTeacherUserControl = new AddTeacherUserControl(this);
+            this.ViewTeacherDetailUserControl = new ViewTeacherDetailUserControl();
+            this.addTeacherUserControl = new AddTeacherUserControl();
             this.AddUserControls();
         }
 
