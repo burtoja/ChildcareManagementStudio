@@ -16,7 +16,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
         private readonly int employeeId;
         private readonly PositionController positionController;
         private readonly PositionTypeController positionTypeController;
-        //private readonly SchoolYearController schoolYearController;
+        private readonly SchoolYearController schoolYearController;
         private readonly ViewTeacherDetailUserControl referringUserControl;
         //private readonly List<string> positionTypeList;
         //private readonly List<string> schoolYearList;
@@ -32,7 +32,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.referringUserControl = referringUserControl;
             this.positionController = new PositionController();
             this.positionTypeController = new PositionTypeController();
-            //this.schoolYearController = new SchoolYearController();
+            this.schoolYearController = new SchoolYearController();
             this.FillPositionTypeDropDownList();
             this.FillSchoolYearDropDownList();
         }
@@ -52,9 +52,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
         /// </summary>
         public void FillSchoolYearDropDownList()
         {
-            //List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
-            //schoolYearList.Insert(0, "Choose a School Year...");
-            //this.comboBoxPosition.DataSource = schoolYearList;
+            List<string> schoolYearList = this.schoolYearController.GetAllSchoolYears();
+            schoolYearList.Insert(0, "Choose a School Year...");
+            this.comboBoxSchoolYear.DataSource = schoolYearList;
         }
 
         /// <summary>
