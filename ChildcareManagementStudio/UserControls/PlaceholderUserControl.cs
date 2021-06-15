@@ -16,7 +16,7 @@ namespace ChildcareManagementStudio.UserControls
         /// 
         /// </summary>
         /// <param name="description">The description of the upcoming feature to be displayed on the UC</param>
-        public void setDescription(string description)
+        public void SetDescription(string description)
         {
             this.labelDescription.Text = description;
         }
