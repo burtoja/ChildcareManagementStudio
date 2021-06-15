@@ -178,6 +178,9 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueState.Text = "";
             this.labelValueZipCode.Text = "";
             this.labelValueStartDate.Text = "";
+            this.listViewCredentialHistory.Items.Clear();
+            this.listViewPayHistory.Items.Clear();
+            this.listViewPositionHistory.Items.Clear();
         }
 
         /// <summary>
