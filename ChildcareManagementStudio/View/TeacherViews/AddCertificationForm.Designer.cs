@@ -125,6 +125,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.Name = "AddCertificationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Employee Certification";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddCertificationForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

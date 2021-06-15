@@ -99,5 +99,14 @@ namespace ChildcareManagementStudio.View.TeacherViews
             
         }
 
+        /// <summary>
+        /// Re-enable referring UC when X is clicked to close form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddSalaryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+        }
     }
 }
