@@ -30,7 +30,7 @@ namespace ChildcareManagementStudioTests.DAL
             {
                 StartDate = new DateTime(2021, 9, 1),
                 Type = "Lead teacher",
-                SchoolYear = "2021-2022"
+                SchoolYear = "2021-22"
             };
             Assert.ThrowsException<System.ArgumentException>(() => positionDAL.AddPositionRecord(employeeId, positionRecord));
         }
@@ -51,13 +51,13 @@ namespace ChildcareManagementStudioTests.DAL
             {
                 StartDate = new DateTime(2021, 9, 1),
                 Type = "Lead teacher",
-                SchoolYear = "2022-2023"
+                SchoolYear = "2019-20"
             };
             positionDAL.AddPositionRecord(employeeId, positionRecord);
             List<PositionRecord> positionRecords = positionDAL.GetPositionRecords(employeeId);
             Assert.AreEqual(2, positionRecords.Count);
             Assert.AreEqual("Lead teacher", positionRecords[1].Type);
-            Assert.AreEqual("2022-2023", positionRecords[1].SchoolYear);
+            Assert.AreEqual("2019-20", positionRecords[1].SchoolYear);
             positionDAL.DeletePositionRecord(employeeId, positionRecord);
         }
     }
