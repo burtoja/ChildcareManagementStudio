@@ -92,6 +92,7 @@
     <Compile Include="Controller\SalaryControllerWhenAddSalaryRecord.cs" />
     <Compile Include="Controller\CertificationControllerWhenAddCertificationRecord.cs" />
     <Compile Include="Controller\PositionTypeControllerWhenGetAllPositionTypes.cs" />
+    <Compile Include="Controller\SchoolYearControllerWhenGetAllSchoolYears.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
