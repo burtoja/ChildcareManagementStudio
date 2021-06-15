@@ -44,7 +44,7 @@ namespace ChildcareManagementStudioTests.DAL
             Assert.AreEqual(new DateTime(2021, 12, 31), firstEmployee.CertificationRecords[0].ExpirationDate);
             Assert.AreEqual(1, firstEmployee.PositionRecords.Count);
             Assert.AreEqual("Lead teacher", firstEmployee.PositionRecords[0].Type);
-            Assert.AreEqual("2021-2022", firstEmployee.PositionRecords[0].SchoolYear);
+            Assert.AreEqual("2021-22", firstEmployee.PositionRecords[0].SchoolYear);
 
             Employee secondEmployee = employees[1];
             Assert.AreEqual(2, secondEmployee.PersonId);
@@ -68,7 +68,7 @@ namespace ChildcareManagementStudioTests.DAL
             Assert.AreEqual(new DateTime(2022, 6, 1), secondEmployee.CertificationRecords[0].ExpirationDate);
             Assert.AreEqual(1, secondEmployee.PositionRecords.Count);
             Assert.AreEqual("Assistant teacher", secondEmployee.PositionRecords[0].Type);
-            Assert.AreEqual("2021-2022", secondEmployee.PositionRecords[0].SchoolYear);
+            Assert.AreEqual("2021-22", secondEmployee.PositionRecords[0].SchoolYear);
         }
     }
 }

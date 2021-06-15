@@ -43,7 +43,7 @@ namespace ChildcareManagementStudioTests.DAL
             List<PositionRecord> positionRecords = positionDAL.GetPositionRecords(employeeId);
             Assert.AreEqual(1, positionRecords.Count);
             Assert.AreEqual("Lead teacher", positionRecords[0].Type);
-            Assert.AreEqual("2021-2022", positionRecords[0].SchoolYear);
+            Assert.AreEqual("2021-22", positionRecords[0].SchoolYear);
         }
     }
 }

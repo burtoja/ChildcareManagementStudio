@@ -64,7 +64,7 @@ namespace ChildcareManagementStudioTests.DAL
 
             Assert.AreEqual(1, employee.PositionRecords.Count);
             Assert.AreEqual("Lead teacher", employee.PositionRecords[0].Type);
-            Assert.AreEqual("2021-2022", employee.PositionRecords[0].SchoolYear);
+            Assert.AreEqual("2021-22", employee.PositionRecords[0].SchoolYear);
         }
     }
 }
