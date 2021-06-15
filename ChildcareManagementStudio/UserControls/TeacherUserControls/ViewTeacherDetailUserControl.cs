@@ -108,7 +108,8 @@ namespace ChildcareManagementStudio.UserControls
             List<SalaryRecord> salaryList = this.salaryController.GetSalaryRecords(employeeId);
             foreach (SalaryRecord current in salaryList)
             {
-                ListViewItem item = new ListViewItem(current.Rate.ToString());
+                string formattedPayRate = String.Format("${0:0.00}", current.Rate);
+                ListViewItem item = new ListViewItem(formattedPayRate);
                 item.SubItems.Add(current.EffectiveDate.ToString("d"));
                 this.listViewPayHistory.Items.Add(item);
             }
