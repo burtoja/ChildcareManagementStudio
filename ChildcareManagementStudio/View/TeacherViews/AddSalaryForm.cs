@@ -64,7 +64,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             {
                 string title = "Submit Record Confirmation";
                 string message = "Are you sure you want to add a new record with the following information: \n\n" +
-                    "Rate: $" + this.numericUpDownRate.Value.ToString("F") + "/hour \n" +
+                    "Rate: " + this.numericUpDownRate.Value.ToString("C") + "/hour \n" +
                     "Effective Date: " + this.dateTimePickerEffectiveDate.Value.ToString("d");
                 DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
