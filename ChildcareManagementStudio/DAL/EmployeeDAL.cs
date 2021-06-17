@@ -188,7 +188,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$personId", employee.PersonId);
-                    insertCommand.Parameters.AddWithValue("$startDate", employee.StartDate);
+                    insertCommand.Parameters.AddWithValue("$startDate", employee.StartDate.ToString("yyyy-MM-dd"));
                     insertCommand.ExecuteNonQuery();
                 }
 
