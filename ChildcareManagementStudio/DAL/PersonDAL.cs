@@ -107,7 +107,7 @@ namespace ChildcareManagementStudio.DAL
                 {
                     insertCommand.Parameters.AddWithValue("$lastName", person.LastName);
                     insertCommand.Parameters.AddWithValue("$firstName", person.FirstName);
-                    insertCommand.Parameters.AddWithValue("$dateOfBirth", person.DateOfBirth);
+                    insertCommand.Parameters.AddWithValue("$dateOfBirth", person.DateOfBirth.ToString("yyyy-MM-dd"));
                     insertCommand.Parameters.AddWithValue("$ssn", person.SocialSecurityNumber);
                     insertCommand.Parameters.AddWithValue("$gender", person.Gender);
                     insertCommand.Parameters.AddWithValue("$phoneNumber", person.PhoneNumber);
