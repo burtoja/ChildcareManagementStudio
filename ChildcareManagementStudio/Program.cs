@@ -20,7 +20,14 @@ namespace ChildcareManagementStudio
 
             using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/jburton6/ChildcareManagementStudio"))
             {
-                await mgr.Result.UpdateApp();
+                try
+                {
+                    await mgr.Result.UpdateApp();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("No update necessary since no previous version installed./nDetails: " + ex.Message);
+                }
             }
         }
     }
