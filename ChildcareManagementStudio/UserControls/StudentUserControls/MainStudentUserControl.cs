@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.StudentUserControls
 {
     public partial class MainStudentUserControl : UserControl
     {
+        private readonly ViewStudentListUserControl viewStudentListUserControl;
+
+        /// <summary>
+        /// Constructor for the control
+        /// </summary>
         public MainStudentUserControl()
         {
             InitializeComponent();
+            this.viewStudentListUserControl = new ViewStudentListUserControl(this);
+            this.AddUserControls();
+        }
+
+        /// <summary>
+        /// Add the user controls to the proper tab pages
+        /// </summary>
+        private void AddUserControls()
+        {
+            this.tabViewAllStudents.Controls.Add(this.viewStudentListUserControl);
         }
 
         /// <summary>
