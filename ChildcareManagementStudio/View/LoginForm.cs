@@ -24,7 +24,6 @@ namespace ChildcareManagementStudio.View
             this.theMainDashboard = null;
             this.theCredentialController = new CredentialController();
             InitializeComponent();
-            this.CheckForUpdates();
         }
 
         /// <summary>
@@ -34,14 +33,6 @@ namespace ChildcareManagementStudio.View
         public void SetMainDashboard(MainDashboard currentMainDashboard)
         {
             this.theMainDashboard = currentMainDashboard;
-        }
-
-        private async Task CheckForUpdates()
-        {
-            using (var manager = UpdateManager.GitHubUpdateManager("https://github.com/jburton6/ChildcareManagementStudio"))
-            {
-                await manager.Result.UpdateApp();
-            }
         }
 
         /// <summary>

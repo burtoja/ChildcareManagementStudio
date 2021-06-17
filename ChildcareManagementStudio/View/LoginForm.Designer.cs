@@ -49,7 +49,7 @@ namespace ChildcareManagementStudio.View
             this.panelTop.Controls.Add(this.labelTitle);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(469, 59);
             this.panelTop.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace ChildcareManagementStudio.View
             this.tableLayoutPanel1.Controls.Add(this.buttonExit, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 79);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -95,7 +95,7 @@ namespace ChildcareManagementStudio.View
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxPassword, 2);
             this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(135, 41);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(297, 30);
@@ -134,7 +134,7 @@ namespace ChildcareManagementStudio.View
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxUsername, 2);
             this.textBoxUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.Location = new System.Drawing.Point(135, 4);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(297, 30);
             this.textBoxUsername.TabIndex = 2;
@@ -145,7 +145,7 @@ namespace ChildcareManagementStudio.View
             // 
             this.buttonSubmit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.Location = new System.Drawing.Point(135, 78);
-            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(144, 28);
             this.buttonSubmit.TabIndex = 4;
@@ -157,7 +157,7 @@ namespace ChildcareManagementStudio.View
             // 
             this.buttonExit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.Location = new System.Drawing.Point(287, 78);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(146, 28);
             this.buttonExit.TabIndex = 5;
@@ -186,7 +186,7 @@ namespace ChildcareManagementStudio.View
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
