@@ -115,6 +115,7 @@
     <Compile Include="Controller\PositionTypeController.cs" />
     <Compile Include="Controller\SalaryController.cs" />
     <Compile Include="Controller\SchoolYearController.cs" />
+    <Compile Include="Controller\StudentController.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="DAL\PositionTypeDAL.cs" />
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\SchoolYearDAL.cs" />
+    <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
