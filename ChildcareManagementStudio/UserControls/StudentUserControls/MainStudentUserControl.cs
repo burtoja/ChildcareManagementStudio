@@ -5,6 +5,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
     public partial class MainStudentUserControl : UserControl
     {
         private readonly ViewStudentListUserControl viewStudentListUserControl;
+        private readonly AddStudentUserControl addStudentUserControl;
 
         /// <summary>
         /// Constructor for the control
@@ -13,6 +14,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         {
             InitializeComponent();
             this.viewStudentListUserControl = new ViewStudentListUserControl(this);
+            this.addStudentUserControl = new AddStudentUserControl(this);
             this.AddUserControls();
         }
 
@@ -22,6 +24,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private void AddUserControls()
         {
             this.tabViewAllStudents.Controls.Add(this.viewStudentListUserControl);
+            this.tabAddStudent.Controls.Add(this.addStudentUserControl);
         }
 
         /// <summary>
