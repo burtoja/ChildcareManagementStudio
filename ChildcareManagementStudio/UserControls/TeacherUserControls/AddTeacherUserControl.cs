@@ -117,11 +117,11 @@ namespace ChildcareManagementStudio.UserControls
 
             if (String.IsNullOrEmpty(this.textBoxLastName.Text))
             {
-                alertText += "Patient first name cannot be blank. ";
+                alertText += "ifrst name cannot be blank. ";
             }
             if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
             {
-                alertText += "Patient last name cannot be blank. ";
+                alertText += "Last name cannot be blank. ";
             }
             if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
             {
