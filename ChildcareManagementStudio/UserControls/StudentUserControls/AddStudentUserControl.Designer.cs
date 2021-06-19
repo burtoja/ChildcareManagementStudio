@@ -203,6 +203,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonSubmit.TabIndex = 23;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonClear
             // 
@@ -215,6 +216,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonClear.TabIndex = 24;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // textBoxFirstName
             // 
