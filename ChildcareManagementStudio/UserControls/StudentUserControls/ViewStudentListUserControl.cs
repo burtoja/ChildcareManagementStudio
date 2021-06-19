@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -58,21 +60,22 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         /// <param name="e"></param>
         private void ButtonViewStudentDetails_Click(object sender, System.EventArgs e)
         {
-            if (this.listViewAllStudents.SelectedItems.Count == 0)
-            {
-                string title = "No Student Chosen";
-                string message = "Please choose a student and try again.";
-                MessageBox.Show(message, title);
-            }
-            else
-            {
-                ListViewItem item = listViewAllStudents.SelectedItems[0];
-                if (Int32.TryParse(item.SubItems[4].Text, out int selectedEmployeeId))
-                {
-                    this.mainStudentUserControl.tabControlStudent.SelectedIndex = 1;
-                    this.mainStudentUserControl.ViewStudentDetailUserControl.FillDropDownList(selectedStudentId);
-                }
-            }
+            // TODO: Uncomment when viewStudentDetail UC is added to tabControl
+            //if (this.listViewAllStudents.SelectedItems.Count == 0)
+            //{
+            //    string title = "No Student Chosen";
+            //    string message = "Please choose a student and try again.";
+            //    MessageBox.Show(message, title);
+            //}
+            //else
+            //{
+            //    ListViewItem item = listViewAllStudents.SelectedItems[0];
+            //    if (Int32.TryParse(item.SubItems[4].Text, out int selectedEmployeeId))
+            //    {
+            //        this.mainStudentUserControl.tabControlStudent.SelectedIndex = 1;
+            //        this.mainStudentUserControl.ViewStudentDetailUserControl.FillDropDownList(selectedStudentId);
+            //    }
+            //}
         }
 
     }

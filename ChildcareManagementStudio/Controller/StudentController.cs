@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
 using System;
+using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
 {
@@ -32,6 +33,15 @@ namespace ChildcareManagementStudio.Controller
             }
 
             return studentDAL.GetStudent(studentId);
+        }
+
+        /// <summary>
+        /// Method that returns Student objects for all of the students in the database.
+        /// </summary>
+        /// <returns>A list of Student objects for all of the students in the database.</returns>
+        public List<Student> GetAllStudents()
+        {
+            return studentDAL.GetAllStudents();
         }
     }
 }
