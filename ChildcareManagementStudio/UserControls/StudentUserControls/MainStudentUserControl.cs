@@ -38,7 +38,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             {
                 case 0:
                     // View All Student tab
-                    
+                    this.viewStudentListUserControl.ResetStudentListResults();
                     break;
                 case 1:
                     // View Student Details tab
