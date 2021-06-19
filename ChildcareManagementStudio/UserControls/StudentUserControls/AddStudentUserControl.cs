@@ -3,35 +3,34 @@ using ChildcareManagementStudio.Model;
 using System;
 using System.Windows.Forms;
 
-namespace ChildcareManagementStudio.UserControls
+namespace ChildcareManagementStudio.UserControls.StudentUserControls
 {
     /// <summary>
-    /// This class builds and manages the add new teacher user control
+    /// This class will create and manage the AddStudent UC
     /// </summary>
-    public partial class AddTeacherUserControl : UserControl
+    public partial class AddStudentUserControl : UserControl
     {
-        //private readonly MainTeacherUserControl mainTeacherUserControl;
-        private readonly EmployeeController employeeController;       
+        private readonly MainStudentUserControl mainStudentUserControl;
+        private readonly StudentController studentController;
 
         /// <summary>
-        /// Constructor for the user control
+        /// Constructor for the UC
         /// </summary>
-        public AddTeacherUserControl()
+        public AddStudentUserControl(MainStudentUserControl mainStudentUserControl)
         {
             InitializeComponent();
-            //this.mainTeacherUserControl = mainTeacherUserControl;
-            this.employeeController = new EmployeeController();
-            
+            this.mainStudentUserControl = mainStudentUserControl;
+            this.studentController = new StudentController();
         }
 
         /// <summary>
         /// Actions to perform when the submit button is clicked.  It should run a validation of form data 
-        /// and then attempt to create the new employee in the DB
+        /// and then attempt to create the new student in the DB
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
-        {               
+        {
             this.labelErrorMessage.Text = this.CheckInputFields();
 
             if (this.labelErrorMessage.Text == "")
@@ -47,10 +46,9 @@ namespace ChildcareManagementStudio.UserControls
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
-                    Employee newEmployee = new Employee
+                    Student newStudent = new Student
                     {
                         LastName = lastName,
                         FirstName = firstName,
@@ -63,11 +61,10 @@ namespace ChildcareManagementStudio.UserControls
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        StartDate = startDate
                     };
-                    this.employeeController.AddEmployee(newEmployee);                   
-                    String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
-                    var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
+                    this.studentController.AddStudent(newStudent);
+                    String successText = "New student  (" + firstName + " " + lastName + ") successfully added.";
+                    var dialogeResult = MessageBox.Show(successText, "Student Added Success");
                     this.ClearForm();
                 }
                 catch (Exception ex)
@@ -104,7 +101,6 @@ namespace ChildcareManagementStudio.UserControls
             this.textBoxCity.Text = "";
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
-            this.dateTimePickerStartDate.Value = DateTime.Now;
         }
 
         /// <summary>
@@ -155,6 +151,5 @@ namespace ChildcareManagementStudio.UserControls
             return alertText;
         }
     }
-
-    
 }
+

@@ -138,6 +138,12 @@
     <Compile Include="UserControls\PlaceholderUserControl.Designer.cs">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StudentUserControls\AddStudentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StudentUserControls\AddStudentUserControl.Designer.cs">
+      <DependentUpon>AddStudentUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\StudentUserControls\MainStudentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StudentUserControls\AddStudentUserControl.resx">
+      <DependentUpon>AddStudentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StudentUserControls\MainStudentUserControl.resx">
       <DependentUpon>MainStudentUserControl.cs</DependentUpon>

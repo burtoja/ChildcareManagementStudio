@@ -120,8 +120,54 @@ namespace ChildcareManagementStudio.DAL
                     }
                 }
             }
-
             return students;
+        }
+
+        /// <summary>
+        /// Method that adds the specified student to the database.
+        /// </summary>
+        /// <param name="student">
+        /// Student object representing the student to add.
+        /// The Student object cannot have a value for the StudentId property, since this will be assigned by the database.
+        /// </param>
+        public void AddStudent(Student student)
+        {
+            if (student.StudentId != default)
+            {
+                throw new ArgumentException("The StudentId property cannot be filled out because it will be assigned by the database.", "employee");
+            }
+
+            // TODO: Add validation for list properties (vaccination records, physical records, etc.)
+
+            // TODO: wrap the table updates in a transaction
+
+            AddPerson(student);
+
+            string insertStatement =
+                "INSERT INTO Student (personId) " +
+                "VALUES ($personId)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$personId", student.PersonId);
+                    insertCommand.ExecuteNonQuery();
+                }
+
+                using (SqliteCommand selectCommand = new SqliteCommand("SELECT last_insert_rowid()", connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            student.StudentId = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
         }
     }
 }

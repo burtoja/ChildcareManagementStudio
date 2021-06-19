@@ -43,5 +43,25 @@ namespace ChildcareManagementStudio.Controller
         {
             return studentDAL.GetAllStudents();
         }
+
+
+        /// <summary>
+        /// Method that adds the specified student to the database.
+        /// </summary>
+        /// <param name="student">
+        /// Student object representing the student to add.
+        /// The Student object cannot have a value for the StudentId property, since this will be assigned by the database.
+        /// </param>
+        public void AddStudent(Student student)
+        {
+            if (student.StudentId != default)
+            {
+                throw new ArgumentException("The StudentId property cannot be filled out because it will be assigned by the database.", "student");
+            }
+            
+            //TODO:  Add check for list properties (vaccination records, physical records, etc.
+
+            studentDAL.AddStudent(student);
+        }
     }
 }
