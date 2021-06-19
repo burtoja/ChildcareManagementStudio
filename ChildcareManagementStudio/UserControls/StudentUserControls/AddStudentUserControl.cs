@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
+using System;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.StudentUserControls
@@ -25,7 +20,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         {
             InitializeComponent();
             this.mainStudentUserControl = mainStudentUserControl;
-            this.employeeController = new EmployeeController();
+            this.studentController = new StudentController();
         }
 
         /// <summary>
