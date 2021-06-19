@@ -25,9 +25,9 @@ namespace ChildcareManagementStudio.DAL
         }
 
         /// <summary>
-        /// Method that returns an Employee object for the specified person ID.
+        /// Method that returns an Employee object for the specified employee ID.
         /// </summary>
-        /// <param name="personId">The person ID of the employee in question.</param>
+        /// <param name="employeeId">The employee ID of the employee in question.</param>
         /// <returns>An Employee object for the specified employee.</returns>
         public Employee GetEmployee(int employeeId)
         {
