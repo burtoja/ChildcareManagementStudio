@@ -138,6 +138,18 @@
     <Compile Include="UserControls\PlaceholderUserControl.Designer.cs">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StudentUserControls\MainStudentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StudentUserControls\MainStudentUserControl.Designer.cs">
+      <DependentUpon>MainStudentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StudentUserControls\ViewStudentListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StudentUserControls\ViewStudentListUserControl.Designer.cs">
+      <DependentUpon>ViewStudentListUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TeacherUserControls\AddTeacherUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,6 +229,12 @@
     </Compile>
     <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StudentUserControls\MainStudentUserControl.resx">
+      <DependentUpon>MainStudentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StudentUserControls\ViewStudentListUserControl.resx">
+      <DependentUpon>ViewStudentListUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\AddTeacherUserControl.resx">
       <DependentUpon>AddTeacherUserControl.cs</DependentUpon>

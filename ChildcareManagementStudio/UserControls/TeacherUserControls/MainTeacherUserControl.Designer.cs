@@ -81,12 +81,11 @@ namespace ChildcareManagementStudio.UserControls
             this.tabAddTeacher.Text = "Add New Teacher";
             this.tabAddTeacher.UseVisualStyleBackColor = true;
             // 
-            // TeacherMainUserControl
+            // MainTeacherUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tabControlTeacher);
-            this.Name = "TeacherMainUserControl";
+            this.Name = "MainTeacherUserControl";
             this.Size = new System.Drawing.Size(760, 515);
             this.tabControlTeacher.ResumeLayout(false);
             this.ResumeLayout(false);

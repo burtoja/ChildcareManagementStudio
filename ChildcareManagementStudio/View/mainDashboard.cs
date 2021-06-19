@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.UserControls;
+using ChildcareManagementStudio.UserControls.StudentUserControls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace ChildcareManagementStudio.View
         
         private LoginForm theLoginForm;
         private PlaceholderUserControl placeholderUserControl;
+        private MainStudentUserControl mainStudentUserControl;
         private readonly CredentialController theCredentialController;
         private string username;
         private bool mouseDown;
@@ -27,9 +29,17 @@ namespace ChildcareManagementStudio.View
         {
             InitializeComponent();
             this.SetTheLoginForm(theInputLoginForm);
+            this.InitializeUserControls();
             this.InitializePlaceholder();
             theCredentialController = new CredentialController();
             this.username = "";
+        }
+
+        private void InitializeUserControls()
+        {
+            this.mainStudentUserControl = new MainStudentUserControl();
+            this.Controls.Add(this.mainStudentUserControl);
+            this.mainStudentUserControl.Location = new System.Drawing.Point(266, 81);
         }
 
         /// <summary>
@@ -86,12 +96,7 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 140);
             this.UpdateTabAppearance(this.buttonStudentsTab);
             this.teacherMainUserControl1.Hide();
-            this.placeholderUserControl.Show();
-            this.placeholderUserControl.SetDescription(
-                "This tab will provide the ability to manage the student \n" +
-                "and parent information at the childcare facility. The ability \n" +
-                "will be provided to view, add, and edit student information."
-                );
+            this.mainStudentUserControl.Show();
         }
 
         /// <summary>
