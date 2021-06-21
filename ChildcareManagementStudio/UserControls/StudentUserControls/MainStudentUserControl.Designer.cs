@@ -61,20 +61,20 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             // tabViewStudentDetails
             // 
-            this.tabViewStudentDetails.Location = new System.Drawing.Point(4, 30);
+            this.tabViewStudentDetails.Location = new System.Drawing.Point(4, 22);
             this.tabViewStudentDetails.Name = "tabViewStudentDetails";
             this.tabViewStudentDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewStudentDetails.Size = new System.Drawing.Size(752, 481);
+            this.tabViewStudentDetails.Size = new System.Drawing.Size(752, 489);
             this.tabViewStudentDetails.TabIndex = 1;
             this.tabViewStudentDetails.Text = "View Student Details";
             this.tabViewStudentDetails.UseVisualStyleBackColor = true;
             // 
             // tabAddStudent
             // 
-            this.tabAddStudent.Location = new System.Drawing.Point(4, 30);
+            this.tabAddStudent.Location = new System.Drawing.Point(4, 22);
             this.tabAddStudent.Name = "tabAddStudent";
             this.tabAddStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddStudent.Size = new System.Drawing.Size(752, 481);
+            this.tabAddStudent.Size = new System.Drawing.Size(752, 489);
             this.tabAddStudent.TabIndex = 2;
             this.tabAddStudent.Text = "Add Student";
             this.tabAddStudent.UseVisualStyleBackColor = true;
@@ -92,10 +92,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControlStudent;
         private System.Windows.Forms.TabPage tabViewAllStudents;
         private System.Windows.Forms.TabPage tabViewStudentDetails;
         private System.Windows.Forms.TabPage tabAddStudent;
+        public System.Windows.Forms.TabControl tabControlStudent;
     }
 }

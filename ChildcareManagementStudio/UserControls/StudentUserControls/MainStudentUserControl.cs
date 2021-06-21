@@ -5,7 +5,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
     public partial class MainStudentUserControl : UserControl
     {
         private readonly ViewStudentListUserControl viewStudentListUserControl;
-        private readonly ViewStudentDetailUserControl viewStudentDetailUserControl;
+        public ViewStudentDetailUserControl viewStudentDetailUserControl { get; }
         private readonly AddStudentUserControl addStudentUserControl;
 
         /// <summary>
