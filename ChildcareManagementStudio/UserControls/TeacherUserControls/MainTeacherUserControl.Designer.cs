@@ -43,7 +43,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tabControlTeacher.Controls.Add(this.tabViewTeacherDetails);
             this.tabControlTeacher.Controls.Add(this.tabAddTeacher);
             this.tabControlTeacher.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlTeacher.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlTeacher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlTeacher.Location = new System.Drawing.Point(0, 0);
             this.tabControlTeacher.Name = "tabControlTeacher";
             this.tabControlTeacher.SelectedIndex = 0;
@@ -53,10 +53,10 @@ namespace ChildcareManagementStudio.UserControls
             // 
             // tabViewAllTeachers
             // 
-            this.tabViewAllTeachers.Location = new System.Drawing.Point(4, 34);
+            this.tabViewAllTeachers.Location = new System.Drawing.Point(4, 33);
             this.tabViewAllTeachers.Name = "tabViewAllTeachers";
             this.tabViewAllTeachers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewAllTeachers.Size = new System.Drawing.Size(752, 477);
+            this.tabViewAllTeachers.Size = new System.Drawing.Size(752, 478);
             this.tabViewAllTeachers.TabIndex = 0;
             this.tabViewAllTeachers.Text = "View All Teachers";
             this.tabViewAllTeachers.UseVisualStyleBackColor = true;

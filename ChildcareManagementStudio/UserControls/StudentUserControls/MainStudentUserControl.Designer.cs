@@ -38,6 +38,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             // tabControlStudent
             // 
+            this.tabControlStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlStudent.Controls.Add(this.tabViewAllStudents);
             this.tabControlStudent.Controls.Add(this.tabViewStudentDetails);
             this.tabControlStudent.Controls.Add(this.tabAddStudent);
@@ -51,30 +52,30 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             // tabViewAllStudents
             // 
-            this.tabViewAllStudents.Location = new System.Drawing.Point(4, 30);
+            this.tabViewAllStudents.Location = new System.Drawing.Point(4, 33);
             this.tabViewAllStudents.Name = "tabViewAllStudents";
             this.tabViewAllStudents.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewAllStudents.Size = new System.Drawing.Size(752, 481);
+            this.tabViewAllStudents.Size = new System.Drawing.Size(752, 478);
             this.tabViewAllStudents.TabIndex = 0;
             this.tabViewAllStudents.Text = "View All Students";
             this.tabViewAllStudents.UseVisualStyleBackColor = true;
             // 
             // tabViewStudentDetails
             // 
-            this.tabViewStudentDetails.Location = new System.Drawing.Point(4, 22);
+            this.tabViewStudentDetails.Location = new System.Drawing.Point(4, 33);
             this.tabViewStudentDetails.Name = "tabViewStudentDetails";
             this.tabViewStudentDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewStudentDetails.Size = new System.Drawing.Size(752, 489);
+            this.tabViewStudentDetails.Size = new System.Drawing.Size(752, 478);
             this.tabViewStudentDetails.TabIndex = 1;
             this.tabViewStudentDetails.Text = "View Student Details";
             this.tabViewStudentDetails.UseVisualStyleBackColor = true;
             // 
             // tabAddStudent
             // 
-            this.tabAddStudent.Location = new System.Drawing.Point(4, 22);
+            this.tabAddStudent.Location = new System.Drawing.Point(4, 33);
             this.tabAddStudent.Name = "tabAddStudent";
             this.tabAddStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddStudent.Size = new System.Drawing.Size(752, 489);
+            this.tabAddStudent.Size = new System.Drawing.Size(752, 478);
             this.tabAddStudent.TabIndex = 2;
             this.tabAddStudent.Text = "Add Student";
             this.tabAddStudent.UseVisualStyleBackColor = true;
