@@ -34,11 +34,11 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelVaccinationRecords = new System.Windows.Forms.Label();
             this.buttonChangePosition = new System.Windows.Forms.Button();
             this.buttonChangePayRate = new System.Windows.Forms.Button();
-            this.listViewPositionHistory = new System.Windows.Forms.ListView();
+            this.listViewVaccinationRecords = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderEffectiveDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPayRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewPayHistory = new System.Windows.Forms.ListView();
+            this.listViewPhysicalExamRecords = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelName = new System.Windows.Forms.Label();
             this.labelDOB = new System.Windows.Forms.Label();
@@ -123,21 +123,21 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonChangePayRate.Text = "Change Pay Rate";
             this.buttonChangePayRate.UseVisualStyleBackColor = true;
             // 
-            // listViewPositionHistory
+            // listViewVaccinationRecords
             // 
-            this.listViewPositionHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewVaccinationRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderPosition,
             this.columnHeaderSchoolYear});
-            this.tableLayoutPanel2.SetColumnSpan(this.listViewPositionHistory, 2);
-            this.listViewPositionHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewPositionHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewPositionHistory.HideSelection = false;
-            this.listViewPositionHistory.Location = new System.Drawing.Point(76, 38);
-            this.listViewPositionHistory.Name = "listViewPositionHistory";
-            this.listViewPositionHistory.Size = new System.Drawing.Size(287, 86);
-            this.listViewPositionHistory.TabIndex = 6;
-            this.listViewPositionHistory.UseCompatibleStateImageBehavior = false;
-            this.listViewPositionHistory.View = System.Windows.Forms.View.Details;
+            this.tableLayoutPanel2.SetColumnSpan(this.listViewVaccinationRecords, 2);
+            this.listViewVaccinationRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewVaccinationRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewVaccinationRecords.HideSelection = false;
+            this.listViewVaccinationRecords.Location = new System.Drawing.Point(76, 38);
+            this.listViewVaccinationRecords.Name = "listViewVaccinationRecords";
+            this.listViewVaccinationRecords.Size = new System.Drawing.Size(287, 86);
+            this.listViewVaccinationRecords.TabIndex = 6;
+            this.listViewVaccinationRecords.UseCompatibleStateImageBehavior = false;
+            this.listViewVaccinationRecords.View = System.Windows.Forms.View.Details;
             // 
             // columnHeaderPosition
             // 
@@ -154,21 +154,21 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.columnHeaderPayRate.Text = "Rate";
             this.columnHeaderPayRate.Width = 115;
             // 
-            // listViewPayHistory
+            // listViewPhysicalExamRecords
             // 
-            this.listViewPayHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewPhysicalExamRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderPayRate,
             this.columnHeaderEffectiveDate});
-            this.tableLayoutPanel2.SetColumnSpan(this.listViewPayHistory, 2);
-            this.listViewPayHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewPayHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewPayHistory.HideSelection = false;
-            this.listViewPayHistory.Location = new System.Drawing.Point(369, 38);
-            this.listViewPayHistory.Name = "listViewPayHistory";
-            this.listViewPayHistory.Size = new System.Drawing.Size(281, 86);
-            this.listViewPayHistory.TabIndex = 7;
-            this.listViewPayHistory.UseCompatibleStateImageBehavior = false;
-            this.listViewPayHistory.View = System.Windows.Forms.View.Details;
+            this.tableLayoutPanel2.SetColumnSpan(this.listViewPhysicalExamRecords, 2);
+            this.listViewPhysicalExamRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewPhysicalExamRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPhysicalExamRecords.HideSelection = false;
+            this.listViewPhysicalExamRecords.Location = new System.Drawing.Point(369, 38);
+            this.listViewPhysicalExamRecords.Name = "listViewPhysicalExamRecords";
+            this.listViewPhysicalExamRecords.Size = new System.Drawing.Size(281, 86);
+            this.listViewPhysicalExamRecords.TabIndex = 7;
+            this.listViewPhysicalExamRecords.UseCompatibleStateImageBehavior = false;
+            this.listViewPhysicalExamRecords.View = System.Windows.Forms.View.Details;
             // 
             // tableLayoutPanel2
             // 
@@ -179,8 +179,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel2.Controls.Add(this.listViewPayHistory, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.listViewPositionHistory, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.listViewPhysicalExamRecords, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.listViewVaccinationRecords, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelPhysicalExamRecords, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePayRate, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePosition, 1, 2);
@@ -484,14 +484,14 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
 
         private System.Windows.Forms.ColumnHeader columnHeaderSchoolYear;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ListView listViewPayHistory;
+        private System.Windows.Forms.ListView listViewPhysicalExamRecords;
         private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
         private System.Windows.Forms.ColumnHeader columnHeaderEffectiveDate;
         private System.Windows.Forms.Label labelPhysicalExamRecords;
         private System.Windows.Forms.Label labelVaccinationRecords;
         private System.Windows.Forms.Button buttonChangePosition;
         private System.Windows.Forms.Button buttonChangePayRate;
-        private System.Windows.Forms.ListView listViewPositionHistory;
+        private System.Windows.Forms.ListView listViewVaccinationRecords;
         private System.Windows.Forms.ColumnHeader columnHeaderPosition;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelDOB;
