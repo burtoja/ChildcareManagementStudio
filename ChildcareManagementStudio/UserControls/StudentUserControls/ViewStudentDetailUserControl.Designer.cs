@@ -47,7 +47,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelCity = new System.Windows.Forms.Label();
             this.labelState = new System.Windows.Forms.Label();
             this.labelZipCode = new System.Windows.Forms.Label();
-            this.labelStartDate = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelSSN = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -60,7 +59,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueAddress2 = new System.Windows.Forms.Label();
             this.labelValueState = new System.Windows.Forms.Label();
             this.labelValueZipCode = new System.Windows.Forms.Label();
-            this.labelValueStartDate = new System.Windows.Forms.Label();
             this.buttonEditStudent = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelValueCity = new System.Windows.Forms.Label();
@@ -201,11 +199,11 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(14, 14);
+            this.labelName.Location = new System.Drawing.Point(15, 14);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(130, 21);
+            this.labelName.Size = new System.Drawing.Size(129, 21);
             this.labelName.TabIndex = 0;
-            this.labelName.Text = "Teacher Name:";
+            this.labelName.Text = "Student Name:";
             // 
             // labelDOB
             // 
@@ -273,17 +271,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelZipCode.TabIndex = 8;
             this.labelZipCode.Text = "Zip Code:";
             // 
-            // labelStartDate
-            // 
-            this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartDate.Location = new System.Drawing.Point(342, 224);
-            this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(96, 21);
-            this.labelStartDate.TabIndex = 21;
-            this.labelStartDate.Text = "Start Date:";
-            // 
             // labelPhone
             // 
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -324,7 +311,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -411,17 +398,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueZipCode.Size = new System.Drawing.Size(0, 21);
             this.labelValueZipCode.TabIndex = 35;
             // 
-            // labelValueStartDate
-            // 
-            this.labelValueStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelValueStartDate.AutoSize = true;
-            this.labelValueStartDate.ForeColor = System.Drawing.Color.Maroon;
-            this.labelValueStartDate.Location = new System.Drawing.Point(444, 224);
-            this.labelValueStartDate.Name = "labelValueStartDate";
-            this.labelValueStartDate.Size = new System.Drawing.Size(0, 21);
-            this.labelValueStartDate.TabIndex = 36;
-            this.labelValueStartDate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // buttonEditStudent
             // 
             this.buttonEditStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -450,7 +426,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.Controls.Add(this.labelCity, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelState, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelZipCode, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelPhone, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
@@ -464,7 +439,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.Controls.Add(this.labelValueCity, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelValueState, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelValueZipCode, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelValueStartDate, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonEditStudent, 0, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -526,7 +500,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private System.Windows.Forms.Label labelCity;
         private System.Windows.Forms.Label labelState;
         private System.Windows.Forms.Label labelZipCode;
-        private System.Windows.Forms.Label labelStartDate;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelSSN;
         private System.Windows.Forms.Label labelGender;
@@ -541,7 +514,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private System.Windows.Forms.Label labelValueCity;
         private System.Windows.Forms.Label labelValueState;
         private System.Windows.Forms.Label labelValueZipCode;
-        private System.Windows.Forms.Label labelValueStartDate;
         private System.Windows.Forms.Button buttonEditStudent;
     }
 }
