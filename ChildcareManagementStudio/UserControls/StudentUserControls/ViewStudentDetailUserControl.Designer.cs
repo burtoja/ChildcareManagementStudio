@@ -311,10 +311,11 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
+            this.comboBoxName.SelectedIndexChanged += new System.EventHandler(this.ComboBoxName_SelectedIndexChanged);
             // 
             // labelValueDOB
             // 
@@ -410,6 +411,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonEditStudent.TabIndex = 26;
             this.buttonEditStudent.Text = "Edit Details for Selected Student";
             this.buttonEditStudent.UseVisualStyleBackColor = true;
+            this.buttonEditStudent.Click += new System.EventHandler(this.ButtonEditStudent_Click);
             // 
             // tableLayoutPanel1
             // 
