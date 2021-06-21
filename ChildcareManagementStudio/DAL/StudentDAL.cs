@@ -169,5 +169,89 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Method that edits an student's records in the database.
+        /// </summary>
+        /// <param name="originalStudent">Student object representing the student's records before the edits are made.</param>
+        /// <param name="revisedStudent">Student object representing the student's records after the edits are made.</param>
+        public void EditStudent(Student originalStudent, Student revisedStudent)
+        {
+            if (originalStudent == null)
+            {
+                throw new ArgumentNullException("originalStudent", "The original student cannot be null.");
+            }
+
+            if (revisedStudent == null)
+            {
+                throw new ArgumentNullException("revisedStudent", "The revised student cannot be null.");
+            }
+
+            if (originalStudent.StudentId != revisedStudent.StudentId)
+            {
+                throw new ArgumentException("The student ID must be the same for both Student objects.");
+            }
+
+            // TODO: wrap both table updates in a transaction
+
+            EditPerson(originalStudent, revisedStudent);
+
+            string updateStatement =
+                "UPDATE Student SET " +
+                    "vaccinationRecordExpirationDate = $revisedVaccinationRecordExpirationDate, " +
+                    "physicalExpirationDate = $revisedPhysicalExpirationDate " +
+                "WHERE studentId = $studentId " +
+                    "AND personId = $personId " +
+                    "AND vaccinationRecordExpirationDate = $originalVaccinationRecordExpirationDate " +
+                    "AND physicalExpirationDate = $originalPhysicalExpirationDate";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("$studentId", originalStudent.StudentId);
+                    updateCommand.Parameters.AddWithValue("$personId", originalStudent.PersonId);
+
+                    if (originalStudent.VaccinationRecordExpirationDate == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalVaccinationRecordExpirationDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalVaccinationRecordExpirationDate", originalStudent.VaccinationRecordExpirationDate.ToString("yyyy-MM-dd"));
+                    }
+
+                    if (originalStudent.PhysicalExamExpirationDate == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalPhysicalExpirationDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$originalPhysicalExpirationDate", originalStudent.PhysicalExamExpirationDate.ToString("yyyy-MM-dd"));
+                    }
+
+                    if (revisedStudent.VaccinationRecordExpirationDate == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedVaccinationRecordExpirationDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedVaccinationRecordExpirationDate", revisedStudent.VaccinationRecordExpirationDate.ToString("yyyy-MM-dd"));
+                    }
+
+                    if (revisedStudent.PhysicalExamExpirationDate == default)
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedPhysicalExpirationDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("$revisedPhysicalExpirationDate", revisedStudent.PhysicalExamExpirationDate.ToString("yyyy-MM-dd"));
+                    }
+
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

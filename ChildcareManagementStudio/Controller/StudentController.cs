@@ -63,5 +63,30 @@ namespace ChildcareManagementStudio.Controller
 
             studentDAL.AddStudent(student);
         }
+
+        /// <summary>
+        /// Method that edits an student's records in the database.
+        /// </summary>
+        /// <param name="originalStudent">Student object representing the student's records before the edits are made.</param>
+        /// <param name="revisedStudent">Student object representing the student's records after the edits are made.</param>
+        public void EditStudent(Student originalStudent, Student revisedStudent)
+        {
+            if (originalStudent == null)
+            {
+                throw new ArgumentNullException("originalStudent", "The original student cannot be null.");
+            }
+
+            if (revisedStudent == null)
+            {
+                throw new ArgumentNullException("revisedStudent", "The revised student cannot be null.");
+            }
+
+            if (originalStudent.StudentId != revisedStudent.StudentId)
+            {
+                throw new ArgumentException("The student ID must be the same for both Student objects.");
+            }
+
+            studentDAL.EditStudent(originalStudent, revisedStudent);
+        }
     }
 }

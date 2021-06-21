@@ -211,7 +211,7 @@ namespace ChildcareManagementStudio.DAL
         /// The method will throw an exception if any of the aforementioned records are different between the original and revised Employee objects.
         /// </summary>
         /// <param name="originalEmployee">Employee object representing the employee's records before the edits are made.</param>
-        /// <param name="revisedEmployee">Employee object representing the person's records after the edits are made.</param>
+        /// <param name="revisedEmployee">Employee object representing the employee's records after the edits are made.</param>
         public void EditEmployee(Employee originalEmployee, Employee revisedEmployee)
         {
             if (originalEmployee == null)
