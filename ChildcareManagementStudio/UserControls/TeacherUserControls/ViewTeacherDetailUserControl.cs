@@ -62,6 +62,26 @@ namespace ChildcareManagementStudio.UserControls
         }
 
         /// <summary>
+        /// Resets teacher details to empty
+        /// </summary>
+        private void ResetFormValues()
+        {
+            this.labelValueDOB.Text = "";
+            this.labelValueSSN.Text = "";
+            this.labelValuePhone.Text = "";
+            this.labelValueGender.Text = "";
+            this.labelValueAddress1.Text = "";
+            this.labelValueAddress2.Text = "";
+            this.labelValueCity.Text = "";
+            this.labelValueState.Text = "";
+            this.labelValueZipCode.Text = "";
+            this.labelValueStartDate.Text = "";
+            this.listViewCredentialHistory.Items.Clear();
+            this.listViewPayHistory.Items.Clear();
+            this.listViewPositionHistory.Items.Clear();
+        }
+
+        /// <summary>
         /// Display the employee details from the DB
         /// </summary>
         /// <param name="employeeId"></param>
@@ -159,26 +179,6 @@ namespace ChildcareManagementStudio.UserControls
                     this.ResetFormValues();
                 }
             }
-        }
-
-        /// <summary>
-        /// Resets teacher details to empty
-        /// </summary>
-        private void ResetFormValues()
-        {
-            this.labelValueDOB.Text = "";
-            this.labelValueSSN.Text = "";
-            this.labelValuePhone.Text = "";
-            this.labelValueGender.Text = "";
-            this.labelValueAddress1.Text = "";
-            this.labelValueAddress2.Text = "";
-            this.labelValueCity.Text = "";
-            this.labelValueState.Text = "";
-            this.labelValueZipCode.Text = "";
-            this.labelValueStartDate.Text = "";
-            this.listViewCredentialHistory.Items.Clear();
-            this.listViewPayHistory.Items.Clear();
-            this.listViewPositionHistory.Items.Clear();
         }
 
         /// <summary>
