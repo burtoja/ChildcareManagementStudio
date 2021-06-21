@@ -1,7 +1,7 @@
 ﻿
-namespace ChildcareManagementStudio.View
+namespace ChildcareManagementStudio.View.StudentViews
 {
-    partial class EditTeacherForm
+    partial class EditStudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace ChildcareManagementStudio.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxZipCode = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxAddress2 = new System.Windows.Forms.TextBox();
@@ -48,17 +49,61 @@ namespace ChildcareManagementStudio.View
             this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
             this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.labelErrorMessage = new System.Windows.Forms.Label();
-            this.labelStartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelSSN = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.textBoxSSN = new System.Windows.Forms.MaskedTextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.94936F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.94936F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.06685F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.03444F));
+            this.tableLayoutPanel1.Controls.Add(this.textBoxZipCode, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxCity, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress2, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxLastName, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelFirstName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelLastName, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelDOB, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelAddress1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelAddress2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.labelCity, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelState, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelZipCode, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSubmit, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.buttonClear, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxFirstName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxState, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelPhone, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxSSN, 3, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 10);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 464);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // textBoxZipCode
             // 
@@ -205,7 +250,6 @@ namespace ChildcareManagementStudio.View
             this.buttonSubmit.TabIndex = 23;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonClear
             // 
@@ -218,7 +262,6 @@ namespace ChildcareManagementStudio.View
             this.buttonClear.TabIndex = 24;
             this.buttonClear.Text = "Reset";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // textBoxFirstName
             // 
@@ -314,27 +357,6 @@ namespace ChildcareManagementStudio.View
             this.labelErrorMessage.Size = new System.Drawing.Size(0, 17);
             this.labelErrorMessage.TabIndex = 20;
             // 
-            // labelStartDate
-            // 
-            this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartDate.Location = new System.Drawing.Point(424, 329);
-            this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(96, 21);
-            this.labelStartDate.TabIndex = 21;
-            this.labelStartDate.Text = "Start Date:";
-            // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePickerStartDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(526, 320);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePickerStartDate.TabIndex = 22;
-            // 
             // labelPhone
             // 
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -404,56 +426,7 @@ namespace ChildcareManagementStudio.View
             this.textBoxSSN.Size = new System.Drawing.Size(100, 27);
             this.textBoxSSN.TabIndex = 14;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.94936F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.94936F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.06685F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.03444F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxZipCode, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCity, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress2, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxLastName, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelFirstName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelLastName, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelDOB, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelAddress1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelAddress2, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelCity, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelState, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelZipCode, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSubmit, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.buttonClear, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxFirstName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxState, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerStartDate, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelPhone, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxSSN, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 9);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 464);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // EditTeacherForm
+            // EditStudentForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(761, 485);
@@ -462,10 +435,9 @@ namespace ChildcareManagementStudio.View
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditTeacherForm";
+            this.Name = "EditStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit Teacher Information";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditTeacherForm_FormClosed);
+            this.Text = "Edit Student Information";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -474,10 +446,10 @@ namespace ChildcareManagementStudio.View
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBoxZipCode;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxAddress2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBoxAddress1;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label labelFirstName;
@@ -494,8 +466,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.DateTimePicker dateTimePickerDOB;
         private System.Windows.Forms.ComboBox comboBoxState;
         private System.Windows.Forms.Label labelErrorMessage;
-        private System.Windows.Forms.Label labelStartDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelSSN;
         private System.Windows.Forms.Label labelGender;
