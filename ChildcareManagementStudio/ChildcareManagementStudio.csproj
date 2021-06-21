@@ -150,6 +150,12 @@
     <Compile Include="UserControls\StudentUserControls\MainStudentUserControl.Designer.cs">
       <DependentUpon>MainStudentUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StudentUserControls\ViewStudentDetailUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StudentUserControls\ViewStudentDetailUserControl.Designer.cs">
+      <DependentUpon>ViewStudentDetailUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\StudentUserControls\ViewStudentListUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StudentUserControls\MainStudentUserControl.resx">
       <DependentUpon>MainStudentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StudentUserControls\ViewStudentDetailUserControl.resx">
+      <DependentUpon>ViewStudentDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StudentUserControls\ViewStudentListUserControl.resx">
       <DependentUpon>ViewStudentListUserControl.cs</DependentUpon>
