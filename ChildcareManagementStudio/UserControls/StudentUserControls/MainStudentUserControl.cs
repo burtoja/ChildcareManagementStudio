@@ -5,7 +5,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
     public partial class MainStudentUserControl : UserControl
     {
         private readonly ViewStudentListUserControl viewStudentListUserControl;
-        public ViewStudentDetailUserControl viewStudentDetailUserControl { get; }
+        public ViewStudentDetailUserControl ViewStudentDetailUserControl { get; }
         private readonly AddStudentUserControl addStudentUserControl;
 
         /// <summary>
@@ -15,7 +15,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         {
             InitializeComponent();
             this.viewStudentListUserControl = new ViewStudentListUserControl(this);
-            this.viewStudentDetailUserControl = new ViewStudentDetailUserControl();
+            this.ViewStudentDetailUserControl = new ViewStudentDetailUserControl();
             this.addStudentUserControl = new AddStudentUserControl(this);
             this.AddUserControls();
         }
@@ -26,7 +26,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private void AddUserControls()
         {
             this.tabViewAllStudents.Controls.Add(this.viewStudentListUserControl);
-            this.tabViewStudentDetails.Controls.Add(this.viewStudentDetailUserControl);
+            this.tabViewStudentDetails.Controls.Add(this.ViewStudentDetailUserControl);
             this.tabAddStudent.Controls.Add(this.addStudentUserControl);
         }
 
@@ -45,7 +45,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                     break;
                 case 1:
                     // View Student Details tab
-                    this.viewStudentDetailUserControl.FillDropDownList();
+                    this.ViewStudentDetailUserControl.FillDropDownList();
                     break;
                 case 2:
                     // Add New Student tab

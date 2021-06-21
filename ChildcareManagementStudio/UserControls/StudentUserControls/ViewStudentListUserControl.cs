@@ -72,7 +72,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 if (Int32.TryParse(item.SubItems[3].Text, out int selectedStudentId))
                 {
                     this.mainStudentUserControl.tabControlStudent.SelectedIndex = 1;
-                    this.mainStudentUserControl.viewStudentDetailUserControl.FillDropDownList(selectedStudentId);
+                    this.mainStudentUserControl.ViewStudentDetailUserControl.FillDropDownList(selectedStudentId);
                 }
             }
         }
