@@ -29,15 +29,15 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.columnHeaderSchoolYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderVaccinationExpiration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelPhysicalExamRecords = new System.Windows.Forms.Label();
             this.labelVaccinationRecords = new System.Windows.Forms.Label();
             this.buttonChangePosition = new System.Windows.Forms.Button();
             this.buttonChangePayRate = new System.Windows.Forms.Button();
             this.listViewVaccinationRecords = new System.Windows.Forms.ListView();
-            this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderEffectiveDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPayRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderVaccinationSubmitDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPhysicalExpirationDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPhysicalSubmitDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewPhysicalExamRecords = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelName = new System.Windows.Forms.Label();
@@ -66,10 +66,10 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // columnHeaderSchoolYear
+            // columnHeaderVaccinationExpiration
             // 
-            this.columnHeaderSchoolYear.Text = "School Year";
-            this.columnHeaderSchoolYear.Width = 120;
+            this.columnHeaderVaccinationExpiration.Text = "Expiration Date";
+            this.columnHeaderVaccinationExpiration.Width = 151;
             // 
             // labelPhysicalExamRecords
             // 
@@ -126,8 +126,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // listViewVaccinationRecords
             // 
             this.listViewVaccinationRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderPosition,
-            this.columnHeaderSchoolYear});
+            this.columnHeaderVaccinationSubmitDate,
+            this.columnHeaderVaccinationExpiration});
             this.tableLayoutPanel2.SetColumnSpan(this.listViewVaccinationRecords, 2);
             this.listViewVaccinationRecords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewVaccinationRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,26 +139,26 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.listViewVaccinationRecords.UseCompatibleStateImageBehavior = false;
             this.listViewVaccinationRecords.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeaderPosition
+            // columnHeaderVaccinationSubmitDate
             // 
-            this.columnHeaderPosition.Text = "Position";
-            this.columnHeaderPosition.Width = 112;
+            this.columnHeaderVaccinationSubmitDate.Text = "Date Submitted";
+            this.columnHeaderVaccinationSubmitDate.Width = 132;
             // 
-            // columnHeaderEffectiveDate
+            // columnHeaderPhysicalExpirationDate
             // 
-            this.columnHeaderEffectiveDate.Text = "StartDate";
-            this.columnHeaderEffectiveDate.Width = 117;
+            this.columnHeaderPhysicalExpirationDate.Text = "Expiration Date";
+            this.columnHeaderPhysicalExpirationDate.Width = 141;
             // 
-            // columnHeaderPayRate
+            // columnHeaderPhysicalSubmitDate
             // 
-            this.columnHeaderPayRate.Text = "Rate";
-            this.columnHeaderPayRate.Width = 115;
+            this.columnHeaderPhysicalSubmitDate.Text = "Date Submitted";
+            this.columnHeaderPhysicalSubmitDate.Width = 135;
             // 
             // listViewPhysicalExamRecords
             // 
             this.listViewPhysicalExamRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderPayRate,
-            this.columnHeaderEffectiveDate});
+            this.columnHeaderPhysicalSubmitDate,
+            this.columnHeaderPhysicalExpirationDate});
             this.tableLayoutPanel2.SetColumnSpan(this.listViewPhysicalExamRecords, 2);
             this.listViewPhysicalExamRecords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPhysicalExamRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,7 +311,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -484,17 +484,17 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
 
         #endregion
 
-        private System.Windows.Forms.ColumnHeader columnHeaderSchoolYear;
+        private System.Windows.Forms.ColumnHeader columnHeaderVaccinationExpiration;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ListView listViewPhysicalExamRecords;
-        private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
-        private System.Windows.Forms.ColumnHeader columnHeaderEffectiveDate;
+        private System.Windows.Forms.ColumnHeader columnHeaderPhysicalSubmitDate;
+        private System.Windows.Forms.ColumnHeader columnHeaderPhysicalExpirationDate;
         private System.Windows.Forms.Label labelPhysicalExamRecords;
         private System.Windows.Forms.Label labelVaccinationRecords;
         private System.Windows.Forms.Button buttonChangePosition;
         private System.Windows.Forms.Button buttonChangePayRate;
         private System.Windows.Forms.ListView listViewVaccinationRecords;
-        private System.Windows.Forms.ColumnHeader columnHeaderPosition;
+        private System.Windows.Forms.ColumnHeader columnHeaderVaccinationSubmitDate;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelDOB;
         private System.Windows.Forms.Label labelAddress1;
