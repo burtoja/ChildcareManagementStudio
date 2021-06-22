@@ -66,8 +66,8 @@ namespace ChildcareManagementStudio.View.StudentViews
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        //VaccinationRecords = this.originalStudent.VaccinationRecords,
-                        //PhysicalExamRecords = this.originalStudent.PhysicalExamRecords
+                        VaccinationRecordExpirationDate = this.originalStudent.VaccinationRecordExpirationDate,
+                        PhysicalExamExpirationDate = this.originalStudent.PhysicalExamExpirationDate
                     };
                     this.studentController.EditStudent(this.originalStudent, revisedStudent);
                     string title = "Student Updated";
