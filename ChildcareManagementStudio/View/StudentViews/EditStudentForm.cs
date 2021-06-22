@@ -80,25 +80,18 @@ namespace ChildcareManagementStudio.View.StudentViews
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                //DateTime vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
-                //DateTime physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
 
-                DateTime vaccinationExpiration = new DateTime(2020, 6, 8);
-                DateTime physicalExamExpiration = new DateTime(2020, 7, 9);
+                DateTime vaccinationExpiration;
+                if (!this.checkBoxNoVaccinationRecord.Checked)
+                    vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
+                else
+                    vaccinationExpiration = new DateTime(0001, 1, 1); 
 
-                //DateTime vaccinationExpiration;
-                //if (!this.checkBoxNoVaccinationRecord.Checked)
-                //    vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
-                //else
-                //    vaccinationExpiration = new DateTime(0001, 1, 1);
-                //Console.WriteLine("Vaccine Expiration: " + vaccinationExpiration.ToString("d"));
-
-                //DateTime physicalExamExpiration;
-                //if (!this.checkBoxNoPhysicalExamRecord.Checked)
-                //    physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
-                //else
-                //    physicalExamExpiration = new DateTime(0001, 1, 1);
-                //Console.WriteLine("Physical Expiration: " + physicalExamExpiration.ToString("d"));
+                DateTime physicalExamExpiration;
+                if (!this.checkBoxNoPhysicalExamRecord.Checked)
+                    physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
+                else
+                    physicalExamExpiration = new DateTime(0001, 1, 1);
 
                 try
                 {
