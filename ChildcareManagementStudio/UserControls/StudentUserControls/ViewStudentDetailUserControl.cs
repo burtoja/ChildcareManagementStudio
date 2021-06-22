@@ -14,8 +14,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
     public partial class ViewStudentDetailUserControl : UserControl
     {
         private readonly StudentController studentController;
-        //private readonly VaccineRecordController vaccineRecordController;     //TODO: Uncomment when controllers created
-        //private readonly PhysicalExamController physicalExamController;       //TODO: Uncomment when controllers created
         private List<Student> studentList;
 
         /// <summary>
@@ -24,8 +22,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         public ViewStudentDetailUserControl()
         {
             this.studentController = new StudentController();
-            //this.vaccineRecordController = new VaccineRecordController();   //TODO: Uncomment when controllers created
-            //this.physicalExamController = new PhysicalExamController();     //TODO: Uncomment when controllers created
             InitializeComponent();
         }
 
@@ -71,9 +67,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueAddress2.Text = "";
             this.labelValueCity.Text = "";
             this.labelValueState.Text = "";
-            this.labelValueZipCode.Text = "";
-            this.listViewVaccinationRecords.Items.Clear();
-            this.listViewPhysicalExamRecords.Items.Clear();           
+            this.labelValueZipCode.Text = "";          
         }
 
         /// <summary>
@@ -92,39 +86,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueCity.Text = student.City;
             this.labelValueState.Text = student.State;
             this.labelValueZipCode.Text = student.ZipCode;
+            this.labelValueVaccination.Text = student.VaccinationRecordExpirationDate.ToString("d");
+            this.labelValuePhysicalExam.Text = student.PhysicalExamExpirationDate.ToString("d");
         }
-
-        ///// <summary>
-        ///// Populate the listview with the students's vaccination records.
-        ///// </summary>
-        ///// <param name="studentId"></param>
-        //private void PopulateVaccinationRecordsListView(int studentId)
-        //{
-        //    this.listViewVaccinationRecords.Items.Clear();
-        //    List<DateTime> vaccinationExpirationList = this.studentController.GetStudent(studentId).VaccinationRecordExpirationDate;
-        //    foreach (VaccinationRecord current in vaccinationExpirationList)
-        //    {
-        //        ListViewItem item = new ListViewItem(current.Type);
-        //        item.SubItems.Add(current.SchoolYear);                  //TODO: Correct this field
-        //        this.listViewVaccinationRecords.Items.Add(item);
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Populate the listview with the students's physical exam records.
-        ///// </summary>
-        ///// <param name="studentId"></param>
-        //private void PopulatePhysicalExamRecordsListView(int studentId)
-        //{
-        //    this.listViewVaccinationRecords.Items.Clear();
-        //    List<PhysicalExamRecord> physicalExamList = this.physicalExamRecordController.GetPhysicalExamRecords(studentId);
-        //    foreach (PhysicalExamRecord current in physicalExamList)
-        //    {
-        //        ListViewItem item = new ListViewItem(current.Type);
-        //        item.SubItems.Add(current.SchoolYear);                  //TODO: correct this field
-        //        this.listViewVaccinationRecords.Items.Add(item);
-        //    }
-        //}
 
         /// <summary>
         /// When new value chosen in combobox the displayed student details update
@@ -147,8 +111,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 {
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int studentId);
                     this.FillFormValues(studentId);
-                    //this.PopulateVaccinationRecordsListView(studentId);       //TODO: Uncomment when controllers created
-                    //this.PopulatePhysicalExamRecordsListView(studentId);       //TODO: Uncomment when controllers created
                 }
                 catch
                 {
@@ -180,7 +142,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 {
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int studentId);
                     Student student = this.studentController.GetStudent(studentId);
-                    EditStudentForm editStudentForm = new EditStudentForm(student, this);        //TODO: Uncomment when edit student form created
+                    EditStudentForm editStudentForm = new EditStudentForm(student, this);       
                     editStudentForm.Show();
                 }
                 catch (Exception ex)

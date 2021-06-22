@@ -29,17 +29,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.columnHeaderVaccinationExpiration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.labelPhysicalExamRecords = new System.Windows.Forms.Label();
-            this.labelVaccinationRecords = new System.Windows.Forms.Label();
-            this.buttonAddVaccinationRecord = new System.Windows.Forms.Button();
-            this.buttonAddPhysicalExamRecord = new System.Windows.Forms.Button();
-            this.listViewVaccinationRecords = new System.Windows.Forms.ListView();
-            this.columnHeaderVaccinationSubmitDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPhysicalExpirationDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPhysicalSubmitDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewPhysicalExamRecords = new System.Windows.Forms.ListView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelName = new System.Windows.Forms.Label();
             this.labelDOB = new System.Windows.Forms.Label();
             this.labelAddress1 = new System.Windows.Forms.Label();
@@ -62,137 +51,12 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonEditStudent = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelValueCity = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.labelVaccinationExpiration = new System.Windows.Forms.Label();
+            this.labelPhysicalExamExpiration = new System.Windows.Forms.Label();
+            this.labelValueVaccination = new System.Windows.Forms.Label();
+            this.labelValuePhysicalExam = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // columnHeaderVaccinationExpiration
-            // 
-            this.columnHeaderVaccinationExpiration.Text = "Expiration Date";
-            this.columnHeaderVaccinationExpiration.Width = 151;
-            // 
-            // labelPhysicalExamRecords
-            // 
-            this.labelPhysicalExamRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPhysicalExamRecords.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.labelPhysicalExamRecords, 2);
-            this.labelPhysicalExamRecords.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhysicalExamRecords.Location = new System.Drawing.Point(369, 8);
-            this.labelPhysicalExamRecords.Name = "labelPhysicalExamRecords";
-            this.labelPhysicalExamRecords.Size = new System.Drawing.Size(281, 19);
-            this.labelPhysicalExamRecords.TabIndex = 1;
-            this.labelPhysicalExamRecords.Text = "Physical Exam Records";
-            this.labelPhysicalExamRecords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelVaccinationRecords
-            // 
-            this.labelVaccinationRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelVaccinationRecords.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.labelVaccinationRecords, 2);
-            this.labelVaccinationRecords.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVaccinationRecords.Location = new System.Drawing.Point(76, 8);
-            this.labelVaccinationRecords.Name = "labelVaccinationRecords";
-            this.labelVaccinationRecords.Size = new System.Drawing.Size(287, 19);
-            this.labelVaccinationRecords.TabIndex = 0;
-            this.labelVaccinationRecords.Text = "Vaccination Records";
-            this.labelVaccinationRecords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonAddVaccinationRecord
-            // 
-            this.buttonAddVaccinationRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.buttonAddVaccinationRecord, 2);
-            this.buttonAddVaccinationRecord.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddVaccinationRecord.Location = new System.Drawing.Point(76, 130);
-            this.buttonAddVaccinationRecord.Name = "buttonAddVaccinationRecord";
-            this.buttonAddVaccinationRecord.Size = new System.Drawing.Size(287, 29);
-            this.buttonAddVaccinationRecord.TabIndex = 3;
-            this.buttonAddVaccinationRecord.Text = "Add Vaccination Record";
-            this.buttonAddVaccinationRecord.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddPhysicalExamRecord
-            // 
-            this.buttonAddPhysicalExamRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.buttonAddPhysicalExamRecord, 2);
-            this.buttonAddPhysicalExamRecord.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddPhysicalExamRecord.Location = new System.Drawing.Point(369, 130);
-            this.buttonAddPhysicalExamRecord.Name = "buttonAddPhysicalExamRecord";
-            this.buttonAddPhysicalExamRecord.Size = new System.Drawing.Size(281, 29);
-            this.buttonAddPhysicalExamRecord.TabIndex = 4;
-            this.buttonAddPhysicalExamRecord.Text = "Add Physical Exam Record";
-            this.buttonAddPhysicalExamRecord.UseVisualStyleBackColor = true;
-            // 
-            // listViewVaccinationRecords
-            // 
-            this.listViewVaccinationRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderVaccinationSubmitDate,
-            this.columnHeaderVaccinationExpiration});
-            this.tableLayoutPanel2.SetColumnSpan(this.listViewVaccinationRecords, 2);
-            this.listViewVaccinationRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewVaccinationRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewVaccinationRecords.HideSelection = false;
-            this.listViewVaccinationRecords.Location = new System.Drawing.Point(76, 38);
-            this.listViewVaccinationRecords.Name = "listViewVaccinationRecords";
-            this.listViewVaccinationRecords.Size = new System.Drawing.Size(287, 86);
-            this.listViewVaccinationRecords.TabIndex = 6;
-            this.listViewVaccinationRecords.UseCompatibleStateImageBehavior = false;
-            this.listViewVaccinationRecords.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderVaccinationSubmitDate
-            // 
-            this.columnHeaderVaccinationSubmitDate.Text = "Date Submitted";
-            this.columnHeaderVaccinationSubmitDate.Width = 132;
-            // 
-            // columnHeaderPhysicalExpirationDate
-            // 
-            this.columnHeaderPhysicalExpirationDate.Text = "Expiration Date";
-            this.columnHeaderPhysicalExpirationDate.Width = 141;
-            // 
-            // columnHeaderPhysicalSubmitDate
-            // 
-            this.columnHeaderPhysicalSubmitDate.Text = "Date Submitted";
-            this.columnHeaderPhysicalSubmitDate.Width = 135;
-            // 
-            // listViewPhysicalExamRecords
-            // 
-            this.listViewPhysicalExamRecords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderPhysicalSubmitDate,
-            this.columnHeaderPhysicalExpirationDate});
-            this.tableLayoutPanel2.SetColumnSpan(this.listViewPhysicalExamRecords, 2);
-            this.listViewPhysicalExamRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewPhysicalExamRecords.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewPhysicalExamRecords.HideSelection = false;
-            this.listViewPhysicalExamRecords.Location = new System.Drawing.Point(369, 38);
-            this.listViewPhysicalExamRecords.Name = "listViewPhysicalExamRecords";
-            this.listViewPhysicalExamRecords.Size = new System.Drawing.Size(281, 86);
-            this.listViewPhysicalExamRecords.TabIndex = 7;
-            this.listViewPhysicalExamRecords.UseCompatibleStateImageBehavior = false;
-            this.listViewPhysicalExamRecords.View = System.Windows.Forms.View.Details;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel2.Controls.Add(this.listViewPhysicalExamRecords, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.listViewVaccinationRecords, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.labelPhysicalExamRecords, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonAddPhysicalExamRecord, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.buttonAddVaccinationRecord, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelVaccinationRecords, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 305);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(739, 162);
-            this.tableLayoutPanel2.TabIndex = 4;
             // 
             // labelName
             // 
@@ -405,7 +269,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.SetColumnSpan(this.buttonEditStudent, 5);
             this.buttonEditStudent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonEditStudent.Location = new System.Drawing.Point(113, 256);
+            this.buttonEditStudent.Location = new System.Drawing.Point(113, 349);
             this.buttonEditStudent.Name = "buttonEditStudent";
             this.buttonEditStudent.Size = new System.Drawing.Size(513, 28);
             this.buttonEditStudent.TabIndex = 26;
@@ -441,10 +305,16 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.Controls.Add(this.labelValueCity, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelValueState, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelValueZipCode, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEditStudent, 0, 7);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.buttonEditStudent, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.labelVaccinationExpiration, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelPhysicalExamExpiration, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueVaccination, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelValuePhysicalExam, 3, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -453,7 +323,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 283);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 412);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // labelValueCity
@@ -466,16 +336,57 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueCity.Size = new System.Drawing.Size(0, 21);
             this.labelValueCity.TabIndex = 33;
             // 
+            // labelVaccinationExpiration
+            // 
+            this.labelVaccinationExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelVaccinationExpiration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelVaccinationExpiration, 2);
+            this.labelVaccinationExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVaccinationExpiration.Location = new System.Drawing.Point(187, 259);
+            this.labelVaccinationExpiration.Name = "labelVaccinationExpiration";
+            this.labelVaccinationExpiration.Size = new System.Drawing.Size(251, 21);
+            this.labelVaccinationExpiration.TabIndex = 36;
+            this.labelVaccinationExpiration.Text = "Vaccination Record Expiration:";
+            // 
+            // labelPhysicalExamExpiration
+            // 
+            this.labelPhysicalExamExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPhysicalExamExpiration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPhysicalExamExpiration, 2);
+            this.labelPhysicalExamExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhysicalExamExpiration.Location = new System.Drawing.Point(236, 294);
+            this.labelPhysicalExamExpiration.Name = "labelPhysicalExamExpiration";
+            this.labelPhysicalExamExpiration.Size = new System.Drawing.Size(202, 21);
+            this.labelPhysicalExamExpiration.TabIndex = 37;
+            this.labelPhysicalExamExpiration.Text = "Physical Exam Expiration:";
+            // 
+            // labelValueVaccination
+            // 
+            this.labelValueVaccination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValueVaccination.AutoSize = true;
+            this.labelValueVaccination.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueVaccination.Location = new System.Drawing.Point(444, 259);
+            this.labelValueVaccination.Name = "labelValueVaccination";
+            this.labelValueVaccination.Size = new System.Drawing.Size(0, 21);
+            this.labelValueVaccination.TabIndex = 38;
+            // 
+            // labelValuePhysicalExam
+            // 
+            this.labelValuePhysicalExam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValuePhysicalExam.AutoSize = true;
+            this.labelValuePhysicalExam.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValuePhysicalExam.Location = new System.Drawing.Point(444, 294);
+            this.labelValuePhysicalExam.Name = "labelValuePhysicalExam";
+            this.labelValuePhysicalExam.Size = new System.Drawing.Size(0, 21);
+            this.labelValuePhysicalExam.TabIndex = 39;
+            // 
             // ViewStudentDetailUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewStudentDetailUserControl";
             this.Size = new System.Drawing.Size(745, 470);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -483,18 +394,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         }
 
         #endregion
-
-        private System.Windows.Forms.ColumnHeader columnHeaderVaccinationExpiration;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ListView listViewPhysicalExamRecords;
-        private System.Windows.Forms.ColumnHeader columnHeaderPhysicalSubmitDate;
-        private System.Windows.Forms.ColumnHeader columnHeaderPhysicalExpirationDate;
-        private System.Windows.Forms.Label labelPhysicalExamRecords;
-        private System.Windows.Forms.Label labelVaccinationRecords;
-        private System.Windows.Forms.Button buttonAddVaccinationRecord;
-        private System.Windows.Forms.Button buttonAddPhysicalExamRecord;
-        private System.Windows.Forms.ListView listViewVaccinationRecords;
-        private System.Windows.Forms.ColumnHeader columnHeaderVaccinationSubmitDate;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelDOB;
         private System.Windows.Forms.Label labelAddress1;
@@ -517,5 +416,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private System.Windows.Forms.Label labelValueState;
         private System.Windows.Forms.Label labelValueZipCode;
         private System.Windows.Forms.Button buttonEditStudent;
+        private System.Windows.Forms.Label labelVaccinationExpiration;
+        private System.Windows.Forms.Label labelPhysicalExamExpiration;
+        private System.Windows.Forms.Label labelValueVaccination;
+        private System.Windows.Forms.Label labelValuePhysicalExam;
     }
 }
