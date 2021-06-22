@@ -49,6 +49,8 @@ namespace ChildcareManagementStudio.View.StudentViews
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
+                DateTime vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
+                DateTime physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
                 try
                 {
                     Student revisedStudent = new Student
@@ -66,8 +68,8 @@ namespace ChildcareManagementStudio.View.StudentViews
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        VaccinationRecordExpirationDate = this.originalStudent.VaccinationRecordExpirationDate,
-                        PhysicalExamExpirationDate = this.originalStudent.PhysicalExamExpirationDate
+                        VaccinationRecordExpirationDate = vaccinationExpiration,
+                        PhysicalExamExpirationDate = physicalExamExpiration
                     };
                     this.studentController.EditStudent(this.originalStudent, revisedStudent);
                     string title = "Student Updated";
@@ -115,6 +117,8 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.textBoxCity.Text = this.originalStudent.City;
             this.comboBoxState.Text = this.originalStudent.State;
             this.textBoxZipCode.Text = this.originalStudent.ZipCode;
+            this.dateTimePickerVaccinationExpiration.Value = this.originalStudent.VaccinationRecordExpirationDate;
+            this.dateTimePickerPhysicalExamExpriation.Value = this.originalStudent.PhysicalExamExpirationDate;
         }
 
         /// <summary>

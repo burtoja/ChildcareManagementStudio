@@ -55,6 +55,10 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.textBoxSSN = new System.Windows.Forms.MaskedTextBox();
+            this.labelVaccinationExpiration = new System.Windows.Forms.Label();
+            this.labelPhysicalExamExpiration = new System.Windows.Forms.Label();
+            this.dateTimePickerVaccinationExpiration = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerPhysicalExamExpriation = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,28 +82,34 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.tableLayoutPanel1.Controls.Add(this.labelCity, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelState, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelZipCode, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSubmit, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.buttonClear, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSubmit, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.buttonClear, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBoxFirstName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxState, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.labelPhone, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSSN, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelVaccinationExpiration, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelPhysicalExamExpiration, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerVaccinationExpiration, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerPhysicalExamExpriation, 3, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowCount = 11;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 464);
@@ -109,7 +119,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxZipCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxZipCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZipCode.Location = new System.Drawing.Point(187, 320);
+            this.textBoxZipCode.Location = new System.Drawing.Point(187, 250);
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(178, 27);
             this.textBoxZipCode.TabIndex = 21;
@@ -118,7 +128,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxCity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCity.Location = new System.Drawing.Point(187, 270);
+            this.textBoxCity.Location = new System.Drawing.Point(187, 210);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(178, 27);
             this.textBoxCity.TabIndex = 19;
@@ -128,7 +138,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.textBoxAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxAddress2, 3);
             this.textBoxAddress2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress2.Location = new System.Drawing.Point(187, 220);
+            this.textBoxAddress2.Location = new System.Drawing.Point(187, 170);
             this.textBoxAddress2.Name = "textBoxAddress2";
             this.textBoxAddress2.Size = new System.Drawing.Size(549, 27);
             this.textBoxAddress2.TabIndex = 18;
@@ -138,7 +148,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.textBoxAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxAddress1, 3);
             this.textBoxAddress1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress1.Location = new System.Drawing.Point(187, 170);
+            this.textBoxAddress1.Location = new System.Drawing.Point(187, 130);
             this.textBoxAddress1.Name = "textBoxAddress1";
             this.textBoxAddress1.Size = new System.Drawing.Size(549, 27);
             this.textBoxAddress1.TabIndex = 17;
@@ -147,7 +157,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastName.Location = new System.Drawing.Point(526, 20);
+            this.textBoxLastName.Location = new System.Drawing.Point(526, 10);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(178, 27);
             this.textBoxLastName.TabIndex = 12;
@@ -157,7 +167,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(86, 29);
+            this.labelFirstName.Location = new System.Drawing.Point(86, 19);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(95, 21);
             this.labelFirstName.TabIndex = 0;
@@ -168,7 +178,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(423, 29);
+            this.labelLastName.Location = new System.Drawing.Point(423, 19);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(97, 21);
             this.labelLastName.TabIndex = 1;
@@ -179,7 +189,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDOB.AutoSize = true;
             this.labelDOB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDOB.Location = new System.Drawing.Point(70, 79);
+            this.labelDOB.Location = new System.Drawing.Point(70, 59);
             this.labelDOB.Name = "labelDOB";
             this.labelDOB.Size = new System.Drawing.Size(111, 21);
             this.labelDOB.TabIndex = 2;
@@ -190,7 +200,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAddress1.AutoSize = true;
             this.labelAddress1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress1.Location = new System.Drawing.Point(92, 179);
+            this.labelAddress1.Location = new System.Drawing.Point(92, 139);
             this.labelAddress1.Name = "labelAddress1";
             this.labelAddress1.Size = new System.Drawing.Size(89, 21);
             this.labelAddress1.TabIndex = 4;
@@ -201,7 +211,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAddress2.AutoSize = true;
             this.labelAddress2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress2.Location = new System.Drawing.Point(92, 229);
+            this.labelAddress2.Location = new System.Drawing.Point(92, 179);
             this.labelAddress2.Name = "labelAddress2";
             this.labelAddress2.Size = new System.Drawing.Size(89, 21);
             this.labelAddress2.TabIndex = 5;
@@ -212,7 +222,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(136, 279);
+            this.labelCity.Location = new System.Drawing.Point(136, 219);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(45, 21);
             this.labelCity.TabIndex = 6;
@@ -223,7 +233,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelState.AutoSize = true;
             this.labelState.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelState.Location = new System.Drawing.Point(463, 279);
+            this.labelState.Location = new System.Drawing.Point(463, 219);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(57, 21);
             this.labelState.TabIndex = 7;
@@ -234,7 +244,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelZipCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelZipCode.AutoSize = true;
             this.labelZipCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipCode.Location = new System.Drawing.Point(97, 329);
+            this.labelZipCode.Location = new System.Drawing.Point(97, 259);
             this.labelZipCode.Name = "labelZipCode";
             this.labelZipCode.Size = new System.Drawing.Size(84, 21);
             this.labelZipCode.TabIndex = 8;
@@ -244,7 +254,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonSubmit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubmit.Location = new System.Drawing.Point(187, 362);
+            this.buttonSubmit.Location = new System.Drawing.Point(187, 372);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(178, 35);
             this.buttonSubmit.TabIndex = 23;
@@ -257,7 +267,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.tableLayoutPanel1.SetColumnSpan(this.buttonClear, 2);
             this.buttonClear.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClear.Location = new System.Drawing.Point(464, 363);
+            this.buttonClear.Location = new System.Drawing.Point(464, 373);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(178, 34);
             this.buttonClear.TabIndex = 24;
@@ -269,7 +279,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(187, 20);
+            this.textBoxFirstName.Location = new System.Drawing.Point(187, 10);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(178, 27);
             this.textBoxFirstName.TabIndex = 11;
@@ -279,7 +289,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.dateTimePickerDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePickerDOB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDOB.Location = new System.Drawing.Point(187, 70);
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(187, 50);
             this.dateTimePickerDOB.Name = "dateTimePickerDOB";
             this.dateTimePickerDOB.Size = new System.Drawing.Size(178, 27);
             this.dateTimePickerDOB.TabIndex = 13;
@@ -343,7 +353,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             "WV",
             "WI",
             "WY"});
-            this.comboBoxState.Location = new System.Drawing.Point(526, 268);
+            this.comboBoxState.Location = new System.Drawing.Point(526, 208);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(94, 29);
             this.comboBoxState.TabIndex = 20;
@@ -354,7 +364,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.tableLayoutPanel1.SetColumnSpan(this.labelErrorMessage, 3);
             this.labelErrorMessage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorMessage.Location = new System.Drawing.Point(187, 400);
+            this.labelErrorMessage.Location = new System.Drawing.Point(187, 410);
             this.labelErrorMessage.Name = "labelErrorMessage";
             this.labelErrorMessage.Size = new System.Drawing.Size(0, 17);
             this.labelErrorMessage.TabIndex = 20;
@@ -364,7 +374,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(51, 129);
+            this.labelPhone.Location = new System.Drawing.Point(51, 99);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(130, 21);
             this.labelPhone.TabIndex = 3;
@@ -375,7 +385,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelSSN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSSN.AutoSize = true;
             this.labelSSN.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSSN.Location = new System.Drawing.Point(478, 79);
+            this.labelSSN.Location = new System.Drawing.Point(478, 59);
             this.labelSSN.Name = "labelSSN";
             this.labelSSN.Size = new System.Drawing.Size(42, 21);
             this.labelSSN.TabIndex = 23;
@@ -386,7 +396,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(446, 129);
+            this.labelGender.Location = new System.Drawing.Point(446, 99);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(74, 21);
             this.labelGender.TabIndex = 24;
@@ -403,7 +413,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.comboBoxGender.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.comboBoxGender.Location = new System.Drawing.Point(526, 118);
+            this.comboBoxGender.Location = new System.Drawing.Point(526, 88);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(94, 29);
             this.comboBoxGender.TabIndex = 16;
@@ -412,7 +422,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(187, 120);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(187, 90);
             this.textBoxPhoneNumber.Mask = "(999) 000-0000";
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(117, 27);
@@ -422,11 +432,55 @@ namespace ChildcareManagementStudio.View.StudentViews
             // 
             this.textBoxSSN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxSSN.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSSN.Location = new System.Drawing.Point(526, 70);
+            this.textBoxSSN.Location = new System.Drawing.Point(526, 50);
             this.textBoxSSN.Mask = "000-00-0000";
             this.textBoxSSN.Name = "textBoxSSN";
             this.textBoxSSN.Size = new System.Drawing.Size(100, 27);
             this.textBoxSSN.TabIndex = 14;
+            // 
+            // labelVaccinationExpiration
+            // 
+            this.labelVaccinationExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelVaccinationExpiration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelVaccinationExpiration, 2);
+            this.labelVaccinationExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVaccinationExpiration.Location = new System.Drawing.Point(285, 299);
+            this.labelVaccinationExpiration.Name = "labelVaccinationExpiration";
+            this.labelVaccinationExpiration.Size = new System.Drawing.Size(235, 21);
+            this.labelVaccinationExpiration.TabIndex = 26;
+            this.labelVaccinationExpiration.Text = "Vaccination Expiration Date:";
+            // 
+            // labelPhysicalExamExpiration
+            // 
+            this.labelPhysicalExamExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPhysicalExamExpiration.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelPhysicalExamExpiration, 2);
+            this.labelPhysicalExamExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhysicalExamExpiration.Location = new System.Drawing.Point(274, 339);
+            this.labelPhysicalExamExpiration.Name = "labelPhysicalExamExpiration";
+            this.labelPhysicalExamExpiration.Size = new System.Drawing.Size(246, 21);
+            this.labelPhysicalExamExpiration.TabIndex = 27;
+            this.labelPhysicalExamExpiration.Text = "Physical Exam Expiration Date:";
+            // 
+            // dateTimePickerVaccinationExpiration
+            // 
+            this.dateTimePickerVaccinationExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerVaccinationExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerVaccinationExpiration.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerVaccinationExpiration.Location = new System.Drawing.Point(526, 290);
+            this.dateTimePickerVaccinationExpiration.Name = "dateTimePickerVaccinationExpiration";
+            this.dateTimePickerVaccinationExpiration.Size = new System.Drawing.Size(178, 27);
+            this.dateTimePickerVaccinationExpiration.TabIndex = 28;
+            // 
+            // dateTimePickerPhysicalExamExpriation
+            // 
+            this.dateTimePickerPhysicalExamExpriation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerPhysicalExamExpriation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPhysicalExamExpriation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerPhysicalExamExpriation.Location = new System.Drawing.Point(526, 330);
+            this.dateTimePickerPhysicalExamExpriation.Name = "dateTimePickerPhysicalExamExpriation";
+            this.dateTimePickerPhysicalExamExpriation.Size = new System.Drawing.Size(178, 27);
+            this.dateTimePickerPhysicalExamExpriation.TabIndex = 29;
             // 
             // EditStudentForm
             // 
@@ -475,5 +529,9 @@ namespace ChildcareManagementStudio.View.StudentViews
         private System.Windows.Forms.ComboBox comboBoxGender;
         private System.Windows.Forms.MaskedTextBox textBoxPhoneNumber;
         private System.Windows.Forms.MaskedTextBox textBoxSSN;
+        private System.Windows.Forms.Label labelVaccinationExpiration;
+        private System.Windows.Forms.Label labelPhysicalExamExpiration;
+        private System.Windows.Forms.DateTimePicker dateTimePickerVaccinationExpiration;
+        private System.Windows.Forms.DateTimePicker dateTimePickerPhysicalExamExpriation;
     }
 }
