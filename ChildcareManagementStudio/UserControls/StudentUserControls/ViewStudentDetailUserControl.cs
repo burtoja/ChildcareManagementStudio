@@ -101,8 +101,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         //private void PopulateVaccinationRecordsListView(int studentId)
         //{
         //    this.listViewVaccinationRecords.Items.Clear();
-        //    List<VaccinationRecord> vaccinationList = this.vaccinationRecordController.GetVaccinationRecords(studentId);
-        //    foreach (VaccinationRecord current in vaccinationList)
+        //    List<DateTime> vaccinationExpirationList = this.studentController.GetStudent(studentId).VaccinationRecordExpirationDate;
+        //    foreach (VaccinationRecord current in vaccinationExpirationList)
         //    {
         //        ListViewItem item = new ListViewItem(current.Type);
         //        item.SubItems.Add(current.SchoolYear);                  //TODO: Correct this field
@@ -147,7 +147,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 {
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int studentId);
                     this.FillFormValues(studentId);
-                    //this.PopulateVaccinationRecordsListView(studentId);        //TODO: Uncomment when controllers created
+                    //this.PopulateVaccinationRecordsListView(studentId);       //TODO: Uncomment when controllers created
                     //this.PopulatePhysicalExamRecordsListView(studentId);       //TODO: Uncomment when controllers created
                 }
                 catch

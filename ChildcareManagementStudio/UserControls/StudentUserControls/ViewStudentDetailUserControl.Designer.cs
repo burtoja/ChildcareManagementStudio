@@ -32,8 +32,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.columnHeaderVaccinationExpiration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelPhysicalExamRecords = new System.Windows.Forms.Label();
             this.labelVaccinationRecords = new System.Windows.Forms.Label();
-            this.buttonChangePosition = new System.Windows.Forms.Button();
-            this.buttonChangePayRate = new System.Windows.Forms.Button();
+            this.buttonAddVaccinationRecord = new System.Windows.Forms.Button();
+            this.buttonAddPhysicalExamRecord = new System.Windows.Forms.Button();
             this.listViewVaccinationRecords = new System.Windows.Forms.ListView();
             this.columnHeaderVaccinationSubmitDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPhysicalExpirationDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -97,31 +97,31 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelVaccinationRecords.Text = "Vaccination Records";
             this.labelVaccinationRecords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonChangePosition
+            // buttonAddVaccinationRecord
             // 
-            this.buttonChangePosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonAddVaccinationRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.buttonChangePosition, 2);
-            this.buttonChangePosition.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangePosition.Location = new System.Drawing.Point(76, 130);
-            this.buttonChangePosition.Name = "buttonChangePosition";
-            this.buttonChangePosition.Size = new System.Drawing.Size(287, 29);
-            this.buttonChangePosition.TabIndex = 3;
-            this.buttonChangePosition.Text = "Change Position";
-            this.buttonChangePosition.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.buttonAddVaccinationRecord, 2);
+            this.buttonAddVaccinationRecord.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddVaccinationRecord.Location = new System.Drawing.Point(76, 130);
+            this.buttonAddVaccinationRecord.Name = "buttonAddVaccinationRecord";
+            this.buttonAddVaccinationRecord.Size = new System.Drawing.Size(287, 29);
+            this.buttonAddVaccinationRecord.TabIndex = 3;
+            this.buttonAddVaccinationRecord.Text = "Add Vaccination Record";
+            this.buttonAddVaccinationRecord.UseVisualStyleBackColor = true;
             // 
-            // buttonChangePayRate
+            // buttonAddPhysicalExamRecord
             // 
-            this.buttonChangePayRate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonAddPhysicalExamRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.buttonChangePayRate, 2);
-            this.buttonChangePayRate.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangePayRate.Location = new System.Drawing.Point(369, 130);
-            this.buttonChangePayRate.Name = "buttonChangePayRate";
-            this.buttonChangePayRate.Size = new System.Drawing.Size(281, 29);
-            this.buttonChangePayRate.TabIndex = 4;
-            this.buttonChangePayRate.Text = "Change Pay Rate";
-            this.buttonChangePayRate.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.buttonAddPhysicalExamRecord, 2);
+            this.buttonAddPhysicalExamRecord.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddPhysicalExamRecord.Location = new System.Drawing.Point(369, 130);
+            this.buttonAddPhysicalExamRecord.Name = "buttonAddPhysicalExamRecord";
+            this.buttonAddPhysicalExamRecord.Size = new System.Drawing.Size(281, 29);
+            this.buttonAddPhysicalExamRecord.TabIndex = 4;
+            this.buttonAddPhysicalExamRecord.Text = "Add Physical Exam Record";
+            this.buttonAddPhysicalExamRecord.UseVisualStyleBackColor = true;
             // 
             // listViewVaccinationRecords
             // 
@@ -182,8 +182,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel2.Controls.Add(this.listViewPhysicalExamRecords, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.listViewVaccinationRecords, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelPhysicalExamRecords, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonChangePayRate, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.buttonChangePosition, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.buttonAddPhysicalExamRecord, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.buttonAddVaccinationRecord, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelVaccinationRecords, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 305);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -491,8 +491,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private System.Windows.Forms.ColumnHeader columnHeaderPhysicalExpirationDate;
         private System.Windows.Forms.Label labelPhysicalExamRecords;
         private System.Windows.Forms.Label labelVaccinationRecords;
-        private System.Windows.Forms.Button buttonChangePosition;
-        private System.Windows.Forms.Button buttonChangePayRate;
+        private System.Windows.Forms.Button buttonAddVaccinationRecord;
+        private System.Windows.Forms.Button buttonAddPhysicalExamRecord;
         private System.Windows.Forms.ListView listViewVaccinationRecords;
         private System.Windows.Forms.ColumnHeader columnHeaderVaccinationSubmitDate;
         private System.Windows.Forms.Label labelName;
