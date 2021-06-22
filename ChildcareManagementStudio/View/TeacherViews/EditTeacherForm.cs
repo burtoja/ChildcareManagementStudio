@@ -134,11 +134,11 @@ namespace ChildcareManagementStudio.View
 
             if (String.IsNullOrEmpty(this.textBoxLastName.Text))
             {
-                alertText += "Patient first name cannot be blank. ";
+                alertText += "Teacher first name cannot be blank. ";
             }
             if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
             {
-                alertText += "Patient last name cannot be blank. ";
+                alertText += "Teacher last name cannot be blank. ";
             }
             if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
             {
