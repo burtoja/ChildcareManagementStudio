@@ -132,11 +132,23 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.Designer.cs">
+      <DependentUpon>AddStudentsToClassroomUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.Designer.cs">
       <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.Designer.cs">
+      <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\PlaceholderUserControl.cs">
       <SubType>UserControl</SubType>
@@ -251,8 +263,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.resx">
+      <DependentUpon>AddStudentsToClassroomUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ClassroomUserControls\MainClassroomUserControl.resx">
       <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.resx">
+      <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
