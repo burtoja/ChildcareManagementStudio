@@ -250,6 +250,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.buttonSubmit.TabIndex = 23;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonClear
             // 
@@ -262,6 +263,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.buttonClear.TabIndex = 24;
             this.buttonClear.Text = "Reset";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // textBoxFirstName
             // 
@@ -438,6 +440,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.Name = "EditStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Student Information";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditStudentForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

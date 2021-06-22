@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.View.StudentViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -179,8 +180,8 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 {
                     Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int studentId);
                     Student student = this.studentController.GetStudent(studentId);
-                    // EditStudentForm editStudentForm = new EditStudentForm(student, this);        //TODO: Uncomment when edit student form created
-                    //editStudentForm.Show();
+                    EditStudentForm editStudentForm = new EditStudentForm(student, this);        //TODO: Uncomment when edit student form created
+                    editStudentForm.Show();
                 }
                 catch (Exception ex)
                 {
