@@ -209,9 +209,7 @@ namespace ChildcareManagementStudio.DAL
                     "vaccinationRecordExpirationDate = $revisedVaccinationRecordExpirationDate, " +
                     "physicalExpirationDate = $revisedPhysicalExpirationDate " +
                 "WHERE studentId = $studentId " +
-                    "AND personId = $personId " +
-                    "AND vaccinationRecordExpirationDate = $originalVaccinationRecordExpirationDate " +
-                    "AND physicalExpirationDate = $originalPhysicalExpirationDate";
+                    "AND personId = $personId";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -221,6 +219,7 @@ namespace ChildcareManagementStudio.DAL
                     updateCommand.Parameters.AddWithValue("$studentId", originalStudent.StudentId);
                     updateCommand.Parameters.AddWithValue("$personId", originalStudent.PersonId);
 
+                    /*
                     if (originalStudent.VaccinationRecordExpirationDate == default)
                     {
                         updateCommand.Parameters.AddWithValue("$originalVaccinationRecordExpirationDate", DBNull.Value);
@@ -238,6 +237,7 @@ namespace ChildcareManagementStudio.DAL
                     {
                         updateCommand.Parameters.AddWithValue("$originalPhysicalExpirationDate", originalStudent.PhysicalExamExpirationDate.ToString("yyyy-MM-dd"));
                     }
+                    */
 
                     if (revisedStudent.VaccinationRecordExpirationDate == default)
                     {
