@@ -204,12 +204,26 @@ namespace ChildcareManagementStudio.DAL
 
             EditPerson(originalStudent, revisedStudent);
 
+            string updateStatementVaccinationWhere;
+            if (originalStudent.VaccinationRecordExpirationDate == default)
+                updateStatementVaccinationWhere = "vaccinationRecordExpirationDate IS NULL ";
+            else 
+                updateStatementVaccinationWhere = "vaccinationRecordExpirationDate = $originalVaccinationRecordExpirationDate ";
+
+            string updateStatementPhysicalWhere;
+            if (originalStudent.PhysicalExamExpirationDate == default) 
+                updateStatementPhysicalWhere = "physicalExpirationDate IS NULL";
+            else
+                updateStatementPhysicalWhere = "physicalExpirationDate = $originalPhysicalExpirationDate";
+
             string updateStatement =
                 "UPDATE Student SET " +
                     "vaccinationRecordExpirationDate = $revisedVaccinationRecordExpirationDate, " +
                     "physicalExpirationDate = $revisedPhysicalExpirationDate " +
                 "WHERE studentId = $studentId " +
-                    "AND personId = $personId";
+                    "AND personId = $personId " +
+                    "AND " + updateStatementVaccinationWhere +
+                    "AND " + updateStatementPhysicalWhere;
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -219,44 +233,23 @@ namespace ChildcareManagementStudio.DAL
                     updateCommand.Parameters.AddWithValue("$studentId", originalStudent.StudentId);
                     updateCommand.Parameters.AddWithValue("$personId", originalStudent.PersonId);
 
-                    /*
-                    if (originalStudent.VaccinationRecordExpirationDate == default)
-                    {
-                        updateCommand.Parameters.AddWithValue("$originalVaccinationRecordExpirationDate", DBNull.Value);
-                    }
-                    else
-                    {
+                    if (originalStudent.VaccinationRecordExpirationDate != default)
                         updateCommand.Parameters.AddWithValue("$originalVaccinationRecordExpirationDate", originalStudent.VaccinationRecordExpirationDate.ToString("yyyy-MM-dd"));
-                    }
 
-                    if (originalStudent.PhysicalExamExpirationDate == default)
-                    {
-                        updateCommand.Parameters.AddWithValue("$originalPhysicalExpirationDate", DBNull.Value);
-                    }
-                    else
-                    {
+                    if (originalStudent.PhysicalExamExpirationDate != default)
                         updateCommand.Parameters.AddWithValue("$originalPhysicalExpirationDate", originalStudent.PhysicalExamExpirationDate.ToString("yyyy-MM-dd"));
-                    }
-                    */
+
 
                     if (revisedStudent.VaccinationRecordExpirationDate == default)
-                    {
                         updateCommand.Parameters.AddWithValue("$revisedVaccinationRecordExpirationDate", DBNull.Value);
-                    }
                     else
-                    {
                         updateCommand.Parameters.AddWithValue("$revisedVaccinationRecordExpirationDate", revisedStudent.VaccinationRecordExpirationDate.ToString("yyyy-MM-dd"));
-                    }
 
                     if (revisedStudent.PhysicalExamExpirationDate == default)
-                    {
                         updateCommand.Parameters.AddWithValue("$revisedPhysicalExpirationDate", DBNull.Value);
-                    }
                     else
-                    {
                         updateCommand.Parameters.AddWithValue("$revisedPhysicalExpirationDate", revisedStudent.PhysicalExamExpirationDate.ToString("yyyy-MM-dd"));
-                    }
-
+                   
                     updateCommand.ExecuteNonQuery();
                 }
             }

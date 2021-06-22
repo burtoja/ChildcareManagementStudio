@@ -2,6 +2,7 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls.StudentUserControls;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.StudentViews
@@ -80,25 +81,18 @@ namespace ChildcareManagementStudio.View.StudentViews
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                //DateTime vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
-                //DateTime physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
 
-                DateTime vaccinationExpiration = new DateTime(2020, 6, 8);
-                DateTime physicalExamExpiration = new DateTime(2020, 7, 9);
+                DateTime vaccinationExpiration;
+                if (!this.checkBoxNoVaccinationRecord.Checked)
+                    vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
+                else
+                    vaccinationExpiration = new DateTime(0001, 1, 1); 
 
-                //DateTime vaccinationExpiration;
-                //if (!this.checkBoxNoVaccinationRecord.Checked)
-                //    vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
-                //else
-                //    vaccinationExpiration = new DateTime(0001, 1, 1);
-                //Console.WriteLine("Vaccine Expiration: " + vaccinationExpiration.ToString("d"));
-
-                //DateTime physicalExamExpiration;
-                //if (!this.checkBoxNoPhysicalExamRecord.Checked)
-                //    physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
-                //else
-                //    physicalExamExpiration = new DateTime(0001, 1, 1);
-                //Console.WriteLine("Physical Expiration: " + physicalExamExpiration.ToString("d"));
+                DateTime physicalExamExpiration;
+                if (!this.checkBoxNoPhysicalExamRecord.Checked)
+                    physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
+                else
+                    physicalExamExpiration = new DateTime(0001, 1, 1);
 
                 try
                 {
@@ -150,8 +144,6 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.FillFormWithOriginalStudentInfo();
         }
 
-
-
         /// <summary>
         /// Performs inital validation on the form fields.
         /// </summary>
@@ -161,41 +153,23 @@ namespace ChildcareManagementStudio.View.StudentViews
             String alertText = "";
 
             if (String.IsNullOrEmpty(this.textBoxLastName.Text))
-            {
                 alertText += "Student first name cannot be blank. ";
-            }
             if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
-            {
                 alertText += "Student last name cannot be blank. ";
-            }
             if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
-            {
                 alertText += "The date of birth cannot be in the future. ";
-            }
             if (this.textBoxPhoneNumber.Text.Length != 14)
-            {
                 alertText += "Ten digit phone number is required of the following format: (xxx) xxx-xxxx";
-            }
             if (String.IsNullOrEmpty(this.textBoxAddress1.Text))
-            {
                 alertText += "Address cannot be blank. ";
-            }
             if (String.IsNullOrEmpty(this.comboBoxState.Text))
-            {
                 alertText += "State must be selected. ";
-            }
             if (String.IsNullOrEmpty(this.textBoxCity.Text))
-            {
                 alertText += "City is required. ";
-            }
             else if (char.IsLower(textBoxCity.Text[0]))
-            {
                 alertText += "City name should start with a capital letter. ";
-            }
             if (this.textBoxZipCode.Text.Length != 5)
-            {
                 alertText += "Five digit zip number is required. ";
-            }
 
             return alertText;
         }
