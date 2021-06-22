@@ -50,8 +50,16 @@ namespace ChildcareManagementStudio.DAL
                             student.StudentId = studentId;
 
                             student.PersonId = reader.GetInt32(personIdOrdinal);
-                            student.VaccinationRecordExpirationDate = reader.GetDateTime(vaccinationRecordExpirationDateOrdinal);
-                            student.PhysicalExamExpirationDate = reader.GetDateTime(physicalExpirationDateOrdinal);
+
+                            if (!reader.IsDBNull(vaccinationRecordExpirationDateOrdinal))
+                            {
+                                student.VaccinationRecordExpirationDate = reader.GetDateTime(vaccinationRecordExpirationDateOrdinal);
+                            }
+
+                            if (!reader.IsDBNull(physicalExpirationDateOrdinal))
+                            {
+                                student.PhysicalExamExpirationDate = reader.GetDateTime(physicalExpirationDateOrdinal);
+                            }
 
                             Person person = GetPerson(student.PersonId);
                             student.LastName = person.LastName;
