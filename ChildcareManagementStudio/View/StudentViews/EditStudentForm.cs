@@ -2,6 +2,7 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls.StudentUserControls;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.StudentViews
@@ -142,8 +143,6 @@ namespace ChildcareManagementStudio.View.StudentViews
         {
             this.FillFormWithOriginalStudentInfo();
         }
-
-
 
         /// <summary>
         /// Performs inital validation on the form fields.
