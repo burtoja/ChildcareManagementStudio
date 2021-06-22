@@ -59,6 +59,8 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelPhysicalExamExpiration = new System.Windows.Forms.Label();
             this.dateTimePickerVaccinationExpiration = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerPhysicalExamExpriation = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxNoVaccinationRecord = new System.Windows.Forms.CheckBox();
+            this.checkBoxNoPhysicalExamRecord = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,10 +96,12 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSSN, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelVaccinationExpiration, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.labelPhysicalExamExpiration, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerVaccinationExpiration, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerPhysicalExamExpriation, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelVaccinationExpiration, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelPhysicalExamExpiration, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerVaccinationExpiration, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerPhysicalExamExpriation, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxNoVaccinationRecord, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxNoPhysicalExamRecord, 3, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
@@ -444,7 +448,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelVaccinationExpiration.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.labelVaccinationExpiration, 2);
             this.labelVaccinationExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVaccinationExpiration.Location = new System.Drawing.Point(285, 299);
+            this.labelVaccinationExpiration.Location = new System.Drawing.Point(130, 299);
             this.labelVaccinationExpiration.Name = "labelVaccinationExpiration";
             this.labelVaccinationExpiration.Size = new System.Drawing.Size(235, 21);
             this.labelVaccinationExpiration.TabIndex = 26;
@@ -456,7 +460,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.labelPhysicalExamExpiration.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.labelPhysicalExamExpiration, 2);
             this.labelPhysicalExamExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhysicalExamExpiration.Location = new System.Drawing.Point(274, 339);
+            this.labelPhysicalExamExpiration.Location = new System.Drawing.Point(119, 339);
             this.labelPhysicalExamExpiration.Name = "labelPhysicalExamExpiration";
             this.labelPhysicalExamExpiration.Size = new System.Drawing.Size(246, 21);
             this.labelPhysicalExamExpiration.TabIndex = 27;
@@ -465,22 +469,54 @@ namespace ChildcareManagementStudio.View.StudentViews
             // dateTimePickerVaccinationExpiration
             // 
             this.dateTimePickerVaccinationExpiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerVaccinationExpiration.Enabled = false;
             this.dateTimePickerVaccinationExpiration.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerVaccinationExpiration.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerVaccinationExpiration.Location = new System.Drawing.Point(526, 290);
+            this.dateTimePickerVaccinationExpiration.Location = new System.Drawing.Point(371, 290);
             this.dateTimePickerVaccinationExpiration.Name = "dateTimePickerVaccinationExpiration";
-            this.dateTimePickerVaccinationExpiration.Size = new System.Drawing.Size(178, 27);
+            this.dateTimePickerVaccinationExpiration.Size = new System.Drawing.Size(149, 27);
             this.dateTimePickerVaccinationExpiration.TabIndex = 28;
             // 
             // dateTimePickerPhysicalExamExpriation
             // 
             this.dateTimePickerPhysicalExamExpriation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePickerPhysicalExamExpriation.Enabled = false;
             this.dateTimePickerPhysicalExamExpriation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerPhysicalExamExpriation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerPhysicalExamExpriation.Location = new System.Drawing.Point(526, 330);
+            this.dateTimePickerPhysicalExamExpriation.Location = new System.Drawing.Point(371, 330);
             this.dateTimePickerPhysicalExamExpriation.Name = "dateTimePickerPhysicalExamExpriation";
-            this.dateTimePickerPhysicalExamExpriation.Size = new System.Drawing.Size(178, 27);
+            this.dateTimePickerPhysicalExamExpriation.Size = new System.Drawing.Size(149, 27);
             this.dateTimePickerPhysicalExamExpriation.TabIndex = 29;
+            // 
+            // checkBoxNoVaccinationRecord
+            // 
+            this.checkBoxNoVaccinationRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxNoVaccinationRecord.AutoSize = true;
+            this.checkBoxNoVaccinationRecord.Checked = true;
+            this.checkBoxNoVaccinationRecord.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxNoVaccinationRecord.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNoVaccinationRecord.Location = new System.Drawing.Point(526, 296);
+            this.checkBoxNoVaccinationRecord.Name = "checkBoxNoVaccinationRecord";
+            this.checkBoxNoVaccinationRecord.Size = new System.Drawing.Size(96, 21);
+            this.checkBoxNoVaccinationRecord.TabIndex = 30;
+            this.checkBoxNoVaccinationRecord.Text = "No Record";
+            this.checkBoxNoVaccinationRecord.UseVisualStyleBackColor = true;
+            this.checkBoxNoVaccinationRecord.CheckedChanged += new System.EventHandler(this.CheckBoxNoVaccinationRecord_CheckedChanged);
+            // 
+            // checkBoxNoPhysicalExamRecord
+            // 
+            this.checkBoxNoPhysicalExamRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxNoPhysicalExamRecord.AutoSize = true;
+            this.checkBoxNoPhysicalExamRecord.Checked = true;
+            this.checkBoxNoPhysicalExamRecord.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxNoPhysicalExamRecord.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNoPhysicalExamRecord.Location = new System.Drawing.Point(526, 336);
+            this.checkBoxNoPhysicalExamRecord.Name = "checkBoxNoPhysicalExamRecord";
+            this.checkBoxNoPhysicalExamRecord.Size = new System.Drawing.Size(96, 21);
+            this.checkBoxNoPhysicalExamRecord.TabIndex = 31;
+            this.checkBoxNoPhysicalExamRecord.Text = "No Record";
+            this.checkBoxNoPhysicalExamRecord.UseVisualStyleBackColor = true;
+            this.checkBoxNoPhysicalExamRecord.CheckedChanged += new System.EventHandler(this.CheckBoxNoPhysicalExamRecord_CheckedChanged);
             // 
             // EditStudentForm
             // 
@@ -533,5 +569,7 @@ namespace ChildcareManagementStudio.View.StudentViews
         private System.Windows.Forms.Label labelPhysicalExamExpiration;
         private System.Windows.Forms.DateTimePicker dateTimePickerVaccinationExpiration;
         private System.Windows.Forms.DateTimePicker dateTimePickerPhysicalExamExpriation;
+        private System.Windows.Forms.CheckBox checkBoxNoVaccinationRecord;
+        private System.Windows.Forms.CheckBox checkBoxNoPhysicalExamRecord;
     }
 }

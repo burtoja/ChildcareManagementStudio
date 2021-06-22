@@ -86,18 +86,16 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueCity.Text = student.City;
             this.labelValueState.Text = student.State;
             this.labelValueZipCode.Text = student.ZipCode;
-            this.labelValueVaccination.Text = student.VaccinationRecordExpirationDate.ToString("d");
-            this.labelValuePhysicalExam.Text = student.PhysicalExamExpirationDate.ToString("d");
+            this.labelValueVaccination.Text = this.GetDateRecordText(student.VaccinationRecordExpirationDate);
+            this.labelValuePhysicalExam.Text = this.GetDateRecordText(student.PhysicalExamExpirationDate);
         }
 
-        /// <summary>
-        /// When new value chosen in combobox the displayed student details update
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
+        private String GetDateRecordText(DateTime theDate)
         {
-            this.UpdateFormValues();
+            if (theDate.ToString() == "1/1/0001 12:00:00 AM")
+                return "No Record On File";
+            else
+                return theDate.ToString("d");
         }
 
         /// <summary>
@@ -115,6 +113,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 catch
                 {
                     this.ResetFormValues();
+                    Console.WriteLine("ERROR: Trouble updating form values  in the following method: UpdateFormValues()");  //TODO: Remove after testing
                 }
             }
         }
@@ -127,6 +126,16 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             string title = "No Student Chosen";
             string message = "Please choose a student to edit.";
             MessageBox.Show(message, title);
+        }
+
+        /// <summary>
+        /// When new value chosen in combobox the displayed student details update
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            this.UpdateFormValues();
         }
 
         /// <summary>

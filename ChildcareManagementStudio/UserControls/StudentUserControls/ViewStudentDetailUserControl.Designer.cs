@@ -175,7 +175,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -364,6 +364,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             this.labelValueVaccination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelValueVaccination.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelValueVaccination, 2);
             this.labelValueVaccination.ForeColor = System.Drawing.Color.Maroon;
             this.labelValueVaccination.Location = new System.Drawing.Point(444, 259);
             this.labelValueVaccination.Name = "labelValueVaccination";
@@ -374,6 +375,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             this.labelValuePhysicalExam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelValuePhysicalExam.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelValuePhysicalExam, 2);
             this.labelValuePhysicalExam.ForeColor = System.Drawing.Color.Maroon;
             this.labelValuePhysicalExam.Location = new System.Drawing.Point(444, 294);
             this.labelValuePhysicalExam.Name = "labelValuePhysicalExam";

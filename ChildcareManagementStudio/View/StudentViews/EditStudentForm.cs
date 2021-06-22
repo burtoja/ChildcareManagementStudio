@@ -28,6 +28,37 @@ namespace ChildcareManagementStudio.View.StudentViews
         }
 
         /// <summary>
+        /// Fills form fields with original emplyee data
+        /// </summary>
+        private void FillFormWithOriginalStudentInfo()
+        {
+            this.textBoxFirstName.Text = this.originalStudent.FirstName;
+            this.textBoxLastName.Text = this.originalStudent.LastName;
+            this.dateTimePickerDOB.Value = this.originalStudent.DateOfBirth;
+            this.textBoxSSN.Text = this.originalStudent.SocialSecurityNumber;
+            this.textBoxPhoneNumber.Text = this.originalStudent.PhoneNumber;
+            this.comboBoxGender.Text = this.originalStudent.Gender;
+            this.textBoxAddress1.Text = this.originalStudent.AddressLine1;
+            this.textBoxAddress2.Text = this.originalStudent.AddressLine2;
+            this.textBoxCity.Text = this.originalStudent.City;
+            this.comboBoxState.Text = this.originalStudent.State;
+            this.textBoxZipCode.Text = this.originalStudent.ZipCode;
+            if (this.originalStudent.VaccinationRecordExpirationDate.ToString() != "1/1/0001 12:00:00 AM")
+            {
+                this.checkBoxNoVaccinationRecord.Checked = false;
+                this.dateTimePickerVaccinationExpiration.Enabled = true;
+                this.dateTimePickerVaccinationExpiration.Value = this.originalStudent.VaccinationRecordExpirationDate;
+            }
+            if (this.originalStudent.PhysicalExamExpirationDate.ToString() != "1/1/0001 12:00:00 AM")
+            {
+                this.checkBoxNoPhysicalExamRecord.Checked = false;
+                this.dateTimePickerPhysicalExamExpriation.Enabled = true;
+                this.dateTimePickerPhysicalExamExpriation.Value = this.originalStudent.PhysicalExamExpirationDate;
+            }
+                
+        }
+
+        /// <summary>
         /// Actions to perform whne submit button is clicked
         /// </summary>
         /// <param name="sender"></param>
@@ -49,8 +80,26 @@ namespace ChildcareManagementStudio.View.StudentViews
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                DateTime vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
-                DateTime physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
+                //DateTime vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
+                //DateTime physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
+
+                DateTime vaccinationExpiration = new DateTime(2020, 6, 8);
+                DateTime physicalExamExpiration = new DateTime(2020, 7, 9);
+
+                //DateTime vaccinationExpiration;
+                //if (!this.checkBoxNoVaccinationRecord.Checked)
+                //    vaccinationExpiration = this.dateTimePickerVaccinationExpiration.Value;
+                //else
+                //    vaccinationExpiration = new DateTime(0001, 1, 1);
+                //Console.WriteLine("Vaccine Expiration: " + vaccinationExpiration.ToString("d"));
+
+                //DateTime physicalExamExpiration;
+                //if (!this.checkBoxNoPhysicalExamRecord.Checked)
+                //    physicalExamExpiration = this.dateTimePickerPhysicalExamExpriation.Value;
+                //else
+                //    physicalExamExpiration = new DateTime(0001, 1, 1);
+                //Console.WriteLine("Physical Expiration: " + physicalExamExpiration.ToString("d"));
+
                 try
                 {
                     Student revisedStudent = new Student
@@ -101,25 +150,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.FillFormWithOriginalStudentInfo();
         }
 
-        /// <summary>
-        /// Fills form fields with original emplyee data
-        /// </summary>
-        private void FillFormWithOriginalStudentInfo()
-        {
-            this.textBoxFirstName.Text = this.originalStudent.FirstName;
-            this.textBoxLastName.Text = this.originalStudent.LastName;
-            this.dateTimePickerDOB.Value = this.originalStudent.DateOfBirth;
-            this.textBoxSSN.Text = this.originalStudent.SocialSecurityNumber;
-            this.textBoxPhoneNumber.Text = this.originalStudent.PhoneNumber;
-            this.comboBoxGender.Text = this.originalStudent.Gender;
-            this.textBoxAddress1.Text = this.originalStudent.AddressLine1;
-            this.textBoxAddress2.Text = this.originalStudent.AddressLine2;
-            this.textBoxCity.Text = this.originalStudent.City;
-            this.comboBoxState.Text = this.originalStudent.State;
-            this.textBoxZipCode.Text = this.originalStudent.ZipCode;
-            this.dateTimePickerVaccinationExpiration.Value = this.originalStudent.VaccinationRecordExpirationDate;
-            this.dateTimePickerPhysicalExamExpriation.Value = this.originalStudent.PhysicalExamExpirationDate;
-        }
+
 
         /// <summary>
         /// Performs inital validation on the form fields.
@@ -177,6 +208,26 @@ namespace ChildcareManagementStudio.View.StudentViews
         private void EditStudentForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.referringControl.Enabled = true;
+        }
+
+        /// <summary>
+        /// Toggle the availability of the dateTimePicker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBoxNoVaccinationRecord_CheckedChanged(object sender, EventArgs e)
+        {
+            this.dateTimePickerVaccinationExpiration.Enabled = !this.dateTimePickerVaccinationExpiration.Enabled;
+        }
+
+        /// <summary>
+        /// Toggle the availability of the dateTimePicker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBoxNoPhysicalExamRecord_CheckedChanged(object sender, EventArgs e)
+        {
+            this.dateTimePickerPhysicalExamExpriation.Enabled = !this.dateTimePickerPhysicalExamExpriation.Enabled;
         }
     }
 }
