@@ -31,7 +31,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         }
 
         /// <summary>
-        /// Event handler to listen for tab selected events and refresh the employee list when heard
+        /// Event handler to listen for tab selected events and refresh the student list when heard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

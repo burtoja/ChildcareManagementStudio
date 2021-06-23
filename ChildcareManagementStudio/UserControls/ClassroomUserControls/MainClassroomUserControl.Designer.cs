@@ -30,9 +30,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void InitializeComponent()
         {
             this.tabControlMainClassroom = new System.Windows.Forms.TabControl();
-            this.tabPageEditClassroom = new System.Windows.Forms.TabPage();
             this.tabPageListClassrooms = new System.Windows.Forms.TabPage();
+            this.tabPageEditClassroom = new System.Windows.Forms.TabPage();
             this.tabPageAttendanceSheet = new System.Windows.Forms.TabPage();
+            this.tabPageSignInSheet = new System.Windows.Forms.TabPage();
             this.tabControlMainClassroom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabControlMainClassroom.Controls.Add(this.tabPageListClassrooms);
             this.tabControlMainClassroom.Controls.Add(this.tabPageEditClassroom);
             this.tabControlMainClassroom.Controls.Add(this.tabPageAttendanceSheet);
+            this.tabControlMainClassroom.Controls.Add(this.tabPageSignInSheet);
             this.tabControlMainClassroom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMainClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMainClassroom.Location = new System.Drawing.Point(0, 0);
@@ -48,16 +50,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabControlMainClassroom.SelectedIndex = 0;
             this.tabControlMainClassroom.Size = new System.Drawing.Size(760, 515);
             this.tabControlMainClassroom.TabIndex = 0;
-            // 
-            // tabPageEditClassroom
-            // 
-            this.tabPageEditClassroom.Location = new System.Drawing.Point(4, 30);
-            this.tabPageEditClassroom.Name = "tabPageEditClassroom";
-            this.tabPageEditClassroom.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEditClassroom.Size = new System.Drawing.Size(752, 481);
-            this.tabPageEditClassroom.TabIndex = 0;
-            this.tabPageEditClassroom.Text = "Edit Classroom";
-            this.tabPageEditClassroom.UseVisualStyleBackColor = true;
             // 
             // tabPageListClassrooms
             // 
@@ -69,6 +61,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabPageListClassrooms.Text = "List Classrooms";
             this.tabPageListClassrooms.UseVisualStyleBackColor = true;
             // 
+            // tabPageEditClassroom
+            // 
+            this.tabPageEditClassroom.Location = new System.Drawing.Point(4, 30);
+            this.tabPageEditClassroom.Name = "tabPageEditClassroom";
+            this.tabPageEditClassroom.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEditClassroom.Size = new System.Drawing.Size(752, 481);
+            this.tabPageEditClassroom.TabIndex = 0;
+            this.tabPageEditClassroom.Text = "Edit Classroom";
+            this.tabPageEditClassroom.UseVisualStyleBackColor = true;
+            // 
             // tabPageAttendanceSheet
             // 
             this.tabPageAttendanceSheet.Location = new System.Drawing.Point(4, 30);
@@ -77,6 +79,15 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabPageAttendanceSheet.TabIndex = 2;
             this.tabPageAttendanceSheet.Text = "Generate Attendance Sheet";
             this.tabPageAttendanceSheet.UseVisualStyleBackColor = true;
+            // 
+            // tabPageSignInSheet
+            // 
+            this.tabPageSignInSheet.Location = new System.Drawing.Point(4, 30);
+            this.tabPageSignInSheet.Name = "tabPageSignInSheet";
+            this.tabPageSignInSheet.Size = new System.Drawing.Size(752, 481);
+            this.tabPageSignInSheet.TabIndex = 3;
+            this.tabPageSignInSheet.Text = "Generate Sign-in Sheet";
+            this.tabPageSignInSheet.UseVisualStyleBackColor = true;
             // 
             // MainClassroomUserControl
             // 
@@ -96,5 +107,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.TabPage tabPageEditClassroom;
         private System.Windows.Forms.TabPage tabPageListClassrooms;
         private System.Windows.Forms.TabPage tabPageAttendanceSheet;
+        private System.Windows.Forms.TabPage tabPageSignInSheet;
     }
 }
