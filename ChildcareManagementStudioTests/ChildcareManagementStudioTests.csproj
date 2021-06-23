@@ -97,6 +97,7 @@
     <Compile Include="Controller\StudentControllerWhenEditStudent.cs" />
     <Compile Include="Controller\ClassroomControllerWhenGetClassroom.cs" />
     <Compile Include="Controller\ClassroomControllerWhenGetAllClassrooms.cs" />
+    <Compile Include="Controller\TeacherClassroomAssignmentControllerWhenGetTeacherClassroomAssignments.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
