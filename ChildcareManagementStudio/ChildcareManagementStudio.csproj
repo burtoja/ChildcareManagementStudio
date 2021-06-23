@@ -131,6 +131,7 @@
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\StudentClassroomAssignment.cs" />
     <Compile Include="Model\TeacherClassroomAssignment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
