@@ -128,6 +128,7 @@
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\SchoolYearDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
+    <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\Classroom.cs" />
     <Compile Include="Model\PositionRecord.cs" />
