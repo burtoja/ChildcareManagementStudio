@@ -210,6 +210,12 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassroomForm.Designer.cs">
+      <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StudentViews\EditStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\AddNewClassroomForm.resx">
+      <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentViews\EditStudentForm.resx">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
