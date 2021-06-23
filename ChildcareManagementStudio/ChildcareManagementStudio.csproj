@@ -118,6 +118,7 @@
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
+    <Compile Include="DAL\ClassroomDAL.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\PersonDAL.cs" />
