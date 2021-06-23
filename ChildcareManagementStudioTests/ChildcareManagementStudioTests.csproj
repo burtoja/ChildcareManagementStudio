@@ -115,6 +115,7 @@
     <Compile Include="DAL\StudentDALWhenGetStudent.cs" />
     <Compile Include="DAL\StudentDALWhenEditStudent.cs" />
     <Compile Include="DAL\ClassroomDALWhenGetClassroom.cs" />
+    <Compile Include="DAL\ClassroomDALWhenGetAllClassrooms.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />

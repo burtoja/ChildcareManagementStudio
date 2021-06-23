@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Model;
 using Microsoft.Data.Sqlite;
 using System;
+using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.DAL
 {
@@ -52,6 +53,44 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return classroom;
+        }
+
+        /// <summary>
+        /// Method that returns Classroom objects for all of the classrooms in the database.
+        /// </summary>
+        /// <returns>A list of Classroom objects for all of the classrooms in the database.</returns>
+        public List<Classroom> GetAllClassrooms()
+        {
+            List<Classroom> classrooms = new List<Classroom>();
+
+            string selectStatement =
+                "SELECT location, capacity " +
+                "FROM Classroom";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int locationOrdinal = reader.GetOrdinal("location");
+                        int capacityOrdinal = reader.GetOrdinal("capacity");
+                        while (reader.Read())
+                        {
+                            Classroom classroom = new Classroom
+                            {
+                                Location = reader.GetString(locationOrdinal),
+                                Capacity = reader.GetInt32(capacityOrdinal)
+                            };
+
+                            classrooms.Add(classroom);
+                        }
+                    }
+                }
+            }
+
+            return classrooms;
         }
     }
 }
