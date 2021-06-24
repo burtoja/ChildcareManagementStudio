@@ -98,6 +98,7 @@
     <Compile Include="Controller\ClassroomControllerWhenGetClassroom.cs" />
     <Compile Include="Controller\ClassroomControllerWhenGetAllClassrooms.cs" />
     <Compile Include="Controller\TeacherClassroomAssignmentControllerWhenGetTeacherClassroomAssignments.cs" />
+    <Compile Include="Controller\ClassRecordControllerWhenGetClassRecord.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="DAL\ClassroomDALWhenGetClassroom.cs" />
     <Compile Include="DAL\ClassroomDALWhenGetAllClassrooms.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDALWhenGetTeacherClassroomAssignments.cs" />
+    <Compile Include="DAL\ClassRecordDALWhenGetClassRecord.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
