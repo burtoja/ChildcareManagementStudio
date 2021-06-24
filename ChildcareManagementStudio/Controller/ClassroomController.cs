@@ -50,6 +50,30 @@ namespace ChildcareManagementStudio.Controller
         /// <param name="theClassroom">Classroom object to be added to DB</param>
         public void CreateNewClassroom(Classroom theClassroom)
         {
+            if (theClassroom == null)
+            {
+                throw new ArgumentNullException("theClassroom", "The classroom cannot be null.");
+            }
+
+            //TODO: implement method
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="originalClassroom"></param>
+        /// <param name="revisedClassroom"></param>
+        public void EditClassroom(Classroom originalClassroom, Classroom revisedClassroom)
+        {
+            if (originalClassroom == null) 
+            {
+                throw new ArgumentNullException("originalClassroom", "The original classroom cannot be null.");
+            }
+            if (revisedClassroom == null)
+            {
+                throw new ArgumentNullException("revisedClassroom", "The revised classroom cannot be null.");
+            }
+
             //TODO: implement method
         }
     }

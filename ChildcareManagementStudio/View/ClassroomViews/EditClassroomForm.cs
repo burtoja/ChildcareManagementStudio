@@ -1,4 +1,6 @@
-﻿using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using System;
 using System.Windows.Forms;
 
@@ -10,18 +12,21 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class EditClassroomForm : Form
     {
         private readonly ViewClassroomListUserControl referringUserControl;
-        //private readonly ClassroomController classroomController;
+        private readonly Classroom originalClassroom;
+        private readonly ClassroomController classroomController;
 
 
         /// <summary>
         /// Constructor for the form
         /// </summary>
         /// <param name="referringUserControl">the userControl creating this form</param>
-        public EditClassroomForm(ViewClassroomListUserControl referringUserControl)
+        /// <param name="originalClassroom">the original Classroom object which is being edited</param>
+        public EditClassroomForm(ViewClassroomListUserControl referringUserControl, Classroom originalClassroom)
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
-           // this.classroomController = new ClassroomController();
+            this.originalClassroom = originalClassroom;
+            this.classroomController = new ClassroomController();
         }
 
         /// <summary>
@@ -45,32 +50,32 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             if (this.UserInputFormIsValid())
             {
                 // TODO: Add originalClassroom to constructor parameter, etc.
-                //try
-                //{
-                //    Classroom revisedClassroom = new Classroom
-                //    {
-                //        Location = this.textBoxLocation.Text,
-                //        labelCapacity = this.numericUpDownCapacity.Value
-                //    };
-                //    this.classroomController.editClassroom(Classroom originalClassroom, Classroom revisedClassroom);
-                //    string title = "Classroom Created";
-                //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
-                //    DialogResult dialogeResult = MessageBox.Show(message, title);
-                //    if (dialogeResult == DialogResult.OK)
-                //    {
-                //        this.referringUserControl.Enabled = true;
-                //        // TODO: Add command to refresh listView in referring UC
-                //        this.Close();
-                //    }
-                //}
-                //catch (Exception ex)
-                //{
-                //    string title = "Error Message";
-                //    string message = "An error was found:/n" +
-                //        ex.Message +
-                //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
-                //    DialogResult dialogeResult = MessageBox.Show(message, title);
-                //}
+                try
+                {
+                    Classroom revisedClassroom = new Classroom
+                    {
+                        Location = this.textBoxLocation.Text,
+                        Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
+                    };
+                    this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);
+                    string title = "Classroom Created";
+                    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                    if (dialogeResult == DialogResult.OK)
+                    {
+                        this.referringUserControl.Enabled = true;
+                        // TODO: Add command to refresh listView in referring UC
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string title = "Error Message";
+                    string message = "An error was found:/n" +
+                        ex.Message +
+                        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                }
             }
         }
 
