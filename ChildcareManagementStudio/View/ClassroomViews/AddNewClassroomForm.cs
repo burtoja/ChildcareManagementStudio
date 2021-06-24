@@ -10,7 +10,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class AddNewClassroomForm : Form
     {
         private readonly ViewClassroomListUserControl referringUserControl;
-        private readonly ClassroomController classroomController;
+        //private readonly ClassroomController classroomController;
 
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
-            this.classroomController = new ClassroomController();
+            //this.classroomController = new ClassroomController();
         }
 
         /// <summary>
@@ -42,7 +42,32 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            this.classroomController.addNewClassroom(Classroom)
+            //try
+            //{
+            //    ClassroomViews newClassroom = new View.ClassroomViews
+            //    {
+            //        Location = this.textBoxLocation.Text,
+            //        labelCapacity = this.numericUpDownCapacity.Value
+            //    };
+            //    this.classroomController.addNewClassroom(Classroom theClassroom);
+            //    string title = "Classroom Created";
+            //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
+            //    DialogResult dialogeResult = MessageBox.Show(message, title);
+            //    if (dialogeResult == DialogResult.OK)
+            //    {
+            //        this.referringUserControl.Enabled = true;
+            //        // TODO: Add command to refresh listView in referring UC
+            //        this.Close();
+            //    }
+            //} 
+            //catch (Exception ex)
+            //{
+            //    string title = "Error Message";
+            //    string message = "An error was found:/n" +
+            //        ex.Message + 
+            //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+            //    DialogResult dialogeResult = MessageBox.Show(message, title);
+            //}
         }
     }
 }
