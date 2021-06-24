@@ -95,6 +95,9 @@
     <Compile Include="Controller\SchoolYearControllerWhenGetAllSchoolYears.cs" />
     <Compile Include="Controller\StudentControllerWhenGetStudent.cs" />
     <Compile Include="Controller\StudentControllerWhenEditStudent.cs" />
+    <Compile Include="Controller\ClassroomControllerWhenGetClassroom.cs" />
+    <Compile Include="Controller\ClassroomControllerWhenGetAllClassrooms.cs" />
+    <Compile Include="Controller\TeacherClassroomAssignmentControllerWhenGetTeacherClassroomAssignments.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
@@ -113,6 +116,9 @@
     <Compile Include="DAL\SchoolYearDALWhenGetAllSchoolYears.cs" />
     <Compile Include="DAL\StudentDALWhenGetStudent.cs" />
     <Compile Include="DAL\StudentDALWhenEditStudent.cs" />
+    <Compile Include="DAL\ClassroomDALWhenGetClassroom.cs" />
+    <Compile Include="DAL\ClassroomDALWhenGetAllClassrooms.cs" />
+    <Compile Include="DAL\TeacherClassroomAssignmentDALWhenGetTeacherClassroomAssignments.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />

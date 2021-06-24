@@ -117,8 +117,10 @@
     <Compile Include="Controller\SalaryController.cs" />
     <Compile Include="Controller\SchoolYearController.cs" />
     <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\TeacherClassroomAssignmentController.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
+    <Compile Include="DAL\ClassroomDAL.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\PersonDAL.cs" />
@@ -127,10 +129,14 @@
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\SchoolYearDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
+    <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
+    <Compile Include="Model\Classroom.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\StudentClassroomAssignment.cs" />
+    <Compile Include="Model\TeacherClassroomAssignment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.cs">

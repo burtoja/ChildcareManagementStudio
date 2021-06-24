@@ -1,27 +1,47 @@
-﻿using System;
+﻿using ChildcareManagementStudio.DAL;
+using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChildcareManagementStudio.Controller
 {
     /// <summary>
-    /// Controller class for managing classrooms
+    /// Controller class for managing classrooms.
     /// </summary>
-    class ClassroomController
+    public class ClassroomController
     {
-       // private readonly ClassroomDAL classroomDAL;
+        private readonly ClassroomDAL classroomDAL;
 
+        /// <summary>
+        /// Constructor for the ClassroomController class.
+        /// </summary>
         public ClassroomController()
         {
-            //this.classroomDAL = new ClassroomDAL();
+            classroomDAL = new ClassroomDAL();
         }
 
-        //public void editClassroom(Classroom originalClassroom, Classroom revisedClassroom)
-        //{
+        /// <summary>
+        /// Method that returns a Classroom object representing the requested classroom.
+        /// </summary>
+        /// <param name="location">Location of the classroom being requested.</param>
+        /// <returns>A Classroom object representing the requested classroom.</returns>
+        public Classroom GetClassroom(string location)
+        {
+            if (string.IsNullOrEmpty(location))
+            {
+                throw new ArgumentNullException("location", "The classroom location cannot be null.");
+            }
 
-        //}
+            return classroomDAL.GetClassroom(location);
+        }
+
+        /// <summary>
+        /// Method that returns Classroom objects for all of the classrooms in the database.
+        /// </summary>
+        /// <returns>A list of Classroom objects for all of the classrooms in the database.</returns>
+        public List<Classroom> GetAllClassrooms()
+        {
+            return classroomDAL.GetAllClassrooms();
+        }
     }
-
 }
