@@ -222,6 +222,12 @@
     <Compile Include="View\ClassroomViews\EditClassroomForm.Designer.cs">
       <DependentUpon>EditClassroomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\SelectTeachersForClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\SelectTeachersForClassForm.Designer.cs">
+      <DependentUpon>SelectTeachersForClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StudentViews\EditStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\EditClassroomForm.resx">
       <DependentUpon>EditClassroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\SelectTeachersForClassForm.resx">
+      <DependentUpon>SelectTeachersForClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentViews\EditStudentForm.resx">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
