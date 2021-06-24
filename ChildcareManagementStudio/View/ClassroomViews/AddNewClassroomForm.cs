@@ -1,4 +1,6 @@
-﻿using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using System;
 using System.Windows.Forms;
 
@@ -10,7 +12,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class AddNewClassroomForm : Form
     {
         private readonly ViewClassroomListUserControl referringUserControl;
-        //private readonly ClassroomController classroomController;
+        private readonly ClassroomController classroomController;
 
 
         /// <summary>
@@ -21,7 +23,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
-            //this.classroomController = new ClassroomController();
+            this.classroomController = new ClassroomController();
         }
 
         /// <summary>
@@ -44,32 +46,32 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             if (this.UserInputFormIsValid())
             {
-                //try
-                //{
-                //    Classroom newClassroom = newClassroom
-                //    {
-                //        Location = this.textBoxLocation.Text,
-                //        labelCapacity = this.numericUpDownCapacity.Value
-                //    };
-                //    this.classroomController.addNewClassroom(Classroom theClassroom);
-                //    string title = "Classroom Created";
-                //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
-                //    DialogResult dialogeResult = MessageBox.Show(message, title);
-                //    if (dialogeResult == DialogResult.OK)
-                //    {
-                //        this.referringUserControl.Enabled = true;
-                //        // TODO: Add command to refresh listView in referring UC
-                //        this.Close();
-                //    }
-                //} 
-                //catch (Exception ex)
-                //{
-                //    string title = "Error Message";
-                //    string message = "An error was found:/n" +
-                //        ex.Message + 
-                //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
-                //    DialogResult dialogeResult = MessageBox.Show(message, title);
-                //}
+                try
+                {
+                    Classroom newClassroom = new Classroom
+                    {
+                        Location = this.textBoxLocation.Text,
+                        Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
+                    };
+                    this.classroomController.CreateNewClassroom(newClassroom);
+                    string title = "Classroom Created";
+                    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                    if (dialogeResult == DialogResult.OK)
+                    {
+                        this.referringUserControl.Enabled = true;
+                        // TODO: Add command to refresh listView in referring UC
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string title = "Error Message";
+                    string message = "An error was found:/n" +
+                        ex.Message +
+                        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                }
             }
         }
 
