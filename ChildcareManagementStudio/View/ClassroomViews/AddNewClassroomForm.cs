@@ -70,7 +70,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     string message = "An error was found:/n" +
                         ex.Message +
                         "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
-                    DialogResult dialogeResult = MessageBox.Show(message, title);
+                    MessageBox.Show(message, title);
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 string title = "Location Not Entered";
                 string message = "The classroom requires a description of the location.  " +
                     "Please click 'Okay' and add a location description and resubmit.";
-                DialogResult dialogeResult = MessageBox.Show(message, title);
+                MessageBox.Show(message, title);
                 return false;
             }
             else
