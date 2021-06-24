@@ -43,13 +43,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddStudent = new System.Windows.Forms.Button();
             this.buttonRemoveStudent = new System.Windows.Forms.Button();
+            this.labelClass = new System.Windows.Forms.Label();
+            this.comboBoxClass = new System.Windows.Forms.ComboBox();
+            this.buttonNewClass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelClassroom
             // 
             this.labelClassroom.AutoSize = true;
             this.labelClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClassroom.Location = new System.Drawing.Point(17, 63);
+            this.labelClassroom.Location = new System.Drawing.Point(17, 101);
             this.labelClassroom.Name = "labelClassroom";
             this.labelClassroom.Size = new System.Drawing.Size(93, 21);
             this.labelClassroom.TabIndex = 0;
@@ -61,7 +64,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClassroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxClassroom.FormattingEnabled = true;
-            this.comboBoxClassroom.Location = new System.Drawing.Point(116, 60);
+            this.comboBoxClassroom.Location = new System.Drawing.Point(116, 98);
             this.comboBoxClassroom.Name = "comboBoxClassroom";
             this.comboBoxClassroom.Size = new System.Drawing.Size(254, 29);
             this.comboBoxClassroom.TabIndex = 1;
@@ -131,7 +134,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.labelAddedStudents.AutoSize = true;
             this.labelAddedStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddedStudents.Location = new System.Drawing.Point(417, 144);
+            this.labelAddedStudents.Location = new System.Drawing.Point(417, 142);
             this.labelAddedStudents.Name = "labelAddedStudents";
             this.labelAddedStudents.Size = new System.Drawing.Size(145, 21);
             this.labelAddedStudents.TabIndex = 8;
@@ -140,7 +143,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // listViewStudentsNotInClass
             // 
             this.listViewStudentsNotInClass.HideSelection = false;
-            this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 168);
+            this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 166);
             this.listViewStudentsNotInClass.Name = "listViewStudentsNotInClass";
             this.listViewStudentsNotInClass.Size = new System.Drawing.Size(298, 244);
             this.listViewStudentsNotInClass.TabIndex = 9;
@@ -149,7 +152,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // listViewStudentsInClass
             // 
             this.listViewStudentsInClass.HideSelection = false;
-            this.listViewStudentsInClass.Location = new System.Drawing.Point(421, 168);
+            this.listViewStudentsInClass.Location = new System.Drawing.Point(421, 166);
             this.listViewStudentsInClass.Name = "listViewStudentsInClass";
             this.listViewStudentsInClass.Size = new System.Drawing.Size(298, 244);
             this.listViewStudentsInClass.TabIndex = 10;
@@ -159,7 +162,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 144);
+            this.label1.Location = new System.Drawing.Point(17, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 21);
             this.label1.TabIndex = 11;
@@ -167,7 +170,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // buttonAddStudent
             // 
-            this.buttonAddStudent.Location = new System.Drawing.Point(325, 220);
+            this.buttonAddStudent.Location = new System.Drawing.Point(325, 217);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(90, 40);
             this.buttonAddStudent.TabIndex = 12;
@@ -176,16 +179,50 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // buttonRemoveStudent
             // 
-            this.buttonRemoveStudent.Location = new System.Drawing.Point(324, 266);
+            this.buttonRemoveStudent.Location = new System.Drawing.Point(325, 272);
             this.buttonRemoveStudent.Name = "buttonRemoveStudent";
             this.buttonRemoveStudent.Size = new System.Drawing.Size(90, 40);
             this.buttonRemoveStudent.TabIndex = 13;
             this.buttonRemoveStudent.Text = "<--";
             this.buttonRemoveStudent.UseVisualStyleBackColor = true;
             // 
-            // AddStudentsToClassroomUserControl
+            // labelClass
+            // 
+            this.labelClass.AutoSize = true;
+            this.labelClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClass.Location = new System.Drawing.Point(17, 60);
+            this.labelClass.Name = "labelClass";
+            this.labelClass.Size = new System.Drawing.Size(53, 21);
+            this.labelClass.TabIndex = 14;
+            this.labelClass.Text = "Class:";
+            // 
+            // comboBoxClass
+            // 
+            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxClass.FormattingEnabled = true;
+            this.comboBoxClass.Location = new System.Drawing.Point(76, 57);
+            this.comboBoxClass.Name = "comboBoxClass";
+            this.comboBoxClass.Size = new System.Drawing.Size(254, 29);
+            this.comboBoxClass.TabIndex = 15;
+            // 
+            // buttonNewClass
+            // 
+            this.buttonNewClass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNewClass.Location = new System.Drawing.Point(336, 60);
+            this.buttonNewClass.Name = "buttonNewClass";
+            this.buttonNewClass.Size = new System.Drawing.Size(113, 25);
+            this.buttonNewClass.TabIndex = 16;
+            this.buttonNewClass.Text = "Create New Class";
+            this.buttonNewClass.UseVisualStyleBackColor = true;
+            // 
+            // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.buttonNewClass);
+            this.Controls.Add(this.comboBoxClass);
+            this.Controls.Add(this.labelClass);
             this.Controls.Add(this.buttonRemoveStudent);
             this.Controls.Add(this.buttonAddStudent);
             this.Controls.Add(this.label1);
@@ -200,7 +237,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.labelSchoolYear);
             this.Controls.Add(this.comboBoxClassroom);
             this.Controls.Add(this.labelClassroom);
-            this.Name = "AddStudentsToClassroomUserControl";
+            this.Name = "SetupClassUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,5 +260,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAddStudent;
         private System.Windows.Forms.Button buttonRemoveStudent;
+        private System.Windows.Forms.Label labelClass;
+        private System.Windows.Forms.ComboBox comboBoxClass;
+        private System.Windows.Forms.Button buttonNewClass;
     }
 }
