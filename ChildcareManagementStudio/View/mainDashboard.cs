@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.UserControls;
+using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using ChildcareManagementStudio.UserControls.StudentUserControls;
 using System;
 using System.Drawing;
@@ -16,6 +17,7 @@ namespace ChildcareManagementStudio.View
         private LoginForm theLoginForm;
         private PlaceholderUserControl placeholderUserControl;
         private MainStudentUserControl mainStudentUserControl;
+        private MainClassroomUserControl mainClassroomUserControl;
         private readonly CredentialController theCredentialController;
         private string username;
         private bool mouseDown;
@@ -40,6 +42,11 @@ namespace ChildcareManagementStudio.View
             this.mainStudentUserControl = new MainStudentUserControl();
             this.Controls.Add(this.mainStudentUserControl);
             this.mainStudentUserControl.Location = new System.Drawing.Point(266, 81);
+
+            this.mainClassroomUserControl = new MainClassroomUserControl();
+            this.Controls.Add(this.mainClassroomUserControl);
+            this.mainClassroomUserControl.Location = new System.Drawing.Point(266, 81);
+            this.mainClassroomUserControl.Hide();
         }
 
         /// <summary>
@@ -83,6 +90,8 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 0);
             this.UpdateTabAppearance(this.buttonTeacherTab);
             this.teacherMainUserControl1.Show();
+            this.mainStudentUserControl.Hide();
+            this.mainClassroomUserControl.Hide();
             this.placeholderUserControl.Hide();
         }
 
@@ -97,6 +106,8 @@ namespace ChildcareManagementStudio.View
             this.UpdateTabAppearance(this.buttonStudentsTab);
             this.teacherMainUserControl1.Hide();
             this.mainStudentUserControl.Show();
+            this.mainClassroomUserControl.Hide();
+            this.placeholderUserControl.Hide();
         }
 
         /// <summary>
@@ -109,13 +120,10 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 280);
             this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.teacherMainUserControl1.Hide();
-            this.placeholderUserControl.Show();
-            this.placeholderUserControl.SetDescription(
-                "This tab will provide the ability to manage the classrooms \n" +
-                "at the facility. The ability will be provided for creating new \n" +
-                "classes, assining students and teachers to those classes, \n" +
-                "assigning the class to a room/location, etc. " 
-                );
+            this.mainStudentUserControl.Hide();
+            this.mainClassroomUserControl.Show();
+            this.placeholderUserControl.Hide();
+            
         }
 
         /// <summary>
@@ -129,6 +137,8 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new Point(3, 420);
             this.UpdateTabAppearance(this.buttonFinancialTab);
             this.teacherMainUserControl1.Hide();
+            this.mainStudentUserControl.Hide();
+            this.mainClassroomUserControl.Hide();
             this.placeholderUserControl.Show();
             this.placeholderUserControl.SetDescription(
                 "This tab will provide the ability to manage the financial \n" +

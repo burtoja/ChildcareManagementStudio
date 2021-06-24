@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CertificationController.cs" />
+    <Compile Include="Controller\ClassController.cs" />
     <Compile Include="Controller\ClassroomController.cs" />
     <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
+    <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Classroom.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
@@ -139,6 +141,24 @@
     <Compile Include="Model\TeacherClassroomAssignment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ClassroomUserControls\SetupClassUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\SetupClassUserControl.Designer.cs">
+      <DependentUpon>SetupClassUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.Designer.cs">
+      <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.Designer.cs">
+      <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PlaceholderUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +219,24 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassroomForm.Designer.cs">
+      <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassroomViews\EditClassroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\EditClassroomForm.Designer.cs">
+      <DependentUpon>EditClassroomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassroomViews\SelectTeachersForClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\SelectTeachersForClassForm.Designer.cs">
+      <DependentUpon>SelectTeachersForClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StudentViews\EditStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +290,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\SetupClassUserControl.resx">
+      <DependentUpon>SetupClassUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\MainClassroomUserControl.resx">
+      <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.resx">
+      <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
       <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +328,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\AddNewClassroomForm.resx">
+      <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\EditClassroomForm.resx">
+      <DependentUpon>EditClassroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\SelectTeachersForClassForm.resx">
+      <DependentUpon>SelectTeachersForClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentViews\EditStudentForm.resx">
       <DependentUpon>EditStudentForm.cs</DependentUpon>
