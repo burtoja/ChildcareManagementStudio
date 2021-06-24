@@ -10,7 +10,7 @@ namespace ChildcareManagementStudio.DAL
     /// </summary>
     public class TeacherClassroomAssignmentDAL
     {
-        private ClassroomDAL classroomDAL;
+        private ClassRecordDAL classRecordDAL;
         private EmployeeDAL employeeDAL;
 
         /// <summary>
@@ -18,45 +18,32 @@ namespace ChildcareManagementStudio.DAL
         /// </summary>
         public TeacherClassroomAssignmentDAL()
         {
-            classroomDAL = new ClassroomDAL();
+            classRecordDAL = new ClassRecordDAL();
             employeeDAL = new EmployeeDAL();
         }
 
         /// <summary>
         /// Method that gets all teacher/classroom assignments for a given school year and classroom.
         /// </summary>
-        /// <param name="schoolYear">School year being requested.</param>
-        /// <param name="classroomLocation">Classroom location being requested.</param>
+        /// <param name="classId">Class ID being requested.</param>
         /// <returns>All teacher/classroom assignments for the requested school year and classroom.</returns>
-        public List<TeacherClassroomAssignment> GetTeacherClassroomAssignments(string schoolYear, string classroomLocation)
+        public List<TeacherClassroomAssignment> GetTeacherClassroomAssignments(int classId)
         {
-            if (string.IsNullOrEmpty(schoolYear))
-            {
-                throw new ArgumentNullException("schoolYear", "The school year cannot be null or empty.");
-            }
-
-            if (string.IsNullOrEmpty(classroomLocation))
-            {
-                throw new ArgumentNullException("classroomLocation", "The classroom location cannot be null or empty.");
-            }
-
             List<TeacherClassroomAssignment> teacherClassroomAssignments = new List<TeacherClassroomAssignment>();
 
-            Classroom classroom = classroomDAL.GetClassroom(classroomLocation);
+            ClassRecord classRecord = classRecordDAL.GetClassRecord(classId);
 
             string selectStatement =
                 "SELECT teacherId, startDate, positionType " +
                 "FROM TeacherClassroomAssignment " +
-                "WHERE schoolYear = $schoolYear " +
-                "AND classroomLocation = $classroomLocation";
+                "WHERE class = $class";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
                 using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("$schoolYear", schoolYear);
-                    selectCommand.Parameters.AddWithValue("$classroomLocation", classroomLocation);
+                    selectCommand.Parameters.AddWithValue("$class", classId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
                         if (!reader.HasRows)
@@ -74,8 +61,7 @@ namespace ChildcareManagementStudio.DAL
 
                             TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
                             {
-                                SchoolYear = schoolYear,
-                                Classroom = classroom,
+                                ClassRecord = classRecord,
                                 StartDate = reader.GetDateTime(startDateOrdinal),
                                 Teacher = teacher,
                                 PositionType = reader.GetString(positionTypeOrdinal)

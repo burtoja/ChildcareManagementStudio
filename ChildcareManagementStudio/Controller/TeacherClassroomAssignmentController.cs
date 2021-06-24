@@ -23,22 +23,11 @@ namespace ChildcareManagementStudio.Controller
         /// <summary>
         /// Method that gets all teacher/classroom assignments for a given school year and classroom.
         /// </summary>
-        /// <param name="schoolYear">School year being requested.</param>
-        /// <param name="classroomLocation">Classroom location being requested.</param>
+        /// <param name="classId">Class ID being requested.</param>
         /// <returns>All teacher/classroom assignments for the requested school year and classroom.</returns>
-        public List<TeacherClassroomAssignment> GetTeacherClassroomAssignments(string schoolYear, string classroomLocation)
+        public List<TeacherClassroomAssignment> GetTeacherClassroomAssignments(int classId)
         {
-            if (string.IsNullOrEmpty(schoolYear))
-            {
-                throw new ArgumentNullException("schoolYear", "The school year cannot be null or empty.");
-            }
-
-            if (string.IsNullOrEmpty(classroomLocation))
-            {
-                throw new ArgumentNullException("classroomLocation", "The classroom location cannot be null or empty.");
-            }
-
-            return teacherClassroomAssignmentDAL.GetTeacherClassroomAssignments(schoolYear, classroomLocation);
+            return teacherClassroomAssignmentDAL.GetTeacherClassroomAssignments(classId);
         }
     }
 }
