@@ -84,6 +84,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonAddNewClassroom.TabIndex = 5;
             this.buttonAddNewClassroom.Text = "Add New Classroom";
             this.buttonAddNewClassroom.UseVisualStyleBackColor = true;
+            this.buttonAddNewClassroom.Click += new System.EventHandler(this.ButtonAddNewClassroom_Click);
             // 
             // buttonViewSelectedClassroomDetails
             // 

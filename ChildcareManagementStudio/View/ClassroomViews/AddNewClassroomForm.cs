@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace ChildcareManagementStudio.View.ClassroomViews
 {
     public partial class AddNewClassroomForm : Form
     {
-        public AddNewClassroomForm()
+        ViewClassroomListUserControl referringUserControl;
+
+        public AddNewClassroomForm(ViewClassroomListUserControl referringUserControl)
         {
             InitializeComponent();
+            this.referringUserControl = referringUserControl;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+            this.Close();
         }
     }
 }

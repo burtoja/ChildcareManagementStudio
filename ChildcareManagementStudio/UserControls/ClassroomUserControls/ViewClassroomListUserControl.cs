@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChildcareManagementStudio.View.ClassroomViews;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         public ViewClassroomListUserControl()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAddNewClassroom_Click(object sender, EventArgs e)
+        {
+            AddNewClassroomForm addNewClassroomForm = new AddNewClassroomForm(this);
+            addNewClassroomForm.Show();
+            this.Enabled = false;
         }
     }
 }
