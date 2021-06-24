@@ -29,31 +29,31 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewAllStudents = new System.Windows.Forms.ListView();
+            this.listViewAllClassrooms = new System.Windows.Forms.ListView();
             this.location = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.capacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonCreateNewClassroom = new System.Windows.Forms.Button();
             this.buttonEditSelectedClassroom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listViewAllStudents
+            // listViewAllClassrooms
             // 
-            this.listViewAllStudents.AccessibleDescription = "List of all student";
-            this.listViewAllStudents.AccessibleName = "Student List";
-            this.listViewAllStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewAllClassrooms.AccessibleDescription = "List of all student";
+            this.listViewAllClassrooms.AccessibleName = "Student List";
+            this.listViewAllClassrooms.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.location,
             this.capacity});
-            this.listViewAllStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewAllStudents.FullRowSelect = true;
-            this.listViewAllStudents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewAllStudents.HideSelection = false;
-            this.listViewAllStudents.Location = new System.Drawing.Point(18, 19);
-            this.listViewAllStudents.MultiSelect = false;
-            this.listViewAllStudents.Name = "listViewAllStudents";
-            this.listViewAllStudents.Size = new System.Drawing.Size(708, 383);
-            this.listViewAllStudents.TabIndex = 4;
-            this.listViewAllStudents.UseCompatibleStateImageBehavior = false;
-            this.listViewAllStudents.View = System.Windows.Forms.View.Details;
+            this.listViewAllClassrooms.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewAllClassrooms.FullRowSelect = true;
+            this.listViewAllClassrooms.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewAllClassrooms.HideSelection = false;
+            this.listViewAllClassrooms.Location = new System.Drawing.Point(18, 19);
+            this.listViewAllClassrooms.MultiSelect = false;
+            this.listViewAllClassrooms.Name = "listViewAllClassrooms";
+            this.listViewAllClassrooms.Size = new System.Drawing.Size(708, 383);
+            this.listViewAllClassrooms.TabIndex = 4;
+            this.listViewAllClassrooms.UseCompatibleStateImageBehavior = false;
+            this.listViewAllClassrooms.View = System.Windows.Forms.View.Details;
             // 
             // location
             // 
@@ -94,7 +94,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.buttonEditSelectedClassroom);
-            this.Controls.Add(this.listViewAllStudents);
+            this.Controls.Add(this.listViewAllClassrooms);
             this.Controls.Add(this.buttonCreateNewClassroom);
             this.Name = "ViewClassroomListUserControl";
             this.Size = new System.Drawing.Size(745, 470);
@@ -104,7 +104,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
         #endregion
 
-        private System.Windows.Forms.ListView listViewAllStudents;
+        private System.Windows.Forms.ListView listViewAllClassrooms;
         private System.Windows.Forms.ColumnHeader location;
         private System.Windows.Forms.ColumnHeader capacity;
         private System.Windows.Forms.Button buttonCreateNewClassroom;

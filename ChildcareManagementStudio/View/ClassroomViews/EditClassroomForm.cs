@@ -49,7 +49,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             if (this.UserInputFormIsValid())
             {
-                // TODO: Add originalClassroom to constructor parameter, etc.
                 try
                 {
                     Classroom revisedClassroom = new Classroom
@@ -64,7 +63,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     if (dialogeResult == DialogResult.OK)
                     {
                         this.referringUserControl.Enabled = true;
-                        // TODO: Add command to refresh listView in referring UC
+                        this.referringUserControl.RefreshClassroomListView();
                         this.Close();
                     }
                 }

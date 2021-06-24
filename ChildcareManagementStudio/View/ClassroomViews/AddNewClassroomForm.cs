@@ -60,7 +60,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     if (dialogeResult == DialogResult.OK)
                     {
                         this.referringUserControl.Enabled = true;
-                        // TODO: Add command to refresh listView in referring UC
+                        this.referringUserControl.RefreshClassroomListView();
                         this.Close();
                     }
                 }

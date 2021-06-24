@@ -1,5 +1,8 @@
-﻿using ChildcareManagementStudio.View.ClassroomViews;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.View.ClassroomViews;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
@@ -9,12 +12,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     /// </summary>
     public partial class ViewClassroomListUserControl : UserControl
     {
+        private readonly ClassroomController classroomController;
+
         /// <summary>
         /// Constructor for the UC
         /// </summary>
         public ViewClassroomListUserControl()
         {
             InitializeComponent();
+            this.classroomController = new ClassroomController();
+            RefreshClassroomListView();
         }
 
         /// <summary>
@@ -27,6 +34,17 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             AddNewClassroomForm addNewClassroomForm = new AddNewClassroomForm(this);
             addNewClassroomForm.Show();
             this.Enabled = false;
+        }
+
+        public void RefreshClassroomListView()
+        {
+            List<Classroom> classroomList = this.classroomController.GetAllClassrooms();
+            foreach (Classroom current in classroomList)
+            {
+                ListViewItem item = new ListViewItem(current.Location.ToString());
+                item.SubItems.Add(current.Capacity.ToString());
+                this.listViewAllClassrooms.Items.Add(item);
+            }
         }
     }
 }
