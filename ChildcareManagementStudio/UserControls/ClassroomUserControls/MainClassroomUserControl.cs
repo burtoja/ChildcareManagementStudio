@@ -8,7 +8,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     public partial class MainClassroomUserControl : UserControl
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
-        private readonly AddStudentsToClassroomUserControl addStudentsToClassroomUserControl;
+        private readonly SetupClassUserControl addStudentsToClassroomUserControl;
         
         /// <summary>
         /// Constructor for the UC
@@ -17,7 +17,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
-            this.addStudentsToClassroomUserControl = new AddStudentsToClassroomUserControl();
+            this.addStudentsToClassroomUserControl = new SetupClassUserControl();
             this.AddUserControls();
         }
 

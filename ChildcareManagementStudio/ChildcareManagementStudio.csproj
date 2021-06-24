@@ -139,11 +139,11 @@
     <Compile Include="Model\TeacherClassroomAssignment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.cs">
+    <Compile Include="UserControls\ClassroomUserControls\SetupClassUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.Designer.cs">
-      <DependentUpon>AddStudentsToClassroomUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\ClassroomUserControls\SetupClassUserControl.Designer.cs">
+      <DependentUpon>SetupClassUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.cs">
       <SubType>UserControl</SubType>
@@ -288,8 +288,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\ClassroomUserControls\AddStudentsToClassroomUserControl.resx">
-      <DependentUpon>AddStudentsToClassroomUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ClassroomUserControls\SetupClassUserControl.resx">
+      <DependentUpon>SetupClassUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ClassroomUserControls\MainClassroomUserControl.resx">
       <DependentUpon>MainClassroomUserControl.cs</DependentUpon>

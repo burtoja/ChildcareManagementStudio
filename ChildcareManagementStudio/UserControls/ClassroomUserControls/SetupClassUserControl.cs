@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 {
-    public partial class AddStudentsToClassroomUserControl : UserControl
+    public partial class SetupClassUserControl : UserControl
     {
-        public AddStudentsToClassroomUserControl()
+        public SetupClassUserControl()
         {
             InitializeComponent();
         }
