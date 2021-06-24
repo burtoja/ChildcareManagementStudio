@@ -35,6 +35,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBoxLocation = new System.Windows.Forms.ComboBox();
+            this.labelCapacity = new System.Windows.Forms.Label();
+            this.numericUpDownCapacity = new System.Windows.Forms.NumericUpDown();
+            this.labelCapcityUnits = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSchoolYear
@@ -63,20 +67,21 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.comboBoxSchoolYear.Location = new System.Drawing.Point(183, 21);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(191, 29);
-            this.comboBoxSchoolYear.TabIndex = 2;
+            this.comboBoxSchoolYear.TabIndex = 1;
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(16, 123);
+            this.buttonSubmit.Location = new System.Drawing.Point(16, 189);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(161, 33);
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Create Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(211, 123);
+            this.buttonCancel.Location = new System.Drawing.Point(213, 189);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(161, 33);
             this.buttonCancel.TabIndex = 5;
@@ -92,12 +97,46 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.comboBoxLocation.Location = new System.Drawing.Point(183, 71);
             this.comboBoxLocation.Name = "comboBoxLocation";
             this.comboBoxLocation.Size = new System.Drawing.Size(214, 29);
-            this.comboBoxLocation.TabIndex = 3;
+            this.comboBoxLocation.TabIndex = 2;
+            // 
+            // labelCapacity
+            // 
+            this.labelCapacity.AutoSize = true;
+            this.labelCapacity.Location = new System.Drawing.Point(89, 126);
+            this.labelCapacity.Name = "labelCapacity";
+            this.labelCapacity.Size = new System.Drawing.Size(88, 21);
+            this.labelCapacity.TabIndex = 6;
+            this.labelCapacity.Text = "Capacity:";
+            // 
+            // numericUpDownCapacity
+            // 
+            this.numericUpDownCapacity.Location = new System.Drawing.Point(183, 124);
+            this.numericUpDownCapacity.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDownCapacity.Name = "numericUpDownCapacity";
+            this.numericUpDownCapacity.Size = new System.Drawing.Size(58, 27);
+            this.numericUpDownCapacity.TabIndex = 3;
+            // 
+            // labelCapcityUnits
+            // 
+            this.labelCapcityUnits.AutoSize = true;
+            this.labelCapcityUnits.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCapcityUnits.Location = new System.Drawing.Point(247, 134);
+            this.labelCapcityUnits.Name = "labelCapcityUnits";
+            this.labelCapcityUnits.Size = new System.Drawing.Size(61, 17);
+            this.labelCapcityUnits.TabIndex = 8;
+            this.labelCapcityUnits.Text = "students";
             // 
             // AddNewClassroomForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(435, 187);
+            this.ClientSize = new System.Drawing.Size(435, 253);
+            this.Controls.Add(this.labelCapcityUnits);
+            this.Controls.Add(this.numericUpDownCapacity);
+            this.Controls.Add(this.labelCapacity);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.comboBoxLocation);
@@ -111,6 +150,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Name = "AddNewClassroomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Classroom Form";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +164,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ComboBox comboBoxLocation;
+        private System.Windows.Forms.Label labelCapacity;
+        private System.Windows.Forms.NumericUpDown numericUpDownCapacity;
+        private System.Windows.Forms.Label labelCapcityUnits;
     }
 }

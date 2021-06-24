@@ -10,6 +10,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class AddNewClassroomForm : Form
     {
         private readonly ViewClassroomListUserControl referringUserControl;
+        private readonly ClassroomController classroomController;
 
 
         /// <summary>
@@ -20,10 +21,11 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
+            this.classroomController = new ClassroomController();
         }
 
         /// <summary>
-        /// handles cance button clicks to close form and re-enable the referring UC
+        /// Handles cancel button clicks to close form and re-enable the referring UC
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -31,6 +33,16 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             this.referringUserControl.Enabled = true;
             this.Close();
+        }
+
+        /// <summary>
+        /// Handles the submit button clicks to attempt to create new classroom entry in DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            this.classroomController.addNewClassroom(Classroom)
         }
     }
 }
