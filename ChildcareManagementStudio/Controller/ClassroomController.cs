@@ -43,5 +43,14 @@ namespace ChildcareManagementStudio.Controller
         {
             return classroomDAL.GetAllClassrooms();
         }
+
+        /// <summary>
+        /// Adds the new Classroom to the DB
+        /// </summary>
+        /// <param name="theClassroom">Classroom object to be added to DB</param>
+        public void CreateNewClassroom(Classroom theClassroom)
+        {
+            //TODO: implement method
+        }
     }
 }
