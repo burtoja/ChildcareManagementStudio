@@ -21,7 +21,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
-            //this.classroomController = new ClassroomController();
+           // this.classroomController = new ClassroomController();
         }
 
         /// <summary>
@@ -62,12 +62,12 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 //        // TODO: Add command to refresh listView in referring UC
                 //        this.Close();
                 //    }
-                //} 
+                //}
                 //catch (Exception ex)
                 //{
                 //    string title = "Error Message";
                 //    string message = "An error was found:/n" +
-                //        ex.Message + 
+                //        ex.Message +
                 //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
                 //    DialogResult dialogeResult = MessageBox.Show(message, title);
                 //}
