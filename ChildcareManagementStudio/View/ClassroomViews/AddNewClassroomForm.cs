@@ -42,32 +42,57 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    ClassroomViews newClassroom = new View.ClassroomViews
-            //    {
-            //        Location = this.textBoxLocation.Text,
-            //        labelCapacity = this.numericUpDownCapacity.Value
-            //    };
-            //    this.classroomController.addNewClassroom(Classroom theClassroom);
-            //    string title = "Classroom Created";
-            //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
-            //    DialogResult dialogeResult = MessageBox.Show(message, title);
-            //    if (dialogeResult == DialogResult.OK)
-            //    {
-            //        this.referringUserControl.Enabled = true;
-            //        // TODO: Add command to refresh listView in referring UC
-            //        this.Close();
-            //    }
-            //} 
-            //catch (Exception ex)
-            //{
-            //    string title = "Error Message";
-            //    string message = "An error was found:/n" +
-            //        ex.Message + 
-            //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
-            //    DialogResult dialogeResult = MessageBox.Show(message, title);
-            //}
+            if (this.UserInputFormIsValid())
+            {
+                //try
+                //{
+                //    ClassroomViews newClassroom = new View.ClassroomViews
+                //    {
+                //        Location = this.textBoxLocation.Text,
+                //        labelCapacity = this.numericUpDownCapacity.Value
+                //    };
+                //    this.classroomController.addNewClassroom(Classroom theClassroom);
+                //    string title = "Classroom Created";
+                //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
+                //    DialogResult dialogeResult = MessageBox.Show(message, title);
+                //    if (dialogeResult == DialogResult.OK)
+                //    {
+                //        this.referringUserControl.Enabled = true;
+                //        // TODO: Add command to refresh listView in referring UC
+                //        this.Close();
+                //    }
+                //} 
+                //catch (Exception ex)
+                //{
+                //    string title = "Error Message";
+                //    string message = "An error was found:/n" +
+                //        ex.Message + 
+                //        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+                //    DialogResult dialogeResult = MessageBox.Show(message, title);
+                //}
+            }
+        }
+
+        /// <summary>
+        /// Verifies that the user has typed some text in the location text box.  Note that
+        /// the number UpDown box is set to not allow for negative numbers to be submitted 
+        /// even if they are typed in manually by the user
+        /// </summary>
+        /// <returns>true if length of text in textbox > 0</returns>
+        private bool UserInputFormIsValid()
+        {
+            if (this.textBoxLocation.Text.Length < 1)
+            {
+                string title = "Location Not Entered";
+                string message = "The classroom requires a description of the location.  " +
+                    "Please click 'Okay' and add a location description and resubmit.";
+                DialogResult dialogeResult = MessageBox.Show(message, title);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
