@@ -3,7 +3,7 @@
     /// <summary>
     /// Class representing a combination of a classroom and a school year.
     /// </summary>
-    public class Class
+    public class ClassRecord
     {
         /// <summary>
         /// The unique ID for the class.

@@ -120,6 +120,7 @@
     <Compile Include="Controller\TeacherClassroomAssignmentController.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
+    <Compile Include="DAL\ClassRecordDAL.cs" />
     <Compile Include="DAL\ClassroomDAL.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
@@ -131,7 +132,7 @@
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
-    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ClassRecord.cs" />
     <Compile Include="Model\Classroom.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
