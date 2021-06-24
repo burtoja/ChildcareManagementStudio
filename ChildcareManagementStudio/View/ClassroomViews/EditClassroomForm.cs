@@ -5,9 +5,9 @@ using System.Windows.Forms;
 namespace ChildcareManagementStudio.View.ClassroomViews
 {
     /// <summary>
-    /// Date	Client	Activity	Start Time	End Time	Billable Hours	Rate (/hr)	Total	Balance	Notes:																
+    /// Class will create and manage the dit classroom form
     /// </summary>
-    public partial class AddNewClassroomForm : Form
+    public partial class EditClassroomForm : Form
     {
         private readonly ViewClassroomListUserControl referringUserControl;
         //private readonly ClassroomController classroomController;
@@ -17,7 +17,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// Constructor for the form
         /// </summary>
         /// <param name="referringUserControl">the userControl creating this form</param>
-        public AddNewClassroomForm(ViewClassroomListUserControl referringUserControl)
+        public EditClassroomForm(ViewClassroomListUserControl referringUserControl)
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
@@ -44,14 +44,15 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             if (this.UserInputFormIsValid())
             {
+                // TODO: Add originalClassroom to constructor parameter, etc.
                 //try
                 //{
-                //    Classroom newClassroom = newClassroom
+                //    Classroom revisedClassroom = new Classroom
                 //    {
                 //        Location = this.textBoxLocation.Text,
                 //        labelCapacity = this.numericUpDownCapacity.Value
                 //    };
-                //    this.classroomController.addNewClassroom(Classroom theClassroom);
+                //    this.classroomController.editClassroom(Classroom originalClassroom, Classroom revisedClassroom);
                 //    string title = "Classroom Created";
                 //    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
                 //    DialogResult dialogeResult = MessageBox.Show(message, title);
