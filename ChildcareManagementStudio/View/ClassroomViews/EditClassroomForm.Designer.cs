@@ -86,7 +86,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonSubmit
             // 
@@ -96,7 +96,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.TabIndex = 12;
             this.buttonSubmit.Text = "Edit Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // labelClassroomLocation
             // 
