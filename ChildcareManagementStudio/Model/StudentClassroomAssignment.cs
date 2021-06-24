@@ -11,13 +11,8 @@
         public Student Student { get; set; }
 
         /// <summary>
-        /// Property representing the classroom associated with the record.
+        /// Property representing the class record associated with the record.
         /// </summary>
-        public Classroom Classroom { get; set; }
-
-        /// <summary>
-        /// Property recording the school year that the assignment is valid for.
-        /// </summary>
-        public string SchoolYear { get; set; }
+        public ClassRecord ClassRecord { get; set; }
     }
 }
