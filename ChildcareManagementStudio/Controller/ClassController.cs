@@ -1,9 +1,5 @@
 ﻿using ChildcareManagementStudio.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChildcareManagementStudio.Controller
 {
@@ -64,18 +60,23 @@ namespace ChildcareManagementStudio.Controller
                 ClassroomLocation = "Room 5A",
                 SchoolYear = "2021-22"
             };
-            List<Class> demoList = new List<Class>();
-            demoList.Add(demoClass1);
-            demoList.Add(demoClass2);
+            List<Class> demoList = new List<Class>
+            {
+                demoClass1,
+                demoClass2
+            };
             return demoList;
         }
 
+        /// <summary>
+        /// Edit the details of a Class
+        /// </summary>
+        /// <param name="originalClass">original Class object</param>
+        /// <param name="revisedClass">revised Class object</param>
         public void EditClass(Class originalClass, Class revisedClass)
         {
             // TODO: Implement when DAL complete
         }
-
-
 
     }
 }
