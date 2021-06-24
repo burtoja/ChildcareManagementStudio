@@ -29,8 +29,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelLocation = new System.Windows.Forms.Label();
-            this.comboBoxLocation = new System.Windows.Forms.ComboBox();
+            this.labelClassroom = new System.Windows.Forms.Label();
+            this.comboBoxClassroom = new System.Windows.Forms.ComboBox();
             this.labelSchoolYear = new System.Windows.Forms.Label();
             this.labelValueSchoolYear = new System.Windows.Forms.Label();
             this.buttonChangeSchoolYear = new System.Windows.Forms.Button();
@@ -45,26 +45,26 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonRemoveStudent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelLocation
+            // labelClassroom
             // 
-            this.labelLocation.AutoSize = true;
-            this.labelLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLocation.Location = new System.Drawing.Point(17, 63);
-            this.labelLocation.Name = "labelLocation";
-            this.labelLocation.Size = new System.Drawing.Size(82, 21);
-            this.labelLocation.TabIndex = 0;
-            this.labelLocation.Text = "Location:";
+            this.labelClassroom.AutoSize = true;
+            this.labelClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClassroom.Location = new System.Drawing.Point(17, 63);
+            this.labelClassroom.Name = "labelClassroom";
+            this.labelClassroom.Size = new System.Drawing.Size(93, 21);
+            this.labelClassroom.TabIndex = 0;
+            this.labelClassroom.Text = "Classroom:";
             // 
-            // comboBoxLocation
+            // comboBoxClassroom
             // 
-            this.comboBoxLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxLocation.FormattingEnabled = true;
-            this.comboBoxLocation.Location = new System.Drawing.Point(105, 60);
-            this.comboBoxLocation.Name = "comboBoxLocation";
-            this.comboBoxLocation.Size = new System.Drawing.Size(151, 29);
-            this.comboBoxLocation.TabIndex = 1;
+            this.comboBoxClassroom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClassroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxClassroom.FormattingEnabled = true;
+            this.comboBoxClassroom.Location = new System.Drawing.Point(116, 60);
+            this.comboBoxClassroom.Name = "comboBoxClassroom";
+            this.comboBoxClassroom.Size = new System.Drawing.Size(254, 29);
+            this.comboBoxClassroom.TabIndex = 1;
             // 
             // labelSchoolYear
             // 
@@ -89,7 +89,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // buttonChangeSchoolYear
             // 
-            this.buttonChangeSchoolYear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeSchoolYear.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChangeSchoolYear.Location = new System.Drawing.Point(194, 22);
             this.buttonChangeSchoolYear.Name = "buttonChangeSchoolYear";
             this.buttonChangeSchoolYear.Size = new System.Drawing.Size(176, 23);
@@ -169,7 +169,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.buttonAddStudent.Location = new System.Drawing.Point(325, 220);
             this.buttonAddStudent.Name = "buttonAddStudent";
-            this.buttonAddStudent.Size = new System.Drawing.Size(90, 23);
+            this.buttonAddStudent.Size = new System.Drawing.Size(90, 40);
             this.buttonAddStudent.TabIndex = 12;
             this.buttonAddStudent.Text = "-->";
             this.buttonAddStudent.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.buttonRemoveStudent.Location = new System.Drawing.Point(324, 266);
             this.buttonRemoveStudent.Name = "buttonRemoveStudent";
-            this.buttonRemoveStudent.Size = new System.Drawing.Size(91, 23);
+            this.buttonRemoveStudent.Size = new System.Drawing.Size(90, 40);
             this.buttonRemoveStudent.TabIndex = 13;
             this.buttonRemoveStudent.Text = "<--";
             this.buttonRemoveStudent.UseVisualStyleBackColor = true;
@@ -198,8 +198,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.buttonChangeSchoolYear);
             this.Controls.Add(this.labelValueSchoolYear);
             this.Controls.Add(this.labelSchoolYear);
-            this.Controls.Add(this.comboBoxLocation);
-            this.Controls.Add(this.labelLocation);
+            this.Controls.Add(this.comboBoxClassroom);
+            this.Controls.Add(this.labelClassroom);
             this.Name = "AddStudentsToClassroomUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.ResumeLayout(false);
@@ -209,8 +209,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
         #endregion
 
-        private System.Windows.Forms.Label labelLocation;
-        private System.Windows.Forms.ComboBox comboBoxLocation;
+        private System.Windows.Forms.Label labelClassroom;
+        private System.Windows.Forms.ComboBox comboBoxClassroom;
         private System.Windows.Forms.Label labelSchoolYear;
         private System.Windows.Forms.Label labelValueSchoolYear;
         private System.Windows.Forms.Button buttonChangeSchoolYear;

@@ -27,7 +27,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void AddUserControls()
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
-            this.tabPageEditClassroom.Controls.Add(this.addStudentsToClassroomUserControl);
+            this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
         }
 
         /// <summary>
