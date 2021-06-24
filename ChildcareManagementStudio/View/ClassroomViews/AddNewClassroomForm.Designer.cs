@@ -71,7 +71,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(16, 189);
+            this.buttonSubmit.Location = new System.Drawing.Point(26, 189);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(161, 33);
             this.buttonSubmit.TabIndex = 4;
@@ -81,7 +81,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(213, 189);
+            this.buttonCancel.Location = new System.Drawing.Point(236, 189);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(161, 33);
             this.buttonCancel.TabIndex = 5;
@@ -119,14 +119,15 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.numericUpDownCapacity.Name = "numericUpDownCapacity";
             this.numericUpDownCapacity.Size = new System.Drawing.Size(58, 27);
             this.numericUpDownCapacity.TabIndex = 3;
+            this.numericUpDownCapacity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelCapcityUnits
             // 
             this.labelCapcityUnits.AutoSize = true;
-            this.labelCapcityUnits.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCapcityUnits.Location = new System.Drawing.Point(247, 134);
+            this.labelCapcityUnits.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCapcityUnits.Location = new System.Drawing.Point(247, 130);
             this.labelCapcityUnits.Name = "labelCapcityUnits";
-            this.labelCapcityUnits.Size = new System.Drawing.Size(61, 17);
+            this.labelCapcityUnits.Size = new System.Drawing.Size(61, 16);
             this.labelCapcityUnits.TabIndex = 8;
             this.labelCapcityUnits.Text = "students";
             // 
