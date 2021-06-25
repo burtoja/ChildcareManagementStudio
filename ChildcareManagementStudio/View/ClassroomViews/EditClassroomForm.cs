@@ -27,6 +27,16 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.referringUserControl = referringUserControl;
             this.originalClassroom = originalClassroom;
             this.classroomController = new ClassroomController();
+            this.PrefillFormValues();
+        }
+
+        /// <summary>
+        /// Prefills form values with values in db for classroom to be edited
+        /// </summary>
+        private void PrefillFormValues()
+        {
+            this.textBoxLocation.Text = originalClassroom.Location;
+            this.numericUpDownCapacity.Value = originalClassroom.Capacity;
         }
 
         /// <summary>
@@ -57,8 +67,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
                     };
                     this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);
-                    string title = "Classroom Created";
-                    string message = "The classroom has been created in the system. Click 'Okay' to continue.";
+                    string title = "Classroom Information Revised";
+                    string message = "The classroom has been revised in the system. Click 'Okay' to continue.";
                     DialogResult dialogeResult = MessageBox.Show(message, title);
                     if (dialogeResult == DialogResult.OK)
                     {
@@ -70,9 +80,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 catch (Exception ex)
                 {
                     string title = "Error Message";
-                    string message = "An error was found:/n" +
-                        ex.Message +
-                        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+                    string message = "An error was found. " +
+                        "The classroom was NOT created. Click 'Okay' to continue. (" +
+                        ex.Message + ")";
                     MessageBox.Show(message, title);
                 }
             }

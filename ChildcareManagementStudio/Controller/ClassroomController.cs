@@ -58,7 +58,7 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
-        /// 
+        /// Edits a current classroom in the DB
         /// </summary>
         /// <param name="originalClassroom"></param>
         /// <param name="revisedClassroom"></param>
@@ -72,8 +72,7 @@ namespace ChildcareManagementStudio.Controller
             {
                 throw new ArgumentNullException("revisedClassroom", "The revised classroom cannot be null.");
             }
-
-            //TODO: implement method
+            this.classroomDAL.EditClassroom(originalClassroom, revisedClassroom);
         }
     }
 }

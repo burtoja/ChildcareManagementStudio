@@ -52,5 +52,28 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 this.listViewAllClassrooms.Items.Add(item);
             }
         }
+
+        /// <summary>
+        /// Handles edit selected classroom button clicks by opening the eidt classroom form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonEditSelectedClassroom_Click(object sender, EventArgs e)
+        {
+                        if (this.listViewAllClassrooms.SelectedItems.Count == 0)
+            {
+                string title = "No Classroom Chosen";
+                string message = "Please choose a classroom and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                ListViewItem item = listViewAllClassrooms.SelectedItems[0];
+                Classroom selectedClassroom = this.classroomController.GetClassroom(item.SubItems[0].Text);
+                EditClassroomForm editClassroomForm = new EditClassroomForm(this, selectedClassroom);
+                editClassroomForm.Show();
+                this.Enabled = false;
+            }
+        }
     }
 }
