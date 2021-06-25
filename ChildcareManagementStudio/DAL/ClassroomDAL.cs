@@ -13,28 +13,23 @@ namespace ChildcareManagementStudio.DAL
         /// <summary>
         /// Method that returns a Classroom object representing the requested classroom.
         /// </summary>
-        /// <param name="location">Location of the classroom being requested.</param>
+        /// <param name="classroomId">Unique ID of the classroom being requested.</param>
         /// <returns>A Classroom object representing the requested classroom.</returns>
-        public Classroom GetClassroom(string location)
+        public Classroom GetClassroom(int classroomId)
         {
-            if (string.IsNullOrEmpty(location))
-            {
-                throw new ArgumentNullException("location", "The classroom location cannot be null.");
-            }
-
             Classroom classroom = new Classroom();
 
             string selectStatement =
-                "SELECT capacity " +
+                "SELECT location, capacity " +
                 "FROM Classroom " +
-                "WHERE location = $location";
+                "WHERE classroomId = $classroomId";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
                 using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("$location", location);
+                    selectCommand.Parameters.AddWithValue("$classroomId", classroomId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
                         if (!reader.HasRows)
@@ -42,10 +37,12 @@ namespace ChildcareManagementStudio.DAL
                             throw new ArgumentException("The specified classroom is not in the database.", "location");
                         }
 
+                        int locationOrdinal = reader.GetOrdinal("location");
                         int capacityOrdinal = reader.GetOrdinal("capacity");
                         while (reader.Read())
                         {
-                            classroom.Location = location;
+                            classroom.Id = classroomId;
+                            classroom.Location = reader.GetString(locationOrdinal);
                             classroom.Capacity = reader.GetInt32(capacityOrdinal);
                         }
                     }
@@ -64,7 +61,7 @@ namespace ChildcareManagementStudio.DAL
             List<Classroom> classrooms = new List<Classroom>();
 
             string selectStatement =
-                "SELECT location, capacity " +
+                "SELECT classroomId, location, capacity " +
                 "FROM Classroom";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
@@ -74,12 +71,14 @@ namespace ChildcareManagementStudio.DAL
                 {
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
+                        int idOrdinal = reader.GetOrdinal("classroomId");
                         int locationOrdinal = reader.GetOrdinal("location");
                         int capacityOrdinal = reader.GetOrdinal("capacity");
                         while (reader.Read())
                         {
                             Classroom classroom = new Classroom
                             {
+                                Id = reader.GetInt32(idOrdinal),
                                 Location = reader.GetString(locationOrdinal),
                                 Capacity = reader.GetInt32(capacityOrdinal)
                             };
@@ -137,6 +136,11 @@ namespace ChildcareManagementStudio.DAL
             if (revisedClassroom == null)
             {
                 throw new ArgumentNullException("revisedClassroom", "The revised classroom cannot be null.");
+            }
+
+            if (originalClassroom.Id != revisedClassroom.Id)
+            {
+                throw new ArgumentException("The ID must be the same for the two classrooms.");
             }
 
             // TODO: wrap both table updates in a transaction
