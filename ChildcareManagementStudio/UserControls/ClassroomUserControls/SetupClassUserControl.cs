@@ -28,6 +28,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classRecord = new ClassRecord();
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
+            this.PopulateClassroomComboBox();
             this.PopulateSelectedTeacherList();
         }
 
@@ -52,9 +53,28 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 classRecords.Add(current);
             }
-            this.comboBoxClass.DataSource = classRecords;
-            this.comboBoxClass.ValueMember = "ClassId";
-            this.comboBoxClass.DisplayMember = "Identifier";  //TODO:  Do we need to have a ClassName property?
+            this.comboBoxClassroom.DataSource = classRecords;
+            this.comboBoxClassroom.ValueMember = "Id";
+            this.comboBoxClassroom.DisplayMember = "Location"; 
+            this.comboBoxClassroom.SelectedIndex = -1;
+            this.comboBoxClassroom.SelectedText = "--select--";
+        }
+
+        /// <summary>
+        /// Populate th Classroom comboBox with the available classrooms
+        /// </summary>
+        private void PopulateClassroomComboBox()
+        {
+            List<Classroom> classroomList = new List<Classroom>();
+            classroomList = this.classroomController.GetAllClassrooms();
+            BindingList<Classroom> classrooms = new BindingList<Classroom>();
+            foreach (Classroom current in classroomList)
+            {
+                classrooms.Add(current);
+            }
+            this.comboBoxClass.DataSource = classrooms;
+            this.comboBoxClass.ValueMember = "";
+            this.comboBoxClass.DisplayMember = "Identifier";
             this.comboBoxClass.SelectedIndex = -1;
             this.comboBoxClass.SelectedText = "--select--";
         }
