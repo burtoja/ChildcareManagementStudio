@@ -21,31 +21,17 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldThrowExceptionIfLocationIsEmpty()
-        {
-            string location = "";
-            Assert.ThrowsException<System.ArgumentNullException>(() => classroomDAL.GetClassroom(location));
-        }
-
-        [TestMethod]
-        public void ShouldThrowExceptionIfLocationIsNull()
-        {
-            string location = null;
-            Assert.ThrowsException<System.ArgumentNullException>(() => classroomDAL.GetClassroom(location));
-        }
-
-        [TestMethod]
         public void ShouldThrowExceptionIfLocationIsClassroomIsNotInDatabase()
         {
-            string location = "Z-101";
-            Assert.ThrowsException<System.ArgumentException>(() => classroomDAL.GetClassroom(location));
+            int classroomId = 0;
+            Assert.ThrowsException<System.ArgumentException>(() => classroomDAL.GetClassroom(classroomId));
         }
 
         [TestMethod]
         public void ShouldReturnClassroomObjectIfClassroomExists()
         {
-            string location = "A-101";
-            Classroom classroom = classroomDAL.GetClassroom(location);
+            int classroomId = 1;
+            Classroom classroom = classroomDAL.GetClassroom(classroomId);
             Assert.AreEqual("A-101", classroom.Location);
             Assert.AreEqual(30, classroom.Capacity);
         }

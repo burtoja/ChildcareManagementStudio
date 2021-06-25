@@ -29,7 +29,7 @@ namespace ChildcareManagementStudio.DAL
             ClassRecord classRecord = new ClassRecord();
 
             string selectStatement =
-                "SELECT classroomLocation, schoolYear " +
+                "SELECT classroomId, schoolYear " +
                 "FROM Class " +
                 "WHERE classId = $classId";
 
@@ -46,12 +46,12 @@ namespace ChildcareManagementStudio.DAL
                             throw new ArgumentException("The specified class is not in the database.", "classId");
                         }
 
-                        int classroomLocationOrdinal = reader.GetOrdinal("classroomLocation");
+                        int classroomIdOrdinal = reader.GetOrdinal("classroomId");
                         int schoolYearOrdinal = reader.GetOrdinal("schoolYear");
                         while (reader.Read())
                         {
-                            string classroomLocation = reader.GetString(classroomLocationOrdinal);
-                            Classroom classroom = classroomDAL.GetClassroom(classroomLocation);
+                            int classroomId = reader.GetInt32(classroomIdOrdinal);
+                            Classroom classroom = classroomDAL.GetClassroom(classroomId);
 
                             classRecord.ClassId = classId;
                             classRecord.Classroom = classroom;
