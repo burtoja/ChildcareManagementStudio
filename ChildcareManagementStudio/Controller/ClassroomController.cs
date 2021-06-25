@@ -54,8 +54,7 @@ namespace ChildcareManagementStudio.Controller
             {
                 throw new ArgumentNullException("theClassroom", "The classroom cannot be null.");
             }
-
-            //TODO: implement method
+            this.classroomDAL.CreateNewClassroom(theClassroom);
         }
 
         /// <summary>
