@@ -26,16 +26,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.classroomController = new ClassroomController();
         }
 
-        /// <summary>
-        /// Handles cancel button clicks to close form and re-enable the referring UC
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            this.referringUserControl.Enabled = true;
-            this.Close();
-        }
 
         /// <summary>
         /// Handles the submit button clicks to attempt to create new classroom entry in DB
@@ -59,8 +49,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     DialogResult dialogeResult = MessageBox.Show(message, title);
                     if (dialogeResult == DialogResult.OK)
                     {
-                        this.referringUserControl.Enabled = true;
-                        this.referringUserControl.RefreshClassroomListView();
                         this.Close();
                     }
                 }
@@ -95,6 +83,29 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             {
                 return true;
             }
+        }
+
+
+        /// <summary>
+        /// Handles cancel button clicks to close form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Listener for when form is closed.  This will execute operations to re-enable 
+        /// the referring UC and update the data displayed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddNewClassroomForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+            this.referringUserControl.RefreshClassroomListView();
         }
     }
 }
