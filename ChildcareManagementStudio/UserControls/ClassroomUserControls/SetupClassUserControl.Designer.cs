@@ -35,7 +35,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelValueSchoolYear = new System.Windows.Forms.Label();
             this.buttonChangeSchoolYear = new System.Windows.Forms.Button();
             this.labelTeacher = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTeachers = new System.Windows.Forms.ListView();
             this.buttonEditTeacherList = new System.Windows.Forms.Button();
             this.labelAddedStudents = new System.Windows.Forms.Label();
             this.listViewStudentsNotInClass = new System.Windows.Forms.ListView();
@@ -110,15 +110,15 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelTeacher.TabIndex = 5;
             this.labelTeacher.Text = "Teacher(s):";
             // 
-            // listView1
+            // listViewTeachers
             // 
-            this.listView1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(519, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 70);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewTeachers.HideSelection = false;
+            this.listViewTeachers.Location = new System.Drawing.Point(519, 22);
+            this.listViewTeachers.Name = "listViewTeachers";
+            this.listViewTeachers.Size = new System.Drawing.Size(200, 70);
+            this.listViewTeachers.TabIndex = 6;
+            this.listViewTeachers.UseCompatibleStateImageBehavior = false;
             // 
             // buttonEditTeacherList
             // 
@@ -129,6 +129,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonEditTeacherList.TabIndex = 7;
             this.buttonEditTeacherList.Text = "Add/Remove Teachers";
             this.buttonEditTeacherList.UseVisualStyleBackColor = true;
+            this.buttonEditTeacherList.Click += new System.EventHandler(this.ButtonEditTeacherList_Click);
             // 
             // labelAddedStudents
             // 
@@ -230,7 +231,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.listViewStudentsNotInClass);
             this.Controls.Add(this.labelAddedStudents);
             this.Controls.Add(this.buttonEditTeacherList);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTeachers);
             this.Controls.Add(this.labelTeacher);
             this.Controls.Add(this.buttonChangeSchoolYear);
             this.Controls.Add(this.labelValueSchoolYear);
@@ -252,7 +253,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label labelValueSchoolYear;
         private System.Windows.Forms.Button buttonChangeSchoolYear;
         private System.Windows.Forms.Label labelTeacher;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTeachers;
         private System.Windows.Forms.Button buttonEditTeacherList;
         private System.Windows.Forms.Label labelAddedStudents;
         private System.Windows.Forms.ListView listViewStudentsNotInClass;
