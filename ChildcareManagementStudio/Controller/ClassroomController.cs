@@ -23,16 +23,11 @@ namespace ChildcareManagementStudio.Controller
         /// <summary>
         /// Method that returns a Classroom object representing the requested classroom.
         /// </summary>
-        /// <param name="location">Location of the classroom being requested.</param>
+        /// <param name="classroomId">Unique ID of the classroom being requested.</param>
         /// <returns>A Classroom object representing the requested classroom.</returns>
-        public Classroom GetClassroom(string location)
+        public Classroom GetClassroom(int classroomId)
         {
-            if (string.IsNullOrEmpty(location))
-            {
-                throw new ArgumentNullException("location", "The classroom location cannot be null.");
-            }
-
-            return classroomDAL.GetClassroom(location);
+            return classroomDAL.GetClassroom(classroomId);
         }
 
         /// <summary>
