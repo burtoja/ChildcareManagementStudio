@@ -9,7 +9,7 @@ namespace ChildcareManagementStudio.DAL
     /// </summary>
     public class ClassRecordDAL
     {
-        private ClassroomDAL classroomDAL;
+        private readonly ClassroomDAL classroomDAL;
         
         /// <summary>
         /// Constructor for the ClassRecordDAL class.
