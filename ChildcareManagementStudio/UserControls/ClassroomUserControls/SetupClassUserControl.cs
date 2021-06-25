@@ -54,7 +54,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
-            this.comboBoxClass.DisplayMember = "nothing now";  //TODO:  Do we need to have a ClassName property?
+            this.comboBoxClass.DisplayMember = "Identifier";  //TODO:  Do we need to have a ClassName property?
             this.comboBoxClass.SelectedIndex = -1;
             this.comboBoxClass.SelectedText = "--select--";
         }
