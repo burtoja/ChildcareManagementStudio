@@ -69,7 +69,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             else
             {
                 ListViewItem item = listViewAllClassrooms.SelectedItems[0];
-                Classroom selectedClassroom = this.classroomController.GetClassroom(item.SubItems[0].Text);
+                Classroom selectedClassroom = this.classroomController.GetClassroom(this.classroomList[listViewAllClassrooms.SelectedIndices[0]].Id);
                 EditClassroomForm editClassroomForm = new EditClassroomForm(this, selectedClassroom);
                 editClassroomForm.Show();
                 this.Enabled = false;
