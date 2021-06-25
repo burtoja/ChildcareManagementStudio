@@ -13,6 +13,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     public partial class ViewClassroomListUserControl : UserControl
     {
         private readonly ClassroomController classroomController;
+        private List<Classroom> classroomList;
 
         /// <summary>
         /// Constructor for the UC
@@ -21,6 +22,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             InitializeComponent();
             this.classroomController = new ClassroomController();
+            this.classroomList = new List<Classroom>();
             RefreshClassroomListView();
         }
 
@@ -42,7 +44,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         public void RefreshClassroomListView()
         {
             this.listViewAllClassrooms.Items.Clear();
-            List<Classroom> classroomList = this.classroomController.GetAllClassrooms();
+            this.classroomList = this.classroomController.GetAllClassrooms();
             foreach (Classroom current in classroomList)
             {
                 ListViewItem item = new ListViewItem(current.Location.ToString());
