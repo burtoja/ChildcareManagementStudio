@@ -36,8 +36,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Enabled = false;
         }
 
+        /// <summary>
+        /// Refresh the list of registered classrooms
+        /// </summary>
         public void RefreshClassroomListView()
         {
+            this.listViewAllClassrooms.Items.Clear();
             List<Classroom> classroomList = this.classroomController.GetAllClassrooms();
             foreach (Classroom current in classroomList)
             {

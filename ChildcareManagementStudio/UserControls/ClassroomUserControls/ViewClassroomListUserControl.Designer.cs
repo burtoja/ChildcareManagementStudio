@@ -58,7 +58,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // location
             // 
             this.location.Text = "Classroom Location";
-            this.location.Width = 248;
+            this.location.Width = 315;
             // 
             // capacity
             // 
