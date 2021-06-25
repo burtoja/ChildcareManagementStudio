@@ -53,7 +53,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.Location = new System.Drawing.Point(28, 108);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(161, 33);
-            this.buttonSubmit.TabIndex = 4;
+            this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "Create Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
@@ -63,7 +63,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.Location = new System.Drawing.Point(223, 108);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(161, 33);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -87,7 +87,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             0});
             this.numericUpDownCapacity.Name = "numericUpDownCapacity";
             this.numericUpDownCapacity.Size = new System.Drawing.Size(58, 27);
-            this.numericUpDownCapacity.TabIndex = 3;
+            this.numericUpDownCapacity.TabIndex = 2;
             this.numericUpDownCapacity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelCapcityUnits
@@ -105,7 +105,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.textBoxLocation.Location = new System.Drawing.Point(183, 19);
             this.textBoxLocation.Name = "textBoxLocation";
             this.textBoxLocation.Size = new System.Drawing.Size(240, 27);
-            this.textBoxLocation.TabIndex = 9;
+            this.textBoxLocation.TabIndex = 1;
             // 
             // AddNewClassroomForm
             // 
@@ -125,6 +125,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Name = "AddNewClassroomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Classroom Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddNewClassroomForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

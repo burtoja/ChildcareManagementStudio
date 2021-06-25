@@ -58,7 +58,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // location
             // 
             this.location.Text = "Classroom Location";
-            this.location.Width = 248;
+            this.location.Width = 315;
             // 
             // capacity
             // 
@@ -89,6 +89,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonEditSelectedClassroom.TabIndex = 7;
             this.buttonEditSelectedClassroom.Text = "Edit Selected Classroom";
             this.buttonEditSelectedClassroom.UseVisualStyleBackColor = true;
+            this.buttonEditSelectedClassroom.Click += new System.EventHandler(this.ButtonEditSelectedClassroom_Click);
             // 
             // ViewClassroomListUserControl
             // 
