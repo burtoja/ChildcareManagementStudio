@@ -75,7 +75,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         }
 
         /// <summary>
-        /// Populates the teacher listView
+        /// Populates the teacher listView with list from DB or appropriate message
         /// </summary>
         private void PopulateSelectedTeacherList()
         {
@@ -83,7 +83,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             Console.WriteLine("Selected ClassRecord ID = " + this.GetSelectedClassId());
             if (this.GetSelectedClassId() == -1)
             {
-                ListViewItem item = new ListViewItem("Please choose a class to view teachers");
+                ListViewItem item = new ListViewItem("No class chosen");
                 this.listViewTeachers.Items.Add(item);
             }
             else
@@ -97,13 +97,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                         this.listViewTeachers.Items.Add(item);
                     }
                 }
-                catch (ArgumentException aex)
+                catch (ArgumentException)
                 {
                     Console.WriteLine("This exception is intentional (2).");
-                    ListViewItem item = new ListViewItem("No teachers assigned to this class");
+                    ListViewItem item = new ListViewItem("No teachers assigned");
                     this.listViewTeachers.Items.Add(item);
                 }
             }
+            this.listViewTeachers.Columns[0].Width = this.listViewTeachers.Width;
         }
 
         /// <summary>
@@ -112,7 +113,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <returns>ClassId for selected class</returns>
         private int GetSelectedClassId()
         {
-            int selectedClassId;
             try
             {
                 return Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
@@ -121,6 +121,24 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 Console.WriteLine("This exception is intentional (1).");
                 return -1;
+            }
+        }
+      
+        /// <summary>
+        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
+        /// classRecord comboBox
+        /// </summary>
+        private void SelectClassroomFromClassRecordComboBoxChoice()
+        {
+            int selectedClassroomId;
+            try
+            {
+                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
+            }
+            catch (Exception)
+            {
+                this.comboBoxClassroom.SelectedIndex = -1;
             }
         }
 
@@ -148,25 +166,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 this.PopulateSelectedTeacherList();
             }
         }
-        
-        /// <summary>
-        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
-        /// classRecord comboBox
-        /// </summary>
-        private void SelectClassroomFromClassRecordComboBoxChoice()
-        {
-            int selectedClassroomId;
-            try
-            {
-                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
-            }
-            catch (Exception)
-            {
-                this.comboBoxClassroom.SelectedIndex = -1;
-            }
-        }
 
+        /// <summary>
+        /// Handles click events of the New Class button and opens the appropriate form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonNewClass_Click(object sender, EventArgs e)
         {
             AddNewClassRecordForm addNewClassRecordForm = new AddNewClassRecordForm(this);

@@ -115,14 +115,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName});
-            this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewTeachers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewTeachers.HideSelection = false;
             this.listViewTeachers.Location = new System.Drawing.Point(519, 22);
+            this.listViewTeachers.MultiSelect = false;
             this.listViewTeachers.Name = "listViewTeachers";
             this.listViewTeachers.Size = new System.Drawing.Size(200, 70);
             this.listViewTeachers.TabIndex = 6;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
-            this.listViewTeachers.View = System.Windows.Forms.View.Details;
+            this.listViewTeachers.View = System.Windows.Forms.View.List;
             // 
             // buttonEditTeacherList
             // 
