@@ -97,9 +97,38 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
         }
 
+        /// <summary>
+        /// Handles events from the ClassRecord comboBox selection being changed.
+        /// Note: this fires when UC is initialized (not just when user changes selection)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.comboBoxClassroom.SelectedValue = "";
+            if (this.comboBoxClass.SelectedIndex != -1)
+            {
+                this.SelectClassroomFromClassRecordComboBoxChoice();
+            }
         }
+        
+        /// <summary>
+        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
+        /// classRecord comboBox
+        /// </summary>
+        private void SelectClassroomFromClassRecordComboBoxChoice()
+        {
+            int selectedClassroomId;
+            try
+            {
+                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
+            }
+            catch (Exception)
+            {
+                this.comboBoxClassroom.SelectedIndex = -1;
+            }
+        }
+
+
     }
 }
