@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
@@ -55,7 +56,22 @@ namespace ChildcareManagementStudio.Controller
         /// <param name="revisedClass">revised Class object</param>
         public void EditClass(ClassRecord originalClass, ClassRecord revisedClass)
         {
-            // TODO: Implement when DAL complete
+            if (originalClass == null)
+            {
+                throw new ArgumentNullException("originalClass", "The original class cannot be null.");
+            }
+
+            if (revisedClass == null)
+            {
+                throw new ArgumentNullException("revisedClass", "The revised class cannot be null.");
+            }
+
+            if (originalClass.ClassId != revisedClass.ClassId)
+            {
+                throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
+            }
+
+            classRecordDAL.EditClass(originalClass, revisedClass);
         }
     }
 }
