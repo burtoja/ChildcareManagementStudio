@@ -113,5 +113,54 @@ namespace ChildcareManagementStudio.DAL
 
             return students;
         }
+
+        /// <summary>
+        /// Method that adds a student/classroom assignment to the database.
+        /// </summary>
+        /// <param name="studentClassroomAssignment">An object representing the student/classroom assignment being added.</param>
+        public void AddStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
+        {
+            if (studentClassroomAssignment == null)
+            {
+                throw new ArgumentNullException("studentClassroomAssignment", "The StudentClassroomAssignment object cannot be null.");
+            }
+
+            string insertStatement =
+                "INSERT INTO StudentClassroomAssignment (studentId, class) " +
+                "VALUES ($studentId, $class)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$studentId", studentClassroomAssignment.Student.StudentId);
+                    insertCommand.Parameters.AddWithValue("$class", studentClassroomAssignment.ClassRecord.ClassId);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
+        {
+            string deleteStatement =
+                "DELETE FROM StudentClassroomAssignment " +
+                "WHERE studentId = $studentId " +
+                "AND class = $classId";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$studentId", studentClassroomAssignment.Student.StudentId);
+                    deleteCommand.Parameters.AddWithValue("$classId", studentClassroomAssignment.ClassRecord.ClassId);
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
