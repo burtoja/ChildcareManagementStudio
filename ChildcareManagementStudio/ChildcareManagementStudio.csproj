@@ -222,6 +222,12 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassRecordForm.Designer.cs">
+      <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassroomViews\AddNewClassroomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\AddNewClassRecordForm.resx">
+      <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\AddNewClassroomForm.resx">
       <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
