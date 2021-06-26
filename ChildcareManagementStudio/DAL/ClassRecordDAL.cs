@@ -72,9 +72,36 @@ namespace ChildcareManagementStudio.DAL
         /// <returns></returns>
         public List<ClassRecord> GetAllClassesForSchoolYear(string schoolYear)
         {
+            List<ClassRecord> classrooms = new List<ClassRecord>();
 
-            List<ClassRecord> demoList = new List<ClassRecord>();
-            return demoList;
+            string selectStatement =
+                "SELECT classId, classroomId, schoolYear " +
+                "FROM Class";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int classIdOrdinal = reader.GetOrdinal("classId");
+                        int classroomIdOrdinal = reader.GetOrdinal("classroomId");
+                        int schoolYearOrdinal = reader.GetOrdinal("schoolYear");
+                        while (reader.Read())
+                        {
+                            ClassRecord classRecord = new ClassRecord
+                            {
+                                ClassId = reader.GetInt32(classIdOrdinal),
+                                Classroom = this.classroomDAL.GetClassroom(reader.GetInt32(classroomIdOrdinal)),
+                                SchoolYear = reader.GetString(schoolYearOrdinal)
+                            };
+                            classrooms.Add(classRecord);
+                        }
+                    }
+                }
+            }
+            return classrooms;
         }
     }
 }
