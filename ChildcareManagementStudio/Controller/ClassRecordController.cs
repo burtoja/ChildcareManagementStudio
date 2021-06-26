@@ -45,7 +45,7 @@ namespace ChildcareManagementStudio.Controller
         /// <param name="classRecord">the ClassRecord object holding the class record information to be added</param>
         public void AddClassRecord(ClassRecord classRecord)
         {
-            this.classRecordDAL.addClassRecord(classRecord);
+            this.classRecordDAL.AddClassRecord(classRecord);
         }
 
         /// <summary>
