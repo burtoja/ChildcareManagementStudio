@@ -71,5 +71,47 @@ namespace ChildcareManagementStudio.DAL
 
             return studentClassroomAssignments;
         }
+
+        /// <summary>
+        /// Method that returns a list of students that are not currently enrolled in a class for the specified school year.
+        /// </summary>
+        /// <param name="schoolYear">The school year being specified.</param>
+        /// <returns>A list of students that are not currently enrolled in a class for the specified school year.</returns>
+        public List<Student> GetAvailableStudents(string schoolYear)
+        {
+            List<Student> students = new List<Student>();
+
+            string selectStatement =
+                "SELECT studentId " +
+                "FROM Student s " +
+                "WHERE NOT EXISTS (" +
+                    "SELECT * " +
+                    "FROM StudentClassroomAssignment sca " +
+                    "JOIN Class c ON sca.class = c.classId " +
+                    "WHERE sca.studentId = s.studentId " +
+                    "AND c.schoolYear = $schoolYear)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("$schoolYear", schoolYear);
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int studentIdOrdinal = reader.GetOrdinal("studentId");
+                        while (reader.Read())
+                        {
+                            int studentId = reader.GetInt32(studentIdOrdinal);
+                            Student student = studentDAL.GetStudent(studentId);
+
+                            students.Add(student);
+                        }
+                    }
+                }
+            }
+
+            return students;
+        }
     }
 }
