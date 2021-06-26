@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.View.ClassroomViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classRecord = new ClassRecord();
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
+            this.PopulateClassroomComboBox();
             this.PopulateSelectedTeacherList();
         }
 
@@ -43,7 +45,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Populate the class combo box with the current ClassReocrds for the set school year
         /// </summary>
-        private void PopulateClassComboBox()
+        public void PopulateClassComboBox()
         {
             List<ClassRecord> classRecordList = new List<ClassRecord>();
             classRecordList = this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear);
@@ -54,9 +56,28 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
-            this.comboBoxClass.DisplayMember = "nothing now";  //TODO:  Do we need to have a ClassName property?
+            this.comboBoxClass.DisplayMember = "Identifier";
             this.comboBoxClass.SelectedIndex = -1;
             this.comboBoxClass.SelectedText = "--select--";
+        }
+
+        /// <summary>
+        /// Populate th Classroom comboBox with the available classrooms
+        /// </summary>
+        private void PopulateClassroomComboBox()
+        {
+            List<Classroom> classroomList = new List<Classroom>();
+            classroomList = this.classroomController.GetAllClassrooms();
+            BindingList<Classroom> classrooms = new BindingList<Classroom>();
+            foreach (Classroom current in classroomList)
+            {
+                classrooms.Add(current);
+            }
+            this.comboBoxClassroom.DataSource = classrooms;
+            this.comboBoxClassroom.ValueMember = "Id";
+            this.comboBoxClassroom.DisplayMember = "Location";
+            this.comboBoxClassroom.SelectedIndex = -1;
+            this.comboBoxClassroom.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -75,6 +96,44 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void ButtonEditTeacherList_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Handles events from the ClassRecord comboBox selection being changed.
+        /// Note: this fires when UC is initialized (not just when user changes selection)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboBoxClass.SelectedIndex != -1)
+            {
+                this.SelectClassroomFromClassRecordComboBoxChoice();
+            }
+        }
+        
+        /// <summary>
+        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
+        /// classRecord comboBox
+        /// </summary>
+        private void SelectClassroomFromClassRecordComboBoxChoice()
+        {
+            int selectedClassroomId;
+            try
+            {
+                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
+            }
+            catch (Exception)
+            {
+                this.comboBoxClassroom.SelectedIndex = -1;
+            }
+        }
+
+        private void ButtonNewClass_Click(object sender, EventArgs e)
+        {
+            AddNewClassRecordForm addNewClassRecordForm = new AddNewClassRecordForm(this);
+            addNewClassRecordForm.Show();
         }
     }
 }

@@ -19,5 +19,18 @@
         /// The school year associated with the record.
         /// </summary>
         public string SchoolYear { get; set; }
+
+        /// <summary>
+        /// SImple string consisting of the Location and School Year strings concatinated
+        /// </summary>
+        public string Identifier
+        {
+            get
+            {
+                return Classroom.Location + " (" + SchoolYear + ")";
+            }
+        }
+
+        
     }
 }

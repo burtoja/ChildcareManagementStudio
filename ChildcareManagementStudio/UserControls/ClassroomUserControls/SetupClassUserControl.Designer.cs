@@ -207,6 +207,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(254, 29);
             this.comboBoxClass.TabIndex = 15;
+            this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.ComboBoxClass_SelectedIndexChanged);
             // 
             // buttonNewClass
             // 
@@ -217,6 +218,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass.TabIndex = 16;
             this.buttonNewClass.Text = "Create New Class";
             this.buttonNewClass.UseVisualStyleBackColor = true;
+            this.buttonNewClass.Click += new System.EventHandler(this.ButtonNewClass_Click);
             // 
             // SetupClassUserControl
             // 

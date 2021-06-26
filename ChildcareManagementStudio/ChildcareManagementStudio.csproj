@@ -117,6 +117,7 @@
     <Compile Include="Controller\PositionTypeController.cs" />
     <Compile Include="Controller\SalaryController.cs" />
     <Compile Include="Controller\SchoolYearController.cs" />
+    <Compile Include="Controller\StudentClassroomAssignmentController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\TeacherClassroomAssignmentController.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="DAL\PositionTypeDAL.cs" />
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\SchoolYearDAL.cs" />
+    <Compile Include="DAL\StudentClassroomAssignmentDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
@@ -219,6 +221,12 @@
     </Compile>
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\AddNewClassRecordForm.Designer.cs">
+      <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ClassroomViews\AddNewClassroomForm.cs">
       <SubType>Form</SubType>
@@ -329,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\AddNewClassRecordForm.resx">
+      <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\AddNewClassroomForm.resx">
       <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
