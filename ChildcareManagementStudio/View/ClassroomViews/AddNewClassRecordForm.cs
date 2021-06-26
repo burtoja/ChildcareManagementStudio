@@ -4,11 +4,6 @@ using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.ClassroomViews
@@ -18,7 +13,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     /// </summary>
     public partial class AddNewClassRecordForm : Form
     {
-        private SetupClassUserControl referringUserControl;
+        private readonly SetupClassUserControl referringUserControl;
         private readonly ClassroomController classroomController;
         private readonly SchoolYearController schoolYearController;
         private readonly ClassRecordController classRecordController;
@@ -44,9 +39,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void PopulateSchoolYearComboBox()
         {
-            List<string> schoolYearList = new List<string>();
-            schoolYearList = this.schoolYearController.GetAllSchoolYears();
-            foreach (string current in schoolYearList)
+            foreach (string current in this.schoolYearController.GetAllSchoolYears())
             {
                 this.comboBoxSchoolYear.Items.Add(current);
             }
@@ -57,10 +50,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void PopulateClassroomComboBox()
         {
-            List<Classroom> classroomList = new List<Classroom>();
-            classroomList = this.classroomController.GetAllClassrooms();
             BindingList<Classroom> classrooms = new BindingList<Classroom>();
-            foreach (Classroom current in classroomList)
+            foreach (Classroom current in this.classroomController.GetAllClassrooms())
             {
                 classrooms.Add(current);
             }
