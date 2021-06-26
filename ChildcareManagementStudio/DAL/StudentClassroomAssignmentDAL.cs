@@ -87,12 +87,14 @@ namespace ChildcareManagementStudio.DAL
             string selectStatement =
                 "SELECT studentId " +
                 "FROM Student s " +
+                "JOIN Person p ON s.personId = p.personId " +
                 "WHERE NOT EXISTS (" +
                     "SELECT * " +
                     "FROM StudentClassroomAssignment sca " +
                     "JOIN Class c ON sca.class = c.classId " +
                     "WHERE sca.studentId = s.studentId " +
-                    "AND c.schoolYear = $schoolYear)";
+                    "AND c.schoolYear = $schoolYear) " +
+                "ORDER BY p.lastName, p.firstName";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
