@@ -34,9 +34,12 @@ namespace ChildcareManagementStudio.DAL
             ClassRecord classRecord = classRecordDAL.GetClassRecord(classId);
 
             string selectStatement =
-                "SELECT studentId " +
-                "FROM StudentClassroomAssignment " +
-                "WHERE class = $classId";
+                "SELECT sca.studentId " +
+                "FROM StudentClassroomAssignment sca " +
+                "JOIN Student s ON sca.studentId = s.studentId " +
+                "JOIN Person p ON s.personId = p.personId " +
+                "WHERE sca.class = $classId " +
+                "ORDER BY p.lastName, p.firstName";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {

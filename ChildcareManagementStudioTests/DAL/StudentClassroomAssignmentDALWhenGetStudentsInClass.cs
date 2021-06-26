@@ -22,9 +22,9 @@ namespace ChildcareManagementStudioTests.DAL
             int classId = 1;
             List<StudentClassroomAssignment> studentClassroomAssignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             Assert.AreEqual(3, studentClassroomAssignments.Count);
-            Assert.AreEqual(1, studentClassroomAssignments[0].Student.StudentId);
-            Assert.AreEqual("A-101", studentClassroomAssignments[0].ClassRecord.Classroom.Location);
-            Assert.AreEqual("2021-22", studentClassroomAssignments[0].ClassRecord.SchoolYear);
+            Assert.AreEqual(1, studentClassroomAssignments[2].Student.StudentId);
+            Assert.AreEqual("A-101", studentClassroomAssignments[2].ClassRecord.Classroom.Location);
+            Assert.AreEqual("2021-22", studentClassroomAssignments[2].ClassRecord.SchoolYear);
         }
     }
 }
