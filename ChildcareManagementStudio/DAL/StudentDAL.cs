@@ -91,7 +91,9 @@ namespace ChildcareManagementStudio.DAL
 
             string selectStatement =
                 "SELECT personId, studentId " +
-                "FROM Student";
+                "FROM Student s " +
+                "JOIN Person p ON s.personId = p.personId " +
+                "ORDER BY p.lastName, p.firstName";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
