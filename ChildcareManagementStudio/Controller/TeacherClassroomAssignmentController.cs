@@ -29,5 +29,25 @@ namespace ChildcareManagementStudio.Controller
         {
             return teacherClassroomAssignmentDAL.GetTeacherClassroomAssignments(classId);
         }
+
+        /// <summary>
+        /// Method that adds a teacher/classroom assignment to the database.
+        /// </summary>
+        /// <param name="teacherClassroomAssignment">An object representing the teacher/classroom assignment being added.</param>
+        public void AddTeacherClassroomAssignment(TeacherClassroomAssignment teacherClassroomAssignment)
+        {
+            if (teacherClassroomAssignment == null)
+            {
+                throw new ArgumentNullException("teacherClassroomAssignment", "The TeacherClassroomAssignment object cannot be null.");
+            }
+
+            teacherClassroomAssignmentDAL.AddTeacherClassroomAssignment(teacherClassroomAssignment);
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteTeacherClassroomAssignment(TeacherClassroomAssignment teacherClassroomAssignment)
+        {
+            teacherClassroomAssignmentDAL.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
+        }
     }
 }
