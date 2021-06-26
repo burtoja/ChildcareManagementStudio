@@ -46,6 +46,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelClass = new System.Windows.Forms.Label();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.buttonNewClass = new System.Windows.Forms.Button();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -112,13 +113,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // listViewTeachers
             // 
-            this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName});
+            this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTeachers.HideSelection = false;
             this.listViewTeachers.Location = new System.Drawing.Point(519, 22);
             this.listViewTeachers.Name = "listViewTeachers";
             this.listViewTeachers.Size = new System.Drawing.Size(200, 70);
             this.listViewTeachers.TabIndex = 6;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
+            this.listViewTeachers.View = System.Windows.Forms.View.Details;
             // 
             // buttonEditTeacherList
             // 
@@ -220,6 +224,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass.UseVisualStyleBackColor = true;
             this.buttonNewClass.Click += new System.EventHandler(this.ButtonNewClass_Click);
             // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "Teacher Name";
+            // 
             // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -266,5 +274,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label labelClass;
         private System.Windows.Forms.ComboBox comboBoxClass;
         private System.Windows.Forms.Button buttonNewClass;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
     }
 }
