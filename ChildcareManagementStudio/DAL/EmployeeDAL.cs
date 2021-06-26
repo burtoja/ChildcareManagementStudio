@@ -98,8 +98,10 @@ namespace ChildcareManagementStudio.DAL
             List<Employee> employees = new List<Employee>();
 
             string selectStatement =
-                "SELECT personId, employeeId, startDate " +
-                "FROM Employee";
+                "SELECT e.personId, e.employeeId, e.startDate " +
+                "FROM Employee e " +
+                "JOIN Person p ON e.personId = p.personId " +
+                "ORDER BY p.lastName, p.firstName";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {

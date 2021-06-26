@@ -22,7 +22,7 @@ namespace ChildcareManagementStudioTests.Controller
             List<Employee> employees = employeeController.GetAllEmployees();
             Assert.AreEqual(3, employees.Count);
 
-            Employee firstEmployee = employees[0];
+            Employee firstEmployee = employees[1];
             Assert.AreEqual(1, firstEmployee.PersonId);
             Assert.AreEqual("Mouse", firstEmployee.LastName);
             Assert.AreEqual("Mickey", firstEmployee.FirstName);
@@ -46,7 +46,7 @@ namespace ChildcareManagementStudioTests.Controller
             Assert.AreEqual("Lead teacher", firstEmployee.PositionRecords[0].Type);
             Assert.AreEqual("2021-22", firstEmployee.PositionRecords[0].SchoolYear);
 
-            Employee secondEmployee = employees[1];
+            Employee secondEmployee = employees[2];
             Assert.AreEqual(2, secondEmployee.PersonId);
             Assert.AreEqual("Mouse", secondEmployee.LastName);
             Assert.AreEqual("Minnie", secondEmployee.FirstName);
