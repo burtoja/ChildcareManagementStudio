@@ -85,7 +85,7 @@ namespace ChildcareManagementStudio.DAL
             List<Student> students = new List<Student>();
 
             string selectStatement =
-                "SELECT studentId " +
+                "SELECT s.studentId " +
                 "FROM Student s " +
                 "JOIN Person p ON s.personId = p.personId " +
                 "WHERE NOT EXISTS (" +
