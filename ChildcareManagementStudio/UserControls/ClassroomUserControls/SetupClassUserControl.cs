@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.View.ClassroomViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,6 +130,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
         }
 
-
+        private void ButtonNewClass_Click(object sender, EventArgs e)
+        {
+            AddNewClassRecordForm addNewClassRecordForm = new AddNewClassRecordForm(this);
+            addNewClassRecordForm.Show();
+        }
     }
 }

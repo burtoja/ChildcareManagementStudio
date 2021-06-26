@@ -218,6 +218,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass.TabIndex = 16;
             this.buttonNewClass.Text = "Create New Class";
             this.buttonNewClass.UseVisualStyleBackColor = true;
+            this.buttonNewClass.Click += new System.EventHandler(this.ButtonNewClass_Click);
             // 
             // SetupClassUserControl
             // 
