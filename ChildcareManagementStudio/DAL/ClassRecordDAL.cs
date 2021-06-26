@@ -132,5 +132,50 @@ namespace ChildcareManagementStudio.DAL
             }
         }
 
+        /// <summary>
+        /// Edit the details of a Class
+        /// </summary>
+        /// <param name="originalClass">original Class object</param>
+        /// <param name="revisedClass">revised Class object</param>
+        public void EditClass(ClassRecord originalClass, ClassRecord revisedClass)
+        {
+            if (originalClass == null)
+            {
+                throw new ArgumentNullException("originalClass", "The original class cannot be null.");
+            }
+
+            if (revisedClass == null)
+            {
+                throw new ArgumentNullException("revisedClass", "The revised class cannot be null.");
+            }
+
+            if (originalClass.ClassId != revisedClass.ClassId)
+            {
+                throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
+            }
+
+            string updateStatement =
+                "UPDATE Class SET " +
+                    "classroomId = $revisedClassroomId, " +
+                    "schoolYear = $revisedSchoolYear " +
+                "WHERE classId = $classId " +
+                    "AND classroomId = $originalClassroomId " +
+                    "AND schoolYear = $originalSchoolYear";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("$classId", originalClass.ClassId);
+                    updateCommand.Parameters.AddWithValue("$originalClassroomId", originalClass.Classroom.Id);
+                    updateCommand.Parameters.AddWithValue("$originalSchoolYear", originalClass.SchoolYear);
+                    updateCommand.Parameters.AddWithValue("$revisedClassroomId", revisedClass.Classroom.Id);
+                    updateCommand.Parameters.AddWithValue("$revisedSchoolYear", revisedClass.SchoolYear);
+
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
