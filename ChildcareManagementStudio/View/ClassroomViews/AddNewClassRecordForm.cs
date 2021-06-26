@@ -76,9 +76,18 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
+        {          
+            this.Close();
+        }
+
+        /// <summary>
+        /// Handles actions for when form is closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddNewClassRecordForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.referringUserControl.Enabled = true;
-            this.Close();
         }
     }
 }

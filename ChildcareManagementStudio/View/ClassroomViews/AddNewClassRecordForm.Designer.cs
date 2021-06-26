@@ -111,6 +111,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Name = "AddNewClassRecordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Class";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddNewClassRecordForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
