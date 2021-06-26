@@ -25,5 +25,15 @@ namespace ChildcareManagementStudio.Controller
         {
             return studentClassroomAssignmentDAL.GetStudentsInClass(classId);
         }
+
+        /// <summary>
+        /// Method that returns a list of students that are not currently enrolled in a class for the specified school year.
+        /// </summary>
+        /// <param name="schoolYear">The school year being specified.</param>
+        /// <returns>A list of students that are not currently enrolled in a class for the specified school year.</returns>
+        public List<Student> GetAvailableStudents(string schoolYear)
+        {
+            return studentClassroomAssignmentDAL.GetAvailableStudents(schoolYear);
+        }
     }
 }
