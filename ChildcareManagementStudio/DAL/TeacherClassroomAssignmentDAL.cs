@@ -75,5 +75,56 @@ namespace ChildcareManagementStudio.DAL
 
             return teacherClassroomAssignments;
         }
+
+        /// <summary>
+        /// Method that adds a teacher/classroom assignment to the database.
+        /// </summary>
+        /// <param name="teacherClassroomAssignment">An object representing the teacher/classroom assignment being added.</param>
+        public void AddTeacherClassroomAssignment(TeacherClassroomAssignment teacherClassroomAssignment)
+        {
+            if (teacherClassroomAssignment == null)
+            {
+                throw new ArgumentNullException("teacherClassroomAssignment", "The TeacherClassroomAssignment object cannot be null.");
+            }
+
+            string insertStatement =
+                "INSERT INTO TeacherClassroomAssignment (teacherId, startDate, positionType, class) " +
+                "VALUES ($teacherId, $startDate, $positionType, $class)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$teacherId", teacherClassroomAssignment.Teacher.EmployeeId);
+                    insertCommand.Parameters.AddWithValue("$startDate", teacherClassroomAssignment.StartDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("$positionType", teacherClassroomAssignment.PositionType);
+                    insertCommand.Parameters.AddWithValue("$class", teacherClassroomAssignment.ClassRecord.ClassId);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteTeacherClassroomAssignment(TeacherClassroomAssignment teacherClassroomAssignment)
+        {
+            string deleteStatement =
+                "DELETE FROM TeacherClassroomAssignment " +
+                "WHERE teacherId = $teacherId " +
+                "AND startDate = $startDate";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$teacherId", teacherClassroomAssignment.Teacher.EmployeeId);
+                    deleteCommand.Parameters.AddWithValue("$startDate", teacherClassroomAssignment.StartDate.ToString("yyyy-MM-dd"));
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
