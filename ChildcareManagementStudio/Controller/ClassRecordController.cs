@@ -40,13 +40,13 @@ namespace ChildcareManagementStudio.Controller
             ClassRecord demoClass1 = new ClassRecord
             {
                 ClassId = 1,
-                Classroom = new Classroom {Location = "Room 25", Capacity = 21 },
+                Classroom = new Classroom {Location = "Demo Room 1 (DAL not implemented)", Capacity = 21 },
                 SchoolYear = "2021-22"
             };
             ClassRecord demoClass2 = new ClassRecord
             {
                 ClassId = 2,
-                Classroom = new Classroom { Location = "Room 30", Capacity = 15 },
+                Classroom = new Classroom { Location = "Demo Room 2 (DAL not implemented)", Capacity = 15 },
                 SchoolYear = "2021-22"
             };
             List<ClassRecord> demoList = new List<ClassRecord>

@@ -53,11 +53,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 classRecords.Add(current);
             }
-            this.comboBoxClassroom.DataSource = classRecords;
-            this.comboBoxClassroom.ValueMember = "Id";
-            this.comboBoxClassroom.DisplayMember = "Location"; 
-            this.comboBoxClassroom.SelectedIndex = -1;
-            this.comboBoxClassroom.SelectedText = "--select--";
+            this.comboBoxClass.DataSource = classRecords;
+            this.comboBoxClass.ValueMember = "ClassId";
+            this.comboBoxClass.DisplayMember = "Identifier";
+            this.comboBoxClass.SelectedIndex = -1;
+            this.comboBoxClass.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -72,11 +72,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 classrooms.Add(current);
             }
-            this.comboBoxClass.DataSource = classrooms;
-            this.comboBoxClass.ValueMember = "";
-            this.comboBoxClass.DisplayMember = "Identifier";
-            this.comboBoxClass.SelectedIndex = -1;
-            this.comboBoxClass.SelectedText = "--select--";
+            this.comboBoxClassroom.DataSource = classrooms;
+            this.comboBoxClassroom.ValueMember = "Id";
+            this.comboBoxClassroom.DisplayMember = "Location";
+            this.comboBoxClassroom.SelectedIndex = -1;
+            this.comboBoxClassroom.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -95,6 +95,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void ButtonEditTeacherList_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ComboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.comboBoxClassroom.SelectedValue = "";
         }
     }
 }
