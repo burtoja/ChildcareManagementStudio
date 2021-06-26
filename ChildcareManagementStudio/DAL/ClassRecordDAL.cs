@@ -103,5 +103,34 @@ namespace ChildcareManagementStudio.DAL
             }
             return classrooms;
         }
+
+        /// <summary>
+        /// Adds a new ClassRecord to the db
+        /// </summary>
+        /// <param name="classRecord"></param>
+        public void AddClassRecord(ClassRecord classRecord)
+        {
+            if (classRecord == null)
+            {
+                throw new ArgumentNullException("classRecord", "The ClassRecord cannot be null.");
+            }
+
+            string insertStatement =
+                "INSERT INTO ClassRecord (classroomId, schoolYear) " +
+                "VALUES ($classroomId, $schoolYear)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$classroomId", classRecord.Classroom.Id);
+                    insertCommand.Parameters.AddWithValue("$schoolYear", classRecord.SchoolYear);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

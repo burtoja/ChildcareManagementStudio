@@ -40,6 +40,15 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Adds class record to the DB
+        /// </summary>
+        /// <param name="classRecord">the ClassRecord object holding the class record information to be added</param>
+        public void AddClassRecord(ClassRecord classRecord)
+        {
+            this.classRecordDAL.addClassRecord(classRecord);
+        }
+
+        /// <summary>
         /// Edit the details of a Class
         /// </summary>
         /// <param name="originalClass">original Class object</param>
