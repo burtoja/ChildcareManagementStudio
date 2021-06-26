@@ -21,6 +21,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private SetupClassUserControl referringUserControl;
         private readonly ClassroomController classroomController;
         private readonly SchoolYearController schoolYearController;
+        private readonly ClassRecordController classRecordController;
 
         /// <summary>
         /// Constructor for the form
@@ -31,6 +32,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             InitializeComponent();
             this.classroomController = new ClassroomController();
             this.schoolYearController = new SchoolYearController();
+            this.classRecordController = new ClassRecordController();
             this.referringUserControl = referringUserControl;
             this.referringUserControl.Enabled = false;
             this.PopulateSchoolYearComboBox();
@@ -38,13 +40,12 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         }
 
         /// <summary>
-        /// Populate the school year combo box with values from dB
+        /// Populate the school year combo box with values from DB
         /// </summary>
         private void PopulateSchoolYearComboBox()
         {
             List<string> schoolYearList = new List<string>();
             schoolYearList = this.schoolYearController.GetAllSchoolYears();
-            //BindingList<string> schoolYears = new BindingList<string>();
             foreach (string current in schoolYearList)
             {
                 this.comboBoxSchoolYear.Items.Add(current);
@@ -71,6 +72,80 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         }
 
         /// <summary>
+        /// Submit button click handler to attwmpt to create new class from from information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("TEST #1");
+            if (IsInputValid())
+            {
+                Console.WriteLine("TEST #2");
+                ClassRecord classRecord = new ClassRecord
+                {
+                    SchoolYear = this.comboBoxSchoolYear.SelectedItem.ToString(),
+                    Classroom = this.GetSelectedClassroom()
+                };
+                this.classRecordController.AddClassRecord(classRecord);
+                string title = "Class Created";
+                string message = "The class was successfully created  Please click 'Okay' to continue.";
+                DialogResult dialogeResult = MessageBox.Show(message, title);
+                if (dialogeResult == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Method to verify that user has selected values for the comboboxes.  Displays alert dialog boxes if not.
+        /// </summary>
+        /// <returns>true if both combo boxes are selected</returns>
+        private bool IsInputValid()
+        {
+            if (this.comboBoxClassroom.SelectedIndex == -1)
+            {
+                string title = "Classroom Location Not Selected";
+                string message = "The classroom location has not been selected.  Please click 'Okay' and try again.";
+                MessageBox.Show(message, title);
+                return false;
+            }
+            else if (this.comboBoxSchoolYear.SelectedIndex == -1)
+            { 
+                string title = "Year Not Selected";
+                string message = "Theschool year has not been selected.  Please click 'Okay' and try again.";
+                MessageBox.Show(message, title);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Get the Classroom object for the selection in the comboBox
+        /// </summary>
+        /// <returns>Classroom object for the selected room</returns>
+        private Classroom GetSelectedClassroom()
+        {
+            int selectedClassroomId;
+            try
+            {
+                selectedClassroomId = Int32.Parse(this.comboBoxClassroom.SelectedValue.ToString());
+                return this.classroomController.GetClassroom(selectedClassroomId);
+            }
+            catch (Exception)
+            {
+                string title = "Classroom SelectionError";
+                string message = "The selected classroom could not be found.  Please click 'Okay' and try again.";
+                MessageBox.Show(message, title);
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Handles cancel button clicks
         /// </summary>
         /// <param name="sender"></param>
@@ -88,6 +163,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void AddNewClassRecordForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.referringUserControl.Enabled = true;
+            this.referringUserControl.PopulateClassComboBox();
         }
+
+
     }
 }

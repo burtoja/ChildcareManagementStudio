@@ -45,7 +45,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Populate the class combo box with the current ClassReocrds for the set school year
         /// </summary>
-        private void PopulateClassComboBox()
+        public void PopulateClassComboBox()
         {
             List<ClassRecord> classRecordList = new List<ClassRecord>();
             classRecordList = this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear);

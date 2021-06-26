@@ -116,7 +116,7 @@ namespace ChildcareManagementStudio.DAL
             }
 
             string insertStatement =
-                "INSERT INTO ClassRecord (classroomId, schoolYear) " +
+                "INSERT INTO Class (classroomId, schoolYear) " +
                 "VALUES ($classroomId, $schoolYear)";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())

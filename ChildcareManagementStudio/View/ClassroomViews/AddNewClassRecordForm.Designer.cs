@@ -73,6 +73,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.TabIndex = 5;
             this.buttonSubmit.Text = "Create Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
