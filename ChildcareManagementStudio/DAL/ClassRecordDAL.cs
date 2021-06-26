@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Model;
 using Microsoft.Data.Sqlite;
 using System;
+using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.DAL
 {
@@ -62,6 +63,18 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return classRecord;
+        }
+
+        /// <summary>
+        /// Returns a list of Class objects matching the provided school year
+        /// </summary>
+        /// <param name="schoolYear">the school year for which to return a list of Class objects</param>
+        /// <returns></returns>
+        public List<ClassRecord> GetAllClassesForSchoolYear(string schoolYear)
+        {
+
+            List<ClassRecord> demoList = new List<ClassRecord>();
+            return demoList;
         }
     }
 }

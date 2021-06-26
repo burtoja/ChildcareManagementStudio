@@ -36,25 +36,7 @@ namespace ChildcareManagementStudio.Controller
         /// <returns></returns>
         public List<ClassRecord> GetAllClassesForSchoolYear(string schoolYear)
         {
-            // TODO: Implement when DAL complete (and remove demoList)
-            ClassRecord demoClass1 = new ClassRecord
-            {
-                ClassId = 1,
-                Classroom = new Classroom {Location = "Demo Room 1 (DAL not implemented)", Capacity = 21 },
-                SchoolYear = "2021-22"
-            };
-            ClassRecord demoClass2 = new ClassRecord
-            {
-                ClassId = 2,
-                Classroom = new Classroom { Location = "Demo Room 2 (DAL not implemented)", Capacity = 15 },
-                SchoolYear = "2021-22"
-            };
-            List<ClassRecord> demoList = new List<ClassRecord>
-            {
-                demoClass1,
-                demoClass2
-            };
-            return demoList;
+            return this.classRecordDAL.GetAllClassesForSchoolYear(schoolYear);
         }
 
         /// <summary>
