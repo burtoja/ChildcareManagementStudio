@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
@@ -34,6 +35,26 @@ namespace ChildcareManagementStudio.Controller
         public List<Student> GetAvailableStudents(string schoolYear)
         {
             return studentClassroomAssignmentDAL.GetAvailableStudents(schoolYear);
+        }
+
+        /// <summary>
+        /// Method that adds a student/classroom assignment to the database.
+        /// </summary>
+        /// <param name="studentClassroomAssignment">An object representing the student/classroom assignment being added.</param>
+        public void AddStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
+        {
+            if (studentClassroomAssignment == null)
+            {
+                throw new ArgumentNullException("studentClassroomAssignment", "The StudentClassroomAssignment object cannot be null.");
+            }
+
+            studentClassroomAssignmentDAL.AddStudentClassroomAssignment(studentClassroomAssignment);
+        }
+
+        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        public void DeleteStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
+        {
+            studentClassroomAssignmentDAL.DeleteStudentClassroomAssignment(studentClassroomAssignment);
         }
     }
 }
