@@ -123,6 +123,7 @@
     <Compile Include="DAL\TeacherClassroomAssignmentDALWhenGetTeacherClassroomAssignments.cs" />
     <Compile Include="DAL\ClassRecordDALWhenGetClassRecord.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDALWhenAddTeacherClassroomAssignment.cs" />
+    <Compile Include="DAL\StudentClassroomAssignmentDALWhenGetStudentsInClass.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
