@@ -47,13 +47,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         public void PopulateClassComboBox()
         {
             BindingList<ClassRecord> classRecords = new BindingList<ClassRecord>();
-            foreach (ClassRecord current in this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear))
-            {
-                classRecords.Add(current);
-            }
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
             this.comboBoxClass.DisplayMember = "Identifier";
+            foreach (ClassRecord current in this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear))
+            {
+                classRecords.Add(current);
+            }           
             this.comboBoxClass.SelectedValue = -1;
         }
 
@@ -80,27 +80,23 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void PopulateSelectedTeacherList()
         {
             this.listViewTeachers.Items.Clear();
-            Console.WriteLine("Selected ClassRecord ID = " + this.GetSelectedClassId());
             if (this.GetSelectedClassId() == -1)
             {
                 ListViewItem item = new ListViewItem("No class chosen");
                 this.listViewTeachers.Items.Add(item);
             }
+            else if (this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId()).Count == 0)
+            {
+                Console.WriteLine("This exception is intentional (2).");
+                ListViewItem item = new ListViewItem("No teachers assigned");
+                this.listViewTeachers.Items.Add(item);
+            }
             else
             {
-                try
+                List<TeacherClassroomAssignment> teacherAssignmentList = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId());
+                foreach (TeacherClassroomAssignment current in teacherAssignmentList)
                 {
-                    List<TeacherClassroomAssignment> teacherAssignmentList = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId());
-                    foreach (TeacherClassroomAssignment current in teacherAssignmentList)
-                    {
-                        ListViewItem item = new ListViewItem(current.Teacher.FullName.ToString());
-                        this.listViewTeachers.Items.Add(item);
-                    }
-                }
-                catch (ArgumentException)
-                {
-                    Console.WriteLine("This exception is intentional (2).");
-                    ListViewItem item = new ListViewItem("No teachers assigned");
+                    ListViewItem item = new ListViewItem(current.Teacher.FullName.ToString());
                     this.listViewTeachers.Items.Add(item);
                 }
             }
@@ -113,17 +109,25 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <returns>ClassId for selected class</returns>
         private int GetSelectedClassId()
         {
-            try
+            Console.WriteLine("Item:" + this.comboBoxClass.SelectedValue);
+            Console.WriteLine("Index:" + this.comboBoxClass.SelectedIndex);
+            Console.WriteLine("Value:" + this.comboBoxClass.SelectedItem);
+            Console.WriteLine("Text:" + this.comboBoxClass.Text);
+
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                Console.WriteLine("Error: ClassRecord ComboBox selection not made yet.");
+                return -1;
+            }
+            else
             {
                 return Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
             }
-            catch (Exception)
-            {
-                Console.WriteLine("This exception is intentional (1).");
-                return -1;
-            }
+
+
+            
         }
-      
+
         /// <summary>
         /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
         /// classRecord comboBox
@@ -131,6 +135,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void SelectClassroomFromClassRecordComboBoxChoice()
         {
             int selectedClassroomId;
+
             try
             {
                 selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
@@ -156,7 +161,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 selectTeacherForm.Show();
             } catch (Exception)
             {
-
+                string title = "No Classroom Chosen";
+                string message = "Please choose a classroom and try again.";
+                MessageBox.Show(message, title);
             }
             
         }
