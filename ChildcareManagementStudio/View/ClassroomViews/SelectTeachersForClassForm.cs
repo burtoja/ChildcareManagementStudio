@@ -15,7 +15,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private readonly SetupClassUserControl referringUserControl;
         private readonly ClassRecord classRecord;
         private readonly EmployeeController employeeController;
-        private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentcontroller;
+        private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
+        private List<int> currentListAssignedTeacherIds;
 
         /// <summary>
         /// Constructor for the form
@@ -27,9 +28,33 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.referringUserControl = referringUserControl;
             this.classRecord = classRecord;
             this.employeeController = new EmployeeController();
-            this.teacherClassroomAssignmentcontroller = new TeacherClassroomAssignmentController();
+            this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
+            this.currentListAssignedTeacherIds = new List<int>();
             this.labelClassIdentifier.Text = this.classRecord.Identifier;
+            this.UpdateCurrentListAssignedTeacherIds();
             this.PopulateTeacherListView();
+        }
+
+        /// <summary>
+        /// Update the current list of assigned teachers based on DB 
+        /// </summary>
+        private void UpdateCurrentListAssignedTeacherIds()
+        {
+            this.currentListAssignedTeacherIds.Clear();
+            foreach (TeacherClassroomAssignment current in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId))
+            {
+                this.currentListAssignedTeacherIds.Add(current.Teacher.EmployeeId);
+            }
+        }
+
+        /// <summary>
+        /// Determines if the supplied emplyeeId is in the list if emplyeeIds of teachers currently assigned to this class
+        /// </summary>
+        /// <param name="employeeId">emplyeeId to search for</param>
+        /// <returns>true if the Id is found in the list of currently assigned Ids</returns>
+        private bool IsAssignedToCurrentClass(int employeeId)
+        {
+            return this.currentListAssignedTeacherIds.Contains(employeeId);   
         }
 
         /// <summary>
