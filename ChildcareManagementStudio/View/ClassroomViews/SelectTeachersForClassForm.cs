@@ -69,6 +69,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 ListViewItem item = new ListViewItem(current.FullName);
                 item.SubItems.Add(current.EmployeeId.ToString());
                 this.listViewTeacherChoices.Items.Add(item);
+                if (this.IsAssignedToCurrentClass(current.EmployeeId))
+                {
+                    item.Checked = true;
+                }                   
             }
         }
 
