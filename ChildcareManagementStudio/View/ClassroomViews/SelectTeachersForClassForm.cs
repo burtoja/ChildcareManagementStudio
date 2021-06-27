@@ -52,5 +52,18 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             this.referringUserControl.Enabled = true;
         }
+
+        /// <summary>
+        /// Provides confirmation dialogue and close form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonCancel_Click(object sender, System.EventArgs e)
+        {
+            string title = "Cancel Teacher Selection Updates";
+            string message = "Changes to assigned teacher list were not saved. Please click okay to go back to the class setup page.";
+            MessageBox.Show(message, title);
+            this.Close();
+        }
     }
 }
