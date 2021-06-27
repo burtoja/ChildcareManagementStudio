@@ -149,6 +149,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     ClassRecord selectedClassRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
                     SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this, selectedClassRecord);
                     selectTeacherForm.Show();
+                    this.Enabled = false;
                 }
                 catch (Exception)
                 {

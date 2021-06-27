@@ -42,5 +42,15 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 this.listViewTeacherChoices.Items.Add(item);
             }
         }
+
+        /// <summary>
+        /// Re-enable referring UC on form close
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SelectTeachersForClassForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+        }
     }
 }
