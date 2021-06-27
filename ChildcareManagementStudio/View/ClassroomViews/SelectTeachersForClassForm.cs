@@ -1,4 +1,5 @@
-﻿using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+﻿using ChildcareManagementStudio.Model;
+using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.ClassroomViews
@@ -9,22 +10,23 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class SelectTeachersForClassForm : Form
     {
         private readonly SetupClassUserControl referringUserControl;
+        private readonly ClassRecord classRecord;
 
         /// <summary>
         /// Constructor for the form
         /// </summary>
         /// <param name="referringUserControl">The userControl opening this form</param>
-        public SelectTeachersForClassForm(SetupClassUserControl referringUserControl)
+        public SelectTeachersForClassForm(SetupClassUserControl referringUserControl, ClassRecord classRecord)
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
+            this.classRecord = classRecord;
+            this.labelClassIdentifier.Text = this.classRecord.Identifier;
         }
 
-        private void SetClassReord()
-        {
-            this.labelClassIdentifier.Text = this.referringUserControl.GetSelectedClassRecord().Identifier;
-        }
-
+        /// <summary>
+        /// Populate the teacher choice listView with the teachers in the DB
+        /// </summary>
         private void PopulateTeacherListView()
         {
 

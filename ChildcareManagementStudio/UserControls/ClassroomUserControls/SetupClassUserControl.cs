@@ -123,12 +123,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 return -1;
             }
         }
-
-        public ClassRecord GetSelectedClassRecord()
-        {
-            return this.classRecordController.GetClassRecord(this.GetSelectedClassId());
-            //TODO: Deal with exception
-        }
       
         /// <summary>
         /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
@@ -155,8 +149,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonEditTeacherList_Click(object sender, EventArgs e)
         {
-            SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this);
-            selectTeacherForm.Show();
+            try
+            {
+                ClassRecord selectedClassRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+                SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this, selectedClassRecord);
+                selectTeacherForm.Show();
+            } catch (Exception)
+            {
+
+            }
+            
         }
 
         /// <summary>
