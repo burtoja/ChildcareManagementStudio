@@ -30,6 +30,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
             this.PopulateClassroomComboBox();
+            this.PopulateSelectedTeacherList();
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 classRecords.Add(current);
             }           
-            this.comboBoxClass.SelectedValue = -1;
+            this.comboBoxClass.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -63,15 +64,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void PopulateClassroomComboBox()
         {
             BindingList<Classroom> classrooms = new BindingList<Classroom>();
-            foreach (Classroom current in this.classroomController.GetAllClassrooms())
-            {
-                classrooms.Add(current);
-            }
             this.comboBoxClassroom.DataSource = classrooms;
             this.comboBoxClassroom.ValueMember = "Id";
             this.comboBoxClassroom.DisplayMember = "Location";
+            foreach (Classroom current in this.classroomController.GetAllClassrooms())
+            {
+                classrooms.Add(current);
+            }           
             this.comboBoxClassroom.SelectedIndex = -1;
-            this.comboBoxClassroom.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -80,14 +80,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void PopulateSelectedTeacherList()
         {
             this.listViewTeachers.Items.Clear();
-            if (this.GetSelectedClassId() == -1)
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
                 ListViewItem item = new ListViewItem("No class chosen");
                 this.listViewTeachers.Items.Add(item);
             }
             else if (this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId()).Count == 0)
             {
-                Console.WriteLine("This exception is intentional (2).");
                 ListViewItem item = new ListViewItem("No teachers assigned");
                 this.listViewTeachers.Items.Add(item);
             }
@@ -106,45 +105,28 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Get the classId for the selection in the comboBox
         /// </summary>
-        /// <returns>ClassId for selected class</returns>
+        /// <returns>ClassId for selected class (-1 if error)</returns>
         private int GetSelectedClassId()
         {
-            Console.WriteLine("Item:" + this.comboBoxClass.SelectedValue);
-            Console.WriteLine("Index:" + this.comboBoxClass.SelectedIndex);
-            Console.WriteLine("Value:" + this.comboBoxClass.SelectedItem);
-            Console.WriteLine("Text:" + this.comboBoxClass.Text);
-
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                Console.WriteLine("Error: ClassRecord ComboBox selection not made yet.");
+                Console.WriteLine("No ClassRecord chosen yet.");
                 return -1;
             }
             else
             {
                 return Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-            }
-
-
-            
+            }          
         }
 
         /// <summary>
         /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
         /// classRecord comboBox
         /// </summary>
-        private void SelectClassroomFromClassRecordComboBoxChoice()
+        private void SetClassroomComboBoxSelection()
         {
-            int selectedClassroomId;
-
-            try
-            {
-                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
-            }
-            catch (Exception)
-            {
-                this.comboBoxClassroom.SelectedIndex = -1;
-            }
+            int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+            this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
         }
 
         /// <summary>
@@ -154,18 +136,27 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonEditTeacherList_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                ClassRecord selectedClassRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
-                SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this, selectedClassRecord);
-                selectTeacherForm.Show();
-            } catch (Exception)
-            {
-                string title = "No Classroom Chosen";
-                string message = "Please choose a classroom and try again.";
+                string title = "No Class Chosen";
+                string message = "Please choose a class and try again.";
                 MessageBox.Show(message, title);
             }
-            
+            else
+            {
+                try
+                {
+                    ClassRecord selectedClassRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+                    SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this, selectedClassRecord);
+                    selectTeacherForm.Show();
+                }
+                catch (Exception)
+                {
+                    string title = "No Record of Class Found In Database";
+                    string message = "Please choose a class and try again.";
+                    MessageBox.Show(message, title);
+                }              
+            }           
         }
 
         /// <summary>
@@ -178,7 +169,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             if (this.comboBoxClass.SelectedIndex != -1)
             {
-                this.SelectClassroomFromClassRecordComboBoxChoice();
+                this.SetClassroomComboBoxSelection();
                 this.PopulateSelectedTeacherList();
             }
         }
