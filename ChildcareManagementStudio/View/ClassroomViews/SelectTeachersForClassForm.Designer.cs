@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void InitializeComponent()
         {
             this.labelInstructions = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTeacherChoices = new System.Windows.Forms.ListView();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelClassIdentifier = new System.Windows.Forms.Label();
@@ -44,14 +44,15 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.labelInstructions.TabIndex = 0;
             this.labelInstructions.Text = "Choose the teacher(s) in the list below to be associated with this class:";
             // 
-            // listView1
+            // listViewTeacherChoices
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 108);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(376, 281);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewTeacherChoices.HideSelection = false;
+            this.listViewTeacherChoices.Location = new System.Drawing.Point(16, 108);
+            this.listViewTeacherChoices.Name = "listViewTeacherChoices";
+            this.listViewTeacherChoices.Size = new System.Drawing.Size(376, 281);
+            this.listViewTeacherChoices.TabIndex = 1;
+            this.listViewTeacherChoices.UseCompatibleStateImageBehavior = false;
+            this.listViewTeacherChoices.View = System.Windows.Forms.View.List;
             // 
             // buttonSubmit
             // 
@@ -88,7 +89,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Controls.Add(this.labelClassIdentifier);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTeacherChoices);
             this.Controls.Add(this.labelInstructions);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -104,7 +105,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         #endregion
 
         private System.Windows.Forms.Label labelInstructions;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTeacherChoices;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelClassIdentifier;

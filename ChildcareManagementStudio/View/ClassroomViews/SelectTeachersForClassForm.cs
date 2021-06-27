@@ -1,5 +1,7 @@
-﻿using ChildcareManagementStudio.Model;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View.ClassroomViews
@@ -11,6 +13,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     {
         private readonly SetupClassUserControl referringUserControl;
         private readonly ClassRecord classRecord;
+        private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentcontroller;
 
         /// <summary>
         /// Constructor for the form
@@ -21,7 +24,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             InitializeComponent();
             this.referringUserControl = referringUserControl;
             this.classRecord = classRecord;
+            this.teacherClassroomAssignmentcontroller = new TeacherClassroomAssignmentController();
             this.labelClassIdentifier.Text = this.classRecord.Identifier;
+            this.PopulateTeacherListView();
         }
 
         /// <summary>
@@ -29,7 +34,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void PopulateTeacherListView()
         {
-
+            this.listViewTeacherChoices.Items.Clear();
+            List <TeacherClassroomAssignment> theList = this.teacherClassroomAssignmentcontroller.GetTeacherClassroomAssignments(this.classRecord.ClassId);
+            foreach (TeacherClassroomAssignment current in theList)
+            {
+                ListViewItem item = new ListViewItem(current.Teacher.FullName.ToString());
+                this.listViewTeacherChoices.Items.Add(item);
+            }
         }
     }
 }
