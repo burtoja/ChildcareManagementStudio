@@ -46,6 +46,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             // 
             // listViewTeacherChoices
             // 
+            this.listViewTeacherChoices.CheckBoxes = true;
             this.listViewTeacherChoices.HideSelection = false;
             this.listViewTeacherChoices.Location = new System.Drawing.Point(16, 108);
             this.listViewTeacherChoices.Name = "listViewTeacherChoices";
@@ -62,6 +63,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.TabIndex = 2;
             this.buttonSubmit.Text = "Update Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
