@@ -113,7 +113,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 catch
                 {
                     this.ResetFormValues();
-                    Console.WriteLine("ERROR: Trouble updating form values  in the following method: UpdateFormValues()");  //TODO: Remove after testing
                 }
             }
         }

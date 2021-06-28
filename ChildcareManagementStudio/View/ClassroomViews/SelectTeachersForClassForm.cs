@@ -95,7 +95,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     Teacher = this.employeeController.GetEmployee(employeeId),
                     ClassRecord = this.classRecord,
-                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
+                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue.  Decide where the date comes from: current position startDate or first position startDate
                     //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
                     PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
                 };
