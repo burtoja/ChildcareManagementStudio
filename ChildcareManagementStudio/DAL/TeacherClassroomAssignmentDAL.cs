@@ -10,8 +10,8 @@ namespace ChildcareManagementStudio.DAL
     /// </summary>
     public class TeacherClassroomAssignmentDAL
     {
-        private ClassRecordDAL classRecordDAL;
-        private EmployeeDAL employeeDAL;
+        private readonly ClassRecordDAL classRecordDAL;
+        private readonly EmployeeDAL employeeDAL;
 
         /// <summary>
         /// Constructor for the TeacherClassroomAssignmentDAL class.

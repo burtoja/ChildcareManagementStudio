@@ -8,7 +8,7 @@ namespace ChildcareManagementStudio.Controller
     /// </summary>
     public class PositionTypeController
     {
-        private PositionTypeDAL positionTypeDAL;
+        private readonly PositionTypeDAL positionTypeDAL;
 
         /// <summary>
         /// Constructor for the PositionTypeController class.

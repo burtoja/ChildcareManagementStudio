@@ -13,7 +13,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     public partial class SetupClassUserControl : UserControl
     {
         private readonly ClassRecordController classRecordController;
-        private readonly ClassroomController classroomController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
         private string schoolYear;
 
@@ -24,7 +23,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             InitializeComponent();
             this.classRecordController = new ClassRecordController();
-            this.classroomController = new ClassroomController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
