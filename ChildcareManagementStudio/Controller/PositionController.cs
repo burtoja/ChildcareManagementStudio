@@ -49,7 +49,7 @@ namespace ChildcareManagementStudio.Controller
 
             return new PositionRecord
             {
-                Type = "Teacher",
+                Type = "Lead teacher",
                 SchoolYear = "2021-22",
                 StartDate = new DateTime(2021, 08, 05)
             };

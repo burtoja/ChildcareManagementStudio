@@ -17,6 +17,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private readonly EmployeeController employeeController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
         private readonly PositionController positionController;
+        private readonly List<TeacherClassroomAssignment> originalTeacherClassroomAssignmentList;
         private readonly List<int> originalListAssignedTeacherIds;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.employeeController = new EmployeeController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
             this.positionController = new PositionController();
+            this.originalTeacherClassroomAssignmentList = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId);
             this.originalListAssignedTeacherIds = new List<int>();
             this.labelClassIdentifier.Text = this.classRecord.Identifier;
             this.PopulateOriginalListAssignedTeacherIds();
@@ -43,8 +45,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void PopulateOriginalListAssignedTeacherIds()
         {
             this.originalListAssignedTeacherIds.Clear();
-            foreach (TeacherClassroomAssignment current in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId))
+            foreach (TeacherClassroomAssignment current in this.originalTeacherClassroomAssignmentList)
             {
+                Console.WriteLine(current.Teacher.FullName + " - " + current.Teacher.EmployeeId + " - " + current.StartDate.ToString()); //TODO: Remove after testing
                 this.originalListAssignedTeacherIds.Add(current.Teacher.EmployeeId);
             }
         }
@@ -83,6 +86,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void AddSelectedTeacherCalssroomAssignments(ListViewItem current)
         {
+            string errorsFromAddOperations = "";
             Console.WriteLine("Checking item to see if it should be added (ADD)...");
             int employeeId = Int32.Parse(current.SubItems[1].Text);
             if (!this.originalListAssignedTeacherIds.Contains(employeeId))
@@ -106,11 +110,18 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 }
                 catch (Exception ex)
                 {
-                    string title = "Error Adding Teacher";
-                    string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
-                    MessageBox.Show(message, title);
+                    errorsFromAddOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
+                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
+                        "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
+                        "\r\n" + ex.Message;
                 }
                 Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
+            }
+            if (errorsFromAddOperations != "")
+            {
+                string title = "Error(s) Adding Teacher(s)";
+                string message = "Errors were found when adding teachers. The following teachers were not added: \r\n" + errorsFromAddOperations;
+                MessageBox.Show(message, title);
             }
         }
 
@@ -119,49 +130,41 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
         {
+            string errorsFromRemoveOperations = "";
             Console.WriteLine("Checking item to see if it should be removed (REMOVE)...");
             if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
             {               
                 int employeeId = Int32.Parse(current.SubItems[1].Text);
-                Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
-                Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE REMOVE METHOD CALL...");  
-                Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
-                Console.WriteLine("Classroom: " + this.classRecord.Identifier);
-                Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
-                Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
+                TeacherClassroomAssignment teacherClassroomAssignment = this.originalTeacherClassroomAssignmentList[this.originalListAssignedTeacherIds.IndexOf(employeeId)];
 
-                TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment()
-                {
-                    Teacher = this.employeeController.GetEmployee(employeeId),
-                    ClassRecord = this.classRecord,
-                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
-                    //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,
-                    //StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
-                    PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
-                };
-                Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);
+                //Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
+                //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE REMOVE METHOD CALL...");  
+                //Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                //Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
+                //Console.WriteLine("Classroom: " + this.classRecord.Identifier);
+                //Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
+                //Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                //Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
+
+                Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);  // TODO: Remove after testing
                 try
                 {
                     this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
-                    foreach (TeacherClassroomAssignment current1 in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId)) 
-                    {
-                        Console.WriteLine("VALUES OF ALL ASSIGNED TEACHERS IN DB AFTER REMOVE METHOD CALL...");  // TODO: Remove after testing
-                        Console.WriteLine("Name: " + current1.Teacher.FullName);
-                        Console.WriteLine("Employee ID: " + current1.Teacher.EmployeeId);
-                        Console.WriteLine("Classroom: " + current1.ClassRecord.Identifier);
-                        Console.WriteLine("Date: " + current1.StartDate);
-                        Console.WriteLine("Position: " + current1.PositionType);                            
-                    }
                 }
                 catch (Exception ex)
                 {
-                    string title = "Error Removing Teacher";
-                    string message = "The Teacher was not removed. The following error was encoutnered: " + ex.Message;
-                    MessageBox.Show(message, title);
+                    errorsFromRemoveOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
+                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
+                        "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
+                        "\r\n" + ex.Message;
                 }
                 Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
+            }
+            if (errorsFromRemoveOperations != "")
+            {
+                string title = "Error(s) Removing Teacher(s)";
+                string message = "Errors were found when removing teachers. The following teachers were not removed: \r\n" + errorsFromRemoveOperations;
+                MessageBox.Show(message, title);
             }
         }
 
