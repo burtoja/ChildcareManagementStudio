@@ -46,6 +46,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             // 
             // comboBoxSchoolYear
             // 
+            this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSchoolYear.FormattingEnabled = true;
             this.comboBoxSchoolYear.Location = new System.Drawing.Point(16, 34);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
