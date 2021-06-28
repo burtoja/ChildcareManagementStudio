@@ -47,7 +47,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.originalListAssignedTeacherIds.Clear();
             foreach (TeacherClassroomAssignment current in this.originalTeacherClassroomAssignmentList)
             {
-                Console.WriteLine(current.Teacher.FullName + " - " + current.Teacher.EmployeeId + " - " + current.StartDate.ToString()); //TODO: Remove after testing
                 this.originalListAssignedTeacherIds.Add(current.Teacher.EmployeeId);
             }
         }
@@ -89,15 +88,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private string AddSelectedTeacherCalssroomAssignments(ListViewItem current)
         {
             string errorsFromAddOperations = "";
-            Console.WriteLine("Checking item to see if it should be added (ADD)...");
             int employeeId = Int32.Parse(current.SubItems[1].Text);
             if (current.Checked && !this.originalListAssignedTeacherIds.Contains(employeeId))
             {
-                Console.WriteLine("---BEGIN ITEM (ADD)---");  // TODO: Remove after testing (All)
-                //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE ADD METHOD CALL..."); 
-                //Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                //Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                //Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
                 TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
                 {
                     Teacher = this.employeeController.GetEmployee(employeeId),
@@ -117,7 +110,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
                         "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
-                Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
             }
             return errorsFromAddOperations;
 
@@ -131,22 +123,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private string RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
         {
             string errorsFromRemoveOperations = "";
-            Console.WriteLine("Checking item to see if it should be removed (REMOVE)...");
             if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
             {               
                 int employeeId = Int32.Parse(current.SubItems[1].Text);
                 TeacherClassroomAssignment teacherClassroomAssignment = this.originalTeacherClassroomAssignmentList[this.originalListAssignedTeacherIds.IndexOf(employeeId)];
-
-                Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
-                //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE REMOVE METHOD CALL...");  
-                //Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                //Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
-                //Console.WriteLine("Classroom: " + this.classRecord.Identifier);
-                //Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
-                //Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                //Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
-
-                Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);  // TODO: Remove after testing
                 try
                 {
                     this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
@@ -158,7 +138,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
                         "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
-                Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
             }
             return errorsFromRemoveOperations;
         }
