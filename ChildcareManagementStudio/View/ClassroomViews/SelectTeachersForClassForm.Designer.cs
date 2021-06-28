@@ -99,6 +99,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectTeachersForClassForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Teachers For Class Form";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectTeachersForClassForm_FormClosed);
             this.ResumeLayout(false);

@@ -188,6 +188,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Close();
         }
 
+        /// <summary>
+        /// Event handler for submit button click events.  Will cehck each teacher item in the listview and determine if
+        /// the teacher should be assigned to the class, removed from the class, or left unaltered.  Then executes the
+        /// appropriate action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
             foreach (ListViewItem current in this.listViewTeacherChoices.Items)
