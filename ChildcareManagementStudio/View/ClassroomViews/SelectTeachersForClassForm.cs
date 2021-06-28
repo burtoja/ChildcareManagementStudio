@@ -81,129 +81,88 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <summary>
         /// Assigns any newly checked teacher to the class
         /// </summary>
-        private void AddSelectedTeacherCalssroomAssignments()
+        private void AddSelectedTeacherCalssroomAssignments(ListViewItem current)
         {
-            ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
-            Console.WriteLine("Number of checked boxes = " + checkedItems.Count);
-            foreach (ListViewItem current in checkedItems)
+            Console.WriteLine("Checking item to see if it should be added (ADD)");
+            int employeeId = Int32.Parse(current.SubItems[1].Text);
+            if (!this.originalListAssignedTeacherIds.Contains(employeeId))
             {
-                Console.WriteLine("Looking at a checked item");
-                int employeeId = Int32.Parse(current.SubItems[1].Text);               
-                if (!this.originalListAssignedTeacherIds.Contains(employeeId))
+                Console.WriteLine("---BEGIN ITEM (ADD)---");  // TODO: Remove after testing (All)
+                Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE ADD METHOD CALL..."); 
+                Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
+                TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
                 {
-                    Console.WriteLine("ADD...");   // TODO: Remove after testing
-                    Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                    Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                    Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
-                    TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
-                    {
-                        Teacher = this.employeeController.GetEmployee(employeeId),
-                        ClassRecord = this.classRecord,
-                        StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
-                        //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
-                        PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type 
-                    };
-                    try
-                    {
-                        this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);                        
-                    }
-                    catch (Exception ex)
-                    {
-                        string title = "Error Adding Teacher";
-                        string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
-                        MessageBox.Show(message, title);
-                    }
-                    Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
+                    Teacher = this.employeeController.GetEmployee(employeeId),
+                    ClassRecord = this.classRecord,
+                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
+                                                           //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
+                    PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
+                };
+                try
+                {
+                    this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);
                 }
+                catch (Exception ex)
+                {
+                    string title = "Error Adding Teacher";
+                    string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
+                    MessageBox.Show(message, title);
+                }
+                Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
             }
-            this.Close();
         }
 
         /// <summary>
         /// Removes any recently unchecked teacher from the class
         /// </summary>
-        private void RemoveDeselectedTeacherClassroomAssignments()
+        private void RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
         {
-            foreach (ListViewItem current in this.listViewTeacherChoices.Items)
-            {
-                Console.WriteLine("TEST  - Made it into foreach loop (remove)");
-                if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
-                {
-                    Console.WriteLine("Looking at a unchecked item");
-                    int employeeId = Int32.Parse(current.SubItems[1].Text);
+            Console.WriteLine("Checking item to see if it should be removed (REMOVE)");
+            if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
+            {               
+                int employeeId = Int32.Parse(current.SubItems[1].Text);
+                Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
+                Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE REMOVE METHOD CALL...");  
+                Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
+                Console.WriteLine("Classroom: " + this.classRecord.Identifier);
+                Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
+                Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
 
-                    Console.WriteLine("REMOVE...");  // TODO: Remove after testing
-                    Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                    Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
-                    Console.WriteLine("Classroom: " + this.classRecord.Identifier);
-                    Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
-                    Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                    Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
-
-                    TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment()
-                    {
-                        Teacher = this.employeeController.GetEmployee(employeeId),
-                        ClassRecord = this.classRecord,
-                        StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
-                        //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,
-                        //StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
-                        PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
-                    };
-                    Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);
-                    try
-                    {
-                        this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
-                        foreach (TeacherClassroomAssignment current1 in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId)) 
-                        {
-                            Console.WriteLine("VALUES IN DB AFTER REMOVE METHOD CALL...");  // TODO: Remove after testing
-                            Console.WriteLine("Name: " + current1.Teacher.FullName);
-                            Console.WriteLine("Employee ID: " + current1.Teacher.EmployeeId);
-                            Console.WriteLine("Classroom: " + current1.ClassRecord.Identifier);
-                            Console.WriteLine("Date: " + current1.StartDate);
-                            Console.WriteLine("Position: " + current1.PositionType);                            
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        string title = "Error Removing Teacher";
-                        string message = "The Teacher was not removed. The following error was encoutnered: " + ex.Message;
-                        MessageBox.Show(message, title);
-                    }
-                    Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
-                }
-                else
+                TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment()
                 {
-                    Console.WriteLine("Looking at a checked item");
-                    int employeeId = Int32.Parse(current.SubItems[1].Text);
-                    if (!this.originalListAssignedTeacherIds.Contains(employeeId))
+                    Teacher = this.employeeController.GetEmployee(employeeId),
+                    ClassRecord = this.classRecord,
+                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
+                    //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,
+                    //StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
+                    PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
+                };
+                Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);
+                try
+                {
+                    this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
+                    foreach (TeacherClassroomAssignment current1 in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId)) 
                     {
-                        Console.WriteLine("ADD...");   // TODO: Remove after testing
-                        Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                        Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                        Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
-                        TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
-                        {
-                            Teacher = this.employeeController.GetEmployee(employeeId),
-                            ClassRecord = this.classRecord,
-                            StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
-                                                                   //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
-                            PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
-                        };
-                        try
-                        {
-                            this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);
-                        }
-                        catch (Exception ex)
-                        {
-                            string title = "Error Adding Teacher";
-                            string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
-                            MessageBox.Show(message, title);
-                        }
-                        Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
+                        Console.WriteLine("VALUES OF ALL ASSIGNED TEACHERS IN DB AFTER REMOVE METHOD CALL...");  // TODO: Remove after testing
+                        Console.WriteLine("Name: " + current1.Teacher.FullName);
+                        Console.WriteLine("Employee ID: " + current1.Teacher.EmployeeId);
+                        Console.WriteLine("Classroom: " + current1.ClassRecord.Identifier);
+                        Console.WriteLine("Date: " + current1.StartDate);
+                        Console.WriteLine("Position: " + current1.PositionType);                            
                     }
                 }
+                catch (Exception ex)
+                {
+                    string title = "Error Removing Teacher";
+                    string message = "The Teacher was not removed. The following error was encoutnered: " + ex.Message;
+                    MessageBox.Show(message, title);
+                }
+                Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
             }
-            this.Close();
         }
 
         /// <summary>
@@ -231,9 +190,18 @@ namespace ChildcareManagementStudio.View.ClassroomViews
 
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
-
-            this.RemoveDeselectedTeacherClassroomAssignments();
-            //this.AddSelectedTeacherCalssroomAssignments();
+            foreach (ListViewItem current in this.listViewTeacherChoices.Items)
+            {
+                if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
+                {
+                    this.RemoveDeselectedTeacherClassroomAssignments(current);
+                }
+                else
+                {
+                    this.AddSelectedTeacherCalssroomAssignments(current);
+                }                
+            }
+            this.Close();
             this.referringUserControl.PopulateSelectedTeacherList();
         }
     }
