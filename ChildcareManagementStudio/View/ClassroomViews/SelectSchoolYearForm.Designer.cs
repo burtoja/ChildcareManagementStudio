@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void InitializeComponent()
         {
             this.labelInstructions = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSchoolYear = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,13 +44,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.labelInstructions.TabIndex = 0;
             this.labelInstructions.Text = "Choose the school year:";
             // 
-            // comboBox1
+            // comboBoxSchoolYear
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 29);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxSchoolYear.FormattingEnabled = true;
+            this.comboBoxSchoolYear.Location = new System.Drawing.Point(16, 34);
+            this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
+            this.comboBoxSchoolYear.Size = new System.Drawing.Size(191, 29);
+            this.comboBoxSchoolYear.TabIndex = 1;
             // 
             // buttonSubmit
             // 
@@ -60,6 +60,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.TabIndex = 2;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
@@ -69,6 +70,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // SelectSchoolYearForm
             // 
@@ -76,16 +78,17 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.ClientSize = new System.Drawing.Size(229, 140);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxSchoolYear);
             this.Controls.Add(this.labelInstructions);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectSchoolYearForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select School Year Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectSchoolYearForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +97,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         #endregion
 
         private System.Windows.Forms.Label labelInstructions;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxSchoolYear;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
     }
