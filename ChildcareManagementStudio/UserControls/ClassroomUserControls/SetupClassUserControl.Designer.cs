@@ -30,12 +30,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void InitializeComponent()
         {
             this.labelClassroom = new System.Windows.Forms.Label();
-            this.comboBoxClassroom = new System.Windows.Forms.ComboBox();
             this.labelSchoolYear = new System.Windows.Forms.Label();
             this.labelValueSchoolYear = new System.Windows.Forms.Label();
             this.buttonChangeSchoolYear = new System.Windows.Forms.Button();
             this.labelTeacher = new System.Windows.Forms.Label();
             this.listViewTeachers = new System.Windows.Forms.ListView();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonEditTeacherList = new System.Windows.Forms.Button();
             this.labelAddedStudents = new System.Windows.Forms.Label();
             this.listViewStudentsNotInClass = new System.Windows.Forms.ListView();
@@ -46,7 +46,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelClass = new System.Windows.Forms.Label();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.buttonNewClass = new System.Windows.Forms.Button();
-            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelValueClassroom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -58,17 +58,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelClassroom.Size = new System.Drawing.Size(93, 21);
             this.labelClassroom.TabIndex = 0;
             this.labelClassroom.Text = "Classroom:";
-            // 
-            // comboBoxClassroom
-            // 
-            this.comboBoxClassroom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClassroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxClassroom.FormattingEnabled = true;
-            this.comboBoxClassroom.Location = new System.Drawing.Point(116, 98);
-            this.comboBoxClassroom.Name = "comboBoxClassroom";
-            this.comboBoxClassroom.Size = new System.Drawing.Size(254, 29);
-            this.comboBoxClassroom.TabIndex = 1;
             // 
             // labelSchoolYear
             // 
@@ -125,6 +114,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewTeachers.TabIndex = 6;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
             this.listViewTeachers.View = System.Windows.Forms.View.List;
+            // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "Teacher Name";
             // 
             // buttonEditTeacherList
             // 
@@ -226,13 +219,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass.UseVisualStyleBackColor = true;
             this.buttonNewClass.Click += new System.EventHandler(this.ButtonNewClass_Click);
             // 
-            // columnHeaderName
+            // labelValueClassroom
             // 
-            this.columnHeaderName.Text = "Teacher Name";
+            this.labelValueClassroom.AutoSize = true;
+            this.labelValueClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValueClassroom.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueClassroom.Location = new System.Drawing.Point(116, 103);
+            this.labelValueClassroom.Name = "labelValueClassroom";
+            this.labelValueClassroom.Size = new System.Drawing.Size(37, 19);
+            this.labelValueClassroom.TabIndex = 17;
+            this.labelValueClassroom.Text = "n/a";
             // 
             // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.labelValueClassroom);
             this.Controls.Add(this.buttonNewClass);
             this.Controls.Add(this.comboBoxClass);
             this.Controls.Add(this.labelClass);
@@ -248,7 +249,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.buttonChangeSchoolYear);
             this.Controls.Add(this.labelValueSchoolYear);
             this.Controls.Add(this.labelSchoolYear);
-            this.Controls.Add(this.comboBoxClassroom);
             this.Controls.Add(this.labelClassroom);
             this.Name = "SetupClassUserControl";
             this.Size = new System.Drawing.Size(745, 470);
@@ -260,7 +260,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         #endregion
 
         private System.Windows.Forms.Label labelClassroom;
-        private System.Windows.Forms.ComboBox comboBoxClassroom;
         private System.Windows.Forms.Label labelSchoolYear;
         private System.Windows.Forms.Label labelValueSchoolYear;
         private System.Windows.Forms.Button buttonChangeSchoolYear;
@@ -277,5 +276,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.ComboBox comboBoxClass;
         private System.Windows.Forms.Button buttonNewClass;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.Label labelValueClassroom;
     }
 }

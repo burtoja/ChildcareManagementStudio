@@ -2,7 +2,6 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.View.ClassroomViews;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -29,7 +28,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
-            this.PopulateClassroomComboBox();
             this.PopulateSelectedTeacherList();
         }
 
@@ -56,22 +54,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 classRecords.Add(current);
             }           
             this.comboBoxClass.SelectedIndex = -1;
-        }
-
-        /// <summary>
-        /// Populate th Classroom comboBox with the available classrooms
-        /// </summary>
-        private void PopulateClassroomComboBox()
-        {
-            BindingList<Classroom> classrooms = new BindingList<Classroom>();
-            this.comboBoxClassroom.DataSource = classrooms;
-            this.comboBoxClassroom.ValueMember = "Id";
-            this.comboBoxClassroom.DisplayMember = "Location";
-            foreach (Classroom current in this.classroomController.GetAllClassrooms())
-            {
-                classrooms.Add(current);
-            }           
-            this.comboBoxClassroom.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -119,13 +101,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         }
 
         /// <summary>
-        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
-        /// classRecord comboBox
+        /// Set the text for the label showing the classroom of the selected class record
         /// </summary>
-        private void SetClassroomComboBoxSelection()
+        private void SetClassroomValueLabel()
         {
             int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-            this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
+            this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;
         }
 
         /// <summary>
@@ -169,7 +150,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             if (this.comboBoxClass.SelectedIndex != -1)
             {
-                this.SetClassroomComboBoxSelection();
+                this.SetClassroomValueLabel();
                 this.PopulateSelectedTeacherList();
             }
         }
