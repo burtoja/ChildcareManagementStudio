@@ -16,7 +16,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private readonly ClassRecord classRecord;
         private readonly EmployeeController employeeController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
-        private List<int> currentListAssignedTeacherIds;
+        private readonly PositionController positionController;
+        private readonly List<int> originalListAssignedTeacherIds;
 
         /// <summary>
         /// Constructor for the form
@@ -29,21 +30,22 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.classRecord = classRecord;
             this.employeeController = new EmployeeController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
-            this.currentListAssignedTeacherIds = new List<int>();
+            this.positionController = new PositionController();
+            this.originalListAssignedTeacherIds = new List<int>();
             this.labelClassIdentifier.Text = this.classRecord.Identifier;
-            this.UpdateCurrentListAssignedTeacherIds();
+            this.PopulateOriginalListAssignedTeacherIds();
             this.PopulateTeacherListView();
         }
 
         /// <summary>
         /// Update the current list of assigned teachers based on DB 
         /// </summary>
-        private void UpdateCurrentListAssignedTeacherIds()
+        private void PopulateOriginalListAssignedTeacherIds()
         {
-            this.currentListAssignedTeacherIds.Clear();
+            this.originalListAssignedTeacherIds.Clear();
             foreach (TeacherClassroomAssignment current in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId))
             {
-                this.currentListAssignedTeacherIds.Add(current.Teacher.EmployeeId);
+                this.originalListAssignedTeacherIds.Add(current.Teacher.EmployeeId);
             }
         }
 
@@ -54,11 +56,11 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <returns>true if the Id is found in the list of currently assigned Ids</returns>
         private bool IsAssignedToCurrentClass(int employeeId)
         {
-            return this.currentListAssignedTeacherIds.Contains(employeeId);   
+            return this.originalListAssignedTeacherIds.Contains(employeeId);   
         }
 
         /// <summary>
-        /// Populate the teacher choice listView with the teachers in the DB
+        /// Populate the teacher choice listView with the teachers in the DB and marks those assigned tot his class with check marks
         /// </summary>
         private void PopulateTeacherListView()
         {
@@ -73,6 +75,43 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     item.Checked = true;
                 }                   
+            }
+        }
+
+        private void AddSelectedTeacherCalssroomAssignments()
+        {
+            ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
+            foreach (ListViewItem current in checkedItems)
+            {
+                int employeeId = Int32.Parse(current.SubItems[1].Text);
+                if (!this.originalListAssignedTeacherIds.Contains(employeeId))
+                {
+                    TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
+                    {
+                        Teacher = this.employeeController.GetEmployee(employeeId),
+                        ClassRecord = this.classRecord,
+                        StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  // TODO: Should this be the position StartDate????
+                        PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type 
+                    };
+                    try
+                    {
+                        this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);
+                    }
+                    catch (Exception ex)
+                    {
+                        string title = "Error Adding Teacher";
+                        string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
+                        MessageBox.Show(message, title);
+                    }
+                }
+            }
+        }
+
+        private void RemoveDeselectedTeacherClassroomAssignments()
+        {
+            foreach (int current in this.originalListAssignedTeacherIds)
+            {
+               
             }
         }
 
@@ -101,6 +140,9 @@ namespace ChildcareManagementStudio.View.ClassroomViews
 
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
+            this.AddSelectedTeacherCalssroomAssignments();
+            this.RemoveDeselectedTeacherClassroomAssignments();
+
             ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
 
             foreach (ListViewItem item in checkedItems)
