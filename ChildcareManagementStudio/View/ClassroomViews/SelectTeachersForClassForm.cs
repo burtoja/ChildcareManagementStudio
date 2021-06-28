@@ -81,12 +81,14 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void AddSelectedTeacherCalssroomAssignments()
         {
             ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
+            int employeeId;
+            TeacherClassroomAssignment teacherClassroomAssignment;
             foreach (ListViewItem current in checkedItems)
             {
-                int employeeId = Int32.Parse(current.SubItems[1].Text);
+                employeeId = Int32.Parse(current.SubItems[1].Text);
                 if (!this.originalListAssignedTeacherIds.Contains(employeeId))
                 {
-                    TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
+                    teacherClassroomAssignment = new TeacherClassroomAssignment
                     {
                         Teacher = this.employeeController.GetEmployee(employeeId),
                         ClassRecord = this.classRecord,
@@ -95,7 +97,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     };
                     try
                     {
-                        this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);
+                        this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);                        
                     }
                     catch (Exception ex)
                     {
@@ -105,14 +107,72 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     }
                 }
             }
+            this.Close();
         }
 
         private void RemoveDeselectedTeacherClassroomAssignments()
         {
-            foreach (int current in this.originalListAssignedTeacherIds)
+            //ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
+            //List<int> revisedAssignedTeacherIds = new List<int>();
+            //foreach (ListViewItem current in checkedItems)
+            //{
+            //    revisedAssignedTeacherIds.Add(Int32.Parse(current.SubItems[1].Text));
+            //}
+
+            int employeeId;
+            TeacherClassroomAssignment teacherClassroomAssignment;
+            foreach (ListViewItem current in this.listViewTeacherChoices.Items)
             {
-               
+                if (!current.Checked)
+                {
+                    employeeId = Int32.Parse(current.SubItems[1].Text);
+                    teacherClassroomAssignment = new TeacherClassroomAssignment
+                    {
+                        Teacher = this.employeeController.GetEmployee(employeeId),
+                        ClassRecord = this.classRecord,
+                        StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
+                        //StartDate = this.employeeController.GetEmployee(currentOriginalEmployeeId).StartDate,  // TODO: Should this be the position StartDate????
+                        PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
+                    };
+                    try
+                    {
+                        this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);                        
+                    }
+                    catch (Exception ex)
+                    {
+                        string title = "Error Removing Teacher";
+                        string message = "The Teacher was not removed. The following error was encoutnered: " + ex.Message;
+                        MessageBox.Show(message, title);
+                    }
+                }
             }
+            this.Close();
+
+
+            //foreach (int currentOriginalEmployeeId in this.originalListAssignedTeacherIds)
+            //{
+            //    if (!revisedAssignedTeacherIds.Contains(currentOriginalEmployeeId))
+            //    {
+            //        TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
+            //        {
+            //            Teacher = this.employeeController.GetEmployee(currentOriginalEmployeeId),
+            //            ClassRecord = this.classRecord,
+            //            StartDate = this.positionController.GetCurrentPositionRecord(currentOriginalEmployeeId).StartDate,
+            //            //StartDate = this.employeeController.GetEmployee(currentOriginalEmployeeId).StartDate,  // TODO: Should this be the position StartDate????
+            //            PositionType = this.positionController.GetCurrentPositionRecord(currentOriginalEmployeeId).Type
+            //        };
+            //        try
+            //        {
+            //            this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            string title = "Error Adding Teacher";
+            //            string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
+            //            MessageBox.Show(message, title);
+            //        }
+            //    }
+            //}
         }
 
         /// <summary>
@@ -142,23 +202,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             this.AddSelectedTeacherCalssroomAssignments();
             this.RemoveDeselectedTeacherClassroomAssignments();
-
-            ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
-
-            foreach (ListViewItem item in checkedItems)
-            {
-                Console.WriteLine("Name: " + item.SubItems[0].Text + " --- Id: " + item.SubItems[1].Text); 
-            }
-            //if (e.CurrentValue == CheckState.Unchecked)
-            //{
-            //    price += Double.Parse(
-            //        this.ListView1.Items[e.Index].SubItems[1].Text);
-            //}
-            //else if ((e.CurrentValue == CheckState.Checked))
-            //{
-            //    price -= Double.Parse(
-            //        this.ListView1.Items[e.Index].SubItems[1].Text);
-            //}
+            this.referringUserControl.PopulateSelectedTeacherList();
         }
     }
 }

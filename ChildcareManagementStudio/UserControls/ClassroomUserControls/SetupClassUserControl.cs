@@ -77,7 +77,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Populates the teacher listView with list from DB or appropriate message
         /// </summary>
-        private void PopulateSelectedTeacherList()
+        public void PopulateSelectedTeacherList()
         {
             this.listViewTeachers.Items.Clear();
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
