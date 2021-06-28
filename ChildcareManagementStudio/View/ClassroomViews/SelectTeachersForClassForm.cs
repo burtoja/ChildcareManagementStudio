@@ -84,12 +84,14 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <summary>
         /// Assigns any newly checked teacher to the class
         /// </summary>
-        private void AddSelectedTeacherCalssroomAssignments(ListViewItem current)
+        /// <param name="current">current ListViewItem to be added if it meets the conditions</param>
+        /// <returns>error message</returns>
+        private string AddSelectedTeacherCalssroomAssignments(ListViewItem current)
         {
             string errorsFromAddOperations = "";
             Console.WriteLine("Checking item to see if it should be added (ADD)...");
             int employeeId = Int32.Parse(current.SubItems[1].Text);
-            if (!this.originalListAssignedTeacherIds.Contains(employeeId))
+            if (current.Checked && !this.originalListAssignedTeacherIds.Contains(employeeId))
             {
                 Console.WriteLine("---BEGIN ITEM (ADD)---");  // TODO: Remove after testing (All)
                 //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE ADD METHOD CALL..."); 
@@ -110,25 +112,23 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 }
                 catch (Exception ex)
                 {
-                    errorsFromAddOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
+                    errorsFromAddOperations += "\r\n\r\n(ADD ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
-                        "\r\n\r\n" + ex.Message; //TODO: Remove exception message after testing complete
+                        "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
                 Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
             }
-            if (errorsFromAddOperations != "")
-            {
-                string title = "Error Adding Teacher(s)";
-                string message = "Errors were found when adding teachers. The following teachers were not added: \r\n" + errorsFromAddOperations;
-                MessageBox.Show(message, title);
-            }
+            return errorsFromAddOperations;
+
         }
 
         /// <summary>
         /// Removes any recently unchecked teacher from the class
         /// </summary>
-        private void RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
+        /// <param name="current">the current ListViewItem to be removed if it meets the conditions</param>
+        /// <returns>error message text</returns>
+        private string RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
         {
             string errorsFromRemoveOperations = "";
             Console.WriteLine("Checking item to see if it should be removed (REMOVE)...");
@@ -153,19 +153,14 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 }
                 catch (Exception ex)
                 {
-                    errorsFromRemoveOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
+                    errorsFromRemoveOperations += "\r\n\r\n(DELETE ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
-                        "\r\n\r\n" + ex.Message; //TODO: Remove exception message after testing complete
+                        "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
                 Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
             }
-            if (errorsFromRemoveOperations != "")
-            {
-                string title = "Error Removing Teacher(s)";
-                string message = "Errors were found when removing teachers. The following teachers were not removed: \r\n" + errorsFromRemoveOperations;
-                MessageBox.Show(message, title);
-            }
+            return errorsFromRemoveOperations;
         }
 
         /// <summary>
@@ -200,16 +195,23 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
+            string errorMessage = "";
             foreach (ListViewItem current in this.listViewTeacherChoices.Items)
             {
                 if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
                 {
-                    this.RemoveDeselectedTeacherClassroomAssignments(current);
+                    errorMessage += this.RemoveDeselectedTeacherClassroomAssignments(current);
                 }
                 else
                 {
-                    this.AddSelectedTeacherCalssroomAssignments(current);
+                    errorMessage += this.AddSelectedTeacherCalssroomAssignments(current);
                 }                
+            }
+            if (errorMessage != "")
+            {
+                string title = "Error Updating Teacher(s)";
+                string message = "Errors were found when updating teachers. The following teachers were not updated:" + errorMessage;
+                MessageBox.Show(message, title);
             }
             this.Close();
             this.referringUserControl.PopulateSelectedTeacherList();
