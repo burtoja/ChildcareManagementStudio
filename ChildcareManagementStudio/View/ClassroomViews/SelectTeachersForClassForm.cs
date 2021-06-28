@@ -85,9 +85,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             TeacherClassroomAssignment teacherClassroomAssignment;
             foreach (ListViewItem current in checkedItems)
             {
-                employeeId = Int32.Parse(current.SubItems[1].Text);
+                employeeId = Int32.Parse(current.SubItems[1].Text);               
                 if (!this.originalListAssignedTeacherIds.Contains(employeeId))
                 {
+                    Console.WriteLine("ADD...");   // TODO: Remove after testing
+                    Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                    Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                    Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
                     teacherClassroomAssignment = new TeacherClassroomAssignment
                     {
                         Teacher = this.employeeController.GetEmployee(employeeId),
@@ -110,33 +114,50 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Close();
         }
 
+
         private void RemoveDeselectedTeacherClassroomAssignments()
         {
-            //ListView.CheckedListViewItemCollection checkedItems = this.listViewTeacherChoices.CheckedItems;
-            //List<int> revisedAssignedTeacherIds = new List<int>();
-            //foreach (ListViewItem current in checkedItems)
-            //{
-            //    revisedAssignedTeacherIds.Add(Int32.Parse(current.SubItems[1].Text));
-            //}
-
+            Console.WriteLine("TEST - Made it into RemoveDeselectedTeacherClassroomAssignments()");
             int employeeId;
-            TeacherClassroomAssignment teacherClassroomAssignment;
+            //TeacherClassroomAssignment teacherClassroomAssignment;
             foreach (ListViewItem current in this.listViewTeacherChoices.Items)
             {
+                Console.WriteLine("TEST  - Made it into foreach loop");
                 if (!current.Checked)
                 {
                     employeeId = Int32.Parse(current.SubItems[1].Text);
-                    teacherClassroomAssignment = new TeacherClassroomAssignment
+
+                    Console.WriteLine("REMOVE...");  // TODO: Remove after testing
+                    Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                    Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
+                    Console.WriteLine("Classroom: " + this.classRecord.Identifier);
+                    Console.WriteLine("Date (employeeController): " + this.employeeController.GetEmployee(employeeId).StartDate);                    
+                    Console.WriteLine("Date (positionController): " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                    Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
+
+                    TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment()
                     {
                         Teacher = this.employeeController.GetEmployee(employeeId),
                         ClassRecord = this.classRecord,
-                        StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
-                        //StartDate = this.employeeController.GetEmployee(currentOriginalEmployeeId).StartDate,  // TODO: Should this be the position StartDate????
+                        StartDate = this.employeeController.GetEmployee(employeeId).StartDate,
+                        //StartDate = this.positionController.GetCurrentPositionRecord(employeeId).StartDate,
                         PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
                     };
+                    //teacherClassroomAssignment = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId)[0];
+                    Console.WriteLine("TEST - Teacher object made: " + teacherClassroomAssignment.StartDate + " " + teacherClassroomAssignment.Teacher.EmployeeId);
                     try
                     {
-                        this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);                        
+                        this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
+                        Console.WriteLine("TEST - finished try block (remove)");
+                        foreach (TeacherClassroomAssignment current1 in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId)) 
+                        {
+                            Console.WriteLine("AFTER LIST...");  // TODO: Remove after testing
+                            Console.WriteLine("Name: " + current1.Teacher.FullName);
+                            Console.WriteLine("Employee ID: " + current1.Teacher.EmployeeId);
+                            Console.WriteLine("Classroom: " + current1.ClassRecord.Identifier);
+                            Console.WriteLine("Date: " + current1.StartDate);
+                            Console.WriteLine("Position: " + current1.PositionType);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -147,32 +168,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 }
             }
             this.Close();
-
-
-            //foreach (int currentOriginalEmployeeId in this.originalListAssignedTeacherIds)
-            //{
-            //    if (!revisedAssignedTeacherIds.Contains(currentOriginalEmployeeId))
-            //    {
-            //        TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
-            //        {
-            //            Teacher = this.employeeController.GetEmployee(currentOriginalEmployeeId),
-            //            ClassRecord = this.classRecord,
-            //            StartDate = this.positionController.GetCurrentPositionRecord(currentOriginalEmployeeId).StartDate,
-            //            //StartDate = this.employeeController.GetEmployee(currentOriginalEmployeeId).StartDate,  // TODO: Should this be the position StartDate????
-            //            PositionType = this.positionController.GetCurrentPositionRecord(currentOriginalEmployeeId).Type
-            //        };
-            //        try
-            //        {
-            //            this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            string title = "Error Adding Teacher";
-            //            string message = "The Teacher was not added. The following error was encoutnered: " + ex.Message;
-            //            MessageBox.Show(message, title);
-            //        }
-            //    }
-            //}
         }
 
         /// <summary>
@@ -200,8 +195,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
 
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
-            this.AddSelectedTeacherCalssroomAssignments();
             this.RemoveDeselectedTeacherClassroomAssignments();
+            // this.AddSelectedTeacherCalssroomAssignments();
             this.referringUserControl.PopulateSelectedTeacherList();
         }
     }

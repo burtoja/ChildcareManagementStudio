@@ -92,8 +92,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
             else
             {
-                List<TeacherClassroomAssignment> teacherAssignmentList = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId());
-                foreach (TeacherClassroomAssignment current in teacherAssignmentList)
+                foreach (TeacherClassroomAssignment current in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId()))
                 {
                     ListViewItem item = new ListViewItem(current.Teacher.FullName.ToString());
                     this.listViewTeachers.Items.Add(item);
