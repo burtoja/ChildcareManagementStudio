@@ -83,7 +83,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void AddSelectedTeacherCalssroomAssignments(ListViewItem current)
         {
-            Console.WriteLine("Checking item to see if it should be added (ADD)");
+            Console.WriteLine("Checking item to see if it should be added (ADD)...");
             int employeeId = Int32.Parse(current.SubItems[1].Text);
             if (!this.originalListAssignedTeacherIds.Contains(employeeId))
             {
@@ -97,7 +97,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     Teacher = this.employeeController.GetEmployee(employeeId),
                     ClassRecord = this.classRecord,
                     StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue
-                                                           //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
+                    //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
                     PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
                 };
                 try
@@ -119,7 +119,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void RemoveDeselectedTeacherClassroomAssignments(ListViewItem current)
         {
-            Console.WriteLine("Checking item to see if it should be removed (REMOVE)");
+            Console.WriteLine("Checking item to see if it should be removed (REMOVE)...");
             if (!current.Checked && this.originalListAssignedTeacherIds.Contains(Int32.Parse(current.SubItems[1].Text)))
             {               
                 int employeeId = Int32.Parse(current.SubItems[1].Text);
