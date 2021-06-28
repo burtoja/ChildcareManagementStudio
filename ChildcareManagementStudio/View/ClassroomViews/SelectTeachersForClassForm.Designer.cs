@@ -30,9 +30,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void InitializeComponent()
         {
             this.labelInstructions = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTeacherChoices = new System.Windows.Forms.ListView();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.labelClassIdentifier = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelInstructions
@@ -41,58 +42,77 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.labelInstructions.Name = "labelInstructions";
             this.labelInstructions.Size = new System.Drawing.Size(380, 49);
             this.labelInstructions.TabIndex = 0;
-            this.labelInstructions.Text = "Choose the teacher(s) in the list below to be associated with this class.";
+            this.labelInstructions.Text = "Choose the teacher(s) in the list below to be associated with this class:";
             // 
-            // listView1
+            // listViewTeacherChoices
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 72);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(376, 281);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewTeacherChoices.CheckBoxes = true;
+            this.listViewTeacherChoices.HideSelection = false;
+            this.listViewTeacherChoices.Location = new System.Drawing.Point(16, 108);
+            this.listViewTeacherChoices.Name = "listViewTeacherChoices";
+            this.listViewTeacherChoices.Size = new System.Drawing.Size(376, 281);
+            this.listViewTeacherChoices.TabIndex = 1;
+            this.listViewTeacherChoices.UseCompatibleStateImageBehavior = false;
+            this.listViewTeacherChoices.View = System.Windows.Forms.View.List;
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(16, 370);
+            this.buttonSubmit.Location = new System.Drawing.Point(16, 410);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(171, 29);
             this.buttonSubmit.TabIndex = 2;
             this.buttonSubmit.Text = "Update Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(221, 370);
+            this.buttonCancel.Location = new System.Drawing.Point(221, 410);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(171, 29);
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // labelClassIdentifier
+            // 
+            this.labelClassIdentifier.AutoSize = true;
+            this.labelClassIdentifier.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClassIdentifier.ForeColor = System.Drawing.Color.Maroon;
+            this.labelClassIdentifier.Location = new System.Drawing.Point(16, 73);
+            this.labelClassIdentifier.Name = "labelClassIdentifier";
+            this.labelClassIdentifier.Size = new System.Drawing.Size(0, 19);
+            this.labelClassIdentifier.TabIndex = 4;
             // 
             // SelectTeachersForClassForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(410, 414);
+            this.ClientSize = new System.Drawing.Size(410, 453);
+            this.Controls.Add(this.labelClassIdentifier);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTeacherChoices);
             this.Controls.Add(this.labelInstructions);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectTeachersForClassForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Teachers For Class Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectTeachersForClassForm_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label labelInstructions;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTeacherChoices;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label labelClassIdentifier;
     }
 }

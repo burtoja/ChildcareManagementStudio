@@ -10,8 +10,8 @@ namespace ChildcareManagementStudio.DAL
     /// </summary>
     public class TeacherClassroomAssignmentDAL
     {
-        private ClassRecordDAL classRecordDAL;
-        private EmployeeDAL employeeDAL;
+        private readonly ClassRecordDAL classRecordDAL;
+        private readonly EmployeeDAL employeeDAL;
 
         /// <summary>
         /// Constructor for the TeacherClassroomAssignmentDAL class.
@@ -49,11 +49,6 @@ namespace ChildcareManagementStudio.DAL
                     selectCommand.Parameters.AddWithValue("$class", classId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
-                        if (!reader.HasRows)
-                        {
-                            throw new ArgumentException("The specified teacher/classroom assignment is not in the database.");
-                        }
-
                         int teacherIdOrdinal = reader.GetOrdinal("teacherId");
                         int startDateOrdinal = reader.GetOrdinal("startDate");
                         int positionTypeOrdinal = reader.GetOrdinal("positionType");

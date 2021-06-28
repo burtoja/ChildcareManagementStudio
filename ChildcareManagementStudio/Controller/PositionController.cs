@@ -36,6 +36,29 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Returns the most current position record for an emplyee.  
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
+        public PositionRecord GetCurrentPositionRecord(int employeeId)
+        {
+            if (employeeId < 0)
+            {
+                throw new ArgumentException("The employee ID cannot be a negative number.", "employeeId");
+            }
+
+            return new PositionRecord
+            {
+                Type = "Lead teacher",
+                SchoolYear = "2021-22",
+                StartDate = new DateTime(2021, 08, 05)
+            };
+
+            //return positionDAL.GetCurrentPositionRecord(employeeId);
+
+        }
+
+        /// <summary>
         /// Method that adds a position record to the database.
         /// </summary>
         /// <param name="employeeId">The employee ID of the employee that the record is associated with.</param>

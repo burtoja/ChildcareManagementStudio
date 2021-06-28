@@ -2,7 +2,6 @@
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.View.ClassroomViews;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -14,8 +13,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     public partial class SetupClassUserControl : UserControl
     {
         private readonly ClassRecordController classRecordController;
-        private readonly ClassroomController classroomController;
-        private readonly ClassRecord classRecord;
+        private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
         private string schoolYear;
 
         /// <summary>
@@ -25,11 +23,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             InitializeComponent();
             this.classRecordController = new ClassRecordController();
-            this.classroomController = new ClassroomController();
-            this.classRecord = new ClassRecord();
+            this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
             this.SetDefaultSchoolYear();
             this.PopulateClassComboBox();
-            this.PopulateClassroomComboBox();
             this.PopulateSelectedTeacherList();
         }
 
@@ -47,45 +43,68 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         public void PopulateClassComboBox()
         {
-            List<ClassRecord> classRecordList = new List<ClassRecord>();
-            classRecordList = this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear);
             BindingList<ClassRecord> classRecords = new BindingList<ClassRecord>();
-            foreach (ClassRecord current in classRecordList)
-            {
-                classRecords.Add(current);
-            }
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
             this.comboBoxClass.DisplayMember = "Identifier";
-            this.comboBoxClass.SelectedIndex = -1;
-            this.comboBoxClass.SelectedText = "--select--";
-        }
-
-        /// <summary>
-        /// Populate th Classroom comboBox with the available classrooms
-        /// </summary>
-        private void PopulateClassroomComboBox()
-        {
-            List<Classroom> classroomList = new List<Classroom>();
-            classroomList = this.classroomController.GetAllClassrooms();
-            BindingList<Classroom> classrooms = new BindingList<Classroom>();
-            foreach (Classroom current in classroomList)
+            foreach (ClassRecord current in this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear))
             {
-                classrooms.Add(current);
-            }
-            this.comboBoxClassroom.DataSource = classrooms;
-            this.comboBoxClassroom.ValueMember = "Id";
-            this.comboBoxClassroom.DisplayMember = "Location";
-            this.comboBoxClassroom.SelectedIndex = -1;
-            this.comboBoxClassroom.SelectedText = "--select--";
+                classRecords.Add(current);
+            }           
+            this.comboBoxClass.SelectedIndex = -1;
         }
 
         /// <summary>
-        /// Populates the teacher listView
+        /// Populates the teacher listView with list from DB or appropriate message
         /// </summary>
-        private void PopulateSelectedTeacherList()
+        public void PopulateSelectedTeacherList()
         {
-            
+            this.listViewTeachers.Items.Clear();
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                ListViewItem item = new ListViewItem("No class chosen");
+                this.listViewTeachers.Items.Add(item);
+            }
+            else if (this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId()).Count == 0)
+            {
+                ListViewItem item = new ListViewItem("No teachers assigned");
+                this.listViewTeachers.Items.Add(item);
+            }
+            else
+            {
+                foreach (TeacherClassroomAssignment current in this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.GetSelectedClassId()))
+                {
+                    ListViewItem item = new ListViewItem(current.Teacher.FullName.ToString());
+                    this.listViewTeachers.Items.Add(item);
+                }
+            }
+            this.listViewTeachers.Columns[0].Width = this.listViewTeachers.Width;
+        }
+
+        /// <summary>
+        /// Get the classId for the selection in the comboBox
+        /// </summary>
+        /// <returns>ClassId for selected class (-1 if error)</returns>
+        private int GetSelectedClassId()
+        {
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                Console.WriteLine("No ClassRecord chosen yet.");
+                return -1;
+            }
+            else
+            {
+                return Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+            }          
+        }
+
+        /// <summary>
+        /// Set the text for the label showing the classroom of the selected class record
+        /// </summary>
+        private void SetClassroomValueLabel()
+        {
+            int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+            this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;
         }
 
         /// <summary>
@@ -95,7 +114,28 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonEditTeacherList_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                string title = "No Class Chosen";
+                string message = "Please choose a class and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                try
+                {
+                    ClassRecord selectedClassRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+                    SelectTeachersForClassForm selectTeacherForm = new SelectTeachersForClassForm(this, selectedClassRecord);
+                    selectTeacherForm.Show();
+                    this.Enabled = false;
+                }
+                catch (Exception)
+                {
+                    string title = "No Record of Class Found In Database";
+                    string message = "Please choose a class and try again.";
+                    MessageBox.Show(message, title);
+                }              
+            }           
         }
 
         /// <summary>
@@ -108,28 +148,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             if (this.comboBoxClass.SelectedIndex != -1)
             {
-                this.SelectClassroomFromClassRecordComboBoxChoice();
-            }
-        }
-        
-        /// <summary>
-        /// Attempt to set the selected index of the classroom comboBox based on the selected ClassRecord in the 
-        /// classRecord comboBox
-        /// </summary>
-        private void SelectClassroomFromClassRecordComboBoxChoice()
-        {
-            int selectedClassroomId;
-            try
-            {
-                selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-                this.comboBoxClassroom.SelectedValue = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Id;
-            }
-            catch (Exception)
-            {
-                this.comboBoxClassroom.SelectedIndex = -1;
+                this.SetClassroomValueLabel();
+                this.PopulateSelectedTeacherList();
             }
         }
 
+        /// <summary>
+        /// Handles click events of the New Class button and opens the appropriate form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonNewClass_Click(object sender, EventArgs e)
         {
             AddNewClassRecordForm addNewClassRecordForm = new AddNewClassRecordForm(this);
