@@ -92,10 +92,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             if (!this.originalListAssignedTeacherIds.Contains(employeeId))
             {
                 Console.WriteLine("---BEGIN ITEM (ADD)---");  // TODO: Remove after testing (All)
-                Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE ADD METHOD CALL..."); 
-                Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
-                Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
-                Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
+                //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE ADD METHOD CALL..."); 
+                //Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
+                //Console.WriteLine("Date: " + this.positionController.GetCurrentPositionRecord(employeeId).StartDate);
+                //Console.WriteLine("Position: " + this.positionController.GetCurrentPositionRecord(employeeId).Type);
                 TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
                 {
                     Teacher = this.employeeController.GetEmployee(employeeId),
@@ -113,13 +113,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     errorsFromAddOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
-                        "\r\n" + ex.Message;
+                        "\r\n\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
                 Console.WriteLine("-------------------------END ITEM (ADD)--------------------------------------");
             }
             if (errorsFromAddOperations != "")
             {
-                string title = "Error(s) Adding Teacher(s)";
+                string title = "Error Adding Teacher(s)";
                 string message = "Errors were found when adding teachers. The following teachers were not added: \r\n" + errorsFromAddOperations;
                 MessageBox.Show(message, title);
             }
@@ -137,7 +137,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 int employeeId = Int32.Parse(current.SubItems[1].Text);
                 TeacherClassroomAssignment teacherClassroomAssignment = this.originalTeacherClassroomAssignmentList[this.originalListAssignedTeacherIds.IndexOf(employeeId)];
 
-                //Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
+                Console.WriteLine("---BEGIN ITEM (REMOVE)---"); // TODO: Remove after testing (all)
                 //Console.WriteLine("VALUES FOR OBJECT FROM FORM BEFORE REMOVE METHOD CALL...");  
                 //Console.WriteLine("Name: " + this.employeeController.GetEmployee(employeeId).FullName);
                 //Console.WriteLine("Employee ID: " + this.employeeController.GetEmployee(employeeId).EmployeeId);
@@ -156,13 +156,13 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                     errorsFromRemoveOperations += "\r\nTeacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
                         "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
-                        "\r\n" + ex.Message;
+                        "\r\n\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
                 Console.WriteLine("-------------------------END ITEM (REMOVE)--------------------------------------");
             }
             if (errorsFromRemoveOperations != "")
             {
-                string title = "Error(s) Removing Teacher(s)";
+                string title = "Error Removing Teacher(s)";
                 string message = "Errors were found when removing teachers. The following teachers were not removed: \r\n" + errorsFromRemoveOperations;
                 MessageBox.Show(message, title);
             }
