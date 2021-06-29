@@ -158,8 +158,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsNotInClass.TabIndex = 9;
             this.listViewStudentsNotInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsNotInClass.View = System.Windows.Forms.View.Details;
-            this.listViewStudentsNotInClass.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListViewStudentsNotInClass_ItemChecked);
-            this.listViewStudentsNotInClass.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.ListViewStudentsNotInClass_ItemSelectionChanged);
             // 
             // studentNameAvailable
             // 
@@ -179,8 +177,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsInClass.TabIndex = 10;
             this.listViewStudentsInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsInClass.View = System.Windows.Forms.View.Details;
-            this.listViewStudentsInClass.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListViewStudentsInClass_ItemChecked);
-            this.listViewStudentsInClass.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.ListViewStudentsInClass_ItemSelectionChanged);
             // 
             // studentNameInClass
             // 
