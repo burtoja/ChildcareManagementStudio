@@ -57,6 +57,11 @@ namespace ChildcareManagementStudio.Controller
         /// <param name="studentClassroomAssignment">The student/classroom assignment being deleted.</param>
         public void DeleteStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
         {
+            if (studentClassroomAssignment == null)
+            {
+                throw new ArgumentNullException("studentClassroomAssignment", "The StudentClassroomAssignment object cannot be null.");
+            }
+
             studentClassroomAssignmentDAL.DeleteStudentClassroomAssignment(studentClassroomAssignment);
         }
     }
