@@ -14,7 +14,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ClassRecordController classRecordController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
-        private string schoolYear;
+        public string schoolYear;
 
         /// <summary>
         /// Constructor for the user control
@@ -24,7 +24,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.classRecordController = new ClassRecordController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
-            this.SetDefaultSchoolYear();
+            this.SetSchoolYear();
             this.PopulateClassComboBox();
             this.PopulateSelectedTeacherList();
         }
@@ -32,10 +32,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Sets the intial school year used for the page and sets the school year label to display it
         /// </summary>
-        private void SetDefaultSchoolYear()
+        private void SetSchoolYear()
         {
             this.schoolYear = "2021-22";    // TODO:  Make this dynamic
             this.labelValueSchoolYear.Text = this.schoolYear;
+        }
+
+        public void SetSchoolYear(string schoolYear)
+        {
+            this.schoolYear = schoolYear;    
+            this.labelValueSchoolYear.Text = this.schoolYear;
+        }
+
+        public string GetSchoolYear()
+        {
+            return this.schoolYear;
         }
 
         /// <summary>
@@ -162,6 +173,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             AddNewClassRecordForm addNewClassRecordForm = new AddNewClassRecordForm(this);
             addNewClassRecordForm.Show();
+        }
+
+        private void ButtonChangeSchoolYear_Click(object sender, EventArgs e)
+        {
+            SelectSchoolYearForm selectSchoolYearForm = new SelectSchoolYearForm(this);
+            selectSchoolYearForm.Show();
+            this.Enabled = false;
         }
     }
 }

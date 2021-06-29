@@ -89,6 +89,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonChangeSchoolYear.TabIndex = 4;
             this.buttonChangeSchoolYear.Text = "Change School Year";
             this.buttonChangeSchoolYear.UseVisualStyleBackColor = true;
+            this.buttonChangeSchoolYear.Click += new System.EventHandler(this.ButtonChangeSchoolYear_Click);
             // 
             // labelTeacher
             // 

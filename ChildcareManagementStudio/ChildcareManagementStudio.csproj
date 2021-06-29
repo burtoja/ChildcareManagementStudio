@@ -240,6 +240,12 @@
     <Compile Include="View\ClassroomViews\EditClassroomForm.Designer.cs">
       <DependentUpon>EditClassroomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\SelectSchoolYearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\SelectSchoolYearForm.Designer.cs">
+      <DependentUpon>SelectSchoolYearForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassroomViews\SelectTeachersForClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\EditClassroomForm.resx">
       <DependentUpon>EditClassroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\SelectSchoolYearForm.resx">
+      <DependentUpon>SelectSchoolYearForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\SelectTeachersForClassForm.resx">
       <DependentUpon>SelectTeachersForClassForm.cs</DependentUpon>

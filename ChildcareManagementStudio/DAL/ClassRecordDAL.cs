@@ -76,13 +76,15 @@ namespace ChildcareManagementStudio.DAL
 
             string selectStatement =
                 "SELECT classId, classroomId, schoolYear " +
-                "FROM Class";
+                "FROM Class " +
+                "WHERE schoolYear = $schoolYear";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
                 using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
                 {
+                    selectCommand.Parameters.AddWithValue("$schoolYear", schoolYear);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
                         int classIdOrdinal = reader.GetOrdinal("classId");
