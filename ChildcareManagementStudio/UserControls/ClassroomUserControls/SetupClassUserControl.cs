@@ -302,36 +302,45 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
-            string errorMessage = "";
-            ClassRecord classRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
-            foreach (ListViewItem current in this.listViewStudentsNotInClass.Items)
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                if (current.Checked)
-                {
-                    int studentId = Int32.Parse(current.SubItems[1].Text);                    
-                    StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()
-                    {
-                        Student = this.studentController.GetStudent(studentId),
-                        ClassRecord = classRecord
-                    };
-                    try
-                    {
-                        this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
-                    }
-                    catch (Exception ex)
-                    {
-                        errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
-                    }
-                }
-            }
-            if (errorMessage != "")
-            {
-                string title = "Error Adding Student(s)";
-                string message = "Errors were found when adding student(s). The following students were not updated:" + errorMessage;
+                string title = "No Class Chosen";
+                string message = "Please choose a class and try again.";
                 MessageBox.Show(message, title);
             }
-            PopulateAvailableStudentsListView();
-            PopulateAssignedStudentsListView();
+            else
+            {
+                string errorMessage = "";
+                ClassRecord classRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+                foreach (ListViewItem current in this.listViewStudentsNotInClass.Items)
+                {
+                    if (current.Checked)
+                    {
+                        int studentId = Int32.Parse(current.SubItems[1].Text);
+                        StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()
+                        {
+                            Student = this.studentController.GetStudent(studentId),
+                            ClassRecord = classRecord
+                        };
+                        try
+                        {
+                            this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
+                        }
+                        catch (Exception ex)
+                        {
+                            errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
+                        }
+                    }
+                }
+                if (errorMessage != "")
+                {
+                    string title = "Error Adding Student(s)";
+                    string message = "Errors were found when adding student(s). The following students were not updated:" + errorMessage;
+                    MessageBox.Show(message, title);
+                }
+                PopulateAvailableStudentsListView();
+                PopulateAssignedStudentsListView();
+            }
         }
 
         /// <summary>
@@ -341,36 +350,45 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonRemoveStudent_Click(object sender, EventArgs e)
         {
-            string errorMessage = "";
-            ClassRecord classRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
-            foreach (ListViewItem current in this.listViewStudentsInClass.Items)
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                if (current.Checked)
-                {
-                    int studentId = Int32.Parse(current.SubItems[1].Text);
-                    StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()
-                    {
-                        Student = this.studentController.GetStudent(studentId),
-                        ClassRecord = classRecord
-                    };
-                    try
-                    {
-                        this.studentClassroomAssignmentController.DeleteStudentClassroomAssignment(studentClassroomAssignment);
-                    }
-                    catch (Exception ex)
-                    {
-                        errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
-                    }
-                }
-            }
-            if (errorMessage != "")
-            {
-                string title = "Error Removing Student(s)";
-                string message = "Errors were found when removing student(s). The following students were not updated:" + errorMessage;
+                string title = "No Class Chosen";
+                string message = "Please choose a class and try again.";
                 MessageBox.Show(message, title);
             }
-            PopulateAvailableStudentsListView();
-            PopulateAssignedStudentsListView();
+            else
+            {
+                string errorMessage = "";
+                ClassRecord classRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+                foreach (ListViewItem current in this.listViewStudentsInClass.Items)
+                {
+                    if (current.Checked)
+                    {
+                        int studentId = Int32.Parse(current.SubItems[1].Text);
+                        StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()
+                        {
+                            Student = this.studentController.GetStudent(studentId),
+                            ClassRecord = classRecord
+                        };
+                        try
+                        {
+                            this.studentClassroomAssignmentController.DeleteStudentClassroomAssignment(studentClassroomAssignment);
+                        }
+                        catch (Exception ex)
+                        {
+                            errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
+                        }
+                    }
+                }
+                if (errorMessage != "")
+                {
+                    string title = "Error Removing Student(s)";
+                    string message = "Errors were found when removing student(s). The following students were not updated:" + errorMessage;
+                    MessageBox.Show(message, title);
+                }
+                PopulateAvailableStudentsListView();
+                PopulateAssignedStudentsListView();
+            }
         }
 
         /// <summary>
