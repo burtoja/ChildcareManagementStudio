@@ -108,6 +108,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName});
+            this.listViewTeachers.Enabled = false;
             this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTeachers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewTeachers.HideSelection = false;
@@ -149,6 +150,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsNotInClass.CheckBoxes = true;
             this.listViewStudentsNotInClass.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.studentNameAvailable});
+            this.listViewStudentsNotInClass.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewStudentsNotInClass.HideSelection = false;
             this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 166);
             this.listViewStudentsNotInClass.Name = "listViewStudentsNotInClass";
@@ -169,6 +171,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsInClass.CheckBoxes = true;
             this.listViewStudentsInClass.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.studentNameInClass});
+            this.listViewStudentsInClass.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewStudentsInClass.HideSelection = false;
             this.listViewStudentsInClass.Location = new System.Drawing.Point(421, 166);
             this.listViewStudentsInClass.Name = "listViewStudentsInClass";
@@ -253,6 +256,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelValueClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValueClassroom.ForeColor = System.Drawing.Color.Maroon;
             this.labelValueClassroom.Location = new System.Drawing.Point(116, 103);
+            this.labelValueClassroom.MaximumSize = new System.Drawing.Size(150, 0);
             this.labelValueClassroom.Name = "labelValueClassroom";
             this.labelValueClassroom.Size = new System.Drawing.Size(37, 19);
             this.labelValueClassroom.TabIndex = 17;
