@@ -39,7 +39,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonEditTeacherList = new System.Windows.Forms.Button();
             this.labelAddedStudents = new System.Windows.Forms.Label();
             this.listViewStudentsNotInClass = new System.Windows.Forms.ListView();
+            this.studentNameAvailable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewStudentsInClass = new System.Windows.Forms.ListView();
+            this.studentNameInClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddStudent = new System.Windows.Forms.Button();
             this.buttonRemoveStudent = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass = new System.Windows.Forms.Button();
             this.labelValueClassroom = new System.Windows.Forms.Label();
             this.buttonChangeClassroom = new System.Windows.Forms.Button();
-            this.studentNameAvailable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.studentNameInClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -157,6 +157,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsNotInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsNotInClass.View = System.Windows.Forms.View.Details;
             // 
+            // studentNameAvailable
+            // 
+            this.studentNameAvailable.Text = "Student Name";
+            this.studentNameAvailable.Width = 291;
+            // 
             // listViewStudentsInClass
             // 
             this.listViewStudentsInClass.CheckBoxes = true;
@@ -170,15 +175,20 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsInClass.View = System.Windows.Forms.View.Details;
             // 
+            // studentNameInClass
+            // 
+            this.studentNameInClass.Text = "Student Name";
+            this.studentNameInClass.Width = 292;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 21);
+            this.label1.Size = new System.Drawing.Size(162, 21);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Students in School:";
+            this.label1.Text = "Available Students:";
             // 
             // buttonAddStudent
             // 
@@ -252,16 +262,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonChangeClassroom.Text = "Change Classroom";
             this.buttonChangeClassroom.UseVisualStyleBackColor = true;
             this.buttonChangeClassroom.Click += new System.EventHandler(this.ButtonChangeClassroom_Click);
-            // 
-            // studentNameAvailable
-            // 
-            this.studentNameAvailable.Text = "Student Name";
-            this.studentNameAvailable.Width = 291;
-            // 
-            // studentNameInClass
-            // 
-            this.studentNameInClass.Text = "Student Name";
-            this.studentNameInClass.Width = 292;
             // 
             // SetupClassUserControl
             // 
