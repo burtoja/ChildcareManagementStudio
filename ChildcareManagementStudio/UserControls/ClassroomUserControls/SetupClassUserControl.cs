@@ -94,6 +94,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewTeachers.Columns[0].Width = this.listViewTeachers.Width;
         }
 
+        /// <summary>
+        /// Populates listView with available students based on school year if class is selected
+        /// </summary>
         private void PopulateAvailableStudentsListView()
         {
             this.listViewStudentsNotInClass.Items.Clear();
@@ -117,6 +120,34 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 }
             }
             this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width;
+        }
+
+        /// <summary>
+        /// Populates listView with assigned students if class is selected
+        /// </summary>
+        private void PopulateAssignedStudentsListView()
+        {
+            this.listViewStudentsInClass.Items.Clear();
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                ListViewItem item = new ListViewItem("No class chosen");
+                this.listViewStudentsInClass.Items.Add(item);
+            }
+            else if (this.studentClassroomAssignmentController.GetStudentsInClass(this.GetSelectedClassId()).Count == 0)
+            {
+                ListViewItem item = new ListViewItem("No students assigned to this class");
+                this.listViewStudentsInClass.Items.Add(item);
+            }
+            else
+            {
+                foreach (StudentClassroomAssignment current in this.studentClassroomAssignmentController.GetStudentsInClass(this.GetSelectedClassId()))
+                {
+                    ListViewItem item = new ListViewItem(current.Student.FullName.ToString());
+                    item.SubItems.Add(current.Student.StudentId.ToString());
+                    this.listViewStudentsInClass.Items.Add(item);
+                }
+            }
+            this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width;
         }
 
         /// <summary>
@@ -189,6 +220,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 this.SetClassroomValueLabel();
                 this.PopulateSelectedTeacherList();
                 PopulateAvailableStudentsListView();
+                PopulateAssignedStudentsListView();
             }
         }
 
