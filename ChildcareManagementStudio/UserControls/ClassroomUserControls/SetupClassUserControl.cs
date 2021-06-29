@@ -182,11 +182,35 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Enabled = false;
         }
 
+        /// <summary>
+        /// Handles button clicks of the change classroom button which opens up the change classroom form if
+        /// a valid class is selected 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonChangeClassroom_Click(object sender, EventArgs e)
         {
-            ChangeClassRecordClassroomForm form = new ChangeClassRecordClassroomForm(this, this.classRecordController.GetClassRecord(this.GetSelectedClassId()));
-            form.Show();
-            this.Enabled = false;
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                string title = "No Class Chosen";
+                string message = "Please choose a class and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                try
+                {
+                    ChangeClassRecordClassroomForm form = new ChangeClassRecordClassroomForm(this, this.classRecordController.GetClassRecord(this.GetSelectedClassId()));
+                    form.Show();
+                    this.Enabled = false;
+                }
+                catch (Exception)
+                {
+                    string title = "No Record of Class Found In Database";
+                    string message = "Please choose a class and try again.";
+                    MessageBox.Show(message, title);
+                }
+            }
         }
     }
 }

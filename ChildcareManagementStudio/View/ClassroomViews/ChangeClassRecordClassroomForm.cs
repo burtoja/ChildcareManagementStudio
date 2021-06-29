@@ -1,4 +1,5 @@
-﻿using ChildcareManagementStudio.Model;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     public partial class ChangeClassRecordClassroomForm : Form
     {
         private readonly SetupClassUserControl referringUserControl;
+        private readonly ClassroomController classroomController;
         private readonly ClassRecord classRecord;
 
         /// <summary>
@@ -25,7 +27,25 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.referringUserControl = referringUserControl;
+            this.classroomController = new ClassroomController();
             this.classRecord = classRecord;
+            this.PopulateClassroomComboBox();
+        }
+
+        /// <summary>
+        /// Populates the classroom comboBox from the DB
+        /// </summary>
+        private void PopulateClassroomComboBox()
+        {
+            BindingList<Classroom> classrooms = new BindingList<Classroom>();
+            this.comboBoxClassroom.DataSource = classrooms;
+            this.comboBoxClassroom.ValueMember = "Id";
+            this.comboBoxClassroom.DisplayMember = "Location";
+            foreach (Classroom current in this.classroomController.GetAllClassrooms())
+            {
+                classrooms.Add(current);
+            }
+            this.comboBoxClassroom.SelectedValue = this.classRecord.Classroom.Id;
         }
 
         /// <summary>
