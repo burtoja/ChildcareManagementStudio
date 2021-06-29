@@ -51,7 +51,10 @@ namespace ChildcareManagementStudio.Controller
             studentClassroomAssignmentDAL.AddStudentClassroomAssignment(studentClassroomAssignment);
         }
 
-        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        /// <summary>
+        /// Method that deletes a student/classroom assignment.
+        /// </summary>
+        /// <param name="studentClassroomAssignment">The student/classroom assignment being deleted.</param>
         public void DeleteStudentClassroomAssignment(StudentClassroomAssignment studentClassroomAssignment)
         {
             studentClassroomAssignmentDAL.DeleteStudentClassroomAssignment(studentClassroomAssignment);
