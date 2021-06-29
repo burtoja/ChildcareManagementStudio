@@ -195,5 +195,29 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Close();
             this.referringUserControl.PopulateSelectedTeacherList();
         }
+
+        /// <summary>
+        /// Checks item when selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewTeacherChoices_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            this.listViewTeacherChoices.FullRowSelect = e.Item.Checked;
+        }
+
+        /// <summary>
+        /// Selects item when checked so it is highlighted
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewTeacherChoices_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            this.listViewTeacherChoices.FullRowSelect = e.Item.Checked;
+            if (e.Item.Checked)
+            {
+                e.Item.Selected = true;
+            }
+        }
     }
 }

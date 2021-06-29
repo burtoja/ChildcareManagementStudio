@@ -54,6 +54,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.listViewTeacherChoices.TabIndex = 1;
             this.listViewTeacherChoices.UseCompatibleStateImageBehavior = false;
             this.listViewTeacherChoices.View = System.Windows.Forms.View.List;
+            this.listViewTeacherChoices.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListViewTeacherChoices_ItemChecked);
+            this.listViewTeacherChoices.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.ListViewTeacherChoices_ItemSelectionChanged);
             // 
             // buttonSubmit
             // 
