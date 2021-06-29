@@ -308,7 +308,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                         Student = this.studentController.GetStudent(studentId),
                         ClassRecord = classRecord
                     };
-                    this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
+                    try
+                    {
+                        this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
+                    }
+                    catch (Exception ex)
+                    {
+                        errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
+                    }
                 }
             }
             if (errorMessage != "")
