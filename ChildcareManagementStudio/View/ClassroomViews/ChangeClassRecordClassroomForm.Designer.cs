@@ -61,6 +61,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.TabIndex = 2;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // buttonCancel
             // 

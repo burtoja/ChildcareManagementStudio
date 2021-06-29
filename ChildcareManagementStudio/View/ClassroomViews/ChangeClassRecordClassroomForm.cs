@@ -17,6 +17,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     {
         private readonly SetupClassUserControl referringUserControl;
         private readonly ClassroomController classroomController;
+        private readonly ClassRecordController classRecordController;
         private readonly ClassRecord classRecord;
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             InitializeComponent();
             this.referringUserControl = referringUserControl;
             this.classroomController = new ClassroomController();
+            this.classRecordController = new ClassRecordController();
             this.classRecord = classRecord;
             this.PopulateClassroomComboBox();
         }
@@ -59,7 +61,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         }
 
         /// <summary>
-        /// HAndles form close events.  SHoudl re-enable referring UC
+        /// Handles form close events.  SHoudl re-enable referring UC
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -67,5 +69,46 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             this.referringUserControl.Enabled = true;
         }
+
+        /// <summary>
+        /// Handles submit button click events to submit the classroom to the record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.comboBoxClassroom.Text))
+            {
+                string title = "No Classroom Chosen";
+                string message = "Please choose a classroom and try again.";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                int selectedClassroomId = Int32.Parse(this.comboBoxClassroom.SelectedValue.ToString());
+                ClassRecord revisedClassRecord = new ClassRecord()
+                {
+                    ClassId = this.classRecord.ClassId,
+                    Classroom = this.classroomController.GetClassroom(selectedClassroomId),
+                    SchoolYear = this.classRecord.SchoolYear
+                };
+                try
+                {
+                    this.classRecordController.EditClass(this.classRecord, revisedClassRecord);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("UNIQUE"))
+                    {
+                        string title = "Room already in use";
+                        string message = "The room chosen is already assigned to another class.  " +
+                            "Please choose another classroom and try again.";
+                        MessageBox.Show(message, title);
+                    }
+                }
+            }
+        }
+
     }
 }
