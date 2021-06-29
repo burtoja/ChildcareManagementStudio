@@ -70,6 +70,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // ChangeClassRecordClassroomForm
             // 
@@ -88,6 +89,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Classroom Assigned to Class";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChangeClassRecordClassroomForm_FormClosed);
             this.ResumeLayout(false);
 
         }

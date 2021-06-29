@@ -181,5 +181,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             selectSchoolYearForm.Show();
             this.Enabled = false;
         }
+
+        private void ButtonChangeClassroom_Click(object sender, EventArgs e)
+        {
+            ChangeClassRecordClassroomForm form = new ChangeClassRecordClassroomForm(this, this.classRecordController.GetClassRecord(this.GetSelectedClassId()));
+            form.Show();
+            this.Enabled = false;
+        }
     }
 }

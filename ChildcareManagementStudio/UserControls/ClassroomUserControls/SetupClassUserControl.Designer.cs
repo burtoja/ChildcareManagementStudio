@@ -47,6 +47,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.buttonNewClass = new System.Windows.Forms.Button();
             this.labelValueClassroom = new System.Windows.Forms.Label();
+            this.buttonChangeClassroom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -231,9 +232,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelValueClassroom.TabIndex = 17;
             this.labelValueClassroom.Text = "n/a";
             // 
+            // buttonChangeClassroom
+            // 
+            this.buttonChangeClassroom.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeClassroom.Location = new System.Drawing.Point(272, 103);
+            this.buttonChangeClassroom.Name = "buttonChangeClassroom";
+            this.buttonChangeClassroom.Size = new System.Drawing.Size(126, 25);
+            this.buttonChangeClassroom.TabIndex = 18;
+            this.buttonChangeClassroom.Text = "Change Classroom";
+            this.buttonChangeClassroom.UseVisualStyleBackColor = true;
+            this.buttonChangeClassroom.Click += new System.EventHandler(this.ButtonChangeClassroom_Click);
+            // 
             // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.buttonChangeClassroom);
             this.Controls.Add(this.labelValueClassroom);
             this.Controls.Add(this.buttonNewClass);
             this.Controls.Add(this.comboBoxClass);
@@ -278,5 +291,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Button buttonNewClass;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.Label labelValueClassroom;
+        private System.Windows.Forms.Button buttonChangeClassroom;
     }
 }
