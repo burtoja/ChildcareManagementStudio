@@ -114,11 +114,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 ListViewItem item = new ListViewItem("No class chosen");
                 this.listViewStudentsNotInClass.Items.Add(item);
+                this.listViewStudentsNotInClass.CheckBoxes = false;
             }
             else if (this.studentClassroomAssignmentController.GetAvailableStudents(this.schoolYear).Count == 0)
             {
                 ListViewItem item = new ListViewItem("No students available");
                 this.listViewStudentsNotInClass.Items.Add(item);
+                this.listViewStudentsNotInClass.CheckBoxes = false;
             }
             else
             {
@@ -127,6 +129,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     ListViewItem item = new ListViewItem(current.FullName.ToString());
                     item.SubItems.Add(current.StudentId.ToString());
                     this.listViewStudentsNotInClass.Items.Add(item);
+                    this.listViewStudentsNotInClass.CheckBoxes = true;
                 }
             }
             this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width;
@@ -140,13 +143,15 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsInClass.Items.Clear();
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                ListViewItem item = new ListViewItem("No class chosen");
+                ListViewItem item = new ListViewItem("No class chosen");               
                 this.listViewStudentsInClass.Items.Add(item);
+                this.listViewStudentsInClass.CheckBoxes = false;
             }
             else if (this.studentClassroomAssignmentController.GetStudentsInClass(this.GetSelectedClassId()).Count == 0)
             {
-                ListViewItem item = new ListViewItem("No students assigned to this class");
+                ListViewItem item = new ListViewItem("No students assigned to this class");              
                 this.listViewStudentsInClass.Items.Add(item);
+                this.listViewStudentsInClass.CheckBoxes = false;
             }
             else
             {
@@ -155,6 +160,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     ListViewItem item = new ListViewItem(current.Student.FullName.ToString());
                     item.SubItems.Add(current.Student.StudentId.ToString());
                     this.listViewStudentsInClass.Items.Add(item);
+                    this.listViewStudentsInClass.CheckBoxes = true;
                 }
             }
             this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width;
