@@ -62,6 +62,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void SelectSchoolYearForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.referringUserControl.Enabled = true;
+            this.referringUserControl.PopulateClassComboBox();
         }
 
         private void ButtonSubmit_Click(object sender, EventArgs e)
