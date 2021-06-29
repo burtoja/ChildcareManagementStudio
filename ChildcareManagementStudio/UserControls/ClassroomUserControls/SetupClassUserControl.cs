@@ -372,5 +372,53 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             PopulateAvailableStudentsListView();
             PopulateAssignedStudentsListView();
         }
+
+        /// <summary>
+        /// Selects item when checked so it is highlighted
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewStudentsNotInClass_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            this.listViewStudentsNotInClass.FullRowSelect = e.Item.Checked;
+            if (e.Item.Checked)
+            {
+                e.Item.Selected = true;
+            }
+        }
+
+        /// <summary>
+        /// Selects item when checked so it is highlighted
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewStudentsInClass_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            this.listViewStudentsInClass.FullRowSelect = e.Item.Checked;
+            if (e.Item.Checked)
+            {
+                e.Item.Selected = true;
+            }
+        }
+
+        /// <summary>
+        /// Checks item when selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewStudentsNotInClass_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            this.listViewStudentsNotInClass.FullRowSelect = e.Item.Checked;
+        }
+
+        /// <summary>
+        /// Checks item when selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewStudentsInClass_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            this.listViewStudentsInClass.FullRowSelect = e.Item.Checked;
+        }
     }
 }
