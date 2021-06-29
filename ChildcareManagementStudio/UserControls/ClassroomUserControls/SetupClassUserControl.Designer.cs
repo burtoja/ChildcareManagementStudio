@@ -198,6 +198,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonAddStudent.TabIndex = 12;
             this.buttonAddStudent.Text = "-->";
             this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click);
             // 
             // buttonRemoveStudent
             // 
@@ -207,6 +208,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonRemoveStudent.TabIndex = 13;
             this.buttonRemoveStudent.Text = "<--";
             this.buttonRemoveStudent.UseVisualStyleBackColor = true;
+            this.buttonRemoveStudent.Click += new System.EventHandler(this.ButtonRemoveStudent_Click);
             // 
             // labelClass
             // 

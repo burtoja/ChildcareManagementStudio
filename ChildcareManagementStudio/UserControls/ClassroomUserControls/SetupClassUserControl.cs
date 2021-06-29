@@ -15,6 +15,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private readonly ClassRecordController classRecordController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
         private readonly StudentClassroomAssignmentController studentClassroomAssignmentController;
+        private readonly StudentController studentController;
         public string schoolYear;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classRecordController = new ClassRecordController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
             this.studentClassroomAssignmentController = new StudentClassroomAssignmentController();
+            this.studentController = new StudentController();
             this.SetSchoolYear();
             this.PopulateClassComboBox();
             this.PopulateSelectedTeacherList();
@@ -285,6 +287,48 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     MessageBox.Show(message, title);
                 }
             }
+        }
+
+        /// <summary>
+        /// Handles the add student button click which adds selected available students to the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonAddStudent_Click(object sender, EventArgs e)
+        {
+            string errorMessage = "";
+            ClassRecord classRecord = this.classRecordController.GetClassRecord(this.GetSelectedClassId());
+            foreach (ListViewItem current in this.listViewStudentsNotInClass.Items)
+            {
+                if (current.Checked)
+                {
+                    int studentId = Int32.Parse(current.SubItems[1].Text);                    
+                    StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()
+                    {
+                        Student = this.studentController.GetStudent(studentId),
+                        ClassRecord = classRecord
+                    };
+                    this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
+                }
+            }
+            if (errorMessage != "")
+            {
+                string title = "Error Adding Student(s)";
+                string message = "Errors were found when adding student(s). The following students were not updated:" + errorMessage;
+                MessageBox.Show(message, title);
+            }
+            PopulateAvailableStudentsListView();
+            PopulateAssignedStudentsListView();
+        }
+
+        /// <summary>
+        /// Handles the remove student button click which removes selected students from the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonRemoveStudent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
