@@ -234,6 +234,12 @@
     <Compile Include="View\ClassroomViews\AddNewClassroomForm.Designer.cs">
       <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassroomViews\ChangeClassRecordClassroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClassroomViews\ChangeClassRecordClassroomForm.Designer.cs">
+      <DependentUpon>ChangeClassRecordClassroomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassroomViews\EditClassroomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\AddNewClassroomForm.resx">
       <DependentUpon>AddNewClassroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClassroomViews\ChangeClassRecordClassroomForm.resx">
+      <DependentUpon>ChangeClassRecordClassroomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\EditClassroomForm.resx">
       <DependentUpon>EditClassroomForm.cs</DependentUpon>
