@@ -14,6 +14,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ClassRecordController classRecordController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
+        private readonly StudentClassroomAssignmentController studentClassroomAssignmentController;
         public string schoolYear;
 
         /// <summary>
@@ -24,6 +25,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.classRecordController = new ClassRecordController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
+            this.studentClassroomAssignmentController = new StudentClassroomAssignmentController();
             this.SetSchoolYear();
             this.PopulateClassComboBox();
             this.PopulateSelectedTeacherList();
@@ -90,6 +92,31 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 }
             }
             this.listViewTeachers.Columns[0].Width = this.listViewTeachers.Width;
+        }
+
+        private void PopulateAvailableStudentsListView()
+        {
+            this.listViewStudentsNotInClass.Items.Clear();
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                ListViewItem item = new ListViewItem("No class chosen");
+                this.listViewStudentsNotInClass.Items.Add(item);
+            }
+            else if (this.studentClassroomAssignmentController.GetAvailableStudents(this.schoolYear).Count == 0)
+            {
+                ListViewItem item = new ListViewItem("No students available");
+                this.listViewStudentsNotInClass.Items.Add(item);
+            }
+            else
+            {
+                foreach (Student current in this.studentClassroomAssignmentController.GetAvailableStudents(this.schoolYear))
+                {
+                    ListViewItem item = new ListViewItem(current.FullName.ToString());
+                    item.SubItems.Add(current.StudentId.ToString());
+                    this.listViewStudentsNotInClass.Items.Add(item);
+                }
+            }
+            this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width;
         }
 
         /// <summary>
@@ -161,6 +188,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 this.SetClassroomValueLabel();
                 this.PopulateSelectedTeacherList();
+                PopulateAvailableStudentsListView();
             }
         }
 

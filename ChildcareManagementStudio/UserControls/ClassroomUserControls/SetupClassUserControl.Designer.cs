@@ -48,6 +48,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass = new System.Windows.Forms.Button();
             this.labelValueClassroom = new System.Windows.Forms.Label();
             this.buttonChangeClassroom = new System.Windows.Forms.Button();
+            this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -144,12 +145,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // listViewStudentsNotInClass
             // 
+            this.listViewStudentsNotInClass.CheckBoxes = true;
+            this.listViewStudentsNotInClass.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.studentName});
             this.listViewStudentsNotInClass.HideSelection = false;
             this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 166);
             this.listViewStudentsNotInClass.Name = "listViewStudentsNotInClass";
             this.listViewStudentsNotInClass.Size = new System.Drawing.Size(298, 244);
             this.listViewStudentsNotInClass.TabIndex = 9;
             this.listViewStudentsNotInClass.UseCompatibleStateImageBehavior = false;
+            this.listViewStudentsNotInClass.View = System.Windows.Forms.View.Details;
             // 
             // listViewStudentsInClass
             // 
@@ -243,6 +248,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonChangeClassroom.UseVisualStyleBackColor = true;
             this.buttonChangeClassroom.Click += new System.EventHandler(this.ButtonChangeClassroom_Click);
             // 
+            // studentName
+            // 
+            this.studentName.Text = "Student Name";
+            // 
             // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -292,5 +301,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.Label labelValueClassroom;
         private System.Windows.Forms.Button buttonChangeClassroom;
+        private System.Windows.Forms.ColumnHeader studentName;
     }
 }
