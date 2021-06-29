@@ -40,12 +40,20 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelValueSchoolYear.Text = this.schoolYear;
         }
 
+        /// <summary>
+        /// Set school year to be used by the UC for populating various elements
+        /// </summary>
+        /// <param name="schoolYear">string representation of school year (i.e. "2020-21")</param>
         public void SetSchoolYear(string schoolYear)
         {
             this.schoolYear = schoolYear;    
             this.labelValueSchoolYear.Text = this.schoolYear;
         }
 
+        /// <summary>
+        /// Get the school year string
+        /// </summary>
+        /// <returns>sstring representation of school year</returns>
         public string GetSchoolYear()
         {
             return this.schoolYear;
@@ -235,6 +243,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             addNewClassRecordForm.Show();
         }
 
+        /// <summary>
+        /// Handles click events from the change school year button.
+        /// Opens up change school year form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonChangeSchoolYear_Click(object sender, EventArgs e)
         {
             SelectSchoolYearForm selectSchoolYearForm = new SelectSchoolYearForm(this);
