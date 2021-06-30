@@ -35,7 +35,6 @@ namespace ChildcareManagementStudioTests.DAL
             Assert.AreEqual("FL", firstEmployee.State);
             Assert.AreEqual("32830", firstEmployee.ZipCode);
             Assert.AreEqual(1, firstEmployee.EmployeeId);
-            Assert.AreEqual(new DateTime(2021, 6, 5), firstEmployee.StartDate);
             Assert.AreEqual(1, firstEmployee.SalaryRecords.Count);
             Assert.AreEqual(new DateTime(2021, 6, 5), firstEmployee.SalaryRecords[0].EffectiveDate);
             Assert.AreEqual(10.00, firstEmployee.SalaryRecords[0].Rate);
@@ -59,7 +58,6 @@ namespace ChildcareManagementStudioTests.DAL
             Assert.AreEqual("FL", secondEmployee.State);
             Assert.AreEqual("32830", secondEmployee.ZipCode);
             Assert.AreEqual(2, secondEmployee.EmployeeId);
-            Assert.AreEqual(new DateTime(2021, 6, 7), secondEmployee.StartDate);
             Assert.AreEqual(1, secondEmployee.SalaryRecords.Count);
             Assert.AreEqual(new DateTime(2021, 6, 7), secondEmployee.SalaryRecords[0].EffectiveDate);
             Assert.AreEqual(9.75, secondEmployee.SalaryRecords[0].Rate);

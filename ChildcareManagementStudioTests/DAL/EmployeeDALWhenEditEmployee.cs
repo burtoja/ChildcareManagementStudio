@@ -40,8 +40,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Lake Buena Vista",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             Assert.ThrowsException<System.ArgumentNullException>(() => employeeDAL.EditEmployee(originalEmployee, revisedEmployee));
@@ -63,8 +62,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             Employee revisedEmployee = null;
@@ -88,8 +86,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             Employee revisedEmployee = new Employee
@@ -105,8 +102,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Lake Buena Vista",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             Assert.ThrowsException<System.ArgumentException>(() => employeeDAL.EditEmployee(originalEmployee, revisedEmployee));
@@ -128,8 +124,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             List<SalaryRecord> revisedSalaryRecords = new List<SalaryRecord>();
@@ -154,7 +149,6 @@ namespace ChildcareManagementStudioTests.DAL
                 City = "Lake Buena Vista",
                 State = "FL",
                 ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5),
                 SalaryRecords = revisedSalaryRecords
             };
 
@@ -177,8 +171,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             List<CertificationRecord> revisedCertificationRecords = new List<CertificationRecord>();
@@ -203,7 +196,6 @@ namespace ChildcareManagementStudioTests.DAL
                 City = "Lake Buena Vista",
                 State = "FL",
                 ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5),
                 CertificationRecords = revisedCertificationRecords
             };
 
@@ -226,8 +218,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             List<PositionRecord> revisedPositionRecords = new List<PositionRecord>();
@@ -252,7 +243,6 @@ namespace ChildcareManagementStudioTests.DAL
                 City = "Lake Buena Vista",
                 State = "FL",
                 ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5),
                 PositionRecords = revisedPositionRecords
             };
 
@@ -275,8 +265,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 5)
+                ZipCode = "32830"
             };
 
             Employee revisedEmployee = new Employee
@@ -292,15 +281,13 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "123 Clubhouse Lane",
                 City = "Lake Buena Vista",
                 State = "FL",
-                ZipCode = "32830",
-                StartDate = new DateTime(2021, 6, 6)
+                ZipCode = "32830"
             };
 
             employeeDAL.EditEmployee(originalEmployee, revisedEmployee);
 
             Employee retrievedEmployee = employeeDAL.GetEmployee(originalEmployee.EmployeeId);
             Assert.AreEqual("Lake Buena Vista", retrievedEmployee.City);
-            Assert.AreEqual(new DateTime(2021, 6, 6), retrievedEmployee.StartDate);
 
             employeeDAL.EditEmployee(revisedEmployee, originalEmployee);    // this line is intended to undo the change made during the test
         }

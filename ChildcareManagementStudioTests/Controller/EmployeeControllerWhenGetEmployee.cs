@@ -52,7 +52,6 @@ namespace ChildcareManagementStudioTests.Controller
             Assert.AreEqual("FL", employee.State);
             Assert.AreEqual("32830", employee.ZipCode);
             Assert.AreEqual(employeeId, employee.EmployeeId);
-            Assert.AreEqual(new DateTime(2021, 6, 5), employee.StartDate);
 
             Assert.AreEqual(1, employee.SalaryRecords.Count);
             Assert.AreEqual(new DateTime(2021, 6, 5), employee.SalaryRecords[0].EffectiveDate);
