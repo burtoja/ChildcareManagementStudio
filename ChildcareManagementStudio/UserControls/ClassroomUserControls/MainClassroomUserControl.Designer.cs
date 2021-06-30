@@ -33,8 +33,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabPageListClassrooms = new System.Windows.Forms.TabPage();
             this.tabPageEditClass = new System.Windows.Forms.TabPage();
             this.tabPageAttendanceSheet = new System.Windows.Forms.TabPage();
+            this.attendanceReportUserControl1 = new ChildcareManagementStudio.UserControls.ClassroomUserControls.AttendanceReportUserControl();
             this.tabPageSignInSheet = new System.Windows.Forms.TabPage();
             this.tabControlMainClassroom.SuspendLayout();
+            this.tabPageAttendanceSheet.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMainClassroom
@@ -47,57 +49,74 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabControlMainClassroom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMainClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMainClassroom.Location = new System.Drawing.Point(0, 0);
+            this.tabControlMainClassroom.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlMainClassroom.Name = "tabControlMainClassroom";
             this.tabControlMainClassroom.SelectedIndex = 0;
-            this.tabControlMainClassroom.Size = new System.Drawing.Size(760, 515);
+            this.tabControlMainClassroom.Size = new System.Drawing.Size(1013, 634);
             this.tabControlMainClassroom.TabIndex = 0;
             // 
             // tabPageListClassrooms
             // 
             this.tabPageListClassrooms.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageListClassrooms.Location = new System.Drawing.Point(4, 33);
+            this.tabPageListClassrooms.Location = new System.Drawing.Point(4, 35);
+            this.tabPageListClassrooms.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageListClassrooms.Name = "tabPageListClassrooms";
-            this.tabPageListClassrooms.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageListClassrooms.Size = new System.Drawing.Size(752, 478);
+            this.tabPageListClassrooms.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageListClassrooms.Size = new System.Drawing.Size(1005, 595);
             this.tabPageListClassrooms.TabIndex = 1;
             this.tabPageListClassrooms.Text = "List Classrooms";
             // 
             // tabPageEditClass
             // 
             this.tabPageEditClass.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageEditClass.Location = new System.Drawing.Point(4, 33);
+            this.tabPageEditClass.Location = new System.Drawing.Point(4, 35);
+            this.tabPageEditClass.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageEditClass.Name = "tabPageEditClass";
-            this.tabPageEditClass.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEditClass.Size = new System.Drawing.Size(752, 478);
+            this.tabPageEditClass.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageEditClass.Size = new System.Drawing.Size(1005, 595);
             this.tabPageEditClass.TabIndex = 0;
             this.tabPageEditClass.Text = "Edit Class";
             // 
             // tabPageAttendanceSheet
             // 
             this.tabPageAttendanceSheet.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageAttendanceSheet.Location = new System.Drawing.Point(4, 33);
+            this.tabPageAttendanceSheet.Controls.Add(this.attendanceReportUserControl1);
+            this.tabPageAttendanceSheet.Location = new System.Drawing.Point(4, 35);
+            this.tabPageAttendanceSheet.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAttendanceSheet.Name = "tabPageAttendanceSheet";
-            this.tabPageAttendanceSheet.Size = new System.Drawing.Size(752, 478);
+            this.tabPageAttendanceSheet.Size = new System.Drawing.Size(1005, 595);
             this.tabPageAttendanceSheet.TabIndex = 2;
             this.tabPageAttendanceSheet.Text = "Generate Attendance Sheet";
+            // 
+            // attendanceReportUserControl1
+            // 
+            this.attendanceReportUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attendanceReportUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.attendanceReportUserControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.attendanceReportUserControl1.Name = "attendanceReportUserControl1";
+            this.attendanceReportUserControl1.Size = new System.Drawing.Size(1256, 744);
+            this.attendanceReportUserControl1.TabIndex = 0;
             // 
             // tabPageSignInSheet
             // 
             this.tabPageSignInSheet.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageSignInSheet.Location = new System.Drawing.Point(4, 33);
+            this.tabPageSignInSheet.Location = new System.Drawing.Point(4, 35);
+            this.tabPageSignInSheet.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageSignInSheet.Name = "tabPageSignInSheet";
-            this.tabPageSignInSheet.Size = new System.Drawing.Size(752, 478);
+            this.tabPageSignInSheet.Size = new System.Drawing.Size(1005, 595);
             this.tabPageSignInSheet.TabIndex = 3;
             this.tabPageSignInSheet.Text = "Generate Sign-in Sheet";
             // 
             // MainClassroomUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControlMainClassroom);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainClassroomUserControl";
-            this.Size = new System.Drawing.Size(760, 515);
+            this.Size = new System.Drawing.Size(1013, 634);
             this.tabControlMainClassroom.ResumeLayout(false);
+            this.tabPageAttendanceSheet.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -109,5 +128,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.TabPage tabPageListClassrooms;
         private System.Windows.Forms.TabPage tabPageAttendanceSheet;
         private System.Windows.Forms.TabPage tabPageSignInSheet;
+        private AttendanceReportUserControl attendanceReportUserControl1;
     }
 }
