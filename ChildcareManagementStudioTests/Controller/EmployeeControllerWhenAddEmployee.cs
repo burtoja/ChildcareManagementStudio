@@ -22,26 +22,6 @@ namespace ChildcareManagementStudioTests.Controller
         }
 
         [TestMethod]
-        public void ShouldThrowExceptionIfEmployeeIsMissingMandatoryProperty()
-        {
-            Employee employeeToAdd = new Employee
-            {
-                LastName = "Duck",
-                FirstName = "Daffy",
-                DateOfBirth = new DateTime(1950, 6, 1),
-                SocialSecurityNumber = "666-66-6666",
-                Gender = "F",
-                PhoneNumber = "(333) 333-3333",
-                AddressLine1 = "7550 Maple Street",
-                City = "Orlando",
-                State = "FL",
-                ZipCode = "32789"
-            };
-
-            Assert.ThrowsException<System.ArgumentException>(() => employeeController.AddEmployee(employeeToAdd));
-        }
-
-        [TestMethod]
         public void ShouldThrowExceptionIfEmployeeAlreadyHasEmployeeId()
         {
             Employee employeeToAdd = new Employee
@@ -56,8 +36,7 @@ namespace ChildcareManagementStudioTests.Controller
                 AddressLine1 = "7550 Maple Street",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32789",
-                StartDate = new DateTime(2021, 6, 7)
+                ZipCode = "32789"
             };
 
             Assert.ThrowsException<System.ArgumentException>(() => employeeController.AddEmployee(employeeToAdd));
@@ -77,8 +56,7 @@ namespace ChildcareManagementStudioTests.Controller
                 AddressLine1 = "7550 Maple Street",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32789",
-                StartDate = new DateTime(2021, 6, 7)
+                ZipCode = "32789"
             };
 
             Assert.AreEqual(default, employeeToAdd.EmployeeId);

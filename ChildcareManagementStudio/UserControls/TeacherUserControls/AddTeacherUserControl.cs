@@ -62,8 +62,7 @@ namespace ChildcareManagementStudio.UserControls
                         AddressLine2 = address2,
                         City = city,
                         State = state,
-                        ZipCode = zip,
-                        StartDate = startDate
+                        ZipCode = zip
                     };
                     this.employeeController.AddEmployee(newEmployee);                   
                     String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
