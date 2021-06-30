@@ -85,7 +85,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         /// <param name="current">current ListViewItem to be added if it meets the conditions</param>
         /// <returns>error message</returns>
-        private string AddSelectedTeacherCalssroomAssignments(ListViewItem current)
+        private string AddSelectedTeacherClassroomAssignments(ListViewItem current)
         {
             string errorsFromAddOperations = "";
             int employeeId = Int32.Parse(current.SubItems[1].Text);
@@ -183,7 +183,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 }
                 else
                 {
-                    errorMessage += this.AddSelectedTeacherCalssroomAssignments(current);
+                    errorMessage += this.AddSelectedTeacherClassroomAssignments(current);
                 }                
             }
             if (errorMessage != "")
@@ -195,5 +195,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Close();
             this.referringUserControl.PopulateSelectedTeacherList();
         }
+
     }
 }
