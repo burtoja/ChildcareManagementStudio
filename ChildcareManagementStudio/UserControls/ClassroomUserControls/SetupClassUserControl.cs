@@ -186,7 +186,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Set the text for the label showing the classroom of the selected class record
         /// </summary>
-        private void SetClassroomValueLabel()
+        public void SetClassroomValueLabel()
         {
             int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
             this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;
