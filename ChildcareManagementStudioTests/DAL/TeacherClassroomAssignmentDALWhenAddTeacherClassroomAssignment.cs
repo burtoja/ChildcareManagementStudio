@@ -37,29 +37,21 @@ namespace ChildcareManagementStudioTests.DAL
 
             ClassRecord classRecord = new ClassRecord()
             {
-                ClassId = 1
+                ClassId = 2
             };
-
-            string positionType = "Lead teacher";
-
-            DateTime startDate = new DateTime(2022, 8, 1);
 
             TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment()
             {
                 Teacher = teacher,
-                ClassRecord = classRecord,
-                StartDate = startDate,
-                PositionType = positionType
+                ClassRecord = classRecord
             };
 
             teacherClassroomAssignmentDAL.AddTeacherClassroomAssignment(teacherClassroomAssignment);
 
-            List<TeacherClassroomAssignment> teacherClassroomAssignments = teacherClassroomAssignmentDAL.GetTeacherClassroomAssignments(1);
-            Assert.AreEqual(3, teacherClassroomAssignments.Count);
-            Assert.AreEqual(teacher.EmployeeId, teacherClassroomAssignments[2].Teacher.EmployeeId);
-            Assert.AreEqual(classRecord.ClassId, teacherClassroomAssignments[2].ClassRecord.ClassId);
-            Assert.AreEqual(startDate, teacherClassroomAssignments[2].StartDate);
-            Assert.AreEqual(positionType, teacherClassroomAssignments[2].PositionType);
+            List<TeacherClassroomAssignment> teacherClassroomAssignments = teacherClassroomAssignmentDAL.GetTeacherClassroomAssignments(2);
+            Assert.AreEqual(1, teacherClassroomAssignments.Count);
+            Assert.AreEqual(teacher.EmployeeId, teacherClassroomAssignments[0].Teacher.EmployeeId);
+            Assert.AreEqual(classRecord.ClassId, teacherClassroomAssignments[0].ClassRecord.ClassId);
 
             teacherClassroomAssignmentDAL.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
         }

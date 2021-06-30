@@ -27,10 +27,8 @@ namespace ChildcareManagementStudioTests.Controller
             List<TeacherClassroomAssignment> teacherClassroomAssignments = teacherClassroomAssignmentController.GetTeacherClassroomAssignments(classId);
             Assert.AreEqual(2, teacherClassroomAssignments.Count);
             Assert.AreEqual(1, teacherClassroomAssignments[0].Teacher.EmployeeId);
-            Assert.AreEqual(new DateTime(2021, 8, 1), teacherClassroomAssignments[0].StartDate);
             Assert.AreEqual("A-101", teacherClassroomAssignments[0].ClassRecord.Classroom.Location);
             Assert.AreEqual("2021-22", teacherClassroomAssignments[0].ClassRecord.SchoolYear);
-            Assert.AreEqual("Lead teacher", teacherClassroomAssignments[0].PositionType);
         }
     }
 }
