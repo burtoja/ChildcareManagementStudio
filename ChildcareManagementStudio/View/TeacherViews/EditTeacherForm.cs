@@ -70,7 +70,6 @@ namespace ChildcareManagementStudio.View
                         City = city,
                         State = state,
                         ZipCode = zip,
-                        StartDate = startDate,
                         SalaryRecords = this.originalEmployee.SalaryRecords,
                         CertificationRecords = this.originalEmployee.CertificationRecords,
                         PositionRecords = this.originalEmployee.PositionRecords

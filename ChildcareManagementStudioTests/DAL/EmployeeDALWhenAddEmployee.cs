@@ -22,26 +22,6 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldThrowExceptionIfEmployeeIsMissingMandatoryProperty()
-        {
-            Employee employeeToAdd = new Employee
-            {
-                LastName = "Duck",
-                FirstName = "Daffy",
-                DateOfBirth = new DateTime(1950, 6, 1),
-                SocialSecurityNumber = "555-55-5555",
-                Gender = "F",
-                PhoneNumber = "(333) 333-3333",
-                AddressLine1 = "7550 Maple Street",
-                City = "Orlando",
-                State = "FL",
-                ZipCode = "32789"
-            };
-
-            Assert.ThrowsException<System.ArgumentException>(() => employeeDAL.AddEmployee(employeeToAdd));
-        }
-
-        [TestMethod]
         public void ShouldThrowExceptionIfEmployeeAlreadyHasEmployeeId()
         {
             Employee employeeToAdd = new Employee
@@ -56,8 +36,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "7550 Maple Street",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32789",
-                StartDate = new DateTime(2021, 6, 7)
+                ZipCode = "32789"
             };
 
             Assert.ThrowsException<System.ArgumentException>(() => employeeDAL.AddEmployee(employeeToAdd));
@@ -77,8 +56,7 @@ namespace ChildcareManagementStudioTests.DAL
                 AddressLine1 = "7550 Maple Street",
                 City = "Orlando",
                 State = "FL",
-                ZipCode = "32789",
-                StartDate = new DateTime(2021, 6, 7)
+                ZipCode = "32789"
             };
 
             Assert.AreEqual(default, employeeToAdd.EmployeeId);

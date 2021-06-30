@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChildcareManagementStudio.Model
 {
@@ -16,7 +17,14 @@ namespace ChildcareManagementStudio.Model
         /// <summary>
         /// Property indicating when the employee started at the center.
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate
+        {
+            get
+            {
+                List<PositionRecord> sortedPositionRecords = PositionRecords.OrderBy(x => x.StartDate).ToList();
+                return sortedPositionRecords.First().StartDate;
+            }
+        }
 
         /// <summary>
         /// Property containing an employee's salary records.

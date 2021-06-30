@@ -39,7 +39,7 @@ namespace ChildcareManagementStudio.DAL
             Employee employee = new Employee();
 
             string selectStatement =
-                "SELECT personId, startDate " +
+                "SELECT personId " +
                 "FROM Employee " +
                 "WHERE employeeId = $employeeId";
 
@@ -57,13 +57,10 @@ namespace ChildcareManagementStudio.DAL
                         }
 
                         int personIdOrdinal = reader.GetOrdinal("personId");
-                        int startDateOrdinal = reader.GetOrdinal("startDate");
                         while (reader.Read())
                         {
                             employee.EmployeeId = employeeId;
-
                             employee.PersonId = reader.GetInt32(personIdOrdinal);
-                            employee.StartDate = reader.GetDateTime(startDateOrdinal);
 
                             Person person = GetPerson(employee.PersonId);
                             employee.LastName = person.LastName;
@@ -98,7 +95,7 @@ namespace ChildcareManagementStudio.DAL
             List<Employee> employees = new List<Employee>();
 
             string selectStatement =
-                "SELECT e.personId, e.employeeId, e.startDate " +
+                "SELECT e.personId, e.employeeId " +
                 "FROM Employee e " +
                 "JOIN Person p ON e.personId = p.personId " +
                 "ORDER BY p.lastName, p.firstName";
@@ -112,14 +109,12 @@ namespace ChildcareManagementStudio.DAL
                     {
                         int personIdOrdinal = reader.GetOrdinal("personId");
                         int employeeIdOrdinal = reader.GetOrdinal("employeeId");
-                        int startDateOrdinal = reader.GetOrdinal("startDate");
                         while (reader.Read())
                         {
                             Employee employee = new Employee
                             {
                                 PersonId = reader.GetInt32(personIdOrdinal),
-                                EmployeeId = reader.GetInt32(employeeIdOrdinal),
-                                StartDate = reader.GetDateTime(startDateOrdinal)
+                                EmployeeId = reader.GetInt32(employeeIdOrdinal)
                             };
 
                             Person person = GetPerson(employee.PersonId);
@@ -160,11 +155,6 @@ namespace ChildcareManagementStudio.DAL
         /// </param>
         public void AddEmployee(Employee employee)
         {
-            if (employee.StartDate == default)
-            {
-                throw new ArgumentException("The Employee object must have a value for the StartDate property.", "employee");
-            }
-
             if (employee.EmployeeId != default)
             {
                 throw new ArgumentException("The EmployeeId property cannot be filled out because it will be assigned by the database.", "employee");
@@ -180,8 +170,8 @@ namespace ChildcareManagementStudio.DAL
             AddPerson(employee);
 
             string insertStatement =
-                "INSERT INTO Employee (personId, startDate) " +
-                "VALUES ($personId, $startDate)";
+                "INSERT INTO Employee (personId) " +
+                "VALUES ($personId)";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -190,7 +180,6 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$personId", employee.PersonId);
-                    insertCommand.Parameters.AddWithValue("$startDate", employee.StartDate.ToString("yyyy-MM-dd"));
                     insertCommand.ExecuteNonQuery();
                 }
 
@@ -250,6 +239,7 @@ namespace ChildcareManagementStudio.DAL
 
             EditPerson(originalEmployee, revisedEmployee);
 
+            /*
             string updateStatement =
                 "UPDATE Employee SET " +
                     "startDate = $revisedStartDate " +
@@ -269,6 +259,7 @@ namespace ChildcareManagementStudio.DAL
                     updateCommand.ExecuteNonQuery();
                 }
             }
+            */
         }
 
         /// <summary>

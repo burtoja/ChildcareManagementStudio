@@ -56,11 +56,6 @@ namespace ChildcareManagementStudio.Controller
         /// </param>
         public void AddEmployee(Employee employee)
         {
-            if (employee.StartDate == default)
-            {
-                throw new ArgumentException("The Employee object must have a value for the StartDate property.", "employee");
-            }
-
             if (employee.EmployeeId != default)
             {
                 throw new ArgumentException("The EmployeeId property cannot be filled out because it will be assigned by the database.", "employee");

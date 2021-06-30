@@ -95,9 +95,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     Teacher = this.employeeController.GetEmployee(employeeId),
                     ClassRecord = this.classRecord,
-                    StartDate = new DateTime(2021, 8, 1),  // TODO: TESTING - added this until I can figure out the date issue.  Decide where the date comes from: current position startDate or first position startDate
                     //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
-                    PositionType = this.positionController.GetCurrentPositionRecord(employeeId).Type
                 };
                 try
                 {
@@ -107,7 +105,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     errorsFromAddOperations += "\r\n\r\n(ADD ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
-                        "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
                         "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
             }
@@ -135,7 +132,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     errorsFromRemoveOperations += "\r\n\r\n(DELETE ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
                         "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
-                        "Start Date: " + teacherClassroomAssignment.StartDate.ToString("d") +
                         "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
                 }
             }

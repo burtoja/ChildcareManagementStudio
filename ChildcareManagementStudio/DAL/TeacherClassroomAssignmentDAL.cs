@@ -34,7 +34,7 @@ namespace ChildcareManagementStudio.DAL
             ClassRecord classRecord = classRecordDAL.GetClassRecord(classId);
 
             string selectStatement =
-                "SELECT tca.teacherId, tca.startDate, tca.positionType " +
+                "SELECT tca.teacherId " +
                 "FROM TeacherClassroomAssignment tca " +
                 "JOIN Employee e ON tca.teacherId = e.employeeId " +
                 "JOIN Person p ON e.personId = p.personId " +
@@ -50,8 +50,6 @@ namespace ChildcareManagementStudio.DAL
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
                         int teacherIdOrdinal = reader.GetOrdinal("teacherId");
-                        int startDateOrdinal = reader.GetOrdinal("startDate");
-                        int positionTypeOrdinal = reader.GetOrdinal("positionType");
                         while (reader.Read())
                         {
                             int teacherId = reader.GetInt32(teacherIdOrdinal);
@@ -60,9 +58,7 @@ namespace ChildcareManagementStudio.DAL
                             TeacherClassroomAssignment teacherClassroomAssignment = new TeacherClassroomAssignment
                             {
                                 ClassRecord = classRecord,
-                                StartDate = reader.GetDateTime(startDateOrdinal),
-                                Teacher = teacher,
-                                PositionType = reader.GetString(positionTypeOrdinal)
+                                Teacher = teacher
                             };
 
                             teacherClassroomAssignments.Add(teacherClassroomAssignment);
@@ -86,8 +82,8 @@ namespace ChildcareManagementStudio.DAL
             }
 
             string insertStatement =
-                "INSERT INTO TeacherClassroomAssignment (teacherId, startDate, positionType, class) " +
-                "VALUES ($teacherId, $startDate, $positionType, $class)";
+                "INSERT INTO TeacherClassroomAssignment (teacherId, class) " +
+                "VALUES ($teacherId, $class)";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -96,8 +92,6 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$teacherId", teacherClassroomAssignment.Teacher.EmployeeId);
-                    insertCommand.Parameters.AddWithValue("$startDate", teacherClassroomAssignment.StartDate.ToString("yyyy-MM-dd"));
-                    insertCommand.Parameters.AddWithValue("$positionType", teacherClassroomAssignment.PositionType);
                     insertCommand.Parameters.AddWithValue("$class", teacherClassroomAssignment.ClassRecord.ClassId);
                     insertCommand.ExecuteNonQuery();
                 }
@@ -110,7 +104,7 @@ namespace ChildcareManagementStudio.DAL
             string deleteStatement =
                 "DELETE FROM TeacherClassroomAssignment " +
                 "WHERE teacherId = $teacherId " +
-                "AND startDate = $startDate";
+                "AND class = $classId";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
@@ -119,7 +113,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
                 {
                     deleteCommand.Parameters.AddWithValue("$teacherId", teacherClassroomAssignment.Teacher.EmployeeId);
-                    deleteCommand.Parameters.AddWithValue("$startDate", teacherClassroomAssignment.StartDate.ToString("yyyy-MM-dd"));
+                    deleteCommand.Parameters.AddWithValue("$classId", teacherClassroomAssignment.ClassRecord.ClassId);
                     deleteCommand.ExecuteNonQuery();
                 }
             }
