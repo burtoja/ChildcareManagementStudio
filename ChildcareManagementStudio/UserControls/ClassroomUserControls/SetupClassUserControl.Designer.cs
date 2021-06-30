@@ -39,7 +39,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonEditTeacherList = new System.Windows.Forms.Button();
             this.labelAddedStudents = new System.Windows.Forms.Label();
             this.listViewStudentsNotInClass = new System.Windows.Forms.ListView();
+            this.studentNameAvailable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewStudentsInClass = new System.Windows.Forms.ListView();
+            this.studentNameInClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddStudent = new System.Windows.Forms.Button();
             this.buttonRemoveStudent = new System.Windows.Forms.Button();
@@ -47,6 +49,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.buttonNewClass = new System.Windows.Forms.Button();
             this.labelValueClassroom = new System.Windows.Forms.Label();
+            this.buttonChangeClassroom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -105,6 +108,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName});
+            this.listViewTeachers.Enabled = false;
             this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTeachers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewTeachers.HideSelection = false;
@@ -143,21 +147,41 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // listViewStudentsNotInClass
             // 
+            this.listViewStudentsNotInClass.CheckBoxes = true;
+            this.listViewStudentsNotInClass.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.studentNameAvailable});
+            this.listViewStudentsNotInClass.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewStudentsNotInClass.HideSelection = false;
             this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 166);
             this.listViewStudentsNotInClass.Name = "listViewStudentsNotInClass";
             this.listViewStudentsNotInClass.Size = new System.Drawing.Size(298, 244);
             this.listViewStudentsNotInClass.TabIndex = 9;
             this.listViewStudentsNotInClass.UseCompatibleStateImageBehavior = false;
+            this.listViewStudentsNotInClass.View = System.Windows.Forms.View.Details;
+            // 
+            // studentNameAvailable
+            // 
+            this.studentNameAvailable.Text = "Student Name";
+            this.studentNameAvailable.Width = 291;
             // 
             // listViewStudentsInClass
             // 
+            this.listViewStudentsInClass.CheckBoxes = true;
+            this.listViewStudentsInClass.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.studentNameInClass});
+            this.listViewStudentsInClass.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewStudentsInClass.HideSelection = false;
             this.listViewStudentsInClass.Location = new System.Drawing.Point(421, 166);
             this.listViewStudentsInClass.Name = "listViewStudentsInClass";
             this.listViewStudentsInClass.Size = new System.Drawing.Size(298, 244);
             this.listViewStudentsInClass.TabIndex = 10;
             this.listViewStudentsInClass.UseCompatibleStateImageBehavior = false;
+            this.listViewStudentsInClass.View = System.Windows.Forms.View.Details;
+            // 
+            // studentNameInClass
+            // 
+            this.studentNameInClass.Text = "Student Name";
+            this.studentNameInClass.Width = 292;
             // 
             // label1
             // 
@@ -165,9 +189,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 21);
+            this.label1.Size = new System.Drawing.Size(162, 21);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Students in School:";
+            this.label1.Text = "Available Students:";
             // 
             // buttonAddStudent
             // 
@@ -177,6 +201,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonAddStudent.TabIndex = 12;
             this.buttonAddStudent.Text = "-->";
             this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click);
             // 
             // buttonRemoveStudent
             // 
@@ -186,6 +211,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonRemoveStudent.TabIndex = 13;
             this.buttonRemoveStudent.Text = "<--";
             this.buttonRemoveStudent.UseVisualStyleBackColor = true;
+            this.buttonRemoveStudent.Click += new System.EventHandler(this.ButtonRemoveStudent_Click);
             // 
             // labelClass
             // 
@@ -226,14 +252,27 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelValueClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValueClassroom.ForeColor = System.Drawing.Color.Maroon;
             this.labelValueClassroom.Location = new System.Drawing.Point(116, 103);
+            this.labelValueClassroom.MaximumSize = new System.Drawing.Size(150, 0);
             this.labelValueClassroom.Name = "labelValueClassroom";
             this.labelValueClassroom.Size = new System.Drawing.Size(37, 19);
             this.labelValueClassroom.TabIndex = 17;
             this.labelValueClassroom.Text = "n/a";
             // 
+            // buttonChangeClassroom
+            // 
+            this.buttonChangeClassroom.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeClassroom.Location = new System.Drawing.Point(272, 103);
+            this.buttonChangeClassroom.Name = "buttonChangeClassroom";
+            this.buttonChangeClassroom.Size = new System.Drawing.Size(126, 25);
+            this.buttonChangeClassroom.TabIndex = 18;
+            this.buttonChangeClassroom.Text = "Change Classroom";
+            this.buttonChangeClassroom.UseVisualStyleBackColor = true;
+            this.buttonChangeClassroom.Click += new System.EventHandler(this.ButtonChangeClassroom_Click);
+            // 
             // SetupClassUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.buttonChangeClassroom);
             this.Controls.Add(this.labelValueClassroom);
             this.Controls.Add(this.buttonNewClass);
             this.Controls.Add(this.comboBoxClass);
@@ -278,5 +317,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Button buttonNewClass;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.Label labelValueClassroom;
+        private System.Windows.Forms.Button buttonChangeClassroom;
+        private System.Windows.Forms.ColumnHeader studentNameAvailable;
+        private System.Windows.Forms.ColumnHeader studentNameInClass;
     }
 }

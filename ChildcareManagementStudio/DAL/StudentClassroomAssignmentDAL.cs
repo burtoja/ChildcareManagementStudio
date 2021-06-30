@@ -49,10 +49,10 @@ namespace ChildcareManagementStudio.DAL
                     selectCommand.Parameters.AddWithValue("$classId", classId);
                     using (SqliteDataReader reader = selectCommand.ExecuteReader())
                     {
-                        if (!reader.HasRows)
-                        {
-                            throw new ArgumentException("The specified student/classroom assignment is not in the database.");
-                        }
+                        //if (!reader.HasRows)
+                        //{
+                        //    throw new ArgumentException("The specified student/classroom assignment is not in the database.");
+                        //}
 
                         int studentIdOrdinal = reader.GetOrdinal("studentId");
                         while (reader.Read())
