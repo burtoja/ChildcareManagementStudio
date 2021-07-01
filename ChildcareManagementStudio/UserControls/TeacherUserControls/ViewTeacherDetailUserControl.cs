@@ -97,7 +97,21 @@ namespace ChildcareManagementStudio.UserControls
             this.labelValueCity.Text = employee.City;
             this.labelValueState.Text = employee.State;
             this.labelValueZipCode.Text = employee.ZipCode;
-            this.labelValueStartDate.Text = employee.StartDate.ToString("d");
+            this.labelValueStartDate.Text = this.PrepareStartDateLabelString(employee);
+        }
+
+        /// <summary>
+        /// Prepares string text for StartDate value label
+        /// </summary>
+        /// <param name="employee">the Employee object to prepare label string for</param>
+        /// <returns>start date string if present, if not returns a message placeholder</returns>
+        private string PrepareStartDateLabelString(Employee employee)
+        {
+            Console.WriteLine(employee.StartDate);
+            if (employee.StartDate.ToString("d") == "1/1/1900")
+                return "N/A (No position assigned)";
+            else
+                return employee.StartDate.ToString("d");
         }
 
         /// <summary>

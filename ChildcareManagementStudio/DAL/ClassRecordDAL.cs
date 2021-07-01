@@ -179,5 +179,46 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Method that returns the ID of a class for a given classroom and school year.
+        /// </summary>
+        /// <param name="classroomId">The classroom ID.</param>
+        /// <param name="schoolYear">The school year.</param>
+        /// <returns>The class ID.</returns>
+        public int GetClassId(int classroomId, string schoolYear)
+        {
+            int classId;
+
+            string selectStatement =
+                "SELECT classId " +
+                "FROM Class " +
+                "WHERE classroomId = $classroomId " +
+                "AND schoolYear = $schoolYear";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("$classroomId", classroomId);
+                    selectCommand.Parameters.AddWithValue("$schoolYear", schoolYear);
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        if (!reader.HasRows)
+                        {
+                            throw new ArgumentException("The specified class is not in the database.");
+                        }
+
+                        int classIdOrdinal = reader.GetOrdinal("classId");
+                        while (reader.Read())
+                        {
+                            classId = reader.GetInt32(classIdOrdinal);
+                        }
+                    }
+                }
+            }
+            return classroomId;
+        }
     }
 }

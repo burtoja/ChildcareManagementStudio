@@ -15,14 +15,22 @@ namespace ChildcareManagementStudio.Model
         public int EmployeeId { get; set; }
 
         /// <summary>
-        /// Property indicating when the employee started at the center.
+        /// Property indicating when the employee started at the center.  
+        /// Note:  Is set to a DateTime of 1/1/1900 12:00:00 AM if not position records are in DB yet
         /// </summary>
         public DateTime StartDate
         {
             get
             {
-                List<PositionRecord> sortedPositionRecords = PositionRecords.OrderBy(x => x.StartDate).ToList();
-                return sortedPositionRecords.First().StartDate;
+                try
+                {
+                    List<PositionRecord> sortedPositionRecords = PositionRecords.OrderBy(x => x.StartDate).ToList();
+                    return sortedPositionRecords.First().StartDate;
+                }
+                catch (Exception ex)
+                {
+                    return new DateTime(1900, 1, 1);
+                }
             }
         }
 
