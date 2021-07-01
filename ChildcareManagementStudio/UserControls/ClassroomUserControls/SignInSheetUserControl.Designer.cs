@@ -126,6 +126,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.reportViewerSignInSheet.ServerReport.BearerToken = null;
             this.reportViewerSignInSheet.Size = new System.Drawing.Size(764, 451);
             this.reportViewerSignInSheet.TabIndex = 1;
+            this.reportViewerSignInSheet.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.reportViewerSignInSheet.ZoomPercent = 75;
             // 
             // StudentBindingSource
             // 
