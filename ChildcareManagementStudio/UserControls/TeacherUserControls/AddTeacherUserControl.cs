@@ -47,7 +47,6 @@ namespace ChildcareManagementStudio.UserControls
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
                     Employee newEmployee = new Employee
@@ -103,7 +102,6 @@ namespace ChildcareManagementStudio.UserControls
             this.textBoxCity.Text = "";
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
-            this.dateTimePickerStartDate.Value = DateTime.Now;
         }
 
         /// <summary>
@@ -116,39 +114,39 @@ namespace ChildcareManagementStudio.UserControls
 
             if (String.IsNullOrEmpty(this.textBoxLastName.Text))
             {
-                alertText += "ifrst name cannot be blank. ";
+                alertText += "First name cannot be blank.  ";
             }
             if (String.IsNullOrEmpty(this.textBoxFirstName.Text))
             {
-                alertText += "Last name cannot be blank. ";
+                alertText += "Last name cannot be blank.  ";
             }
             if (DateTime.Compare(this.dateTimePickerDOB.Value, DateTime.Now) > 0)
             {
-                alertText += "The date of birth cannot be in the future. ";
+                alertText += "The date of birth cannot be in the future.  ";
             }
             if (this.textBoxPhoneNumber.Text.Length != 14)
             {
-                alertText += "Ten digit phone number is required of the following format: (xxx) xxx-xxxx";
+                alertText += "Ten digit phone number is required of the following format: (xxx) xxx-xxxx.  ";
             }
             if (String.IsNullOrEmpty(this.textBoxAddress1.Text))
             {
-                alertText += "Address cannot be blank. ";
+                alertText += "Address cannot be blank.  ";
             }
             if (String.IsNullOrEmpty(this.comboBoxState.Text))
             {
-                alertText += "State must be selected. ";
+                alertText += "State must be selected.  ";
             }
             if (String.IsNullOrEmpty(this.textBoxCity.Text))
             {
-                alertText += "City is required. ";
+                alertText += "City is required.  ";
             }
             else if (char.IsLower(textBoxCity.Text[0]))
             {
-                alertText += "City name should start with a capital letter. ";
+                alertText += "City name should start with a capital letter.  ";
             }
             if (this.textBoxZipCode.Text.Length != 5)
             {
-                alertText += "Five digit zip number is required. ";
+                alertText += "Five digit zip number is required.  ";
             }
 
             return alertText;

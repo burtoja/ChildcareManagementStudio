@@ -18,8 +18,6 @@ namespace ChildcareManagementStudio.View
         private PlaceholderUserControl placeholderUserControl;
         private MainStudentUserControl mainStudentUserControl;
         private MainClassroomUserControl mainClassroomUserControl;
-        private readonly CredentialController theCredentialController;
-        private string username;
         private bool mouseDown;
         private Point lastLocation;
 
@@ -33,8 +31,6 @@ namespace ChildcareManagementStudio.View
             this.SetTheLoginForm(theInputLoginForm);
             this.InitializeUserControls();
             this.InitializePlaceholder();
-            theCredentialController = new CredentialController();
-            this.username = "";
         }
 
         private void InitializeUserControls()

@@ -115,16 +115,8 @@ namespace ChildcareManagementStudio.View.StudentViews
                         PhysicalExamExpirationDate = physicalExamExpiration
                     };
                     this.studentController.EditStudent(this.originalStudent, revisedStudent);
-                    string title = "Student Updated";
-                    string message = "The student information has been updated. Click 'Okay' to continue.";
-                    DialogResult dialogeResult = MessageBox.Show(message, title);
-                    if (dialogeResult == DialogResult.OK)
-                    {
-                        this.referringControl.Enabled = true;
-                        this.referringControl.FillDropDownList(revisedStudent.StudentId);
-                        this.Close();
-                    }
-
+                    this.referringControl.FillDropDownList(revisedStudent.StudentId);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
