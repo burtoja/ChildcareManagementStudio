@@ -333,13 +333,23 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                         {
                             this.studentClassroomAssignmentController.AddStudentClassroomAssignment(studentClassroomAssignment);
                         }
+                        catch (InvalidOperationException)
+                        {
+                            errorMessage = "Classroom is at full capacity.";
+                        }
                         catch (Exception ex)
                         {
                             errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
                         }
                     }
                 }
-                if (errorMessage != "")
+                if (errorMessage == "Classroom is at full capacity.")
+                {
+                    string title = "Classroom Capacity Reached";
+                    string message = "The classroom has reached capacity and students cannot be added.";
+                    MessageBox.Show(message, title);
+                }
+                else if (errorMessage != "")
                 {
                     string title = "Error Adding Student(s)";
                     string message = "Errors were found when adding student(s). The following students were not updated:" + errorMessage;
