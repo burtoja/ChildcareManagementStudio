@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceReportTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.attendanceReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -55,48 +55,51 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.attendanceReportTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.attendanceReportTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.attendanceReportTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.attendanceReportTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.attendanceReportTableLayoutPanel.Name = "attendanceReportTableLayoutPanel";
             this.attendanceReportTableLayoutPanel.RowCount = 2;
             this.attendanceReportTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.87234F));
             this.attendanceReportTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.12766F));
-            this.attendanceReportTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.attendanceReportTableLayoutPanel.Size = new System.Drawing.Size(815, 376);
+            this.attendanceReportTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.attendanceReportTableLayoutPanel.Size = new System.Drawing.Size(639, 306);
             this.attendanceReportTableLayoutPanel.TabIndex = 0;
             // 
             // attendanceReportViewer
             // 
             this.attendanceReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "StudentDataSet";
-            reportDataSource2.Value = this.StudentBindingSource;
-            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "StudentDataSet";
+            reportDataSource1.Value = this.StudentBindingSource;
+            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.attendanceReportViewer.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.AttendanceReport.rdlc";
-            this.attendanceReportViewer.Location = new System.Drawing.Point(3, 70);
+            this.attendanceReportViewer.Location = new System.Drawing.Point(2, 56);
+            this.attendanceReportViewer.Margin = new System.Windows.Forms.Padding(2);
             this.attendanceReportViewer.Name = "attendanceReportViewer";
             this.attendanceReportViewer.ServerReport.BearerToken = null;
-            this.attendanceReportViewer.Size = new System.Drawing.Size(809, 303);
+            this.attendanceReportViewer.Size = new System.Drawing.Size(635, 248);
             this.attendanceReportViewer.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.55253F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.88999F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.38295F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.394314F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.62052F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.337454F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.36217F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.32283F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.259843F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.291339F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.889764F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.85827F));
             this.tableLayoutPanel1.Controls.Add(this.schoolYearLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.schoolYearComboBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.classLabel, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.classComboBox, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.generateReportButton, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(809, 61);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(635, 50);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // schoolYearLabel
@@ -104,9 +107,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearLabel.AutoSize = true;
             this.schoolYearLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.schoolYearLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolYearLabel.Location = new System.Drawing.Point(12, 0);
+            this.schoolYearLabel.Location = new System.Drawing.Point(9, 0);
+            this.schoolYearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.schoolYearLabel.Name = "schoolYearLabel";
-            this.schoolYearLabel.Size = new System.Drawing.Size(126, 61);
+            this.schoolYearLabel.Size = new System.Drawing.Size(99, 50);
             this.schoolYearLabel.TabIndex = 0;
             this.schoolYearLabel.Text = "School year";
             // 
@@ -114,9 +118,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.schoolYearComboBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.schoolYearComboBox.FormattingEnabled = true;
-            this.schoolYearComboBox.Location = new System.Drawing.Point(144, 3);
+            this.schoolYearComboBox.Location = new System.Drawing.Point(112, 2);
+            this.schoolYearComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.schoolYearComboBox.Name = "schoolYearComboBox";
-            this.schoolYearComboBox.Size = new System.Drawing.Size(203, 24);
+            this.schoolYearComboBox.Size = new System.Drawing.Size(104, 21);
             this.schoolYearComboBox.TabIndex = 1;
             // 
             // classLabel
@@ -124,9 +129,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classLabel.AutoSize = true;
             this.classLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.classLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLabel.Location = new System.Drawing.Point(347, 0);
+            this.classLabel.Location = new System.Drawing.Point(232, 0);
+            this.classLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classLabel.Name = "classLabel";
-            this.classLabel.Size = new System.Drawing.Size(61, 61);
+            this.classLabel.Size = new System.Drawing.Size(49, 50);
             this.classLabel.TabIndex = 2;
             this.classLabel.Text = "Class";
             // 
@@ -136,9 +142,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classComboBox.DisplayMember = "Location";
             this.classComboBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.classComboBox.FormattingEnabled = true;
-            this.classComboBox.Location = new System.Drawing.Point(414, 3);
+            this.classComboBox.Location = new System.Drawing.Point(285, 2);
+            this.classComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.classComboBox.Name = "classComboBox";
-            this.classComboBox.Size = new System.Drawing.Size(220, 24);
+            this.classComboBox.Size = new System.Drawing.Size(112, 21);
             this.classComboBox.TabIndex = 3;
             this.classComboBox.ValueMember = "Id";
             // 
@@ -148,22 +155,23 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // generateReportButton
             // 
-            this.generateReportButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.generateReportButton.Location = new System.Drawing.Point(622, 3);
+            this.generateReportButton.Location = new System.Drawing.Point(421, 2);
+            this.generateReportButton.Margin = new System.Windows.Forms.Padding(2);
             this.generateReportButton.Name = "generateReportButton";
-            this.generateReportButton.Size = new System.Drawing.Size(184, 55);
+            this.generateReportButton.Size = new System.Drawing.Size(205, 21);
             this.generateReportButton.TabIndex = 4;
-            this.generateReportButton.Text = "Generate Report";
+            this.generateReportButton.Text = "Generate Attendance Sheet";
             this.generateReportButton.UseVisualStyleBackColor = true;
             this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
             // 
             // AttendanceReportUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.attendanceReportTableLayoutPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AttendanceReportUserControl";
-            this.Size = new System.Drawing.Size(815, 376);
+            this.Size = new System.Drawing.Size(639, 306);
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.attendanceReportTableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
