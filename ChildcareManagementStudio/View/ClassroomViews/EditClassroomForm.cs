@@ -63,6 +63,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     Classroom revisedClassroom = new Classroom
                     {
+                        Id = this.originalClassroom.Id,
                         Location = this.textBoxLocation.Text,
                         Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
                     };
