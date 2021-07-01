@@ -44,7 +44,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.textBoxLocation.Location = new System.Drawing.Point(183, 19);
             this.textBoxLocation.Name = "textBoxLocation";
             this.textBoxLocation.Size = new System.Drawing.Size(240, 27);
-            this.textBoxLocation.TabIndex = 16;
+            this.textBoxLocation.TabIndex = 1;
             // 
             // labelCapcityUnits
             // 
@@ -66,7 +66,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             0});
             this.numericUpDownCapacity.Name = "numericUpDownCapacity";
             this.numericUpDownCapacity.Size = new System.Drawing.Size(58, 27);
-            this.numericUpDownCapacity.TabIndex = 11;
+            this.numericUpDownCapacity.TabIndex = 2;
             this.numericUpDownCapacity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelCapacity
@@ -83,7 +83,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.Location = new System.Drawing.Point(223, 108);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(161, 33);
-            this.buttonCancel.TabIndex = 13;
+            this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -93,7 +93,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonSubmit.Location = new System.Drawing.Point(28, 108);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(161, 33);
-            this.buttonSubmit.TabIndex = 12;
+            this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "Edit Class";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
