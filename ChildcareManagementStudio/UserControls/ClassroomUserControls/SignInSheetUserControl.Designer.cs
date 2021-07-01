@@ -29,6 +29,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel1 = new System.Windows.Forms.Panel();
             this.schoolYearLabel = new System.Windows.Forms.Label();
             this.schoolYearComboBox = new System.Windows.Forms.ComboBox();
@@ -36,7 +38,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classComboBox = new System.Windows.Forms.ComboBox();
             this.generateReportButton = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,11 +116,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // reportViewer1
             // 
+            reportDataSource1.Name = "StudentDataSet";
+            reportDataSource1.Value = this.StudentBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Reports.SignInSheetReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 86);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(764, 451);
             this.reportViewer1.TabIndex = 1;
+            // 
+            // StudentBindingSource
+            // 
+            this.StudentBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Student);
             // 
             // SignInSheetUserControl
             // 
@@ -127,6 +139,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Size = new System.Drawing.Size(770, 540);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +153,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.ComboBox schoolYearComboBox;
         private System.Windows.Forms.Label schoolYearLabel;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource StudentBindingSource;
     }
 }
