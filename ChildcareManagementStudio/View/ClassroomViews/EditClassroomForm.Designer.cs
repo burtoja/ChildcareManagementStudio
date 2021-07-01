@@ -125,6 +125,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.Name = "EditClassroomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Classroom Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditClassroomForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
