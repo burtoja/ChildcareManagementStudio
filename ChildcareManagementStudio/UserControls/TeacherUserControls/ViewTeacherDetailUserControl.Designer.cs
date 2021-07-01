@@ -246,7 +246,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -348,6 +348,7 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.labelValueStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelValueStartDate.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelValueStartDate, 2);
             this.labelValueStartDate.ForeColor = System.Drawing.Color.Maroon;
             this.labelValueStartDate.Location = new System.Drawing.Point(444, 224);
             this.labelValueStartDate.Name = "labelValueStartDate";
