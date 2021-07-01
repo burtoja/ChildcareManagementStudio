@@ -67,16 +67,11 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         Location = this.textBoxLocation.Text,
                         Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
                     };
-                    this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);
-                    string title = "Classroom Information Revised";
-                    string message = "The classroom has been revised in the system. Click 'Okay' to continue.";
-                    DialogResult dialogeResult = MessageBox.Show(message, title);
-                    if (dialogeResult == DialogResult.OK)
-                    {
-                        this.referringUserControl.Enabled = true;
-                        this.referringUserControl.RefreshClassroomListView();
-                        this.Close();
-                    }
+                    this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);                    
+                    this.referringUserControl.Enabled = true;
+                    this.referringUserControl.RefreshClassroomListView();
+                    this.Close();
+                    
                 }
                 catch (Exception ex)
                 {
