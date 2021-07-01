@@ -35,6 +35,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classLabel = new System.Windows.Forms.Label();
             this.classComboBox = new System.Windows.Forms.ComboBox();
             this.generateReportButton = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,12 +107,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.generateReportButton.Name = "generateReportButton";
             this.generateReportButton.Size = new System.Drawing.Size(212, 33);
             this.generateReportButton.TabIndex = 9;
-            this.generateReportButton.Text = "Generate Attendance Sheet";
+            this.generateReportButton.Text = "Generate Sign-in Sheet";
             this.generateReportButton.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(3, 86);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(764, 451);
+            this.reportViewer1.TabIndex = 1;
             // 
             // SignInSheetUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.Name = "SignInSheetUserControl";
             this.Size = new System.Drawing.Size(770, 540);
@@ -129,5 +139,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.ComboBox schoolYearComboBox;
         private System.Windows.Forms.Label schoolYearLabel;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

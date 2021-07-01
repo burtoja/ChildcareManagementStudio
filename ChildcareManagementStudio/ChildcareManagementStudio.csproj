@@ -344,6 +344,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\SignInSheetReport.rdlc" />
     <EmbeddedResource Include="UserControls\ClassroomUserControls\AttendanceReportUserControl.resx">
       <DependentUpon>AttendanceReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
