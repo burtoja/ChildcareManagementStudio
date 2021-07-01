@@ -22,6 +22,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Left>0.125in</Left>
         <Height>0.45in</Height>
         <Width>4.03333in</Width>
         <Style>
@@ -44,19 +45,19 @@
               <Width>1.25in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.9in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.9in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.9in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.9in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.9in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -75,7 +76,6 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -111,7 +111,6 @@
                               <Value>DOB</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -147,7 +146,6 @@
                               <Value>Monday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -183,7 +181,6 @@
                               <Value>Tuesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -219,7 +216,6 @@
                               <Value>Wednesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -255,7 +251,6 @@
                               <Value>Thursday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -291,7 +286,6 @@
                               <Value>Friday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -332,7 +326,6 @@
                               <Value>=Fields!FullName.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -368,7 +361,6 @@
                               <Value>=Fields!DateOfBirth.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
@@ -405,7 +397,6 @@
                               <Value />
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -438,7 +429,6 @@
                               <Value />
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -471,7 +461,6 @@
                               <Value />
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -504,7 +493,6 @@
                               <Value />
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -537,7 +525,6 @@
                               <Value />
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -584,9 +571,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>StudentDataSet</DataSetName>
-        <Top>0.51944in</Top>
+        <Top>0.83889in</Top>
+        <Left>0.125in</Left>
         <Height>1in</Height>
-        <Width>9.03333in</Width>
+        <Width>7.28333in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -594,11 +582,43 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Week starting: ____________________</Value>
+                <Style>
+                  <FontFamily>Century Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.51944in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>2.78333in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>1.56667in</Height>
+    <Height>1.93125in</Height>
     <Style />
   </Body>
-  <Width>9.075in</Width>
+  <Width>7.50208in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
