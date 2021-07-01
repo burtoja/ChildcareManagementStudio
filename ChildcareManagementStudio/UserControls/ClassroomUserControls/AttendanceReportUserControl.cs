@@ -27,8 +27,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             classRecordDAL = new ClassRecordDAL();
             studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
 
-            schoolYearComboBox.DataSource = schoolYearDAL.GetAllSchoolYears();
-            classComboBox.DataSource = classroomDAL.GetAllClassrooms();
+            List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
+            List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
+
+            schoolYearComboBox.DataSource = schoolYears;
+            classComboBox.DataSource = classrooms;
+
+            schoolYearComboBox.SelectedIndex = schoolYears.Count - 1;
         }
 
         private void GenerateReportButton_Click(object sender, System.EventArgs e)
