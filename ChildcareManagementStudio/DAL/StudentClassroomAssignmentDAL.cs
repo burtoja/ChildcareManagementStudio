@@ -129,6 +129,11 @@ namespace ChildcareManagementStudio.DAL
             {
                 throw new ArgumentNullException("studentClassroomAssignment", "The StudentClassroomAssignment object cannot be null.");
             }
+            int studentCount = this.GetStudentsInClass(studentClassroomAssignment.ClassRecord.ClassId).Count;
+            if (studentCount >= studentClassroomAssignment.ClassRecord.Classroom.Capacity)
+            {
+                throw new InvalidOperationException("No students can be added. The classroom is at maximum capacity.");
+            }
 
             string insertStatement =
                 "INSERT INTO StudentClassroomAssignment (studentId, class) " +
