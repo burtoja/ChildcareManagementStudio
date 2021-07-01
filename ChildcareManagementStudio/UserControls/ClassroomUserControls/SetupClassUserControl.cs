@@ -174,7 +174,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
             {
-                Console.WriteLine("No ClassRecord chosen yet.");
                 return -1;
             }
             else
@@ -188,8 +187,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         public void SetClassroomValueLabel()
         {
-            int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
-            this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;
+            if (string.IsNullOrEmpty(this.comboBoxClass.Text))
+            {
+                this.labelValueClassroom.Text = "n/a";
+            }
+            else
+            {
+                int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
+                this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;
+            }
+               
         }
 
         /// <summary>
