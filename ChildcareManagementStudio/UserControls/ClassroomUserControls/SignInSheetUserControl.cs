@@ -62,6 +62,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 StudentBindingSource.Add(assignment.Student);
             }
+
+            System.Drawing.Printing.PageSettings ps = reportViewerSignInSheet.GetPageSettings();
+            ps.Landscape = true;
+            reportViewerSignInSheet.SetPageSettings(ps);
+
             reportViewerSignInSheet.RefreshReport();
         }
     }
