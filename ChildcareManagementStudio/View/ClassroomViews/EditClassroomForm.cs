@@ -40,17 +40,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         }
 
         /// <summary>
-        /// Handles cancel button clicks to close form and re-enable the referring UC
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            this.referringUserControl.Enabled = true;
-            this.Close();
-        }
-
-        /// <summary>
         /// Handles the submit button clicks to attempt to create new classroom entry in DB
         /// </summary>
         /// <param name="sender"></param>
@@ -67,9 +56,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         Location = this.textBoxLocation.Text,
                         Capacity = Convert.ToInt32(Math.Round(this.numericUpDownCapacity.Value))
                     };
-                    this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);                    
-                    this.referringUserControl.Enabled = true;
-                    this.referringUserControl.RefreshClassroomListView();
+                    this.classroomController.EditClassroom(this.originalClassroom, revisedClassroom);                                        
                     this.Close();
                     
                 }
@@ -104,6 +91,27 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Handles cancel button clicks to close form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Upon form close, re-enable the reffering UC and refresh classroom listview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditClassroomForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.referringUserControl.Enabled = true;
+            this.referringUserControl.RefreshClassroomListView();
         }
     }
 }
