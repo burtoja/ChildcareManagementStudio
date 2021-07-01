@@ -37,7 +37,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classLabel = new System.Windows.Forms.Label();
             this.classComboBox = new System.Windows.Forms.ComboBox();
             this.generateReportButton = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerSignInSheet = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
@@ -113,18 +113,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.generateReportButton.TabIndex = 9;
             this.generateReportButton.Text = "Generate Sign-in Sheet";
             this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
             // 
-            // reportViewer1
+            // reportViewerSignInSheet
             // 
             reportDataSource1.Name = "StudentDataSet";
             reportDataSource1.Value = this.StudentBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Reports.SignInSheetReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(3, 86);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(764, 451);
-            this.reportViewer1.TabIndex = 1;
+            this.reportViewerSignInSheet.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerSignInSheet.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Reports.SignInSheetReport.rdlc";
+            this.reportViewerSignInSheet.Location = new System.Drawing.Point(3, 86);
+            this.reportViewerSignInSheet.Name = "reportViewerSignInSheet";
+            this.reportViewerSignInSheet.ServerReport.BearerToken = null;
+            this.reportViewerSignInSheet.Size = new System.Drawing.Size(764, 451);
+            this.reportViewerSignInSheet.TabIndex = 1;
             // 
             // StudentBindingSource
             // 
@@ -133,7 +134,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // SignInSheetUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.reportViewerSignInSheet);
             this.Controls.Add(this.panel1);
             this.Name = "SignInSheetUserControl";
             this.Size = new System.Drawing.Size(770, 540);
@@ -152,7 +153,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.ComboBox schoolYearComboBox;
         private System.Windows.Forms.Label schoolYearLabel;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerSignInSheet;
         private System.Windows.Forms.BindingSource StudentBindingSource;
     }
 }

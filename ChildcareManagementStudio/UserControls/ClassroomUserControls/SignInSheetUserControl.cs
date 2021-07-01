@@ -35,5 +35,34 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             schoolYearComboBox.SelectedIndex = schoolYears.Count - 1;
         }
+
+        /// <summary>
+        /// Handles the report generation button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GenerateReportButton_Click(object sender, System.EventArgs e)
+        {
+            StudentBindingSource.Clear();
+            int classId = 0;
+            try
+            {
+                int classroomId = (int)classComboBox.SelectedValue;
+                string schoolYear = schoolYearComboBox.Text;
+                classId = classRecordDAL.GetClassId(classroomId, schoolYear);
+            }
+            catch
+            {
+                MessageBox.Show("The selected combination of class and school year does not exist in the database.", "Invalid Class");
+                return;
+            }
+
+            List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
+            foreach (StudentClassroomAssignment assignment in assignments)
+            {
+                StudentBindingSource.Add(assignment.Student);
+            }
+            reportViewerSignInSheet.RefreshReport();
+        }
     }
 }
