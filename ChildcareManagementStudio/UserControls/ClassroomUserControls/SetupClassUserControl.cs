@@ -107,7 +107,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Populates listView with available students based on school year if class is selected
         /// </summary>
-        private void PopulateAvailableStudentsListView()
+        public void PopulateAvailableStudentsListView()
         {
             this.listViewStudentsNotInClass.Items.Clear();
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
@@ -138,7 +138,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Populates listView with assigned students if class is selected
         /// </summary>
-        private void PopulateAssignedStudentsListView()
+        public void PopulateAssignedStudentsListView()
         {
             this.listViewStudentsInClass.Items.Clear();
             if (string.IsNullOrEmpty(this.comboBoxClass.Text))
@@ -186,7 +186,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Set the text for the label showing the classroom of the selected class record
         /// </summary>
-        private void SetClassroomValueLabel()
+        public void SetClassroomValueLabel()
         {
             int selectedClassroomId = Int32.Parse(this.comboBoxClass.SelectedValue.ToString());
             this.labelValueClassroom.Text = this.classRecordController.GetClassRecord(selectedClassroomId).Classroom.Location;

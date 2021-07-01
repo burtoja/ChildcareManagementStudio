@@ -16,7 +16,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private readonly ClassRecord classRecord;
         private readonly EmployeeController employeeController;
         private readonly TeacherClassroomAssignmentController teacherClassroomAssignmentController;
-        private readonly PositionController positionController;
         private readonly List<TeacherClassroomAssignment> originalTeacherClassroomAssignmentList;
         private readonly List<int> originalListAssignedTeacherIds;
 
@@ -31,7 +30,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.classRecord = classRecord;
             this.employeeController = new EmployeeController();
             this.teacherClassroomAssignmentController = new TeacherClassroomAssignmentController();
-            this.positionController = new PositionController();
             this.originalTeacherClassroomAssignmentList = this.teacherClassroomAssignmentController.GetTeacherClassroomAssignments(this.classRecord.ClassId);
             this.originalListAssignedTeacherIds = new List<int>();
             this.labelClassIdentifier.Text = this.classRecord.Identifier;
@@ -95,17 +93,15 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     Teacher = this.employeeController.GetEmployee(employeeId),
                     ClassRecord = this.classRecord,
-                    //StartDate = this.employeeController.GetEmployee(employeeId).StartDate,  
                 };
                 try
                 {
                     this.teacherClassroomAssignmentController.AddTeacherClassroomAssignment(teacherClassroomAssignment);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     errorsFromAddOperations += "\r\n\r\n(ADD ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
-                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
-                        "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
+                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId;
                 }
             }
             return errorsFromAddOperations;
@@ -128,11 +124,10 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 {
                     this.teacherClassroomAssignmentController.DeleteTeacherClassroomAssignment(teacherClassroomAssignment);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     errorsFromRemoveOperations += "\r\n\r\n(DELETE ERROR) Teacher name: " + teacherClassroomAssignment.Teacher.FullName + " - " +
-                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId + " - " +
-                        "\r\n" + ex.Message; //TODO: Remove exception message after testing complete
+                        "ID: " + teacherClassroomAssignment.Teacher.EmployeeId;
                 }
             }
             return errorsFromRemoveOperations;

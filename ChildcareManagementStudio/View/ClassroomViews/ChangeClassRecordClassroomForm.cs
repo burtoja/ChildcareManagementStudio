@@ -68,6 +68,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private void ChangeClassRecordClassroomForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.referringUserControl.Enabled = true;
+            this.referringUserControl.SetClassroomValueLabel();
         }
 
         /// <summary>
