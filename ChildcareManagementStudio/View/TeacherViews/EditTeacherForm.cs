@@ -74,16 +74,8 @@ namespace ChildcareManagementStudio.View
                         PositionRecords = this.originalEmployee.PositionRecords
                     };
                     this.employeeController.EditEmployee(this.originalEmployee, revisedEmployee);
-                    string title = "Teacher Updated";
-                    string message = "The teacher information has been updated. Click 'Okay' to continue.";
-                    DialogResult dialogeResult = MessageBox.Show(message, title);
-                    if (dialogeResult == DialogResult.OK)
-                    {
-                        this.referringControl.Enabled = true;
-                        this.referringControl.FillDropDownList(revisedEmployee.EmployeeId);
-                        this.Close();
-                    }
-
+                    this.referringControl.FillDropDownList(revisedEmployee.EmployeeId);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
