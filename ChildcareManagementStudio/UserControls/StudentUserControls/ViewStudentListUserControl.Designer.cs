@@ -48,10 +48,10 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.listViewAllStudents.FullRowSelect = true;
             this.listViewAllStudents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewAllStudents.HideSelection = false;
-            this.listViewAllStudents.Location = new System.Drawing.Point(18, 19);
+            this.listViewAllStudents.Location = new System.Drawing.Point(30, 19);
             this.listViewAllStudents.MultiSelect = false;
             this.listViewAllStudents.Name = "listViewAllStudents";
-            this.listViewAllStudents.Size = new System.Drawing.Size(708, 383);
+            this.listViewAllStudents.Size = new System.Drawing.Size(710, 418);
             this.listViewAllStudents.TabIndex = 2;
             this.listViewAllStudents.UseCompatibleStateImageBehavior = false;
             this.listViewAllStudents.View = System.Windows.Forms.View.Details;
@@ -76,9 +76,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.buttonViewTeacherDetails.AccessibleDescription = "View student details button";
             this.buttonViewTeacherDetails.AccessibleName = "View student details button";
             this.buttonViewTeacherDetails.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonViewTeacherDetails.Location = new System.Drawing.Point(18, 408);
+            this.buttonViewTeacherDetails.Location = new System.Drawing.Point(30, 456);
             this.buttonViewTeacherDetails.Name = "buttonViewTeacherDetails";
-            this.buttonViewTeacherDetails.Size = new System.Drawing.Size(708, 43);
+            this.buttonViewTeacherDetails.Size = new System.Drawing.Size(710, 43);
             this.buttonViewTeacherDetails.TabIndex = 3;
             this.buttonViewTeacherDetails.Text = "View Details for Selected Student";
             this.buttonViewTeacherDetails.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.Controls.Add(this.buttonViewTeacherDetails);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewStudentListUserControl";
-            this.Size = new System.Drawing.Size(745, 470);
+            this.Size = new System.Drawing.Size(770, 540);
             this.ResumeLayout(false);
 
         }
