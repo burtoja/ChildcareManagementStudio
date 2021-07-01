@@ -108,7 +108,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName});
-            this.listViewTeachers.Enabled = false;
             this.listViewTeachers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTeachers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewTeachers.HideSelection = false;
