@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceReportTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.attendanceReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -39,10 +39,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearComboBox = new System.Windows.Forms.ComboBox();
             this.classLabel = new System.Windows.Forms.Label();
             this.classComboBox = new System.Windows.Forms.ComboBox();
+            this.classroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.generateReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
             this.attendanceReportTableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // attendanceReportTableLayoutPanel
@@ -64,9 +66,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // attendanceReportViewer
             // 
             this.attendanceReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "StudentDataSet";
-            reportDataSource1.Value = this.StudentBindingSource;
-            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "StudentDataSet";
+            reportDataSource2.Value = this.StudentBindingSource;
+            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.attendanceReportViewer.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.AttendanceReport.rdlc";
             this.attendanceReportViewer.Location = new System.Drawing.Point(3, 70);
             this.attendanceReportViewer.Name = "attendanceReportViewer";
@@ -114,7 +116,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearComboBox.FormattingEnabled = true;
             this.schoolYearComboBox.Location = new System.Drawing.Point(144, 3);
             this.schoolYearComboBox.Name = "schoolYearComboBox";
-            this.schoolYearComboBox.Size = new System.Drawing.Size(162, 24);
+            this.schoolYearComboBox.Size = new System.Drawing.Size(203, 24);
             this.schoolYearComboBox.TabIndex = 1;
             // 
             // classLabel
@@ -130,12 +132,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             // classComboBox
             // 
+            this.classComboBox.DataSource = this.classroomBindingSource;
+            this.classComboBox.DisplayMember = "Location";
             this.classComboBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.classComboBox.FormattingEnabled = true;
             this.classComboBox.Location = new System.Drawing.Point(414, 3);
             this.classComboBox.Name = "classComboBox";
-            this.classComboBox.Size = new System.Drawing.Size(176, 24);
+            this.classComboBox.Size = new System.Drawing.Size(220, 24);
             this.classComboBox.TabIndex = 3;
+            this.classComboBox.ValueMember = "Id";
+            // 
+            // classroomBindingSource
+            // 
+            this.classroomBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Classroom);
             // 
             // generateReportButton
             // 
@@ -146,6 +155,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.generateReportButton.TabIndex = 4;
             this.generateReportButton.Text = "Generate Report";
             this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
             // 
             // AttendanceReportUserControl
             // 
@@ -158,6 +168,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.attendanceReportTableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +183,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.ComboBox classComboBox;
         private System.Windows.Forms.Button generateReportButton;
+        private System.Windows.Forms.BindingSource classroomBindingSource;
     }
 }

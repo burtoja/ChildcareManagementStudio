@@ -423,6 +423,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ChildcareManagementStudio.Model.Classroom.datasource" />
     <None Include="Properties\DataSources\ChildcareManagementStudio.Model.Student.datasource" />
     <None Include="Properties\DataSources\ChildcareManagementStudio.Model.StudentClassroomAssignment.datasource" />
     <None Include="Properties\Settings.settings">
