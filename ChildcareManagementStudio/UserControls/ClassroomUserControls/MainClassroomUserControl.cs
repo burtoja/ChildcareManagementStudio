@@ -9,6 +9,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
         private readonly SetupClassUserControl addStudentsToClassroomUserControl;
+
+        private readonly SignInSheetUserControl signInSheetUserControl;
         
         /// <summary>
         /// Constructor for the UC
@@ -18,6 +20,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
             this.addStudentsToClassroomUserControl = new SetupClassUserControl();
+
+            this.signInSheetUserControl = new SignInSheetUserControl();
             this.AddUserControls();
         }
 
@@ -28,6 +32,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
             this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
+
+            this.tabPageSignInSheet.Controls.Add(this.signInSheetUserControl);
         }
 
         /// <summary>
