@@ -48,8 +48,6 @@ namespace ChildcareManagementStudio.View
             this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
             this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.labelErrorMessage = new System.Windows.Forms.Label();
-            this.labelStartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelSSN = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -314,27 +312,6 @@ namespace ChildcareManagementStudio.View
             this.labelErrorMessage.Size = new System.Drawing.Size(0, 17);
             this.labelErrorMessage.TabIndex = 20;
             // 
-            // labelStartDate
-            // 
-            this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartDate.Location = new System.Drawing.Point(424, 329);
-            this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(96, 21);
-            this.labelStartDate.TabIndex = 21;
-            this.labelStartDate.Text = "Start Date:";
-            // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePickerStartDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(526, 320);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePickerStartDate.TabIndex = 22;
-            // 
             // labelPhone
             // 
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -430,8 +407,6 @@ namespace ChildcareManagementStudio.View
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxState, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelErrorMessage, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.labelStartDate, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerStartDate, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelPhone, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelSSN, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
@@ -494,8 +469,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.DateTimePicker dateTimePickerDOB;
         private System.Windows.Forms.ComboBox comboBoxState;
         private System.Windows.Forms.Label labelErrorMessage;
-        private System.Windows.Forms.Label labelStartDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelSSN;
         private System.Windows.Forms.Label labelGender;

@@ -52,7 +52,6 @@ namespace ChildcareManagementStudio.View
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
                     Employee revisedEmployee = new Employee
@@ -120,7 +119,6 @@ namespace ChildcareManagementStudio.View
             this.textBoxCity.Text = this.originalEmployee.City;
             this.comboBoxState.Text = this.originalEmployee.State;
             this.textBoxZipCode.Text = this.originalEmployee.ZipCode;
-            this.dateTimePickerStartDate.Value = this.originalEmployee.StartDate; 
         }
 
         /// <summary>
