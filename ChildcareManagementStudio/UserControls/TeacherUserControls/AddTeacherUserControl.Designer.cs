@@ -448,7 +448,7 @@ namespace ChildcareManagementStudio.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddTeacherUserControl";
-            this.Size = new System.Drawing.Size(770, 550);
+            this.Size = new System.Drawing.Size(770, 540);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
