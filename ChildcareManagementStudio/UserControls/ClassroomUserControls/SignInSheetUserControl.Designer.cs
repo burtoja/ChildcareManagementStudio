@@ -31,6 +31,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.generateReportButton = new System.Windows.Forms.Button();
             this.classComboBox = new System.Windows.Forms.ComboBox();
@@ -38,10 +39,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearComboBox = new System.Windows.Forms.ComboBox();
             this.schoolYearLabel = new System.Windows.Forms.Label();
             this.reportViewerSignInSheet = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // StudentBindingSource
+            // 
+            this.StudentBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Student);
             // 
             // panel1
             // 
@@ -79,6 +83,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classComboBox.Size = new System.Drawing.Size(112, 29);
             this.classComboBox.TabIndex = 8;
             this.classComboBox.ValueMember = "Id";
+            this.classComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // classLabel
             // 
@@ -102,6 +107,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearComboBox.Name = "schoolYearComboBox";
             this.schoolYearComboBox.Size = new System.Drawing.Size(104, 29);
             this.schoolYearComboBox.TabIndex = 6;
+            this.schoolYearComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // schoolYearLabel
             // 
@@ -129,10 +135,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.reportViewerSignInSheet.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerSignInSheet.ZoomPercent = 75;
             // 
-            // StudentBindingSource
-            // 
-            this.StudentBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Student);
-            // 
             // SignInSheetUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -140,9 +142,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.panel1);
             this.Name = "SignInSheetUserControl";
             this.Size = new System.Drawing.Size(770, 540);
+            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

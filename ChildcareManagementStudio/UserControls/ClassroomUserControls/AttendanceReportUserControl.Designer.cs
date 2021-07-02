@@ -95,6 +95,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.Size = new System.Drawing.Size(112, 29);
             this.comboBoxClass.TabIndex = 8;
             this.comboBoxClass.ValueMember = "Id";
+            this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -118,6 +119,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(104, 29);
             this.comboBoxSchoolYear.TabIndex = 6;
+            this.comboBoxSchoolYear.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
