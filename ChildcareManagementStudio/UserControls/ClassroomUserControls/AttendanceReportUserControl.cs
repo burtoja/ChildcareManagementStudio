@@ -36,10 +36,15 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             comboBoxSchoolYear.SelectedIndex = schoolYears.Count - 1;
         }
 
+        /// <summary>
+        /// Handles button clicks for the generate report button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
-            int classId = 0;
+            int classId;
             try
             {
                 int classroomId = (int)comboBoxClass.SelectedValue;
@@ -57,6 +62,11 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 StudentBindingSource.Add(assignment.Student);
             }
+
+            System.Drawing.Printing.PageSettings ps = attendanceReportViewer.GetPageSettings();
+            ps.Landscape = true;
+            attendanceReportViewer.SetPageSettings(ps);
+
             attendanceReportViewer.RefreshReport();
         }
     }

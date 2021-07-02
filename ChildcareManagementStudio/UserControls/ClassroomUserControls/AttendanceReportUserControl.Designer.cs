@@ -30,37 +30,34 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.classroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonGenerateReport = new System.Windows.Forms.Button();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxSchoolYear = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.classroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // attendanceReportViewer
             // 
-            reportDataSource2.Name = "StudentDataSet";
-            reportDataSource2.Value = this.StudentBindingSource;
-            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "StudentDataSet";
+            reportDataSource1.Value = this.StudentBindingSource;
+            this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.attendanceReportViewer.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Reports.AttendanceReport.rdlc";
-            this.attendanceReportViewer.Location = new System.Drawing.Point(2, 76);
+            this.attendanceReportViewer.Location = new System.Drawing.Point(2, 85);
             this.attendanceReportViewer.Margin = new System.Windows.Forms.Padding(2);
             this.attendanceReportViewer.Name = "attendanceReportViewer";
             this.attendanceReportViewer.ServerReport.BearerToken = null;
-            this.attendanceReportViewer.Size = new System.Drawing.Size(764, 451);
+            this.attendanceReportViewer.Size = new System.Drawing.Size(741, 391);
             this.attendanceReportViewer.TabIndex = 0;
-            // 
-            // classroomBindingSource
-            // 
-            this.classroomBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Classroom);
+            this.attendanceReportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // panel1
             // 
@@ -134,6 +131,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label2.TabIndex = 1;
             this.label2.Text = "School Year:";
             // 
+            // classroomBindingSource
+            // 
+            this.classroomBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Classroom);
+            // 
             // AttendanceReportUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -143,9 +144,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Name = "AttendanceReportUserControl";
             this.Size = new System.Drawing.Size(770, 540);
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classroomBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

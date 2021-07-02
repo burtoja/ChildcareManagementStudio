@@ -44,7 +44,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void GenerateReportButton_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
-            int classId = 0;
+            int classId;
             try
             {
                 int classroomId = (int)classComboBox.SelectedValue;
