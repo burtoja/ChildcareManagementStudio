@@ -27,6 +27,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             classRecordDAL = new ClassRecordDAL();
             studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
 
+            this.UpdateComboBoxes();
+        }
+
+        /// <summary>
+        /// Populates (or updates) the values in both combo boxes based on current data in database
+        /// </summary>
+        public void UpdateComboBoxes()
+        {
             List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
             List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
 

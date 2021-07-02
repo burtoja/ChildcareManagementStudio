@@ -9,7 +9,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
         private readonly SetupClassUserControl addStudentsToClassroomUserControl;
-
+        private readonly AttendanceReportUserControl attendanceReportUserControl;
         private readonly SignInSheetUserControl signInSheetUserControl;
         
         /// <summary>
@@ -20,7 +20,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
             this.addStudentsToClassroomUserControl = new SetupClassUserControl();
-
+            this.attendanceReportUserControl = new AttendanceReportUserControl();
             this.signInSheetUserControl = new SignInSheetUserControl();
             this.AddUserControls();
         }
@@ -32,34 +32,35 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
             this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
-
+            this.tabPageAttendanceSheet.Controls.Add(this.attendanceReportUserControl);
             this.tabPageSignInSheet.Controls.Add(this.signInSheetUserControl);
         }
 
         /// <summary>
-        /// Event handler to listen for tab selected events and refresh the classroom list when heard
+        /// Event handler for selecting tabs within the Classroom section of the application
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TabControlStudent_Selected(object sender, TabControlEventArgs e)
+        private void TabControlMainClassroom_Selected(object sender, TabControlEventArgs e)
         {
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
                     // View Classroom List tab
-                    
+
                     break;
                 case 1:
                     // Edit Students In Classroom tab
-                    
+
                     break;
                 case 2:
                     // Generate Attendance Report tab
-
+                    this.attendanceReportUserControl.UpdateComboBoxes();
+                    break;
                 case 3:
                     // Generate Sign-in Report tab
-
-                break;
+                    this.signInSheetUserControl.UpdateComboBoxes();
+                    break;
             }
         }
     }
