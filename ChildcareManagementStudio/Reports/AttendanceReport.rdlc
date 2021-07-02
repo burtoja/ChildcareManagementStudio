@@ -42,22 +42,22 @@
               <Width>1.53333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.73958in</Width>
+              <Width>0.91666in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -76,7 +76,7 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -115,7 +115,7 @@
                               <Value>D.O.B.</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -154,7 +154,7 @@
                               <Value>Monday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -193,7 +193,7 @@
                               <Value>Tuesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -232,7 +232,7 @@
                               <Value>Wednesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -271,7 +271,7 @@
                               <Value>Thursday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -310,7 +310,7 @@
                               <Value>Friday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>LightGrey</Color>
                               </Style>
@@ -602,7 +602,7 @@
         <Top>0.83889in</Top>
         <Left>0.125in</Left>
         <Height>1in</Height>
-        <Width>7.27291in</Width>
+        <Width>8.44999in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -643,10 +643,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.93125in</Height>
+    <Height>7.5in</Height>
     <Style />
   </Body>
-  <Width>7.50208in</Width>
+  <Width>10.00125in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
