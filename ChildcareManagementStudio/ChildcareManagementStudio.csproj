@@ -334,7 +334,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Person.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <EmbeddedResource Include="AttendanceReport.rdlc" />
+    <EmbeddedResource Include="Reports\AttendanceReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

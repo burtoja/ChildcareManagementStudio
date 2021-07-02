@@ -70,7 +70,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             reportDataSource1.Name = "StudentDataSet";
             reportDataSource1.Value = this.StudentBindingSource;
             this.attendanceReportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.attendanceReportViewer.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.AttendanceReport.rdlc";
+            this.attendanceReportViewer.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Reports.AttendanceReport.rdlc";
             this.attendanceReportViewer.Location = new System.Drawing.Point(2, 56);
             this.attendanceReportViewer.Margin = new System.Windows.Forms.Padding(2);
             this.attendanceReportViewer.Name = "attendanceReportViewer";
