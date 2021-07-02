@@ -90,19 +90,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.classLabel.AutoSize = true;
             this.classLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLabel.Location = new System.Drawing.Point(291, 31);
+            this.classLabel.Location = new System.Drawing.Point(251, 31);
             this.classLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classLabel.Name = "classLabel";
-            this.classLabel.Size = new System.Drawing.Size(53, 21);
+            this.classLabel.Size = new System.Drawing.Size(93, 21);
             this.classLabel.TabIndex = 7;
-            this.classLabel.Text = "Class:";
+            this.classLabel.Text = "Classroom:";
             // 
             // schoolYearComboBox
             // 
             this.schoolYearComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.schoolYearComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schoolYearComboBox.FormattingEnabled = true;
-            this.schoolYearComboBox.Location = new System.Drawing.Point(163, 28);
+            this.schoolYearComboBox.Location = new System.Drawing.Point(138, 28);
             this.schoolYearComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.schoolYearComboBox.Name = "schoolYearComboBox";
             this.schoolYearComboBox.Size = new System.Drawing.Size(104, 29);
@@ -114,7 +114,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.schoolYearLabel.AutoSize = true;
             this.schoolYearLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolYearLabel.Location = new System.Drawing.Point(53, 31);
+            this.schoolYearLabel.Location = new System.Drawing.Point(28, 31);
             this.schoolYearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.schoolYearLabel.Name = "schoolYearLabel";
             this.schoolYearLabel.Size = new System.Drawing.Size(106, 21);

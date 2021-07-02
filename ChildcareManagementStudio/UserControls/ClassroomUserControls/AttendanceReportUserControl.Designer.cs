@@ -74,7 +74,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // buttonGenerateReport
             // 
             this.buttonGenerateReport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGenerateReport.Location = new System.Drawing.Point(475, 25);
+            this.buttonGenerateReport.Location = new System.Drawing.Point(481, 25);
             this.buttonGenerateReport.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGenerateReport.Name = "buttonGenerateReport";
             this.buttonGenerateReport.Size = new System.Drawing.Size(251, 33);
@@ -89,7 +89,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.DisplayMember = "Location";
             this.comboBoxClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxClass.FormattingEnabled = true;
-            this.comboBoxClass.Location = new System.Drawing.Point(331, 28);
+            this.comboBoxClass.Location = new System.Drawing.Point(346, 28);
             this.comboBoxClass.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(112, 29);
@@ -102,19 +102,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 31);
+            this.label1.Location = new System.Drawing.Point(249, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
+            this.label1.Size = new System.Drawing.Size(93, 21);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Class:";
+            this.label1.Text = "Classroom:";
             // 
             // comboBoxSchoolYear
             // 
             this.comboBoxSchoolYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxSchoolYear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSchoolYear.FormattingEnabled = true;
-            this.comboBoxSchoolYear.Location = new System.Drawing.Point(144, 28);
+            this.comboBoxSchoolYear.Location = new System.Drawing.Point(128, 28);
             this.comboBoxSchoolYear.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(104, 29);
@@ -126,7 +126,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 31);
+            this.label2.Location = new System.Drawing.Point(18, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 21);
