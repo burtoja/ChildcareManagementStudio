@@ -30,20 +30,20 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
             List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
 
-            schoolYearComboBox.DataSource = schoolYears;
-            classComboBox.DataSource = classrooms;
+            comboBoxSchoolYear.DataSource = schoolYears;
+            comboBoxClass.DataSource = classrooms;
 
-            schoolYearComboBox.SelectedIndex = schoolYears.Count - 1;
+            comboBoxSchoolYear.SelectedIndex = schoolYears.Count - 1;
         }
 
-        private void GenerateReportButton_Click(object sender, System.EventArgs e)
+        private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
             int classId = 0;
             try
             {
-                int classroomId = (int)classComboBox.SelectedValue;
-                string schoolYear = schoolYearComboBox.Text;
+                int classroomId = (int)comboBoxClass.SelectedValue;
+                string schoolYear = comboBoxSchoolYear.Text;
                 classId = classRecordDAL.GetClassId(classroomId, schoolYear);
             }
             catch
@@ -51,7 +51,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 MessageBox.Show("The selected combination of class and school year does not exist in the database.", "Invalid Class");
                 return;
             }
-            
+
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             foreach (StudentClassroomAssignment assignment in assignments)
             {
