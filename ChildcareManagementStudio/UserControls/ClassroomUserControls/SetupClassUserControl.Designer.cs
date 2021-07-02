@@ -89,7 +89,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonChangeSchoolYear.Location = new System.Drawing.Point(194, 22);
             this.buttonChangeSchoolYear.Name = "buttonChangeSchoolYear";
             this.buttonChangeSchoolYear.Size = new System.Drawing.Size(176, 23);
-            this.buttonChangeSchoolYear.TabIndex = 4;
+            this.buttonChangeSchoolYear.TabIndex = 1;
             this.buttonChangeSchoolYear.Text = "Change School Year";
             this.buttonChangeSchoolYear.UseVisualStyleBackColor = true;
             this.buttonChangeSchoolYear.Click += new System.EventHandler(this.ButtonChangeSchoolYear_Click);
@@ -115,7 +115,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewTeachers.MultiSelect = false;
             this.listViewTeachers.Name = "listViewTeachers";
             this.listViewTeachers.Size = new System.Drawing.Size(200, 70);
-            this.listViewTeachers.TabIndex = 6;
+            this.listViewTeachers.TabIndex = 22;
+            this.listViewTeachers.TabStop = false;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
             this.listViewTeachers.View = System.Windows.Forms.View.List;
             // 
@@ -129,7 +130,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonEditTeacherList.Location = new System.Drawing.Point(519, 98);
             this.buttonEditTeacherList.Name = "buttonEditTeacherList";
             this.buttonEditTeacherList.Size = new System.Drawing.Size(200, 23);
-            this.buttonEditTeacherList.TabIndex = 7;
+            this.buttonEditTeacherList.TabIndex = 5;
             this.buttonEditTeacherList.Text = "Add/Remove Teachers";
             this.buttonEditTeacherList.UseVisualStyleBackColor = true;
             this.buttonEditTeacherList.Click += new System.EventHandler(this.ButtonEditTeacherList_Click);
@@ -154,7 +155,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsNotInClass.Location = new System.Drawing.Point(21, 166);
             this.listViewStudentsNotInClass.Name = "listViewStudentsNotInClass";
             this.listViewStudentsNotInClass.Size = new System.Drawing.Size(298, 244);
-            this.listViewStudentsNotInClass.TabIndex = 9;
+            this.listViewStudentsNotInClass.TabIndex = 6;
             this.listViewStudentsNotInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsNotInClass.View = System.Windows.Forms.View.Details;
             // 
@@ -173,7 +174,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.listViewStudentsInClass.Location = new System.Drawing.Point(421, 166);
             this.listViewStudentsInClass.Name = "listViewStudentsInClass";
             this.listViewStudentsInClass.Size = new System.Drawing.Size(298, 244);
-            this.listViewStudentsInClass.TabIndex = 10;
+            this.listViewStudentsInClass.TabIndex = 8;
             this.listViewStudentsInClass.UseCompatibleStateImageBehavior = false;
             this.listViewStudentsInClass.View = System.Windows.Forms.View.Details;
             // 
@@ -197,7 +198,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonAddStudent.Location = new System.Drawing.Point(325, 217);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(90, 40);
-            this.buttonAddStudent.TabIndex = 12;
+            this.buttonAddStudent.TabIndex = 7;
             this.buttonAddStudent.Text = "-->";
             this.buttonAddStudent.UseVisualStyleBackColor = true;
             this.buttonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click);
@@ -207,7 +208,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonRemoveStudent.Location = new System.Drawing.Point(325, 272);
             this.buttonRemoveStudent.Name = "buttonRemoveStudent";
             this.buttonRemoveStudent.Size = new System.Drawing.Size(90, 40);
-            this.buttonRemoveStudent.TabIndex = 13;
+            this.buttonRemoveStudent.TabIndex = 9;
             this.buttonRemoveStudent.Text = "<--";
             this.buttonRemoveStudent.UseVisualStyleBackColor = true;
             this.buttonRemoveStudent.Click += new System.EventHandler(this.ButtonRemoveStudent_Click);
@@ -231,7 +232,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.Location = new System.Drawing.Point(76, 57);
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(254, 29);
-            this.comboBoxClass.TabIndex = 15;
+            this.comboBoxClass.TabIndex = 2;
             this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.ComboBoxClass_SelectedIndexChanged);
             // 
             // buttonNewClass
@@ -240,7 +241,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonNewClass.Location = new System.Drawing.Point(336, 60);
             this.buttonNewClass.Name = "buttonNewClass";
             this.buttonNewClass.Size = new System.Drawing.Size(113, 25);
-            this.buttonNewClass.TabIndex = 16;
+            this.buttonNewClass.TabIndex = 3;
             this.buttonNewClass.Text = "Create New Class";
             this.buttonNewClass.UseVisualStyleBackColor = true;
             this.buttonNewClass.Click += new System.EventHandler(this.ButtonNewClass_Click);
@@ -263,7 +264,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonChangeClassroom.Location = new System.Drawing.Point(272, 103);
             this.buttonChangeClassroom.Name = "buttonChangeClassroom";
             this.buttonChangeClassroom.Size = new System.Drawing.Size(126, 25);
-            this.buttonChangeClassroom.TabIndex = 18;
+            this.buttonChangeClassroom.TabIndex = 4;
             this.buttonChangeClassroom.Text = "Change Classroom";
             this.buttonChangeClassroom.UseVisualStyleBackColor = true;
             this.buttonChangeClassroom.Click += new System.EventHandler(this.ButtonChangeClassroom_Click);

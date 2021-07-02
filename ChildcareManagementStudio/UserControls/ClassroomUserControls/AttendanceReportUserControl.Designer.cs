@@ -56,7 +56,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.attendanceReportViewer.Name = "attendanceReportViewer";
             this.attendanceReportViewer.ServerReport.BearerToken = null;
             this.attendanceReportViewer.Size = new System.Drawing.Size(741, 391);
-            this.attendanceReportViewer.TabIndex = 0;
+            this.attendanceReportViewer.TabIndex = 4;
             this.attendanceReportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // panel1
@@ -78,7 +78,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.buttonGenerateReport.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGenerateReport.Name = "buttonGenerateReport";
             this.buttonGenerateReport.Size = new System.Drawing.Size(251, 33);
-            this.buttonGenerateReport.TabIndex = 9;
+            this.buttonGenerateReport.TabIndex = 3;
             this.buttonGenerateReport.Text = "Generate Attendance Sheet";
             this.buttonGenerateReport.UseVisualStyleBackColor = true;
             this.buttonGenerateReport.Click += new System.EventHandler(this.ButtonGenerateReport_Click);
@@ -93,7 +93,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(112, 29);
-            this.comboBoxClass.TabIndex = 8;
+            this.comboBoxClass.TabIndex = 2;
             this.comboBoxClass.ValueMember = "Id";
             this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
@@ -118,7 +118,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxSchoolYear.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(104, 29);
-            this.comboBoxSchoolYear.TabIndex = 6;
+            this.comboBoxSchoolYear.TabIndex = 1;
             this.comboBoxSchoolYear.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // label2

@@ -66,7 +66,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.generateReportButton.Margin = new System.Windows.Forms.Padding(2);
             this.generateReportButton.Name = "generateReportButton";
             this.generateReportButton.Size = new System.Drawing.Size(212, 33);
-            this.generateReportButton.TabIndex = 9;
+            this.generateReportButton.TabIndex = 3;
             this.generateReportButton.Text = "Generate Sign-in Sheet";
             this.generateReportButton.UseVisualStyleBackColor = true;
             this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
@@ -81,7 +81,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.classComboBox.Name = "classComboBox";
             this.classComboBox.Size = new System.Drawing.Size(112, 29);
-            this.classComboBox.TabIndex = 8;
+            this.classComboBox.TabIndex = 2;
             this.classComboBox.ValueMember = "Id";
             this.classComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
@@ -106,7 +106,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.schoolYearComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.schoolYearComboBox.Name = "schoolYearComboBox";
             this.schoolYearComboBox.Size = new System.Drawing.Size(104, 29);
-            this.schoolYearComboBox.TabIndex = 6;
+            this.schoolYearComboBox.TabIndex = 1;
             this.schoolYearComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // schoolYearLabel
@@ -131,7 +131,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.reportViewerSignInSheet.Name = "reportViewerSignInSheet";
             this.reportViewerSignInSheet.ServerReport.BearerToken = null;
             this.reportViewerSignInSheet.Size = new System.Drawing.Size(741, 391);
-            this.reportViewerSignInSheet.TabIndex = 1;
+            this.reportViewerSignInSheet.TabIndex = 4;
             this.reportViewerSignInSheet.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerSignInSheet.ZoomPercent = 75;
             // 
