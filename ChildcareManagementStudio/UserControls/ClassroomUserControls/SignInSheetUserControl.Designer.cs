@@ -31,17 +31,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.schoolYearLabel = new System.Windows.Forms.Label();
-            this.schoolYearComboBox = new System.Windows.Forms.ComboBox();
-            this.classLabel = new System.Windows.Forms.Label();
-            this.classComboBox = new System.Windows.Forms.ComboBox();
-            this.generateReportButton = new System.Windows.Forms.Button();
-            this.reportViewerSignInSheet = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.generateReportButton = new System.Windows.Forms.Button();
+            this.classComboBox = new System.Windows.Forms.ComboBox();
+            this.classLabel = new System.Windows.Forms.Label();
+            this.schoolYearComboBox = new System.Windows.Forms.ComboBox();
+            this.schoolYearLabel = new System.Windows.Forms.Label();
+            this.reportViewerSignInSheet = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // StudentBindingSource
+            // 
+            this.StudentBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Student);
             // 
             // panel1
             // 
@@ -55,40 +59,17 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.panel1.Size = new System.Drawing.Size(770, 80);
             this.panel1.TabIndex = 0;
             // 
-            // schoolYearLabel
+            // generateReportButton
             // 
-            this.schoolYearLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.schoolYearLabel.AutoSize = true;
-            this.schoolYearLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolYearLabel.Location = new System.Drawing.Point(53, 31);
-            this.schoolYearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.schoolYearLabel.Name = "schoolYearLabel";
-            this.schoolYearLabel.Size = new System.Drawing.Size(106, 21);
-            this.schoolYearLabel.TabIndex = 1;
-            this.schoolYearLabel.Text = "School Year:";
-            // 
-            // schoolYearComboBox
-            // 
-            this.schoolYearComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.schoolYearComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolYearComboBox.FormattingEnabled = true;
-            this.schoolYearComboBox.Location = new System.Drawing.Point(163, 28);
-            this.schoolYearComboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.schoolYearComboBox.Name = "schoolYearComboBox";
-            this.schoolYearComboBox.Size = new System.Drawing.Size(104, 29);
-            this.schoolYearComboBox.TabIndex = 6;
-            // 
-            // classLabel
-            // 
-            this.classLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.classLabel.AutoSize = true;
-            this.classLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLabel.Location = new System.Drawing.Point(291, 31);
-            this.classLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.classLabel.Name = "classLabel";
-            this.classLabel.Size = new System.Drawing.Size(53, 21);
-            this.classLabel.TabIndex = 7;
-            this.classLabel.Text = "Class:";
+            this.generateReportButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateReportButton.Location = new System.Drawing.Point(486, 25);
+            this.generateReportButton.Margin = new System.Windows.Forms.Padding(2);
+            this.generateReportButton.Name = "generateReportButton";
+            this.generateReportButton.Size = new System.Drawing.Size(212, 33);
+            this.generateReportButton.TabIndex = 3;
+            this.generateReportButton.Text = "Generate Sign-in Sheet";
+            this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
             // 
             // classComboBox
             // 
@@ -100,20 +81,45 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.classComboBox.Name = "classComboBox";
             this.classComboBox.Size = new System.Drawing.Size(112, 29);
-            this.classComboBox.TabIndex = 8;
+            this.classComboBox.TabIndex = 2;
             this.classComboBox.ValueMember = "Id";
+            this.classComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
-            // generateReportButton
+            // classLabel
             // 
-            this.generateReportButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateReportButton.Location = new System.Drawing.Point(486, 25);
-            this.generateReportButton.Margin = new System.Windows.Forms.Padding(2);
-            this.generateReportButton.Name = "generateReportButton";
-            this.generateReportButton.Size = new System.Drawing.Size(212, 33);
-            this.generateReportButton.TabIndex = 9;
-            this.generateReportButton.Text = "Generate Sign-in Sheet";
-            this.generateReportButton.UseVisualStyleBackColor = true;
-            this.generateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
+            this.classLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.classLabel.AutoSize = true;
+            this.classLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classLabel.Location = new System.Drawing.Point(251, 31);
+            this.classLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.classLabel.Name = "classLabel";
+            this.classLabel.Size = new System.Drawing.Size(93, 21);
+            this.classLabel.TabIndex = 7;
+            this.classLabel.Text = "Classroom:";
+            // 
+            // schoolYearComboBox
+            // 
+            this.schoolYearComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.schoolYearComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.schoolYearComboBox.FormattingEnabled = true;
+            this.schoolYearComboBox.Location = new System.Drawing.Point(138, 28);
+            this.schoolYearComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.schoolYearComboBox.Name = "schoolYearComboBox";
+            this.schoolYearComboBox.Size = new System.Drawing.Size(104, 29);
+            this.schoolYearComboBox.TabIndex = 1;
+            this.schoolYearComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            // 
+            // schoolYearLabel
+            // 
+            this.schoolYearLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.schoolYearLabel.AutoSize = true;
+            this.schoolYearLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.schoolYearLabel.Location = new System.Drawing.Point(28, 31);
+            this.schoolYearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.schoolYearLabel.Name = "schoolYearLabel";
+            this.schoolYearLabel.Size = new System.Drawing.Size(106, 21);
+            this.schoolYearLabel.TabIndex = 1;
+            this.schoolYearLabel.Text = "School Year:";
             // 
             // reportViewerSignInSheet
             // 
@@ -124,14 +130,10 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.reportViewerSignInSheet.Location = new System.Drawing.Point(3, 86);
             this.reportViewerSignInSheet.Name = "reportViewerSignInSheet";
             this.reportViewerSignInSheet.ServerReport.BearerToken = null;
-            this.reportViewerSignInSheet.Size = new System.Drawing.Size(764, 451);
-            this.reportViewerSignInSheet.TabIndex = 1;
+            this.reportViewerSignInSheet.Size = new System.Drawing.Size(741, 391);
+            this.reportViewerSignInSheet.TabIndex = 4;
             this.reportViewerSignInSheet.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerSignInSheet.ZoomPercent = 75;
-            // 
-            // StudentBindingSource
-            // 
-            this.StudentBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Student);
             // 
             // SignInSheetUserControl
             // 
@@ -140,9 +142,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.Controls.Add(this.panel1);
             this.Name = "SignInSheetUserControl";
             this.Size = new System.Drawing.Size(770, 540);
+            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

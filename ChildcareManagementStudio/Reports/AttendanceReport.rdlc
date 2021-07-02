@@ -42,22 +42,22 @@
               <Width>1.53333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25in</Width>
+              <Width>0.91666in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9in</Width>
+              <Width>1.2in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -76,6 +76,9 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -90,8 +93,9 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
@@ -108,14 +112,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DOB</Value>
+                              <Value>D.O.B.</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -125,6 +132,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -146,6 +154,9 @@
                               <Value>Monday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -160,6 +171,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -181,6 +193,9 @@
                               <Value>Tuesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -195,6 +210,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -216,6 +232,9 @@
                               <Value>Wednesday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -230,6 +249,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -251,6 +271,9 @@
                               <Value>Thursday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -265,6 +288,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -286,6 +310,9 @@
                               <Value>Friday</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>LightGrey</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -300,6 +327,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Maroon</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -341,7 +369,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
@@ -366,7 +394,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -574,7 +602,7 @@
         <Top>0.83889in</Top>
         <Left>0.125in</Left>
         <Height>1in</Height>
-        <Width>7.28333in</Width>
+        <Width>8.44999in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -615,10 +643,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.93125in</Height>
+    <Height>7.5in</Height>
     <Style />
   </Body>
-  <Width>7.50208in</Width>
+  <Width>10.00125in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

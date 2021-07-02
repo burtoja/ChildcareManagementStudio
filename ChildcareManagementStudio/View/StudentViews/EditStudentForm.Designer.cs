@@ -264,7 +264,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.buttonSubmit.Location = new System.Drawing.Point(187, 372);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(178, 35);
-            this.buttonSubmit.TabIndex = 23;
+            this.buttonSubmit.TabIndex = 26;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
@@ -277,7 +277,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.buttonClear.Location = new System.Drawing.Point(464, 373);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(178, 34);
-            this.buttonClear.TabIndex = 24;
+            this.buttonClear.TabIndex = 27;
             this.buttonClear.Text = "Reset";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.ButtonReset_Click);
@@ -478,7 +478,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.dateTimePickerVaccinationExpiration.Location = new System.Drawing.Point(371, 290);
             this.dateTimePickerVaccinationExpiration.Name = "dateTimePickerVaccinationExpiration";
             this.dateTimePickerVaccinationExpiration.Size = new System.Drawing.Size(149, 27);
-            this.dateTimePickerVaccinationExpiration.TabIndex = 28;
+            this.dateTimePickerVaccinationExpiration.TabIndex = 22;
             // 
             // dateTimePickerPhysicalExamExpriation
             // 
@@ -489,7 +489,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.dateTimePickerPhysicalExamExpriation.Location = new System.Drawing.Point(371, 330);
             this.dateTimePickerPhysicalExamExpriation.Name = "dateTimePickerPhysicalExamExpriation";
             this.dateTimePickerPhysicalExamExpriation.Size = new System.Drawing.Size(149, 27);
-            this.dateTimePickerPhysicalExamExpriation.TabIndex = 29;
+            this.dateTimePickerPhysicalExamExpriation.TabIndex = 24;
             // 
             // checkBoxNoVaccinationRecord
             // 
@@ -501,7 +501,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.checkBoxNoVaccinationRecord.Location = new System.Drawing.Point(526, 296);
             this.checkBoxNoVaccinationRecord.Name = "checkBoxNoVaccinationRecord";
             this.checkBoxNoVaccinationRecord.Size = new System.Drawing.Size(96, 21);
-            this.checkBoxNoVaccinationRecord.TabIndex = 30;
+            this.checkBoxNoVaccinationRecord.TabIndex = 23;
             this.checkBoxNoVaccinationRecord.Text = "No Record";
             this.checkBoxNoVaccinationRecord.UseVisualStyleBackColor = true;
             this.checkBoxNoVaccinationRecord.CheckedChanged += new System.EventHandler(this.CheckBoxNoVaccinationRecord_CheckedChanged);
@@ -516,7 +516,7 @@ namespace ChildcareManagementStudio.View.StudentViews
             this.checkBoxNoPhysicalExamRecord.Location = new System.Drawing.Point(526, 336);
             this.checkBoxNoPhysicalExamRecord.Name = "checkBoxNoPhysicalExamRecord";
             this.checkBoxNoPhysicalExamRecord.Size = new System.Drawing.Size(96, 21);
-            this.checkBoxNoPhysicalExamRecord.TabIndex = 31;
+            this.checkBoxNoPhysicalExamRecord.TabIndex = 25;
             this.checkBoxNoPhysicalExamRecord.Text = "No Record";
             this.checkBoxNoPhysicalExamRecord.UseVisualStyleBackColor = true;
             this.checkBoxNoPhysicalExamRecord.CheckedChanged += new System.EventHandler(this.CheckBoxNoPhysicalExamRecord_CheckedChanged);

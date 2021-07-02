@@ -27,6 +27,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             classRecordDAL = new ClassRecordDAL();
             studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
 
+            this.UpdateComboBoxes();
+        }
+
+        /// <summary>
+        /// Populates (or updates) the values in both combo boxes based on current data in database
+        /// </summary>
+        public void UpdateComboBoxes()
+        {
             List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
             List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
 
@@ -44,7 +52,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void GenerateReportButton_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
-            int classId = 0;
+            int classId;
             try
             {
                 int classroomId = (int)classComboBox.SelectedValue;
@@ -69,5 +77,16 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             reportViewerSignInSheet.RefreshReport();
         }
+
+        /// <summary>
+        /// Event handler for comboBox selection changes which should reset the report viewer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            reportViewerSignInSheet.Clear();
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -27,23 +28,36 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             classRecordDAL = new ClassRecordDAL();
             studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
 
+            this.UpdateComboBoxes();
+        }
+
+        /// <summary>
+        /// Populates (or updates) the values in both combo boxes based on current data in database
+        /// </summary>
+        public void UpdateComboBoxes()
+        {
             List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
             List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
 
-            schoolYearComboBox.DataSource = schoolYears;
-            classComboBox.DataSource = classrooms;
+            comboBoxSchoolYear.DataSource = schoolYears;
+            comboBoxClass.DataSource = classrooms;
 
-            schoolYearComboBox.SelectedIndex = schoolYears.Count - 1;
+            comboBoxSchoolYear.SelectedIndex = schoolYears.Count - 1;
         }
 
-        private void GenerateReportButton_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Handles button clicks for the generate report button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
-            int classId = 0;
+            int classId;
             try
             {
-                int classroomId = (int)classComboBox.SelectedValue;
-                string schoolYear = schoolYearComboBox.Text;
+                int classroomId = (int)comboBoxClass.SelectedValue;
+                string schoolYear = comboBoxSchoolYear.Text;
                 classId = classRecordDAL.GetClassId(classroomId, schoolYear);
             }
             catch
@@ -51,13 +65,29 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 MessageBox.Show("The selected combination of class and school year does not exist in the database.", "Invalid Class");
                 return;
             }
-            
+
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             foreach (StudentClassroomAssignment assignment in assignments)
             {
                 StudentBindingSource.Add(assignment.Student);
             }
+
+            System.Drawing.Printing.PageSettings ps = attendanceReportViewer.GetPageSettings();
+            ps.Landscape = true;
+            attendanceReportViewer.SetPageSettings(ps);
+
             attendanceReportViewer.RefreshReport();
         }
+
+        /// <summary>
+        /// Event handler for comboBox selection changes which should reset the report viewer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            attendanceReportViewer.Clear();
+        }
+
     }
 }
