@@ -9,8 +9,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
         private readonly SetupClassUserControl addStudentsToClassroomUserControl;
-        private readonly GenerateDocumentsUserControl attendanceReportUserControl;
-        private readonly SignInSheetUserControl signInSheetUserControl;
+        private readonly GenerateDocumentsUserControl generateDocumentsUserControl;
         
         /// <summary>
         /// Constructor for the UC
@@ -20,8 +19,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
             this.addStudentsToClassroomUserControl = new SetupClassUserControl();
-            this.attendanceReportUserControl = new GenerateDocumentsUserControl();
-            this.signInSheetUserControl = new SignInSheetUserControl();
+            this.generateDocumentsUserControl = new GenerateDocumentsUserControl();
             this.AddUserControls();
         }
 
@@ -32,8 +30,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
             this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
-            this.tabPageAttendanceSheet.Controls.Add(this.attendanceReportUserControl);
-            this.tabPageSignInSheet.Controls.Add(this.signInSheetUserControl);
+            this.tabPageAttendanceSheet.Controls.Add(this.generateDocumentsUserControl);
         }
 
         /// <summary>
@@ -55,11 +52,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     break;
                 case 2:
                     // Generate Attendance Report tab
-                    this.attendanceReportUserControl.UpdateComboBoxes();
-                    break;
-                case 3:
-                    // Generate Sign-in Report tab
-                    this.signInSheetUserControl.UpdateComboBoxes();
+                    this.generateDocumentsUserControl.UpdateComboBoxes();
                     break;
             }
         }
