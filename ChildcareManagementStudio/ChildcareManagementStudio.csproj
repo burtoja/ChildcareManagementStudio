@@ -181,12 +181,6 @@
     <Compile Include="UserControls\ClassroomUserControls\MainClassroomUserControl.Designer.cs">
       <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ClassroomUserControls\SignInSheetUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ClassroomUserControls\SignInSheetUserControl.Designer.cs">
-      <DependentUpon>SignInSheetUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,9 +347,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ClassroomUserControls\MainClassroomUserControl.resx">
       <DependentUpon>MainClassroomUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ClassroomUserControls\SignInSheetUserControl.resx">
-      <DependentUpon>SignInSheetUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.resx">
       <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
