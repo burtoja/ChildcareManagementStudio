@@ -71,22 +71,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 StudentBindingSource.Add(assignment.Student);
             }
-
-            System.Drawing.Printing.PageSettings ps = attendanceReportViewer.GetPageSettings();
-            ps.Landscape = true;
-            attendanceReportViewer.SetPageSettings(ps);
-
-            attendanceReportViewer.RefreshReport();
-        }
-
-        /// <summary>
-        /// Event handler for comboBox selection changes which should reset the report viewer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            attendanceReportViewer.Clear();
         }
 
     }
