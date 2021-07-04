@@ -1,7 +1,7 @@
 ﻿
 namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 {
-    partial class AttendanceReportUserControl
+    partial class GenerateDocumentsUserControl
     {
         /// <summary> 
         /// Required designer variable.

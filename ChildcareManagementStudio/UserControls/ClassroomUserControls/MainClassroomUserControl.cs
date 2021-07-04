@@ -9,7 +9,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
         private readonly SetupClassUserControl addStudentsToClassroomUserControl;
-        private readonly AttendanceReportUserControl attendanceReportUserControl;
+        private readonly GenerateDocumentsUserControl attendanceReportUserControl;
         private readonly SignInSheetUserControl signInSheetUserControl;
         
         /// <summary>
@@ -20,7 +20,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
             this.addStudentsToClassroomUserControl = new SetupClassUserControl();
-            this.attendanceReportUserControl = new AttendanceReportUserControl();
+            this.attendanceReportUserControl = new GenerateDocumentsUserControl();
             this.signInSheetUserControl = new SignInSheetUserControl();
             this.AddUserControls();
         }

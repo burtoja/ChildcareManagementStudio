@@ -9,7 +9,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     /// <summary>
     /// User control for selecting and viewing the weekly attendance report.
     /// </summary>
-    public partial class AttendanceReportUserControl : UserControl
+    public partial class GenerateDocumentsUserControl : UserControl
     {
         private readonly SchoolYearDAL schoolYearDAL;
         private readonly ClassroomDAL classroomDAL;
@@ -19,7 +19,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <summary>
         /// Constructor for the attendance report user control.
         /// </summary>
-        public AttendanceReportUserControl()
+        public GenerateDocumentsUserControl()
         {
             InitializeComponent();
 
