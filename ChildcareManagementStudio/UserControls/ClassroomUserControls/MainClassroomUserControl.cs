@@ -30,7 +30,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
             this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
-            this.tabPageAttendanceSheet.Controls.Add(this.generateDocumentsUserControl);
+            this.tabPageGenerateDocuments.Controls.Add(this.generateDocumentsUserControl);
         }
 
         /// <summary>
