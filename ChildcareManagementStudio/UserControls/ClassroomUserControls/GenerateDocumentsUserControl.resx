@@ -123,6 +123,9 @@
   <metadata name="classroomBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>225, 16</value>
   </metadata>
+  <data name="labelInstructions.Text" xml:space="preserve">
+    <value>To generate a document, select the desired school year and choose an active classroom.  Then press the button of the type of report desired.  You will be prompted to choose a location to save the generated Microsoft Word document.  After saving the document, you can open it in Word and modify as desired before printing.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>

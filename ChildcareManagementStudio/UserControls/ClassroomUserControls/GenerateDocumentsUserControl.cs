@@ -1,14 +1,15 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 {
     /// <summary>
-    /// Class will create and manage the sign-in sheet tab in the Classrooms section of the application
+    /// User control for selecting and viewing the weekly attendance report.
     /// </summary>
-    public partial class SignInSheetUserControl : UserControl
+    public partial class GenerateDocumentsUserControl : UserControl
     {
         private readonly SchoolYearDAL schoolYearDAL;
         private readonly ClassroomDAL classroomDAL;
@@ -16,9 +17,9 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private readonly StudentClassroomAssignmentDAL studentClassroomAssignmentDAL;
 
         /// <summary>
-        /// Constructor for the user control
+        /// Constructor for the attendance report user control.
         /// </summary>
-        public SignInSheetUserControl()
+        public GenerateDocumentsUserControl()
         {
             InitializeComponent();
 
@@ -38,25 +39,25 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             List<string> schoolYears = schoolYearDAL.GetAllSchoolYears();
             List<Classroom> classrooms = classroomDAL.GetAllClassrooms();
 
-            schoolYearComboBox.DataSource = schoolYears;
-            classComboBox.DataSource = classrooms;
+            comboBoxSchoolYear.DataSource = schoolYears;
+            comboBoxClass.DataSource = classrooms;
 
-            schoolYearComboBox.SelectedIndex = schoolYears.Count - 1;
+            comboBoxSchoolYear.SelectedIndex = schoolYears.Count - 1;
         }
 
         /// <summary>
-        /// Handles the report generation button clicks
+        /// Handles button clicks for the generate report button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GenerateReportButton_Click(object sender, System.EventArgs e)
+        private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
             StudentBindingSource.Clear();
             int classId;
             try
             {
-                int classroomId = (int)classComboBox.SelectedValue;
-                string schoolYear = schoolYearComboBox.Text;
+                int classroomId = (int)comboBoxClass.SelectedValue;
+                string schoolYear = comboBoxSchoolYear.Text;
                 classId = classRecordDAL.GetClassId(classroomId, schoolYear);
             }
             catch
@@ -70,22 +71,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 StudentBindingSource.Add(assignment.Student);
             }
-
-            System.Drawing.Printing.PageSettings ps = reportViewerSignInSheet.GetPageSettings();
-            ps.Landscape = true;
-            reportViewerSignInSheet.SetPageSettings(ps);
-
-            reportViewerSignInSheet.RefreshReport();
-        }
-
-        /// <summary>
-        /// Event handler for comboBox selection changes which should reset the report viewer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            reportViewerSignInSheet.Clear();
         }
 
     }

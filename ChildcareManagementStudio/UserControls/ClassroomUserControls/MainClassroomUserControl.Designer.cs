@@ -32,8 +32,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabControlMainClassroom = new System.Windows.Forms.TabControl();
             this.tabPageListClassrooms = new System.Windows.Forms.TabPage();
             this.tabPageEditClass = new System.Windows.Forms.TabPage();
-            this.tabPageAttendanceSheet = new System.Windows.Forms.TabPage();
-            this.tabPageSignInSheet = new System.Windows.Forms.TabPage();
+            this.tabPageGenerateDocuments = new System.Windows.Forms.TabPage();
             this.tabControlMainClassroom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,8 +41,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabControlMainClassroom.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlMainClassroom.Controls.Add(this.tabPageListClassrooms);
             this.tabControlMainClassroom.Controls.Add(this.tabPageEditClass);
-            this.tabControlMainClassroom.Controls.Add(this.tabPageAttendanceSheet);
-            this.tabControlMainClassroom.Controls.Add(this.tabPageSignInSheet);
+            this.tabControlMainClassroom.Controls.Add(this.tabPageGenerateDocuments);
             this.tabControlMainClassroom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMainClassroom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMainClassroom.Location = new System.Drawing.Point(0, 0);
@@ -58,7 +56,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabPageListClassrooms.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageListClassrooms.Location = new System.Drawing.Point(4, 33);
             this.tabPageListClassrooms.Name = "tabPageListClassrooms";
-            this.tabPageListClassrooms.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageListClassrooms.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageListClassrooms.Size = new System.Drawing.Size(752, 478);
             this.tabPageListClassrooms.TabIndex = 1;
             this.tabPageListClassrooms.Text = "List Classrooms";
@@ -68,28 +66,19 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.tabPageEditClass.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageEditClass.Location = new System.Drawing.Point(4, 33);
             this.tabPageEditClass.Name = "tabPageEditClass";
-            this.tabPageEditClass.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageEditClass.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageEditClass.Size = new System.Drawing.Size(752, 478);
             this.tabPageEditClass.TabIndex = 0;
             this.tabPageEditClass.Text = "Edit Class";
             // 
-            // tabPageAttendanceSheet
+            // tabPageGenerateDocuments
             // 
-            this.tabPageAttendanceSheet.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageAttendanceSheet.Location = new System.Drawing.Point(4, 33);
-            this.tabPageAttendanceSheet.Name = "tabPageAttendanceSheet";
-            this.tabPageAttendanceSheet.Size = new System.Drawing.Size(752, 478);
-            this.tabPageAttendanceSheet.TabIndex = 2;
-            this.tabPageAttendanceSheet.Text = "Generate Attendance Sheet";
-            // 
-            // tabPageSignInSheet
-            // 
-            this.tabPageSignInSheet.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageSignInSheet.Location = new System.Drawing.Point(4, 33);
-            this.tabPageSignInSheet.Name = "tabPageSignInSheet";
-            this.tabPageSignInSheet.Size = new System.Drawing.Size(752, 478);
-            this.tabPageSignInSheet.TabIndex = 3;
-            this.tabPageSignInSheet.Text = "Generate Sign-in Sheet";
+            this.tabPageGenerateDocuments.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageGenerateDocuments.Location = new System.Drawing.Point(4, 33);
+            this.tabPageGenerateDocuments.Name = "tabPageGenerateDocuments";
+            this.tabPageGenerateDocuments.Size = new System.Drawing.Size(752, 478);
+            this.tabPageGenerateDocuments.TabIndex = 2;
+            this.tabPageGenerateDocuments.Text = "Generate Documents";
             // 
             // MainClassroomUserControl
             // 
@@ -108,8 +97,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.TabControl tabControlMainClassroom;
         private System.Windows.Forms.TabPage tabPageEditClass;
         private System.Windows.Forms.TabPage tabPageListClassrooms;
-        private System.Windows.Forms.TabPage tabPageAttendanceSheet;
-        private System.Windows.Forms.TabPage tabPageSignInSheet;
-        private AttendanceReportUserControl attendanceReportUserControl1;
+        private System.Windows.Forms.TabPage tabPageGenerateDocuments;
     }
 }

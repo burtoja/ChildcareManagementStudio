@@ -337,7 +337,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                         {
                             errorMessage = "Classroom is at full capacity.";
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
                         }
@@ -391,7 +391,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                         {
                             this.studentClassroomAssignmentController.DeleteStudentClassroomAssignment(studentClassroomAssignment);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             errorMessage += "\r\n" + studentClassroomAssignment.Student.FullName;
                         }

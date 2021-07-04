@@ -1,9 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
-using Squirrel;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.View
@@ -80,9 +78,6 @@ namespace ChildcareManagementStudio.View
                         this.labelErrorMessage.Text = "Please enter a password";
                 }                
             }
-            //TODO: Make credential controller with a CredentialsAreValid method stubbed in
-            //TODO: Make SetTheLoginForm method in MainDashboard
-            //TODO: Make SetActiveUsername method in MAinDashboard
         }
 
         /// <summary>

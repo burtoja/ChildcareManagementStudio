@@ -27,7 +27,7 @@ namespace ChildcareManagementStudio.Model
                     List<PositionRecord> sortedPositionRecords = PositionRecords.OrderBy(x => x.StartDate).ToList();
                     return sortedPositionRecords.First().StartDate;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return new DateTime(1900, 1, 1);
                 }
