@@ -110,6 +110,5 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.TabPage tabPageListClassrooms;
         private System.Windows.Forms.TabPage tabPageAttendanceSheet;
         private System.Windows.Forms.TabPage tabPageSignInSheet;
-        private AttendanceReportUserControl attendanceReportUserControl1;
     }
 }
