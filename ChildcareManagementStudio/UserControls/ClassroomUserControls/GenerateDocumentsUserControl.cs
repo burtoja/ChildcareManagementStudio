@@ -1,4 +1,5 @@
-﻿using ChildcareManagementStudio.DAL;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
-            StudentBindingSource.Clear();
             int classId;
             try
             {
@@ -67,11 +67,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
-            foreach (StudentClassroomAssignment assignment in assignments)
-            {
-                StudentBindingSource.Add(assignment.Student);
-            }
+            ReportWriter reportWriter = new ReportWriter(assignments);
+            reportWriter.WriteAttendanceSheet(@"C:\\Test\\temp.pdf");
         }
-
     }
 }
