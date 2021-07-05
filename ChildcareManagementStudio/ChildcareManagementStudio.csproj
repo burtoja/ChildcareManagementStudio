@@ -265,6 +265,12 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeClockUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeClockUserControl.Designer.cs">
+      <DependentUpon>TimeClockUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassroomViews\AddNewClassRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeUserControls\TimeClockUserControl.resx">
+      <DependentUpon>TimeClockUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\AddNewClassRecordForm.resx">
       <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
