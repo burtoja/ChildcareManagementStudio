@@ -68,12 +68,32 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             ReportWriter reportWriter = new ReportWriter(assignments);
-            reportWriter.WriteAttendanceSheet(@"C:\Test\Attendance Report.pdf");
+            reportWriter.WriteAttendanceSheet(@"C:\Test\Attendance Sheet.pdf");
 
             /*
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             DialogResult dialogResult = saveFileDialog.ShowDialog();
             */
+        }
+
+        private void GenerateSignInSheetButton_Click(object sender, EventArgs e)
+        {
+            int classId;
+            try
+            {
+                int classroomId = (int)comboBoxClass.SelectedValue;
+                string schoolYear = comboBoxSchoolYear.Text;
+                classId = classRecordDAL.GetClassId(classroomId, schoolYear);
+            }
+            catch
+            {
+                MessageBox.Show("The selected combination of class and school year does not exist in the database.", "Invalid Class");
+                return;
+            }
+
+            List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
+            ReportWriter reportWriter = new ReportWriter(assignments);
+            reportWriter.WriteSignInSheet(@"C:\Test\Sign In Sheet.pdf");
         }
     }
 }

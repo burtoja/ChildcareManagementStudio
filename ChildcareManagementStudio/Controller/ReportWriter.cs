@@ -53,7 +53,6 @@ namespace ChildcareManagementStudio.Controller
             object missing = System.Reflection.Missing.Value;
             object readOnly = false;
             object isVisible = false;
-            object fileName = @"C:\Test\AttendanceSheet.dotx";
             object fileFormat = WdSaveFormat.wdFormatPDF;
             object saveChanges = WdSaveOptions.wdDoNotSaveChanges;
 
@@ -84,6 +83,59 @@ namespace ChildcareManagementStudio.Controller
                     oWord.Selection.TypeText(this.studentClassroomAssignments[assignmentNumber].Student.FullName);
                     oDoc.Tables[2].Rows.Last.Cells[2].Select();
                     oWord.Selection.TypeText(this.studentClassroomAssignments[assignmentNumber].Student.DateOfBirth.ToShortDateString());
+                }
+            }
+
+            oDoc.SaveAs(ref filePath, ref fileFormat, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
+            oDoc.Close(ref saveChanges, ref missing, ref missing);
+            oWord.Quit(ref saveChanges, ref missing, ref missing);
+        }
+
+        /// <summary>
+        /// Method that writes a PDF file for a sign-in sheet.
+        /// </summary>
+        /// <param name="filePath">The path where the file will be saved.</param>
+        public void WriteSignInSheet(object filePath)
+        {
+            if (filePath == null)
+            {
+                throw new ArgumentNullException("filePath", "The file path cannot be null.");
+            }
+
+            if (!GetFileExtension(filePath).Equals("pdf", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ArgumentException("The file must have a PDF extension.", "filePath");
+            }
+
+            object missing = System.Reflection.Missing.Value;
+            object readOnly = false;
+            object isVisible = false;
+            object fileFormat = WdSaveFormat.wdFormatPDF;
+            object saveChanges = WdSaveOptions.wdDoNotSaveChanges;
+
+            Microsoft.Office.Interop.Word.Application oWord = new Microsoft.Office.Interop.Word.Application();
+
+            Documents oDocTmp = oWord.Documents;
+            oWord.Visible = false;
+
+            string temporaryFilePath = Path.GetTempFileName();
+            File.WriteAllBytes(temporaryFilePath, Resources.SignInSheet);
+            object templatePath = temporaryFilePath;
+
+            Documents documentTemplate = oWord.Documents;
+            oWord.Visible = false;
+            Document oDoc = documentTemplate.Open(ref templatePath, ref missing, ref readOnly, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref isVisible, ref missing, ref missing, ref missing, ref missing);
+
+            oDoc.Bookmarks["startOfTable"].Select();
+            oWord.Selection.TypeText(this.studentClassroomAssignments[0].Student.FullName);
+
+            if (this.studentClassroomAssignments.Count > 1)
+            {
+                for (int assignmentNumber = 1; assignmentNumber < this.studentClassroomAssignments.Count; assignmentNumber++)
+                {
+                    oDoc.Tables[2].Rows.Add();
+                    oDoc.Tables[2].Rows.Last.Cells[1].Select();
+                    oWord.Selection.TypeText(this.studentClassroomAssignments[assignmentNumber].Student.FullName);
                 }
             }
 
