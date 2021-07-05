@@ -271,6 +271,12 @@
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TimeUserControls\MainTimeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\MainTimeUserControl.Designer.cs">
+      <DependentUpon>MainTimeUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TimeUserControls\TimeClockUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeUserControls\MainTimeUserControl.resx">
+      <DependentUpon>MainTimeUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TimeUserControls\TimeClockUserControl.resx">
       <DependentUpon>TimeClockUserControl.cs</DependentUpon>
