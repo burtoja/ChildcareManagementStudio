@@ -443,6 +443,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\AttendanceSheet.dotx" />
+    <None Include="Resources\SignInSheet.dotx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
