@@ -193,6 +193,12 @@
     <Compile Include="UserControls\FinancialUserControls\RecordPaymentUserControl.Designer.cs">
       <DependentUpon>RecordPaymentUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewBalancesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewBalancesUserControl.Designer.cs">
+      <DependentUpon>ViewBalancesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FinancialUserControls\RecordPaymentUserControl.resx">
       <DependentUpon>RecordPaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FinancialUserControls\ViewBalancesUserControl.resx">
+      <DependentUpon>ViewBalancesUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.resx">
       <DependentUpon>ViewPaymentsUserControl.cs</DependentUpon>
