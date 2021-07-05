@@ -53,7 +53,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
-            /*
             int classId;
             try
             {
@@ -69,11 +68,12 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             ReportWriter reportWriter = new ReportWriter(assignments);
-            reportWriter.WriteAttendanceSheet(@"C:\Test\temp.pdf");
-            */
+            reportWriter.WriteAttendanceSheet(@"C:\Test\Attendance Report.pdf");
 
+            /*
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             DialogResult dialogResult = saveFileDialog.ShowDialog();
+            */
         }
     }
 }

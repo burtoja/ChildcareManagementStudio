@@ -90,8 +90,6 @@ namespace ChildcareManagementStudio.Controller
             oDoc.SaveAs(ref filePath, ref fileFormat, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
             oDoc.Close(ref saveChanges, ref missing, ref missing);
             oWord.Quit(ref saveChanges, ref missing, ref missing);
-
-            MessageBox.Show("Here");
         }
 
         private string GetFileExtension(object filePath)
