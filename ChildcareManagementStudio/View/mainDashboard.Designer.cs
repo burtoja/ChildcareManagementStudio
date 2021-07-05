@@ -40,7 +40,7 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab = new System.Windows.Forms.Button();
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
-            this.teacherMainUserControl1 = new ChildcareManagementStudio.UserControls.MainTeacherUserControl();
+            //this.teacherMainUserControl1 = new ChildcareManagementStudio.UserControls.MainTeacherUserControl();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
@@ -189,18 +189,18 @@ namespace ChildcareManagementStudio.View
             // 
             // teacherMainUserControl1
             // 
-            this.teacherMainUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teacherMainUserControl1.Location = new System.Drawing.Point(266, 81);
-            this.teacherMainUserControl1.Name = "teacherMainUserControl1";
-            this.teacherMainUserControl1.Size = new System.Drawing.Size(779, 563);
-            this.teacherMainUserControl1.TabIndex = 2;
+            //this.teacherMainUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.teacherMainUserControl1.Location = new System.Drawing.Point(266, 81);
+            //this.teacherMainUserControl1.Name = "teacherMainUserControl1";
+            //this.teacherMainUserControl1.Size = new System.Drawing.Size(779, 563);
+            //this.teacherMainUserControl1.TabIndex = 2;
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 644);
-            this.Controls.Add(this.teacherMainUserControl1);
+            //this.Controls.Add(this.teacherMainUserControl1);
             this.Controls.Add(this.panelLeftSide);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -227,6 +227,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Button buttonTeacherTab;
         private System.Windows.Forms.Panel panelTabIndicator;
         private System.Windows.Forms.Button buttonLogout;
-        private UserControls.MainTeacherUserControl teacherMainUserControl1;
+        //private UserControls.MainTeacherUserControl teacherMainUserControl1;
     }
 }
