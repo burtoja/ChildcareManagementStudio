@@ -119,7 +119,7 @@ namespace ChildcareManagementStudio.View
         /// <param name="e"></param>
         private void ButtonStudentsTab_Click(object sender, EventArgs e)
         {
-            this.panelTabIndicator.Location = new Point(3, 140);
+            this.panelTabIndicator.Location = new Point(3, 112);
             this.UpdateTabAppearance(this.buttonStudentsTab);
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Show();
@@ -135,7 +135,7 @@ namespace ChildcareManagementStudio.View
         /// <param name="e"></param>
         private void ButtonClassroomsTab_Click(object sender, EventArgs e)
         {
-            this.panelTabIndicator.Location = new Point(3, 280);
+            this.panelTabIndicator.Location = new Point(3, 224);
             this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Hide();
@@ -153,8 +153,8 @@ namespace ChildcareManagementStudio.View
         /// <summary>
         private void ButtonFinancialTab_Click(object sender, EventArgs e)
         {
-            this.panelTabIndicator.Location = new Point(3, 280);
-            this.UpdateTabAppearance(this.buttonClassroomsTab);
+            this.panelTabIndicator.Location = new Point(3, 336);
+            this.UpdateTabAppearance(this.buttonFinancialTab);
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Hide();
             this.mainClassroomUserControl.Hide();
@@ -169,8 +169,8 @@ namespace ChildcareManagementStudio.View
         /// <param name="e"></param>
         private void ButtonTimeTab_Click(object sender, EventArgs e)
         {
-            this.panelTabIndicator.Location = new Point(3, 280);
-            this.UpdateTabAppearance(this.buttonClassroomsTab);
+            this.panelTabIndicator.Location = new Point(3, 448);
+            this.UpdateTabAppearance(this.buttonTimeTab);
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Hide();
             this.mainClassroomUserControl.Hide();
@@ -211,6 +211,12 @@ namespace ChildcareManagementStudio.View
                 this.buttonFinancialTab.BackColor = Color.FromArgb(64, 64, 64);
                 this.buttonFinancialTab.ForeColor = SystemColors.Control;
                 this.buttonFinancialTab.FlatAppearance.BorderColor = Color.Black;
+            }
+            if (activeButton != this.buttonTimeTab)
+            {
+                this.buttonTimeTab.BackColor = Color.FromArgb(64, 64, 64);
+                this.buttonTimeTab.ForeColor = SystemColors.Control;
+                this.buttonTimeTab.FlatAppearance.BorderColor = Color.Black;
             }
         }
 

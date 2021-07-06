@@ -40,7 +40,7 @@ namespace ChildcareManagementStudio.View
             this.buttonClassroomsTab = new System.Windows.Forms.Button();
             this.buttonStudentsTab = new System.Windows.Forms.Button();
             this.buttonTeacherTab = new System.Windows.Forms.Button();
-            this.buttonTime = new System.Windows.Forms.Button();
+            this.buttonTimeTab = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelLeftSide.SuspendLayout();
@@ -106,7 +106,7 @@ namespace ChildcareManagementStudio.View
             // panelLeftSide
             // 
             this.panelLeftSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelLeftSide.Controls.Add(this.buttonTime);
+            this.panelLeftSide.Controls.Add(this.buttonTimeTab);
             this.panelLeftSide.Controls.Add(this.panelTabIndicator);
             this.panelLeftSide.Controls.Add(this.buttonFinancialTab);
             this.panelLeftSide.Controls.Add(this.buttonClassroomsTab);
@@ -188,20 +188,20 @@ namespace ChildcareManagementStudio.View
             this.buttonTeacherTab.UseVisualStyleBackColor = false;
             this.buttonTeacherTab.Click += new System.EventHandler(this.ButtonTeacherTab_Click);
             // 
-            // buttonTime
+            // buttonTimeTab
             // 
-            this.buttonTime.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonTime.Location = new System.Drawing.Point(13, 448);
-            this.buttonTime.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonTime.Name = "buttonTime";
-            this.buttonTime.Size = new System.Drawing.Size(253, 112);
-            this.buttonTime.TabIndex = 4;
-            this.buttonTime.Text = "Time";
-            this.buttonTime.UseVisualStyleBackColor = true;
-            this.buttonTime.Click += new System.EventHandler(this.ButtonTimeTab_Click);
+            this.buttonTimeTab.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonTimeTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTimeTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimeTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonTimeTab.Location = new System.Drawing.Point(13, 448);
+            this.buttonTimeTab.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonTimeTab.Name = "buttonTimeTab";
+            this.buttonTimeTab.Size = new System.Drawing.Size(253, 115);
+            this.buttonTimeTab.TabIndex = 4;
+            this.buttonTimeTab.Text = "Time";
+            this.buttonTimeTab.UseVisualStyleBackColor = true;
+            this.buttonTimeTab.Click += new System.EventHandler(this.ButtonTimeTab_Click);
             // 
             // MainDashboard
             // 
@@ -234,6 +234,6 @@ namespace ChildcareManagementStudio.View
         private System.Windows.Forms.Button buttonTeacherTab;
         private System.Windows.Forms.Panel panelTabIndicator;
         private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.Button buttonTime;
+        private System.Windows.Forms.Button buttonTimeTab;
     }
 }
