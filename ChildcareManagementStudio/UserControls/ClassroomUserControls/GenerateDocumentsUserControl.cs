@@ -68,12 +68,17 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             ReportWriter reportWriter = new ReportWriter(assignments);
-            reportWriter.WriteAttendanceSheet(@"C:\Test\Attendance Sheet.pdf");
-
-            /*
+            
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF file (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Attendance Sheet - " + comboBoxClass.Text + " - " + comboBoxSchoolYear.Text;
             DialogResult dialogResult = saveFileDialog.ShowDialog();
-            */
+            if (dialogResult == DialogResult.OK)
+            {
+                reportWriter.WriteAttendanceSheet(saveFileDialog.FileName);
+            }
+
+            MessageBox.Show("The attendance sheet was successfully saved.");
         }
 
         private void GenerateSignInSheetButton_Click(object sender, EventArgs e)
@@ -93,7 +98,17 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
             ReportWriter reportWriter = new ReportWriter(assignments);
-            reportWriter.WriteSignInSheet(@"C:\Test\Sign In Sheet.pdf");
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF file (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Sign In Sheet - " + comboBoxClass.Text + " - " + comboBoxSchoolYear.Text;
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                reportWriter.WriteSignInSheet(saveFileDialog.FileName);
+            }
+
+            MessageBox.Show("The sign-in sheet was successfully saved.");
         }
     }
 }
