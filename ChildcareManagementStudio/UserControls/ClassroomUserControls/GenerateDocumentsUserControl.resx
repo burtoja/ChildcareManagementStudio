@@ -124,7 +124,7 @@
     <value>225, 16</value>
   </metadata>
   <data name="labelInstructions.Text" xml:space="preserve">
-    <value>To generate a document, select the desired school year and choose an active classroom.  Then press the button of the type of report desired.  You will be prompted to choose a location to save the generated Microsoft Word document.  After saving the document, you can open it in Word and modify as desired before printing.</value>
+    <value>To generate a document, select the desired school year and choose an active classroom.  Then press the button of the type of report desired.  You will be prompted to choose a location to save the generated PDF.  After saving the document, you can open it using an Adobe Acrobat reader, and then print it.</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
