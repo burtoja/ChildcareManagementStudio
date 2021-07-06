@@ -1,5 +1,4 @@
-﻿using ChildcareManagementStudio.Controller;
-using ChildcareManagementStudio.UserControls;
+﻿using ChildcareManagementStudio.UserControls;
 using ChildcareManagementStudio.UserControls.ClassroomUserControls;
 using ChildcareManagementStudio.UserControls.FinancialUserControls;
 using ChildcareManagementStudio.UserControls.StudentUserControls;
@@ -36,6 +35,9 @@ namespace ChildcareManagementStudio.View
             this.InitializeUserControls();
         }
 
+        /// <summary>
+        /// Create instanctances of UCs, add them to the main dashboard in the appropriate locations
+        /// </summary>
         private void InitializeUserControls()
         {
             this.mainTeacherUserControl = new MainTeacherUserControl();
