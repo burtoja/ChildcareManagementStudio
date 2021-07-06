@@ -34,7 +34,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         }
 
         /// <summary>
-        /// Event handler for selecting tabs within this section of the application
+        /// Event handler for selecting tabs within this section of the application 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
