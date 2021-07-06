@@ -191,11 +191,29 @@
     <Compile Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.Designer.cs">
       <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PlaceholderUserControl.cs">
+    <Compile Include="UserControls\FinancialUserControls\MainFinancialUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\PlaceholderUserControl.Designer.cs">
-      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\FinancialUserControls\MainFinancialUserControl.Designer.cs">
+      <DependentUpon>MainFinancialUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\RecordPaymentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\RecordPaymentUserControl.Designer.cs">
+      <DependentUpon>RecordPaymentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewBalancesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewBalancesUserControl.Designer.cs">
+      <DependentUpon>ViewBalancesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.Designer.cs">
+      <DependentUpon>ViewPaymentsUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\StudentUserControls\AddStudentUserControl.cs">
       <SubType>UserControl</SubType>
@@ -250,6 +268,24 @@
     </Compile>
     <Compile Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.Designer.cs">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\MainTimeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\MainTimeUserControl.Designer.cs">
+      <DependentUpon>MainTimeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeClockUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeClockUserControl.Designer.cs">
+      <DependentUpon>TimeClockUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeSheetUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeUserControls\TimeSheetUserControl.Designer.cs">
+      <DependentUpon>TimeSheetUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ClassroomViews\AddNewClassRecordForm.cs">
       <SubType>Form</SubType>
@@ -353,8 +389,17 @@
     <EmbeddedResource Include="UserControls\ClassroomUserControls\ViewClassroomListUserControl.resx">
       <DependentUpon>ViewClassroomListUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
-      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\FinancialUserControls\MainFinancialUserControl.resx">
+      <DependentUpon>MainFinancialUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FinancialUserControls\RecordPaymentUserControl.resx">
+      <DependentUpon>RecordPaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FinancialUserControls\ViewBalancesUserControl.resx">
+      <DependentUpon>ViewBalancesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.resx">
+      <DependentUpon>ViewPaymentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StudentUserControls\AddStudentUserControl.resx">
       <DependentUpon>AddStudentUserControl.cs</DependentUpon>
@@ -382,6 +427,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TeacherUserControls\ViewTeacherListUserControl.resx">
       <DependentUpon>ViewTeacherListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeUserControls\MainTimeUserControl.resx">
+      <DependentUpon>MainTimeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeUserControls\TimeClockUserControl.resx">
+      <DependentUpon>TimeClockUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeUserControls\TimeSheetUserControl.resx">
+      <DependentUpon>TimeSheetUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClassroomViews\AddNewClassRecordForm.resx">
       <DependentUpon>AddNewClassRecordForm.cs</DependentUpon>
