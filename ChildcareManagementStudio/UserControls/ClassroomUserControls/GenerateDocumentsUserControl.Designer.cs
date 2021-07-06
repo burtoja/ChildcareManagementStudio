@@ -41,7 +41,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.classroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelInstructions = new System.Windows.Forms.Label();
             this.labelInstructionsTitle = new System.Windows.Forms.Label();
-            this.generateReportButton = new System.Windows.Forms.Button();
+            this.generateSignInSheetButton = new System.Windows.Forms.Button();
             this.labelAttendanceDescription = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StudentBindingSource)).BeginInit();
@@ -69,7 +69,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxClass.Location = new System.Drawing.Point(390, 22);
             this.comboBoxClass.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxClass.Name = "comboBoxClass";
-            this.comboBoxClass.Size = new System.Drawing.Size(112, 29);
+            this.comboBoxClass.Size = new System.Drawing.Size(112, 31);
             this.comboBoxClass.TabIndex = 2;
             this.comboBoxClass.ValueMember = "Id";
             // 
@@ -81,7 +81,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label1.Location = new System.Drawing.Point(265, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 21);
+            this.label1.Size = new System.Drawing.Size(117, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Classroom:";
             // 
@@ -93,7 +93,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.comboBoxSchoolYear.Location = new System.Drawing.Point(112, 22);
             this.comboBoxSchoolYear.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
-            this.comboBoxSchoolYear.Size = new System.Drawing.Size(104, 29);
+            this.comboBoxSchoolYear.Size = new System.Drawing.Size(104, 31);
             this.comboBoxSchoolYear.TabIndex = 1;
             // 
             // label2
@@ -104,7 +104,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.label2.Location = new System.Drawing.Point(2, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 21);
+            this.label2.Size = new System.Drawing.Size(133, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "School Year:";
             // 
@@ -143,20 +143,21 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.labelInstructionsTitle.Location = new System.Drawing.Point(37, 25);
             this.labelInstructionsTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInstructionsTitle.Name = "labelInstructionsTitle";
-            this.labelInstructionsTitle.Size = new System.Drawing.Size(96, 19);
+            this.labelInstructionsTitle.Size = new System.Drawing.Size(125, 23);
             this.labelInstructionsTitle.TabIndex = 8;
             this.labelInstructionsTitle.Text = "Instructions:";
             // 
-            // generateReportButton
+            // generateSignInSheetButton
             // 
-            this.generateReportButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateReportButton.Location = new System.Drawing.Point(41, 369);
-            this.generateReportButton.Margin = new System.Windows.Forms.Padding(2);
-            this.generateReportButton.Name = "generateReportButton";
-            this.generateReportButton.Size = new System.Drawing.Size(251, 33);
-            this.generateReportButton.TabIndex = 9;
-            this.generateReportButton.Text = "Generate Sign-in Sheet";
-            this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateSignInSheetButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateSignInSheetButton.Location = new System.Drawing.Point(41, 369);
+            this.generateSignInSheetButton.Margin = new System.Windows.Forms.Padding(2);
+            this.generateSignInSheetButton.Name = "generateSignInSheetButton";
+            this.generateSignInSheetButton.Size = new System.Drawing.Size(251, 33);
+            this.generateSignInSheetButton.TabIndex = 9;
+            this.generateSignInSheetButton.Text = "Generate Sign-in Sheet";
+            this.generateSignInSheetButton.UseVisualStyleBackColor = true;
+            this.generateSignInSheetButton.Click += new System.EventHandler(this.GenerateSignInSheetButton_Click);
             // 
             // labelAttendanceDescription
             // 
@@ -187,7 +188,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelAttendanceDescription);
-            this.Controls.Add(this.generateReportButton);
+            this.Controls.Add(this.generateSignInSheetButton);
             this.Controls.Add(this.labelInstructionsTitle);
             this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.buttonGenerateReport);
@@ -215,7 +216,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelInstructions;
         private System.Windows.Forms.Label labelInstructionsTitle;
-        private System.Windows.Forms.Button generateReportButton;
+        private System.Windows.Forms.Button generateSignInSheetButton;
         private System.Windows.Forms.Label labelAttendanceDescription;
         private System.Windows.Forms.Label label3;
     }

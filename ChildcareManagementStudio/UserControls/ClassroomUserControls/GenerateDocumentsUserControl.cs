@@ -1,4 +1,5 @@
-﻿using ChildcareManagementStudio.DAL;
+﻿using ChildcareManagementStudio.Controller;
+using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,6 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, System.EventArgs e)
         {
-            StudentBindingSource.Clear();
             int classId;
             try
             {
@@ -67,11 +67,46 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             }
 
             List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
-            foreach (StudentClassroomAssignment assignment in assignments)
+            ReportWriter reportWriter = new ReportWriter(assignments);
+            
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF file (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Attendance Sheet - " + comboBoxClass.Text + " - " + comboBoxSchoolYear.Text;
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
             {
-                StudentBindingSource.Add(assignment.Student);
+                reportWriter.WriteAttendanceSheet(saveFileDialog.FileName);
+                MessageBox.Show("The attendance sheet was successfully saved.");
             }
         }
 
+        private void GenerateSignInSheetButton_Click(object sender, EventArgs e)
+        {
+            int classId;
+            try
+            {
+                int classroomId = (int)comboBoxClass.SelectedValue;
+                string schoolYear = comboBoxSchoolYear.Text;
+                classId = classRecordDAL.GetClassId(classroomId, schoolYear);
+            }
+            catch
+            {
+                MessageBox.Show("The selected combination of class and school year does not exist in the database.", "Invalid Class");
+                return;
+            }
+
+            List<StudentClassroomAssignment> assignments = studentClassroomAssignmentDAL.GetStudentsInClass(classId);
+            ReportWriter reportWriter = new ReportWriter(assignments);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF file (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Sign In Sheet - " + comboBoxClass.Text + " - " + comboBoxSchoolYear.Text;
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                reportWriter.WriteSignInSheet(saveFileDialog.FileName);
+                MessageBox.Show("The sign-in sheet was successfully saved.");
+            }
+        }
     }
 }

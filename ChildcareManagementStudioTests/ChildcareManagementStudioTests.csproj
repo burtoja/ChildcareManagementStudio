@@ -102,7 +102,7 @@
     <Compile Include="Controller\TeacherClassroomAssignmentControllerWhenAddTeacherClassroomAssignment.cs" />
     <Compile Include="Controller\StudentClassroomAssignmentControllerWhenGetStudentsInClass.cs" />
     <Compile Include="Controller\StudentClassroomAssignmentControllerWhenGetAvailableStudents.cs" />
-    <Compile Include="Controller\StudentClassroomAssignmentDALWhenAddStudentClassroomAssignment.cs" />
+    <Compile Include="Controller\StudentClassroomAssignmentControllerWhenAddStudentClassroomAssignment.cs" />
     <Compile Include="Controller\ClassRecordControllerWhenEditClass.cs" />
     <Compile Include="Controller\StudentClassroomAssignmentControllerWhenDeleteStudentClassroomAssignment.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
