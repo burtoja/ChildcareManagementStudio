@@ -56,7 +56,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tabPageTimeClock.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageTimeClock.Size = new System.Drawing.Size(752, 478);
             this.tabPageTimeClock.TabIndex = 1;
-            this.tabPageTimeClock.Text = "Tme Clock";
+            this.tabPageTimeClock.Text = "Time Clock";
             // 
             // tabPageTimeSheet
             // 
