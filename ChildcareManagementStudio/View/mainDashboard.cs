@@ -1,7 +1,9 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.UserControls;
 using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+using ChildcareManagementStudio.UserControls.FinancialUserControls;
 using ChildcareManagementStudio.UserControls.StudentUserControls;
+using ChildcareManagementStudio.UserControls.TimeUserControls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,6 +21,8 @@ namespace ChildcareManagementStudio.View
         private MainTeacherUserControl mainTeacherUserControl;
         private MainStudentUserControl mainStudentUserControl;
         private MainClassroomUserControl mainClassroomUserControl;
+        private MainFinancialUserControl mainFinancialUserControl;
+        private MainTimeUserControl mainTimeUserControl;
         private bool mouseDown;
         private Point lastLocation;
 
@@ -49,6 +53,16 @@ namespace ChildcareManagementStudio.View
             this.Controls.Add(this.mainClassroomUserControl);
             this.mainClassroomUserControl.Location = new System.Drawing.Point(266, 81);
             this.mainClassroomUserControl.Hide();
+
+            this.mainFinancialUserControl = new MainFinancialUserControl();
+            this.Controls.Add(this.mainFinancialUserControl);
+            this.mainFinancialUserControl.Location = new System.Drawing.Point(266, 81);
+            this.mainFinancialUserControl.Hide();
+
+            this.mainTimeUserControl = new MainTimeUserControl();
+            this.Controls.Add(this.mainTimeUserControl);
+            this.mainTimeUserControl.Location = new System.Drawing.Point(266, 81);
+            this.mainTimeUserControl.Hide();
         }
 
         /// <summary>
@@ -94,7 +108,8 @@ namespace ChildcareManagementStudio.View
             this.mainTeacherUserControl.Show();
             this.mainStudentUserControl.Hide();
             this.mainClassroomUserControl.Hide();
-            this.placeholderUserControl.Hide();
+            this.mainFinancialUserControl.Hide();
+            this.mainTimeUserControl.Hide();
         }
 
         /// <summary>
@@ -109,7 +124,8 @@ namespace ChildcareManagementStudio.View
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Show();
             this.mainClassroomUserControl.Hide();
-            this.placeholderUserControl.Hide();
+            this.mainFinancialUserControl.Hide();
+            this.mainTimeUserControl.Hide();
         }
 
         /// <summary>
@@ -124,8 +140,9 @@ namespace ChildcareManagementStudio.View
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Hide();
             this.mainClassroomUserControl.Show();
-            this.placeholderUserControl.Hide();
-            
+            this.mainFinancialUserControl.Hide();
+            this.mainTimeUserControl.Hide();
+
         }
 
         /// <summary>
@@ -136,17 +153,30 @@ namespace ChildcareManagementStudio.View
         /// <summary>
         private void ButtonFinancialTab_Click(object sender, EventArgs e)
         {
-            this.panelTabIndicator.Location = new Point(3, 420);
-            this.UpdateTabAppearance(this.buttonFinancialTab);
+            this.panelTabIndicator.Location = new Point(3, 280);
+            this.UpdateTabAppearance(this.buttonClassroomsTab);
             this.mainTeacherUserControl.Hide();
             this.mainStudentUserControl.Hide();
             this.mainClassroomUserControl.Hide();
-            this.placeholderUserControl.Show();
-            this.placeholderUserControl.SetDescription(
-                "This tab will provide the ability to manage the financial \n" +
-                "aspects of the facility. The ability will be provided to view \n" +
-                "payments, record payments, view balances."
-                );
+            this.mainFinancialUserControl.Show();
+            this.mainTimeUserControl.Hide();
+        }
+
+        /// <summary>
+        /// Actions to perform when time tab button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonTimeTab_Click(object sender, EventArgs e)
+        {
+            this.panelTabIndicator.Location = new Point(3, 280);
+            this.UpdateTabAppearance(this.buttonClassroomsTab);
+            this.mainTeacherUserControl.Hide();
+            this.mainStudentUserControl.Hide();
+            this.mainClassroomUserControl.Hide();
+            this.mainFinancialUserControl.Hide();
+            this.mainTimeUserControl.Show();
+
         }
 
         /// <summary>

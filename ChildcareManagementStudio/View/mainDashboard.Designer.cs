@@ -124,7 +124,7 @@ namespace ChildcareManagementStudio.View
             this.panelTabIndicator.Location = new System.Drawing.Point(3, 0);
             this.panelTabIndicator.Margin = new System.Windows.Forms.Padding(0);
             this.panelTabIndicator.Name = "panelTabIndicator";
-            this.panelTabIndicator.Size = new System.Drawing.Size(10, 140);
+            this.panelTabIndicator.Size = new System.Drawing.Size(10, 112);
             this.panelTabIndicator.TabIndex = 2;
             // 
             // buttonFinancialTab
@@ -201,6 +201,7 @@ namespace ChildcareManagementStudio.View
             this.buttonTime.TabIndex = 4;
             this.buttonTime.Text = "Time";
             this.buttonTime.UseVisualStyleBackColor = true;
+            this.buttonTime.Click += new System.EventHandler(this.ButtonTimeTab_Click);
             // 
             // MainDashboard
             // 
