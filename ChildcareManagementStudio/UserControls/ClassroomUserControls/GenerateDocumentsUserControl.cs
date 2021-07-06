@@ -76,9 +76,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             if (dialogResult == DialogResult.OK)
             {
                 reportWriter.WriteAttendanceSheet(saveFileDialog.FileName);
+                MessageBox.Show("The attendance sheet was successfully saved.");
             }
-
-            MessageBox.Show("The attendance sheet was successfully saved.");
         }
 
         private void GenerateSignInSheetButton_Click(object sender, EventArgs e)
@@ -106,9 +105,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             if (dialogResult == DialogResult.OK)
             {
                 reportWriter.WriteSignInSheet(saveFileDialog.FileName);
+                MessageBox.Show("The sign-in sheet was successfully saved.");
             }
-
-            MessageBox.Show("The sign-in sheet was successfully saved.");
         }
     }
 }
