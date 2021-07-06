@@ -211,12 +211,6 @@
     <Compile Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.Designer.cs">
       <DependentUpon>ViewPaymentsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PlaceholderUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\PlaceholderUserControl.Designer.cs">
-      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\StudentUserControls\AddStudentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -404,9 +398,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FinancialUserControls\ViewPaymentsUserControl.resx">
       <DependentUpon>ViewPaymentsUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\PlaceholderUserControl.resx">
-      <DependentUpon>PlaceholderUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StudentUserControls\AddStudentUserControl.resx">
       <DependentUpon>AddStudentUserControl.cs</DependentUpon>

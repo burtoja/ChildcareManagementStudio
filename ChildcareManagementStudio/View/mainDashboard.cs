@@ -17,7 +17,6 @@ namespace ChildcareManagementStudio.View
     {
         
         private LoginForm theLoginForm;
-        private PlaceholderUserControl placeholderUserControl;
         private MainTeacherUserControl mainTeacherUserControl;
         private MainStudentUserControl mainStudentUserControl;
         private MainClassroomUserControl mainClassroomUserControl;
@@ -35,7 +34,6 @@ namespace ChildcareManagementStudio.View
             InitializeComponent();
             this.SetTheLoginForm(theInputLoginForm);
             this.InitializeUserControls();
-            this.InitializePlaceholder();
         }
 
         private void InitializeUserControls()
@@ -63,16 +61,6 @@ namespace ChildcareManagementStudio.View
             this.Controls.Add(this.mainTimeUserControl);
             this.mainTimeUserControl.Location = new System.Drawing.Point(266, 81);
             this.mainTimeUserControl.Hide();
-        }
-
-        /// <summary>
-        /// Initializes the placeholder UC for unimplemented tabs
-        /// </summary>
-        private void InitializePlaceholder()
-        {
-            this.placeholderUserControl = new PlaceholderUserControl();
-            this.Controls.Add(this.placeholderUserControl);
-            this.placeholderUserControl.Location = new System.Drawing.Point(266, 81);
         }
 
         /// <summary>
