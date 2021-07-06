@@ -14,21 +14,30 @@ namespace ChildcareManagementStudio
         [STAThread]
         static async Task Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-
-            using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/jburton6/ChildcareManagementStudio"))
+            var runapp = new System.Threading.ThreadStart(async () =>
             {
-                try
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginForm());
+
+                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/jburton6/ChildcareManagementStudio"))
                 {
-                    await mgr.Result.UpdateApp();
+                    try
+                    {
+                        await mgr.Result.UpdateApp();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("No update necessary since no previous version installed./nDetails: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("No update necessary since no previous version installed./nDetails: " + ex.Message);
-                }
-            }
+                
+            });
+
+            var thread = new System.Threading.Thread(runapp);
+            thread.SetApartmentState(System.Threading.ApartmentState.STA);
+            thread.Start();
+            thread.Join();
         }
     }
 }
