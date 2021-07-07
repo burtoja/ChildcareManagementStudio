@@ -8,7 +8,7 @@ namespace ChildcareManagementStudio.DAL
     /// <summary>
     /// Class for accessing clock record information from the child care database.
     /// </summary>
-    class ClockRecordDAL
+    public class ClockRecordDAL
     {
 
         /// <summary>

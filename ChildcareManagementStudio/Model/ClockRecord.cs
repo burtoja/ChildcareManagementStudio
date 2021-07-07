@@ -14,7 +14,7 @@ namespace ChildcareManagementStudio.Model
     /// <summary>
     /// Class to model a time clock record for an employee
     /// </summary>
-    class ClockRecord
+    public class ClockRecord
     {
         /// <summary>
         /// EmployeeId of Emplyee  associated with the record
