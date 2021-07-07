@@ -35,13 +35,19 @@ namespace ChildcareManagementStudio.DAL
                     {
                         int inDateTimeOrdinal = reader.GetOrdinal("inDateTime");
                         int outDateTimeOrdinal = reader.GetOrdinal("outDateTime");
+                        
                         while (reader.Read())
                         {
                             ClockRecord clockRecord = new ClockRecord
                             {
-                                InDateTime = reader.GetDateTime(inDateTimeOrdinal),
-                                OutDateTime = reader.GetDateTime(outDateTimeOrdinal)
+                                EmployeeId = employeeId,
+                                InDateTime = reader.GetDateTime(inDateTimeOrdinal)
                             };
+                            if (reader[outDateTimeOrdinal].GetType() != typeof(DBNull))
+                            {
+                                clockRecord.OutDateTime = reader.GetDateTime(outDateTimeOrdinal);
+                            }
+
                             records.Add(clockRecord);
                         }
                     }

@@ -134,6 +134,7 @@
     <Compile Include="DAL\ClassRecordDALWhenEditClass.cs" />
     <Compile Include="DAL\StudentClassroomAssignmentDALWhenDeleteStudentClassroomAssignment.cs" />
     <Compile Include="DAL\ClockRecordDALWhenGetAllClockRecordsForEmployee.cs" />
+    <Compile Include="DAL\ClockRecordWhenClockIn.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
