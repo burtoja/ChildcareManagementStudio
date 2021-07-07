@@ -160,6 +160,7 @@
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\ClassRecord.cs" />
     <Compile Include="Model\Classroom.cs" />
+    <Compile Include="Model\ClockRecord.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Model\Student.cs" />
