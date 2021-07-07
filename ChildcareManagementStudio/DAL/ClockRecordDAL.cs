@@ -79,7 +79,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$employeeId", clockRecord.EmployeeId);
-                    insertCommand.Parameters.AddWithValue("$inDatetime", clockRecord.InDateTime);
+                    insertCommand.Parameters.AddWithValue("$inDatetime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
                     insertCommand.ExecuteNonQuery();
                 }
             }
@@ -113,6 +113,8 @@ namespace ChildcareManagementStudio.DAL
                     "(--" + clockInRecord.OutDateTime + "--");
             }
 
+            //TODO: Add check requiring ClockOut to be after ClockIn 
+
             string updateStatement =
                 "UPDATE ClockRecord SET " +
                     "outDateTime = $outDateTime " +
@@ -125,8 +127,8 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
                 {
                     updateCommand.Parameters.AddWithValue("$employeeId", clockOutRecord.EmployeeId);
-                    updateCommand.Parameters.AddWithValue("$inDateTime", clockOutRecord.InDateTime);
-                    updateCommand.Parameters.AddWithValue("$outDateTime", clockOutRecord.OutDateTime);
+                    updateCommand.Parameters.AddWithValue("$inDateTime", clockOutRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
+                    updateCommand.Parameters.AddWithValue("$outDateTime", clockOutRecord.OutDateTime.ToString("yyyy-MM-dd HH:mm"));
                     
                     updateCommand.ExecuteNonQuery();
                 }
