@@ -26,7 +26,7 @@ namespace ChildcareManagementStudioTests.DAL
         {
             string schoolYear = "2020-21";
             List<Student> students = studentClassroomAssignmentDAL.GetAvailableStudents(schoolYear);
-            Assert.AreEqual(100, students.Count);
+            Assert.AreEqual(98, students.Count);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace ChildcareManagementStudioTests.DAL
         {
             string schoolYear = "2021-22";
             List<Student> students = studentClassroomAssignmentDAL.GetAvailableStudents(schoolYear);
-            Assert.AreEqual(94, students.Count);
+            Assert.AreEqual(92, students.Count);
         }
     }
 }
