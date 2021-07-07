@@ -6,13 +6,14 @@ using System.Collections.Generic;
 namespace ChildcareManagementStudioTests.DAL
 {
     [TestClass]
-    public class ClockRecordWhenClockIn
+    public class ClockRecordDALWhenClockIn
     {
         [TestMethod]
         public void ShouldAddNewRecordWithInDateTimeForEmployee()
         {
             ClockRecordDAL clockRecordDAL = new ClockRecordDAL();
             List<ClockRecord> recordsBefore = clockRecordDAL.GetAllClockRecordsForEmployee(1);
+            Assert.AreEqual(1, recordsBefore.Count);
             ClockRecord testRecord = new ClockRecord()
             {
                 EmployeeId = 1,

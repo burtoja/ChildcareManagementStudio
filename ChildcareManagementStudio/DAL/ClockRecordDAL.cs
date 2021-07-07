@@ -107,25 +107,26 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
             }
 
-            if (clockInRecord.OutDateTime != null)
+            if (clockInRecord.OutDateTime.ToString() != "1/1/0001 12:00:00 AM")
             {
-                throw new ArgumentException("This record already has a clock-out time associated with it.");
+                throw new ArgumentException("This record already has a clock-out time associated with it " +
+                    "(--" + clockInRecord.OutDateTime + "--");
             }
 
             string updateStatement =
                 "UPDATE ClockRecord SET " +
-                    "outDateTime = $outDatetime, " +
+                    "outDateTime = $outDateTime " +
                 "WHERE employeeId = $employeeId " +
-                    "AND inDateTime = $inDateTime ";
+                    "AND inDateTime = $inDateTime";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
                 using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
                 {
-                    updateCommand.Parameters.AddWithValue("$employeeId", clockInRecord.EmployeeId);
-                    updateCommand.Parameters.AddWithValue("$inDateTime", clockInRecord.InDateTime);
-                    updateCommand.Parameters.AddWithValue("$outDatetime", clockOutRecord.OutDateTime);
+                    updateCommand.Parameters.AddWithValue("$employeeId", clockOutRecord.EmployeeId);
+                    updateCommand.Parameters.AddWithValue("$inDateTime", clockOutRecord.InDateTime);
+                    updateCommand.Parameters.AddWithValue("$outDateTime", clockOutRecord.OutDateTime);
                     
                     updateCommand.ExecuteNonQuery();
                 }
