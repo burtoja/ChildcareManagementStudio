@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Model;
 using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.DAL
@@ -60,6 +61,51 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return accountHolders;
+        }
+
+        /// <summary>
+        /// Method that adds the specified account holder to the database.
+        /// </summary>
+        /// <param name="accountHolder">
+        /// AccountHolder object representing the account holder to add.
+        /// The AccountHolder object cannot have a value for the AccountHolderId property, since this will be assigned by the database.
+        /// </param>
+        public void AddAccountHolder(AccountHolder accountHolder)
+        {
+            if (accountHolder.AccountHolderId != default)
+            {
+                throw new ArgumentException("The AccountHolderId property cannot be filled out because it will be assigned by the database.", "accountHolder");
+            }
+
+            // TODO: wrap the table updates in a transaction
+
+            AddPerson(accountHolder);
+
+            string insertStatement =
+                "INSERT INTO AccountHolder (personId) " +
+                "VALUES ($personId)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$personId", accountHolder.PersonId);
+                    insertCommand.ExecuteNonQuery();
+                }
+
+                using (SqliteCommand selectCommand = new SqliteCommand("SELECT last_insert_rowid()", connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            accountHolder.AccountHolderId = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
         }
     }
 }
