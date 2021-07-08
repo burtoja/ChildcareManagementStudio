@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
@@ -26,6 +27,23 @@ namespace ChildcareManagementStudio.Controller
         public List<AccountHolder> GetAllAccountHolders()
         {
             return accountHolderDAL.GetAllAccountHolders();
+        }
+
+        /// <summary>
+        /// Method that adds the specified account holder to the database.
+        /// </summary>
+        /// <param name="accountHolder">
+        /// AccountHolder object representing the account holder to add.
+        /// The AccountHolder object cannot have a value for the AccountHolderId property, since this will be assigned by the database.
+        /// </param>
+        public void AddAccountHolder(AccountHolder accountHolder)
+        {
+            if (accountHolder.AccountHolderId != default)
+            {
+                throw new ArgumentException("The AccountHolderId property cannot be filled out because it will be assigned by the database.", "accountHolder");
+            }
+
+            accountHolderDAL.AddAccountHolder(accountHolder);
         }
     }
 }
