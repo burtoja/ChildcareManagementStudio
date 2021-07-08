@@ -110,6 +110,7 @@
     <Compile Include="Controller\AccountHolderControllerWhenEditAccountHolder.cs" />
     <Compile Include="Controller\ClockRecordControllerWhenClockIn.cs" />
     <Compile Include="Controller\ClockRecordControllerWhenClockOut.cs" />
+    <Compile Include="Controller\ClockRecordControllerWhenDeleteRecord.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
