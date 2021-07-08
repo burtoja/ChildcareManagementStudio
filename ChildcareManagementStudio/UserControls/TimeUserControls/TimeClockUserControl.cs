@@ -46,13 +46,48 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         }
 
         /// <summary>
+        /// Checks to see if theacher is selected in the comboBox.
         /// Displays a message box for not choosing a teacher when needed
         /// </summary>
-        private void DisplayChooseTeacherErrorBox()
+        /// <returns>true if teacher is selected in combo box</returns>
+        private bool TeacherIsSelectedCheck()
         {
-            string title = "No Teacher Chosen";
-            string message = "Please choose a teacher to edit.";
-            MessageBox.Show(message, title);
+            if (this.comboEmployeeName.SelectedIndex == -1)
+            {
+                this.Enabled = false;
+                string title = "No Teacher Chosen";
+                string message = "Please choose a teacher to edit.";
+                MessageBox.Show(message, title);
+                this.Enabled = true;
+                return false;
+            }
+            else
+            {
+                return true;
+            }               
+        }
+
+        /// <summary>
+        /// Checks to see if the employee is clocked in (and not clocked out) 
+        /// Displays error box for attempts to clock in when emplyee is already clocked in.
+        /// </summary>
+        /// <param name="employeeId">the employeeId of the emplyee to verify</param>
+        /// <returns>true if employee is NOT clocked in</returns>
+        private bool IsNotClockedInCheck(int employeeId)
+        {
+            if (this.clockRecordController.GetOpenClockRecord(employeeId) != null)
+            {
+                this.Enabled = false;
+                string title = "Employee Still Clocked In";
+                string message = "This employee is still clocked in.  Please clock out before clocking in again.";
+                MessageBox.Show(message, title);
+                this.Enabled = true;
+                return false;
+            }
+            else
+            {
+                return true;
+            }               
         }
 
         /// <summary>
@@ -73,22 +108,10 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <param name="e"></param>
         private void ButtonClockIn_Click(object sender, EventArgs e)
         {           
-            if (this.comboEmployeeName.SelectedIndex == -1)
-            {
-                this.DisplayChooseTeacherErrorBox();
-            }
-            else
+            if (this.TeacherIsSelectedCheck())
             {
                 Int32.TryParse(this.comboEmployeeName.SelectedValue.ToString(), out int employeeId);
-                if (this.clockRecordController.GetOpenClockRecord(employeeId) != null)
-                {
-                    this.Enabled = false;
-                    string title = "Employee Still Clocked In";
-                    string message = "This employee is still clocked in.  Please clock out before clocking in again.";
-                    MessageBox.Show(message, title);
-                    this.Enabled = true;
-                }
-                else
+                if (this.IsNotClockedInCheck(employeeId))
                 {
                     try
                     {
@@ -151,7 +174,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             }
             else
             {
-                this.DisplayChooseTeacherErrorBox();
+                this.TeacherIsSelectedCheck();
             }
 
         }
