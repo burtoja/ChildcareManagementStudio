@@ -120,7 +120,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
                 {
                     insertCommand.Parameters.AddWithValue("$employeeId", clockRecord.EmployeeId);
-                    insertCommand.Parameters.AddWithValue("$inDatetime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
+                    insertCommand.Parameters.AddWithValue("$inDatetime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
                     insertCommand.ExecuteNonQuery();
                 }
             }
@@ -168,8 +168,8 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
                 {
                     updateCommand.Parameters.AddWithValue("$employeeId", clockOutRecord.EmployeeId);
-                    updateCommand.Parameters.AddWithValue("$inDateTime", clockOutRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
-                    updateCommand.Parameters.AddWithValue("$outDateTime", clockOutRecord.OutDateTime.ToString("yyyy-MM-dd HH:mm"));
+                    updateCommand.Parameters.AddWithValue("$inDateTime", clockOutRecord.InDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                    updateCommand.Parameters.AddWithValue("$outDateTime", clockOutRecord.OutDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
                     
                     updateCommand.ExecuteNonQuery();
                 }
@@ -201,7 +201,7 @@ namespace ChildcareManagementStudio.DAL
                 using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
                 {
                     deleteCommand.Parameters.AddWithValue("$employeeId", clockRecord.EmployeeId);
-                    deleteCommand.Parameters.AddWithValue("$inDateTime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
+                    deleteCommand.Parameters.AddWithValue("$inDateTime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
                     deleteCommand.ExecuteNonQuery();
                 }
             }
