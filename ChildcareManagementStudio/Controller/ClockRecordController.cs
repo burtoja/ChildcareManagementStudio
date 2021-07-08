@@ -1,11 +1,10 @@
 ﻿using ChildcareManagementStudio.DAL;
 using ChildcareManagementStudio.Model;
-using System;
 using System.Collections.Generic;
 
 namespace ChildcareManagementStudio.Controller
 {
-    class ClockRecordController
+    public class ClockRecordController
     {
         private readonly ClockRecordDAL clockRecordDAL;
 
@@ -41,6 +40,17 @@ namespace ChildcareManagementStudio.Controller
         public void ClockOut(ClockRecord clockInRecord, ClockRecord clockOutRecord)
         {
             this.clockRecordDAL.ClockOut(clockInRecord, clockOutRecord);
+        }
+
+        /// <summary>
+        /// Method used to delete record.  This is primarily used in test classes to preserve
+        /// the DB state for subsequent tests
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="certificationRecord"></param>
+        public void DeleteClockRecord(ClockRecord clockRecord)
+        {
+            this.clockRecordDAL.DeleteClockRecord(clockRecord);
         }
 
     }
