@@ -29,7 +29,7 @@ namespace ChildcareManagementStudio.DAL
         {
             if (accountHolder == null)
             {
-                throw new ArgumentNullException("accountHolder", "The acount holder cannot be null.");
+                throw new ArgumentNullException("accountHolder", "The account holder cannot be null.");
             }
 
             List<Payment> payments = new List<Payment>();
@@ -76,6 +76,62 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return payments;
+        }
+
+        /// <summary>
+        /// Method that adds a payment record to the database.
+        /// </summary>
+        /// <param name="payment">The payment being added.</param>
+        public void AddPayment(Payment payment)
+        {
+            if (payment.PaymentId != default)
+            {
+                throw new ArgumentNullException("payment", "The payment cannot be null.");
+            }
+
+            if (payment.PaymentId != default)
+            {
+                throw new ArgumentException("The PaymentId property cannot be filled out because it will be assigned by the database.", "payment");
+            }
+
+            string paymentTypeString;
+            if (payment.PaymentType == PaymentType.CreditCard)
+            {
+                paymentTypeString = "Credit Card";
+            }
+            else
+            {
+                paymentTypeString = payment.PaymentType.ToString();
+            }
+
+            string insertStatement =
+                "INSERT INTO Payment (accountHolderId, date, amount, type) " +
+                "VALUES ($accountHolderId, $date, $amount, $type)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$accountHolderId", payment.AccountHolder.AccountHolderId);
+                    insertCommand.Parameters.AddWithValue("$date", payment.PaymentDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("$amount", payment.Amount);
+                    insertCommand.Parameters.AddWithValue("$type", paymentTypeString);
+                    insertCommand.ExecuteNonQuery();
+                }
+
+                using (SqliteCommand selectCommand = new SqliteCommand("SELECT last_insert_rowid()", connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            payment.PaymentId = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
         }
     }
 }
