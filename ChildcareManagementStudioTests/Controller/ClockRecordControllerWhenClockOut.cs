@@ -23,7 +23,14 @@ namespace ChildcareManagementStudioTests.Controller
             int employeeId = 2;
             List<ClockRecord> recordsBefore = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
             Assert.AreEqual(1, recordsBefore.Count);
-            ClockRecord inTestRecord = recordsBefore[0];
+            ClockRecord inTestRecord = new ClockRecord()
+            {
+                EmployeeId = employeeId,
+                InDateTime = new DateTime(2021, 7, 5, 08, 15, 0)
+            };
+            this.clockRecordController.ClockIn(inTestRecord);
+            List<ClockRecord> recordsAfterClockIn = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
+            Assert.AreEqual(2, recordsAfterClockIn.Count);
             ClockRecord outTestRecord = new ClockRecord()
             {
                 EmployeeId = employeeId,
@@ -31,10 +38,11 @@ namespace ChildcareManagementStudioTests.Controller
                 OutDateTime = new DateTime(2021, 7, 5, 17, 30, 0)
             };
             this.clockRecordController.ClockOut(inTestRecord, outTestRecord);
-            List<ClockRecord> recordsAfter = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
-            Assert.AreEqual(1, recordsAfter.Count);
-            Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfter[0].InDateTime.ToString());
-            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfter[0].OutDateTime.ToString());
+            List<ClockRecord> recordsAfterClockOut = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
+            Assert.AreEqual(2, recordsAfterClockOut.Count);
+            Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfterClockOut[0].InDateTime.ToString());
+            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfterClockOut[0].OutDateTime.ToString());
+            this.clockRecordController.DeleteClockRecord(outTestRecord);
         }
 
         [TestMethod]
