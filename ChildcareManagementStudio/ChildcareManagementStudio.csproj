@@ -133,6 +133,7 @@
     <Compile Include="Controller\CertificationController.cs" />
     <Compile Include="Controller\ClassRecordController.cs" />
     <Compile Include="Controller\ClassroomController.cs" />
+    <Compile Include="Controller\ClockRecordController.cs" />
     <Compile Include="DAL\ClockRecordDAL.cs" />
     <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
