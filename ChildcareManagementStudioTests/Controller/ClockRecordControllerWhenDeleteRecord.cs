@@ -9,7 +9,6 @@ namespace ChildcareManagementStudioTests.Controller
     [TestClass]
     public class ClockRecordControllerWhenDeleteRecord
     {
-
         private ClockRecordController clockRecordController;
 
         [TestInitialize]
