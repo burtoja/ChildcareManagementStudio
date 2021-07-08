@@ -146,7 +146,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <param name="e"></param>
         private void ButtonClockOut_Click(object sender, EventArgs e)
         {
-            if (this.comboEmployeeName.SelectedIndex != -1)
+            if (this.TeacherIsSelectedCheck())
             {
                 try
                 {
@@ -177,6 +177,36 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                 this.TeacherIsSelectedCheck();
             }
 
+        }
+
+        /// <summary>
+        /// Handler to change button enabled state based upon selection in combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboEmployeeName.SelectedIndex != -1)
+            {
+                Int32.TryParse(this.comboEmployeeName.SelectedValue.ToString(), out int employeeId);
+                if (this.clockRecordController.GetOpenClockRecord(employeeId) == null)
+                {
+                    this.buttonClockIn.Enabled = true;
+                    this.buttonClockOut.Enabled = false;
+                } else
+                {
+                    this.buttonClockIn.Enabled = false;
+                    this.buttonClockOut.Enabled = true;
+                }
+            }
+            else
+            {
+                this.buttonClockIn.Enabled = false;
+                this.buttonClockOut.Enabled = false;
+            }
+                
+
+            
         }
     }
 }

@@ -83,6 +83,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboEmployeeName.Name = "comboEmployeeName";
             this.comboEmployeeName.Size = new System.Drawing.Size(287, 29);
             this.comboEmployeeName.TabIndex = 19;
+            this.comboEmployeeName.SelectedIndexChanged += new System.EventHandler(this.ComboEmployeeName_SelectedIndexChanged);
             // 
             // labelCurrentTime
             // 
@@ -123,6 +124,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             // buttonClockIn
             // 
             this.buttonClockIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonClockIn.Enabled = false;
             this.buttonClockIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClockIn.Location = new System.Drawing.Point(40, 16);
             this.buttonClockIn.Margin = new System.Windows.Forms.Padding(2);
@@ -136,6 +138,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             // buttonClockOut
             // 
             this.buttonClockOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonClockOut.Enabled = false;
             this.buttonClockOut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClockOut.Location = new System.Drawing.Point(421, 16);
             this.buttonClockOut.Margin = new System.Windows.Forms.Padding(2);
