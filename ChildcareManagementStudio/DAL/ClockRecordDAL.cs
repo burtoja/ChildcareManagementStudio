@@ -135,5 +135,31 @@ namespace ChildcareManagementStudio.DAL
             }
         }
 
+        /// <summary>
+        /// Method used to delete record.  This is primarily used in test classes to preserve
+        /// the DB state for subsequent tests
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="certificationRecord"></param>
+        public void DeleteClockRecord(ClockRecord clockRecord)
+        {
+            string deleteStatement =
+                "DELETE FROM ClockRecord " +
+                "WHERE employeeId = $employeeId " +
+                "AND inDateTime = $inDateTime ";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$employeeId", clockRecord.EmployeeId);
+                    deleteCommand.Parameters.AddWithValue("$inDateTime", clockRecord.InDateTime.ToString("yyyy-MM-dd HH:mm"));
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

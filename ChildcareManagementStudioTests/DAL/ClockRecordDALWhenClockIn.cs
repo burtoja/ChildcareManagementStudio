@@ -25,6 +25,7 @@ namespace ChildcareManagementStudioTests.DAL
             Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfter[0].InDateTime.ToString());
             Assert.AreEqual("7/5/2021 5:00:00 PM", recordsAfter[0].OutDateTime.ToString());
             Assert.AreEqual("7/6/2021 9:30:15 AM", recordsAfter[1].InDateTime.ToString());
+            clockRecordDAL.DeleteClockRecord(testRecord);
         }
     }
 }

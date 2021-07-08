@@ -142,6 +142,7 @@
     <Compile Include="DAL\ClockRecordDALWhenGetAllClockRecordsForEmployee.cs" />
     <Compile Include="DAL\ClockRecordDALWhenClockIn.cs" />
     <Compile Include="DAL\ClockRecordDALWhenClockOut.cs" />
+    <Compile Include="DAL\ClockRecordDALWhenDeleteRecord.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
