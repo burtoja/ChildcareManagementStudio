@@ -16,5 +16,10 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         {
             InitializeComponent();
         }
+
+        private void TimerCurrentTime_Tick(object sender, EventArgs e)
+        {
+            this.labelValueCurrentTime.Text = DateTime.Now.ToString();
+        }
     }
 }

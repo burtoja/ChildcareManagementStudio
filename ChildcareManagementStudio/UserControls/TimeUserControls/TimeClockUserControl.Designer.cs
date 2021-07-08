@@ -29,14 +29,16 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelEmployeeName = new System.Windows.Forms.Label();
             this.comboEmployeeName = new System.Windows.Forms.ComboBox();
+            this.labelCurrentTime = new System.Windows.Forms.Label();
+            this.labelValueCurrentTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonClockIn = new System.Windows.Forms.Button();
             this.buttonClockOut = new System.Windows.Forms.Button();
-            this.labelCurrentTime = new System.Windows.Forms.Label();
-            this.labelValueCurrenttime = new System.Windows.Forms.Label();
+            this.timerCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +51,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tableLayoutPanel1.Controls.Add(this.labelEmployeeName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboEmployeeName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelCurrentTime, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelValueCurrenttime, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelValueCurrentTime, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(160, 102);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -81,6 +83,28 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboEmployeeName.Name = "comboEmployeeName";
             this.comboEmployeeName.Size = new System.Drawing.Size(287, 29);
             this.comboEmployeeName.TabIndex = 19;
+            // 
+            // labelCurrentTime
+            // 
+            this.labelCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelCurrentTime.AutoSize = true;
+            this.labelCurrentTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentTime.Location = new System.Drawing.Point(5, 23);
+            this.labelCurrentTime.Name = "labelCurrentTime";
+            this.labelCurrentTime.Size = new System.Drawing.Size(114, 21);
+            this.labelCurrentTime.TabIndex = 20;
+            this.labelCurrentTime.Text = "Current Time:";
+            // 
+            // labelValueCurrentTime
+            // 
+            this.labelValueCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelValueCurrentTime.AutoSize = true;
+            this.labelValueCurrentTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValueCurrentTime.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueCurrentTime.Location = new System.Drawing.Point(125, 24);
+            this.labelValueCurrentTime.Name = "labelValueCurrentTime";
+            this.labelValueCurrentTime.Size = new System.Drawing.Size(0, 19);
+            this.labelValueCurrentTime.TabIndex = 21;
             // 
             // tableLayoutPanel2
             // 
@@ -120,27 +144,11 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.buttonClockOut.Text = "Clock Out";
             this.buttonClockOut.UseVisualStyleBackColor = true;
             // 
-            // labelCurrentTime
+            // timerCurrentTime
             // 
-            this.labelCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelCurrentTime.AutoSize = true;
-            this.labelCurrentTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentTime.Location = new System.Drawing.Point(5, 23);
-            this.labelCurrentTime.Name = "labelCurrentTime";
-            this.labelCurrentTime.Size = new System.Drawing.Size(114, 21);
-            this.labelCurrentTime.TabIndex = 20;
-            this.labelCurrentTime.Text = "Current Time:";
-            // 
-            // labelValueCurrenttime
-            // 
-            this.labelValueCurrenttime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelValueCurrenttime.AutoSize = true;
-            this.labelValueCurrenttime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValueCurrenttime.ForeColor = System.Drawing.Color.Maroon;
-            this.labelValueCurrenttime.Location = new System.Drawing.Point(125, 24);
-            this.labelValueCurrenttime.Name = "labelValueCurrenttime";
-            this.labelValueCurrenttime.Size = new System.Drawing.Size(0, 19);
-            this.labelValueCurrenttime.TabIndex = 21;
+            this.timerCurrentTime.Enabled = true;
+            this.timerCurrentTime.Interval = 500;
+            this.timerCurrentTime.Tick += new System.EventHandler(this.TimerCurrentTime_Tick);
             // 
             // TimeClockUserControl
             // 
@@ -166,6 +174,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private System.Windows.Forms.Button buttonClockIn;
         private System.Windows.Forms.Button buttonClockOut;
         private System.Windows.Forms.Label labelCurrentTime;
-        private System.Windows.Forms.Label labelValueCurrenttime;
+        private System.Windows.Forms.Label labelValueCurrentTime;
+        private System.Windows.Forms.Timer timerCurrentTime;
     }
 }
