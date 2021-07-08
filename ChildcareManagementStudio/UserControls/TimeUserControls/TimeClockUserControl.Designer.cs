@@ -131,6 +131,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.buttonClockIn.TabIndex = 24;
             this.buttonClockIn.Text = "Clock In";
             this.buttonClockIn.UseVisualStyleBackColor = true;
+            this.buttonClockIn.Click += new System.EventHandler(this.ButtonClockIn_Click);
             // 
             // buttonClockOut
             // 
@@ -143,6 +144,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.buttonClockOut.TabIndex = 25;
             this.buttonClockOut.Text = "Clock Out";
             this.buttonClockOut.UseVisualStyleBackColor = true;
+            this.buttonClockOut.Click += new System.EventHandler(this.ButtonClockOut_Click);
             // 
             // timerCurrentTime
             // 
