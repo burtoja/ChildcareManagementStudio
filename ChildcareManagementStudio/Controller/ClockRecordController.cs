@@ -24,6 +24,18 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Returns a ClockRecord object matching the provided employeeId with 
+        /// empty clock-out time or null if not open record exists
+        /// </summary>
+        /// <param name="employeeId">theemployeeId for which to return a list of ClockRecord objects</param>
+        /// <returns>a ClockRecord object matching the provided employeeId with 
+        /// empty clock-out time or null if not open record exists</returns>
+        public ClockRecord GetOpenClockRecord(int employeeId)
+        {
+            return this.clockRecordDAL.GetOpenClockRecord(employeeId);
+        }
+
+        /// <summary>
         /// Adds a new ClockRecord entry into the DAL with the clocked-in date time for an employee
         /// </summary>
         /// <param name="clockRecord">the clock record object to insert into the DB</param>

@@ -15,7 +15,7 @@ namespace ChildcareManagementStudio.DAL
         /// Returns a list of ClockRecord objects matching the provided employeeId
         /// </summary>
         /// <param name="employeeId">theemployeeId for which to return a list of ClockRecord objects</param>
-        /// <returns></returns>
+        /// <returns>List of clockRecord object matching emplyeeId</returns>
         public List<ClockRecord> GetAllClockRecordsForEmployee(int employeeId)
         {
             List<ClockRecord> records = new List<ClockRecord>();
@@ -56,6 +56,47 @@ namespace ChildcareManagementStudio.DAL
             return records;
         }
 
+        /// <summary>
+        /// Returns a ClockRecord object matching the provided employeeId with 
+        /// empty clock-out time or null if not open record exists
+        /// </summary>
+        /// <param name="employeeId">theemployeeId for which to return a list of ClockRecord objects</param>
+        /// <returns>a ClockRecord object matching the provided employeeId with 
+        /// empty clock-out time or null if not open record exists</returns>
+        public ClockRecord GetOpenClockRecord(int employeeId)
+        {
+            ClockRecord clockRecord = null;
+
+            string selectStatement =
+                "SELECT inDateTime, outDateTime " +
+                "FROM ClockRecord " +
+                "WHERE employeeId = $employeeId " +
+                "AND outDateTime IS NULL";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("$employeeId", employeeId);
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int inDateTimeOrdinal = reader.GetOrdinal("inDateTime");
+                        int outDateTimeOrdinal = reader.GetOrdinal("outDateTime");
+
+                        while (reader.Read())
+                        {
+                            clockRecord = new ClockRecord()
+                            {
+                                EmployeeId = employeeId,
+                                InDateTime = reader.GetDateTime(inDateTimeOrdinal)
+                            };                           
+                        }
+                    }
+                }
+            }
+            return clockRecord;
+        }
 
         /// <summary>
         /// Adds a new ClockRecord entry into the DAL with the clocked-in date time for an employee

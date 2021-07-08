@@ -143,5 +143,4 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
 
         }
     }
-    }
 }
