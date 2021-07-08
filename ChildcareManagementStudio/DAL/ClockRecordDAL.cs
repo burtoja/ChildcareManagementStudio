@@ -107,10 +107,10 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
             }
 
-            if (clockInRecord.OutDateTime.ToString() != "1/1/0001 12:00:00 AM")
+            if (clockInRecord.OutDateTime.ToString("yyyy-MM-dd HH:mm:ss") != "0001-01-01 00:00:00")
             {
                 throw new ArgumentException("This record already has a clock-out time associated with it " +
-                    "(--" + clockInRecord.OutDateTime + "--)");
+                    "(--" + clockInRecord.OutDateTime.ToString("yyyy-MM-dd HH:mm:ss") + "--)");
             }
 
             //TODO: Add check requiring ClockOut to be after ClockIn 
