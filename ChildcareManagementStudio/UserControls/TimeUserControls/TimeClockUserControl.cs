@@ -72,34 +72,47 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonClockIn_Click(object sender, EventArgs e)
-        {
-            if (this.comboEmployeeName.SelectedIndex != -1)
-            {
-                try
-                {
-                    Int32.TryParse(this.comboEmployeeName.SelectedValue.ToString(), out int employeeId);
-                    DateTime inTime = DateTime.Now;
-                    ClockRecord clockInRecord = new ClockRecord()
-                    {
-                        EmployeeId = employeeId,
-                        InDateTime = inTime
-                    };
-                    this.clockRecordController.ClockIn(clockInRecord);
-                    string title = "Employee Clocked In";
-                    string message = this.comboEmployeeName.SelectedText +
-                        " has been clocked in at " + inTime;
-                    MessageBox.Show(message, title);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: ", ex.Message);
-                }
-            }
-            else
+        {           
+            if (this.comboEmployeeName.SelectedIndex == -1)
             {
                 this.DisplayChooseTeacherErrorBox();
             }
-            
+            else
+            {
+                Int32.TryParse(this.comboEmployeeName.SelectedValue.ToString(), out int employeeId);
+                if (this.clockRecordController.GetOpenClockRecord(employeeId) != null)
+                {
+                    this.Enabled = false;
+                    string title = "Employee Still Clocked In";
+                    string message = "This employee is still clocked in.  Please clock out before clocking in again.";
+                    MessageBox.Show(message, title);
+                    this.Enabled = true;
+                }
+                else
+                {
+                    try
+                    {
+                        DateTime inTime = DateTime.Now;
+                        ClockRecord clockInRecord = new ClockRecord()
+                        {
+                            EmployeeId = employeeId,
+                            InDateTime = inTime
+                        };
+                        this.clockRecordController.ClockIn(clockInRecord);
+                        this.Enabled = false;
+                        string title = "Employee Clocked In";
+                        string message = "Employee has been clocked in at " + inTime;
+                        MessageBox.Show(message, title);
+                        this.Enabled = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        this.Enabled = false;
+                        MessageBox.Show("Error: ", ex.Message);
+                        this.Enabled = true;
+                    }
+                }
+            }
         }
 
         /// <summary>
