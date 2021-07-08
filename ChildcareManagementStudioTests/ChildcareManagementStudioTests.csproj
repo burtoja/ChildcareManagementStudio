@@ -135,6 +135,7 @@
     <Compile Include="DAL\StudentClassroomAssignmentDALWhenDeleteStudentClassroomAssignment.cs" />
     <Compile Include="DAL\AccountHolderDALWhenGetAllAccountHolders.cs" />
     <Compile Include="DAL\AccountHolderDALWhenAddAccountHolder.cs" />
+    <Compile Include="DAL\AccountHolderDALWhenEditAccountHolder.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
