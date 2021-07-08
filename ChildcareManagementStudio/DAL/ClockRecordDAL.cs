@@ -143,6 +143,11 @@ namespace ChildcareManagementStudio.DAL
         /// <param name="certificationRecord"></param>
         public void DeleteClockRecord(ClockRecord clockRecord)
         {
+            if (clockRecord == null)
+            {
+                throw new ArgumentNullException("clockRecord", "The clock record cannot be null.");
+            }
+
             string deleteStatement =
                 "DELETE FROM ClockRecord " +
                 "WHERE employeeId = $employeeId " +
