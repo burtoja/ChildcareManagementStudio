@@ -164,10 +164,9 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     this.clockRecordController.ClockOut(inRecord, outRecord);
                     this.Enabled = false;
                     string title = "Employee Clocked Out";
-                    string message = this.comboEmployeeName.SelectedText +
-                        " was clocked in at " +
-                        outRecord.InDateTime.ToString() +
-                        "has been clocked out at " + outRecord.OutDateTime.ToString();
+                    string message = "Employee has been clocked out: \r\n" +
+                        "Time clocked in: " + outRecord.InDateTime.ToString() + "\r\n" +
+                        "Time clocked out: " + outRecord.OutDateTime.ToString();
                     MessageBox.Show(message, title);
                     this.Enabled = true;
                     this.buttonClockIn.Enabled = true;
