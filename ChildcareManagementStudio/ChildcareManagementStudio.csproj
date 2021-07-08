@@ -387,6 +387,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\TimeSheetReport.rdlc" />
     <EmbeddedResource Include="UserControls\ClassroomUserControls\GenerateDocumentsUserControl.resx">
       <DependentUpon>GenerateDocumentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
