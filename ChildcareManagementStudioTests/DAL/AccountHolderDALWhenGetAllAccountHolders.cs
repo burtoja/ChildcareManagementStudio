@@ -20,9 +20,9 @@ namespace ChildcareManagementStudioTests.DAL
             AccountHolderDAL accountHolderDAL = new AccountHolderDAL();
 
             List<AccountHolder> accountHolders = accountHolderDAL.GetAllAccountHolders();
-            Assert.AreEqual(3, accountHolders.Count);
+            Assert.AreEqual(4, accountHolders.Count);
 
-            AccountHolder firstAccountHolder = accountHolders[2];
+            AccountHolder firstAccountHolder = accountHolders[3];
             Assert.AreEqual(101, firstAccountHolder.PersonId);
             Assert.AreEqual("Woodward", firstAccountHolder.LastName);
             Assert.AreEqual("Ryan", firstAccountHolder.FirstName);
