@@ -34,9 +34,15 @@ namespace ChildcareManagementStudioTests.Controller
                 StudentId = 7
             };
 
+            Classroom classroom = new Classroom()
+            {
+                Capacity = 30
+            };
+
             ClassRecord classRecord = new ClassRecord()
             {
-                ClassId = 1
+                ClassId = 1,
+                Classroom = classroom
             };
 
             StudentClassroomAssignment studentClassroomAssignment = new StudentClassroomAssignment()

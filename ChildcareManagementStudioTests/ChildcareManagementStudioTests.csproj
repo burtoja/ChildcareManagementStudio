@@ -105,6 +105,9 @@
     <Compile Include="Controller\StudentClassroomAssignmentControllerWhenAddStudentClassroomAssignment.cs" />
     <Compile Include="Controller\ClassRecordControllerWhenEditClass.cs" />
     <Compile Include="Controller\StudentClassroomAssignmentControllerWhenDeleteStudentClassroomAssignment.cs" />
+    <Compile Include="Controller\AccountHolderControllerWhenGetAllAccountHolders.cs" />
+    <Compile Include="Controller\AccountHolderControllerWhenAddAccountHolder.cs" />
+    <Compile Include="Controller\AccountHolderControllerWhenEditAccountHolder.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
@@ -133,6 +136,9 @@
     <Compile Include="DAL\StudentClassroomAssignmentDALWhenAddStudentClassroomAssignment.cs" />
     <Compile Include="DAL\ClassRecordDALWhenEditClass.cs" />
     <Compile Include="DAL\StudentClassroomAssignmentDALWhenDeleteStudentClassroomAssignment.cs" />
+    <Compile Include="DAL\AccountHolderDALWhenGetAllAccountHolders.cs" />
+    <Compile Include="DAL\AccountHolderDALWhenAddAccountHolder.cs" />
+    <Compile Include="DAL\AccountHolderDALWhenEditAccountHolder.cs" />
     <Compile Include="DAL\ClockRecordDALWhenGetAllClockRecordsForEmployee.cs" />
     <Compile Include="DAL\ClockRecordDALWhenClockIn.cs" />
     <Compile Include="DAL\ClockRecordDALWhenClockOut.cs" />
