@@ -151,6 +151,7 @@
     <Compile Include="DAL\ClassroomDAL.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\PaymentDAL.cs" />
     <Compile Include="DAL\PersonDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\PositionTypeDAL.cs" />
