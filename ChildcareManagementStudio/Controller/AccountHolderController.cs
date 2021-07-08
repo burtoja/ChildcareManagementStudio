@@ -45,5 +45,30 @@ namespace ChildcareManagementStudio.Controller
 
             accountHolderDAL.AddAccountHolder(accountHolder);
         }
+
+        /// <summary>
+        /// Method that edits an employee's records in the database.
+        /// </summary>
+        /// <param name="originalAccountHolder">AccountHolder object representing the account holder's records before the edits are made.</param>
+        /// <param name="revisedAccountHolder">AccountHolder object representing the account holder's records after the edits are made.</param>
+        public void EditAccountHolder(AccountHolder originalAccountHolder, AccountHolder revisedAccountHolder)
+        {
+            if (originalAccountHolder == null)
+            {
+                throw new ArgumentNullException("originalAccountHolder", "The original account holder cannot be null.");
+            }
+
+            if (revisedAccountHolder == null)
+            {
+                throw new ArgumentNullException("revisedAccountHolder", "The revised account holder cannot be null.");
+            }
+
+            if (originalAccountHolder.AccountHolderId != revisedAccountHolder.AccountHolderId)
+            {
+                throw new ArgumentException("The account holder ID must be the same for both AccountHolder objects.");
+            }
+
+            accountHolderDAL.EditAccountHolder(originalAccountHolder, revisedAccountHolder);
+        }
     }
 }
