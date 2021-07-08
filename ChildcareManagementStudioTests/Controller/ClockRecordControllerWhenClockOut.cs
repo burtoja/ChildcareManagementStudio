@@ -40,8 +40,8 @@ namespace ChildcareManagementStudioTests.Controller
             this.clockRecordController.ClockOut(inTestRecord, outTestRecord);
             List<ClockRecord> recordsAfterClockOut = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
             Assert.AreEqual(2, recordsAfterClockOut.Count);
-            Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfterClockOut[0].InDateTime.ToString());
-            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfterClockOut[0].OutDateTime.ToString());
+            Assert.AreEqual("7/5/2021 8:15:00 AM", recordsAfterClockOut[1].InDateTime.ToString());
+            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfterClockOut[1].OutDateTime.ToString());
             this.clockRecordController.DeleteClockRecord(outTestRecord);
         }
 
