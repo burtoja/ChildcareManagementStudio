@@ -36,8 +36,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.labelValueCurrentTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonClockIn = new System.Windows.Forms.Button();
             this.buttonClockOut = new System.Windows.Forms.Button();
+            this.buttonClockIn = new System.Windows.Forms.Button();
             this.timerCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -48,17 +48,14 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.64228F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.35772F));
-            this.tableLayoutPanel1.Controls.Add(this.labelEmployeeName, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboEmployeeName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelCurrentTime, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelValueCurrentTime, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(160, 102);
+            this.tableLayoutPanel1.Controls.Add(this.labelEmployeeName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.comboEmployeeName, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(152, 158);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 135);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 57);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelEmployeeName
@@ -66,7 +63,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.labelEmployeeName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelEmployeeName.AutoSize = true;
             this.labelEmployeeName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmployeeName.Location = new System.Drawing.Point(29, 90);
+            this.labelEmployeeName.Location = new System.Drawing.Point(29, 18);
             this.labelEmployeeName.Name = "labelEmployeeName";
             this.labelEmployeeName.Size = new System.Drawing.Size(90, 21);
             this.labelEmployeeName.TabIndex = 18;
@@ -79,7 +76,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboEmployeeName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboEmployeeName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmployeeName.FormattingEnabled = true;
-            this.comboEmployeeName.Location = new System.Drawing.Point(125, 86);
+            this.comboEmployeeName.Location = new System.Drawing.Point(125, 14);
             this.comboEmployeeName.Name = "comboEmployeeName";
             this.comboEmployeeName.Size = new System.Drawing.Size(287, 29);
             this.comboEmployeeName.TabIndex = 19;
@@ -90,64 +87,68 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.labelCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelCurrentTime.AutoSize = true;
             this.labelCurrentTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentTime.Location = new System.Drawing.Point(5, 23);
+            this.labelCurrentTime.Location = new System.Drawing.Point(310, 54);
             this.labelCurrentTime.Name = "labelCurrentTime";
             this.labelCurrentTime.Size = new System.Drawing.Size(114, 21);
             this.labelCurrentTime.TabIndex = 20;
             this.labelCurrentTime.Text = "Current Time:";
+            this.labelCurrentTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelValueCurrentTime
             // 
             this.labelValueCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelValueCurrentTime.AutoSize = true;
-            this.labelValueCurrentTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValueCurrentTime.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValueCurrentTime.ForeColor = System.Drawing.Color.Maroon;
-            this.labelValueCurrentTime.Location = new System.Drawing.Point(125, 24);
+            this.labelValueCurrentTime.Location = new System.Drawing.Point(211, 85);
             this.labelValueCurrentTime.Name = "labelValueCurrentTime";
-            this.labelValueCurrentTime.Size = new System.Drawing.Size(0, 19);
+            this.labelValueCurrentTime.Size = new System.Drawing.Size(352, 38);
             this.labelValueCurrentTime.TabIndex = 21;
+            this.labelValueCurrentTime.Tag = "";
+            this.labelValueCurrentTime.Text = "12/7/2021 7:35:00 AM";
+            this.labelValueCurrentTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonClockIn, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonClockOut, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 295);
+            this.tableLayoutPanel2.Controls.Add(this.buttonClockIn, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 289);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(739, 65);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(739, 119);
             this.tableLayoutPanel2.TabIndex = 27;
-            // 
-            // buttonClockIn
-            // 
-            this.buttonClockIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonClockIn.Enabled = false;
-            this.buttonClockIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClockIn.Location = new System.Drawing.Point(40, 16);
-            this.buttonClockIn.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClockIn.Name = "buttonClockIn";
-            this.buttonClockIn.Size = new System.Drawing.Size(288, 33);
-            this.buttonClockIn.TabIndex = 24;
-            this.buttonClockIn.Text = "Clock In";
-            this.buttonClockIn.UseVisualStyleBackColor = true;
-            this.buttonClockIn.Click += new System.EventHandler(this.ButtonClockIn_Click);
             // 
             // buttonClockOut
             // 
             this.buttonClockOut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonClockOut.Enabled = false;
             this.buttonClockOut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClockOut.Location = new System.Drawing.Point(421, 16);
+            this.buttonClockOut.Location = new System.Drawing.Point(410, 28);
             this.buttonClockOut.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClockOut.Name = "buttonClockOut";
-            this.buttonClockOut.Size = new System.Drawing.Size(266, 33);
+            this.buttonClockOut.Size = new System.Drawing.Size(288, 63);
             this.buttonClockOut.TabIndex = 25;
             this.buttonClockOut.Text = "Clock Out";
             this.buttonClockOut.UseVisualStyleBackColor = true;
             this.buttonClockOut.Click += new System.EventHandler(this.ButtonClockOut_Click);
+            // 
+            // buttonClockIn
+            // 
+            this.buttonClockIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonClockIn.Enabled = false;
+            this.buttonClockIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClockIn.Location = new System.Drawing.Point(40, 28);
+            this.buttonClockIn.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClockIn.Name = "buttonClockIn";
+            this.buttonClockIn.Size = new System.Drawing.Size(288, 63);
+            this.buttonClockIn.TabIndex = 24;
+            this.buttonClockIn.Text = "Clock In";
+            this.buttonClockIn.UseVisualStyleBackColor = true;
+            this.buttonClockIn.Click += new System.EventHandler(this.ButtonClockIn_Click);
             // 
             // timerCurrentTime
             // 
@@ -160,6 +161,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.labelValueCurrentTime);
+            this.Controls.Add(this.labelCurrentTime);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TimeClockUserControl";
             this.Size = new System.Drawing.Size(745, 470);
@@ -167,6 +170,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
