@@ -110,7 +110,7 @@ namespace ChildcareManagementStudio.DAL
             if (clockInRecord.OutDateTime.ToString() != "1/1/0001 12:00:00 AM")
             {
                 throw new ArgumentException("This record already has a clock-out time associated with it " +
-                    "(--" + clockInRecord.OutDateTime + "--");
+                    "(--" + clockInRecord.OutDateTime + "--)");
             }
 
             //TODO: Add check requiring ClockOut to be after ClockIn 
