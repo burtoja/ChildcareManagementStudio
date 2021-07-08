@@ -126,6 +126,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                         string title = "Employee Clocked In";
                         string message = "Employee has been clocked in at " + inTime;
                         MessageBox.Show(message, title);
+                        this.buttonClockIn.Enabled = false;
+                        this.buttonClockOut.Enabled = true;
                         this.Enabled = true;
                     }
                     catch (Exception ex)
@@ -160,16 +162,22 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                         OutDateTime = outTime
                     };
                     this.clockRecordController.ClockOut(inRecord, outRecord);
+                    this.Enabled = false;
                     string title = "Employee Clocked Out";
                     string message = this.comboEmployeeName.SelectedText +
                         " was clocked in at " +
                         outRecord.InDateTime.ToString() +
                         "has been clocked out at " + outRecord.OutDateTime.ToString();
                     MessageBox.Show(message, title);
+                    this.Enabled = true;
+                    this.buttonClockIn.Enabled = true;
+                    this.buttonClockOut.Enabled = false;
                 }
                 catch (Exception ex)
                 {
+                    this.Enabled = false;
                     MessageBox.Show("Error: ", ex.Message);
+                    this.Enabled = true;
                 }
             }
             else
