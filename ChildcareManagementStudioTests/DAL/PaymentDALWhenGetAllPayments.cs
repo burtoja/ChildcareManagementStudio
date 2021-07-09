@@ -20,7 +20,7 @@ namespace ChildcareManagementStudioTests.DAL
             PaymentDAL paymentDAL = new PaymentDAL();
             List<Payment> payments = paymentDAL.GetAllPayments();
 
-            Assert.AreEqual(2, payments.Count);
+            Assert.AreEqual(3, payments.Count);
             Payment firstPayment = payments[0];
 
             Assert.AreEqual(1, firstPayment.PaymentId);

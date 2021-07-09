@@ -1,18 +1,18 @@
-﻿using ChildcareManagementStudio.DAL;
+﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-namespace ChildcareManagementStudioTests.DAL
+namespace ChildcareManagementStudioTests.Controller
 {
     /// <summary>
-    /// Class for testing the AddPayment method of the PaymentDAL class.
+    /// Class for testing the AddPayment method of the PaymentController class.
     /// Note that this is only a temporary test class.
     /// These tests are based on the current state of the production database.
     /// </summary>
     [TestClass]
-    public class PaymentDALWhenAddPayment
+    public class PaymentControllerWhenAddPayment
     {
         [TestMethod]
         public void ShouldAddValidRecord()
@@ -36,14 +36,14 @@ namespace ChildcareManagementStudioTests.DAL
                 PaymentType = paymentType
             };
 
-            PaymentDAL paymentDAL = new PaymentDAL();
+            PaymentController paymentController = new PaymentController();
 
-            paymentDAL.AddPayment(payment);
+            paymentController.AddPayment(payment);
 
-            List<Payment> payments = paymentDAL.GetPayments(accountHolder);
+            List<Payment> payments = paymentController.GetPayments(accountHolder);
             Payment paymentFromDatabase = payments[1];
 
-            Assert.AreEqual(3, payments.Count);
+            Assert.AreEqual(2, payments.Count);
             Assert.AreEqual(2, paymentFromDatabase.PaymentId);
             Assert.AreEqual(accountHolder.AccountHolderId, paymentFromDatabase.AccountHolder.AccountHolderId);
             Assert.AreEqual(paymentDate, paymentFromDatabase.PaymentDate);

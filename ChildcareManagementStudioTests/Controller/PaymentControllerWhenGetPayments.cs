@@ -25,7 +25,7 @@ namespace ChildcareManagementStudioTests.Controller
             List<Payment> payments = paymentController.GetPayments(accountHolder);
             Payment firstPayment = payments[0];
 
-            Assert.AreEqual(1, payments.Count);
+            Assert.AreEqual(2, payments.Count);
             Assert.AreEqual(1, firstPayment.PaymentId);
             Assert.AreEqual(new DateTime(2021, 7, 7), firstPayment.PaymentDate);
             Assert.AreEqual(100.00, firstPayment.Amount);

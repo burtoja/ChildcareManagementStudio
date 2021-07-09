@@ -109,6 +109,7 @@
     <Compile Include="Controller\AccountHolderControllerWhenAddAccountHolder.cs" />
     <Compile Include="Controller\AccountHolderControllerWhenEditAccountHolder.cs" />
     <Compile Include="Controller\PaymentControllerWhenGetPayments.cs" />
+    <Compile Include="Controller\PaymentControllerWhenAddPayment.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />

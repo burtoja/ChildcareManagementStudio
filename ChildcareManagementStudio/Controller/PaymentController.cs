@@ -34,5 +34,24 @@ namespace ChildcareManagementStudio.Controller
 
             return paymentDAL.GetPayments(accountHolder);
         }
+
+        /// <summary>
+        /// Method that adds a payment record to the database.
+        /// </summary>
+        /// <param name="payment">The payment being added.</param>
+        public void AddPayment(Payment payment)
+        {
+            if (payment.PaymentId != default)
+            {
+                throw new ArgumentNullException("payment", "The payment cannot be null.");
+            }
+
+            if (payment.PaymentId != default)
+            {
+                throw new ArgumentException("The PaymentId property cannot be filled out because it will be assigned by the database.", "payment");
+            }
+
+            paymentDAL.AddPayment(payment);
+        }
     }
 }
