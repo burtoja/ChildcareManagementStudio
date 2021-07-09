@@ -41,6 +41,28 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         }
 
         /// <summary>
+        /// Checks to see if employee is selected in the comboBox.
+        /// Displays a message box for not choosing a teacher when needed
+        /// </summary>
+        /// <returns>true if teacher is selected in combo box</returns>
+        private bool EmployeeIsSelectedCheck()
+        {
+            if (this.comboBoxEmployee.SelectedIndex == -1)
+            {
+                this.Enabled = false;
+                string title = "No Employee Chosen";
+                string message = "Please choose a employee.";
+                MessageBox.Show(message, title);
+                this.Enabled = true;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Handles button clicks to generate the report for the parameters set in the comboBoxes
         /// </summary>
         /// <param name="sender"></param>
@@ -50,52 +72,54 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             ClockRecordBindingSource.Clear();
             EmployeeBindingSource.Clear();
             int employeeId;
-            DateTime startTargetDate;
-            DateTime endTargetDate;
-            try
+            DateTime startTargetDate = this.dateTimePickerStart.Value;
+            DateTime endTargetDate = this.dateTimePickerEnd.Value;
+            if (this.EmployeeIsSelectedCheck())
             {
-                employeeId = (int)this.comboBoxEmployee.SelectedValue;
-                startTargetDate = this.dateTimePickerStart.Value;
-                endTargetDate = this.dateTimePickerEnd.Value;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                return;
-            }
-            List<ClockRecord> clockRecords = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
-            foreach (ClockRecord clockRecord in clockRecords)
-            {
-                int startRangeResult = DateTime.Compare(clockRecord.InDateTime, startTargetDate);
-                int endRangeResult = DateTime.Compare(clockRecord.InDateTime, endTargetDate);
-
-                if (startRangeResult >= 0
-                    && endRangeResult <= 0
-                    &&  clockRecord.OutDateTime.ToString("d") != "1/1/0001")
+                try
                 {
-                    ClockRecordBindingSource.Add(clockRecord);
-                }               
-            }
-            if (ClockRecordBindingSource.Count == 0)
-            {
-                this.Enabled = false;
-                string title = "No Clock Records Meet Criteria";
-                string message = "The employee has no recorded work hours in the given range.";
-                MessageBox.Show(message, title);
-                this.Enabled = true;
-            }
-            else
-            {
-                Employee employee = this.employeeController.GetEmployee((employeeId));
-                EmployeeBindingSource.Add(employee);
+                    employeeId = (int)this.comboBoxEmployee.SelectedValue;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return;
+                }
+                List<ClockRecord> clockRecords = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
+                foreach (ClockRecord clockRecord in clockRecords)
+                {
+                    int startRangeResult = DateTime.Compare(clockRecord.InDateTime, startTargetDate);
+                    int endRangeResult = DateTime.Compare(clockRecord.InDateTime, endTargetDate);
 
-                ReportParameter[] parameters = new ReportParameter[2];
-                parameters[0] = new ReportParameter("startTargetDate", startTargetDate.ToString("ddd M/d/yyyy"));
-                parameters[1] = new ReportParameter("endTargetDate", endTargetDate.ToString("ddd MM/dd/yyyy"));
-                this.reportViewerTimeSheet.LocalReport.SetParameters(parameters);
+                    if (startRangeResult >= 0
+                        && endRangeResult <= 0
+                        && clockRecord.OutDateTime.ToString("d") != "1/1/0001")
+                    {
+                        ClockRecordBindingSource.Add(clockRecord);
+                    }
+                }
+                if (ClockRecordBindingSource.Count == 0)
+                {
+                    this.Enabled = false;
+                    string title = "No Clock Records Meet Criteria";
+                    string message = "The employee has no recorded work hours in the given range.";
+                    MessageBox.Show(message, title);
+                    this.Enabled = true;
+                }
+                else
+                {
+                    Employee employee = this.employeeController.GetEmployee((employeeId));
+                    EmployeeBindingSource.Add(employee);
 
-                this.reportViewerTimeSheet.RefreshReport();
-            }            
+                    ReportParameter[] parameters = new ReportParameter[2];
+                    parameters[0] = new ReportParameter("startTargetDate", startTargetDate.ToString("ddd M/d/yyyy"));
+                    parameters[1] = new ReportParameter("endTargetDate", endTargetDate.ToString("ddd MM/dd/yyyy"));
+                    this.reportViewerTimeSheet.LocalReport.SetParameters(parameters);
+
+                    this.reportViewerTimeSheet.RefreshReport();
+                }
+            }
+                        
         }
     }
 }

@@ -46,7 +46,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         }
 
         /// <summary>
-        /// Checks to see if theacher is selected in the comboBox.
+        /// Checks to see if teacher is selected in the comboBox.
         /// Displays a message box for not choosing a teacher when needed
         /// </summary>
         /// <returns>true if teacher is selected in combo box</returns>
@@ -56,7 +56,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             {
                 this.Enabled = false;
                 string title = "No Teacher Chosen";
-                string message = "Please choose a teacher to edit.";
+                string message = "Please choose a teacher.";
                 MessageBox.Show(message, title);
                 this.Enabled = true;
                 return false;
