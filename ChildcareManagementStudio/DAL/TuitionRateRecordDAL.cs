@@ -199,5 +199,31 @@ namespace ChildcareManagementStudio.DAL
 
             return tuitionRateRecords;
         }
+
+        /// <summary>
+        /// Method that adds a tuition rate record to the database.
+        /// </summary>
+        /// <param name="tuitionRateRecord">The tuition rate record to add to the database.</param>
+        public void AddTuitionRateRecord(TuitionRateRecord tuitionRateRecord)
+        {
+            string insertStatement =
+                "INSERT INTO TuitionRateRecord (studentId, startDate, endDate, dailyRate, accountHolderId) " +
+                "VALUES ($studentId, $startDate, $endDate, $dailyRate, $accountHolderId)";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand insertCommand = new SqliteCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("$studentId", tuitionRateRecord.Student.StudentId);
+                    insertCommand.Parameters.AddWithValue("$startDate", tuitionRateRecord.StartDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("$endDate", tuitionRateRecord.EndDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("$dailyRate", tuitionRateRecord.DailyRate);
+                    insertCommand.Parameters.AddWithValue("$accountHolderId", tuitionRateRecord.AccountHolder.AccountHolderId);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

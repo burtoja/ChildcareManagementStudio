@@ -31,7 +31,7 @@ namespace ChildcareManagementStudioTests.DAL
             List<TuitionRateRecord> tuitionRateRecords = tuitionRateRecordDAL.GetTuitionRateRecords(student);
             TuitionRateRecord firstRecord = tuitionRateRecords[0];
 
-            Assert.AreEqual(1, tuitionRateRecords.Count);
+            Assert.AreEqual(2, tuitionRateRecords.Count);
             Assert.AreEqual(1, firstRecord.Student.StudentId);
             Assert.AreEqual(new DateTime(2021, 6, 1), firstRecord.StartDate);
             Assert.AreEqual(new DateTime(2021, 6, 30), firstRecord.EndDate);
@@ -50,7 +50,7 @@ namespace ChildcareManagementStudioTests.DAL
             List<TuitionRateRecord> tuitionRateRecords = tuitionRateRecordDAL.GetTuitionRateRecords(accountHolder);
             TuitionRateRecord firstRecord = tuitionRateRecords[0];
 
-            Assert.AreEqual(2, tuitionRateRecords.Count);
+            Assert.AreEqual(3, tuitionRateRecords.Count);
             Assert.AreEqual(1, firstRecord.Student.StudentId);
             Assert.AreEqual(new DateTime(2021, 6, 1), firstRecord.StartDate);
             Assert.AreEqual(new DateTime(2021, 6, 30), firstRecord.EndDate);

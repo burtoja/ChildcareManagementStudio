@@ -149,6 +149,7 @@
     <Compile Include="DAL\PaymentDALWhenGetAllPayments.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenGetTuitionRateRecords.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenGetAllTuitionRateRecords.cs" />
+    <Compile Include="DAL\TuitionRateRecordDALWhenAddTuitionRateRecord.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
