@@ -143,5 +143,61 @@ namespace ChildcareManagementStudio.DAL
 
             return tuitionRateRecords;
         }
+
+        /// <summary>
+        /// Method that returns all of the tuition rate records in the database.
+        /// </summary>
+        /// <returns>All of the tuition rate records in the database.</returns>
+        public List<TuitionRateRecord> GetAllTuitionRateRecords()
+        {
+            List<TuitionRateRecord> tuitionRateRecords = new List<TuitionRateRecord>();
+
+            string selectStatement =
+                "SELECT studentId, startDate, endDate, dailyRate, accountHolderId " +
+                "FROM TuitionRateRecord " +
+                "ORDER BY startDate";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int studentIdOrdinal = reader.GetOrdinal("studentId");
+                        int startDateOrdinal = reader.GetOrdinal("startDate");
+                        int endDateOrdinal = reader.GetOrdinal("endDate");
+                        int dailyRateOrdinal = reader.GetOrdinal("dailyRate");
+                        int accountHolderIdOrdinal = reader.GetOrdinal("accountHolderId");
+                        while (reader.Read())
+                        {
+                            DateTime endDate = new DateTime();
+                            int studentId = reader.GetInt32(studentIdOrdinal);
+                            DateTime startDate = reader.GetDateTime(startDateOrdinal);
+                            if (!reader.IsDBNull(endDateOrdinal)) { endDate = reader.GetDateTime(endDateOrdinal); }
+                            double dailyRate = reader.GetDouble(dailyRateOrdinal);
+                            int accountHolderId = reader.GetInt32(accountHolderIdOrdinal);
+
+                            AccountHolder accountHolder = accountHolderDAL.GetAccountHolder(accountHolderId);
+                            Student student = studentDAL.GetStudent(studentId);
+
+                            TuitionRateRecord currentTuitionRateRecord = new TuitionRateRecord
+                            {
+                                AccountHolder = accountHolder,
+                                Student = student,
+                                StartDate = startDate,
+                                DailyRate = dailyRate
+                            };
+
+                            if (!reader.IsDBNull(endDateOrdinal)) { currentTuitionRateRecord.EndDate = endDate; }
+
+                            tuitionRateRecords.Add(currentTuitionRateRecord);
+                        }
+                    }
+                }
+            }
+
+            return tuitionRateRecords;
+        }
     }
 }
