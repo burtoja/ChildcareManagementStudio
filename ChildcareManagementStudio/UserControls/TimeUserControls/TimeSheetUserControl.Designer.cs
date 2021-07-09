@@ -29,7 +29,9 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelEndingDate = new System.Windows.Forms.Label();
             this.labelStartingDate = new System.Windows.Forms.Label();
@@ -39,16 +41,13 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.buttonGenerateReport = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.reportViewerTimeSheet = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.EmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClockRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClockRecordBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(3, 210);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(739, 257);
-            this.reportViewer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -143,6 +142,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.buttonGenerateReport.TabIndex = 26;
             this.buttonGenerateReport.Text = "Generate Report";
             this.buttonGenerateReport.UseVisualStyleBackColor = true;
+            this.buttonGenerateReport.Click += new System.EventHandler(this.ButtonGenerateReport_Click);
             // 
             // buttonClear
             // 
@@ -156,25 +156,49 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             // 
+            // reportViewerTimeSheet
+            // 
+            this.reportViewerTimeSheet.CausesValidation = false;
+            reportDataSource1.Name = "DataSetTimeSheetReportEmployee";
+            reportDataSource1.Value = this.EmployeeBindingSource;
+            reportDataSource2.Name = "DataSetTimeSheetReportClockRecord";
+            reportDataSource2.Value = this.ClockRecordBindingSource;
+            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerTimeSheet.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Resources.TimeSheetReport.rdlc";
+            this.reportViewerTimeSheet.Location = new System.Drawing.Point(3, 195);
+            this.reportViewerTimeSheet.Name = "reportViewerTimeSheet";
+            this.reportViewerTimeSheet.ServerReport.BearerToken = null;
+            this.reportViewerTimeSheet.Size = new System.Drawing.Size(739, 258);
+            this.reportViewerTimeSheet.TabIndex = 28;
+            // 
+            // EmployeeBindingSource
+            // 
+            this.EmployeeBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.Employee);
+            // 
+            // ClockRecordBindingSource
+            // 
+            this.ClockRecordBindingSource.DataSource = typeof(ChildcareManagementStudio.Model.ClockRecord);
+            // 
             // TimeSheetUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.reportViewerTimeSheet);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonGenerateReport);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.reportViewer1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TimeSheetUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClockRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelEndingDate;
         private System.Windows.Forms.Label labelStartingDate;
@@ -184,5 +208,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.Button buttonGenerateReport;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.BindingSource EmployeeBindingSource;
+        private System.Windows.Forms.BindingSource ClockRecordBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerTimeSheet;
     }
 }

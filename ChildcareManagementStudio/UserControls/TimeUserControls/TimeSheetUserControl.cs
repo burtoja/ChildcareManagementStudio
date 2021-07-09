@@ -38,5 +38,31 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.SelectedIndex = -1;
             this.comboBoxEmployee.SelectedText = "--select--";
         }
+
+        private void ButtonGenerateReport_Click(object sender, EventArgs e)
+        {
+            ClockRecordBindingSource.Clear();
+            int employeeId;
+            try
+            {
+                employeeId = 1;  //(int)this.comboBoxEmployee.SelectedValue;
+                //DateTime startDate = this.dateTimePickerStart.Value;
+                //DateTime endDate = this.dateTimePickerEnd.Value;
+                Console.WriteLine("TEST1 EmployeeId = " + employeeId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return;
+            }
+            List<ClockRecord> clockRecords = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
+            foreach (ClockRecord clockRecord in clockRecords)
+            {
+                ClockRecordBindingSource.Add(clockRecord);
+                Console.WriteLine("TEST2 inDateTime = " + clockRecord.InDateTime.ToString());
+                Console.WriteLine("TEST2 outDateTime = " + clockRecord.OutDateTime.ToString());
+            }
+            this.reportViewerTimeSheet.Refresh();
+        }
     }
 }
