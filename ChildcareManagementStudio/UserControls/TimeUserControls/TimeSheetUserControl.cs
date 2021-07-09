@@ -43,12 +43,13 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         {
             ClockRecordBindingSource.Clear();
             int employeeId;
+            DateTime startTargetDate;
+            DateTime endTargetDate;
             try
             {
-                employeeId = 1;  //(int)this.comboBoxEmployee.SelectedValue;
-                //DateTime startDate = this.dateTimePickerStart.Value;
-                //DateTime endDate = this.dateTimePickerEnd.Value;
-                Console.WriteLine("TEST1 EmployeeId = " + employeeId);
+                employeeId = 1; // (int)this.comboBoxEmployee.SelectedValue;
+                startTargetDate = this.dateTimePickerStart.Value;
+                endTargetDate = this.dateTimePickerEnd.Value;
             }
             catch (Exception ex)
             {
@@ -58,11 +59,14 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             List<ClockRecord> clockRecords = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
             foreach (ClockRecord clockRecord in clockRecords)
             {
-                ClockRecordBindingSource.Add(clockRecord);
-                Console.WriteLine("TEST2 inDateTime = " + clockRecord.InDateTime.ToString());
-                Console.WriteLine("TEST2 outDateTime = " + clockRecord.OutDateTime.ToString());
+                int startRangeResult = DateTime.Compare(clockRecord.InDateTime, startTargetDate);
+                int endRangeResult = DateTime.Compare(clockRecord.InDateTime, endTargetDate);
+                if (startRangeResult >= 1 && endRangeResult <= 1)
+                {
+                    ClockRecordBindingSource.Add(clockRecord);
+                }
             }
-            this.reportViewerTimeSheet.Refresh();
+            this.reportViewerTimeSheet.RefreshReport();
         }
     }
 }
