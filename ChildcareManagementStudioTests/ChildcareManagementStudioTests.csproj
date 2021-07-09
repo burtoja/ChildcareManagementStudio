@@ -141,6 +141,7 @@
     <Compile Include="DAL\AccountHolderDALWhenEditAccountHolder.cs" />
     <Compile Include="DAL\PaymentDALWhenGetPayments.cs" />
     <Compile Include="DAL\PaymentDALWhenAddPayment.cs" />
+    <Compile Include="DAL\AccountHolderDALWhenGetAccountHolder.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
