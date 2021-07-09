@@ -53,5 +53,14 @@ namespace ChildcareManagementStudio.Controller
 
             paymentDAL.AddPayment(payment);
         }
+
+        /// <summary>
+        /// Method that returns a list of all the payments in the database.
+        /// </summary>
+        /// <returns>A list of all the payments in the database.</returns>
+        public List<Payment> GetAllPayments()
+        {
+            return paymentDAL.GetAllPayments();
+        }
     }
 }
