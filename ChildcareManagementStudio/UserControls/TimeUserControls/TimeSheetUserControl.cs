@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,8 +68,15 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     ClockRecordBindingSource.Add(clockRecord);
                 }
             }
+
             Employee employee = this.employeeController.GetEmployee((employeeId));
             EmployeeBindingSource.Add(employee);
+
+            ReportParameter[] parameters = new ReportParameter[2];
+            parameters[0] = new ReportParameter("startTargetDate", startTargetDate.ToString("ddd M/d/yyyy"));
+            parameters[1] = new ReportParameter("endTargetDate", endTargetDate.ToString("ddd MM/dd/yyyy"));
+            this.reportViewerTimeSheet.LocalReport.SetParameters(parameters);
+
             this.reportViewerTimeSheet.RefreshReport();
         }
     }
