@@ -63,28 +63,62 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         }
 
         /// <summary>
+        /// Gets the employeeId from the comboBox.  Displays a dialog box and returns -1 if fail
+        /// </summary>
+        /// <returns>employeeID from comboBox</returns>
+        private int GetEmployeeIdFromComboBox()
+        {
+            int employeeId;
+            try
+            {
+                employeeId = (int)this.comboBoxEmployee.SelectedValue;
+                return employeeId;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return -1;
+            }            
+        }
+
+        /// <summary>
+        /// Checks to see if records were found that match the criteria provided in the form.
+        /// If no records found a dialog box is displayed and false is returned.
+        /// </summary>
+        /// <returns>true if records were found within criteria</returns>
+        private bool HasRecordsThatMatchCriteria()
+        {
+            if (ClockRecordBindingSource.Count == 0)
+            {
+                this.Enabled = false;
+                string title = "No Clock Records Meet Criteria";
+                string message = "The employee has no recorded work hours in the given range.";
+                MessageBox.Show(message, title);
+                this.Enabled = true;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+                
+        }
+
+        /// <summary>
         /// Handles button clicks to generate the report for the parameters set in the comboBoxes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, EventArgs e)
         {
+            this.reportViewerTimeSheet.Clear();
             ClockRecordBindingSource.Clear();
-            EmployeeBindingSource.Clear();
-            int employeeId;
-            DateTime startTargetDate = this.dateTimePickerStart.Value;
-            DateTime endTargetDate = this.dateTimePickerEnd.Value;
+            EmployeeBindingSource.Clear();          
             if (this.EmployeeIsSelectedCheck())
             {
-                try
-                {
-                    employeeId = (int)this.comboBoxEmployee.SelectedValue;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                    return;
-                }
+                int employeeId = this.GetEmployeeIdFromComboBox();
+                DateTime startTargetDate = this.dateTimePickerStart.Value;
+                DateTime endTargetDate = this.dateTimePickerEnd.Value;
                 List<ClockRecord> clockRecords = this.clockRecordController.GetAllClockRecordsForEmployee(employeeId);
                 foreach (ClockRecord clockRecord in clockRecords)
                 {
@@ -98,15 +132,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                         ClockRecordBindingSource.Add(clockRecord);
                     }
                 }
-                if (ClockRecordBindingSource.Count == 0)
-                {
-                    this.Enabled = false;
-                    string title = "No Clock Records Meet Criteria";
-                    string message = "The employee has no recorded work hours in the given range.";
-                    MessageBox.Show(message, title);
-                    this.Enabled = true;
-                }
-                else
+                if (this.HasRecordsThatMatchCriteria())
                 {
                     Employee employee = this.employeeController.GetEmployee((employeeId));
                     EmployeeBindingSource.Add(employee);
@@ -118,8 +144,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
 
                     this.reportViewerTimeSheet.RefreshReport();
                 }
-            }
-                        
+            }                        
         }
+
     }
 }
