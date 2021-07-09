@@ -133,5 +133,58 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Method that returns a list of all the payments in the database.
+        /// </summary>
+        /// <returns>A list of all the payments in the database.</returns>
+        public List<Payment> GetAllPayments()
+        {
+            List<Payment> payments = new List<Payment>();
+
+            string selectStatement =
+                "SELECT paymentId, accountHolderId, date, amount, type " +
+                "FROM Payment " +
+                "ORDER BY date";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int paymentIdOrdinal = reader.GetOrdinal("paymentId");
+                        int accountHolderIdOrdinal = reader.GetOrdinal("accountHolderId");
+                        int dateOrdinal = reader.GetOrdinal("date");
+                        int amountOrdinal = reader.GetOrdinal("amount");
+                        int typeOrdinal = reader.GetOrdinal("type");
+                        while (reader.Read())
+                        {
+                            int paymentId = reader.GetInt32(paymentIdOrdinal);
+                            int accountHolderId = reader.GetInt32(accountHolderIdOrdinal);
+                            DateTime date = reader.GetDateTime(dateOrdinal);
+                            double amount = reader.GetDouble(amountOrdinal);
+                            string typeString = reader.GetString(typeOrdinal).Replace(" ", "");
+                            PaymentType paymentType = (PaymentType)Enum.Parse(typeof(PaymentType), typeString);
+                            AccountHolder accountHolder = accountHolderDAL.GetAccountHolder(accountHolderId);
+
+                            Payment currentPayment = new Payment
+                            {
+                                AccountHolder = accountHolder,
+                                PaymentId = paymentId,
+                                PaymentDate = date,
+                                Amount = amount,
+                                PaymentType = paymentType
+                            };
+
+                            payments.Add(currentPayment);
+                        }
+                    }
+                }
+            }
+
+            return payments;
+        }
     }
 }
