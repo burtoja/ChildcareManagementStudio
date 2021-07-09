@@ -42,12 +42,13 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private void ButtonGenerateReport_Click(object sender, EventArgs e)
         {
             ClockRecordBindingSource.Clear();
+            EmployeeBindingSource.Clear();
             int employeeId;
             DateTime startTargetDate;
             DateTime endTargetDate;
             try
             {
-                employeeId = 1; // (int)this.comboBoxEmployee.SelectedValue;
+                employeeId = 1; // TODO: Put this back in after testing:  (int)this.comboBoxEmployee.SelectedValue;
                 startTargetDate = this.dateTimePickerStart.Value;
                 endTargetDate = this.dateTimePickerEnd.Value;
             }
@@ -66,6 +67,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     ClockRecordBindingSource.Add(clockRecord);
                 }
             }
+            Employee employee = this.employeeController.GetEmployee((employeeId));
+            EmployeeBindingSource.Add(employee);
             this.reportViewerTimeSheet.RefreshReport();
         }
     }
