@@ -161,6 +161,7 @@
     <Compile Include="DAL\StudentClassroomAssignmentDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
+    <Compile Include="DAL\TuitionRateRecordDAL.cs" />
     <Compile Include="Model\AccountHolder.cs" />
     <Compile Include="Model\Balance.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
