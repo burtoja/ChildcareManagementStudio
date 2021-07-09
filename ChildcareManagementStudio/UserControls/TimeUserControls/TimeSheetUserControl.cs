@@ -40,6 +40,11 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.SelectedText = "--select--";
         }
 
+        /// <summary>
+        /// Handles button clicks to generate the report for the parameters set in the comboBoxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonGenerateReport_Click(object sender, EventArgs e)
         {
             ClockRecordBindingSource.Clear();
@@ -49,7 +54,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             DateTime endTargetDate;
             try
             {
-                employeeId = 1; // TODO: Put this back in after testing:  (int)this.comboBoxEmployee.SelectedValue;
+                employeeId = (int)this.comboBoxEmployee.SelectedValue;
                 startTargetDate = this.dateTimePickerStart.Value;
                 endTargetDate = this.dateTimePickerEnd.Value;
             }
@@ -63,10 +68,13 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             {
                 int startRangeResult = DateTime.Compare(clockRecord.InDateTime, startTargetDate);
                 int endRangeResult = DateTime.Compare(clockRecord.InDateTime, endTargetDate);
-                if (startRangeResult >= 1 && endRangeResult <= 1)
+
+                if (startRangeResult >= 0
+                    && endRangeResult <= 0
+                    &&  clockRecord.OutDateTime.ToString("d") != "1/1/0001")
                 {
                     ClockRecordBindingSource.Add(clockRecord);
-                }
+                }               
             }
 
             Employee employee = this.employeeController.GetEmployee((employeeId));
