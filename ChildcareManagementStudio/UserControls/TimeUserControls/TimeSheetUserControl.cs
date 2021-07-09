@@ -76,16 +76,26 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     ClockRecordBindingSource.Add(clockRecord);
                 }               
             }
+            if (ClockRecordBindingSource.Count == 0)
+            {
+                this.Enabled = false;
+                string title = "No Clock Records Meet Criteria";
+                string message = "The employee has no recorded work hours in the given range.";
+                MessageBox.Show(message, title);
+                this.Enabled = true;
+            }
+            else
+            {
+                Employee employee = this.employeeController.GetEmployee((employeeId));
+                EmployeeBindingSource.Add(employee);
 
-            Employee employee = this.employeeController.GetEmployee((employeeId));
-            EmployeeBindingSource.Add(employee);
+                ReportParameter[] parameters = new ReportParameter[2];
+                parameters[0] = new ReportParameter("startTargetDate", startTargetDate.ToString("ddd M/d/yyyy"));
+                parameters[1] = new ReportParameter("endTargetDate", endTargetDate.ToString("ddd MM/dd/yyyy"));
+                this.reportViewerTimeSheet.LocalReport.SetParameters(parameters);
 
-            ReportParameter[] parameters = new ReportParameter[2];
-            parameters[0] = new ReportParameter("startTargetDate", startTargetDate.ToString("ddd M/d/yyyy"));
-            parameters[1] = new ReportParameter("endTargetDate", endTargetDate.ToString("ddd MM/dd/yyyy"));
-            this.reportViewerTimeSheet.LocalReport.SetParameters(parameters);
-
-            this.reportViewerTimeSheet.RefreshReport();
+                this.reportViewerTimeSheet.RefreshReport();
+            }            
         }
     }
 }
