@@ -42,7 +42,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.labelParentName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelParentName.Location = new System.Drawing.Point(14, 33);
             this.labelParentName.Name = "labelParentName";
-            this.labelParentName.Size = new System.Drawing.Size(118, 21);
+            this.labelParentName.Size = new System.Drawing.Size(146, 23);
             this.labelParentName.TabIndex = 15;
             this.labelParentName.Text = "Parent Name:";
             // 
@@ -54,8 +54,9 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboParentName.FormattingEnabled = true;
             this.comboParentName.Location = new System.Drawing.Point(138, 30);
             this.comboParentName.Name = "comboParentName";
-            this.comboParentName.Size = new System.Drawing.Size(287, 29);
+            this.comboParentName.Size = new System.Drawing.Size(287, 31);
             this.comboParentName.TabIndex = 16;
+            this.comboParentName.SelectedIndexChanged += new System.EventHandler(this.ComboParentName_SelectedIndexChanged);
             // 
             // listViewPaymentRecords
             // 
@@ -93,7 +94,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.Controls.Add(this.comboParentName);
             this.Controls.Add(this.labelParentName);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ViewPaymentsUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.ResumeLayout(false);
