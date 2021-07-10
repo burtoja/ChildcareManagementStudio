@@ -30,6 +30,11 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tabPageTimeSheet.Controls.Add(this.timeSheetUserControl);
         }
 
+        /// <summary>
+        /// Hndler to update comboBoxes when visibility changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainTimeUserControl_VisibleChanged(object sender, System.EventArgs e)
         {
             this.timeClockUserControl.PopulateDropDownList();
