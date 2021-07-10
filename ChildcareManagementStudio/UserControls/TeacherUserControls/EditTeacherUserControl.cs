@@ -43,7 +43,6 @@ namespace ChildcareManagementStudio.UserControls
                 string city = this.textBoxCity.Text;
                 string state = this.comboBoxState.Text;
                 string zip = this.textBoxZipCode.Text;
-                DateTime startDate = this.dateTimePickerStartDate.Value;
                 try
                 {
                     Employee revisedEmployee = new Employee

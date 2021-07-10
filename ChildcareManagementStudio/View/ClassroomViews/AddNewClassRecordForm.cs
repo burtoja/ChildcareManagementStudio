@@ -16,7 +16,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
     {
         private readonly SetupClassUserControl referringUserControl;
         private readonly ClassroomController classroomController;
-        private readonly SchoolYearController schoolYearController;
         private readonly ClassRecordController classRecordController;
 
         /// <summary>
@@ -27,7 +26,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         {
             InitializeComponent();
             this.classroomController = new ClassroomController();
-            this.schoolYearController = new SchoolYearController();
             this.classRecordController = new ClassRecordController();
             this.referringUserControl = referringUserControl;
             this.referringUserControl.Enabled = false;

@@ -107,7 +107,6 @@ namespace ChildcareManagementStudio.UserControls
         /// <returns>start date string if present, if not returns a message placeholder</returns>
         private string PrepareStartDateLabelString(Employee employee)
         {
-            Console.WriteLine(employee.StartDate);
             if (employee.StartDate.ToString("d") == "1/1/1900")
                 return "N/A (No position assigned)";
             else
