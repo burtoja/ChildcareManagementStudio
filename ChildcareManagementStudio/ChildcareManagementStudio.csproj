@@ -145,6 +145,7 @@
     <Compile Include="Controller\StudentClassroomAssignmentController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\TeacherClassroomAssignmentController.cs" />
+    <Compile Include="Controller\TuitionRateRecordController.cs" />
     <Compile Include="DAL\AccountHolderDAL.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
