@@ -34,7 +34,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.comboBoxClassroom = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.comboBoxSchoolYear = new System.Windows.Forms.ComboBox();
+            this.labelValueSchoolYear = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelClassroom
@@ -85,24 +85,24 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // comboBoxSchoolYear
+            // labelValueSchoolYear
             // 
-            this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSchoolYear.FormattingEnabled = true;
-            this.comboBoxSchoolYear.Location = new System.Drawing.Point(142, 22);
-            this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
-            this.comboBoxSchoolYear.Size = new System.Drawing.Size(173, 29);
-            this.comboBoxSchoolYear.TabIndex = 3;
+            this.labelValueSchoolYear.AutoSize = true;
+            this.labelValueSchoolYear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValueSchoolYear.ForeColor = System.Drawing.Color.Maroon;
+            this.labelValueSchoolYear.Location = new System.Drawing.Point(138, 25);
+            this.labelValueSchoolYear.Name = "labelValueSchoolYear";
+            this.labelValueSchoolYear.Size = new System.Drawing.Size(0, 19);
+            this.labelValueSchoolYear.TabIndex = 7;
             // 
             // AddNewClassRecordForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(417, 178);
+            this.Controls.Add(this.labelValueSchoolYear);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.comboBoxClassroom);
-            this.Controls.Add(this.comboBoxSchoolYear);
             this.Controls.Add(this.labelSchoolYear);
             this.Controls.Add(this.labelClassroom);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +125,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         private System.Windows.Forms.ComboBox comboBoxClassroom;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.ComboBox comboBoxSchoolYear;
+        private System.Windows.Forms.Label labelValueSchoolYear;
     }
 }
