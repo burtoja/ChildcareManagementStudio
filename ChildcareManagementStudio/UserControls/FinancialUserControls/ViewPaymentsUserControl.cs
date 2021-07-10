@@ -22,7 +22,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             InitializeComponent();
             paymentController = new PaymentController();
             accountHolderController = new AccountHolderController();
-            this.Refresh();
+            this.RefreshPaymentsUserControl();
         }
 
         /// <summary>

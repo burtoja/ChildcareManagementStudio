@@ -63,7 +63,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             {
                 case 0:
                     // 'view payments' tab
-
+                    viewPaymentsUserControl.RefreshPaymentsUserControl();
                     break;
                 case 1:
                     // 'record payment' tab
