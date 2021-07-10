@@ -85,7 +85,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 catch (SqliteException)
                 {
                     title = "Duplicate Class Error";
-                    message = "This class has already been created. Duplicates are not allowed.  Please click 'Okay' to continue.";
+                    message = "A class has already been created in this classroom for the selected school year. " +
+                        "Duplicates are not allowed.  Please click 'Okay' to continue.";
                 }
                 DialogResult dialogeResult = MessageBox.Show(message, title);
                 if (dialogeResult == DialogResult.OK)
