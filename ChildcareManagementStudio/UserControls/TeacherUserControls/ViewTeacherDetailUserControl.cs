@@ -300,6 +300,11 @@ namespace ChildcareManagementStudio.UserControls
             this.UpdateFormValues();
         }
 
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewPositionHistory_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -312,6 +317,11 @@ namespace ChildcareManagementStudio.UserControls
             }
         }
 
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewPayHistory_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -324,6 +334,11 @@ namespace ChildcareManagementStudio.UserControls
             }
         }
 
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewCredentialHistory_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -336,14 +351,15 @@ namespace ChildcareManagementStudio.UserControls
             }
         }
 
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToolStripMenuItemDeletePosition_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("TEST 1");
             Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
             ListViewItem item = listViewPositionHistory.SelectedItems[0];
-            Console.WriteLine("TYPE: " + item.SubItems[0].Text);
-            Console.WriteLine("SCHOOLYEAR: " + item.SubItems[1].Text);
-            Console.WriteLine("STARTDATE: " + item.SubItems[2].Text);
             PositionRecord positionRecord = new PositionRecord()
             {
                 Type = item.SubItems[0].Text,
@@ -354,14 +370,41 @@ namespace ChildcareManagementStudio.UserControls
             this.PopulatePositionHistoryListView(employeeId);
         }
 
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToolStripMenuDeletePay_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("TEST 2");
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewPayHistory.SelectedItems[0];
+            SalaryRecord salaryRecord = new SalaryRecord()
+            {
+                Rate = Double.Parse(item.SubItems[0].Text.TrimStart('$')),
+                EffectiveDate = DateTime.Parse(item.SubItems[1].Text)
+                
+            };
+            this.salaryController.DeleteSalaryRecord(employeeId, salaryRecord);
+            this.PopulateSalaryHistoryListView(employeeId);
         }
 
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToolStripMenuItemDeleteCredential_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("TEST 3");
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewCredentialHistory.SelectedItems[0];
+            CertificationRecord certificationRecord = new CertificationRecord()
+            {
+                Type = item.SubItems[0].Text,
+                ExpirationDate = DateTime.Parse(item.SubItems[1].Text)
+            };
+            this.certificationController.DeleteCertificationRecord(employeeId, certificationRecord);
+            this.PopulateCertificationHistoryListView(employeeId);
         }
     }
 }
