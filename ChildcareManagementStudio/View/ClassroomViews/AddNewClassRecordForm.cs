@@ -31,19 +31,16 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.classRecordController = new ClassRecordController();
             this.referringUserControl = referringUserControl;
             this.referringUserControl.Enabled = false;
-            this.PopulateSchoolYearComboBox();
+            this.SetSchoolYearLabelText();
             this.PopulateClassroomComboBox();
         }
 
         /// <summary>
-        /// Populate the school year combo box with values from DB
+        /// Set the value text of the school year label
         /// </summary>
-        private void PopulateSchoolYearComboBox()
+        private void SetSchoolYearLabelText()
         {
-            foreach (string current in this.schoolYearController.GetAllSchoolYears())
-            {
-                this.comboBoxSchoolYear.Items.Add(current);
-            }
+            this.labelValueSchoolYear.Text = this.referringUserControl.GetSchoolYear();
         }
 
         /// <summary>
@@ -76,7 +73,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 string message;
                 ClassRecord classRecord = new ClassRecord
                 {
-                    SchoolYear = this.comboBoxSchoolYear.SelectedItem.ToString(),
+                    SchoolYear = this.referringUserControl.GetSchoolYear(),
                     Classroom = this.GetSelectedClassroom()
                 };
                 try
@@ -88,7 +85,8 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 catch (SqliteException)
                 {
                     title = "Duplicate Class Error";
-                    message = "This class has already been created. Duplicates are not allowed.  Please click 'Okay' to continue.";
+                    message = "A class has already been created in this classroom for the selected school year. " +
+                        "Duplicates are not allowed.  Please click 'Okay' to continue.";
                 }
                 DialogResult dialogeResult = MessageBox.Show(message, title);
                 if (dialogeResult == DialogResult.OK)
@@ -108,13 +106,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             {
                 string title = "Classroom Location Not Selected";
                 string message = "The classroom location has not been selected.  Please click 'Okay' and try again.";
-                MessageBox.Show(message, title);
-                return false;
-            }
-            else if (this.comboBoxSchoolYear.SelectedIndex == -1)
-            { 
-                string title = "Year Not Selected";
-                string message = "Theschool year has not been selected.  Please click 'Okay' and try again.";
                 MessageBox.Show(message, title);
                 return false;
             }
@@ -165,7 +156,6 @@ namespace ChildcareManagementStudio.View.ClassroomViews
             this.referringUserControl.Enabled = true;
             this.referringUserControl.PopulateClassComboBox();
         }
-
 
     }
 }
