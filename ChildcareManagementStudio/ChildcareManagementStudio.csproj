@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AccountHolderController.cs" />
+    <Compile Include="Controller\BalanceController.cs" />
     <Compile Include="Controller\CertificationController.cs" />
     <Compile Include="Controller\ClassRecordController.cs" />
     <Compile Include="Controller\ClassroomController.cs" />
