@@ -256,7 +256,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(155, 3);
+            this.comboBoxName.Location = new System.Drawing.Point(155, 11);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -601,7 +601,7 @@ namespace ChildcareManagementStudio.UserControls
             this.toolStripMenuItemDeleteCredential});
             this.contextMenuStripCredentialHistory.Name = "contextMenuStripCredentialHistory";
             this.contextMenuStripCredentialHistory.ShowImageMargin = false;
-            this.contextMenuStripCredentialHistory.Size = new System.Drawing.Size(180, 48);
+            this.contextMenuStripCredentialHistory.Size = new System.Drawing.Size(180, 26);
             // 
             // toolStripMenuItemDeleteCredential
             // 

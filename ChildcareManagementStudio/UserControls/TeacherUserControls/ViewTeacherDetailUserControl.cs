@@ -121,11 +121,12 @@ namespace ChildcareManagementStudio.UserControls
         private void PopulatePositionHistoryListView(int employeeId)
         {
             this.listViewPositionHistory.Items.Clear();
-           List <PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
+            List <PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
             foreach (PositionRecord current in positionList)
             {
                 ListViewItem item = new ListViewItem(current.Type);
                 item.SubItems.Add(current.SchoolYear);
+                item.SubItems.Add(current.StartDate.ToString());
                 this.listViewPositionHistory.Items.Add(item);
             }
         }
@@ -338,6 +339,19 @@ namespace ChildcareManagementStudio.UserControls
         private void ToolStripMenuItemDeletePosition_Click(object sender, EventArgs e)
         {
             Console.WriteLine("TEST 1");
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewPositionHistory.SelectedItems[0];
+            Console.WriteLine("TYPE: " + item.SubItems[0].Text);
+            Console.WriteLine("SCHOOLYEAR: " + item.SubItems[1].Text);
+            Console.WriteLine("STARTDATE: " + item.SubItems[2].Text);
+            PositionRecord positionRecord = new PositionRecord()
+            {
+                Type = item.SubItems[0].Text,
+                SchoolYear = item.SubItems[1].Text,
+                StartDate = DateTime.Parse(item.SubItems[2].Text)
+            };
+            this.positionController.DeletePositionRecord(employeeId, positionRecord);
+            this.PopulatePositionHistoryListView(employeeId);
         }
 
         private void ToolStripMenuDeletePay_Click(object sender, EventArgs e)

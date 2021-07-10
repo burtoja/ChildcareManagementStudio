@@ -98,7 +98,6 @@ namespace ChildcareManagementStudio.DAL
             }
         }
 
-        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
         public void DeletePositionRecord(int employeeId, PositionRecord positionRecord)
         {
             string deleteStatement =
