@@ -43,22 +43,78 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboAccountHolder.ValueMember = "AccountHolderId";
             this.comboAccountHolder.DisplayMember = "FullName";
             this.comboAccountHolder.SelectedIndex = -1;
-            this.comboAccountHolder.SelectedText = "--select--";
         }
 
+        /// <summary>
+        /// Populate the payment type comboBox using the enum values in the model class
+        /// </summary>
         private void PopulatePaymentTypeComboBox()
         {
             foreach (var paymentType in Enum.GetValues(typeof(PaymentType)))
             {
                 this.comboBoxPaymentType.Items.Add(paymentType);
-            }          
+            }
+            this.comboBoxPaymentType.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Displays message box and handles the enabling and disabling of the UC
+        /// </summary>
+        /// <param name="title">title of the message box</param>
+        /// <param name="message">the message to display</param>
+        private void DisplayMessageBox(string title, string message)
+        {
+            this.Enabled = false;
+            MessageBox.Show(message, title);
+            this.Enabled = true;
+        }
+
+        /// <summary>
+        /// Validate that the user input is valid on the form
+        /// </summary>
+        /// <returns>true if all forms are filled with valid data</returns>
         private bool FormFieldEntriesAreValid()
         {
-            return true;
+            string title = "";
+            string message = "";
+            if (this.comboAccountHolder.SelectedIndex == -1)
+            {
+                title = "Account Holder Not Selected";
+                message = "Please select an account holder.";
+            }
+            else if (this.numericUpDownAmount.Value < 0)
+            {
+                title = "Negative Payment Not Allowed";
+                message = "Negative payments are not allowed. Please input a positive value for the payment.";
+            }
+            else if (this.numericUpDownAmount.Value == 0)
+            {
+                title = "Payment Not Entered";
+                message = "A payment amount was not entered. Please input a positive value for the payment.";
+            }
+            else if (this.comboBoxPaymentType.SelectedIndex == -1)
+            {
+                title = "Payment Type Not Selected";
+                message = "Please select a payment type.";
+            }
+
+            if (title != "")
+            {
+                this.DisplayMessageBox(title, message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
 
+        /// <summary>
+        /// Handles the submit button clicks and attempts to add entry to the DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, System.EventArgs e)
         {
             if (this.FormFieldEntriesAreValid())
@@ -70,8 +126,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                     PaymentDate = this.dateTimePickerPayment.Value,
                     Amount = Decimal.ToDouble(this.numericUpDownAmount.Value),
                     PaymentType = (PaymentType)this.comboBoxPaymentType.SelectedItem
-                //PaymentType = (PaymentType)Enum.Parse(typeof(PaymentType), this.comboBoxPaymentType.ValueMember.ToString())
-            };
+                };
                 try
                 {
                     this.paymentController.AddPayment(payment);
@@ -94,7 +149,6 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.numericUpDownAmount.ResetText();
             this.dateTimePickerPayment.ResetText();
         }
-
         
     }
 }

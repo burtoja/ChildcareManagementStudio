@@ -34,13 +34,14 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.labelPaymentDate = new System.Windows.Forms.Label();
             this.labelPaymentAmount = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelPaymentType = new System.Windows.Forms.Label();
             this.dateTimePickerPayment = new System.Windows.Forms.DateTimePicker();
             this.numericUpDownAmount = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxPaymentType = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPaymentType = new System.Windows.Forms.Label();
-            this.comboBoxPaymentType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -63,33 +64,33 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.labelAccountHolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelAccountHolder.AutoSize = true;
             this.labelAccountHolder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountHolder.Location = new System.Drawing.Point(49, 18);
+            this.labelAccountHolder.Location = new System.Drawing.Point(43, 18);
             this.labelAccountHolder.Name = "labelAccountHolder";
-            this.labelAccountHolder.Size = new System.Drawing.Size(138, 21);
+            this.labelAccountHolder.Size = new System.Drawing.Size(144, 21);
             this.labelAccountHolder.TabIndex = 17;
-            this.labelAccountHolder.Text = "Account Holder:";
+            this.labelAccountHolder.Text = "*Account Holder:";
             // 
             // labelPaymentDate
             // 
             this.labelPaymentDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelPaymentDate.AutoSize = true;
             this.labelPaymentDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPaymentDate.Location = new System.Drawing.Point(59, 76);
+            this.labelPaymentDate.Location = new System.Drawing.Point(53, 76);
             this.labelPaymentDate.Name = "labelPaymentDate";
-            this.labelPaymentDate.Size = new System.Drawing.Size(128, 21);
+            this.labelPaymentDate.Size = new System.Drawing.Size(134, 21);
             this.labelPaymentDate.TabIndex = 19;
-            this.labelPaymentDate.Text = "Payment Date:";
+            this.labelPaymentDate.Text = "*Payment Date:";
             // 
             // labelPaymentAmount
             // 
             this.labelPaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelPaymentAmount.AutoSize = true;
             this.labelPaymentAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPaymentAmount.Location = new System.Drawing.Point(34, 134);
+            this.labelPaymentAmount.Location = new System.Drawing.Point(28, 134);
             this.labelPaymentAmount.Name = "labelPaymentAmount";
-            this.labelPaymentAmount.Size = new System.Drawing.Size(153, 21);
+            this.labelPaymentAmount.Size = new System.Drawing.Size(159, 21);
             this.labelPaymentAmount.TabIndex = 21;
-            this.labelPaymentAmount.Text = "Payment Amount:";
+            this.labelPaymentAmount.Text = "*Payment Amount:";
             // 
             // tableLayoutPanel1
             // 
@@ -114,6 +115,17 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.tableLayoutPanel1.Size = new System.Drawing.Size(533, 233);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
+            // labelPaymentType
+            // 
+            this.labelPaymentType.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPaymentType.AutoSize = true;
+            this.labelPaymentType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPaymentType.Location = new System.Drawing.Point(56, 193);
+            this.labelPaymentType.Name = "labelPaymentType";
+            this.labelPaymentType.Size = new System.Drawing.Size(131, 21);
+            this.labelPaymentType.TabIndex = 22;
+            this.labelPaymentType.Text = "*Payment Type:";
+            // 
             // dateTimePickerPayment
             // 
             this.dateTimePickerPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -136,6 +148,17 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.numericUpDownAmount.Name = "numericUpDownAmount";
             this.numericUpDownAmount.Size = new System.Drawing.Size(96, 27);
             this.numericUpDownAmount.TabIndex = 3;
+            // 
+            // comboBoxPaymentType
+            // 
+            this.comboBoxPaymentType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxPaymentType.FormattingEnabled = true;
+            this.comboBoxPaymentType.Location = new System.Drawing.Point(193, 189);
+            this.comboBoxPaymentType.Name = "comboBoxPaymentType";
+            this.comboBoxPaymentType.Size = new System.Drawing.Size(228, 29);
+            this.comboBoxPaymentType.TabIndex = 23;
             // 
             // buttonSubmit
             // 
@@ -177,31 +200,21 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.tableLayoutPanel2.Size = new System.Drawing.Size(739, 65);
             this.tableLayoutPanel2.TabIndex = 26;
             // 
-            // labelPaymentType
+            // label1
             // 
-            this.labelPaymentType.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelPaymentType.AutoSize = true;
-            this.labelPaymentType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPaymentType.Location = new System.Drawing.Point(62, 193);
-            this.labelPaymentType.Name = "labelPaymentType";
-            this.labelPaymentType.Size = new System.Drawing.Size(125, 21);
-            this.labelPaymentType.TabIndex = 22;
-            this.labelPaymentType.Text = "Payment Type:";
-            // 
-            // comboBoxPaymentType
-            // 
-            this.comboBoxPaymentType.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxPaymentType.FormattingEnabled = true;
-            this.comboBoxPaymentType.Location = new System.Drawing.Point(193, 193);
-            this.comboBoxPaymentType.Name = "comboBoxPaymentType";
-            this.comboBoxPaymentType.Size = new System.Drawing.Size(228, 29);
-            this.comboBoxPaymentType.TabIndex = 23;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(137, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 15);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "* Indicates required field";
             // 
             // RecordPaymentUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,6 +225,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -229,5 +243,6 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         private System.Windows.Forms.NumericUpDown numericUpDownAmount;
         private System.Windows.Forms.Label labelPaymentType;
         private System.Windows.Forms.ComboBox comboBoxPaymentType;
+        private System.Windows.Forms.Label label1;
     }
 }
