@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.accountHolderController = new AccountHolderController();
             this.paymentController = new PaymentController();
             this.PopulateDropDownList();
+            this.PopulatePaymentTypeComboBox();
         }
 
         /// <summary>
@@ -37,11 +39,48 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             {
                 accountHolders.Add(current);
             }
-            this.comboParentName.DataSource = accountHolders;
-            this.comboParentName.ValueMember = "AccountHolderId";
-            this.comboParentName.DisplayMember = "FullName";
-            this.comboParentName.SelectedIndex = -1;
-            this.comboParentName.SelectedText = "--select--";
+            this.comboAccountHolder.DataSource = accountHolders;
+            this.comboAccountHolder.ValueMember = "AccountHolderId";
+            this.comboAccountHolder.DisplayMember = "FullName";
+            this.comboAccountHolder.SelectedIndex = -1;
+            this.comboAccountHolder.SelectedText = "--select--";
+        }
+
+        private void PopulatePaymentTypeComboBox()
+        {
+            foreach (var paymentType in Enum.GetValues(typeof(PaymentType)))
+            {
+                this.comboBoxPaymentType.Items.Add(paymentType);
+            }          
+        }
+
+        private bool FormFieldEntriesAreValid()
+        {
+            return true;
+        }
+
+        private void ButtonSubmit_Click(object sender, System.EventArgs e)
+        {
+            if (this.FormFieldEntriesAreValid())
+            {
+                Int32.TryParse(this.comboAccountHolder.SelectedValue.ToString(), out int accountHolderId);
+                Payment payment = new Payment()
+                {
+                    AccountHolder = this.accountHolderController.GetAccountHolder(accountHolderId),
+                    PaymentDate = this.dateTimePickerPayment.Value,
+                    Amount = Decimal.ToDouble(this.numericUpDownAmount.Value),
+                    PaymentType = (PaymentType)this.comboBoxPaymentType.SelectedItem
+                //PaymentType = (PaymentType)Enum.Parse(typeof(PaymentType), this.comboBoxPaymentType.ValueMember.ToString())
+            };
+                try
+                {
+                    this.paymentController.AddPayment(payment);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("-----EXCEPTION: " + ex.Message); //TODO:  Replace when implementation complete
+                }                
+            }           
         }
 
         /// <summary>
@@ -55,5 +94,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.numericUpDownAmount.ResetText();
             this.dateTimePickerPayment.ResetText();
         }
+
+        
     }
 }
