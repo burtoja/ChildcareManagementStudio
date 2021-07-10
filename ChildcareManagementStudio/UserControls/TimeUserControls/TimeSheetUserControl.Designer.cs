@@ -30,8 +30,8 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClockRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -111,6 +111,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.Name = "comboBoxEmployee";
             this.comboBoxEmployee.Size = new System.Drawing.Size(304, 29);
             this.comboBoxEmployee.TabIndex = 21;
+            this.comboBoxEmployee.SelectedIndexChanged += new System.EventHandler(this.ClearReportEventHandler);
             // 
             // labelName
             // 
@@ -130,6 +131,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(200, 27);
             this.dateTimePickerStart.TabIndex = 29;
+            this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.ClearReportEventHandler);
             // 
             // dateTimePickerEnd
             // 
@@ -138,6 +140,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 27);
             this.dateTimePickerEnd.TabIndex = 30;
+            this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.ClearReportEventHandler);
             // 
             // buttonGenerateReport
             // 
@@ -168,12 +171,12 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             // reportViewerTimeSheet
             // 
             this.reportViewerTimeSheet.CausesValidation = false;
-            reportDataSource1.Name = "DataSetTimeSheetReportEmployee";
-            reportDataSource1.Value = this.EmployeeBindingSource;
-            reportDataSource2.Name = "DataSetTimeSheetReportClockRecord";
-            reportDataSource2.Value = this.ClockRecordBindingSource;
-            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource5.Name = "DataSetTimeSheetReportEmployee";
+            reportDataSource5.Value = this.EmployeeBindingSource;
+            reportDataSource6.Name = "DataSetTimeSheetReportClockRecord";
+            reportDataSource6.Value = this.ClockRecordBindingSource;
+            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerTimeSheet.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerTimeSheet.LocalReport.ReportEmbeddedResource = "ChildcareManagementStudio.Resources.TimeSheetReport.rdlc";
             this.reportViewerTimeSheet.Location = new System.Drawing.Point(3, 195);
             this.reportViewerTimeSheet.Name = "reportViewerTimeSheet";

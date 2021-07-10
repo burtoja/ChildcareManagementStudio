@@ -158,5 +158,10 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.SelectedIndex = -1;
             this.comboBoxEmployee.SelectedText = "--select--";
         }
+
+        private void ClearReportEventHandler(object sender, EventArgs e)
+        {
+            this.reportViewerTimeSheet.Clear();
+        }
     }
 }
