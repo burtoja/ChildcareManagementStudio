@@ -1,13 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.FinancialUserControls
@@ -48,6 +42,18 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboParentName.DisplayMember = "FullName";
             this.comboParentName.SelectedIndex = -1;
             this.comboParentName.SelectedText = "--select--";
+        }
+
+        /// <summary>
+        /// Handler to reset form fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClear_Click(object sender, System.EventArgs e)
+        {
+            this.PopulateDropDownList();
+            this.numericUpDownAmount.ResetText();
+            this.dateTimePickerPayment.ResetText();
         }
     }
 }

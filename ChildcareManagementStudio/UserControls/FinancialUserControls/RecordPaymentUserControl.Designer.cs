@@ -155,6 +155,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.buttonClear.TabIndex = 5;
             this.buttonClear.Text = "Clear Form";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // tableLayoutPanel2
             // 
