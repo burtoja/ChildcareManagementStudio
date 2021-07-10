@@ -334,5 +334,20 @@ namespace ChildcareManagementStudio.UserControls
                 }
             }
         }
+
+        private void ToolStripMenuItemDeletePosition_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("TEST 1");
+        }
+
+        private void ToolStripMenuDeletePay_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("TEST 2");
+        }
+
+        private void ToolStripMenuItemDeleteCredential_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("TEST 3");
+        }
     }
 }

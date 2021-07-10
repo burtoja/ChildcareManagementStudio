@@ -71,11 +71,11 @@ namespace ChildcareManagementStudio.UserControls
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSchoolYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStripPositionHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeletePosition = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripPayHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuDeletePay = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripCredentialHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeleteCredential = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.contextMenuStripPositionHistory.SuspendLayout();
@@ -256,7 +256,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(155, 11);
+            this.comboBoxName.Location = new System.Drawing.Point(155, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -568,41 +568,47 @@ namespace ChildcareManagementStudio.UserControls
             // contextMenuStripPositionHistory
             // 
             this.contextMenuStripPositionHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemDelete});
+            this.toolStripMenuItemDeletePosition});
             this.contextMenuStripPositionHistory.Name = "contextMenuStripPositionHistory";
-            this.contextMenuStripPositionHistory.Size = new System.Drawing.Size(194, 26);
+            this.contextMenuStripPositionHistory.ShowImageMargin = false;
+            this.contextMenuStripPositionHistory.Size = new System.Drawing.Size(169, 26);
             // 
-            // toolStripMenuItemDelete
+            // toolStripMenuItemDeletePosition
             // 
-            this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
-            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(193, 22);
-            this.toolStripMenuItemDelete.Text = "Delete Position Record";
+            this.toolStripMenuItemDeletePosition.Name = "toolStripMenuItemDeletePosition";
+            this.toolStripMenuItemDeletePosition.Size = new System.Drawing.Size(168, 22);
+            this.toolStripMenuItemDeletePosition.Text = "Delete Position Record";
+            this.toolStripMenuItemDeletePosition.Click += new System.EventHandler(this.ToolStripMenuItemDeletePosition_Click);
             // 
             // contextMenuStripPayHistory
             // 
             this.contextMenuStripPayHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuDeletePay});
             this.contextMenuStripPayHistory.Name = "contextMenuStripPayHistory";
-            this.contextMenuStripPayHistory.Size = new System.Drawing.Size(170, 26);
+            this.contextMenuStripPayHistory.ShowImageMargin = false;
+            this.contextMenuStripPayHistory.Size = new System.Drawing.Size(145, 26);
             // 
-            // toolStripMenuItem1
+            // toolStripMenuDeletePay
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
-            this.toolStripMenuItem1.Text = "Delete Pay Record";
+            this.toolStripMenuDeletePay.Name = "toolStripMenuDeletePay";
+            this.toolStripMenuDeletePay.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuDeletePay.Text = "Delete Pay Record";
+            this.toolStripMenuDeletePay.Click += new System.EventHandler(this.ToolStripMenuDeletePay_Click);
             // 
             // contextMenuStripCredentialHistory
             // 
             this.contextMenuStripCredentialHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
+            this.toolStripMenuItemDeleteCredential});
             this.contextMenuStripCredentialHistory.Name = "contextMenuStripCredentialHistory";
-            this.contextMenuStripCredentialHistory.Size = new System.Drawing.Size(205, 26);
+            this.contextMenuStripCredentialHistory.ShowImageMargin = false;
+            this.contextMenuStripCredentialHistory.Size = new System.Drawing.Size(180, 48);
             // 
-            // toolStripMenuItem2
+            // toolStripMenuItemDeleteCredential
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(204, 22);
-            this.toolStripMenuItem2.Text = "Delete Credential Record";
+            this.toolStripMenuItemDeleteCredential.Name = "toolStripMenuItemDeleteCredential";
+            this.toolStripMenuItemDeleteCredential.Size = new System.Drawing.Size(179, 22);
+            this.toolStripMenuItemDeleteCredential.Text = "Delete Credential Record";
+            this.toolStripMenuItemDeleteCredential.Click += new System.EventHandler(this.ToolStripMenuItemDeleteCredential_Click);
             // 
             // ViewTeacherDetailUserControl
             // 
@@ -667,10 +673,10 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
         private System.Windows.Forms.ColumnHeader columnHeaderEffectiveDate;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripPositionHistory;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelete;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeletePosition;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripPayHistory;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuDeletePay;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripCredentialHistory;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeleteCredential;
     }
 }
