@@ -158,6 +158,7 @@
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Model\TuitionRateRecordWhenGetNumberOfWeekdaysInRange.cs" />
     <Compile Include="Model\BalanceCalculatorWhenGetTuitionTotal.cs" />
+    <Compile Include="Model\BalanceCalculatorWhenGetPaymentTotal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PersonWhenSetSocialSecurityNumber.cs" />
     <Compile Include="Model\PersonWhenSetGender.cs" />

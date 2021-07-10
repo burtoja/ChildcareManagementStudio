@@ -49,5 +49,21 @@ namespace ChildcareManagementStudio.Model
 
             return tuitionTotal;
         }
+
+        /// <summary>
+        /// Method that returns the total amount of payments.
+        /// </summary>
+        /// <returns>The total amount of payments.</returns>
+        public double GetPaymentTotal()
+        {
+            double paymentTotal = 0;
+
+            foreach (Payment currentPayment in payments)
+            {
+                paymentTotal += currentPayment.Amount;
+            }
+
+            return paymentTotal;
+        }
     }
 }
