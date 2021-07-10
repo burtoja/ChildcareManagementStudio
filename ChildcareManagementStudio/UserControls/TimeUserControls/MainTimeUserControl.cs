@@ -31,23 +31,14 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         }
 
         /// <summary>
-        /// Event handler for selecting tabs within this section of the application
+        /// Hndler to update comboBoxes when visibility changes.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TabControlMainClassroom_Selected(object sender, TabControlEventArgs e)
+        private void MainTimeUserControl_VisibleChanged(object sender, System.EventArgs e)
         {
-            switch ((sender as TabControl).SelectedIndex)
-            {
-                case 0:
-                    // View Tiem Clock tab
-
-                    break;
-                case 1:
-                    // Edit Tiem Sheet tab
-
-                    break;
-            }
+            this.timeClockUserControl.PopulateDropDownList();
+            this.timeSheetUserControl.PopulateDropDownList();
         }
     }
 }

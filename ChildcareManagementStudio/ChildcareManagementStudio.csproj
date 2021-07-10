@@ -133,6 +133,8 @@
     <Compile Include="Controller\CertificationController.cs" />
     <Compile Include="Controller\ClassRecordController.cs" />
     <Compile Include="Controller\ClassroomController.cs" />
+    <Compile Include="Controller\ClockRecordController.cs" />
+    <Compile Include="DAL\ClockRecordDAL.cs" />
     <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\PaymentController.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Model\Classroom.cs" />
     <Compile Include="Model\GrossPay.cs" />
     <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\ClockRecord.cs" />
     <Compile Include="Model\PositionRecord.cs" />
     <Compile Include="Model\SalaryRecord.cs" />
     <Compile Include="Model\Student.cs" />
@@ -389,6 +392,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\TimeSheetReport.rdlc" />
     <EmbeddedResource Include="UserControls\ClassroomUserControls\GenerateDocumentsUserControl.resx">
       <DependentUpon>GenerateDocumentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
