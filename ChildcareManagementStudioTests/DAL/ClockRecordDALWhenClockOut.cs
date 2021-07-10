@@ -18,7 +18,7 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldUpdateRecordWithOutDateTimeForClockedOutEmployee()
+        public void ShouldUpdateRecordForClockedOutEmployee()
         {
             int employeeId = 1;
             List<ClockRecord> recordsBefore = this.clockRecordDAL.GetAllClockRecordsForEmployee(employeeId);
@@ -46,7 +46,7 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldUpdateRecordWithOutDateTimeForMinnie()
+        public void ShouldUpdateRecordForMinnie()
         {
             int employeeId = 2;
             List<ClockRecord> recordsBefore = this.clockRecordDAL.GetAllClockRecordsForEmployee(employeeId);
@@ -61,8 +61,8 @@ namespace ChildcareManagementStudioTests.DAL
             this.clockRecordDAL.ClockOut(inTestRecord, outTestRecord);
             List<ClockRecord> recordsAfterClockOut = this.clockRecordDAL.GetAllClockRecordsForEmployee(employeeId);
             Assert.AreEqual(1, recordsAfterClockOut.Count);
-            Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfterClockOut[1].InDateTime.ToString());
-            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfterClockOut[1].OutDateTime.ToString());
+            Assert.AreEqual("7/5/2021 8:00:00 AM", recordsAfterClockOut[0].InDateTime.ToString());
+            Assert.AreEqual("7/5/2021 5:30:00 PM", recordsAfterClockOut[0].OutDateTime.ToString());
         }
 
         [TestMethod]
