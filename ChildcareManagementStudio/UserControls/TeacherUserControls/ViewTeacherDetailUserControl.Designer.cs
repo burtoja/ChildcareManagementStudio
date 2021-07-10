@@ -29,6 +29,7 @@ namespace ChildcareManagementStudio.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelName = new System.Windows.Forms.Label();
             this.labelDOB = new System.Windows.Forms.Label();
             this.labelAddress1 = new System.Windows.Forms.Label();
@@ -69,8 +70,17 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSchoolYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripPositionHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemDeletePosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripPayHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuDeletePay = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripCredentialHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemDeleteCredential = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.contextMenuStripPositionHistory.SuspendLayout();
+            this.contextMenuStripPayHistory.SuspendLayout();
+            this.contextMenuStripCredentialHistory.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelName
@@ -246,7 +256,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
+            this.comboBoxName.Location = new System.Drawing.Point(155, 11);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -387,7 +397,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePayRate, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.buttonAddNewCredential, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.listViewPositionHistory, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 322);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 312);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -404,6 +414,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.SetColumnSpan(this.listViewCredentialHistory, 2);
             this.listViewCredentialHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewCredentialHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewCredentialHistory.FullRowSelect = true;
             this.listViewCredentialHistory.HideSelection = false;
             this.listViewCredentialHistory.Location = new System.Drawing.Point(491, 38);
             this.listViewCredentialHistory.Name = "listViewCredentialHistory";
@@ -411,6 +422,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewCredentialHistory.TabIndex = 8;
             this.listViewCredentialHistory.UseCompatibleStateImageBehavior = false;
             this.listViewCredentialHistory.View = System.Windows.Forms.View.Details;
+            this.listViewCredentialHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewCredentialHistory_MouseClick);
             // 
             // columnHeaderCredential
             // 
@@ -430,6 +442,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.SetColumnSpan(this.listViewPayHistory, 2);
             this.listViewPayHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPayHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPayHistory.FullRowSelect = true;
             this.listViewPayHistory.HideSelection = false;
             this.listViewPayHistory.Location = new System.Drawing.Point(247, 38);
             this.listViewPayHistory.Name = "listViewPayHistory";
@@ -437,6 +450,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPayHistory.TabIndex = 7;
             this.listViewPayHistory.UseCompatibleStateImageBehavior = false;
             this.listViewPayHistory.View = System.Windows.Forms.View.Details;
+            this.listViewPayHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewPayHistory_MouseClick);
             // 
             // columnHeaderPayRate
             // 
@@ -531,6 +545,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.SetColumnSpan(this.listViewPositionHistory, 2);
             this.listViewPositionHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPositionHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPositionHistory.FullRowSelect = true;
             this.listViewPositionHistory.HideSelection = false;
             this.listViewPositionHistory.Location = new System.Drawing.Point(3, 38);
             this.listViewPositionHistory.Name = "listViewPositionHistory";
@@ -538,6 +553,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory.TabIndex = 6;
             this.listViewPositionHistory.UseCompatibleStateImageBehavior = false;
             this.listViewPositionHistory.View = System.Windows.Forms.View.Details;
+            this.listViewPositionHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewPositionHistory_MouseClick);
             // 
             // columnHeaderPosition
             // 
@@ -548,6 +564,51 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.columnHeaderSchoolYear.Text = "School Year";
             this.columnHeaderSchoolYear.Width = 120;
+            // 
+            // contextMenuStripPositionHistory
+            // 
+            this.contextMenuStripPositionHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemDeletePosition});
+            this.contextMenuStripPositionHistory.Name = "contextMenuStripPositionHistory";
+            this.contextMenuStripPositionHistory.ShowImageMargin = false;
+            this.contextMenuStripPositionHistory.Size = new System.Drawing.Size(169, 26);
+            // 
+            // toolStripMenuItemDeletePosition
+            // 
+            this.toolStripMenuItemDeletePosition.Name = "toolStripMenuItemDeletePosition";
+            this.toolStripMenuItemDeletePosition.Size = new System.Drawing.Size(168, 22);
+            this.toolStripMenuItemDeletePosition.Text = "Delete Position Record";
+            this.toolStripMenuItemDeletePosition.Click += new System.EventHandler(this.ToolStripMenuItemDeletePosition_Click);
+            // 
+            // contextMenuStripPayHistory
+            // 
+            this.contextMenuStripPayHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuDeletePay});
+            this.contextMenuStripPayHistory.Name = "contextMenuStripPayHistory";
+            this.contextMenuStripPayHistory.ShowImageMargin = false;
+            this.contextMenuStripPayHistory.Size = new System.Drawing.Size(145, 26);
+            // 
+            // toolStripMenuDeletePay
+            // 
+            this.toolStripMenuDeletePay.Name = "toolStripMenuDeletePay";
+            this.toolStripMenuDeletePay.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuDeletePay.Text = "Delete Pay Record";
+            this.toolStripMenuDeletePay.Click += new System.EventHandler(this.ToolStripMenuDeletePay_Click);
+            // 
+            // contextMenuStripCredentialHistory
+            // 
+            this.contextMenuStripCredentialHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemDeleteCredential});
+            this.contextMenuStripCredentialHistory.Name = "contextMenuStripCredentialHistory";
+            this.contextMenuStripCredentialHistory.ShowImageMargin = false;
+            this.contextMenuStripCredentialHistory.Size = new System.Drawing.Size(180, 26);
+            // 
+            // toolStripMenuItemDeleteCredential
+            // 
+            this.toolStripMenuItemDeleteCredential.Name = "toolStripMenuItemDeleteCredential";
+            this.toolStripMenuItemDeleteCredential.Size = new System.Drawing.Size(179, 22);
+            this.toolStripMenuItemDeleteCredential.Text = "Delete Credential Record";
+            this.toolStripMenuItemDeleteCredential.Click += new System.EventHandler(this.ToolStripMenuItemDeleteCredential_Click);
             // 
             // ViewTeacherDetailUserControl
             // 
@@ -563,6 +624,9 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.contextMenuStripPositionHistory.ResumeLayout(false);
+            this.contextMenuStripPayHistory.ResumeLayout(false);
+            this.contextMenuStripCredentialHistory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,5 +672,11 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.ColumnHeader columnHeaderExpiration;
         private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
         private System.Windows.Forms.ColumnHeader columnHeaderEffectiveDate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPositionHistory;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeletePosition;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPayHistory;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuDeletePay;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripCredentialHistory;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeleteCredential;
     }
 }

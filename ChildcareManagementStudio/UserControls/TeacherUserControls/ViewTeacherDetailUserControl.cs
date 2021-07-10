@@ -121,11 +121,12 @@ namespace ChildcareManagementStudio.UserControls
         private void PopulatePositionHistoryListView(int employeeId)
         {
             this.listViewPositionHistory.Items.Clear();
-           List <PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
+            List <PositionRecord> positionList = this.positionController.GetPositionRecords(employeeId);
             foreach (PositionRecord current in positionList)
             {
                 ListViewItem item = new ListViewItem(current.Type);
                 item.SubItems.Add(current.SchoolYear);
+                item.SubItems.Add(current.StartDate.ToString());
                 this.listViewPositionHistory.Items.Add(item);
             }
         }
@@ -299,6 +300,111 @@ namespace ChildcareManagementStudio.UserControls
             this.UpdateFormValues();
         }
 
-       
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewPositionHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewPositionHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    this.contextMenuStripPositionHistory.Show(Cursor.Position);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewPayHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewPayHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    this.contextMenuStripPayHistory.Show(Cursor.Position);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handler to bring up context menu when history list view item clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewCredentialHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewCredentialHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    this.contextMenuStripCredentialHistory.Show(Cursor.Position);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItemDeletePosition_Click(object sender, EventArgs e)
+        {
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewPositionHistory.SelectedItems[0];
+            PositionRecord positionRecord = new PositionRecord()
+            {
+                Type = item.SubItems[0].Text,
+                SchoolYear = item.SubItems[1].Text,
+                StartDate = DateTime.Parse(item.SubItems[2].Text)
+            };
+            this.positionController.DeletePositionRecord(employeeId, positionRecord);
+            this.PopulatePositionHistoryListView(employeeId);
+        }
+
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuDeletePay_Click(object sender, EventArgs e)
+        {
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewPayHistory.SelectedItems[0];
+            SalaryRecord salaryRecord = new SalaryRecord()
+            {
+                Rate = Double.Parse(item.SubItems[0].Text.TrimStart('$')),
+                EffectiveDate = DateTime.Parse(item.SubItems[1].Text)
+                
+            };
+            this.salaryController.DeleteSalaryRecord(employeeId, salaryRecord);
+            this.PopulateSalaryHistoryListView(employeeId);
+        }
+
+        /// <summary>
+        /// Handler to process the delete action when context menu ite clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItemDeleteCredential_Click(object sender, EventArgs e)
+        {
+            Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
+            ListViewItem item = listViewCredentialHistory.SelectedItems[0];
+            CertificationRecord certificationRecord = new CertificationRecord()
+            {
+                Type = item.SubItems[0].Text,
+                ExpirationDate = DateTime.Parse(item.SubItems[1].Text)
+            };
+            this.certificationController.DeleteCertificationRecord(employeeId, certificationRecord);
+            this.PopulateCertificationHistoryListView(employeeId);
+        }
     }
 }

@@ -98,7 +98,11 @@ namespace ChildcareManagementStudio.DAL
             }
         }
 
-        // TODO: delete this temporary method (it is only used to clean up temporary test additions)
+        /// <summary>
+        /// Deletes record from DB
+        /// </summary>
+        /// <param name="employeeId">The employee ID of the employee that the record is associated with.</param>
+        /// <param name="certificationRecord">An object that contains the details of the  record.</param>
         public void DeletePositionRecord(int employeeId, PositionRecord positionRecord)
         {
             string deleteStatement =

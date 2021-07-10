@@ -76,9 +76,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
             try
             {
                 this.certificationController.AddCertificationRecord(this.employeeId, record);
-                string title = "Success";
-                string message = "Record has been added.";
-                MessageBox.Show(message, title);
             }
             catch (SqliteException ex)
             {
