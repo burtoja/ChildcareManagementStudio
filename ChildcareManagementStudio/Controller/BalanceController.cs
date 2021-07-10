@@ -30,11 +30,39 @@ namespace ChildcareManagementStudio.Controller
         /// <returns>The balance for the specified account holder.</returns>
         public Balance GetBalance(AccountHolder accountHolder)
         {
-            List<TuitionRateRecord> tuitionRateRecords = tuitionRateRecordDAL.GetTuitionRateRecords(accountHolder);
-            List<Payment> payments = paymentDAL.GetPayments(accountHolder);
-            BalanceCalculator balanceCalculator = new BalanceCalculator(tuitionRateRecords, payments);
-            Balance balance = balanceCalculator.GetBalance();
+            Balance balance;
+            try
+            {
+                List<TuitionRateRecord> tuitionRateRecords = tuitionRateRecordDAL.GetTuitionRateRecords(accountHolder);
+                List<Payment> payments = paymentDAL.GetPayments(accountHolder);
+                BalanceCalculator balanceCalculator = new BalanceCalculator(tuitionRateRecords, payments);
+                balance = balanceCalculator.GetBalance();
+            }
+            catch
+            {
+                balance = new Balance()
+                {
+                    AccountHolder = accountHolder,
+                    Amount = 0
+                };
+            }
             return balance;
+        }
+
+        /// <summary>
+        /// Method that returns the balances of all the account holders in the database.
+        /// </summary>
+        /// <returns>Balances for all of the account holders in the database.</returns>
+        public List<Balance> GetAllBalances()
+        {
+            List<Balance> balances = new List<Balance>();
+            List<AccountHolder> accountHolders = accountHolderDAL.GetAllAccountHolders();
+            foreach (AccountHolder accountHolder in accountHolders)
+            {
+                Balance currentBalance = this.GetBalance(accountHolder);
+                balances.Add(currentBalance);
+            }
+            return balances;
         }
     }
 }

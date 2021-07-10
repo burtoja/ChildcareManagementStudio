@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.Model
 {
@@ -27,6 +28,11 @@ namespace ChildcareManagementStudio.Model
             if (payments == null)
             {
                 throw new ArgumentNullException("payments", "The payments cannot be null.");
+            }
+
+            if (tuitionRateRecords.Count == 0)
+            {
+                throw new ArgumentException("A balance cannot be calculated if there are no tuition rate records.", "tuitionRateRecords");
             }
 
             this.tuitionRateRecords = tuitionRateRecords;

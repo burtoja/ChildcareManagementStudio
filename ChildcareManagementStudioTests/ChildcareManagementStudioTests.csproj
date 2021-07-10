@@ -117,6 +117,7 @@
     <Compile Include="Controller\TuitionRateRecordControllerWhenAddTuitionRateRecord.cs" />
     <Compile Include="Controller\TuitionRateRecordControllerWhenEditTuitionRateEndDate.cs" />
     <Compile Include="Controller\BalanceControllerWhenGetBalance.cs" />
+    <Compile Include="Controller\BalanceControllerWhenGetAllBalances.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
