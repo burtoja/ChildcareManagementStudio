@@ -26,7 +26,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         /// <summary>
         /// Method that refreshes the list of balances.
         /// </summary>
-        private void RefreshBalanceListView()
+        public void RefreshBalanceListView()
         {
             this.listViewBalances.Items.Clear();
             balances = balanceController.GetAllBalances();
