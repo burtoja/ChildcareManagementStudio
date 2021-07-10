@@ -38,5 +38,41 @@ namespace ChildcareManagementStudio.Model
         /// being enrolled.
         /// </summary>
         public double DailyRate { get; set; }
+
+        /// <summary>
+        /// The number of days in the date range.
+        /// The start and end dates are included in the count if they are weekdays.
+        /// If the TuitionRateRecord has an end date, that date is used for the count.
+        /// If the TuitionRateRecord does not have an end date, the current date is used for the count.
+        /// </summary>
+        public int NumberOfWeekdaysInRange
+        {
+            get
+            {
+                DateTime endDate;
+                if (this.EndDate == default)
+                {
+                    endDate = DateTime.Now;
+                }
+                else
+                {
+                    endDate = this.EndDate;
+                }
+
+                return this.NumberOfWeekdaysBetweenDates(this.StartDate, endDate);
+            }
+        }
+
+        private int NumberOfWeekdaysBetweenDates(DateTime startDate, DateTime endDate)
+        {
+            int dowStart = ((int)startDate.DayOfWeek == 0 ? 7 : (int)startDate.DayOfWeek);
+            int dowEnd = ((int)endDate.DayOfWeek == 0 ? 7 : (int)endDate.DayOfWeek);
+            TimeSpan timeSpan = endDate - startDate;
+            if (dowStart <= dowEnd)
+            {
+                return (((timeSpan.Days / 7) * 5) + Math.Max((Math.Min((dowEnd + 1), 6) - dowStart), 0));
+            }
+            return (((timeSpan.Days / 7) * 5) + Math.Min((dowEnd + 6) - Math.Min(dowStart, 6), 5));
+        }
     }
 }
