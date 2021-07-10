@@ -67,5 +67,21 @@ namespace ChildcareManagementStudio.Controller
         {
             tuitionRateRecordDAL.AddTuitionRateRecord(tuitionRateRecord);
         }
+
+        /// <summary>
+        /// Method that appends an end date to an existing tuition rate record in the database.
+        /// Searches for an existing record based on the student ID and start date,
+        /// then edits the end date based on the end date in the revisedTuitionRateRecord argument.
+        /// </summary>
+        /// <param name="revisedTuitionRateRecord">The modified tuition rate record.</param>
+        public void EditTuitionRateEndDate(TuitionRateRecord revisedTuitionRateRecord)
+        {
+            if (revisedTuitionRateRecord == null)
+            {
+                throw new ArgumentNullException("revisedTuitionRateRecord", "The revised tuitionRateRecord cannot be null.");
+            }
+
+            tuitionRateRecordDAL.EditTuitionRateEndDate(revisedTuitionRateRecord);
+        }
     }
 }

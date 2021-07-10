@@ -19,7 +19,7 @@ namespace ChildcareManagementStudioTests.DAL
 
             Student student = new Student()
             {
-                StudentId = 1
+                StudentId = 5
             };
 
             AccountHolder accountHolder = new AccountHolder()
@@ -42,9 +42,9 @@ namespace ChildcareManagementStudioTests.DAL
             tuitionRateRecordDAL.AddTuitionRateRecord(tuitionRateRecord);
 
             List<TuitionRateRecord> tuitionRateRecords = tuitionRateRecordDAL.GetAllTuitionRateRecords();
-            TuitionRateRecord addedTuitionRateRecordFromDatabase = tuitionRateRecords[4];
+            TuitionRateRecord addedTuitionRateRecordFromDatabase = tuitionRateRecords[5];
 
-            Assert.AreEqual(5, tuitionRateRecords.Count);
+            Assert.AreEqual(6, tuitionRateRecords.Count);
             Assert.AreEqual(tuitionRateRecord.Student.StudentId, addedTuitionRateRecordFromDatabase.Student.StudentId);
             Assert.AreEqual(tuitionRateRecord.AccountHolder.AccountHolderId, addedTuitionRateRecordFromDatabase.AccountHolder.AccountHolderId);
             Assert.AreEqual(tuitionRateRecord.StartDate, addedTuitionRateRecordFromDatabase.StartDate);
