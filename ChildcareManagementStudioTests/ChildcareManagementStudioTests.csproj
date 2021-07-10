@@ -108,13 +108,6 @@
     <Compile Include="Controller\AccountHolderControllerWhenGetAllAccountHolders.cs" />
     <Compile Include="Controller\AccountHolderControllerWhenAddAccountHolder.cs" />
     <Compile Include="Controller\AccountHolderControllerWhenEditAccountHolder.cs" />
-<<<<<<< HEAD
-    <Compile Include="Controller\ClockRecordControllerWhenClockIn.cs" />
-    <Compile Include="Controller\ClockRecordControllerWhenClockOut.cs" />
-    <Compile Include="Controller\ClockRecordControllerWhenDeleteRecord.cs" />
-    <Compile Include="Controller\ClockRecordControllerWhenGetAllClockRecordsForEmployee.cs" />
-    <Compile Include="Controller\ClockRecordControllerWhenGetOpenClockRecord.cs" />
-=======
     <Compile Include="Controller\PaymentControllerWhenGetPayments.cs" />
     <Compile Include="Controller\PaymentControllerWhenAddPayment.cs" />
     <Compile Include="Controller\PaymentControllerWhenGetAllPayments.cs" />
@@ -123,7 +116,6 @@
     <Compile Include="Controller\TuitionRateRecordControllerWhenGetAllTuitionRateRecords.cs" />
     <Compile Include="Controller\TuitionRateRecordControllerWhenAddTuitionRateRecord.cs" />
     <Compile Include="Controller\TuitionRateRecordControllerWhenEditTuitionRateEndDate.cs" />
->>>>>>> master
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
@@ -155,13 +147,6 @@
     <Compile Include="DAL\AccountHolderDALWhenGetAllAccountHolders.cs" />
     <Compile Include="DAL\AccountHolderDALWhenAddAccountHolder.cs" />
     <Compile Include="DAL\AccountHolderDALWhenEditAccountHolder.cs" />
-<<<<<<< HEAD
-    <Compile Include="DAL\ClockRecordDALWhenGetAllClockRecordsForEmployee.cs" />
-    <Compile Include="DAL\ClockRecordDALWhenClockIn.cs" />
-    <Compile Include="DAL\ClockRecordDALWhenClockOut.cs" />
-    <Compile Include="DAL\ClockRecordDALWhenDeleteRecord.cs" />
-    <Compile Include="DAL\ClockRecordDALWhenGetOpenClockRecord.cs" />
-=======
     <Compile Include="DAL\PaymentDALWhenGetPayments.cs" />
     <Compile Include="DAL\PaymentDALWhenAddPayment.cs" />
     <Compile Include="DAL\AccountHolderDALWhenGetAccountHolder.cs" />
@@ -170,7 +155,6 @@
     <Compile Include="DAL\TuitionRateRecordDALWhenGetAllTuitionRateRecords.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenAddTuitionRateRecord.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenEditTuitionRateEndDate.cs" />
->>>>>>> master
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Model\TuitionRateRecordWhenGetNumberOfWeekdaysInRange.cs" />
     <Compile Include="Model\BalanceCalculatorWhenGetTuitionTotal.cs" />
