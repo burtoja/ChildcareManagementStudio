@@ -58,5 +58,14 @@ namespace ChildcareManagementStudio.Controller
         {
             return tuitionRateRecordDAL.GetAllTuitionRateRecords();
         }
+
+        /// <summary>
+        /// Method that adds a tuition rate record to the database.
+        /// </summary>
+        /// <param name="tuitionRateRecord">The tuition rate record to add to the database.</param>
+        public void AddTuitionRateRecord(TuitionRateRecord tuitionRateRecord)
+        {
+            tuitionRateRecordDAL.AddTuitionRateRecord(tuitionRateRecord);
+        }
     }
 }

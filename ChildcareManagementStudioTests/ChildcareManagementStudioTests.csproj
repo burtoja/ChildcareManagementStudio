@@ -114,6 +114,7 @@
     <Compile Include="Controller\AccountHolderControllerWhenGetAccountHolder.cs" />
     <Compile Include="Controller\TuitionRateRecordControllerWhenGetTuitionRateRecords.cs" />
     <Compile Include="Controller\TuitionRateRecordControllerWhenGetAllTuitionRateRecords.cs" />
+    <Compile Include="Controller\TuitionRateRecordControllerWhenAddTuitionRateRecord.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
