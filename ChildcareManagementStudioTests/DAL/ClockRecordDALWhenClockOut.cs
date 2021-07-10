@@ -46,7 +46,7 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldUpdateRecordForMinnie()
+        public void ShouldUpdateRecordForClockedInEmployee()
         {
             int employeeId = 2;
             List<ClockRecord> recordsBefore = this.clockRecordDAL.GetAllClockRecordsForEmployee(employeeId);
