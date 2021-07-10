@@ -306,7 +306,31 @@ namespace ChildcareManagementStudio.UserControls
                 var focusedItem = this.listViewPositionHistory.FocusedItem;
                 if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
                 {
-                    contextMenuStripPositionHistory.Show(Cursor.Position);
+                    this.contextMenuStripPositionHistory.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void ListViewPayHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewPayHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    this.contextMenuStripPayHistory.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void ListViewCredentialHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewCredentialHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    this.contextMenuStripCredentialHistory.Show(Cursor.Position);
                 }
             }
         }
