@@ -8,12 +8,18 @@ using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.UserControls.TimeUserControls
 {
+    /// <summary>
+    /// This class will create and manage the time sheet UC
+    /// </summary>
     public partial class TimeSheetUserControl : UserControl
     {
         private readonly EmployeeController employeeController;
         private readonly ClockRecordController clockRecordController;
         private List<Employee> employeeList;
 
+        /// <summary>
+        /// Constructor for the UC
+        /// </summary>
         public TimeSheetUserControl()
         {
             InitializeComponent();
@@ -158,7 +164,12 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.SelectedIndex = -1;
             this.comboBoxEmployee.SelectedText = "--select--";
         }
-
+        
+        /// <summary>
+        /// Handler for clear button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearReportEventHandler(object sender, EventArgs e)
         {
             this.reportViewerTimeSheet.Clear();
