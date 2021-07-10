@@ -29,6 +29,7 @@ namespace ChildcareManagementStudio.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelName = new System.Windows.Forms.Label();
             this.labelDOB = new System.Windows.Forms.Label();
             this.labelAddress1 = new System.Windows.Forms.Label();
@@ -69,8 +70,11 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory = new System.Windows.Forms.ListView();
             this.columnHeaderPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSchoolYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripPositionHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.contextMenuStripPositionHistory.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelName
@@ -531,6 +535,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.SetColumnSpan(this.listViewPositionHistory, 2);
             this.listViewPositionHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPositionHistory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPositionHistory.FullRowSelect = true;
             this.listViewPositionHistory.HideSelection = false;
             this.listViewPositionHistory.Location = new System.Drawing.Point(3, 38);
             this.listViewPositionHistory.Name = "listViewPositionHistory";
@@ -538,6 +543,7 @@ namespace ChildcareManagementStudio.UserControls
             this.listViewPositionHistory.TabIndex = 6;
             this.listViewPositionHistory.UseCompatibleStateImageBehavior = false;
             this.listViewPositionHistory.View = System.Windows.Forms.View.Details;
+            this.listViewPositionHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewPositionHistory_MouseClick);
             // 
             // columnHeaderPosition
             // 
@@ -548,6 +554,19 @@ namespace ChildcareManagementStudio.UserControls
             // 
             this.columnHeaderSchoolYear.Text = "School Year";
             this.columnHeaderSchoolYear.Width = 120;
+            // 
+            // contextMenuStripPositionHistory
+            // 
+            this.contextMenuStripPositionHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemDelete});
+            this.contextMenuStripPositionHistory.Name = "contextMenuStripPositionHistory";
+            this.contextMenuStripPositionHistory.Size = new System.Drawing.Size(232, 26);
+            // 
+            // toolStripMenuItemDelete
+            // 
+            this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(231, 22);
+            this.toolStripMenuItemDelete.Text = "Delete PositionHistory Record";
             // 
             // ViewTeacherDetailUserControl
             // 
@@ -563,6 +582,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.contextMenuStripPositionHistory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,5 +628,7 @@ namespace ChildcareManagementStudio.UserControls
         private System.Windows.Forms.ColumnHeader columnHeaderExpiration;
         private System.Windows.Forms.ColumnHeader columnHeaderPayRate;
         private System.Windows.Forms.ColumnHeader columnHeaderEffectiveDate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPositionHistory;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelete;
     }
 }

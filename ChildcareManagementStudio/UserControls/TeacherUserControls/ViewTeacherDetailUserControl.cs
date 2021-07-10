@@ -299,6 +299,16 @@ namespace ChildcareManagementStudio.UserControls
             this.UpdateFormValues();
         }
 
-       
+        private void ListViewPositionHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = this.listViewPositionHistory.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    contextMenuStripPositionHistory.Show(Cursor.Position);
+                }
+            }
+        }
     }
 }
