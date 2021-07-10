@@ -54,11 +54,9 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         {
             if (this.comboEmployeeName.SelectedIndex == -1)
             {
-                this.Enabled = false;
-                string title = "No Teacher Chosen";
-                string message = "Please choose a teacher.";
-                MessageBox.Show(message, title);
-                this.Enabled = true;
+                this.DisplayMessageBox(
+                    "No Teacher Chosen",
+                    "Please choose a teacher.");
                 return false;
             }
             else
@@ -77,17 +75,27 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         {
             if (this.clockRecordController.GetOpenClockRecord(employeeId) != null)
             {
-                this.Enabled = false;
-                string title = "Employee Still Clocked In";
-                string message = "This employee is still clocked in.  Please clock out before clocking in again.";
-                MessageBox.Show(message, title);
-                this.Enabled = true;
+                this.DisplayMessageBox(
+                    "Employee Still Clocked In",
+                    "This employee is still clocked in.  Please clock out before clocking in again.");         
                 return false;
             }
             else
             {
                 return true;
             }               
+        }
+
+        /// <summary>
+        /// Displays message box and handles the enabling and disabling of the UC
+        /// </summary>
+        /// <param name="title">title of the message box</param>
+        /// <param name="message">the message to display</param>
+        private void DisplayMessageBox(string title, string message)
+        {
+            this.Enabled = false;
+            MessageBox.Show(message, title);
+            this.Enabled = true;
         }
 
         /// <summary>
@@ -122,19 +130,15 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                             InDateTime = inTime
                         };
                         this.clockRecordController.ClockIn(clockInRecord);
-                        this.Enabled = false;
-                        string title = "Employee Clocked In";
-                        string message = "Employee has been clocked in at " + inTime;
-                        MessageBox.Show(message, title);
+                        this.DisplayMessageBox(
+                            "Employee Clocked In",
+                            "Employee has been clocked in at " + inTime);                       
                         this.buttonClockIn.Enabled = false;
                         this.buttonClockOut.Enabled = true;
-                        this.Enabled = true;
                     }
                     catch (Exception ex)
                     {
-                        this.Enabled = false;
-                        MessageBox.Show("Error: ", ex.Message);
-                        this.Enabled = true;
+                        this.DisplayMessageBox("Error Encountered", "Error: " + ex.Message);
                     }
                 }
             }
@@ -162,21 +166,17 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                         OutDateTime = outTime
                     };
                     this.clockRecordController.ClockOut(inRecord, outRecord);
-                    this.Enabled = false;
-                    string title = "Employee Clocked Out";
-                    string message = "Employee has been clocked out: \r\n" +
+                    this.DisplayMessageBox(
+                        "Employee Clocked Out",
+                        "Employee has been clocked out: \r\n" +
                         "Time clocked in: " + outRecord.InDateTime.ToString() + "\r\n" +
-                        "Time clocked out: " + outRecord.OutDateTime.ToString();
-                    MessageBox.Show(message, title);
-                    this.Enabled = true;
+                        "Time clocked out: " + outRecord.OutDateTime.ToString());
                     this.buttonClockIn.Enabled = true;
                     this.buttonClockOut.Enabled = false;
                 }
                 catch (Exception ex)
                 {
-                    this.Enabled = false;
-                    MessageBox.Show("Error: ", ex.Message);
-                    this.Enabled = true;
+                    this.DisplayMessageBox("Error Encountered", "Error: " + ex.Message);
                 }
             }
         }
@@ -206,9 +206,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                 this.buttonClockIn.Enabled = false;
                 this.buttonClockOut.Enabled = false;
             }
-                
-
-            
+                            
         }
     }
 }
