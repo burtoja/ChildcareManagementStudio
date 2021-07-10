@@ -1,6 +1,7 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
 using ChildcareManagementStudio.UserControls.ClassroomUserControls;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,18 +70,26 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <param name="e"></param>
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("TEST #1");
             if (IsInputValid())
             {
-                Console.WriteLine("TEST #2");
+                string title;
+                string message;
                 ClassRecord classRecord = new ClassRecord
                 {
                     SchoolYear = this.comboBoxSchoolYear.SelectedItem.ToString(),
                     Classroom = this.GetSelectedClassroom()
                 };
-                this.classRecordController.AddClassRecord(classRecord);
-                string title = "Class Created";
-                string message = "The class was successfully created  Please click 'Okay' to continue.";
+                try
+                {
+                    this.classRecordController.AddClassRecord(classRecord);
+                    title = "Class Created";
+                    message = "The class was successfully created  Please click 'Okay' to continue.";
+                }
+                catch (SqliteException)
+                {
+                    title = "Duplicate Class Error";
+                    message = "This class has already been created. Duplicates are not allowed.  Please click 'Okay' to continue.";
+                }
                 DialogResult dialogeResult = MessageBox.Show(message, title);
                 if (dialogeResult == DialogResult.OK)
                 {
