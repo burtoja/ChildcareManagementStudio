@@ -130,6 +130,11 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                 try
                 {
                     this.paymentController.AddPayment(payment);
+                    this.DisplayMessageBox(
+                        "Payment Successfully Recorded",
+                        "The payment of " +
+                        String.Format("{0:C}", Convert.ToInt32(payment.Amount)) + 
+                        " was added for " + payment.AccountHolder.FullName + ".");
                 }
                 catch (Exception ex)
                 {
