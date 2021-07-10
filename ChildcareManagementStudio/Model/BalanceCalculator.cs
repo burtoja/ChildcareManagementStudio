@@ -65,5 +65,23 @@ namespace ChildcareManagementStudio.Model
 
             return paymentTotal;
         }
+
+        /// <summary>
+        /// Method that returns a Balance object based on the instance variables.
+        /// </summary>
+        /// <returns>A Balance object representing the account holder's balance.</returns>
+        public Balance GetBalance()
+        {
+            AccountHolder accountHolder = tuitionRateRecords[0].AccountHolder;
+            double tuitionTotal = this.GetTuitionTotal();
+            double paymentTotal = this.GetPaymentTotal();
+            double balanceAmount = tuitionTotal - paymentTotal;
+            Balance balance = new Balance()
+            {
+                AccountHolder = accountHolder,
+                Amount = balanceAmount
+            };
+            return balance;
+        }
     }
 }
