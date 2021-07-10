@@ -165,6 +165,7 @@
     <Compile Include="DAL\TuitionRateRecordDAL.cs" />
     <Compile Include="Model\AccountHolder.cs" />
     <Compile Include="Model\Balance.cs" />
+    <Compile Include="Model\BalanceCalculator.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\ClassRecord.cs" />
     <Compile Include="Model\Classroom.cs" />
