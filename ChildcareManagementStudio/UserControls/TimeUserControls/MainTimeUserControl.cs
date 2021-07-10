@@ -49,5 +49,11 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     break;
             }
         }
+
+        private void MainTimeUserControl_VisibleChanged(object sender, System.EventArgs e)
+        {
+            this.timeClockUserControl.PopulateDropDownList();
+            this.timeSheetUserControl.PopulateDropDownList();
+        }
     }
 }

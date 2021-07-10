@@ -179,11 +179,6 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
                     this.Enabled = true;
                 }
             }
-            else
-            {
-                this.TeacherIsSelectedCheck();
-            }
-
         }
 
         /// <summary>

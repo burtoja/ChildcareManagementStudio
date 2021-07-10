@@ -90,7 +90,7 @@ namespace ChildcareManagementStudio.DAL
                             {
                                 EmployeeId = employeeId,
                                 InDateTime = reader.GetDateTime(inDateTimeOrdinal)
-                            };                           
+                            };
                         }
                     }
                 }

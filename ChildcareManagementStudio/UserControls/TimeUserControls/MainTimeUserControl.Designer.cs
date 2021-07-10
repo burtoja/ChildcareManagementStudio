@@ -75,6 +75,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainTimeUserControl";
             this.Size = new System.Drawing.Size(760, 515);
+            this.VisibleChanged += new System.EventHandler(this.MainTimeUserControl_VisibleChanged);
             this.tabControlMainTime.ResumeLayout(false);
             this.ResumeLayout(false);
 
