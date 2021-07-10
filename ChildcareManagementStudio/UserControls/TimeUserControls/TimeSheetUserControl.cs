@@ -147,5 +147,16 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             }                        
         }
 
+        /// <summary>
+        /// Handles clear button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            this.reportViewerTimeSheet.Clear();
+            this.comboBoxEmployee.SelectedIndex = -1;
+            this.comboBoxEmployee.SelectedText = "--select--";
+        }
     }
 }
