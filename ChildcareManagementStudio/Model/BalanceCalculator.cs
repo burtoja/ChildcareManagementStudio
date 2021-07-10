@@ -32,5 +32,22 @@ namespace ChildcareManagementStudio.Model
             this.tuitionRateRecords = tuitionRateRecords;
             this.payments = payments;
         }
+
+        /// <summary>
+        /// Method that returns the total amount of tuition for all of the tuition rate records.
+        /// </summary>
+        /// <returns>The total amount of tuition for all of the tuition rate records.</returns>
+        public double GetTuitionTotal()
+        {
+            double tuitionTotal = 0;
+
+            foreach (TuitionRateRecord currentTuitionRateRecord in tuitionRateRecords)
+            {
+                double currentTuition = currentTuitionRateRecord.DailyRate * currentTuitionRateRecord.NumberOfWeekdaysInRange;
+                tuitionTotal += currentTuition;
+            }
+
+            return tuitionTotal;
+        }
     }
 }
