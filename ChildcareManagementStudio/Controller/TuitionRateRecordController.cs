@@ -49,5 +49,14 @@ namespace ChildcareManagementStudio.Controller
 
             return tuitionRateRecordDAL.GetTuitionRateRecords(accountHolder);
         }
+
+        /// <summary>
+        /// Method that returns all of the tuition rate records in the database.
+        /// </summary>
+        /// <returns>All of the tuition rate records in the database.</returns>
+        public List<TuitionRateRecord> GetAllTuitionRateRecords()
+        {
+            return tuitionRateRecordDAL.GetAllTuitionRateRecords();
+        }
     }
 }
