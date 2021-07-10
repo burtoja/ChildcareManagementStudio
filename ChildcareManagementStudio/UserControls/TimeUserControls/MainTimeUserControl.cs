@@ -30,26 +30,6 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.tabPageTimeSheet.Controls.Add(this.timeSheetUserControl);
         }
 
-        /// <summary>
-        /// Event handler for selecting tabs within this section of the application
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TabControlMainClassroom_Selected(object sender, TabControlEventArgs e)
-        {
-            switch ((sender as TabControl).SelectedIndex)
-            {
-                case 0:
-                    // View Tiem Clock tab
-
-                    break;
-                case 1:
-                    // Edit Tiem Sheet tab
-
-                    break;
-            }
-        }
-
         private void MainTimeUserControl_VisibleChanged(object sender, System.EventArgs e)
         {
             this.timeClockUserControl.PopulateDropDownList();
