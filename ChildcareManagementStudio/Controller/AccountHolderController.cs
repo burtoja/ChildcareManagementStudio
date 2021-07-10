@@ -21,6 +21,15 @@ namespace ChildcareManagementStudio.Controller
         }
 
         /// <summary>
+        /// Method that returns an AccountHolder object for the requested account holder.
+        /// </summary>
+        /// <returns>An AccountHolder object for the specified account holder.</returns>
+        public AccountHolder GetAccountHolder(int accountHolderId)
+        {
+            return accountHolderDAL.GetAccountHolder(accountHolderId);
+        }
+
+        /// <summary>
         /// Method that returns AccountHolder objects for all of the account holders in the database.
         /// </summary>
         /// <returns>A list of AccountHolder objects for all of the account holders in the database.</returns>

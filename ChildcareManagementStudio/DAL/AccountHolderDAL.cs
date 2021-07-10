@@ -11,6 +11,53 @@ namespace ChildcareManagementStudio.DAL
     public class AccountHolderDAL : PersonDAL
     {
         /// <summary>
+        /// Method that returns an AccountHolder object for the requested account holder.
+        /// </summary>
+        /// <returns>An AccountHolder object for the specified account holder.</returns>
+        public AccountHolder GetAccountHolder(int accountHolderId)
+        {
+            AccountHolder accountHolder = new AccountHolder();
+
+            string selectStatement =
+                "SELECT personId " +
+                "FROM AccountHolder " +
+                "WHERE accountHolderId = $accountHolderId";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("$accountHolderId", accountHolderId);
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int personIdOrdinal = reader.GetOrdinal("personId");
+                        while (reader.Read())
+                        {
+                            accountHolder.PersonId = reader.GetInt32(personIdOrdinal);
+                            accountHolder.AccountHolderId = accountHolderId;
+
+                            Person person = GetPerson(accountHolder.PersonId);
+                            accountHolder.LastName = person.LastName;
+                            accountHolder.FirstName = person.FirstName;
+                            accountHolder.DateOfBirth = person.DateOfBirth;
+                            accountHolder.SocialSecurityNumber = person.SocialSecurityNumber;
+                            accountHolder.Gender = person.Gender;
+                            accountHolder.PhoneNumber = person.PhoneNumber;
+                            accountHolder.AddressLine1 = person.AddressLine1;
+                            if (person.AddressLine2 != default) { accountHolder.AddressLine2 = person.AddressLine2; }
+                            accountHolder.City = person.City;
+                            accountHolder.State = person.State;
+                            accountHolder.ZipCode = person.ZipCode;
+                        }
+                    }
+                }
+            }
+
+            return accountHolder;
+        }
+
+        /// <summary>
         /// Method that returns AccountHolder objects for all of the account holders in the database.
         /// </summary>
         /// <returns>A list of AccountHolder objects for all of the account holders in the database.</returns>

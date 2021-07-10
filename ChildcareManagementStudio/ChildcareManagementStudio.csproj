@@ -137,6 +137,7 @@
     <Compile Include="DAL\ClockRecordDAL.cs" />
     <Compile Include="Controller\CredentialController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
+    <Compile Include="Controller\PaymentController.cs" />
     <Compile Include="Controller\PersonController.cs" />
     <Compile Include="Controller\PositionController.cs" />
     <Compile Include="Controller\PositionTypeController.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Controller\StudentClassroomAssignmentController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\TeacherClassroomAssignmentController.cs" />
+    <Compile Include="Controller\TuitionRateRecordController.cs" />
     <Compile Include="DAL\AccountHolderDAL.cs" />
     <Compile Include="DAL\CertificationDAL.cs" />
     <Compile Include="DAL\ChildCareDatabaseConnection.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="DAL\ClassroomDAL.cs" />
     <Compile Include="DAL\CredentialDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\PaymentDAL.cs" />
     <Compile Include="DAL\PersonDAL.cs" />
     <Compile Include="DAL\PositionDAL.cs" />
     <Compile Include="DAL\PositionTypeDAL.cs" />
@@ -161,8 +164,10 @@
     <Compile Include="DAL\StudentClassroomAssignmentDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\TeacherClassroomAssignmentDAL.cs" />
+    <Compile Include="DAL\TuitionRateRecordDAL.cs" />
     <Compile Include="Model\AccountHolder.cs" />
     <Compile Include="Model\Balance.cs" />
+    <Compile Include="Model\BalanceCalculator.cs" />
     <Compile Include="Model\CertificationRecord.cs" />
     <Compile Include="Model\ClassRecord.cs" />
     <Compile Include="Model\Classroom.cs" />
