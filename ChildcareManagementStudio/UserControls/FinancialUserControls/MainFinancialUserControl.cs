@@ -56,5 +56,24 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                     break;
             }
         }
+
+        private void TabControlMainFinanical_Selected(object sender, TabControlEventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    // 'view payments' tab
+
+                    break;
+                case 1:
+                    // 'record payment' tab
+
+                    break;
+                case 2:
+                    // 'view balances' tab
+                    viewBalancesUserControl.RefreshBalanceListView();
+                    break;
+            }
+        }
     }
 }

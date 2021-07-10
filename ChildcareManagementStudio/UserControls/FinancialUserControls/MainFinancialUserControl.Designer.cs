@@ -49,33 +49,34 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.tabControlMainFinancial.SelectedIndex = 0;
             this.tabControlMainFinancial.Size = new System.Drawing.Size(760, 515);
             this.tabControlMainFinancial.TabIndex = 1;
+            this.tabControlMainFinancial.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlMainFinanical_Selected);
             // 
             // tabPageViewPayments
             // 
             this.tabPageViewPayments.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageViewPayments.Location = new System.Drawing.Point(4, 33);
+            this.tabPageViewPayments.Location = new System.Drawing.Point(4, 35);
             this.tabPageViewPayments.Name = "tabPageViewPayments";
             this.tabPageViewPayments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageViewPayments.Size = new System.Drawing.Size(752, 478);
+            this.tabPageViewPayments.Size = new System.Drawing.Size(752, 476);
             this.tabPageViewPayments.TabIndex = 1;
             this.tabPageViewPayments.Text = "View Payments";
             // 
             // tabPageRecordPayment
             // 
             this.tabPageRecordPayment.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageRecordPayment.Location = new System.Drawing.Point(4, 33);
+            this.tabPageRecordPayment.Location = new System.Drawing.Point(4, 35);
             this.tabPageRecordPayment.Name = "tabPageRecordPayment";
             this.tabPageRecordPayment.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRecordPayment.Size = new System.Drawing.Size(752, 478);
+            this.tabPageRecordPayment.Size = new System.Drawing.Size(752, 476);
             this.tabPageRecordPayment.TabIndex = 0;
             this.tabPageRecordPayment.Text = "Record Payment";
             // 
             // tabPageViewBalances
             // 
             this.tabPageViewBalances.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageViewBalances.Location = new System.Drawing.Point(4, 33);
+            this.tabPageViewBalances.Location = new System.Drawing.Point(4, 35);
             this.tabPageViewBalances.Name = "tabPageViewBalances";
-            this.tabPageViewBalances.Size = new System.Drawing.Size(752, 478);
+            this.tabPageViewBalances.Size = new System.Drawing.Size(752, 476);
             this.tabPageViewBalances.TabIndex = 2;
             this.tabPageViewBalances.Text = "View Balances";
             // 
