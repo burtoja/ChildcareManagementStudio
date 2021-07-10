@@ -246,7 +246,7 @@ namespace ChildcareManagementStudio.UserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(150, 3);
+            this.comboBoxName.Location = new System.Drawing.Point(155, 11);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 29);
             this.comboBoxName.TabIndex = 25;
@@ -387,7 +387,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel2.Controls.Add(this.buttonChangePayRate, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.buttonAddNewCredential, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.listViewPositionHistory, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 322);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 312);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
