@@ -225,5 +225,37 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Method that appends an end date to an existing tuition rate record in the database.
+        /// Searches for an existing record based on the student ID and start date,
+        /// then edits the end date based on the end date in the revisedTuitionRateRecord argument.
+        /// </summary>
+        /// <param name="revisedTuitionRateRecord">The modified tuition rate record.</param>
+        public void EditTuitionRateEndDate(TuitionRateRecord revisedTuitionRateRecord)
+        {
+            if (revisedTuitionRateRecord == null)
+            {
+                throw new ArgumentNullException("revisedTuitionRateRecord", "The revised tuitionRateRecord cannot be null.");
+            }
+
+            string updateStatement =
+                "UPDATE TuitionRateRecord SET " +
+                    "endDate = $revisedEndDate " +
+                "WHERE studentId = $originalStudentId " +
+                    "AND startDate = $originalStartDate";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand updateCommand = new SqliteCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("$revisedEndDate", revisedTuitionRateRecord.EndDate.ToString("yyyy-MM-dd"));
+                    updateCommand.Parameters.AddWithValue("$originalStudentId", revisedTuitionRateRecord.Student.StudentId);
+                    updateCommand.Parameters.AddWithValue("$originalStartDate", revisedTuitionRateRecord.StartDate.ToString("yyyy-MM-dd"));
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
