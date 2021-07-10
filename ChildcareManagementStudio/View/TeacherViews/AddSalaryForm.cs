@@ -91,13 +91,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
             try
             {
                 this.salaryController.AddSalaryRecord(this.employeeId, record);
-                string title = "Success";
-                string message = "Record has been added.";
-                MessageBox.Show(message, title);
             } 
             catch (SqliteException ex)
             {
-                Console.WriteLine("TEST: " + ex.ErrorCode) ;
                 if (ex.ErrorCode == -2147467259)
                 {
                     string title = "Duplicate Record Error";

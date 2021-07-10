@@ -118,9 +118,6 @@ namespace ChildcareManagementStudio.View.TeacherViews
             try
             {
                 this.positionController.AddPositionRecord(this.employeeId, record);
-                string title = "Success";
-                string message = "Record has been added.";
-                MessageBox.Show(message, title);
             }
             catch (SqliteException ex)
             {
