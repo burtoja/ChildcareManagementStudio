@@ -101,6 +101,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxCity.Text = "";
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
+            this.labelErrorMessage.Text = "";
         }
 
         /// <summary>
