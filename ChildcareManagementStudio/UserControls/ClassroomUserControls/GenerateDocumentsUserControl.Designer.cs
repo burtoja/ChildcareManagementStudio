@@ -64,6 +64,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // 
             this.comboBoxClass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxClass.DisplayMember = "Location";
+            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.Location = new System.Drawing.Point(390, 22);
@@ -88,6 +90,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // comboBoxSchoolYear
             // 
             this.comboBoxSchoolYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSchoolYear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSchoolYear.FormattingEnabled = true;
             this.comboBoxSchoolYear.Location = new System.Drawing.Point(112, 22);
