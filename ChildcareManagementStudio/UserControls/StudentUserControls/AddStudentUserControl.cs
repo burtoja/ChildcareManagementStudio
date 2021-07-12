@@ -69,7 +69,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 }
                 catch (Exception ex)
                 {
-                    this.labelErrorMessage.Text = "Form data not submitted." + ex.Message + " Please fix and try again. ";
+                    this.labelErrorMessage.Text = "Form data not submitted. A person already exists with that social security number. Please fix and try again.";
                 }
             }
         }
@@ -101,6 +101,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxCity.Text = "";
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
+            this.labelErrorMessage.Text = "";
         }
 
         /// <summary>
@@ -150,6 +151,60 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
 
             return alertText;
         }
+
+        private void TextBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void DateTimePickerDOB_ValueChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxSSN_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void ComboBoxGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxAddress1_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxAddress2_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxCity_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void ComboBoxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxZipCode_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
     }
 }
-
