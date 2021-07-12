@@ -150,9 +150,12 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddPositionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Update Employee Position";
+            this.Text = "Change Employee Position";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddPositionForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

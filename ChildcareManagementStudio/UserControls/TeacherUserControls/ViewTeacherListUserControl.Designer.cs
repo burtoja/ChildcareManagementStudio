@@ -66,7 +66,7 @@ namespace ChildcareManagementStudio.UserControls
             // firstName
             // 
             this.firstName.Text = "First Name";
-            this.firstName.Width = 200;
+            this.firstName.Width = 191;
             // 
             // dob
             // 
@@ -91,13 +91,13 @@ namespace ChildcareManagementStudio.UserControls
             this.buttonViewTeacherDetails.UseVisualStyleBackColor = true;
             this.buttonViewTeacherDetails.Click += new System.EventHandler(this.ButtonViewTeacherDetails_Click);
             // 
-            // TeacherViewTeachersUserControl
+            // ViewTeacherListUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.buttonViewTeacherDetails);
             this.Controls.Add(this.listViewAllTeachers);
-            this.Name = "TeacherViewTeachersUserControl";
+            this.Name = "ViewTeacherListUserControl";
             this.Size = new System.Drawing.Size(745, 470);
             this.ResumeLayout(false);
 

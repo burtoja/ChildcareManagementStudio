@@ -124,8 +124,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
                 if (ex.ErrorCode == -2147467259)
                 {
                     string title = "Duplicate Record Error";
-                    string message = "Error. This record matches anothed record on file for this employee.  " +
-                        "Duplicate records are not allowed.  Please try again.";
+                    string message = "Error. This record matches anothed record on file for this employee. " +
+                        "All position records must have a unique start date. " +
+                        "Please try again.";
                     MessageBox.Show(message, title);
                 }
             }

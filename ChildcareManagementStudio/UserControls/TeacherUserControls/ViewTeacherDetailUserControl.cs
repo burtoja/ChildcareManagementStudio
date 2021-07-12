@@ -201,7 +201,7 @@ namespace ChildcareManagementStudio.UserControls
         private void DisplayChooseTeacherErrorBox()
         {
             string title = "No Teacher Chosen";
-            string message = "Please choose a teacher to edit.";
+            string message = "Please choose a teacher.";
             MessageBox.Show(message, title);
         }
 
