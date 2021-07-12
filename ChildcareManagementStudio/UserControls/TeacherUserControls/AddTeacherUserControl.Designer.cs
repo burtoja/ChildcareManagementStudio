@@ -103,8 +103,8 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 535);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -358,7 +358,7 @@ namespace ChildcareManagementStudio.UserControls
             this.tableLayoutPanel1.SetColumnSpan(this.labelErrorMessage, 3);
             this.labelErrorMessage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorMessage.Location = new System.Drawing.Point(166, 439);
+            this.labelErrorMessage.Location = new System.Drawing.Point(166, 432);
             this.labelErrorMessage.Name = "labelErrorMessage";
             this.labelErrorMessage.Size = new System.Drawing.Size(0, 17);
             this.labelErrorMessage.TabIndex = 20;
@@ -437,7 +437,7 @@ namespace ChildcareManagementStudio.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(544, 495);
+            this.label1.Location = new System.Drawing.Point(544, 481);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 15);
             this.label1.TabIndex = 25;
@@ -448,7 +448,7 @@ namespace ChildcareManagementStudio.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddTeacherUserControl";
-            this.Size = new System.Drawing.Size(770, 540);
+            this.Size = new System.Drawing.Size(770, 518);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
