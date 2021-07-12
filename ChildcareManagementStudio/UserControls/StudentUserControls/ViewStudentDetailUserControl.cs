@@ -67,7 +67,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelValueAddress2.Text = "";
             this.labelValueCity.Text = "";
             this.labelValueState.Text = "";
-            this.labelValueZipCode.Text = "";          
+            this.labelValueZipCode.Text = "";
+            this.labelValueVaccination.Text = "";
+            this.labelValuePhysicalExam.Text = "";
         }
 
         /// <summary>
