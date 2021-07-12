@@ -122,6 +122,9 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmit);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddCertificationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Employee Certification";
