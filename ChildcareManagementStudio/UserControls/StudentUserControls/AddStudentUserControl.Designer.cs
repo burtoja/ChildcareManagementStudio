@@ -67,6 +67,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(178, 32);
             this.textBoxZipCode.TabIndex = 21;
+            this.textBoxZipCode.TextChanged += new System.EventHandler(this.TextBoxZipCode_TextChanged);
             // 
             // textBoxCity
             // 
@@ -76,6 +77,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(178, 32);
             this.textBoxCity.TabIndex = 19;
+            this.textBoxCity.TextChanged += new System.EventHandler(this.TextBoxCity_TextChanged);
             // 
             // textBoxAddress2
             // 
@@ -86,6 +88,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxAddress2.Name = "textBoxAddress2";
             this.textBoxAddress2.Size = new System.Drawing.Size(549, 32);
             this.textBoxAddress2.TabIndex = 18;
+            this.textBoxAddress2.TextChanged += new System.EventHandler(this.TextBoxAddress2_TextChanged);
             // 
             // textBoxAddress1
             // 
@@ -96,6 +99,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxAddress1.Name = "textBoxAddress1";
             this.textBoxAddress1.Size = new System.Drawing.Size(549, 32);
             this.textBoxAddress1.TabIndex = 17;
+            this.textBoxAddress1.TextChanged += new System.EventHandler(this.TextBoxAddress1_TextChanged);
             // 
             // textBoxLastName
             // 
@@ -105,6 +109,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(178, 32);
             this.textBoxLastName.TabIndex = 12;
+            this.textBoxLastName.TextChanged += new System.EventHandler(this.TextBoxLastName_TextChanged);
             // 
             // labelFirstName
             // 
@@ -227,6 +232,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(178, 32);
             this.textBoxFirstName.TabIndex = 11;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.TextBoxFirstName_TextChanged);
             // 
             // dateTimePickerDOB
             // 
@@ -237,6 +243,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.dateTimePickerDOB.Name = "dateTimePickerDOB";
             this.dateTimePickerDOB.Size = new System.Drawing.Size(178, 32);
             this.dateTimePickerDOB.TabIndex = 13;
+            this.dateTimePickerDOB.ValueChanged += new System.EventHandler(this.DateTimePickerDOB_ValueChanged);
             // 
             // comboBoxState
             // 
@@ -301,6 +308,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(94, 31);
             this.comboBoxState.TabIndex = 20;
+            this.comboBoxState.SelectedIndexChanged += new System.EventHandler(this.ComboBoxState_SelectedIndexChanged);
             // 
             // labelErrorMessage
             // 
@@ -361,6 +369,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(94, 31);
             this.comboBoxGender.TabIndex = 16;
+            this.comboBoxGender.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGender_SelectedIndexChanged);
             // 
             // textBoxPhoneNumber
             // 
@@ -371,6 +380,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(117, 32);
             this.textBoxPhoneNumber.TabIndex = 15;
+            this.textBoxPhoneNumber.TextChanged += new System.EventHandler(this.TextBoxPhoneNumber_TextChanged);
             // 
             // textBoxSSN
             // 
@@ -381,6 +391,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxSSN.Name = "textBoxSSN";
             this.textBoxSSN.Size = new System.Drawing.Size(100, 32);
             this.textBoxSSN.TabIndex = 14;
+            this.textBoxSSN.TextChanged += new System.EventHandler(this.TextBoxSSN_TextChanged);
             // 
             // tableLayoutPanel1
             // 

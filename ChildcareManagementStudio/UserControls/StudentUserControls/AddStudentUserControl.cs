@@ -151,6 +151,60 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
 
             return alertText;
         }
+
+        private void TextBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void DateTimePickerDOB_ValueChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxSSN_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void ComboBoxGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxAddress1_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxAddress2_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxCity_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void ComboBoxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
+
+        private void TextBoxZipCode_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorMessage.Text = "";
+        }
     }
 }
-
