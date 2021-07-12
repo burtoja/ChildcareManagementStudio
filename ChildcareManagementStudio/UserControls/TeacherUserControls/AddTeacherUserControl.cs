@@ -1,5 +1,6 @@
 ﻿using ChildcareManagementStudio.Controller;
 using ChildcareManagementStudio.Model;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Windows.Forms;
 
@@ -63,15 +64,23 @@ namespace ChildcareManagementStudio.UserControls
                         State = state,
                         ZipCode = zip
                     };
-                    this.employeeController.AddEmployee(newEmployee);                   
+                    this.employeeController.AddEmployee(newEmployee);
                     String successText = "Employee  (" + firstName + " " + lastName + ") successfully added.";
                     var dialogeResult = MessageBox.Show(successText, "Employee Added Success");
                     this.ClearForm();
+                }
+                catch (SqliteException sqlex)
+                {
+                    this.labelErrorMessage.Text = "The social security number entered for this employee " +
+                        "is already found in the system.  Duplicate social security numbers are not allowed. " +
+                        "Please fix and try again. ";
                 }
                 catch (Exception ex)
                 {
                     this.labelErrorMessage.Text = "Form data not submitted." + ex.Message + " Please fix and try again. ";
                 }
+                    
+
             }
         }
 
