@@ -55,7 +55,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.textBoxSSN = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelRequiredField = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,18 +63,18 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             this.textBoxZipCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxZipCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZipCode.Location = new System.Drawing.Point(164, 320);
+            this.textBoxZipCode.Location = new System.Drawing.Point(164, 315);
             this.textBoxZipCode.Name = "textBoxZipCode";
-            this.textBoxZipCode.Size = new System.Drawing.Size(178, 27);
+            this.textBoxZipCode.Size = new System.Drawing.Size(178, 32);
             this.textBoxZipCode.TabIndex = 21;
             // 
             // textBoxCity
             // 
             this.textBoxCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxCity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCity.Location = new System.Drawing.Point(164, 270);
+            this.textBoxCity.Location = new System.Drawing.Point(164, 265);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(178, 27);
+            this.textBoxCity.Size = new System.Drawing.Size(178, 32);
             this.textBoxCity.TabIndex = 19;
             // 
             // textBoxAddress2
@@ -82,9 +82,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxAddress2, 3);
             this.textBoxAddress2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress2.Location = new System.Drawing.Point(164, 220);
+            this.textBoxAddress2.Location = new System.Drawing.Point(164, 215);
             this.textBoxAddress2.Name = "textBoxAddress2";
-            this.textBoxAddress2.Size = new System.Drawing.Size(549, 27);
+            this.textBoxAddress2.Size = new System.Drawing.Size(549, 32);
             this.textBoxAddress2.TabIndex = 18;
             // 
             // textBoxAddress1
@@ -92,18 +92,18 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.textBoxAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxAddress1, 3);
             this.textBoxAddress1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress1.Location = new System.Drawing.Point(164, 170);
+            this.textBoxAddress1.Location = new System.Drawing.Point(164, 165);
             this.textBoxAddress1.Name = "textBoxAddress1";
-            this.textBoxAddress1.Size = new System.Drawing.Size(549, 27);
+            this.textBoxAddress1.Size = new System.Drawing.Size(549, 32);
             this.textBoxAddress1.TabIndex = 17;
             // 
             // textBoxLastName
             // 
             this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastName.Location = new System.Drawing.Point(537, 20);
+            this.textBoxLastName.Location = new System.Drawing.Point(537, 15);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(178, 27);
+            this.textBoxLastName.Size = new System.Drawing.Size(178, 32);
             this.textBoxLastName.TabIndex = 12;
             // 
             // labelFirstName
@@ -111,9 +111,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(57, 29);
+            this.labelFirstName.Location = new System.Drawing.Point(33, 27);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(101, 21);
+            this.labelFirstName.Size = new System.Drawing.Size(125, 23);
             this.labelFirstName.TabIndex = 0;
             this.labelFirstName.Text = "*First Name:";
             // 
@@ -122,9 +122,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(428, 29);
+            this.labelLastName.Location = new System.Drawing.Point(402, 27);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(103, 21);
+            this.labelLastName.Size = new System.Drawing.Size(129, 23);
             this.labelLastName.TabIndex = 1;
             this.labelLastName.Text = "*Last Name:";
             // 
@@ -133,9 +133,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDOB.AutoSize = true;
             this.labelDOB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDOB.Location = new System.Drawing.Point(41, 79);
+            this.labelDOB.Location = new System.Drawing.Point(15, 77);
             this.labelDOB.Name = "labelDOB";
-            this.labelDOB.Size = new System.Drawing.Size(117, 21);
+            this.labelDOB.Size = new System.Drawing.Size(143, 23);
             this.labelDOB.TabIndex = 2;
             this.labelDOB.Text = "*Date of Birth:";
             // 
@@ -144,9 +144,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAddress1.AutoSize = true;
             this.labelAddress1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress1.Location = new System.Drawing.Point(63, 179);
+            this.labelAddress1.Location = new System.Drawing.Point(39, 177);
             this.labelAddress1.Name = "labelAddress1";
-            this.labelAddress1.Size = new System.Drawing.Size(95, 21);
+            this.labelAddress1.Size = new System.Drawing.Size(119, 23);
             this.labelAddress1.TabIndex = 4;
             this.labelAddress1.Text = "*Address 1:";
             // 
@@ -155,9 +155,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAddress2.AutoSize = true;
             this.labelAddress2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress2.Location = new System.Drawing.Point(69, 229);
+            this.labelAddress2.Location = new System.Drawing.Point(48, 227);
             this.labelAddress2.Name = "labelAddress2";
-            this.labelAddress2.Size = new System.Drawing.Size(89, 21);
+            this.labelAddress2.Size = new System.Drawing.Size(110, 23);
             this.labelAddress2.TabIndex = 5;
             this.labelAddress2.Text = "Address 2:";
             // 
@@ -166,9 +166,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(107, 279);
+            this.labelCity.Location = new System.Drawing.Point(97, 277);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(51, 21);
+            this.labelCity.Size = new System.Drawing.Size(61, 23);
             this.labelCity.TabIndex = 6;
             this.labelCity.Text = "*City:";
             // 
@@ -177,9 +177,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelState.AutoSize = true;
             this.labelState.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelState.Location = new System.Drawing.Point(468, 279);
+            this.labelState.Location = new System.Drawing.Point(456, 277);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(63, 21);
+            this.labelState.Size = new System.Drawing.Size(75, 23);
             this.labelState.TabIndex = 7;
             this.labelState.Text = "*State:";
             // 
@@ -188,9 +188,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelZipCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelZipCode.AutoSize = true;
             this.labelZipCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipCode.Location = new System.Drawing.Point(68, 329);
+            this.labelZipCode.Location = new System.Drawing.Point(45, 327);
             this.labelZipCode.Name = "labelZipCode";
-            this.labelZipCode.Size = new System.Drawing.Size(90, 21);
+            this.labelZipCode.Size = new System.Drawing.Size(113, 23);
             this.labelZipCode.TabIndex = 8;
             this.labelZipCode.Text = "*Zip Code:";
             // 
@@ -223,9 +223,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             // 
             this.textBoxFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(164, 20);
+            this.textBoxFirstName.Location = new System.Drawing.Point(164, 15);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(178, 27);
+            this.textBoxFirstName.Size = new System.Drawing.Size(178, 32);
             this.textBoxFirstName.TabIndex = 11;
             // 
             // dateTimePickerDOB
@@ -233,9 +233,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.dateTimePickerDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePickerDOB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDOB.Location = new System.Drawing.Point(164, 70);
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(164, 65);
             this.dateTimePickerDOB.Name = "dateTimePickerDOB";
-            this.dateTimePickerDOB.Size = new System.Drawing.Size(178, 27);
+            this.dateTimePickerDOB.Size = new System.Drawing.Size(178, 32);
             this.dateTimePickerDOB.TabIndex = 13;
             // 
             // comboBoxState
@@ -297,9 +297,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             "WV",
             "WI",
             "WY"});
-            this.comboBoxState.Location = new System.Drawing.Point(537, 268);
+            this.comboBoxState.Location = new System.Drawing.Point(537, 266);
             this.comboBoxState.Name = "comboBoxState";
-            this.comboBoxState.Size = new System.Drawing.Size(94, 29);
+            this.comboBoxState.Size = new System.Drawing.Size(94, 31);
             this.comboBoxState.TabIndex = 20;
             // 
             // labelErrorMessage
@@ -310,7 +310,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelErrorMessage.ForeColor = System.Drawing.Color.Red;
             this.labelErrorMessage.Location = new System.Drawing.Point(164, 400);
             this.labelErrorMessage.Name = "labelErrorMessage";
-            this.labelErrorMessage.Size = new System.Drawing.Size(0, 17);
+            this.labelErrorMessage.Size = new System.Drawing.Size(0, 20);
             this.labelErrorMessage.TabIndex = 20;
             // 
             // labelPhone
@@ -318,9 +318,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(22, 129);
+            this.labelPhone.Location = new System.Drawing.Point(64, 104);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(136, 21);
+            this.labelPhone.Size = new System.Drawing.Size(94, 46);
             this.labelPhone.TabIndex = 3;
             this.labelPhone.Text = "*Phone Number:";
             // 
@@ -329,9 +329,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelSSN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSSN.AutoSize = true;
             this.labelSSN.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSSN.Location = new System.Drawing.Point(483, 79);
+            this.labelSSN.Location = new System.Drawing.Point(472, 77);
             this.labelSSN.Name = "labelSSN";
-            this.labelSSN.Size = new System.Drawing.Size(48, 21);
+            this.labelSSN.Size = new System.Drawing.Size(59, 23);
             this.labelSSN.TabIndex = 23;
             this.labelSSN.Text = "*SSN:";
             // 
@@ -340,9 +340,9 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.labelGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(451, 129);
+            this.labelGender.Location = new System.Drawing.Point(432, 127);
             this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(80, 21);
+            this.labelGender.Size = new System.Drawing.Size(99, 23);
             this.labelGender.TabIndex = 24;
             this.labelGender.Text = "*Gender:";
             // 
@@ -357,29 +357,29 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxGender.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.comboBoxGender.Location = new System.Drawing.Point(537, 118);
+            this.comboBoxGender.Location = new System.Drawing.Point(537, 116);
             this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(94, 29);
+            this.comboBoxGender.Size = new System.Drawing.Size(94, 31);
             this.comboBoxGender.TabIndex = 16;
             // 
             // textBoxPhoneNumber
             // 
             this.textBoxPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(164, 120);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(164, 115);
             this.textBoxPhoneNumber.Mask = "(999) 000-0000";
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(117, 27);
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(117, 32);
             this.textBoxPhoneNumber.TabIndex = 15;
             // 
             // textBoxSSN
             // 
             this.textBoxSSN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxSSN.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSSN.Location = new System.Drawing.Point(537, 70);
+            this.textBoxSSN.Location = new System.Drawing.Point(537, 65);
             this.textBoxSSN.Mask = "000-00-0000";
             this.textBoxSSN.Name = "textBoxSSN";
-            this.textBoxSSN.Size = new System.Drawing.Size(100, 27);
+            this.textBoxSSN.Size = new System.Drawing.Size(100, 32);
             this.textBoxSSN.TabIndex = 14;
             // 
             // tableLayoutPanel1
@@ -414,7 +414,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSSN, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 3, 9);
+            this.tableLayoutPanel1.Controls.Add(this.labelRequiredField, 3, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -431,16 +431,16 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 534);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // label1
+            // labelRequiredField
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(537, 476);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "* Indicates required field";
+            this.labelRequiredField.AutoSize = true;
+            this.labelRequiredField.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequiredField.ForeColor = System.Drawing.Color.Maroon;
+            this.labelRequiredField.Location = new System.Drawing.Point(537, 476);
+            this.labelRequiredField.Name = "labelRequiredField";
+            this.labelRequiredField.Size = new System.Drawing.Size(176, 17);
+            this.labelRequiredField.TabIndex = 26;
+            this.labelRequiredField.Text = "* Indicates required field";
             // 
             // AddStudentUserControl
             // 
@@ -483,6 +483,6 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private System.Windows.Forms.ComboBox comboBoxGender;
         private System.Windows.Forms.MaskedTextBox textBoxPhoneNumber;
         private System.Windows.Forms.MaskedTextBox textBoxSSN;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelRequiredField;
     }
 }
