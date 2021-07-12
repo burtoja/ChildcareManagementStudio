@@ -11,7 +11,6 @@ namespace ChildcareManagementStudio.UserControls
     /// </summary>
     public partial class AddTeacherUserControl : UserControl
     {
-        //private readonly MainTeacherUserControl mainTeacherUserControl;
         private readonly EmployeeController employeeController;       
 
         /// <summary>
@@ -20,7 +19,6 @@ namespace ChildcareManagementStudio.UserControls
         public AddTeacherUserControl()
         {
             InitializeComponent();
-            //this.mainTeacherUserControl = mainTeacherUserControl;
             this.employeeController = new EmployeeController();
             
         }
@@ -111,6 +109,7 @@ namespace ChildcareManagementStudio.UserControls
             this.textBoxCity.Text = "";
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxZipCode.Text = "";
+            this.labelErrorMessage.Text = "";
         }
 
         /// <summary>
