@@ -69,7 +69,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
                 }
                 catch (Exception ex)
                 {
-                    this.labelErrorMessage.Text = "Form data not submitted." + ex.Message + " Please fix and try again. ";
+                    this.labelErrorMessage.Text = "Form data not submitted. A person already exists with that social security number. Please fix and try again.";
                 }
             }
         }
