@@ -67,7 +67,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.comboBoxSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSchoolYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxSchoolYear.FormattingEnabled = true;
-            this.comboBoxSchoolYear.Location = new System.Drawing.Point(121, 76);
+            this.comboBoxSchoolYear.Location = new System.Drawing.Point(121, 68);
             this.comboBoxSchoolYear.Name = "comboBoxSchoolYear";
             this.comboBoxSchoolYear.Size = new System.Drawing.Size(235, 29);
             this.comboBoxSchoolYear.TabIndex = 2;
@@ -98,7 +98,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPosition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxPosition.FormattingEnabled = true;
-            this.comboBoxPosition.Location = new System.Drawing.Point(121, 18);
+            this.comboBoxPosition.Location = new System.Drawing.Point(121, 26);
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(235, 29);
             this.comboBoxPosition.TabIndex = 1;
@@ -155,7 +155,7 @@ namespace ChildcareManagementStudio.View.TeacherViews
             this.MinimizeBox = false;
             this.Name = "AddPositionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Update Employee Position";
+            this.Text = "Change Employee Position";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddPositionForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
