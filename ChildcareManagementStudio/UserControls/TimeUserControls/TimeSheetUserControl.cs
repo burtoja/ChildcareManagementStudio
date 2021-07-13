@@ -34,6 +34,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         public void PopulateDropDownList()
         {
             this.employeeList = this.employeeController.GetAllEmployees();
+            this.employeeList.Insert(0, new Employee { FirstName = "Select an employee..." });
             BindingList<Employee> employees = new BindingList<Employee>();
             foreach (Employee current in this.employeeList)
             {
@@ -42,8 +43,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
             this.comboBoxEmployee.DataSource = employees;
             this.comboBoxEmployee.ValueMember = "EmployeeId";
             this.comboBoxEmployee.DisplayMember = "FullName";
-            this.comboBoxEmployee.SelectedIndex = -1;
-            this.comboBoxEmployee.SelectedText = "--select--";
+            this.comboBoxEmployee.SelectedIndex = 0;
         }
 
         /// <summary>
