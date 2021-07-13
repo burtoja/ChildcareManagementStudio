@@ -105,7 +105,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         /// </summary>
         private void UpdateFormValues()
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 try
                 {
@@ -154,7 +154,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         /// <param name="e"></param>
         private void ButtonEditStudent_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 try
                 {

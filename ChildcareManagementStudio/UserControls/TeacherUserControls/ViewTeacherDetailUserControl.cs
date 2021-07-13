@@ -187,7 +187,7 @@ namespace ChildcareManagementStudio.UserControls
         /// </summary>
         private void UpdateFormValues()
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 try
                 {
@@ -243,7 +243,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonEditTeacher_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 try
                 {
@@ -270,7 +270,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonChangePosition_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                 AddPositionForm addPositionForm = new AddPositionForm(employeeId, this);
@@ -289,7 +289,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonChangePayRate_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                 AddSalaryForm addSalaryForm = new AddSalaryForm(employeeId, this);
@@ -308,7 +308,7 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ButtonAddNewCredential_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxName.SelectedIndex != -1)
+            if (this.comboBoxName.SelectedIndex > 0)
             {
                 Int32.TryParse(this.comboBoxName.SelectedValue.ToString(), out int employeeId);
                 AddCertificationForm addCertificationForm = new AddCertificationForm(employeeId, this);
