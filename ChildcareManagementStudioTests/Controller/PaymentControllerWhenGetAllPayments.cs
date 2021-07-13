@@ -20,13 +20,13 @@ namespace ChildcareManagementStudioTests.Controller
             PaymentController paymentController = new PaymentController();
             List<Payment> payments = paymentController.GetAllPayments();
 
-            Assert.AreEqual(2, payments.Count);
+            Assert.AreEqual(1, payments.Count);
             Payment firstPayment = payments[0];
 
-            Assert.AreEqual(1, firstPayment.PaymentId);
-            Assert.AreEqual(new DateTime(2021, 7, 7), firstPayment.PaymentDate);
-            Assert.AreEqual(100.00, firstPayment.Amount);
-            Assert.AreEqual(PaymentType.CreditCard, firstPayment.PaymentType);
+            Assert.AreEqual(2, firstPayment.PaymentId);
+            Assert.AreEqual(new DateTime(2021, 7, 8), firstPayment.PaymentDate);
+            Assert.AreEqual(125.00, firstPayment.Amount);
+            Assert.AreEqual(PaymentType.Cash, firstPayment.PaymentType);
         }
     }
 }

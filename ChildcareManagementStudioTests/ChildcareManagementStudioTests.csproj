@@ -118,6 +118,7 @@
     <Compile Include="Controller\TuitionRateRecordControllerWhenEditTuitionRateEndDate.cs" />
     <Compile Include="Controller\BalanceControllerWhenGetBalance.cs" />
     <Compile Include="Controller\BalanceControllerWhenGetAllBalances.cs" />
+    <Compile Include="Controller\PaymentControllerWhenDeletePayment.cs" />
     <Compile Include="DAL\CredentialDALWhenCheckCredentialsAreValid.cs" />
     <Compile Include="DAL\PersonDALWhenEditPerson.cs" />
     <Compile Include="DAL\SalaryDALWhenGetSalaryRecords.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="DAL\TuitionRateRecordDALWhenGetAllTuitionRateRecords.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenAddTuitionRateRecord.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenEditTuitionRateEndDate.cs" />
+    <Compile Include="DAL\PaymentDALWhenDeletePayment.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Model\TuitionRateRecordWhenGetNumberOfWeekdaysInRange.cs" />
     <Compile Include="Model\BalanceCalculatorWhenGetTuitionTotal.cs" />

@@ -36,7 +36,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             comboParentName.DisplayMember = "FullName";
         }
 
-        private void ComboParentName_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void RefreshListView()
         {
             this.listViewPaymentRecords.Items.Clear();
             AccountHolder accountHolder = accountHolders[comboParentName.SelectedIndex];
@@ -47,6 +47,26 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                 item.SubItems.Add(currentPayment.Amount.ToString("$#,##0.00"));
                 this.listViewPaymentRecords.Items.Add(item);
             }
+        }
+
+        private void ComboParentName_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            this.RefreshListView();
+        }
+
+        private void DeletePaymentButton_Click(object sender, System.EventArgs e)
+        {
+            if (listViewPaymentRecords.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Please select a payment before clicking the delete button.");
+                return;
+            }
+
+            AccountHolder accountHolder = accountHolders[comboParentName.SelectedIndex];
+            List<Payment> payments = paymentController.GetPayments(accountHolder);
+            Payment payment = payments[listViewPaymentRecords.SelectedIndices[0]];
+            paymentController.DeletePayment(payment);
+            this.RefreshListView();
         }
     }
 }
