@@ -175,7 +175,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(155, 7);
+            this.comboBoxName.Location = new System.Drawing.Point(155, 3);
             this.comboBoxName.Name = "comboBoxName";
             this.comboBoxName.Size = new System.Drawing.Size(288, 31);
             this.comboBoxName.TabIndex = 25;

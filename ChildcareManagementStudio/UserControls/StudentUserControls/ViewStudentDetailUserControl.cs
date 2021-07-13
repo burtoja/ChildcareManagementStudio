@@ -31,6 +31,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         public void FillDropDownList()
         {
             this.studentList = this.studentController.GetAllStudents();
+            this.studentList.Insert(0, new Student { FirstName = "Select a student..." });
             BindingList<Student> students = new BindingList<Student>();
             foreach (Student current in this.studentList)
             {
@@ -39,8 +40,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             this.comboBoxName.DataSource = students;
             this.comboBoxName.ValueMember = "StudentId";
             this.comboBoxName.DisplayMember = "FullName";
-            this.comboBoxName.SelectedIndex = -1;
-            this.comboBoxName.SelectedText = "--select--";
+            this.comboBoxName.SelectedIndex = 0;
             this.ResetFormValues();
         }
 
