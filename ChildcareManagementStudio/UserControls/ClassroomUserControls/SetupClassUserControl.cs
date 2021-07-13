@@ -66,6 +66,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         public void PopulateClassComboBox()
         {
+            int originalSelectedIndex = this.comboBoxClass.SelectedIndex;
             BindingList<ClassRecord> classRecords = new BindingList<ClassRecord>();
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
@@ -73,8 +74,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             foreach (ClassRecord current in this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear))
             {
                 classRecords.Add(current);
-            }           
-            this.comboBoxClass.SelectedIndex = -1;
+            }
+            this.comboBoxClass.SelectedIndex = originalSelectedIndex;
         }
 
         /// <summary>
