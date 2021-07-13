@@ -53,7 +53,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <returns>true if teacher is selected in combo box</returns>
         private bool EmployeeIsSelectedCheck()
         {
-            if (this.comboBoxEmployee.SelectedIndex == -1)
+            if (this.comboBoxEmployee.SelectedIndex <= 0)
             {
                 this.Enabled = false;
                 string title = "No Employee Chosen";
@@ -161,8 +161,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private void ButtonClear_Click(object sender, EventArgs e)
         {
             this.reportViewerTimeSheet.Clear();
-            this.comboBoxEmployee.SelectedIndex = -1;
-            this.comboBoxEmployee.SelectedText = "--select--";
+            this.comboBoxEmployee.SelectedIndex = 0;
         }
         
         /// <summary>
