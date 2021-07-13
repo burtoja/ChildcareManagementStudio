@@ -157,6 +157,7 @@
     <Compile Include="DAL\TuitionRateRecordDALWhenGetAllTuitionRateRecords.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenAddTuitionRateRecord.cs" />
     <Compile Include="DAL\TuitionRateRecordDALWhenEditTuitionRateEndDate.cs" />
+    <Compile Include="DAL\ClassRecordWhenGetClassRecordsForRoom.cs" />
     <Compile Include="Model\PersonWhenGetFullName.cs" />
     <Compile Include="Model\TuitionRateRecordWhenGetNumberOfWeekdaysInRange.cs" />
     <Compile Include="Model\BalanceCalculatorWhenGetTuitionTotal.cs" />
