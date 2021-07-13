@@ -34,6 +34,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         public void PopulateDropDownList()
         {
             this.accountHolderList = this.accountHolderController.GetAllAccountHolders();
+            this.accountHolderList.Insert(0, new AccountHolder { FirstName = "Select an account holder..." });
             BindingList<AccountHolder> accountHolders = new BindingList<AccountHolder>();
             foreach (AccountHolder current in this.accountHolderList)
             {
@@ -42,7 +43,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboAccountHolder.DataSource = accountHolders;
             this.comboAccountHolder.ValueMember = "AccountHolderId";
             this.comboAccountHolder.DisplayMember = "FullName";
-            this.comboAccountHolder.SelectedIndex = -1;
+            this.comboAccountHolder.SelectedIndex = 0;
         }
 
         /// <summary>
