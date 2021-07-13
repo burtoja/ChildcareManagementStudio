@@ -31,7 +31,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         public void RefreshPaymentsUserControl()
         {
             accountHolders = accountHolderController.GetAllAccountHolders();
-            accountHolders.Insert(0, new AccountHolder { FirstName = "Select an account holder" });
+            accountHolders.Insert(0, new AccountHolder { FirstName = "Select an account holder..." });
             comboParentName.DataSource = accountHolders;
             comboParentName.DisplayMember = "FullName";
         }
