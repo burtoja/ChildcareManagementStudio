@@ -58,6 +58,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboAccountHolder.Name = "comboAccountHolder";
             this.comboAccountHolder.Size = new System.Drawing.Size(287, 31);
             this.comboAccountHolder.TabIndex = 1;
+            this.comboAccountHolder.SelectedIndexChanged += new System.EventHandler(this.ComboAccountHolder_SelectedIndexChanged);
             // 
             // labelAccountHolder
             // 
@@ -159,6 +160,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.comboBoxPaymentType.Name = "comboBoxPaymentType";
             this.comboBoxPaymentType.Size = new System.Drawing.Size(228, 31);
             this.comboBoxPaymentType.TabIndex = 23;
+            this.comboBoxPaymentType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPaymentType_SelectedIndexChanged);
             // 
             // buttonSubmit
             // 

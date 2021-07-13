@@ -112,6 +112,23 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         }
 
         /// <summary>
+        /// Enables or disables buttons depending on the selected indices of the combo boxes.
+        /// </summary>
+        private void EnableOrDisableButtons()
+        {
+            if (this.comboAccountHolder.SelectedIndex > 0 && this.comboBoxPaymentType.SelectedIndex > 0)
+            {
+                this.buttonSubmit.Enabled = true;
+                this.buttonClear.Enabled = true;
+            }
+            else
+            {
+                this.buttonSubmit.Enabled = false;
+                this.buttonClear.Enabled = false;
+            }
+        }
+
+        /// <summary>
         /// Handles the submit button clicks and attempts to add entry to the DB
         /// </summary>
         /// <param name="sender"></param>
@@ -155,6 +172,15 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.numericUpDownAmount.ResetText();
             this.dateTimePickerPayment.ResetText();
         }
-        
+
+        private void ComboAccountHolder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.EnableOrDisableButtons();
+        }
+
+        private void ComboBoxPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.EnableOrDisableButtons();
+        }
     }
 }
