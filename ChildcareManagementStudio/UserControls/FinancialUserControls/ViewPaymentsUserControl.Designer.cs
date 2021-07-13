@@ -34,6 +34,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.listViewPaymentRecords = new System.Windows.Forms.ListView();
             this.headerDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deletePaymentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelParentName
@@ -72,7 +73,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.listViewPaymentRecords.Location = new System.Drawing.Point(18, 80);
             this.listViewPaymentRecords.MultiSelect = false;
             this.listViewPaymentRecords.Name = "listViewPaymentRecords";
-            this.listViewPaymentRecords.Size = new System.Drawing.Size(708, 370);
+            this.listViewPaymentRecords.Size = new System.Drawing.Size(708, 293);
             this.listViewPaymentRecords.TabIndex = 17;
             this.listViewPaymentRecords.UseCompatibleStateImageBehavior = false;
             this.listViewPaymentRecords.View = System.Windows.Forms.View.Details;
@@ -87,9 +88,20 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.headerAmount.Text = "Payment Amount";
             this.headerAmount.Width = 244;
             // 
+            // deletePaymentButton
+            // 
+            this.deletePaymentButton.Location = new System.Drawing.Point(18, 390);
+            this.deletePaymentButton.Name = "deletePaymentButton";
+            this.deletePaymentButton.Size = new System.Drawing.Size(708, 61);
+            this.deletePaymentButton.TabIndex = 18;
+            this.deletePaymentButton.Text = "Delete Payment";
+            this.deletePaymentButton.UseVisualStyleBackColor = true;
+            this.deletePaymentButton.Click += new System.EventHandler(this.DeletePaymentButton_Click);
+            // 
             // ViewPaymentsUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.deletePaymentButton);
             this.Controls.Add(this.listViewPaymentRecords);
             this.Controls.Add(this.comboParentName);
             this.Controls.Add(this.labelParentName);
@@ -109,5 +121,6 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         private System.Windows.Forms.ListView listViewPaymentRecords;
         private System.Windows.Forms.ColumnHeader headerDate;
         private System.Windows.Forms.ColumnHeader headerAmount;
+        private System.Windows.Forms.Button deletePaymentButton;
     }
 }
