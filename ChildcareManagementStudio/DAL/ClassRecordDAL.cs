@@ -228,6 +228,11 @@ namespace ChildcareManagementStudio.DAL
         /// <returns>List of ClassRecord objects matching the search</returns>
         public List<ClassRecord> GetClassRecordsForRoom(Classroom classroom)
         {
+            if (classroom == null)
+            {
+                throw new ArgumentNullException("classroom", "The classroom cannot be null.");
+            }
+
             List<ClassRecord> classrooms = new List<ClassRecord>();
 
             string selectStatement =
