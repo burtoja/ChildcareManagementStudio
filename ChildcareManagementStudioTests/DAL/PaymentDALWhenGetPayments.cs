@@ -25,8 +25,8 @@ namespace ChildcareManagementStudioTests.DAL
             List<Payment> payments = paymentDAL.GetPayments(accountHolder);
             Payment firstPayment = payments[0];
 
-            Assert.AreEqual(2, payments.Count);
-            Assert.AreEqual(2, firstPayment.PaymentId);
+            Assert.AreEqual(1, payments.Count);
+            Assert.AreEqual(3, firstPayment.PaymentId);
             Assert.AreEqual(new DateTime(2021, 7, 8), firstPayment.PaymentDate);
             Assert.AreEqual(125.00, firstPayment.Amount);
             Assert.AreEqual(PaymentType.Cash, firstPayment.PaymentType);

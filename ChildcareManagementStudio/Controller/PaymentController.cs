@@ -62,5 +62,14 @@ namespace ChildcareManagementStudio.Controller
         {
             return paymentDAL.GetAllPayments();
         }
+
+        /// <summary>
+        /// Method that deletes a payment from the database.
+        /// </summary>
+        /// <param name="payment">The payment being deleted.</param>
+        public void DeletePayment(Payment payment)
+        {
+            paymentDAL.DeletePayment(payment);
+        }
     }
 }
