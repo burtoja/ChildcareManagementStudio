@@ -78,7 +78,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         {
             string title = "";
             string message = "";
-            if (this.comboAccountHolder.SelectedIndex == -1)
+            if (this.comboAccountHolder.SelectedIndex <= 0)
             {
                 title = "Account Holder Not Selected";
                 message = "Please select an account holder.";
@@ -93,7 +93,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                 title = "Payment Not Entered";
                 message = "A payment amount was not entered. Please input a positive value for the payment.";
             }
-            else if (this.comboBoxPaymentType.SelectedIndex == -1)
+            else if (this.comboBoxPaymentType.SelectedIndex <= 0)
             {
                 title = "Payment Type Not Selected";
                 message = "Please select a payment type.";
@@ -129,6 +129,26 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         }
 
         /// <summary>
+        /// Gets the selected payment type in the form of an enumeration.
+        /// </summary>
+        /// <returns>The payment type in the form of an enumeration.</returns>
+        private PaymentType GetPaymentType()
+        {
+            if (this.comboBoxPaymentType.Text.Equals("Cash"))
+            {
+                return PaymentType.Cash;
+            }
+            else if (this.comboBoxPaymentType.Text.Equals("Check"))
+            {
+                return PaymentType.Check;
+            }
+            else
+            {
+                return PaymentType.CreditCard;
+            }
+        }
+
+        /// <summary>
         /// Handles the submit button clicks and attempts to add entry to the DB
         /// </summary>
         /// <param name="sender"></param>
@@ -143,7 +163,7 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
                     AccountHolder = this.accountHolderController.GetAccountHolder(accountHolderId),
                     PaymentDate = this.dateTimePickerPayment.Value,
                     Amount = Decimal.ToDouble(this.numericUpDownAmount.Value),
-                    PaymentType = (PaymentType)this.comboBoxPaymentType.SelectedItem
+                    PaymentType = this.GetPaymentType()
                 };
                 try
                 {
