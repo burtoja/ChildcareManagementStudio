@@ -52,7 +52,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <returns>true if teacher is selected in combo box</returns>
         private bool TeacherIsSelectedCheck()
         {
-            if (this.comboEmployeeName.SelectedIndex == -1)
+            if (this.comboEmployeeName.SelectedIndex <= 0)
             {
                 this.DisplayMessageBox(
                     "No Teacher Chosen",
@@ -188,7 +188,7 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         /// <param name="e"></param>
         private void ComboEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.comboEmployeeName.SelectedIndex != -1)
+            if (this.comboEmployeeName.SelectedIndex > 0)
             {
                 Int32.TryParse(this.comboEmployeeName.SelectedValue.ToString(), out int employeeId);
                 if (this.clockRecordController.GetOpenClockRecord(employeeId) == null)
