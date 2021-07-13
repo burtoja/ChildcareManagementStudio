@@ -172,6 +172,21 @@ namespace ChildcareManagementStudio.UserControls.TimeUserControls
         private void ClearReportEventHandler(object sender, EventArgs e)
         {
             this.reportViewerTimeSheet.Clear();
+            this.EnableOrDisableButtons();
+        }
+
+        private void EnableOrDisableButtons()
+        {
+            if (this.comboBoxEmployee.SelectedIndex <= 0)
+            {
+                this.buttonGenerateReport.Enabled = false;
+                this.buttonClear.Enabled = false;
+            }
+            else
+            {
+                this.buttonGenerateReport.Enabled = true;
+                this.buttonClear.Enabled = true;
+            }
         }
     }
 }
