@@ -2,6 +2,7 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ChildcareManagementStudio.DAL
 {
@@ -185,6 +186,28 @@ namespace ChildcareManagementStudio.DAL
             }
 
             return payments;
+        }
+
+        /// <summary>
+        /// Method that deletes a payment from the database.
+        /// </summary>
+        /// <param name="payment">The payment being deleted.</param>
+        public void DeletePayment(Payment payment)
+        {
+            string deleteStatement =
+                "DELETE FROM Payment " +
+                "WHERE paymentId = $paymentId";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqliteCommand deleteCommand = new SqliteCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("$paymentId", payment.PaymentId);
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
