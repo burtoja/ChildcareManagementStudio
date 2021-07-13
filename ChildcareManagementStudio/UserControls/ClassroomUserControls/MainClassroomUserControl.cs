@@ -8,7 +8,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
     public partial class MainClassroomUserControl : UserControl
     {
         private readonly ViewClassroomListUserControl viewClassroomListUserControl;
-        private readonly SetupClassUserControl addStudentsToClassroomUserControl;
+        private readonly SetupClassUserControl setupClassUserControl;
         private readonly GenerateDocumentsUserControl generateDocumentsUserControl;
         
         /// <summary>
@@ -18,7 +18,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         {
             InitializeComponent();
             this.viewClassroomListUserControl = new ViewClassroomListUserControl();
-            this.addStudentsToClassroomUserControl = new SetupClassUserControl();
+            this.setupClassUserControl = new SetupClassUserControl();
             this.generateDocumentsUserControl = new GenerateDocumentsUserControl();
             this.AddUserControls();
         }
@@ -29,7 +29,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         private void AddUserControls()
         {
             this.tabPageListClassrooms.Controls.Add(this.viewClassroomListUserControl);
-            this.tabPageEditClass.Controls.Add(this.addStudentsToClassroomUserControl);
+            this.tabPageEditClass.Controls.Add(this.setupClassUserControl);
             this.tabPageGenerateDocuments.Controls.Add(this.generateDocumentsUserControl);
         }
 
@@ -48,6 +48,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     break;
                 case 1:
                     // Edit Students In Classroom tab
+                    this.setupClassUserControl.SetClassroomValueLabel();
 
                     break;
                 case 2:
