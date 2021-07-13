@@ -143,6 +143,8 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for the two classrooms.");
             }
 
+            // TODO: Verify that no classRecords using this classroom have more students than the new capacity
+
             // TODO: wrap both table updates in a transaction
 
             // TODO: propagate this change to other table entries as needed
