@@ -171,7 +171,15 @@ namespace ChildcareManagementStudio.UserControls
         /// <param name="e"></param>
         private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            this.UpdateFormValues();           
+            this.UpdateFormValues();
+            if (this.comboBoxName.SelectedIndex > 0)
+            {
+                this.EnableButtons();
+            }
+            else
+            {
+                this.DisableButtons();
+            }
         }
 
         /// <summary>
@@ -204,6 +212,28 @@ namespace ChildcareManagementStudio.UserControls
             string title = "No Teacher Chosen";
             string message = "Please choose a teacher.";
             MessageBox.Show(message, title);
+        }
+
+        /// <summary>
+        /// Disables all the buttons on the form.
+        /// </summary>
+        private void DisableButtons()
+        {
+            this.buttonEditTeacher.Enabled = false;
+            this.buttonChangePosition.Enabled = false;
+            this.buttonChangePayRate.Enabled = false;
+            this.buttonAddNewCredential.Enabled = false;
+        }
+
+        /// <summary>
+        /// Enables all the buttons on the form.
+        /// </summary>
+        private void EnableButtons()
+        {
+            this.buttonEditTeacher.Enabled = true;
+            this.buttonChangePosition.Enabled = true;
+            this.buttonChangePayRate.Enabled = true;
+            this.buttonAddNewCredential.Enabled = true;
         }
 
         /// <summary>
