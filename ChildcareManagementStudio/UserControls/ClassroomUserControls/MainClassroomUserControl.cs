@@ -49,6 +49,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                 case 1:
                     // Edit Students In Classroom tab
                     this.setupClassUserControl.SetClassroomValueLabel();
+                    this.setupClassUserControl.PopulateClassComboBox();
 
                     break;
                 case 2:
