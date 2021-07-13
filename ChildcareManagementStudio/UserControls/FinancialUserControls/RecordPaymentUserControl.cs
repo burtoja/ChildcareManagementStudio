@@ -51,11 +51,11 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
         /// </summary>
         private void PopulatePaymentTypeComboBox()
         {
-            foreach (var paymentType in Enum.GetValues(typeof(PaymentType)))
-            {
-                this.comboBoxPaymentType.Items.Add(paymentType);
-            }
-            this.comboBoxPaymentType.SelectedIndex = -1;
+            this.comboBoxPaymentType.Items.Add("Select a payment type...");
+            this.comboBoxPaymentType.Items.Add("Cash");
+            this.comboBoxPaymentType.Items.Add("Check");
+            this.comboBoxPaymentType.Items.Add("Credit Card");
+            this.comboBoxPaymentType.SelectedIndex = 0;
         }
 
         /// <summary>
