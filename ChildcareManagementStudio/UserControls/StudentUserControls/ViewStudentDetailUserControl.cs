@@ -137,6 +137,14 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
         private void ComboBoxName_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             this.UpdateFormValues();
+            if (this.comboBoxName.SelectedIndex > 0)
+            {
+                this.buttonEditStudent.Enabled = true;
+            }
+            else
+            {
+                this.buttonEditStudent.Enabled = false;
+            }
         }
 
         /// <summary>
