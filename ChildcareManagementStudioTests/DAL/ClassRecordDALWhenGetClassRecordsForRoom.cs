@@ -9,7 +9,7 @@ namespace ChildcareManagementStudioTests.DAL
     /// Class for testing the GetAllClassrooms method of the ClassroomDAL class.
     /// </summary>
     [TestClass]
-    public class ClassRecordWhenGetClassRecordsForRoom
+    public class ClassRecordDALWhenGetClassRecordsForRoom
     {
         [TestMethod]
         public void ShouldReturnOneClassMatchingDBInfo()
