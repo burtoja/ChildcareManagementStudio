@@ -75,7 +75,13 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             {
                 classRecords.Add(current);
             }
-            this.comboBoxClass.SelectedIndex = originalSelectedIndex;
+            try
+            {
+                this.comboBoxClass.SelectedIndex = originalSelectedIndex;
+            } catch (Exception)
+            {
+                this.comboBoxClass.SelectedIndex = -1;
+            }
         }
 
         /// <summary>
