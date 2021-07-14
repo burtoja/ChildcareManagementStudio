@@ -156,6 +156,13 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
             }
 
+            StudentClassroomAssignmentDAL studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
+            int classSize = studentClassroomAssignmentDAL.GetStudentsInClass(originalClass.ClassId).Count;
+            if (classSize > revisedClass.Classroom.Capacity)
+            {
+                throw new Exception("The class has more students than the capacity of the classroom.");
+            }
+
             string updateStatement =
                 "UPDATE Class SET " +
                     "classroomId = $revisedClassroomId, " +
@@ -219,6 +226,51 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
             return classroomId;
+        }
+
+        /// <summary>
+        /// Queries DB to get all ClassRecords with the location (Classroom) provided in the parameter
+        /// </summary>
+        /// <param name="classroom">Classroom object defining the search</param>
+        /// <returns>List of ClassRecord objects matching the search</returns>
+        public List<ClassRecord> GetClassRecordsForRoom(Classroom classroom)
+        {
+            if (classroom == null)
+            {
+                throw new ArgumentNullException("classroom", "The classroom cannot be null.");
+            }
+
+            List<ClassRecord> classrooms = new List<ClassRecord>();
+
+            string selectStatement =
+                "SELECT classId, schoolYear " +
+                "FROM Class " +
+                "WHERE classroomId = $classroomId";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("$classroomId", classroom.Id);
+                    using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        int classIdOrdinal = reader.GetOrdinal("classId");
+                        int schoolYearOrdinal = reader.GetOrdinal("schoolYear");
+                        while (reader.Read())
+                        {
+                            ClassRecord classRecord = new ClassRecord
+                            {
+                                ClassId = reader.GetInt32(classIdOrdinal),
+                                Classroom = classroom,
+                                SchoolYear = reader.GetString(schoolYearOrdinal)
+                            };
+                            classrooms.Add(classRecord);
+                        }
+                    }
+                }
+            }
+            return classrooms;
         }
     }
 }

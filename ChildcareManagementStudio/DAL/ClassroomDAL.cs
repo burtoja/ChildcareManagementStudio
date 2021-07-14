@@ -100,7 +100,11 @@ namespace ChildcareManagementStudio.DAL
         {
             if (theClassroom == null)
             {
-                throw new ArgumentNullException("theClassroom", "The classroom record cannot be null.");
+                throw new ArgumentNullException("The classroom record cannot be null.");
+            }
+            if (theClassroom.Capacity < 1)
+            {
+                throw new ArgumentException("The classroom capacity must be greater than zero.");
             }
 
             string insertStatement =
@@ -142,6 +146,16 @@ namespace ChildcareManagementStudio.DAL
             {
                 throw new ArgumentException("The ID must be the same for the two classrooms.");
             }
+
+            ClassRecordDAL classRecordDAL = new ClassRecordDAL();
+            StudentClassroomAssignmentDAL studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
+            List<ClassRecord> classesUsingRoom = classRecordDAL.GetClassRecordsForRoom(revisedClassroom);
+            int largestClassSizeUsingRoom = studentClassroomAssignmentDAL.FindLargestClassSizeInList(classesUsingRoom);
+            if (revisedClassroom.Capacity < largestClassSizeUsingRoom)
+            {
+                throw new Exception("Capacity cannot be less than currently populated class records.");
+            }
+            
 
             // TODO: wrap both table updates in a transaction
 

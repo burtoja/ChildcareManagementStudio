@@ -66,6 +66,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
         /// </summary>
         public void PopulateClassComboBox()
         {
+            int originalSelectedIndex = this.comboBoxClass.SelectedIndex;
             BindingList<ClassRecord> classRecords = new BindingList<ClassRecord>();
             this.comboBoxClass.DataSource = classRecords;
             this.comboBoxClass.ValueMember = "ClassId";
@@ -73,8 +74,14 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             foreach (ClassRecord current in this.classRecordController.GetAllClassesForSchoolYear(this.schoolYear))
             {
                 classRecords.Add(current);
-            }           
-            this.comboBoxClass.SelectedIndex = -1;
+            }
+            try
+            {
+                this.comboBoxClass.SelectedIndex = originalSelectedIndex;
+            } catch (Exception)
+            {
+                this.comboBoxClass.SelectedIndex = -1;
+            }
         }
 
         /// <summary>
@@ -132,7 +139,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     this.listViewStudentsNotInClass.CheckBoxes = true;
                 }
             }
-            this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width;
+            this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width - 4 - SystemInformation.VerticalScrollBarWidth;
         }
 
         /// <summary>
@@ -163,7 +170,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     this.listViewStudentsInClass.CheckBoxes = true;
                 }
             }
-            this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width;
+            this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width - 4 - SystemInformation.VerticalScrollBarWidth;
         }
 
         /// <summary>
