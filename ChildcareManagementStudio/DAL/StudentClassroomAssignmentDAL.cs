@@ -180,5 +180,51 @@ namespace ChildcareManagementStudio.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Examines a list of ClassRecord objects and determines the size of the largest class.
+        /// </summary>
+        /// <param name="">list of ClassRecord objects to examine</param>
+        /// <returns>the size of the largest class in the list</returns>
+        public int FindLargestClassSizeInList(List<ClassRecord> classList)
+        {
+            if (classList == null || classList.Count == 0)
+            {
+                throw new ArgumentNullException("classList", "The list of class records must be populated by at least one record");
+            }
+
+            int largestClassSize = 0;
+
+            string selectStatement =
+                "SELECT COUNT() AS classSize " +
+                "FROM StudentClassroomAssignment " +
+                "WHERE class = $classId";
+
+            using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                {                   
+                    foreach(ClassRecord current in classList)
+                    {
+                        selectCommand.Parameters.AddWithValue("$classId", current.ClassId);
+                        using (SqliteDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            int classSizeOrdinal = reader.GetOrdinal("classSize");
+                            while (reader.Read())
+                            {
+                                int currentClassSize = reader.GetInt32(classSizeOrdinal);
+                                if (currentClassSize > largestClassSize)
+                                {
+                                    largestClassSize = currentClassSize;
+                                }
+                            }
+                        }
+                    }                 
+                }
+            }
+            return largestClassSize;
+        }
+
     }
 }
