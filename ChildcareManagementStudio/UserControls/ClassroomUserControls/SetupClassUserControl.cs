@@ -31,6 +31,8 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             this.SetSchoolYear();
             this.PopulateClassComboBox();
             this.PopulateSelectedTeacherList();
+            this.PopulateAvailableStudentsListView();
+            this.PopulateAssignedStudentsListView();  
         }
 
         /// <summary>
