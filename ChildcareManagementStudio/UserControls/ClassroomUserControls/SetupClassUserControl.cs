@@ -133,7 +133,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     this.listViewStudentsNotInClass.CheckBoxes = true;
                 }
             }
-            this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width;
+            this.listViewStudentsNotInClass.Columns[0].Width = this.listViewStudentsNotInClass.Width - 4 - SystemInformation.VerticalScrollBarWidth;
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
                     this.listViewStudentsInClass.CheckBoxes = true;
                 }
             }
-            this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width;
+            this.listViewStudentsInClass.Columns[0].Width = this.listViewStudentsInClass.Width - 4 - SystemInformation.VerticalScrollBarWidth;
         }
 
         /// <summary>

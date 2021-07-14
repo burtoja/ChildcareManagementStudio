@@ -162,7 +162,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // studentNameAvailable
             // 
             this.studentNameAvailable.Text = "Student Name";
-            this.studentNameAvailable.Width = 291;
+            this.studentNameAvailable.Width = 275;
             // 
             // listViewStudentsInClass
             // 
@@ -181,7 +181,7 @@ namespace ChildcareManagementStudio.UserControls.ClassroomUserControls
             // studentNameInClass
             // 
             this.studentNameInClass.Text = "Student Name";
-            this.studentNameInClass.Width = 292;
+            this.studentNameInClass.Width = 275;
             // 
             // label1
             // 
