@@ -156,6 +156,13 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for both ClassRecord objects.");
             }
 
+            StudentClassroomAssignmentDAL studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
+            int classSize = studentClassroomAssignmentDAL.GetStudentsInClass(originalClass.ClassId).Count;
+            if (classSize > revisedClass.Classroom.Capacity)
+            {
+                throw new Exception("The class has more students than the capacity of the classroom.");
+            }
+
             string updateStatement =
                 "UPDATE Class SET " +
                     "classroomId = $revisedClassroomId, " +

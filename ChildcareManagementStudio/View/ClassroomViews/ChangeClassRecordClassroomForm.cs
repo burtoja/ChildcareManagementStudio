@@ -106,6 +106,12 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                         string message = "The room chosen is already assigned to another class.  " +
                             "Please choose another classroom and try again.";
                         MessageBox.Show(message, title);
+                    } 
+                    else
+                    {
+                        string title = "Error";
+                        string message = ex.Message + "\nPlease correct and try again.";
+                        MessageBox.Show(message, title);
                     }
                 }
             }
