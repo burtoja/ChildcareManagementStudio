@@ -10,6 +10,18 @@ namespace ChildcareManagementStudio.DAL
     /// </summary>
     public class ClassroomDAL
     {
+        private readonly ClassRecordDAL classRecordDAL;
+        private readonly StudentClassroomAssignmentDAL studentClassroomAssignmentDAL;
+
+        /// <summary>
+        /// Constructor for the DAL class
+        /// </summary>
+        public ClassroomDAL()
+        {
+            this.classRecordDAL = new ClassRecordDAL();
+            this.studentClassroomAssignmentDAL = new StudentClassroomAssignmentDAL();
+        }
+
         /// <summary>
         /// Method that returns a Classroom object representing the requested classroom.
         /// </summary>
@@ -143,7 +155,13 @@ namespace ChildcareManagementStudio.DAL
                 throw new ArgumentException("The ID must be the same for the two classrooms.");
             }
 
-            // TODO: Verify that no classRecords using this classroom have more students than the new capacity
+            List<ClassRecord> classesUsingRoom = this.classRecordDAL.GetClassRecordsForRoom(revisedClassroom);
+            int largestClassSizeUsingRoom = this.studentClassroomAssignmentDAL.FindLargestClassSizeInList(classesUsingRoom);
+            if (revisedClassroom.Capacity < largestClassSizeUsingRoom)
+            {
+                throw new Exception("Capacity cannot be less than currently populated class records.");
+            }
+            
 
             // TODO: wrap both table updates in a transaction
 

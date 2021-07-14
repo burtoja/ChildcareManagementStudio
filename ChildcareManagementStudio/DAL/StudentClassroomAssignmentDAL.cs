@@ -185,12 +185,16 @@ namespace ChildcareManagementStudio.DAL
         /// Examines a list of ClassRecord objects and determines the size of the largest class.
         /// </summary>
         /// <param name="">list of ClassRecord objects to examine</param>
-        /// <returns>the size of the largest class in the list</returns>
+        /// <returns>the size of the largest class in the list (0 if no classes in list)</returns>
         public int FindLargestClassSizeInList(List<ClassRecord> classList)
         {
-            if (classList == null || classList.Count == 0)
+            if (classList == null)
             {
-                throw new ArgumentNullException("classList", "The list of class records must be populated by at least one record");
+                throw new ArgumentNullException("classList", "The list of class records cannot be null");
+            }
+            if (classList.Count == 0)
+            {
+                return 0;
             }
 
             int largestClassSize = 0;
