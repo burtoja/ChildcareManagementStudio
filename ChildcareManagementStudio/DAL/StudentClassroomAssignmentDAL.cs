@@ -198,15 +198,16 @@ namespace ChildcareManagementStudio.DAL
             string selectStatement =
                 "SELECT COUNT() AS classSize " +
                 "FROM StudentClassroomAssignment " +
-                "WHERE class = $classId";
+                "WHERE class = $classId " +
+                "GROUP BY class";
 
             using (SqliteConnection connection = ChildCareDatabaseConnection.GetConnection())
             {
                 connection.Open();
-                using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
-                {                   
-                    foreach(ClassRecord current in classList)
-                    {
+                foreach (ClassRecord current in classList)
+                {
+                    using (SqliteCommand selectCommand = new SqliteCommand(selectStatement, connection))
+                    {                                       
                         selectCommand.Parameters.AddWithValue("$classId", current.ClassId);
                         using (SqliteDataReader reader = selectCommand.ExecuteReader())
                         {
