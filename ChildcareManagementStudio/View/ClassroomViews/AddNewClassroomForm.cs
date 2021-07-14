@@ -55,9 +55,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
                 catch (Exception ex)
                 {
                     string title = "Error Message";
-                    string message = "An error was found:/n" +
-                        ex.Message +
-                        "/n/nThe classroom was NOT created. Click 'Okay' to continue.";
+                    string message = ex.Message + "\n\nThe classroom was NOT created. Click 'Okay' to continue.";
                     MessageBox.Show(message, title);
                 }
             }

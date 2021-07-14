@@ -100,7 +100,11 @@ namespace ChildcareManagementStudio.DAL
         {
             if (theClassroom == null)
             {
-                throw new ArgumentNullException("theClassroom", "The classroom record cannot be null.");
+                throw new ArgumentNullException("The classroom record cannot be null.");
+            }
+            if (theClassroom.Capacity < 1)
+            {
+                throw new ArgumentException("The classroom capacity must be greater than zero.");
             }
 
             string insertStatement =
