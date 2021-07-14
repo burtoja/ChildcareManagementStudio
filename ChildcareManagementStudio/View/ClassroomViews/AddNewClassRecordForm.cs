@@ -46,16 +46,16 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// </summary>
         private void PopulateClassroomComboBox()
         {
-            BindingList<Classroom> classrooms = new BindingList<Classroom>();
-            foreach (Classroom current in this.classroomController.GetAllClassrooms())
+            BindingList<Classroom> classroomsBindingList = new BindingList<Classroom>();
+            List<Classroom> classrooms = this.classroomController.GetAllClassrooms();
+            classrooms.Insert(0, new Classroom { Location = "Select a classroom..." });
+            foreach (Classroom current in classrooms)
             {
-                classrooms.Add(current);
+                classroomsBindingList.Add(current);
             }
-            this.comboBoxClassroom.DataSource = classrooms;
+            this.comboBoxClassroom.DataSource = classroomsBindingList;
             this.comboBoxClassroom.ValueMember = "Id";
             this.comboBoxClassroom.DisplayMember = "Location";
-            this.comboBoxClassroom.SelectedIndex = -1;
-            this.comboBoxClassroom.SelectedText = "--select--";
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace ChildcareManagementStudio.View.ClassroomViews
         /// <returns>true if both combo boxes are selected</returns>
         private bool IsInputValid()
         {
-            if (this.comboBoxClassroom.SelectedIndex == -1)
+            if (this.comboBoxClassroom.SelectedIndex == 0)
             {
                 string title = "Classroom Location Not Selected";
                 string message = "The classroom location has not been selected.  Please click 'Okay' and try again.";
