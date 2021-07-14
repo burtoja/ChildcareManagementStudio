@@ -43,8 +43,8 @@ namespace ChildcareManagementStudioTests.DAL
             List<Payment> payments = paymentDAL.GetPayments(accountHolder);
             Payment paymentFromDatabase = payments[1];
 
-            Assert.AreEqual(3, payments.Count);
-            Assert.AreEqual(2, paymentFromDatabase.PaymentId);
+            Assert.AreEqual(2, payments.Count);
+            Assert.AreEqual(3, paymentFromDatabase.PaymentId);
             Assert.AreEqual(accountHolder.AccountHolderId, paymentFromDatabase.AccountHolder.AccountHolderId);
             Assert.AreEqual(paymentDate, paymentFromDatabase.PaymentDate);
             Assert.AreEqual(amount, paymentFromDatabase.Amount);
