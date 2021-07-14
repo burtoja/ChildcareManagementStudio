@@ -179,6 +179,7 @@ namespace ChildcareManagementStudio.UserControls
             else
             {
                 this.DisableButtons();
+                this.ResetFormValues();
             }
         }
 

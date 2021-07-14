@@ -144,6 +144,7 @@ namespace ChildcareManagementStudio.UserControls.StudentUserControls
             else
             {
                 this.buttonEditStudent.Enabled = false;
+                this.ResetFormValues();
             }
         }
 
