@@ -19,15 +19,6 @@ namespace ChildcareManagementStudioTests.DAL
         }
 
         [TestMethod]
-        public void ShouldThrowExceptionIfNoChanges()
-        {
-            Classroom originalClassroom = this.classroomDAL.GetClassroom(1);
-            Classroom revisedClassroom = originalClassroom;
-
-            Assert.ThrowsException<System.ArgumentException>(() => classroomDAL.EditClassroom(originalClassroom, revisedClassroom));
-        }
-
-        [TestMethod]
         public void ShouldThrowExceptionIfRevisedCapacityLessThanLargestClass()
         {
             Classroom originalClassroom = this.classroomDAL.GetClassroom(1);
@@ -53,6 +44,7 @@ namespace ChildcareManagementStudioTests.DAL
             };
             this.classroomDAL.EditClassroom(originalClassroom, revisedClassroom);
             Assert.AreEqual(10, this.classroomDAL.GetClassroom(originalClassroom.Id).Capacity);
+            this.classroomDAL.EditClassroom(revisedClassroom, originalClassroom);
         }
     }
 }

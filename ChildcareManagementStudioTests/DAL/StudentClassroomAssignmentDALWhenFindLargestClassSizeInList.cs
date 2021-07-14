@@ -33,6 +33,7 @@ namespace ChildcareManagementStudioTests.DAL
             this.studentClassroomAssignmentDAL.AddStudentClassroomAssignment(testClassroomAssignment);
             largestClassSize = this.studentClassroomAssignmentDAL.FindLargestClassSizeInList(classList);
             Assert.AreEqual(4, largestClassSize);
+            this.studentClassroomAssignmentDAL.DeleteStudentClassroomAssignment(testClassroomAssignment);
         }
     }
 }
