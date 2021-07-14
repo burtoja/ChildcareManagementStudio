@@ -41,12 +41,26 @@ namespace ChildcareManagementStudio.UserControls.FinancialUserControls
             this.listViewPaymentRecords.Items.Clear();
             AccountHolder accountHolder = accountHolders[comboParentName.SelectedIndex];
             List<Payment> payments = paymentController.GetPayments(accountHolder);
-            foreach (Payment currentPayment in payments)
+            if (comboParentName.SelectedIndex == 0)
             {
-                ListViewItem item = new ListViewItem(currentPayment.PaymentDate.ToShortDateString());
-                item.SubItems.Add(currentPayment.Amount.ToString("$#,##0.00"));
+                ListViewItem item = new ListViewItem("Choose a parent");
                 this.listViewPaymentRecords.Items.Add(item);
             }
+            else if (payments.Count == 0)
+            {
+                ListViewItem item = new ListViewItem("No payments on record");
+                this.listViewPaymentRecords.Items.Add(item);
+            } 
+            else
+            {
+                foreach (Payment currentPayment in payments)
+                {
+                    ListViewItem item = new ListViewItem(currentPayment.PaymentDate.ToShortDateString());
+                    item.SubItems.Add(currentPayment.Amount.ToString("$#,##0.00"));
+                    this.listViewPaymentRecords.Items.Add(item);
+                }
+            }
+            
         }
 
         private void ComboParentName_SelectedIndexChanged(object sender, System.EventArgs e)
