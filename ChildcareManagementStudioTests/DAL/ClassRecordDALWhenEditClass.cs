@@ -95,7 +95,8 @@ namespace ChildcareManagementStudioTests.DAL
         {
             Classroom originalClassroom = new Classroom()
             {
-                Id = 1
+                Id = 1,
+                Capacity = 30
             };
 
             ClassRecord originalClassRecord = new ClassRecord
@@ -107,7 +108,8 @@ namespace ChildcareManagementStudioTests.DAL
 
             Classroom revisedClassroom = new Classroom()
             {
-                Id = 1
+                Id = 1,
+                Capacity = 30
             };
 
             ClassRecord revisedClassRecord = new ClassRecord
